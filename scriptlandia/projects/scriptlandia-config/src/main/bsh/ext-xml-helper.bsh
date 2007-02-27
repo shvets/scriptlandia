@@ -1,0 +1,138 @@
+// ExtXmlHelper.bsh
+
+package org.sf.scriptlandia.install;
+
+import org.jdom.Element;
+import org.jdom.JDOMException;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.File;
+import java.io.FileOutputStream;
+
+import org.apache.tools.ant.Project;
+
+sourceRelative("XmlHelper.bsh");
+//sourceRelative("Language.bsh");
+
+public class ExtXmlHelper extends XmlHelper {
+
+  public List getLanguages() {
+    List languages = new ArrayList();
+
+    Element root = document.getRootElement();
+
+    List children = root.getChildren();
+
+    for(int i=0; i < children.size(); i++) {
+      Element child = (Element)children.get(i);
+
+      Element registration = getElementByName(child, "registration");
+
+      List extensions = getElementByName(registration, "extensions").getChildren();
+
+      Map language = new HashMap();
+
+      language.put("name", child.getAttribute("name").getValue());
+      language.put("groupId", child.getAttribute("groupId").getValue());
+      language.put("artifactId", child.getAttribute("artifactId").getValue());
+      language.put("version", child.getAttribute("version").getValue());
+
+      language.put("mimeType", registration.getAttribute("mimeType").getValue());
+      language.put("icon", registration.getAttribute("icon").getValue());
+
+      Element starter = getElementByName(registration, "starter");
+
+      language.put("starter.groupId", starter.getAttribute("groupId").getValue());
+      language.put("starter.artifactId", starter.getAttribute("artifactId").getValue());
+      language.put("starter.version", starter.getAttribute("version").getValue());
+
+      language.put("mainClass", getElementByName(starter, "mainClass").getValue());
+
+      Element commandLine = getElementByName(starter, "commandLine");
+
+      if(commandLine != null) {
+        language.put("commandLine", commandLine.getValue());
+      }
+
+      List list = new ArrayList();
+
+      for(int j=0; j < extensions.size(); j++) {
+        Element extension = (Element)extensions.get(j);
+
+        list.add(extension.getValue());
+      }
+
+      language.put("extensions", list);
+
+      languages.add(language);
+    }
+
+    return languages;
+  }
+
+  public void copyProperties(String propsFileName) throws IOException {
+    Properties props = new Properties();
+
+    File propsFile = new File(propsFileName);
+
+    if(propsFile.exists()) {
+      props.load(new FileInputStream(propsFile));
+    }
+
+    Element root = document.getRootElement();
+
+    List children = root.getChildren();
+
+    for(int i=0; i < children.size(); i++) {
+      Element child = (Element)children.get(i);
+
+      String repositoryHome = System.getProperty("repository.home");
+
+      String name = child.getAttribute("name").getValue();
+      String groupId = child.getAttribute("groupId").getValue();
+      String artifactId = child.getAttribute("artifactId").getValue();
+
+      String version = child.getAttribute("version").getValue();
+
+      props.put(name + ".version", version);
+      props.put(name + ".base", repositoryHome + "/" + groupId.replace('.', '/') + "/" +
+                                artifactId + "/" + version);
+    }
+
+    props. store(new FileOutputStream(propsFileName), "Scriptlandia properties");
+  }
+
+    public void setupProperties(Project project) {
+      Element root = document.getRootElement();
+
+      List children = root.getChildren();
+
+      for(int i=0; i < children.size(); i++) {
+        Element child = (Element)children.get(i);
+
+        String repositoryHome = System.getProperty("repository.home");
+
+        String name = child.getAttribute("name").getValue();
+        String groupId = child.getAttribute("groupId").getValue();
+        String artifactId = child.getAttribute("artifactId").getValue();
+
+        String version = child.getAttribute("version").getValue();
+
+        project.setNewProperty(name + ".version", version);
+        project.setNewProperty(name + ".base", repositoryHome + "/" + groupId.replace('.', '/') + "/" +
+                                               artifactId + "/" + version);
+      }
+    }
+
+  public static void main(String[] args) throws IOException, JDOMException {
+    ExtXmlHelper xmlHelper = new ExtXmlHelper();
+    xmlHelper.read(new File("languages.xml"));
+
+    System.out.println(xmlHelper.getLanguages());
+  }
+
+}

@@ -1,0 +1,86 @@
+<assembly>
+  <id>src</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+
+  <fileSets>
+    <fileSet>
+      <includes>
+        <include>*.bat</include>
+        <include>*.ant</include>
+        <include>*.bsh</include>
+        <include>*.sh</include>
+        <include>*.xml</include>
+        <include>*.properties</include>
+        <include>*.txt</include>
+        <include>*.exe</include>
+
+        <include>*.ipr</include>
+        <include>*.iws</include>
+        <include>*.iml</include>
+
+        <include>docs/**</include>
+        <include>src/**</include>
+      </includes>
+    </fileSet>
+
+    <fileSet>
+      <directory>projects</directory>
+      <outputDirectory>projects</outputDirectory>
+    
+      <includes>
+        <include>bootstrap-mini/pom.xml</include>
+        <include>bootstrap-mini/src/**</include>
+
+        <include>pomreader/pom.xml</include>
+        <include>pomreader/src/**</include>
+
+        <include>image4j/pom.xml</include>
+        <include>image4j/src/**</include>
+
+        <include>scriptlandia-common/pom.xml</include>
+        <include>scriptlandia-common/src/**</include>
+
+        <include>antrun/pom.xml</include>
+        <include>antrun/src/**</include>
+
+        <include>scriptlandia-startup/pom.*</include>
+
+        <include>scriptlandia-installer/pom.xml</include>
+        <include>scriptlandia-installer/src/**</include>
+
+        <include>scriptlandia-config/bin/**</include>
+        <include>scriptlandia-config/components/**</include>
+        <include>scriptlandia-config/starters/**</include>
+        <include>scriptlandia-config/src/**</include>
+        <include>scriptlandia-config/pom.xml</include>
+
+        <include>nailgun/*.xml</include>
+        <include>nailgun/src/**</include>
+
+        <include>scriptlandia/pom.xml</include>
+        <include>scriptlandia/src/**</include>
+
+        <include>scriptlandia-launcher/pom.xml</include>
+        <include>scriptlandia-launcher/src/**</include>
+
+        <include>scriptlandia-nailgun/pom.xml</include>
+        <include>scriptlandia-nailgun/src/**</include>
+      </includes>
+    </fileSet>
+
+<!--
+    <fileSet>
+      <directory>examples</directory>
+      <outputDirectory>examples</outputDirectory>
+    </fileSet>
+
+    <fileSet>
+      <directory>tools</directory>
+      <outputDirectory>tools</outputDirectory>
+    </fileSet>
+-->
+  </fileSets>
+
+</assembly>

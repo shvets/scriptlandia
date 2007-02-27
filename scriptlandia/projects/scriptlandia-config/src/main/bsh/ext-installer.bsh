@@ -1,0 +1,382 @@
+//package org.sf.scriptlandia.install;
+
+import org.jdesktop.jdic.filetypes.*;
+
+sourceRelative("ext-xml-helper.bsh");
+
+import java.util.Arrays;
+
+/**
+ * This is the class for installing extensions.
+ *
+ * @author Alexander Shvets
+ * @version 2.0 09/02/2006
+ */
+public class ExtInstaller {
+  private final String OS_NAME = System.getProperty("os.name");
+  //private final String JAVA_VERSION = System.getProperty("java.version");
+
+  private final String repositoryHome = System.getProperty("repository.home");
+  private final String scriptlandiaHome = System.getProperty("scriptlandia.home");
+
+  private AssociationService associationService = new AssociationService();
+
+  /**
+   * Install the extensions.
+   *
+   */
+  public void install() {
+    boolean mavenInstall = Boolean.valueOf(System.getProperty("maven.install")).booleanValue();
+    boolean antInstall = Boolean.valueOf(System.getProperty("ant.install")).booleanValue();
+    boolean beanshellInstall = Boolean.valueOf(System.getProperty("beanshell.install")).booleanValue();
+    boolean groovyInstall = Boolean.valueOf(System.getProperty("groovy.install")).booleanValue();
+    boolean javascriptInstall = Boolean.valueOf(System.getProperty("javascript.install")).booleanValue();
+    boolean jellyInstall = Boolean.valueOf(System.getProperty("jelly.install")).booleanValue();
+    boolean velocityInstall = Boolean.valueOf(System.getProperty("velocity.install")).booleanValue();
+    boolean pnutsInstall = Boolean.valueOf(System.getProperty("pnuts.install")).booleanValue();
+    boolean jrubyInstall = Boolean.valueOf(System.getProperty("jruby.install")).booleanValue();
+    boolean jythonInstall = Boolean.valueOf(System.getProperty("jython.install")).booleanValue();
+    boolean scalaInstall = Boolean.valueOf(System.getProperty("scala.install")).booleanValue();
+    boolean jschemeInstall = Boolean.valueOf(System.getProperty("jscheme.install")).booleanValue();
+    boolean jaskellInstall = Boolean.valueOf(System.getProperty("jaskell.install")).booleanValue();
+    boolean tclInstall = Boolean.valueOf(System.getProperty("tcl.install")).booleanValue();
+    boolean f3Install = Boolean.valueOf(System.getProperty("f3.install")).booleanValue();
+    boolean fortressInstall = Boolean.valueOf(System.getProperty("fortress.install")).booleanValue();
+
+    boolean slInstall = Boolean.valueOf(System.getProperty("sl.install")).booleanValue();
+    boolean cwdInstall = Boolean.valueOf(System.getProperty("cwd.install")).booleanValue();
+    boolean etlInstall = Boolean.valueOf(System.getProperty("etl.install")).booleanValue();
+    boolean classInstall = Boolean.valueOf(System.getProperty("class.install")).booleanValue();
+    boolean jarInstall = Boolean.valueOf(System.getProperty("jar.install")).booleanValue();
+    boolean jadInstall = Boolean.valueOf(System.getProperty("jad.install")).booleanValue();
+    boolean aptFmtInstall = Boolean.valueOf(System.getProperty("aptfmt.install")).booleanValue();
+    boolean aptJellyInstall = Boolean.valueOf(System.getProperty("aptjelly.install")).booleanValue();
+
+    ExtXmlHelper xmlHelper = new ExtXmlHelper();
+    xmlHelper.read(new File("languages.xml"));
+
+    List languages = xmlHelper.getLanguages();
+
+    for(int i=0; i < languages.size(); i++) {
+      Map language = (Map)languages.get(i);
+
+      registerLanguage(language);
+    }
+
+    //registerRubyGemExtensions(new String[] { "gem" });
+  }
+
+  private void registerLanguage(Map language) {
+    List extensions = language.get("extensions");
+
+    Boolean[] registrations = new Boolean[extensions.size()];
+
+//    String groupId = "org.sf.scriptlandia";
+
+//    String version = project.getProperty("scriptlandia.version");
+
+    String groupId = language.get("starter.groupId");
+    String artifactId = language.get("starter.artifactId");
+    String version = language.get("starter.version");
+
+    String mainClass =  language.get("mainClass");
+    String commandLine = language.get("commandLine");
+
+    if(commandLine == null) {
+      commandLine = "";
+    }
+
+    StringBuffer openAction = new StringBuffer();
+    openAction.append(scriptlandiaHome.replace('/', File.separatorChar));
+    openAction.append(File.separatorChar);
+    openAction.append("launcher.");
+    openAction.append(getScriptExt());
+    openAction.append(" \"");
+    openAction.append("-deps.file.name=");
+    openAction.append(repositoryHome.replace('/', File.separatorChar));
+    openAction.append(File.separatorChar);
+    openAction.append(groupId.replace('.', File.separatorChar));
+    openAction.append(File.separatorChar);
+    openAction.append(/*language.get("starter")*/artifactId);
+    openAction.append(File.separatorChar);
+    openAction.append(version);
+    openAction.append(File.separatorChar);
+    openAction.append(/*language.get("starter")*/artifactId);
+    openAction.append("-");
+    openAction.append(version);
+    openAction.append(".pom");
+    openAction.append("\"");
+
+    openAction.append(" \"");
+    openAction.append("-main.class.name=");
+    openAction.append(/*language.get("mainClass")*/mainClass);
+    openAction.append("\"");
+    openAction.append(" ");
+
+    if(commandLine != null && commandLine.trim().length() > 0) {
+      openAction.append(language.get("commandLine"));
+      if(commandLine.equals("-f")) {
+        openAction.append(" ");
+      }
+    }
+
+    openAction.append(getCommandLineExpression());
+
+    System.out.print("Registering extension(s): " + extensions + "... ");
+
+    for(int i=0; i < extensions.size(); i++) {
+      registrations[i] = registerExtension(extensions.get(i), language.get("mimeType"), 
+                                           language.get("icon"), openAction.toString());
+
+      print(openAction.toString());
+    }
+
+    System.out.println("Registered: " + Arrays.asList(registrations) + ".");
+  }
+
+  /**
+   * Registers extensions for artefact specified as (groupId; artefactId; version).
+   *
+   * @param extensions the list of extensions
+   * @param artifactId the artefact Id
+   * @param mimeType mime type 
+   *,@param iconName icon name
+   * @param mainClassName the main class name
+   * @param additionalParams additional parameters
+   * @param mimeType mime type
+   */
+  private void registerExtensions(String[] extensions, String mimeType, String iconName, 
+                                  String artifactId, String mainClassName,
+                                  String additionalParams) {
+    Boolean[] registrations = new Boolean[extensions.length];
+
+    String groupId = "org.sf.scriptlandia";
+
+    String version = project.getProperty("scriptlandia.version");
+
+    StringBuffer openAction = new StringBuffer();
+    openAction.append(scriptlandiaHome.replace('/', File.separatorChar));
+    openAction.append(File.separatorChar);
+    openAction.append("launcher.");
+    openAction.append(getScriptExt());
+    openAction.append(" \"");
+    openAction.append("-deps.file.name=");
+    openAction.append(repositoryHome.replace('/', File.separatorChar));
+    openAction.append(File.separatorChar);
+    openAction.append(groupId.replace('.', File.separatorChar));
+    openAction.append(File.separatorChar);
+    openAction.append(artifactId);
+    openAction.append(File.separatorChar);
+    openAction.append(version);
+    openAction.append(File.separatorChar);
+    openAction.append(artifactId);
+    openAction.append("-");
+    openAction.append(version);
+    openAction.append(".pom");
+    openAction.append("\"");
+
+    openAction.append(" \"");
+    openAction.append("-main.class.name=");
+    openAction.append(mainClassName);
+    openAction.append("\"");
+    openAction.append(" ");
+
+    if(additionalParams != null && additionalParams.trim().length() > 0) {
+      openAction.append(additionalParams);
+      if(additionalParams.equals("-f")) {
+        openAction.append(" ");
+      }
+    }
+
+    openAction.append(getCommandLineExpression());
+
+    System.out.print("Registering extension(s): " + Arrays.asList(extensions) + "... ");
+
+    for(int i=0; i < extensions.length; i++) {
+      registrations[i] = registerExtension(extensions[i], mimeType, iconName, openAction.toString());
+
+      print(openAction.toString());
+    }
+
+    System.out.println("Registered: " + Arrays.asList(registrations) + ".");
+  }
+
+  /**
+   * Registers extensions for artefact specified as (groupId; artefactId; version).
+   *
+   * @param extensions the list of extensions
+   * @param mimeType mime type 
+   *,@param iconName icon name
+   * @param artifactId the artefact Id
+   * @param mainClassName the main class name
+   * @param mimeType mime type
+   */
+  private void registerExtensions(String[] extensions, String mimeType, String iconName, 
+                                  String artifactId, String mainClassName) {
+    registerExtensions(extensions, mimeType, iconName, artifactId, mainClassName, "");
+  }
+
+  /**
+   * Registers extensions for ruby gem.
+   *
+   * @param extensions the list of extensions
+   */
+  private void registerRubyGemExtensions(String[] extensions) {
+    Boolean[] registrations = new Boolean[extensions.length];
+
+    String openAction =
+            scriptlandiaHome + "/" + "gem." +  getScriptExt() +
+            " install" +
+            " " + getCommandLineExpression();
+
+    System.out.print("Registering extension(s): " + Arrays.asList(extensions) + "... ");
+
+    for(int i=0; i < extensions.length; i++) {
+      registrations[i] = registerExtension(extensions[i], "text/ruby", openAction);
+    }
+
+    System.out.println("Registered: " + Arrays.asList(registrations) + ".");
+  }
+
+  /**
+   * Registers single extension.
+   *
+   * @param extension the extension to be registered
+   * @param openAction the action, assosiated with this extension
+   * @param mimeType mime type
+   *,@param iconName icon name
+   * @return true if the extension is registered; false otherwise
+   */
+  private boolean registerExtension(String extension, String mimeType, String iconName,
+                                    String openAction) {
+    boolean registered = false;
+
+    Association existingAssociation = associationService.getFileExtensionAssociation(extension);
+
+    if(existingAssociation == null || existingAssociation.getMimeType() == null ||
+       (!existingAssociation.getFileExtList().contains("." + extension) ||
+        !existingAssociation.getMimeType().equals(mimeType) ||
+        !existingAssociation.getActionByVerb("open").getCommand().equals(openAction))) {
+      Association assosiation = new Association();
+
+      // Adds specific type to the Association object.
+      assosiation.addFileExtension(extension);
+
+      assosiation.setMimeType(mimeType);
+      assosiation.setIconFileName((scriptlandiaHome + "/images/" + iconName).replace('/', File.separatorChar));
+
+      // Adds an Action to the Association object that will 
+      // open file of this type with some executable. 
+      assosiation.addAction(new Action("open", openAction));
+
+      try {
+        // Adds the Association to the file types' table 
+        // at the user level using an AssociationService object.
+        associationService.registerUserAssociation(assosiation);
+
+        registered = true;
+      }
+      catch (java.lang.IllegalArgumentException e) {
+        // This exception will be caught if the given Association is not valid 
+        // to be added to the table of file types.
+        System.err.println(e);
+        //e.printStackTrace();
+      }
+      catch (AssociationAlreadyRegisteredException e) {
+        // This exception will be caught if the Association already
+        // exists in the table of file types.
+
+        //System.err.println(e);
+
+        try {
+          associationService.unregisterUserAssociation(assosiation);
+          associationService.registerUserAssociation(assosiation);
+
+          registered = true;
+        }
+        catch(Exception e2) {
+          ;
+        }
+      }
+      catch (RegisterFailedException e) {
+        // This exception will be caught if the Association was
+        // unable to be added to the table of file types.
+
+        //System.err.println(e);
+        try {
+          associationService.unregisterUserAssociation(assosiation);
+          associationService.registerUserAssociation(assosiation);
+
+          registered = true;
+        }
+        catch(Exception e2) {
+          System.err.println(e2);
+        }
+      }
+    }
+    else {
+      System.out.println("Registration is not required.");
+    }
+
+    return registered;
+  }
+
+  /**
+   * Unregisters the extension.
+   * @param extension the extension
+   * @throws AssociationNotRegisteredException the exception
+   * @throws RegisterFailedException the exception
+   */
+  public void unregisterExtension(String extension)
+    throws AssociationNotRegisteredException, RegisterFailedException {
+    Association assosiation = associationService.getFileExtensionAssociation(extension);
+    System.out.println(assosiation);
+
+    associationService.unregisterUserAssociation(assosiation);
+  }
+
+  /**
+   * Calculates the script extension.
+   *
+   * @return the script extension
+   */
+  private String getScriptExt() {
+    String scriptExt;
+
+    if(OS_NAME.toLowerCase().startsWith("windows")) {
+      scriptExt = "bat";
+      //scriptExt = "exe";
+    }
+    else {
+      scriptExt = "sh";
+    }
+
+    return scriptExt;
+  }
+
+  /**
+   * Calculates the command line expression.
+   *
+   * @return the command line expression
+   */
+  private String getCommandLineExpression() {
+    String scriptExt;
+
+    if(OS_NAME.toLowerCase().startsWith("windows")) {
+      scriptExt = "%1 %*";
+    }
+    else {
+      scriptExt = "$<";
+    }
+
+    return scriptExt;
+  }
+
+  public static void main(String[] args) throws Exception {
+    ExtInstaller installer = new ExtInstaller();
+
+    installer.install();
+  }
+
+}
+

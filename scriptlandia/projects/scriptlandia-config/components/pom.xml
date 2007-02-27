@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>scriptlandia-components</artifactId>
+  <version>2.2.0</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia Components Module</name>
+  <description>Scriptlandia Components Module</description>
+
+  <url>http://sf.net/projects/scriptlandia/</url>
+  <inceptionYear>2006</inceptionYear>
+
+  <issueManagement>
+    <system>SourceForge</system>
+    <url>http://sourceforge.net/tracker/?group_id=127753</url>
+  </issueManagement>
+
+  <organization>
+    <name>Dream Programs Inc.</name>
+    <url>http://sf.net/projects/scriptlandia/</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>shvets</id>
+      <name>Alexander Shvets</name>
+      <email>shvets_alexander@yahoo.com</email>
+      <organization></organization>
+      <roles>
+        <role>Founder</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <licenses>
+    <license>
+      <name>GNU General Public License</name>
+      <url>http://www.gnu.org/copyleft/gpl.html</url>
+    </license>
+  </licenses>
+
+  <modules>
+    <module>projects/ant</module>
+    <module>projects/beanshell</module>
+    <module>projects/groovy</module>
+    <module>projects/javascript</module>
+    <module>projects/jelly</module>
+    <module>projects/jruby</module>
+    <module>projects/jython</module>
+    <module>projects/maven</module>
+    <module>projects/pnuts</module>
+    <module>projects/velocity</module>
+    <module>projects/etl</module>
+    <module>projects/jscheme</module>
+    <module>projects/jaskell</module>
+    <module>projects/apt</module>
+    <module>projects/class</module>
+    <module>projects/freemarker</module>
+    <module>projects/jad</module>
+    <module>projects/jar</module>
+    <module>projects/scala</module>
+    <module>projects/f3</module>
+    <module>projects/fortress</module>
+    <module>projects/tcl</module>
+    <module>projects/war</module>
+    <module>projects/jawk</module>
+    <module>projects/janino</module>
+
+    <module>projects/java-compiler</module>
+  </modules>
+
+</project>

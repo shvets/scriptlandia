@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<project name="config-macrodefs" basedir=".">
+
+  <macrodef name="load-properties">
+    <sequential>
+      <script language="beanshell">
+        String repositoryHome = System.getProperty("repository.home");
+        addClassPath(repositoryHome + "/jdom/jdom/1.0/jdom-1.0.jar");
+
+        source("projects/scriptlandia-config/src/main/bsh/ext-xml-helper.bsh");
+
+        ExtXmlHelper xmlHelper = new ExtXmlHelper();
+        xmlHelper.read(new File("languages.xml"));
+
+        xmlHelper.setupProperties(project);
+      </script>
+    </sequential>
+  </macrodef>
+
+  <macrodef name="copy-properties">
+    <sequential>
+      <script language="beanshell">
+        String repositoryHome = System.getProperty("repository.home");
+        addClassPath(repositoryHome + "/jdom/jdom/1.0/jdom-1.0.jar");
+
+        source("projects/scriptlandia-config/src/main/bsh/ext-xml-helper.bsh");
+
+        ExtXmlHelper xmlHelper = new ExtXmlHelper();
+        xmlHelper.read(new File("languages.xml"));
+
+        xmlHelper.copyProperties(System.getProperty("user.home") + "/.scriptlandia");
+      </script>
+    </sequential>
+  </macrodef>
+
+</project>

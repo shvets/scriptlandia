@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<document>
+  <properties>
+    <title>Scriptlandia project</title>
+    <author email="shvets_alexander@yahoo.com">Alexander Shvets</author>
+  </properties>
+
+  <body>
+    <release version="2.0" date="8-Apr-2006" description="Initial Release">    
+      <action dev="Alexander Shvets" type="add">
+        Initial Release.
+      </action>        
+    </release>
+
+    <release version="2.0.1" date="21-Apr-2006" description="Maintainance Release">    
+      <action dev="Alexander Shvets" type="fix">
+        Using maven 2.0.4.
+      </action>        
+
+      <action dev="Alexander Shvets" type="fix">
+        Changes in configuration.
+      </action>        
+
+      <action dev="Alexander Shvets" type="fix">
+        Added support for new JRuby version - 0.8.3.
+      </action>        
+
+      <action dev="Alexander Shvets" type="fix">
+        Added Support for Jython version 2.2a1.
+      </action>        
+    </release>
+
+    <release version="2.1.0" date="21-Apr-2006" description="Maintainance Release">    
+      <action dev="Alexander Shvets" type="fix">
+        Changes in class hierarchy. Simplified code.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added translate.bsh example. Connects to google translate service and perform the translation 
+        from one language to another.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Moved repoitories definition into profiles.xml file.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for classworlds format (*.cwd). This type of file could be launched from 
+        command line in same was as any other registered type.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for jad format (*.jad). This type is used for Mobile Java.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for class format (*.class). 
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for apt-fmt format (*.apt-fmt). 
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for apt-jelly format (*.apt-jelly). 
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added various examples.
+      </action>        
+    </release>
+
+    <release version="2.2.0" date="23-Feb-2007" description="New Features Release">    
+      <action dev="Alexander Shvets" type="add">
+        Adding support for -X attribute.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Replacing dependencies in form of *.cwd file with maven-like dependencied.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Breaking single project into subprojects.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Adding tools subproject.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Adding support for ruby.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Adding support for grails.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Adding support for diff tools: jdiff and diffj.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Adding nailgun server to the framework.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Adding ability to run nailgun in system tray.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Adding ability to run scripts with GUI (-gui command line parameter).
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Adding ability to run scripts with Nailgun server (-ng command line parameter).
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for *.sl format.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for Ivy project.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for Scriptella project.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added WebTide archetypes for Maven2.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for Scala language.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for JScheme language.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for Jaskell language.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for F3 language.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for TCL (Jacl) language.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for Fortress language.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for FreeMarker templates.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for AWK language.
+      </action>        
+
+      <action dev="Alexander Shvets" type="fix">
+        Using maven 2.0.5.
+      </action>        
+    </release>
+
+   </body>
+</document>

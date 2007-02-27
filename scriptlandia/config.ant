@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+
+<project name="config.ant" default="config" basedir=".">
+
+  <property file="config.properties"/>
+  <property file="scriptlandia.properties"/>
+
+  <import file="config-macrodefs.xml"/>
+  <load-properties/>
+
+  <property name="debug" value="on"/>
+  <property name="optimize" value="on"/>
+  <property name="deprecation" value="on"/>
+
+  <condition property="os.is.windows">
+    <os family="windows"/>
+  </condition>
+
+  <condition property="os.is.unix">
+    <os family="unix"/>
+  </condition>
+
+  <target name="config" depends="copy.config.files"/>
+
+  <target name="copy.config.files">
+    <!-- Variable ${java.home.internal} is set up inside install program. -->
+
+    <filterset id="copy.filterset">
+      <filter token="java.home" value="${java.home.internal}"/>
+      <filter token="mobile.java.home" value="${mobile.java.home}"/>
+
+      <filter token="proxy.server.host" value="${proxy.server.host}"/>
+      <filter token="proxy.server.port" value="${proxy.server.port}"/>
+
+      <filter token="repository.home" value="${repository.home}"/>
+      <filter token="maven.repo.local" value="${repository.home}"/>
+      <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
+      <filter token="ruby.home" value="${ruby.home}"/>
+
+      <filter token="scriptlandia.version" value="${scriptlandia.version}"/>
+      <filter token="classworlds.version" value="${classworlds.version}"/>
+      <filter token="maven.version" value="${maven.version}"/>
+      <filter token="ant.version.internal" value="${ant.version.internal}"/>
+      <filter token="beanshell.version" value="${beanshell.version}"/>
+      <filter token="groovy.version" value="${groovy.version}"/>
+      <filter token="javascript.version" value="${javascript.version}"/>
+      <filter token="jruby.version" value="${jruby.version}"/>
+      <filter token="pnuts.version" value="${pnuts.version}"/>
+      <filter token="jython.version" value="${jython.version}"/>
+      <filter token="jelly.version" value="${jelly.version}"/>
+      <filter token="velocity.version" value="${velocity.version}"/>
+      <filter token="scala.version" value="${scala.version}"/>
+      <filter token="jaskell.version" value="${jaskell.version}"/>
+
+      <filter token="jdic.version" value="${jdic.version}"/>
+      <filter token="nailgun.version" value="${nailgun.version}"/>
+
+      <filter token="scriptlandia.base" value="${scriptlandia.base}"/>
+      <filter token="classworlds.base" value="${classworlds.base}"/>
+      <filter token="maven.base" value="${maven.base}"/>
+      <filter token="ant.base" value="${ant.base}"/>
+      <filter token="beanshell.base" value="${beanshell.base}"/>
+      <filter token="groovy.base" value="${groovy.base}"/>
+      <filter token="javascript.base" value="${javascript.base}"/>
+      <filter token="jruby.base" value="${jruby.base}"/>
+      <filter token="pnuts.base" value="${pnuts.base}"/>
+      <filter token="jython.base" value="${jython.base}"/>
+      <filter token="jython.lib.base" value="${jython.lib.base}"/>
+      <filter token="jelly.base" value="${jelly.base}"/>
+      <filter token="velocity.base" value="${velocity.base}"/>
+      <filter token="jaskell.base" value="${jaskell.base}"/>
+    </filterset>
+
+    <condition property="jython.lib.is.present">
+      <and>
+        <available file="${repository.home}/jython/jython-lib/${jython.version}/jython-lib-${jython.version}.jar"/>
+        <istrue value="${jython.install}"/>
+      </and>
+    </condition>
+
+    <condition property="jruby.lib.is.present">
+      <and>
+        <available file="${repository.home}/jruby/jruby-lib/${jruby.version}/jruby-lib-${jruby.version}.jar"/>
+        <istrue value="${jruby.install}"/>
+      </and>
+    </condition>
+
+    <condition property="fortress.lib.is.present">
+      <and>
+        <available file="${repository.home}/com/sun/fortress/fortress-lib/${fortress.version}/fortress-lib-${fortress.version}.jar"/>
+        <istrue value="${fortress.install}"/>
+      </and>
+    </condition>
+
+    <antcall target="copy.settings.xml"/>
+
+    <antcall target="unzip.jython.lib"/>
+
+    <antcall target="unzip.jruby.lib"/>
+
+    <antcall target="unzip.fortress.lib"/>
+
+    <script language="beanshell">
+      source("projects/scriptlandia-config/src/main/bsh/ChecksumScript.bsh");
+
+      String repositoryHome = System.getProperty("repository.home");
+
+      File dir = new File(repositoryHome + "/org/sf/scriptlandia");
+
+      ChecksumScript checksum = new ChecksumScript();
+
+      checksum.calculate(dir);
+    </script>
+
+    <copy todir="${scriptlandia.home}" overwrite="true">
+      <filterset refid="copy.filterset"/>
+
+      <fileset dir="projects/scriptlandia-config/bin">
+       <include name="*.bat"/>
+       <include name="*.ant"/>
+       <include name="*.conf"/>
+       <include name="*.ini"/>
+
+       <include name="images/*.*"/>
+      </fileset>
+    </copy>
+
+    <copy todir="${java.io.tmpdir}" overwrite="true">
+      <fileset dir="${scriptlandia.home}">
+       <include name="ant.bat"/>
+       <include name="mvn.bat"/>
+       <include name="config.bat"/>
+       <include name="launcher*.bat"/>
+       <include name="nailgun*.bat"/>
+      </fileset>
+    </copy>
+
+    <move todir="${scriptlandia.home}" overwrite="true">
+      <fileset dir="${java.io.tmpdir}">
+       <include name="ant.bat"/>
+       <include name="mvn.bat"/>
+       <include name="config.bat"/>
+       <include name="launcher*.bat"/>
+       <include name="nailgun*.bat"/>
+      </fileset>
+
+      <filterchain>
+        <replacestring from="/" to="\"/>
+      </filterchain>
+    </move>
+
+    <script language="beanshell">
+      String repositoryHome = System.getProperty("repository.home");
+
+      addClassPath(repositoryHome + "/jdom/jdom/1.0/jdom-1.0.jar");
+
+      source("projects/scriptlandia-config/src/main/bsh/ProxiesXmlHelper.bsh");
+
+      ProxiesXmlHelper.main(new String[] {});
+    </script>
+
+    <condition property="jdic.native.libs.present">
+      <available file="${repository.home}/org/jdesktop/jdic-native-libs/${jdic.version}/jdic-native-libs-${jdic.version}.jar"/>
+    </condition>
+
+    <condition property="nailgun.binaries.present">
+      <available file="${repository.home}/com/martiansoftware/nailgun-bin/${nailgun.version}/nailgun-bin-${nailgun.version}.jar"/>
+    </condition>
+
+    <antcall target="unzip.jdic.native.libs"/>
+    <antcall target="unzip.nailgun.binaries"/>
+
+    <antcall target="update.for.windows"/>
+
+    <antcall target="update.for.unix"/>    
+
+    <property name="jdic.lib" value="${repository.home}/org/jdesktop/jdic/${jdic.version}/jdic-${jdic.version}.jar"/>
+    <property name="jdom.lib" value="${repository.home}/jdom/jdom/1.0/jdom-1.0.jar"/>
+
+    <script language="beanshell">
+      addClassPath(project.getProperty("jdic.lib"));
+      addClassPath(project.getProperty("jdom.lib"));
+
+      source("projects/scriptlandia-config/src/main/bsh/ext-installer.bsh");
+
+      new ExtInstaller().install();
+    </script>
+  </target>
+
+  <target name="copy.settings.xml">
+    <copy todir="${user.home}/.m2" overwrite="false">
+      <filterset>
+        <filter token="proxy.server.host" value="${proxy.server.host}"/>
+        <filter token="proxy.server.port" value="${proxy.server.port}"/>
+
+        <filter token="repository.home" value="${repository.home}"/>
+      </filterset>
+
+      <fileset dir="projects/scriptlandia-config/src/main/config">
+       <include name="settings.xml"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="unzip.jython.lib" if="jython.lib.is.present">
+    <unzip src="${repository.home}/jython/jython-lib/${jython.version}/jython-lib-${jython.version}.jar"
+           dest="${jython.base}/Lib" overwrite="false"/>
+  </target>
+
+  <target name="unzip.jruby.lib" if="jruby.lib.is.present">
+    <unzip src="${repository.home}/jruby/jruby-lib/${jruby.version}/jruby-lib-${jruby.version}.jar"
+           dest="${jruby.base}/lib/ruby" overwrite="false"/>
+  </target>
+
+  <target name="unzip.jdic.native.libs" if="jdic.native.libs.present">
+    <unzip src="${repository.home}/org/jdesktop/jdic-native-libs/${jdic.version}/jdic-native-libs-${jdic.version}.jar"
+           dest="${repository.home}/org/jdesktop/jdic/${jdic.version}" overwrite="false"/>
+  </target>
+
+  <target name="unzip.nailgun.binaries" if="nailgun.binaries.present">
+    <unzip src="${repository.home}/com/martiansoftware/nailgun-bin/${nailgun.version}/nailgun-bin-${nailgun.version}.jar"
+           dest="${repository.home}/com/martiansoftware/nailgun-bin/${nailgun.version}" overwrite="false"/>
+  </target>
+
+  <target name="unzip.fortress.lib" if="fortress.lib.is.present">
+    <unzip src="${repository.home}/com/sun/fortress/fortress-lib/${fortress.version}/fortress-lib-${fortress.version}.jar"
+           dest="${fortress.base}" overwrite="false">
+      <patternset>
+        <include name="FortressLibrary.fss"/>
+      </patternset>
+    </unzip>
+  </target>
+
+  <target name="update.for.windows" if="os.is.windows">
+
+  </target>
+
+  <target name="update.for.unix" if="os.is.unix">
+    <!-- todo -->
+
+    <!-- for UNIX -->
+    <fixcrlf eol="unix" srcdir="${scriptlandia.base}" includes="*.sh"/>
+
+    <chmod perm="ugo+x">
+      <fileset dir="${scriptlandia.base}">
+        <include name="*.sh"/>
+      </fileset>
+    </chmod>
+  </target>
+
+</project>

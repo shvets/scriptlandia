@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<project name="package.ant" default="package" basedir=".">
+
+  <property file="config.properties"/>
+
+  <import file="config-macrodefs.xml"/>
+  <import file="install-macrodefs.xml"/>
+
+  <load-properties/>
+
+  <property file="scriptlandia.properties"/>
+
+  <target name="clean">
+    <delete dir="projects/scriptlandia-common/target"/>
+    <delete dir="projects/bootstrap-mini/target"/>
+    <delete dir="projects/pomreader/target"/>
+    <delete dir="projects/image4j/target"/>
+    <delete dir="projects/scriptlandia-installer/target"/>
+  </target>
+
+  <target name="compile">
+    <echo>Java Specification Version: ${java.specification.version}</echo>
+
+    <compileProject basedir="projects/scriptlandia-common"/>
+
+    <compileProject basedir="projects/image4j"/>
+
+    <compileProject basedir="projects/bootstrap-mini"/>
+
+    <compileProject basedir="projects/pomreader">
+      <classpath-entries>
+       <path location="projects/bootstrap-mini/target/classes"/>
+       <path location="projects/scriptlandia-common/target/classes"/>
+      </classpath-entries>
+    </compileProject>
+
+    <compileProject basedir="projects/scriptlandia-installer">
+      <classpath-entries>
+       <path location="projects/bootstrap-mini/target/classes"/>
+       <path location="projects/pomreader/target/classes"/>
+       <path location="projects/scriptlandia-common/target/classes"/>
+       <path location="projects/image4j/target/classes"/>
+      </classpath-entries>
+    </compileProject>
+  </target>
+
+  <target name="jar" depends="compile">
+    <jarProject basedir="projects/bootstrap-mini" name="bootstrap-mini"/>
+    <jarProject basedir="projects/pomreader" name="pomreader"/>
+    <jarProject basedir="projects/image4j" name="image4j"/>
+    <jarProject basedir="projects/scriptlandia-common" name="scriptlandia-common"/>
+    <jarProject basedir="projects/scriptlandia-installer" name="scriptlandia-installer"/>
+  </target>
+
+  <target name="package" depends="jar">
+    <java fork="yes" classname="org.sf.scriptlandia.install.ProjectInstaller">
+      <sysproperty key="maven.repo.local" value="${repository.home}"/>
+      <sysproperty key="basedir" value="projects/scriptlandia-startup"/>
+
+      <classpath>
+        <path location="projects/scriptlandia-common/target/scriptlandia-common.jar"/>
+        <path location="projects/bootstrap-mini/target/bootstrap-mini.jar"/>
+        <path location="projects/pomreader/target/pomreader.jar"/>
+        <path location="projects/image4j/target/image4j.jar"/>
+        <path location="projects/scriptlandia-installer/target/scriptlandia-installer.jar"/>
+      </classpath>
+    </java>
+
+    <java fork="yes" classname="org.apache.tools.ant.launch.Launcher">
+      <sysproperty key="repository.home" value="${repository.home}"/>
+
+      <arg line="-f installer.ant package.projects"/>
+
+      <classpath>
+        <path location="${repository.home}/org/apache/ant/ant-launcher/${ant.version.internal}/ant-launcher-${ant.version.internal}.jar"/>
+        <path location="${repository.home}/org/apache/ant/ant/${ant.version.internal}/ant-${ant.version.internal}.jar"/>
+        <path location="${repository.home}/org/apache/ant/ant-apache-bsf/${ant.version.internal}/ant-apache-bsf-${ant.version.internal}.jar"/>
+        <path location="${repository.home}/org/apache/ant/ant-nodeps/${ant.version.internal}/ant-nodeps-${ant.version.internal}.jar"/>
+        <path location="${repository.home}/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar"/>
+        <path location="${repository.home}/bsf/bsf/2.4.0/bsf-2.4.0.jar"/>
+        <path location="${repository.home}/bsh/bsh/${beanshell.version}/bsh-${beanshell.version}.jar"/>
+      </classpath>
+    </java>
+  </target>
+
+</project>

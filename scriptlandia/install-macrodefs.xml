@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<project name="install-macrodefs" basedir=".">
+
+  <macrodef name="compileProject">
+    <attribute name="basedir"/>
+
+    <attribute name="debug" default="false"/>
+    <attribute name="optimize" default="false"/>
+    <attribute name="deprecation" default="false"/>
+
+    <element name="classpath-entries" optional="true"/>
+
+    <sequential>
+      <mkdir dir="@{basedir}/target/classes"/>
+
+      <javac destdir="@{basedir}/target/classes" includeAntRuntime="false"
+             debug="@{debug}" optimize="@{optimize}" deprecation ="@{deprecation}"
+             source="${java.specification.version}" target="${java.specification.version}">
+        <src path="@{basedir}/src/main/java"/>
+
+        <include name ="**/*.java"/>
+
+        <classpath>
+          <classpath-entries/>
+        </classpath>
+      </javac>
+    </sequential>
+  </macrodef>
+
+  <macrodef name="jarProject">
+    <attribute name="basedir"/>
+    <attribute name="name"/>
+
+    <sequential>
+      <jar destfile="@{basedir}/target/@{name}.jar">
+        <fileset dir="@{basedir}/target/classes">
+           <include name="**/*.class"/>
+         </fileset>
+       </jar>
+    </sequential>
+  </macrodef>
+
+  <macrodef name="installProject">
+    <attribute name="basedir"/>
+    <attribute name="build" default="true"/>
+
+    <sequential>
+      <java classname="org.sf.scriptlandia.install.ProjectInstaller">
+        <classpath>
+          <pathelement path="projects/scriptlandia-common/target/scriptlandia-common.jar"/>
+          <pathelement path="projects/bootstrap-mini/target/bootstrap-mini.jar"/>
+          <pathelement path="projects/pomreader/target/pomreader.jar"/>
+          <pathelement path="projects/image4j/target/image4j.jar"/>
+          <pathelement path="projects/scriptlandia-installer/target/scriptlandia-installer.jar"/>
+        </classpath>
+
+        <sysproperty key="build.required" value="@{build}"/>
+        <sysproperty key="basedir" value="@{basedir}"/>
+
+        <sysproperty key="maven.repo.local" value="${repository.home}"/>
+
+        <sysproperty key="proxy.server.host" value="${proxy.server.host}"/>
+        <sysproperty key="proxy.server.port" value="${proxy.server.port}"/>
+      </java>
+    </sequential>
+  </macrodef>
+
+</project>

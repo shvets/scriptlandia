@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>jaskell</artifactId>
+  <version>2.2.0</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia Jaskell Module</name>
+  <description>Scriptlandia Jaskell Module</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>jaskell</groupId>
+      <artifactId>jaskell</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>
+
+</project>

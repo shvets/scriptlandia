@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>groovy-starter</artifactId>
+  <version>2.2.0</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia Groovy Starter Module</name>
+  <description>Scriptlandia Groovy Starter Module</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>groovy</artifactId>
+      <version>2.2.0</version>
+      <type>pom</type>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>ant</artifactId>
+      <version>2.2.0</version>
+      <type>pom</type>
+    </dependency>
+  </dependencies>
+
+</project>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>freemarker</artifactId>
+  <version>2.2.0</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia Freemarker Module</name>
+  <description>Scriptlandia Freemarker Module</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>freemarker</groupId>
+      <artifactId>freemarker</artifactId>
+      <version>2.3.9</version>
+    </dependency>
+  </dependencies>
+
+</project>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>class</artifactId>
+  <version>2.2.0</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia Class Module</name>
+  <description>Scriptlandia Class Module</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.sf.classfile</groupId>
+      <artifactId>classfile</artifactId>
+      <version>1.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>scriptlandia</artifactId>
+      <version>2.2.0</version>
+    </dependency>
+  </dependencies>
+
+</project>

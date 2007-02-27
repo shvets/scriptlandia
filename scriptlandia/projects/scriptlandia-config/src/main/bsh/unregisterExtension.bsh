@@ -1,0 +1,10 @@
+//
+
+String jdicLib = repositoryHome + "/org/jdesktop/jdic/0.9.1/jdic-0.9.1.jar";
+
+addClassPath(jdicLib);
+
+source("ext-installer.bsh");
+
+new Installer().unregisterExtension();
+

@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+
+<project name="installer.ant" default="install" basedir=".">
+
+  <import file="install-macrodefs.xml"/>
+
+  <import file="config.ant" />
+
+  <target name="install" depends="install.projects, install.libraries, copy.config.files"/>
+
+  <target name="package.projects">
+    <installProject basedir="projects/bootstrap-mini" build="false"/>
+    <installProject basedir="projects/scriptlandia-common" build="false"/>
+    <installProject basedir="projects/image4j" build="false"/>
+
+    <installProject basedir="projects/pomreader" build="false"/>
+
+    <installProject basedir="projects/antrun"/>
+    <installProject basedir="projects/nailgun"/>
+
+    <installProject basedir="projects/scriptlandia-config/components"/>
+    <installProject basedir="projects/scriptlandia-launcher"/>
+
+    <installProject basedir="projects/scriptlandia-nailgun"/>
+    <installProject basedir="projects/scriptlandia"/>
+
+    <installProject basedir="projects/scriptlandia-config/starters"/>
+  </target>
+
+  <target name="install.projects">
+    <script language="beanshell">
+      addClassPath("projects/scriptlandia-common/target/scriptlandia-common.jar");
+      addClassPath("projects/bootstrap-mini/target/bootstrap-mini.jar");
+      addClassPath("projects/pomreader/target/pomreader.jar");
+      addClassPath("projects/image4j/target/image4j.jar");
+      addClassPath("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
+
+      import org.sf.scriptlandia.install.ProjectInstaller;
+
+      ProjectInstaller installer = new ProjectInstaller();
+
+      installer.install("projects/bootstrap-mini", false);
+      installer.install("projects/image4j", false);
+      installer.install("projects/scriptlandia-common", false);
+
+      installer.install("projects/pomreader", false);
+      installer.install("projects/nailgun", false);
+      installer.install("projects/scriptlandia-installer", false);
+      installer.install("projects/scriptlandia-config/components", false);
+
+      installer.install("projects/scriptlandia-launcher", false);
+      installer.install("projects/scriptlandia-nailgun", false);
+      installer.install("projects/scriptlandia", false);
+      installer.install("projects/scriptlandia-config/starters", false);
+    </script>
+  </target>
+
+  <target name="install.libraries">
+    <copy todir="${scriptlandia.home}">
+      <fileset dir=".">
+       <include name="repositories.xml"/>
+       <include name="config.ant"/>
+       <include name="scriptlandia.properties"/>
+       <include name="config-macrodefs.xml"/>
+       <include name="languages.xml"/>
+      </fileset>
+    </copy>
+
+    <copy todir="${scriptlandia.home}">
+      <fileset dir="projects/scriptlandia-config/bin">
+       <include name="*.exe"/>
+      </fileset>
+    </copy>
+
+    <copy todir="${scriptlandia.home}">
+      <fileset dir=".">
+        <include name="projects/scriptlandia-config/bin/*.*"/>
+        <exclude name="projects/scriptlandia-config/bin/*.exe"/>
+        <include name="projects/scriptlandia-config/src/main/bsh/**"/>
+        <include name="projects/scriptlandia-config/src/main/config/**"/>
+      </fileset>
+    </copy>
+
+    <copy-properties/>
+  </target>
+
+  <target name="get.accelerator">
+    <get src="http://scriptlandia.sourceforge.net/maven2/scriptlandia-maven-repository-2.2.0.jar" 
+         dest="d:/scriptlandia-maven-repository-2.2.0.jar"
+         verbose="true"/>
+  </target>
+
+  <target name="set.accelerator">
+    <mkdir dir="d:/maven-repository-remote-2"/>
+
+    <unjar src="d:/scriptlandia-maven-repository-2.2.0.jar" 
+           dest="d:/maven-repository-remote-2"/>
+  </target>
+
+</project>
+

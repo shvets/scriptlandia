@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>jython</artifactId>
+  <version>2.2.0</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia Jython Module</name>
+  <description>Scriptlandia Jython Module</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>jython</groupId>
+      <artifactId>jython</artifactId>
+      <version>2.2b1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>jython</groupId>
+      <artifactId>jython-lib</artifactId>
+      <version>2.2b1</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>install</defaultGoal>
+    
+    <plugins>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+
+        <executions>
+          <execution>
+            <phase>install</phase>
+            <configuration>
+              <tasks>
+                <unzip src="${repository.home}/jython/jython-lib/${jython.version}/jython-lib-${jython.version}.jar"
+                       dest="${repository.home}/jython/jython/${jython.version}/Lib"
+                       overwrite="false"/>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

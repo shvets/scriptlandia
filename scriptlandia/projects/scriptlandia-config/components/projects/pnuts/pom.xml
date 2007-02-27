@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>pnuts</artifactId>
+  <version>2.2.0</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia Pnuts Module</name>
+  <description>Scriptlandia Pnuts Module</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>pnuts</groupId>
+      <artifactId>pnuts</artifactId>
+      <version>1.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>pnuts</groupId>
+      <artifactId>pnuts-modules</artifactId>
+      <version>1.1</version>
+    </dependency>
+  </dependencies>
+
+</project>

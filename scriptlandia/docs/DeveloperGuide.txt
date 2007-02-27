@@ -1,0 +1,624 @@
+Supported scripting languages
+
+After the installation, the following languages will be available out-of-the-box:
+
+- Javascript;
+- Groovy;
+- Beanshell;
+- Jaskell;
+- Jelly;
+- JRuby;
+- JScheme;
+- Jython;
+- Pnuts;
+- TCL;
+- AWK;
+- f3;
+- Fortress;
+- Scala;
+- Velocity;
+- Freemarker.
+
+For example:
+
+// hello.js
+
+importPackage(Packages.java.lang);
+
+System.out.println("Hello!!!");
+
+In the same way you can work with Beanshell scripts:
+
+// hello.bsh
+
+System.out.println("Hello!!!");
+
+In the same way as we do it for Beanshell and JavaScript scripts, we can
+create and run scripts for Groovy language. It is very interesting new
+language with the set of advanced features such as closures, native support
+for various markup languages (html, xml, ant etc.). For example:
+
+// helloworld.groovy
+
+println("Hello world")
+
+Groovy scripts can be used to get access the Ant API in "Groovy"-like way.
+For example:
+
+ant = new AntBuilder()
+
+ant.echo("hello")
+
+myDir = "dist/src"
+
+ant.mkdir(dir:myDir)
+
+ant.copy(todir:myDir) {
+  fileset(dir:".") {
+    include(name:"**/*.groovy")
+  }
+}
+
+ant.input(message:"Press Return key to continue...")
+
+ant.delete(dir:"target")
+
+ant.echo("done")
+
+We also can run jelly script, that looks almost like Ant script (but not competely):
+
+
+<?xml version="1.0"?>
+<j:jelly xmlns:j="jelly:core" xmlns="jelly:ant" trim="false">
+  Lets start by calling the echo task:
+
+  <echo message="hello"/>
+
+  <property name="myDir" value="dist/src"/>
+
+  <mkdir dir="${myDir}"/>
+
+  <copy todir="${myDir}">
+   <fileset dir=".">
+      <include name="**/*.groovy"/>
+    </fileset>
+  </jar>
+
+  <input message="Press Return key to continue..."/>
+
+  <delete dir="target"/>
+
+  <echo message="done"/>
+
+   End.
+</j:jelly>
+
+
+As you can see, we can mix Ant tasks with plain text. Plus, this script will execute tasks
+and display plain text sequentially (there is no "target" tag used).
+
+
+Ant scripts as regular scriptlets (antlets)
+
+
+We can introduce scripting support for Ant projects. Let's think about Ant projects not only
+as the way for creating development projects, but also as the convenient infrastructure
+for expressing various scenarios, built from the sequence of Ant tasks. Using optional
+"script" Ant task, we can "plug-in" any other scripting language to it, greatly extending
+in such a way basic functionality of the Ant.
+
+We can register yet another extension for the Ant scripts: ".ant". Let's call such script
+as "antlet", little Ant scripts. Such scripts are regular Ant build files,
+but you don't have to specify build file name or to have predefined name,
+like build.xml. For example:
+
+<!-- hello.ant -->
+
+<project name="hello.ant" default="start" basedir=".">
+
+  <target name="start">
+    <echo>
+      Hello, World!!!
+    </echo>
+  </target>
+
+</project>
+
+You can use any other scripting language inside antlets. To work with the scripting
+engines, Ant uses Bean Scripting Framework (BSF). Jar files for this framework and 
+jars for the scripting engines should be present in CLASSPATH. Scriptlandia takes care
+about this details.
+
+For example:
+
+<!-- Hello2.ant -->
+
+<project name="hello.ant" default="start" basedir=".">
+
+  <target name="start" depends"start.beanshell, start.javascript, start.groovy"/>
+
+  <target name="start.beanshell">
+    <script language="beanshell">
+      System.out.println("Hello, World from beanshell!");
+    </script>
+  </target>
+
+  <target name="start.javascript">
+    <script language="javascript">
+      importPackage(Packages.java.lang);
+
+      System.out.println("Hello, World from Javascript!");
+    </script>
+  </target>
+
+  <target name="start.groovy">
+    <script language="groovy">
+      println("Hello, World from Groovy!")
+    </script>
+  </target>
+
+</project>
+
+Antlets can be used as the convenient way for building command-line tools.
+By mixing predefined Ant tasks with scripting languages code, we can build
+something more powerful, like Java compiler, Jar tool etc. It could be general
+tool or very specific tool that serves your today needs. For example:
+
+<project name="javac.antlet" default="javac" basedir=".">
+
+  <target name="init">
+    <property name="debug" value="false"/>
+    <property name="optimize" value="false"/>
+    <property name="deprecation" value="false"/>
+
+    <property name="src.dir" value="."/>
+
+    <input message="Input -d parameter:"
+           addproperty="destination.dir"/>
+
+    <input message="Input files mask:"
+           addproperty="files.mask"/>
+
+    <mkdir dir="${destination.dir}"/>
+  </target>
+
+  <target name="javac" depends="init">
+    <javac destdir="${destination.dir}"
+           includeAntRuntime="false"
+           debug="${debug}"
+           optimize="${optimize}"
+           deprecation ="${deprecation}">
+        <src path="${src.dir}"/>
+        <include name ="${files.mask}"/>
+    </javac>
+  </target>
+
+</project>
+
+
+Antlet adapter
+
+
+If you are not ready to convert your favorite project file into antlet,
+let's use the adapter:
+
+<!-- my.favorite.project.ant -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="my.favorite.project.ant" default="usage" basedir=".">
+
+ <import file="build.xml" />
+
+</project>
+
+
+Executing antlets from inside "jar" files
+
+
+Current implementation of Java execution mechanism uses special MANIFEST.MF file
+properties to represent Java "jar" file as an executable:
+
+>java -jar jarfile.jar
+
+By using antlets we can build more powerful framework. Say, we want to assign set of
+commands with given jar file (not only starting the application). To do it, we prepare
+special file with the predefined name: "default.ant". This file resides inside "META-INF"
+directory, similar to "MANIFEST.MF" file.
+
+As an example, let's associate two commands: "start" and "stop" with our jar file.
+Antlet for this case looks like:
+
+<!-- default.ant -->
+<project name="jar.invocation.antlet" default="start" basedir=".">
+
+  <target name="start">
+    <java classname="Test" fork="yes">
+      <classpath>
+        <pathelement location="${jar.file}" />
+      </classpath>
+
+      <arg line="start"/>
+    </java>
+  </target>
+
+  <target name="stop">
+    <java classname="Test" fork="yes">
+      <classpath>
+        <pathelement location="${jar.file}" />
+      </classpath>
+
+      <arg line="stop"/>
+    </java>
+  </target>
+</project>
+
+Now, we have to associate "jar" extension with special launcher program (it is the part
+of the framework), which will extracts this antlet from the archive, prepares 
+"project" object and then executes specified target. The variable "${jar.file}" 
+is prepared inside this launcher program.
+
+The typical execution will look like:
+
+>Test.jar
+>Test.jar start
+>Test.jar stop
+
+First 2 commands do exactly the same: execute "start" target. The 3rd command 
+executes "stop" target.
+
+The following command runs "start" then "stop" targets consequentially:
+
+>Test.jar start stop
+
+
+Working with command line parameters in antlets
+
+
+When we work with the scripting languages outside of antlets, we have access
+to the command line in the standard for this language way (see documentation
+for the given language).
+
+For antlets we have to introduce special mechanism, which can "filter" Ant targets
+and separate them from command line parameters:
+
+>CommandLine.ant start [a] [b] [c]
+
+In the above example we have "start" target and command line: "a b c".
+
+In the similar way we can prepare command line for the new "jar" executable:
+
+>Test.jar start [a] [b] [c]
+
+
+Repetitive execution of Ant commands
+
+
+It is possible to load Ant script into the memory (for standalone antlets or
+antlets from jar files) and run them periodically without reloading Ant
+script for every execution.
+
+To do it, place "-i" parameter on your command line:
+
+>test.ant -i
+
+or
+
+>Test.jar -i
+
+In this case the user has the ability to enter various targets interactively
+along with the command line parameters.
+
+To leave the interactive mode, enter the "quit" ("q") command.
+
+This interactive mode is supported for all scripts withing Scriptlandia.
+
+
+Forcing GUI mode
+
+
+If your script is based on AWT or swing, we need to make sure not to close
+awt-thread from execution. You have to use -gui command line parameter:
+
+>testWithGui.bsh -gui
+
+
+Jelly Scripts
+
+Jelly is yet another interesting scripting language that uses xml syntax to express itself.
+For example:
+
+<?xml version="1.0"?>
+
+<j:jelly xmlns:j="jelly:core" trim="false">
+
+  Hello World!
+
+</j:jelly>
+
+
+It is possible to include ant script inside jelly script. You need to include ant tags library:
+
+<?xml version="1.0"?>
+<j:jelly xmlns:j="jelly:core" xmlns="jelly:ant" trim="false">
+  Lets start by calling the echo task:
+
+  <!-- this example attempts to invoke some Ant tasks -->
+  <echo message="Hello from inside Jelly!!!"/>
+
+  <echo>
+    Java home is ${java.home}
+  </echo>
+
+   End.
+</j:jelly>
+
+The jelly launcher is dependent on the following tag libraries:
+"commons-jelly-tags-ant", "commons-jelly-tags-beanshell", "commons-jelly-tags-sql",
+"commons-jelly-tags-swing", "commons-jelly-tags-swt", "commons-jelly-tags-define",
+"commons-jelly-tags-log".
+
+New tag libraries could be easily added to the framework by including new dependencies.
+
+
+Velocity and Freemarker templates
+
+
+Velocity templates can be treated as another example of scripting language. The situation
+here is more complex than usual, because Velocity is expecting some external parameters
+to be entered in order to generate actual source from the template.
+
+The solution used here is to use beanshell script as the object with actual parameters
+(context object). This beanshell script has predefined name: context.bsh. If you need to use other
+name, specify it on command line next to velocity script name:
+
+>test1.vm
+
+>test2.vm myContext.bsh
+
+For example, context file can contain this information:
+
+// context.bsh
+import org.apache.velocity.VelocityContext;
+
+VelocityContext context = new VelocityContext();
+
+context.put("name", "Velocity");
+context.put("project", "Jakarta");
+
+return context;
+
+Velocity template will look like this:
+
+## test1.vm
+Hello from $name in the $project project.
+
+In same way we can execute Freemarker scripts:
+
+// context.bsh
+Map context = new HashMap();
+
+context.put("message", "Hello from Freemarker!");
+
+return context;
+
+And then freemarker template:
+
+<html>
+<head>
+  <title>FreeMarker Example Web Application 1</title>
+</head>
+<body>
+  ${message}
+</body>
+</html>
+
+APT tool
+
+Java 5 support APT tool for processing annotations in user defined way. In order to do this,
+separate factory class should be written, compiled and registered. This process is tedious.
+
+In order to simplify this process, Apt-Jelly library is used. Instead of using Java code for 
+representing the factory, dynamic languages are used instead: Jelly and Freemarker.
+
+Apt-Jelly library is already registered as the dependency. In order to use this abilities,
+your factory file should have apt-jelly or apt-fmt extension.
+
+For example, in order to process all java files in src directory, you have to execute 
+the following command:
+
+>test.apt-fmt src/.../*.java
+
+
+Dynamic loading of external libraries
+
+
+We have <addtoclassloader> Ant task in order to dynamically add new libraries to the Ant script.
+Usually, If you have the Ant script, that is relying on 3-rd party library, you have to download
+this library and install it somewhere. Or you have already this library, previously installed
+somewhere. To make the situation controllable, we can write simple script-adapter:
+
+<project name="3rdparty.adapter.ant" basedir=".">
+
+  <property name="3rdparty.lib.home" value="...somewhere_on_drive..."/>
+
+  <addtoclassloader>
+    <path>
+      <fileset dir="${3rdparty.lib.home}">
+        <include name="*.jar"/>
+      </fileset>
+    </path>
+  </addtoclassloader>
+
+  <import file="${basedir}/build.xml"/>
+
+</project>
+
+For beanshell scripts we can use addClassPath() method to have libraries dynamically loaded.
+In the following example beanshell script is ant-aware and can perform manipulations
+with Ant API:
+
+// run-ant.bsh
+
+addClassPath("ant-1.7.0.jar");
+addClassPath("ant-launcher-1.7.0.jar");
+
+import org.apache.tools.ant.Project;
+import org.apache.tools.ant.ProjectHelper;
+import org.apache.tools.ant.BuildLogger;
+import org.apache.tools.ant.DefaultLogger;
+
+Project project = new Project();
+project.init();
+
+BuildLogger logger = new DefaultLogger();
+
+logger.setMessageOutputLevel(Project.MSG_INFO);
+logger.setOutputPrintStream(System.out);
+logger.setErrorPrintStream(System.err);
+
+project.addBuildListener(logger);
+
+File buildFile = new File("build.xml");
+
+ProjectHelper.getProjectHelper().parse(project, buildFile);
+
+project.executeTarget(project.getDefaultTarget());
+
+
+For scripting languages that do not have dynamic libraries loading feature, we can use hook
+into Scriplandia internals (to ClassWorlds guts):
+
+import org.codehaus.classworlds.ClassRealm;
+
+import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+
+ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+
+launcher.addClasspathEntry("3rdparty.library.jar");
+
+Another useful technique to dynamically load libraries is to use "-lib" parameter from the
+command line:
+
+>Test.ant -lib lib
+>Test.bsh -lib lib
+
+These commands will pick up all libraries from "lib" folder and add them to "CLASSPATH" variable.
+
+
+Maven scripts as regular scriptlets (maven-lets) and dependencies siles
+
+
+Maven project files can also be used as scripts. Instead of having predefined "pom.xml" file
+for each maven project, we will create file with ".maven" extension. The primary goal for
+these scripts is to express dependencies on other libraries.
+
+In case when we need some additional libraries for running the script, we can express this 
+dependencies in the form of maven file. For example, this file describes dependency on jdom:
+
+<!-- deps.maven -->
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>test</groupId>
+  <artifactId>test</artifactId>
+  <version>1.0</version>
+
+  <name>Test</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>jdom</groupId>
+      <artifactId>jdom</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>verify</defaultGoal>
+  </build>
+
+</project>
+
+We can use these dependencies inside Ant script (within "script" task). For example,
+by running the following method we will add all classes in "compile" scope to main class realm:
+
+import org.sf.scriptlandia.ScriptlandiaHelper;
+
+ScriptlandiaHelper.resolveMavenDependencies("deps.maven", "compile");
+
+By running next line we can add all maven dependencies to classpath:
+
+ScriptlandiaHelper.addMavenDependencies("some-pom-file");
+
+If you need to run Maven from within your script, use this method:
+
+ScriptlandiaHelper.executeMaven("deps.maven", args); 
+
+
+Scriptlandia scripts
+
+You can use maven project files as executables. To do so you have to rename
+"pom.xml" file into something more meaningful with ".sl" extension. This extension is registered
+in such a way, that it will try to run this file. The class to be executed is
+"embedded" inside "groupId" and "artifactId" tags. The "groupId" tag contains package part of 
+the fully qualified class name and the "artifactId" tag - short class name. For example, 
+in order to run JLGUI mp3 player (http://www.javazoom.net/jlgui/jlgui.html),
+you have to create this file:
+
+<!-- jlgui.sl -->
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>javazoom.jlgui.player.amp</groupId>
+  <artifactId>StandalonePlayer</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>javazoom.jlgui</groupId>
+      <artifactId>jlgui</artifactId>
+      <version>3.0</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    ...
+  </repositories>
+
+</project>
+
+In repositories section you have to specify the repository location (if dependent 
+libraries are not located in default repository).
+
+Classworld scripts
+
+The same application can be started in slightly different way by using classworld file.
+The ".cwd" extension is registered to launch such files. For example, in order to
+run JLGUI mp3 player you can use this file:
+
+# jlgui.cwd 
+
+main is javazoom.jlgui.player.amp.StandalonePlayer from jlgui.core
+
+set jlgui.version default 3.0
+
+[jlgui.core]
+load ${repository.home}/javazoom/jlgui/jlgui/${jlgui.version}/jlgui-${jlgui.version}.jar
+
+Usually classworld file does not provide loading dependent files on-the fly. But there is
+small trick that can do it. If you try to load libraries from ${repository.home}, the program will try 
+to calculate "artifactId", "groupId" and "version" and then download it (including transitive 
+dependencies).
+
+
+Working with mobile applications
+
+If you have Java Micro Edition, installed on your computer, you will be able to run jar files
+for mobile applications in the same way as for Java Standard Edition. By executing jar file,
+the system will recognize such application and run it inside the phone emulator. The trick is that
+manifest file has specific attributes, unique to phone applications only.
+
+This is very convenient way to test mobile application before moving it to your cell phone.
+

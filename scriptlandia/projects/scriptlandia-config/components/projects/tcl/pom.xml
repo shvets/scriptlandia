@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>tcl</artifactId>
+  <version>2.2.0</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia TCL Module</name>
+  <description>Scriptlandia TCL Module</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>tcl</groupId>
+      <artifactId>jacl</artifactId>
+      <version>1.4.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>tcl</groupId>
+      <artifactId>tcljava</artifactId>
+      <version>1.4.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>tcl</groupId>
+      <artifactId>itcl</artifactId>
+      <version>1.4.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>tcl</groupId>
+      <artifactId>tjc</artifactId>
+      <version>1.4.0</version>
+    </dependency>
+  </dependencies>
+
+</project>

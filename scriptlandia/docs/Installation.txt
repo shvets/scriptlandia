@@ -1,0 +1,109 @@
+Installation
+
+
+Installation script helps to automatically install all required files. It depends only on 
+Java Standard Edition (version 1.5 or higher). Java should be installed before the installation.
+
+Before running the installation, modify "JAVA_HOME" variable inside "config.bat" ("config.sh")
+file to point to the correct location of pre-installed Java.
+
+You also may need to modify "REPOSITORY_HOME" and "SCRIPTLANDIA_HOME" variables. 
+"REPOSITORY_HOME" variable points to the location of repository folder, where all additional jars 
+will be stored (maven 2 uses ${user.home}/.m2 folder as the default). "SCRIPTLANDIA_HOME" variable 
+keeps the location of the folder with batch/shell script files.
+
+For example:
+
+SET DRIVE_LETTER=c:
+
+SET JAVA_HOME=%DRIVE_LETTER%\Java\jdk1.5.0
+SET SCRIPTLANDIA_HOME=%DRIVE_LETTER%\scriptlandia
+SET REPOSITORY_HOME=%DRIVE_LETTER%\maven-repository
+
+You can also setup additional optional variable: "JAVA_MOBILE_HOME" - if you have Java Micro Edition 
+installed and want to support it. For example:
+
+SET JAVA_MOBILE_HOME=%DRIVE_LETTER%\Java\j2me-2.5
+
+If you plan to use "Ruby on Rails" library, setup this optional variable:
+
+SET RUBY_HOME=%DRIVE_LETTER%\Ruby-1.8.4-20
+
+If you work behind the proxy server, you have to define these proxy server parameters:
+
+SET PROXY_SERVER_HOST_NAME=<proxy-server-name>
+SET PROXY_SERVER_PORT=<proxy-server-port>
+
+
+Now you can run the installation script:
+
+>installer.bat
+
+or
+
+>installer.exe
+
+The installation is completed. During the installation we associate extensions like ".ant", ".maven",
+".bsh" etc. with appropriate dynamic language interpreter (thanks to JDIC library).
+
+After completing the installation, scripts can be launched from the command line, for example:
+
+>hello.bsh
+
+>test.ant
+
+Scripts are located in separate "examples" directory.
+
+If you don't want to type the extension, do the following (Windows only):
+
+set PATHEXT=.ant;.bsh;.maven;.js;.groovy;%PATHEXT%
+
+Now you can ivoke scripts without specifying the extension:
+
+>hello
+
+It is also good idea to add SCRIPTLANDIA_HOME variable to your PATH variable.
+
+
+Integration with Nailgun server
+
+***
+NailGun is a client, protocol, and server for running Java programs from the command line without 
+incurring the JVM startup overhead. Programs run in the server (which is implemented in Java), 
+and are triggered by the client (written in C), which handles all I/O.
+***
+
+You can speed-up the execution of your scripts, if JVM is in the memory all the time. Once 
+you execute your scripts, required classes are loaded into memory and ready for the following 
+usage.
+
+To run the nailgun server execute this command (located in ${scriptlandia.home} folder):
+
+>nailgun-tray.bat
+
+New icon appears at system tray (right part of the task toolbar). Right click on it and 
+execute the command: "Start Nailgun Server". Now you can execute scripts in nailgun (-ng) mode:
+
+>Hello.bsh -ng
+
+
+To stop the server, right click on the icon and then execute "Stop Nailgun Server". Now you can exit
+from the tray.
+
+If you don't want to have the server as the system tray, run this command instead:
+
+>nailgun-server.bat
+
+
+Additional code to explore
+
+
+The Scriptlandia installation has additional distribution package: "examples and tools".
+It contains a lot of small examples to test supported languages. Also it contains useful 
+(finished) examples that use various Java  API/frameworks/approaches.
+
+"tools" part contains bigger examples/components that could work with Scriptlandia. From one hand, 
+they are bigger than example, but from another - they are not as big as yet another
+language. Plus, it requires some additional steps in order to integrate them too. For example:
+jruby on rails, grails, different maven archetypes (webtide, appfuse, ...) etc.
+
