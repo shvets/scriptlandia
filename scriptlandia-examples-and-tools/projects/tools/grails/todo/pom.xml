@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia.tools</groupId>
+  <artifactId>grails</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia Grails Starter Module</name>
+  <description>Scriptlandia Grails Starter Module</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.13</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.0.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>scriptlandia</artifactId>
+      <version>2.2.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>ant</artifactId>
+      <version>2.2.0</version>
+      <type>pom</type>
+    </dependency>
+
+    <dependency>
+      <groupId>bsf</groupId>
+      <artifactId>bsf</artifactId>
+      <version>2.4.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>groovy</groupId>
+      <artifactId>groovy-all</artifactId>
+      <version>1.0-RC-01-1</version>
+    </dependency>
+
+<!--
+    <dependency>
+      <groupId>jetty</groupId>
+      <artifactId>org.mortbay.jetty</artifactId>
+      <version>5.1.5rc2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>jetty</groupId>
+      <artifactId>jasper-compiler</artifactId>
+      <version>5.1.5rc2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>jetty</groupId>
+      <artifactId>jasper-runtime</artifactId>
+      <version>5.1.5rc2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.4</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-el</groupId>
+      <artifactId>commons-el</artifactId>
+      <version>1.0</version>
+    </dependency>
+-->
+  </dependencies>
+
+  <build>
+    <defaultGoal>validate</defaultGoal>
+
+    <plugins>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+
+        <executions>
+          <execution>
+            <phase>compile</phase>
+            <configuration>
+              <tasks>
+                <filterset id="copy.filterset">
+                  <filter token="grails.version" value="${grails.version}"/>
+
+                  <filter token="ruby.home" value="${ruby.home}"/>
+                  <filter token="jruby.version" value="${jruby.version}"/>
+
+                  <filter token="jruby.base" value="${jruby.base}"/>
+                </filterset>
+
+                <copy todir="${scriptlandia-tools.home}" overwrite="true">
+                  <filterset refid="copy.filterset"/>
+
+                  <fileset dir="src/main/config"/>
+                </copy>
+
+                <copy todir="${repository.home}/groovy/grails-templates/${grails.version}/src/grails/templates/maven" 
+                      file="src/main/config/pom.xml"
+                      overwrite="true"/>
+
+                <copy tofile="${scriptlandia-tools.home}/grails.sl" 
+                      file="src/main/config/pom.xml"
+                      overwrite="true"/>
+
+<!--
+                <unzip src="${repository.home}/groovy/grails-templates/${grails.version}/grails-templates-${grails.version}.jar"
+                       dest="${repository.home}/groovy/grails-templates/${grails.version}" overwrite="false"/>
+-->
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>scriptlandia-repo</id>
+      <name>Scriptlandia Maven2 repository</name>
+      <url>http://scriptlandia.sourceforge.net/maven2-languages</url>
+    </repository>
+  </repositories>
+
+</project>
+

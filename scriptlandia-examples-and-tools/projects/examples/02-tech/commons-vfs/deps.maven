@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>test</groupId>
+  <artifactId>test</artifactId>
+  <version>1.0</version>
+  <name>Test</name>
+
+  <dependencies>
+    <dependency>
+     <groupId>commons-vfs</groupId>
+      <artifactId>commons-vfs</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>verify</defaultGoal>
+  </build>
+
+</project>

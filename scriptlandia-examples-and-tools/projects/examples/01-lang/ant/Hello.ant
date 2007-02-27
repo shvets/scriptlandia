@@ -1,0 +1,84 @@
+<!-- Hello.ant -->
+
+<project name="Hello.antlet" default="all" basedir=".">
+  <property environment="env"/>
+
+  <target name="all">
+    <antcall target="ant"/>
+    <antcall target="bsh"/>
+    <antcall target="js"/>
+    <antcall target="ruby"/>
+
+    <antcall target="groovy"/>
+    <antcall target="jelly"/>
+    <!--antcall target="scala"/-->
+    <antcall target="jscheme"/>
+    <antcall target="jaskell"/>
+  </target>
+
+  <target name="ant">
+    <echo>
+      Hello, World from Ant echo!
+    </echo>
+  </target>
+
+  <target name="bsh">
+    <script language="beanshell">
+      System.out.println("Hello, World from BeanShell!");
+    </script>
+  </target>
+
+  <target name="js">
+    <script language="javascript">
+      importPackage(Packages.java.lang);
+
+      System.out.println("Hello, World from JS!");
+    </script>
+  </target>
+
+  <target name="groovy">
+    <script language="groovy">
+      println("Hello world from Groovy!")
+    </script>
+  </target>
+
+  <target name="jelly">
+    <taskdef name="jelly" classname="org.apache.commons.jelly.task.JellyTask">
+      <classpath>
+        <fileset dir="${repository.home}/commons-jelly/commons-jelly-tags-ant/1.1">
+          <include name="*.jar"/>
+        </fileset>
+      </classpath>
+    </taskdef>
+
+    <jelly script="../jelly/hello_world.jelly"/>
+  </target>
+
+  <target name="ruby">
+    <script language="ruby">
+      require 'java'
+
+      include_class "java.util.Locale"
+
+      print "Hello, World from JRuby!. My locale is: ", Locale.getDefault()
+    </script>
+  </target>
+
+  <target name="scala">
+    <script language="scala">
+      Console.println("Hello, world from Scala!")
+     </script>
+  </target>
+
+  <target name="jscheme">
+    <script language="jscheme">
+      (display "Hello World from JScheme!") (newline)
+    </script>
+  </target>
+
+  <target name="jaskell">
+    <script language="jaskell">
+      print "Hello World from Jaskell!"
+    </script>
+  </target>
+</project>

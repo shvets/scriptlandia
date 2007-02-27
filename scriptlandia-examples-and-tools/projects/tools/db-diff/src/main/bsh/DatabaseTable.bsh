@@ -1,0 +1,41 @@
+sourceRelative("FieldEntry.bsh");
+
+public class DatabaseTable {
+  String name;
+  Map fields = new HashMap();
+
+  DatabaseTable(String name) {
+    this.name = name;
+  }
+
+  void addField(FieldEntry fieldEntry) {
+    fields.put(fieldEntry.name, fieldEntry);
+  }
+
+  FieldEntry getField(String name) {
+    return fields.get(name);
+  }
+
+  public String toString() {
+    StringBuffer sb = new StringBuffer();
+
+    sb.append("DatabaseTable {\n");
+    sb.append("  name = " + name + "\n");
+
+    sb.append("  fields = " + "\n");
+
+    Iterator iterator = fields.keySet().iterator();
+
+    while(iterator.hasNext()) {
+      String key = iterator.next();
+      FieldEntry fieldEntry = (FieldEntry)fields.get(key);
+
+      sb.append("    " + fieldEntry);
+      sb.append("\n");
+    }
+
+    sb.append("}\n");
+
+    return sb.toString();
+  }
+}

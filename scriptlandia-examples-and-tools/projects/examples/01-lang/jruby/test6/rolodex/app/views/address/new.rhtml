@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+      <title>Ruby Rolodex</title>
+    </head>
+    <body>
+        <h1>Edit address for: <%= @contact.lastname + " (" + @contact.nickname + ")" %> </h1>
+    
+	    <form action="/address/create" method="post">
+	        <input id="contact_id" name="contact_id" size="45" 
+	             type="hidden" value="<%= @contact.id %>" />	    
+	        <p>
+	            <label for="address_street">Street</label><br />
+	            <input id="address_street" name="address[street]" size="45" MAXLENGTH="45" type="text" /><BR>
+	            <input id="address_street2" name="address[street2]" size="45" MAXLENGTH="45" type="text" />
+	        </p>
+	        <p>
+	            <label for="address_city">City</label><br />
+	            <input id="address_city" name="address[city]" size="25" MAXLENGTH="45" type="text" />
+	        </p>           
+	        <p>
+	            <label for="address_state">State</label><br />
+	            <input id="address_state" name="address[state]" size="2" MAXLENGTH="2" type="text" />
+	        </p>
+	        <p>
+	            <label for="address_zip">Zip</label><br />
+	            <input id="address_zip" name="address[zip]" size="5" MAXLENGTH="5" type="text" />
+	        </p>
+	             
+	        <input name="commit" type="submit" value="Create" />
+	    </form>
+	    
+	    <a href="/contact/list">Back to contact list</a>
+    
+    </body>
+</html>

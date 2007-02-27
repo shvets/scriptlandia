@@ -1,0 +1,47 @@
+<!-- findbugs.ant -->
+
+<project name="findbugs" default="run" basedir=".">
+
+  <target name="init">
+    <script language="beanshell">
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      ScriptlandiaHelper.resolveMavenDependencies(project, "c:/scriptlandia-tools/findbugs-deps.maven", "compile");
+    </script>
+
+    <taskdef resource="edu/umd/cs/findbugs/anttask/tasks.properties">
+      <classpath>
+        <path refid="maven.compile.classpath"/>
+      </classpath>
+    </taskdef>
+  </target>
+
+  <target name="run" depends="init">
+    <property name="xml.report.name" value="${user.dir}/findbugs-report.txt"/>
+    <property name="html.report.name" value="${user.dir}/findbugs-report.html"/>
+    <property name="findbugs.home" value="C:/JavaPrograms/findbugs-1.1.3" />
+
+    <findbugs output="text" outputFile="${xml.report.name}"
+              home="${findbugs.home}">
+      <class location="${user.dir}/target/classes"/>
+
+      <sourcePath path="${user.dir}/src/main/java"/>
+
+<!--
+      <classpath>
+        <path refid="maven.compile.classpath"/>
+      </classpath>
+
+      <pluginList>
+      </pluginList>
+-->
+      <auxClasspath>
+        <path refid="maven.compile.classpath"/>
+      </auxClasspath>
+    </findbugs>
+
+    <!--style in="${xml.report.name}" out="${html.report.name}"
+           style="${global.repository.home}/findbugs/xsl/default.xsl"/-->
+  </target>
+
+</project>

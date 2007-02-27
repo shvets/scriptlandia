@@ -1,0 +1,26 @@
+<!-- test1.ant -->
+
+<project name="test1" default="test1" basedir=".">
+
+  <target name="init">
+    <property name="destination.dir" value="classes1"/>
+  </target>
+
+  <target name="test1" depends="init">
+    <mkdir dir="${destination.dir}"/>
+
+    <javac destdir="${destination.dir}" includeAntRuntime="false">
+      <src path="test1"/>
+
+      <include name ="Sufferer.java"/>
+      <include name ="Attacker.java"/>
+    </javac>
+
+    <java classname="Attacker" fork="true">
+      <classpath>
+        <pathelement path="${destination.dir}"/>
+      </classpath>
+    </java>
+  </target>
+
+</project>

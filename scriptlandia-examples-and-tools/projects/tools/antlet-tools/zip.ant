@@ -1,0 +1,86 @@
+<!-- zip.ant -->
+
+<project name="zip" default="start"  basedir=".">
+
+  <target name="start">
+    <script language="beanshell"> <![CDATA[
+      import org.apache.tools.ant.taskdefs.Input;
+
+      String parameters = System.getProperty("command.line");
+
+      if(parameters == null) {
+        parameters = "";
+      }
+
+      StringTokenizer st = new StringTokenizer(parameters);
+
+      if(!st.hasMoreTokens()) {
+        Input inputTask = new Input();
+        inputTask.setProject(project);
+
+        inputTask.setMessage("Input archive name:");
+
+        inputTask.setAddproperty("archive.name");
+
+        inputTask.execute();
+      }
+      else {
+        project.setNewProperty("archive.name", st.nextToken());
+
+        if(!st.hasMoreTokens()) {
+          Input inputTask = new Input();
+          inputTask.setProject(project);
+
+          inputTask.setMessage("Input files mask:");
+          inputTask.setAddproperty("files");
+
+          inputTask.execute();
+        }
+        else {
+          StringBuffer files = new StringBuffer();
+
+          for(int i=0; st.hasMoreTokens(); i++) {
+            files.append(st.nextToken());
+
+            if(i < (st.countTokens()-1)) {
+              files.append(" ");
+            }
+          }
+
+          project.setNewProperty("files", files.toString());
+        }
+      }
+
+      String property1 = project.getProperty("files");
+
+      if(property1 == null || property1.length() == 0) {
+        project.setProperty("files", "*.*");
+      }
+
+      String property2 = project.getProperty("archive.name");
+
+      if(property2 != null && property2.length() > 0) {
+        project.executeTarget("zip");
+      }
+    ]]> </script>
+  </target>
+
+  <target name="zip">
+    <script language="beanshell">
+      String archiveName = project.getProperty("archive.name");
+
+      if(!archiveName.toLowerCase().endsWith(".zip")) {
+        archiveName += ".zip";
+        project.setProperty("archive.name", archiveName);
+      }
+    </script>
+
+    <zip zipfile="${archive.name}">
+      <zipfileset dir=".">
+        <include name="${files}"/>
+        <exclude name ="${archive.name}"/>
+      </zipfileset>
+    </zip>
+  </target>
+
+</project>

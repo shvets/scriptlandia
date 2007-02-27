@@ -1,0 +1,47 @@
+<!-- test2.ant -->
+
+<!-- This test make sense only for java 1.5. -->
+
+<project name="test2" default="test2" basedir=".">
+
+  <target name="init">
+    <property name="destination.dir" value="classes2"/>
+  </target>
+
+  <target name="test2" depends="init">
+    <mkdir dir="${destination.dir}"/>
+
+    <javac destdir="${destination.dir}" includeAntRuntime="false">
+      <src path="test1"/>
+
+      <include name ="*.*"/>
+    </javac>
+
+    <delete file="classes2/Sufferer.class"/>
+
+    <javac destdir="${destination.dir}" includeAntRuntime="false">
+      <src path="test2"/>
+
+      <include name ="Sufferer.java"/>
+    </javac>
+
+    <echo>Test2.1</echo>
+
+    <java classname="Attacker" fork="true">
+      <classpath>
+        <pathelement path="${destination.dir}"/>
+      </classpath>
+    </java>
+
+    <echo>Test2.2</echo>
+
+    <java classname="Attacker" fork="true">
+      <jvmarg value="-verify"/>
+
+      <classpath>
+        <pathelement path="${destination.dir}"/>
+      </classpath>
+    </java>
+  </target>
+
+</project>

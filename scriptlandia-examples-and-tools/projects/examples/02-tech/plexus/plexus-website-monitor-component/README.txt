@@ -1,0 +1,1 @@
+mvn archetype:create -DarchetypeGroupId=org.codehaus.plexus -DarchetypeArtifactId=plexus-archetype-component-simple -DarchetypeVersion=1.0-alpha-1-SNAPSHOT -DgroupId=org.codehaus.plexus -DartifactId=plexus-website-monitor-component  -DpackageName=org.codehaus.plexus.tutorial -Dpackaging=jar -DremoteRepositories=http://snapshots.repository.codehaus.org/

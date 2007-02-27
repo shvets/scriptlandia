@@ -1,0 +1,69 @@
+Code samples
+
+Desktop
+
+File file = ...;
+Desktop.open(file); // open file in default viewer
+Desktop.edit(file); // open file in default editor
+Desktop.print(file); // print file
+Desktop.browse(new URL(inputUrl)); // open URL in default browser
+
+// build message from file (attachment) and send as mail 
+Message msg = new Message();
+List attachList = new ArrayList();
+attachList.add(selectedFile.toString());
+msg.setAttachments(attachList);
+Desktop.mail(msg);
+
+
+Tray
+
+
+
+Floating Dock Toplevel Window
+
+JButton button1, button2, button3;
+FloatingDock fd;
+	
+GridLayout gl = new GridLayout(3, 1);
+
+fd = new FloatingDock();
+fd.setLocation (FloatingDock.LEFT);
+fd.setLayout(gl);
+button1 = new JButton("Button 1");
+button1.setVisible(true);
+button2 = new JButton("Button 2");
+button2.setVisible(true);
+button3 = new JButton("Button 3");
+button3.setVisible(true);
+fd.add(button1);
+fd.add(button2);
+fd.add(button3);
+fd.setSize(new Dimension(100, 300));
+
+fd.setVisible(true);
+
+
+Volume
+from http://weblogs.java.net/blog/joshy/archive/2005/04/sometimes_you_o.html
+
+
+final Volume vol = Volume.newInstance();
+// get the volume
+float current_volume = vol.getVolume();
+vol.setVolume(current_volume + 0.1);
+vol.addPropertyChangedListener(mew PropertyChangeListener() {
+       public void propertyChange(PropertyChangeEvent evt) {...}
+});
+
+Wallpaper
+
+int [] modes = Wallpaper.MODES;
+String [] modeNames = Wallpaper.MODE_NAMES;
+
+int mode = Wallpaper.STRETCH;
+// int mode = Wallpaper.CENTER;
+//int mode = Wallpaper.TILE;
+p.setBackground(new File(".."), mode);
+
+

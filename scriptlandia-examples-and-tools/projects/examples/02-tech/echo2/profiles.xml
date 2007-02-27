@@ -1,0 +1,27 @@
+<profiles>
+  <profile>
+    <id>default</id>
+
+    <repositories>
+      <repository>
+        <id>central</id>
+        <name>Default Maven2 repository</name>
+        <url>http://repo1.maven.org/maven2</url>
+      </repository>
+
+      <repository>
+        <id>codehaus</id>
+        <name>Codehaus Maven2 repository</name>
+        <url>http://repository.codehaus.org</url>
+      </repository>
+
+      <repository>
+        <id>scriptlandia-repo</id>
+        <name>Scriptlandia Maven2 repository</name>
+        <url>http://scriptlandia.sourceforge.net/maven2-tools</url>
+      </repository>
+    </repositories>
+  </profile>
+
+</profiles>
+

@@ -1,0 +1,30 @@
+<!-- jar.ant -->
+
+<project name="jar.ant" default="jar" basedir=".">
+
+  <target name="jar">
+    <input message="Input archive name:"
+           addproperty="archive.name"/>
+
+    <input message="Input files mask:"
+           addproperty="files.masks"/>
+
+    <script language="beanshell"> <![CDATA[
+      String property = project.getProperty("files.masks");
+
+      if(property != null && property.length() > 0) {
+        project.executeTarget("start");
+      }
+    ]]></script>
+  </target>
+
+  <target name="start">
+    <jar destfile="${user.dir}/${archive.name}.jar">
+      <fileset dir="${user.dir}">
+        <include name="${files.masks}"/>
+        <exclude name ="${archive.name}.zip"/>
+      </fileset>
+    </jar>
+  </target>
+
+</project>

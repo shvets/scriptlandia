@@ -1,0 +1,43 @@
+<profiles>
+  <profile>
+    <id>default</id>
+
+    <repositories>
+      <repository>
+        <id>central</id>
+        <name>Default Maven2 repository</name>
+        <url>http://repo1.maven.org/maven2</url>
+      </repository>
+
+      <repository>
+        <id>codehaus</id>
+        <name>Codehaus Maven2 repository</name>
+        <url>http://repository.codehaus.org</url>
+      </repository>
+
+      <repository>
+        <id>ibiblio</id>
+        <name>ibiblio maven repository</name>
+        <url>http://ibiblio.org/maven</url>
+        <layout>legacy</layout>
+      </repository>
+
+    <!--  needed for XmlSchema -->
+        <repository>
+            <id>ibiblio</id>
+            <name>ibiblio maven repository</name>
+            <url>http://ibiblio.org/maven</url>
+            <layout>legacy</layout>
+        </repository>
+        <repository>
+            <id>apache</id>
+            <name>Apache maven repository</name>
+            <url>http://www.apache.org/dist/java-repository</url>
+            <layout>legacy</layout>
+        </repository>
+
+    </repositories>
+
+  </profile>
+</profiles>
+

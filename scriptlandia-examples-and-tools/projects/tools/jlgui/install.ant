@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<project name="install.ant" default="install" basedir=".">
+
+  <target name="install" depends="init, copy"/>
+
+  <target name="init">
+    <property file="tool.properties"/>
+  </target>
+
+  <target name="copy">
+    <copy todir="${scriptlandia.tools.home}" file="jlgui.sl" overwrite="true"/>
+  </target>
+
+</project>
+

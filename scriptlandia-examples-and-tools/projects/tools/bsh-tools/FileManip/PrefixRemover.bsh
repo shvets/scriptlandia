@@ -1,0 +1,51 @@
+sourceRelative("RuleProcessor.bsh");
+
+class RemovePrefixRule extends RenameRule {
+  private String prefix;
+
+  RemovePrefixRule(String prefix) {
+    //this.prefix = prefix.replaceAll("\\Q(\\E", "\\Q(\\E").replaceAll("\\Q)\\E", "\\Q)\\E");
+    this.prefix = prefix.replaceAll("\\(", "_").replaceAll("\\)", "_");
+  }
+
+  protected String getNewName(String oldName) {
+    oldName = oldName.replaceAll("\\(", "_").replaceAll("\\)", "_");
+
+    String newName = null;
+
+    int index = oldName.indexOf(prefix);
+
+    if(index == -1) {
+      newName = oldName;
+    }
+    else {
+      newName = oldName.replaceFirst(prefix, "");
+    }
+
+    return newName;
+  }
+
+}
+
+String prefix = "";
+
+if(bsh.args.length == 0) {
+  print("Please specify the prefix to be removed.");
+}
+else {
+  prefix = bsh.args[0];
+
+  Rule rule = new RemovePrefixRule(prefix);
+
+  Processor processor = new RuleProcessor(rule);
+
+  List extensions = new ArrayList();
+  extensions.add("mp3");
+  extensions.add("wav");
+
+  processor.setExtensions(extensions);
+
+  String currentDir = new File(".").getCanonicalPath();
+
+  processor.process(new File(currentDir));
+}

@@ -1,0 +1,49 @@
+//
+
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.ConsoleAppender;
+import org.apache.log4j.PatternLayout;
+
+import org.sf.scriptlandia.launcher.Launcher;
+import org.sf.scriptlandia.launchermanager.LauncherManager;
+
+import org.sf.scriptlandia.ScriptlandiaHelper;
+
+void resolveDependencies() {
+  ScriptlandiaHelper.resolveMavenDependencies("db-diff.maven", "compile");
+
+  Launcher launcher = (Launcher)LauncherManager.getLauncher();
+
+  launcher.addClasspathEntry(new File("src/main/resources").toURL());
+}
+
+void prepareLog4j() {
+  String pattern = "%-d{ISO8601} (%F:%L) : %m%n";
+
+  PatternLayout patternLayout = new PatternLayout(pattern);
+  ConsoleAppender appender = new ConsoleAppender(patternLayout);
+
+  Logger logger1 = Logger.getLogger("com.ibatis.common.jdbc");
+  Logger logger2 = Logger.getLogger("java.sql");
+
+  logger1.setLevel((Level) Level.DEBUG);
+  logger2.setLevel((Level) Level.WARN);
+
+  logger1.addAppender(appender);
+  logger2.addAppender(appender);
+}
+
+
+resolveDependencies();
+
+prepareLog4j();
+
+
+source("src/main/bsh/db-diff.bsh");
+
+BufferedWriter writer = new BufferedWriter(new FileWriter("result.txt"));
+
+dbDiff(project, writer);
+
+writer.close();

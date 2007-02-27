@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+<project name="install.ant" default="install" basedir=".">
+
+  <import file="install-macrodefs.xml"/>
+
+  <property file="tool.properties"/>
+
+  <target name="install" depends="copy, test.ruby.gem, update, test.rails"/>
+
+  <target name="copy">
+    <filterset id="copy.filterset">
+      <filter token="scriptlandia.tools.home" value="${scriptlandia.tools.home}"/>
+      <filter token="ruby.home" value="${ruby.home}"/>
+    </filterset>
+
+    <copy todir="${scriptlandia.tools.home}" overwrite="true">
+      <filterset refid="copy.filterset"/>
+
+      <fileset dir="src/main/config">
+       <include name="*.bat"/>
+       <include name="*.rb"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="test.ruby.gem">
+    <exec dir="${scriptlandia.tools.home}" executable="ruby.bat">
+      <arg line="-v"/>
+    </exec>
+
+    <exec dir="${scriptlandia.tools.home}" executable="gem.bat">
+      <arg line="-v"/>
+    </exec>
+  </target>
+
+  <target name="update">
+    <installPackage name="rake" version="0.7.1"/>
+
+    <installPackage name="rubygems-update" version="0.9.0"/>
+
+    <installPackage name="activesupport" version="1.3.1"/>
+
+    <installPackage name="activerecord" version="1.14.4"/>
+
+    <installPackage name="actionpack" version="1.12.5"/>
+
+    <installPackage name="actionmailer" version="1.2.5"/>
+
+    <installPackage name="actionwebservice" version="1.1.6"/>
+
+    <installPackage name="RbYAML" version="0.1.0"/>
+
+    <installPackage name="rails" version="1.1.6"/>
+
+    <installPackage name="raven" version="1.1.2"/>
+  </target>
+
+  <target name="test.rails">
+    <exec dir="${scriptlandia.tools.home}" executable="rails.bat">
+      <arg line="-v"/>
+    </exec>
+  </target>
+
+</project>
+

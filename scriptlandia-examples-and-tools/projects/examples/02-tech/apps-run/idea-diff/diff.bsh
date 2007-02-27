@@ -1,0 +1,100 @@
+/* diff.idea.bsh */
+
+// 1. Preparing IDEA environment.
+
+import org.sf.scriptlandia.launchermanager.LauncherManager;
+import org.sf.scriptlandia.launcher.Launcher;
+
+String repositoryHome = System.getProperty("repository.home");
+
+//String ideaHome = "C:/Editors/IntelliJ IDEA-4192";
+String ideaHome = System.getProperty("idea.home");
+String javaHome = System.getProperty("java.home");
+
+//System.setProperty("idea.home", ideaHome);
+
+Launcher launcher = (Launcher)LauncherManager.getLauncher();
+
+launcher.addClasspathEntry(new File(javaHome + "/../lib/tools.jar").toURL());
+
+launcher.addClasspathEntry(new File(ideaHome + "/lib/idea.jar").toURL());
+launcher.addClasspathEntry(new File(ideaHome + "/lib/openapi.jar").toURL());
+launcher.addClasspathEntry(new File(ideaHome + "/lib/extensions.jar").toURL());
+launcher.addClasspathEntry(new File(ideaHome + "/lib/log4j.jar").toURL());
+launcher.addClasspathEntry(new File(ideaHome + "/lib/picocontainer.jar").toURL());
+launcher.addClasspathEntry(new File(ideaHome + "/lib/jdom.jar").toURL());
+launcher.addClasspathEntry(new File(ideaHome + "/lib/commons-collections.jar").toURL());
+launcher.addClasspathEntry(new File(ideaHome + "/lib/trove4j.jar").toURL());
+launcher.addClasspathEntry(new File(ideaHome + "/lib/resources.jar").toURL());
+launcher.addClasspathEntry(new File(ideaHome + "/lib/resources_en.jar").toURL());
+launcher.addClasspathEntry(new File(ideaHome + "/lib/icons.jar").toURL());
+launcher.addClasspathEntry(new File(ideaHome + "/lib/jh.jar").toURL());
+launcher.addClasspathEntry(new File(ideaHome + "/lib/xstream.jar").toURL());
+launcher.addClasspathEntry(new File(ideaHome + "/lib/forms_rt.jar").toURL());
+launcher.addClasspathEntry(new File(ideaHome + "/lib/alloy.jar").toURL());
+
+// 2. Executing the script.
+
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.diff.DiffTool;
+import com.intellij.openapi.diff.SimpleDiffRequest;
+import com.intellij.openapi.diff.DiffManager;
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.PathManager;
+import com.intellij.openapi.application.impl.ApplicationImpl;
+import com.intellij.openapi.application.ex.ApplicationManagerEx;
+import com.intellij.openapi.application.ex.ApplicationEx;
+
+import javax.swing.SwingUtilities;
+
+public class DiffApplication implements Runnable {
+  String[] args;
+
+  public DiffApplication(String[] args) {
+    this.args = args;
+
+    ApplicationManagerEx.createApplication("componentSets/IdeaComponents", false, false, "idea");
+  }
+
+  public void run() {
+    ApplicationEx application = ApplicationManagerEx.getApplicationEx();
+    application.load(PathManager.getOptionsPath());
+
+    String path1 = args[0];
+    String path2 = args[1];
+
+    VirtualFile file1 = findFile(path1);
+    VirtualFile file2 = findFile(path2);
+
+    SimpleDiffRequest request = SimpleDiffRequest.comapreFiles(file1, file2, null);
+    request.addHint(DiffTool.HINT_SHOW_FRAME);
+
+    //DiffManager.getInstance().getIdeaDiffTool().show(request);
+  }
+
+  VirtualFile findFile(String path1) throws FileNotFoundException {
+    VirtualFile vFile = LocalFileSystem.getInstance().findFileByIoFile(new File(path1));
+
+    if (vFile == null) {
+      throw new FileNotFoundException(DiffBundle.message("cannot.file.file.error.message", path1));
+    }
+
+    return vFile;
+  }
+}
+
+
+if(bsh.args.length < 2) {
+  print("You have to provide source and destination files.");
+}
+else {
+  DiffApplication diffApplication = new DiffApplication(bsh.args);
+
+  SwingUtilities.invokeAndWait(diffApplication);
+
+  //Thread.currentThread().join();
+}
+
+

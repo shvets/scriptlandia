@@ -1,0 +1,9 @@
+// checksum.bsh
+
+sourceRelative("ChecksumScript.bsh");
+
+File currentDirectory = new File(".");
+
+ChecksumScript checksum = new ChecksumScript();
+
+checksum.calculate(currentDirectory);

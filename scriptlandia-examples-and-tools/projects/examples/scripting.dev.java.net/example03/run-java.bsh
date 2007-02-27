@@ -1,0 +1,22 @@
+// run-java.bsh
+
+sourceRelative("../load-libraries.bsh");//
+
+import java.util.*;
+import java.io.*;
+import javax.script.*;
+
+
+ScriptEngineManager manager = new ScriptEngineManager();
+ScriptEngine engine = manager.getEngineByExtension("java");
+
+System.out.println(engine);
+
+Compilable compilingEngine = (Compilable)engine;
+
+ScriptContext ctx = compilingEngine.getContext();
+ctx.setAttribute("javax.script.filename", "scripts/Test.java", ScriptContext.GLOBAL_SCOPE);
+
+Object result = engine.eval(new FileReader("scripts/Test.java"), ctx);
+
+((Runnable)result.newInstance()).run();

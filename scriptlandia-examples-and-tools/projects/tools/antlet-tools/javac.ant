@@ -1,0 +1,32 @@
+<!-- javac.ant -->
+
+<project name="javac.ant" default="javac" basedir=".">
+
+  <target name="init">
+    <property name="debug" value="false"/>
+    <property name="optimize" value="false"/>
+    <property name="deprecation" value="false"/>
+
+    <property name="src.dir" value="."/>
+
+    <input message="Input -d parameter:"
+           addproperty="destination.dir"/>
+
+    <input message="Input files mask:"
+           addproperty="files.mask"/>
+
+    <mkdir dir="${destination.dir}"/>
+  </target>
+
+  <target name="javac" depends="init">
+    <javac destdir="${destination.dir}"
+           includeAntRuntime="false"
+           debug="${debug}"
+           optimize="${optimize}"
+           deprecation ="${deprecation}">
+        <src path="${src.dir}"/>
+        <include name ="${files.mask}"/>
+    </javac>
+  </target>
+
+</project>

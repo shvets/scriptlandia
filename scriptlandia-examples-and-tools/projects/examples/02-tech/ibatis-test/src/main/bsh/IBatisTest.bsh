@@ -1,0 +1,25 @@
+// IBatisTest.bsh
+
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.List;
+
+sourceRelative("BaseDAO.bsh");
+
+public class IBatisTest extends BaseDAO {
+
+  public IBatisTest() {
+    setupIbatis();
+  }
+
+  public List displayUsers(Object parameterObject) throws SQLException {
+    return getList("getUsers", parameterObject);
+  }
+
+  public void display() throws Exception {
+    List users = displayUsers(new HashMap());
+
+    System.out.println("Users: " + users);
+  }
+
+}

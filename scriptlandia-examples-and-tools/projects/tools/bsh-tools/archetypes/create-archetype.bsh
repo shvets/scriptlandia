@@ -1,0 +1,160 @@
+// create-archetype.bsh
+
+import org.sf.scriptlandia.ScriptlandiaHelper;
+
+
+public class CreateArchetype extends JFrame {
+  private JComboBox typeField = new JComboBox(archetypes);
+
+  private JTextField groupIdField = new JTextField(15);
+  private JTextField artifactIdField = new JTextField(15);
+  private JTextField versionField = new JTextField(15);
+
+  JButton createButton = new JButton("Create archetype...");
+
+  private String[] archetypes;
+  private String archetypeGroupId;
+  private String archetypeArtifactIdPrefix;
+  private String archetypeVersion;
+  private String remoteRepositories;
+
+  public CreateArchetype(String type) {
+    setTitle("Create new (" + type + ") archetype");
+
+    setSize(600, 200);
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    groupIdField.setText("org.test");
+    artifactIdField.setText("test");
+    versionField.setText("1.0");
+
+    createButton.addActionListener(new ActionListener() {
+      void actionPerformed(ActionEvent event) {
+        submit();
+      }
+    });
+
+    JPanel topPanel = createPanel();
+
+    setContentPane(topPanel);
+  }
+
+  JPanel createPanel() {
+    // panel 2
+
+    JPanel panel2 = new JPanel();
+    panel2.setLayout(new BoxLayout(panel2, BoxLayout.X_AXIS));
+
+    panel2.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel2.add(new JLabel("Group ID:"));
+    panel2.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel2.add(groupIdField);
+    panel2.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel2.add(new JLabel("Artifact ID:"));
+    panel2.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel2.add(artifactIdField);
+    panel2.add(Box.createRigidArea(new Dimension(10, 0)));
+
+    // panel 3
+
+    JPanel panel3 = new JPanel();
+    panel3.setLayout(new BoxLayout(panel3, BoxLayout.X_AXIS));
+
+    panel3.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel3.add(new JLabel("Version:"));
+    panel3.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel3.add(versionField);
+    panel3.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel3.add(new JLabel("type:"));
+    panel3.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel3.add(typeField);
+    panel3.add(Box.createRigidArea(new Dimension(10, 0)));
+
+    // panel 4
+
+    JPanel panel4 = new JPanel();
+    panel4.setLayout(new BoxLayout(panel4, BoxLayout.X_AXIS));
+
+    panel4.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel4.add(createButton);
+    panel4.add(Box.createRigidArea(new Dimension(10, 0)));
+
+    // top panel
+    JPanel topPanel = new JPanel();
+
+    topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
+//    topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+//    topPanel.add(panel1);
+    topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+    topPanel.add(panel2);
+    topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+    topPanel.add(panel3);
+    topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+    topPanel.add(panel4);
+    topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+
+    return topPanel;
+  }
+
+  private void submit() {
+    String repositoryHome = System.getProperty("repository.home");
+    String scriptlandiaVersion = System.getProperty("scriptlandia.version");
+
+//    String pomFile = repositoryHome + "org/sf/scriptlandia/tools/webtide-archetypes/" + 
+//                     scriptlandiaVersion + "/webtide-archetypes-" + scriptlandiaVersion + ".xml";
+
+    System.setProperty("archetypeGroupId", archetypeGroupId);
+    System.setProperty("archetypeArtifactId", archetypeArtifactIdPrefix + getType());
+    System.setProperty("archetypeVersion", archetypeVersion);
+
+    System.setProperty("groupId", getGroupId());
+    System.setProperty("artifactId", getArtifactId());
+    System.setProperty("version", getVersion());
+
+    if(remoteRepositories != null) {
+      System.setProperty("remoteRepositories", remoteRepositories);
+    }
+
+    String[] args = new String[] { "archetype:create" };
+
+    ScriptlandiaHelper.executeMaven(args);
+  }
+
+  private String getGroupId() {
+    return groupIdField.getText();
+  }
+
+  private String getArtifactId() {
+    return artifactIdField.getText();
+  }
+
+  private String getVersion() {
+    return versionField.getText();
+  }
+
+  private String getType() {
+    return typeField.getSelectedItem();
+  }
+
+  public void setArchetypes(String[] archetypes) {
+    this.archetypes = archetypes; 
+  }
+
+  public void setArchetypeGroupId(String archetypeGroupId) {
+    this.archetypeGroupId = archetypeGroupId;
+  }
+
+  public void setArchetypeArtifactIdPrefix(String archetypeArtifactIdPrefix) {
+    this.archetypeArtifactIdPrefix = archetypeArtifactIdPrefix;
+  }
+
+  public void setArchetypeVersion(String archetypeVersion) {
+    this.archetypeVersion = archetypeVersion;
+  }
+
+  public void setRemoteRepositories(String remoteRepositories) {
+    this.remoteRepositories = remoteRepositories;
+  }
+
+}
+

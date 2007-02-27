@@ -1,0 +1,382 @@
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+import org.apache.tools.ant.Project;
+
+sourceRelative("DatabaseTable.bsh");
+
+
+DatabaseTable parseTable(File file) {
+  BufferedReader reader = new BufferedReader(new FileReader(file));
+
+  String line1 = reader.readLine();
+
+  StringTokenizer st1 = new StringTokenizer(line1, " \n\r\t(),");
+
+  st1.nextToken(); // CREATE
+  st1.nextToken(); // TABLE
+
+  String tableName = st1.nextToken().toUpperCase();
+
+  DatabaseTable databaseTable = new DatabaseTable(tableName);
+
+  while(true) {
+    String line2 = reader.readLine();
+
+    if(line2 == null) {
+      break;
+    }
+
+    StringTokenizer st2 = new StringTokenizer(line2, " \n\r\t(),;");
+
+    if(st2.hasMoreTokens()) {
+      String name = st2.nextToken().toUpperCase();
+
+      if(st2.hasMoreTokens()) {
+        String type = st2.nextToken().toUpperCase();
+
+        if(name.equals("PRIMARY") && type.equals("KEY")) {
+          continue;
+        }
+
+        if(name.equals("CREATE") && type.equals("INDEX")) {
+          continue;
+        }
+
+        int precision = 0;
+        int scale = 0;
+
+        if(st2.hasMoreTokens()) {
+          String token = st2.nextToken();
+
+          try {
+            precision = Integer.parseInt(token);
+          }
+          catch(NumberFormatException e) {
+            ;
+          }
+
+          if(st2.hasMoreTokens()) {
+            token = st2.nextToken();
+
+            try {
+              scale = Integer.parseInt(token);
+            }
+            catch(NumberFormatException e) {
+              ;
+            }
+          }
+
+        }
+
+        FieldEntry fieldEntry =
+          new FieldEntry(name, type, precision, scale);
+
+        databaseTable.addField(fieldEntry);
+      }
+    }
+  }
+
+  return databaseTable;
+}
+
+Map getTablesFromDirectory(File dirFile) {
+  Map tables = new HashMap();
+
+  File[] list = dirFile.listFiles();
+
+  for(int i=0; i < list.length; i++) {
+    File file = list[i];
+
+    DatabaseTable databaseTable = parseTable(list[i]);
+
+    tables.put(databaseTable.name, databaseTable);
+  }
+
+  return tables;
+}
+
+DatabaseTable getTable(String tableName, Connection connection) {
+  DatabaseTable databaseTable = new DatabaseTable(tableName);
+
+  Statement stmt = connection.createStatement();
+  ResultSet rs = stmt.executeQuery("SELECT * FROM " + tableName);
+
+  ResultSetMetaData rsmd = rs.getMetaData();
+
+  for(int i=0; i < rsmd.getColumnCount(); i++) {
+    String name = rsmd.getColumnName(i+1).toUpperCase();
+
+    String type;
+    try {
+      type = rsmd.getColumnTypeName(i+1).toUpperCase();
+    }
+    catch(NullPointerException e) {
+      type = "unknown type";
+    }
+
+    if(type.equalsIgnoreCase("VARCHAR2")) {
+      type = "VARCHAR";
+    }
+
+    int precision = 0;
+    int scale = 0;
+
+    try {
+      precision = rsmd.getPrecision(i+1);
+    }
+    catch(NumberFormatException e) {
+      ;
+    }
+
+
+    try {
+      scale= rsmd.getScale(i+1);
+    }
+    catch(NumberFormatException e) {
+      ;
+    }
+
+    FieldEntry fieldEntry =
+      new FieldEntry(name, type, precision, scale);
+
+    databaseTable.addField(fieldEntry);
+  }
+
+  return databaseTable;
+}
+
+Connection prepareConnection(String driver, String url, String user, String password) {
+  Class.forName(driver);
+
+  return DriverManager.getConnection(url, user, password);
+}
+
+
+Map getTablesFromDatabase(String driver, String url, String user, String password, String owner, String schema) {
+  Map tables = new HashMap();
+
+  Connection connection = prepareConnection(driver, url, user, password);
+
+  DatabaseMetaData dbmd = connection.getMetaData();
+
+  String name = null;
+
+  if(owner != null) {
+    name = owner;
+  }
+  else {
+    name = schema;
+  }
+
+  print("Database Version: " + dbmd.getDriverVersion());
+
+  ResultSet resultSet = 
+     dbmd.getTables(null, name.toUpperCase(), "%", 
+        new String[] {"TABLE", "VIEW"});
+
+//	"SYSTEM TABLE", "GLOBAL TEMPORARY", 
+//     *			"LOCAL TEMPORARY", "ALIAS", "SYNONYM".
+//, "ALIAS", "SYNONYM"
+
+  while (resultSet.next()) {
+    int tableNamePos = resultSet.findColumn("TABLE_NAME");
+
+    if(tableNamePos >= 0) {
+      String name = resultSet.getString(tableNamePos).toUpperCase();
+
+      try {
+        DatabaseTable databaseTable = getTable(name, connection);
+
+        //print(name);
+
+        tables.put(databaseTable.name, databaseTable);
+      }
+      catch(Throwable t) {
+        System.out.println("Cannot access this table: " + name + ". Reason: " + t.getMessage());
+      }
+    }
+  }
+
+  connection.close();
+
+  return tables;
+}
+
+void analaze(Map tables1, Map tables2, List tablesToAdd,
+             Map fieldsToAdd, Map fieldsNotInSynch) {
+  Iterator iterator1 = tables1.keySet().iterator();
+
+  while(iterator1.hasNext()) {
+    String tableName1 = (String)iterator1.next();
+
+    DatabaseTable databaseTable2 = (DatabaseTable)tables2.get(tableName1);
+
+    if(databaseTable2 == null) {
+      tablesToAdd.add(tableName1);
+    }
+    else {
+      DatabaseTable databaseTable1 = (DatabaseTable)tables1.get(tableName1);
+
+      Iterator iterator2 = databaseTable1.fields.keySet().iterator();
+
+      while(iterator2.hasNext()) {
+        String fieldName1 = (String)iterator2.next();
+
+        FieldEntry fieldEntry1 = databaseTable1.fields.get(fieldName1);
+        FieldEntry fieldEntry2 = databaseTable2.fields.get(fieldName1);
+
+        if(fieldEntry2 == null) {
+          fieldsToAdd.put(tableName1 + "." + fieldEntry1.name, fieldEntry1);
+        }
+        else {
+          boolean isInSynch = true;
+
+          if(!fieldEntry1.name.equals(fieldEntry2.name)) {
+            isInSynch = false;
+          }
+          else if(!fieldEntry1.type.equals(fieldEntry2.type)) {
+            if(fieldEntry1.type.equalsIgnoreCase("NUMERIC")) {
+              if(!fieldEntry2.type.equalsIgnoreCase("NUMBER") &&
+                 !fieldEntry2.type.equalsIgnoreCase("NUMERIC")) {
+                isInSynch = false;
+              }
+            }
+          }
+          else {
+            if(fieldEntry1.precision != 0 && fieldEntry2.precision != 0 &&
+               fieldEntry1.precision != fieldEntry2.precision) {
+              isInSynch = false;
+            }
+
+            if(fieldEntry1.scale != 0 && fieldEntry2.scale != 0 &&
+               fieldEntry1.scale != fieldEntry2.scale) {
+              isInSynch = false;
+            }
+          }
+
+          if(!isInSynch) {
+            fieldsNotInSynch.put(tableName1 + "." + fieldEntry2.name,
+                                 new FieldEntry[] { fieldEntry2, fieldEntry1 });
+          }
+        }
+      }
+    }
+  }
+}
+
+
+void dbDiff(Project project, BufferedWriter writer) {
+  String driver1 = project.getProperty("database1.driver");
+  String url1 = project.getProperty("database1.url");
+  String user1 = project.getProperty("database1.user");
+  String password1 = project.getProperty("database1.password");
+  String schema1 = project.getProperty("database1.schema");
+
+  String driver2 = project.getProperty("database2.driver");
+  String url2 = project.getProperty("database2.url");
+  String user2 = project.getProperty("database2.user");
+  String password2 = project.getProperty("database2.password");
+  String schema2 = project.getProperty("database2.schema");
+
+  Map tables1 = getTablesFromDatabase(driver1, url1, user1, password1, null, schema1);
+  Map tables2 = getTablesFromDatabase(driver2, url2, user2, password2, null, schema2);
+
+  List tablesToAdd = new ArrayList();
+  Map fieldsToAdd = new HashMap();
+  Map fieldsNotInSynch = new HashMap();
+
+  analaze(tables1, tables2, tablesToAdd, fieldsToAdd, fieldsNotInSynch);
+
+  writer.write("These tables should be added:");
+  writer.newLine();
+  writer.newLine();
+
+  for(int i=0; i < tablesToAdd.size(); i++) {
+    writer.write("  " + tablesToAdd.get(i));
+    writer.newLine();
+  }
+
+  writer.newLine();
+  writer.write("These fields should be added:");
+  writer.newLine();
+  writer.newLine();
+
+  Iterator iterator1 = fieldsToAdd.keySet().iterator();
+
+  while(iterator1.hasNext()) {
+    String qualifiedFieldName = iterator1.next();
+
+    writer.write("  " + qualifiedFieldName);
+    writer.newLine();
+  }
+
+  writer.newLine();
+  writer.write("These fields are not in synch:");
+  writer.newLine();
+  writer.newLine();
+
+  Iterator iterator2 = fieldsNotInSynch.keySet().iterator();
+
+  while(iterator2.hasNext()) {
+    String qualifiedFieldName = iterator2.next();
+
+    int index = qualifiedFieldName.indexOf(".");
+    String tableName = qualifiedFieldName.substring(0, index);
+
+    FieldEntry[] fields = fieldsNotInSynch.get(qualifiedFieldName);
+
+    FieldEntry fromField = fields[0];
+    FieldEntry toField = fields[1];
+
+    writer.write("  " + tableName + ": [");
+    writer.write(fromField + "->" + toField);
+    writer.write("]");
+    writer.newLine();
+    writer.newLine();
+  }
+
+  writer.newLine();
+  writer.write("Possible alteration sequence:");
+  writer.newLine();
+  writer.newLine();
+
+  iterator1 = fieldsToAdd.keySet().iterator();
+
+  while(iterator1.hasNext()) {
+    String qualifiedFieldName = iterator1.next();
+    FieldEntry field = fieldsToAdd.get(qualifiedFieldName);
+
+    int index = qualifiedFieldName.indexOf(".");
+    String tableName = qualifiedFieldName.substring(0, index);
+
+    writer.write("alter table " + tableName + " add ");
+    writer.write(field.toString());
+    writer.write(";");
+    writer.newLine();
+  }
+
+  writer.newLine();
+
+  iterator2 = fieldsNotInSynch.keySet().iterator();
+
+  while(iterator2.hasNext()) {
+    String qualifiedFieldName = iterator2.next();
+
+    int index = qualifiedFieldName.indexOf(".");
+    String tableName = qualifiedFieldName.substring(0, index);
+
+    FieldEntry[] fields = fieldsNotInSynch.get(qualifiedFieldName);
+
+    FieldEntry toField = fields[1];
+
+    writer.write("alter table " + tableName + " modify " + toField + ";");
+
+    writer.newLine();
+    writer.newLine();
+  }
+}

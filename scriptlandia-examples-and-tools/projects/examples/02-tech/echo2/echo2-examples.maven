@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>echo2-examples</groupId>
+  <artifactId>echo2-examples</artifactId>
+  <version>1.0</version>
+  <packaging>war</packaging>
+
+  <properties>
+    <!--spring.version>2.0-rc1</spring.version-->
+    <spring.version>1.2.7</spring.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.13</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.4</version>
+      <scope>provided</scope>
+    </dependency>
+<!--
+    <dependency>
+      <groupId>oro</groupId>
+      <artifactId>oro</artifactId>
+      <version>2.0.8</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-collections</groupId>
+      <artifactId>commons-collections</artifactId>
+      <version>3.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.0.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-dbcp</groupId>
+      <artifactId>commons-dbcp</artifactId>
+      <version>1.2.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-pool</groupId>
+      <artifactId>commons-pool</artifactId>
+      <version>1.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>dom4j</groupId>
+      <artifactId>dom4j</artifactId>
+      <version>1.6</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.derby</groupId> 
+      <artifactId>derby</artifactId> 
+      <version>10.1.2.1</version> 
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.derby</groupId> 
+      <artifactId>derbytools</artifactId> 
+      <version>10.1.2.1</version> 
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.derby</groupId> 
+      <artifactId>derbyclient</artifactId> 
+      <version>10.1.2.1</version> 
+    </dependency>
+
+    <dependency>
+      <groupId>geronimo-spec</groupId> 
+      <artifactId>geronimo-spec-jta</artifactId> 
+      <version>1.0.1b-rc4</version> 
+    </dependency>
+
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate</artifactId>
+      <version>3.1.3</version>
+
+      <exclusions>
+        <exclusion>
+          <groupId>javax.transaction</groupId>
+          <artifactId>jta</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+-->
+
+    <dependency>
+      <groupId>org.nextapp</groupId>
+      <artifactId>echo2-app</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.nextapp</groupId>
+      <artifactId>echo2-webcontainer</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.nextapp</groupId>
+      <artifactId>echo2-webrender</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+
+<!--
+    <dependency>
+      <groupId>org.nextapp</groupId>
+      <artifactId>echopointng</artifactId>
+      <version>2.1.0rc2</version>
+    </dependency>
+-->
+  </dependencies>
+
+  <build>
+    <finalName>echo2-examples</finalName>
+    <defaultGoal>compile</defaultGoal>
+
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>false</filtering>
+        <includes>
+          <include>**/*.*</include>
+        </includes>
+      </resource>
+
+      <resource>
+        <directory>src/main/java</directory>
+        <filtering>false</filtering>
+        <includes>
+          <include>**/*.png</include>
+        </includes>
+      </resource>
+    </resources>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.mortbay.jetty</groupId>
+        <artifactId>maven-jetty-plugin</artifactId>
+
+        <configuration>
+          <scanIntervalSeconds>2</scanIntervalSeconds>
+
+          <connectors>
+            <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+              <port>9090</port>
+              <maxIdleTime>60000</maxIdleTime>
+            </connector>
+          </connectors>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

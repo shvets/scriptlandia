@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="ws.client.ant" default="run">
+  <description>
+    @author Alexander Shvets
+  </description>
+
+  <property name="wsdl.file.name" value="src/main/wsdl/BabelFishService.wsdl"/>
+  <property name="package.name" value="org.sf.babelfishtest"/>
+
+  <target name="init">
+    <script language="beanshell">
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+      import org.apache.tools.ant.Project;
+
+      Project localProject = ScriptlandiaHelper.resolveMavenDependencies("babel-fish-axis2.maven", "compile");
+      project.addReference("maven.compile.classpath", localProject.getReference("maven.compile.classpath"));
+    </script>
+  </target>
+
+  <target name="wsdl.get">
+    <!--setproxy proxyhost="proxyhost" proxyport="8080"/-->
+
+    <mkdir dir="src/main/wsdl"/>
+
+    <get src="http://www.xmethods.com/sd/2001/BabelFishService" dest="${wsdl.file.name}"/>
+  </target>
+
+  <target name="wsgen" depends="init, wsdl.get">
+    <script language="beanshell">
+      import org.apache.axis2.tool.ant.AntCodegenTask;
+
+      AntCodegenTask wsGenTask = new AntCodegenTask();
+      wsGenTask.setProject(project);
+
+      wsGenTask.setOutput("target/generated-source");
+
+      String wsdlFileName = project.getProperty("wsdl.file.name");
+      String packageName = project.getProperty("package.name");
+
+      wsGenTask.setWSDLFileName(wsdlFileName);
+      wsGenTask.setPackageName(packageName);
+      wsGenTask.setDatabindingName("jaxb");
+
+      wsGenTask.execute();
+    </script>
+
+  </target>
+
+  <target name="compile" depends="init">
+    <mkdir dir="build/classes"/>
+
+    <javac destdir="build/classes"
+           includeAntRuntime="false"
+           debug="${debug}"
+           optimize="${optimize}"
+           deprecation ="${deprecation}">
+        <classpath refid="maven.compile.classpath"/>
+        <src path="target/generated-source"/>
+    </javac>
+  </target>
+
+  <target name="run" depends="compile">
+    <java classname="${package.name}.BookServiceClient" 
+          classpathref="maven.compile.classpath">
+      <classpath>
+        <pathelement location="build/classes"/>
+        <path refid="maven.compile.classpath"/>
+      </classpath>
+    </java>
+  </target>
+		
+</project>

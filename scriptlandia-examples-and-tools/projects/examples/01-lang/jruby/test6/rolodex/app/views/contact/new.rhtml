@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+      <title>Ruby Rolodex</title>
+    </head>
+    <body>
+    
+	    <h1>New contact</h1>
+	    
+	    
+	    <form action="/contact/create/" method="post">
+	        <p>
+	            <label for="contact_firstname">First Name</label><br />
+	            <input id="contact_firstname" name="contact[firstname]" size="30" MAXLENGTH="45" type="text" />
+	        </p>
+	        <p>
+	            <label for="contact_lastname">Last Name</label><br />
+	            <input id="contact_lastname" name="contact[lastname]" size="30" MAXLENGTH="45" type="text" value="" />
+	        </p>
+	        <p>
+	            <label for="contact_nickname">Nickname</label><br />
+	            <input id="contact_nickname" name="contact[nickname]" size="30" MAXLENGTH="45" type="text" />
+	        </p>
+	        <p>
+	             <b>Contact Type:</b><br/>
+	             <select name="contact[contact_type_id]">
+	                 <% @contact_types.each do |contact_type| %>
+	                     <option value="<%= contact_type.id %>">
+	                         <%= contact_type.name %>
+	                     </option>
+	                 <% end %>
+	             </select>
+	        </p>
+	        <input name="commit" type="submit" value="Create" />
+	    </form>
+	    
+	    <a href="/contact/list">Back</a>
+    
+    </body>
+</html>

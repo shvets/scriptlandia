@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>persistence-deps</groupId>
+  <artifactId>persistence-deps</artifactId>
+  <version>1.0</version>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.0.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>hsqldb</groupId> 
+      <artifactId>hsqldb</artifactId> 
+      <version>1.8.0.1</version> 
+    </dependency>
+
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate</artifactId>
+      <version>3.2.0.ga</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-annotations</artifactId>
+      <version>3.2.0.ga</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <version>3.2.0.ga</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-tools</artifactId>
+      <version>3.2.0.beta8</version>
+    </dependency>
+
+    <dependency>
+      <groupId>c3p0</groupId>
+      <artifactId>c3p0</artifactId>
+      <version>0.9.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>compile</defaultGoal>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>scriptlandia-repo</id>
+      <name>Scriptlandia Maven2 repository</name>
+      <url>http://scriptlandia.sourceforge.net/maven2-tools</url>
+    </repository>
+  </repositories>
+</project>

@@ -1,0 +1,136 @@
+<!-- persistence-test.ant -->
+
+<project name="persistence-test.antlet" default="run" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+
+  <property name="repository.home" value="c:/maven-repository"/>
+
+  <property name="database.dir" value="database"/>
+
+  <!-- Useful shortcuts -->
+  <patternset id="meta.files">
+      <include name="**/*.xml"/>
+      <include name="**/*.properties"/>
+  </patternset>
+
+  <artifact:localRepository id="local.repository" location="${repository.home}" layout="default"/>
+
+  <artifact:pom file="pom.xml" id="maven.project" />
+
+  <artifact:dependencies pathId="maven.compile.classpath" filesetId="compile.fileset" useScope="compile">
+    <pom refid="maven.project"/>
+  </artifact:dependencies>
+
+  <artifact:dependencies pathId="maven.runtime.classpath" filesetId="runtime.fileset" useScope="runtime">
+    <pom refid="maven.project"/>
+  </artifact:dependencies>
+
+
+  <target name="clean" description="Removes all compiled classes">
+    <delete dir="${maven.project.build.directory}"/>
+  </target>
+
+  <!-- Copy metadata to build classpath -->
+  <target name="copymetafiles">
+    <mkdir dir="${maven.project.build.outputDirectory}"/>
+
+    <copy todir="${maven.project.build.outputDirectory}">
+      <fileset dir="${maven.project.build.sourceDirectory}/../resources">
+        <patternset refid="meta.files"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="compile">
+    <mkdir dir="${maven.project.build.outputDirectory}"/>
+
+    <javac destdir="${maven.project.build.outputDirectory}"
+           includeAntRuntime="false"
+           debug="${debug}"
+           optimize="${optimize}"
+           deprecation ="${deprecation}">
+        <classpath refid="compile.classpath"/>
+        <src path="${maven.project.build.sourceDirectory}"/>
+    </javac>
+  </target>
+
+  <target name="jar" depends="compile">
+    <jar destfile="${maven.project.build.directory}/test.jar">
+      <fileset dir="${maven.project.build.outputDirectory}"/>
+    </jar>
+  </target>
+
+  <!-- Run HelloWorld -->
+  <target name="run" depends="compile, copymetafiles" description="Build and run HelloWorld">
+    <java classname="hello.HelloWorld" fork="true">
+      <classpath>
+        <path refid="maven.compile.classpath"/>
+
+        <path location="target/classes"/>
+      </classpath>
+      </java>
+  </target>
+
+  <!-- Export the database schema -->
+  <target name="schemaexport" depends="compile, copymetafiles"
+      description="Exports a generated schema to DB and file">
+    <!-- Hibernate Tools import -->
+    <taskdef name="hibernatetool"
+             classname="org.hibernate.tool.ant.HibernateToolTask"
+             classpathref="maven.compile.classpath"/>
+
+      <hibernatetool destdir="${maven.project.build.sourceDirectory}/../sql">
+        <classpath>
+          <path refid="maven.compile.classpath"/>
+
+          <path location="target/classes"/>
+        </classpath>
+
+        <jpaconfiguration/>
+
+        <hbm2ddl
+              drop="true"
+              create="true"
+              export="true"
+              outputfilename="helloworld-jpa-ddl.sql"
+              delimiter=";"
+              format="true"/>
+      </hibernatetool>
+  </target>
+
+  <!-- Start the HSQL DB server -->
+  <target name="startdb" description="Run HSQL database server with clean DB">
+      <!-- Delete database files -->
+      <delete dir="${database.dir}"/>
+      <java classname="org.hsqldb.Server"
+            fork="yes"
+            classpathref="maven.compile.classpath"
+            failonerror="true">
+          <arg value="-database.0"/>
+          <arg value="file:${database.dir}/db"/>
+      </java>
+  </target>
+
+  <!-- Start the HSQL DB browser tool -->
+  <target name="dbmanager" description="Start HSQL DB manager">
+      <java
+          classname="org.hsqldb.util.DatabaseManagerSwing"
+          fork="yes"
+          classpathref="maven.compile.classpath"
+          failonerror="true">
+          <arg value="-url"/>
+          <arg value="jdbc:hsqldb:hsql://localhost/"/>
+          <arg value="-driver"/>
+          <arg value="org.hsqldb.jdbcDriver"/>
+      </java>
+  </target>
+
+<!--
+  <target name="dbmanager">
+    <java classname="org.hsqldb.util.DatabaseManager" fork="yes">
+      <classpath>
+        <path refid="maven.compile.classpath"/>
+      </classpath>
+    </java>
+  </target>
+-->
+</project>

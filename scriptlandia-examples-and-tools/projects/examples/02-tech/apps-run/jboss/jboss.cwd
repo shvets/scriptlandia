@@ -1,0 +1,17 @@
+main is org.jboss.Main from root.main
+
+set tools.jar default ${java.home}/../lib/tools.jar
+
+set java.endorsed.dirs default $[jboss.home}/lib/endorsed
+
+# set program.name default ${jboss.home}/bin/run.bat
+
+[root]
+load ${tools.jar}
+
+[root.main]
+load ${jboss.home}/bin/run.jar
+
+# load ${jboss.home}/lib/*.jar
+# load ${jboss.home}/server/default/lib/*.jar
+

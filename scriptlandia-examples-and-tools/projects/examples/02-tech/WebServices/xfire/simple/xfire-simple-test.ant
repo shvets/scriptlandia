@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="xfire.test" default="run">
+  <description>
+    @author Alexander Shvets
+  </description>
+
+  <property name="wsdl.file.name" value="src/main/wsdl/SimpleService.wsdl"/>
+  <property name="package.name" value="org.sf.ws.simpleservice"/>
+
+  <target name="init">
+    <script language="beanshell">
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      ScriptlandiaHelper.resolveMavenDependencies(project, "xfire-simple-test.maven", "test", false);
+    </script>
+  </target>
+
+  <target name="wsdl.get">
+    <setproxy proxyhost="proxyHost" proxyport="9090"/>
+
+    <mkdir dir="src/main/wsdl"/>
+
+    <get src="http://localhost:8080/xfire-test/services/SimpleService?wsdl" dest="${wsdl.file.name}"/>
+  </target>
+
+  <target name="wsgen" depends="init, wsdl.get">
+    <script language="beanshell">
+      import org.codehaus.xfire.gen.WsGenTask;
+
+      WsGenTask wsGenTask = new WsGenTask();
+      wsGenTask.setProject(project);
+
+      wsGenTask.setOutputDirectory("target/generated-source");
+
+      String wsdlFileName = project.getProperty("wsdl.file.name");
+      String packageName = project.getProperty("package.name");
+
+      wsGenTask.setWsdl(wsdlFileName);
+      wsGenTask.setPackage(packageName);
+      wsGenTask.setBinding("jaxb");
+
+      wsGenTask.execute();
+    </script>
+
+  </target>
+
+  <target name="compile" depends="init">
+    <mkdir dir="target/classes"/>
+
+    <javac destdir="target/classes"
+           includeAntRuntime="false"
+           debug="${debug}"
+           optimize="${optimize}"
+           deprecation ="${deprecation}">
+        <classpath refid="maven.test.classpath"/>
+        <src path="src/main/java"/>
+        <src path="src/test/java"/>
+        <!--src path="target/generated-source"/-->
+    </javac>
+  </target>
+
+  <target name="test" depends="compile">
+    <java classname="WSClientTest" 
+          classpathref="maven.test.classpath">
+      <classpath>
+        <pathelement location="target/classes"/>
+        <path refid="maven.test.classpath"/>
+      </classpath>
+    </java>
+  </target>
+
+</project>

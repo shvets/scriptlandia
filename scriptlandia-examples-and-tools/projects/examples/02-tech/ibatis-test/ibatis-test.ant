@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="ibatis-test" default="test" basedir=".">
+  <description>
+    @author Alexander Shvets
+  </description>
+
+  <target name="resolve.dependencies">
+    <script language="beanshell">
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      ScriptlandiaHelper.resolveMavenDependencies("ibatis-test.maven", "compile");
+
+      import org.sf.scriptlandia.launcher.ScriptlandiaLauncherndiaLauncher;
+      import org.sf.scriptlandia.launchermanager.LauncherManager;
+
+      Launcher launcher = (Launcher)LauncherManager.getLauncher();
+
+      launcher.addClasspathEntry(new File("src/main/resources").toURL());
+    </script>
+  </target>
+
+  <target name="prepare.log4j">
+    <script language="beanshell">
+      void prepareLog4j() {
+        import org.apache.log4j.Level;
+        import org.apache.log4j.Logger;
+        import org.apache.log4j.ConsoleAppender;
+        import org.apache.log4j.PatternLayout;
+
+        String pattern = "%-d{ISO8601} (%F:%L) : %m%n";
+
+        PatternLayout patternLayout = new PatternLayout(pattern);
+        ConsoleAppender appender = new ConsoleAppender(patternLayout);
+
+        Logger logger1 = Logger.getLogger("com.ibatis.common.jdbc");
+        Logger logger2 = Logger.getLogger("java.sql");
+
+        logger1.setLevel((Level) Level.DEBUG);
+        logger2.setLevel((Level) Level.WARN);
+
+        logger1.addAppender(appender);
+        logger2.addAppender(appender);
+      }
+
+      prepareLog4j();
+    </script>
+  </target>
+
+  <target name="test" depends="resolve.dependencies, prepare.log4j">
+    <script language="beanshell">
+      source("src/main/bsh/IBatisTest.bsh");
+
+      IBatisTest test = new IBatisTest();
+      test.display();
+    </script>
+  </target>
+
+</project>

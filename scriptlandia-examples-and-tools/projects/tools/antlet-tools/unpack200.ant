@@ -1,0 +1,42 @@
+<!-- unpack200.ant -->
+
+<project name="unpack200" default="unpack" basedir=".">
+
+  <target name="init">
+    <taskdef name="unpack200" 
+             classname="com.sun.tools.apache.ant.pack200.Unpack200Task"/>
+  </target>
+
+  <target name="unpack" depends="init">
+    <script language="beanshell">
+      import org.apache.tools.ant.taskdefs.Input;
+
+      List parameters = (List)project.getReference("parameters");
+
+      if(parameters == null || parameters.size() == 0) {
+        Input inputTask = new Input();
+        inputTask.setProject(project);
+
+        inputTask.setMessage("Input archive name:");
+
+        inputTask.setAddproperty("src.archive.name");
+
+        inputTask.execute();
+      }
+      else {
+        String s = parameters.get(0);
+
+        project.setNewProperty("src.archive.name", s.substring(1, s.length()-1));
+      }
+
+      String srcArchiveName = project.getProperty("src.archive.name");
+      String destArchiveName = srcArchiveName.substring(0, srcArchiveName.indexOf("pack.gz")-1);
+
+      project.setNewProperty("dest.archive.name", destArchiveName);
+    </script>
+
+    <unpack200 src="${user.dir}/${src.archive.name}" 
+               dest="${user.dir}/${dest.archive.name}"/>
+  </target>
+
+</project>

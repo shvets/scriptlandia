@@ -1,0 +1,47 @@
+<!-- prepare.ant -->
+
+<project name="gosling-test" default="compile" basedir=".">
+
+  <property name="repository.home" value="c:/maven-repository"/>
+
+  <target name="init">
+    <property name="src.dir" value="src/main/java"/>
+    <property name="target.dir" value="target"/>
+
+    <property name="debug" value="false"/>
+    <property name="optimize" value="false"/>
+    <property name="deprecation" value="false"/>
+
+    <property name="gosling.lib" value="${repository.home}/com/antwerkz/gosling/0.1/gosling-0.1.jar"/>
+  </target>
+
+  <target name="compile" depends="init">
+    <mkdir dir="${target.dir}/classes"/>
+
+    <javac destdir="${target.dir}/classes"
+           includeAntRuntime="false"
+           debug="${debug}"
+           optimize="${optimize}"
+           deprecation ="${deprecation}">
+        <src path="${src.dir}"/>
+        <include name ="*.java"/>
+
+      <classpath>
+        <pathelement location="${gosling.lib}" />
+      </classpath>
+    </javac>
+  </target>
+
+  <target name="run" depends="compile">
+    <java classname="Gosling" fork="true">
+      <classpath>
+        <pathelement path="${target.dir}/classes"/>
+
+        <pathelement location="${gosling.lib}" />
+      </classpath>
+    </java>
+  </target>
+
+</project>
+
+

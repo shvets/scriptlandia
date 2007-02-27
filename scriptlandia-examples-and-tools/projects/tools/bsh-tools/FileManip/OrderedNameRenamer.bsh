@@ -1,0 +1,56 @@
+sourceRelative("RuleProcessor.bsh");
+
+class OrderedNameRule extends RenameRule {
+
+  Object execute(Object[] parameters) {
+    File file = (File)parameters[0];
+
+    int index = ((Integer)parameters[1]).intValue();
+
+    String oldName = file.getName();
+
+    String extension = FileUtil.getExtension(oldName);
+
+    String newName = "part" + getIndex(index) + "." + extension;
+
+    if(!newName.equals(oldName)) {
+      File newFile = new File(newName);
+
+      boolean ok = file.renameTo(newFile);
+
+      if(!ok) {
+        print("File " + oldName + " cannot be renamed.");
+      }
+
+      return new Object();
+    }
+
+    return null;
+  }
+
+
+  String getIndex(int i) {
+    if(i < 10) {
+      return "0" + i;
+    }
+
+    return "" + i;
+  }
+
+}
+
+
+Rule rule = new OrderedNameRule();
+
+Processor processor = new RuleProcessor(rule);
+
+List extensions = new ArrayList();
+extensions.add("mp3");
+extensions.add("wav");
+
+processor.setExtensions(extensions);
+
+String currentDir = new File(".").getCanonicalPath();
+
+processor.process(new File(currentDir));
+

@@ -1,0 +1,55 @@
+<!-- checkstyle.ant -->
+
+<project name="CheckstyleProject" basedir=".">
+
+  <property file="../common.properties"/>
+  <property file="../build.properties"/>
+
+  <target name ="init">
+    <taskdef resource="checkstyletask.properties">
+      <classpath>
+        <pathelement location="${global.repository.home}/checkstyle/checkstyle-all-3.5.jar"/>
+
+        <path refid="project.classpath" />
+      </classpath>
+    </taskdef>
+  </target>
+
+  <property name="style.config.file" value="${basedir}/ant/sun_checks-modified.xml"/>
+
+  <target name ="checkstyle.file" depends="init">
+    <checkstyle file ="${file.name}" config="${style.config.file}"/>
+  </target>
+
+  <target name ="checkstyle.dir" depends="init">
+    <script language="beanshell">
+      import java.io.File;
+
+      String dirName = project.getProperty("dir.name");
+
+      dirName = dirName.replace('/', '.');
+
+      System.out.println("dirName " + dirName);
+      project.setNewProperty("dir.name.as.file.path", dirName);
+    </script>
+
+    <property name="checkstyle.xml.report" value="checkstyle/${dir.name.as.file.path}.xml"/>
+    <property name="checkstyle.html.report" value="checkstyle/${dir.name.as.file.path}.html"/>
+
+    <checkstyle config="${style.config.file}"
+                failOnViolation="false" failureProperty="checkstyle.failure">
+      <formatter type="xml" tofile="${checkstyle.xml.report}"/>
+      
+      <fileset dir="${dir.name}">
+        <include name ="**/*.java"/>
+
+        <exclude name ="**/TransactionStatus.java"/>
+      </fileset>
+    </checkstyle>
+    
+    <style in="${checkstyle.xml.report}" out="${checkstyle.html.report}" style="ant/checkstyle-simple.xsl"/>
+  </target>
+
+  </target>
+
+</project>

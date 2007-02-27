@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>demo</groupId>
+  <artifactId>demo</artifactId>
+  <version>1.0</version>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <!-- skip tests execution -->
+          <skip>true</skip>
+          <!--testFailureIgnore>true</testFailureIgnore-->
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.mortbay.jetty</groupId>
+        <artifactId>maven-jetty-plugin</artifactId>
+
+        <configuration>
+          <scanIntervalSeconds>2</scanIntervalSeconds>
+          <webApp>demo-1.0.war</webApp>
+
+          <connectors>
+            <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+              <port>${application.server.port}</port>
+              <maxIdleTime>60000</maxIdleTime>
+            </connector>
+          </connectors>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.cargo</groupId>
+        <artifactId>cargo-maven2-plugin</artifactId>
+
+        <!-- jboss (already running) -->
+        <!--configuration>
+          <container>
+            <containerId>jboss4x</containerId>
+            <type>remote</type>
+          </container>
+
+          <configuration>
+            <type>runtime</type>
+          </configuration>
+
+          <deployer>
+            <type>remote</type>
+            <deployables>
+              <deployable>
+                <groupId>org.princetonjug</groupId>
+                <artifactId>princetonjug-web</artifactId>
+                <type>war</type>
+              </deployable>
+            </deployables>
+          </deployer>
+        </configuration-->
+
+        <!-- jboss -->
+        <configuration>
+          <container>
+            <containerId>jboss4x</containerId>
+            <type>installed</type>
+            <home>c:/AppServers/jboss-4.0.5.GA</home>
+          </container>
+
+          <configuration>
+            <home>${project.build.directory}/jboss</home>
+          </configuration>
+        </configuration>
+
+        <!-- tomcat -->
+        <!--configuration>
+          <container>
+            <containerId>tomcat5x</containerId>
+            <type>installed</type>
+            <home>c:/AppServers/apache-tomcat-5.5.12</home>
+          </container>
+
+          <configuration>
+            <home>${project.build.directory}/tomcat</home>
+          </configuration>
+        </configuration-->
+
+        <!-- jetty -->
+        <!--configuration>
+          <container>
+            <type>installed</type>
+          </container>
+  
+          <configuration>
+            <home>${project.build.directory}/jetty</home>
+          </configuration>
+        </configuration-->
+
+        <!-- resin -->
+        <!--configuration>
+          <container>
+            <containerId>${application.server.type}</containerId>
+            <type>installed</type>
+            <home>${application.server.home}</home>
+          </container>
+  
+          <configuration>
+            <home>${project.build.directory}/resin</home>
+          </configuration>
+        </configuration-->
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

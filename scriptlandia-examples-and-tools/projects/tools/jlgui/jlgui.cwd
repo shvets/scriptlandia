@@ -1,0 +1,6 @@
+main is javazoom.jlgui.player.amp.StandalonePlayer from jlgui.core
+
+set jlgui.version default 3.0
+
+[jlgui.core]
+load ${repository.home}/javazoom/jlgui/jlgui/${jlgui.version}/jlgui-${jlgui.version}.jar

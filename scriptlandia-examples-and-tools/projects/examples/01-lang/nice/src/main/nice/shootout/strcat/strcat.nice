@@ -1,0 +1,22 @@
+/* The Great Computer Language Shootout 
+   contributed by Isaac Gouy
+
+To compile:	
+   nicec --sourcepath=.. -d=. -a strcat.jar strcat
+
+To run:
+   java -ea -jar strcat.jar 40000
+*/
+
+
+import ackermann; // reuse toSinglePositiveInt
+
+void main(String[] args){
+   var n = toSinglePositiveInt(args);
+   let s = "hello\n";
+   var buffer = new StringBuffer(32);
+
+   while (n-- > 0) buffer.append(s);
+
+   println(buffer.length); 
+}

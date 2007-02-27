@@ -1,0 +1,59 @@
+sourceRelative("RuleProcessor.bsh");
+
+class RenameByMap3 extends RenameByMapRule {
+
+  RenameByMap3(File fileMap) {
+    super(fileMap);
+  }
+
+  String getNewName(String oldName) {
+    String newName = null;
+
+    int index = oldName.lastIndexOf(".");
+
+    int suffixLength = 0;
+
+    if(oldName.endsWith(".mp3")) {
+      suffixLength = ".mp3".length();
+    }
+    else if(oldName.endsWith(".wav")) {
+      suffixLength = ".wav".length();
+    }
+
+    String s = oldName.substring(oldName.length()-suffixLength-2, 
+                                 oldName.length()-suffixLength);
+
+    char ch1 = s.charAt(0);
+    char ch2 = s.charAt(1);
+
+    if(!Character.isDigit(ch1)) {
+      return oldName.substring(0, oldName.length()-suffixLength-1) + "0" + ch2 +
+             oldName.substring(oldName.length()-suffixLength);
+    }
+
+    return oldName;
+  }
+
+}
+
+
+String fileName = "in_names.txt";
+
+File file = new File(fileName);
+
+if(file.exists()) {
+  Rule rule = new RenameByMap3(file);
+
+  Processor processor = new RuleProcessor(rule);
+
+  List extensions = new ArrayList();
+  extensions.add("mp3");
+  extensions.add("wav");
+
+  processor.setExtensions(extensions);
+
+  String currentDir = new File(".").getCanonicalPath();
+
+  processor.process(new File(currentDir));
+}
+

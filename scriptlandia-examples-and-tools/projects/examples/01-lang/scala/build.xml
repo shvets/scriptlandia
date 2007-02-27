@@ -1,0 +1,69 @@
+<!-- prepare.ant -->
+
+<project name="scala-test" default="compile" basedir="." 
+         xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+
+  <property name="repository.home" value="c:/maven-repository"/>
+
+  <description>
+    @author Alexander Shvets
+  </description>
+
+  <artifact:localRepository id="local.repository" location="${repository.home}" layout="default"/>
+
+  <artifact:pom file="pom.xml" id="maven.project" />
+
+  <artifact:dependencies pathId="maven.compile.classpath" filesetId="compile.fileset" useScope="compile">
+    <pom refid="maven.project"/>
+  </artifact:dependencies>
+
+  <target name="init">
+    <property name="src.dir" value="src/main/scala"/>
+    <property name="target.dir" value="target"/>
+  </target>
+
+  <target name="compile" depends="init">
+    <mkdir dir="${target.dir}/classes"/>
+
+    <java classname="scala.tools.nsc.Main" fork="true">
+      <classpath>
+        <path refid="maven.compile.classpath"/>
+      </classpath>
+
+      <arg line="-d ${target.dir}/classes ${src.dir}/*.scala"/>
+    </java>
+  </target>
+
+  <target name="run" depends="compile">
+    <java classname="scala.tools.nsc.MainGenericRunner" fork="true">
+      <classpath>
+        <path refid="maven.compile.classpath"/>
+
+        <pathelement location="${target.dir}/classes"/>
+      </classpath>
+
+      <arg line="HelloWorld"/>
+    </java>
+  </target>
+
+  <target name="run2" depends="compile">
+    <java classname="HelloWorld">
+      <classpath>
+        <path refid="maven.compile.classpath"/>
+
+        <pathelement location="${target.dir}/classes"/>
+      </classpath>
+    </java>
+  </target>
+
+  <target name="run3">
+    <java classname="scala.tools.nsc.MainGenericRunner" fork="true">
+      <classpath>
+        <path refid="maven.compile.classpath"/>
+      </classpath>
+
+      <arg line="src/main/scala/testScript.scala"/>
+    </java>
+  </target>
+
+</project>

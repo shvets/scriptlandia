@@ -1,0 +1,16 @@
+main is com.intellij.idea.Main from root.idea
+
+set tools.jar default ${java.home}/../lib/tools.jar
+
+set idea.properties.file default ${idea.home}/bin/idea.properties
+
+[root]
+load ${tools.jar}
+
+[root.idea]
+load ${idea.home}/lib/idea.jar
+load ${idea.home}/lib/openapi.jar
+load ${idea.home}/lib/jdom.jar
+load ${idea.home}/lib/log4j.jar
+load ${idea.home}/lib/extensions.jar
+load ${tools.jar}

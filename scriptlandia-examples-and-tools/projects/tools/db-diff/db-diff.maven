@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>db-diff</groupId>
+  <artifactId>db-diff</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0</version>
+
+  <name>Maven project for db-diff tool</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.13</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.0.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>oracle</groupId>
+      <artifactId>oracle-driver</artifactId>
+      <version>9.2.0.5.0</version>
+    </dependency>
+
+  </dependencies>
+
+  <developers>
+    <developer>
+      <name>Alexander Shvets</name>
+      <id>alex</id>
+      <email>shvets_alexander@yahoo.com</email>
+      <organization></organization>
+    </developer>
+  </developers>
+
+  <build>
+    <defaultGoal>compile</defaultGoal>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>scriptlandia-tools-repo</id>
+      <name>Scriptlandia tools Maven2 repository</name>
+      <url>http://scriptlandia.sourceforge.net/maven2-tools</url>
+    </repository>
+  </repositories>
+
+</project>

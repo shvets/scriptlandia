@@ -1,0 +1,25 @@
+sourceRelative("RuleProcessor.bsh");
+
+class RemoveSpacesRule extends RenameRule {
+
+  protected String getNewName(String oldName) {
+    return oldName.replaceAll("[\\s~()&]", "");
+  }
+
+}
+
+
+Rule rule = new RemoveSpacesRule();
+
+Processor processor = new RuleProcessor(rule);
+
+List extensions = new ArrayList();
+extensions.add("jpg");
+extensions.add("gif");
+
+processor.setExtensions(extensions);
+
+String currentDir = new File(".").getCanonicalPath();
+
+processor.process(new File(currentDir));
+

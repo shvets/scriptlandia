@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="ibatis-test" default="run" basedir=".">
+  <description>
+    @author Alexander Shvets
+    @description to access the WS: 
+      http://localhost:8080/WebServiceExample/circlefunctions?WSDL
+
+  </description>
+
+  <target name="init">
+    <mkdir dir="target/classes"/>
+    <mkdir dir="target/sources"/>
+  </target>
+
+  <target name="compile" depends="init">
+    <javac destdir="target/classes"
+           includeAntRuntime="false"
+           debug="true"
+           optimize="true"
+           deprecation ="true">
+      <src path="src/main/java"/>
+      <src path="src/test/java"/>
+    </javac>
+
+    <java classname="com.sun.tools.internal.ws.WsGen" fork="yes">
+      <classpath>
+        <path location="${java.home}/lib/tools.jar"/>
+      </classpath>
+
+      <arg line="-cp target/classes -s target/sources -d target/classes hello.CircleFunctions"/>
+    </java>
+  </target>
+
+  <target name="run" depends="compile">
+    <java classname="TestWS" fork="yes">
+      <classpath>
+        <path location="target/classes"/>
+      </classpath>
+    </java>
+  </target>
+
+</project>

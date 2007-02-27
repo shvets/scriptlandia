@@ -1,0 +1,27 @@
+<!-- vfs-ant-task-test -->
+
+<project name="vfs-ant-task-test" default="run" basedir=".">
+
+  <target name="init">
+    <taskdef resource="org/apache/commons/vfs/tasks/tasks.properties">
+      <classpath>
+        <path location="${repository.home}/commons-vfs/commons-vfs/1.0/commons-vfs-1.0.jar"/>
+      </classpath>
+    </taskdef>
+
+    <script language="beanshell">
+      import org.apache.commons.vfs.*;
+
+      String javaHome = System.getProperty("java.home").replace('\\', '/');
+      String userDir = System.getProperty("user.dir").replace('\\', '/');
+
+      project.setNewProperty("user.dir.local", userDir);
+    </script>
+  </target>
+
+  <target name="run" depends="init">
+    <v-copy src="jar:file://${user.dir.local}/test2.jar1!/file1.txt" destdir="jar:file://${user.dir.local}/test.jar1"/>
+  </target>
+
+
+</project>

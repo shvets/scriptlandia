@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.sf</groupId>
+  <artifactId>launch4j-install</artifactId>
+  <version>1.0</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>jogl</groupId>
+      <artifactId>jogl</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>jogl</groupId>
+      <artifactId>jogl-win32</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>validate</defaultGoal>
+
+    <plugins>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+
+        <executions>
+          <execution>
+            <phase>validate</phase>
+            <configuration>
+              <tasks>
+                <property name="jogl.version" value="1.0.0"/>
+
+                <unzip src="${repository.home}/jogl/jogl-win32/${jogl.version}/jogl-win32-${jogl.version}.jar"
+                       dest="${repository.home}/jogl/jogl/${jogl.version}">
+                  <patternset>
+                    <include name="**/*.*"/>
+                  </patternset>
+                </unzip>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>scriptlandia-repo</id>
+      <name>Scriptlandia Maven2 repository</name>
+      <url>http://scriptlandia.sourceforge.net/maven2-tools</url>
+    </repository>
+  </repositories>
+
+</project>
+

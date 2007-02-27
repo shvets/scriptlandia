@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>scala</groupId>
+  <artifactId>test</artifactId>
+  <version>1.0</version>
+
+  <name>Scala Test</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>scala</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>2.3.3</version>
+    </dependency>
+
+    <dependency>
+      <groupId>scala</groupId>
+      <artifactId>scala-compiler</artifactId>
+      <version>2.3.3</version>
+    </dependency>
+
+    <dependency>
+      <groupId>scala</groupId>
+      <artifactId>scala-actors</artifactId>
+      <version>2.3.3</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>compile</defaultGoal>
+
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>src/main/scala</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <compilerId>scalac</compilerId>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-compiler-scalac</artifactId>
+            <version>1.5.2</version>
+
+            <scope>runtime</scope>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>scriptlandia-repo</id>
+      <name>Scriptlandia Maven2 repository</name>
+      <url>http://scriptlandia.sourceforge.net/maven2-languages</url>
+    </repository>
+  </repositories>
+
+</project>

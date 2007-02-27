@@ -1,0 +1,20 @@
+<profiles>
+  <profile>
+    <id>default</id>
+
+    <repositories>
+      <repository>
+        <id>central</id>
+        <name>Default Maven2 repository</name>
+        <url>http://repo1.maven.org/maven2</url>
+      </repository>
+
+      <repository>
+        <id>codehaus</id>
+        <name>Codehaus Maven2 repository</name>
+        <url>http://repository.codehaus.org</url>
+      </repository>
+    </repositories>
+  </profile>
+</profiles>
+

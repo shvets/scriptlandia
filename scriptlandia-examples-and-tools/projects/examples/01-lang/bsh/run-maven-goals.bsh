@@ -1,0 +1,6 @@
+// run-maven-goals.bsh
+
+import org.sf.scriptlandia.ScriptlandiaHelper;
+
+ScriptlandiaHelper.executeMaven("deps.maven", bsh.args);
+

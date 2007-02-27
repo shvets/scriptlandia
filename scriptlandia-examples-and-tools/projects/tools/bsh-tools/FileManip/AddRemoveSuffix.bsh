@@ -1,0 +1,32 @@
+// AddExtension.bsh 
+
+sourceRelative("RuleProcessor.bsh");
+
+class SuffixRule extends RenameRule {
+  private String suffix;
+  private boolean addSuffix;
+
+  public SuffixRule(String suffix, boolean addSuffix) {
+    this.suffix = suffix;
+    this.addSuffix = addSuffix; 
+  }
+
+  protected String getNewName(String oldName) {
+    if(addSuffix) {
+      return oldName + suffix;
+    }
+
+    return oldName.substring(0, oldName.length() - suffix.length());
+  }
+
+}
+
+
+Rule rule = new SuffixRule(".html", false);
+
+Processor processor = new RuleProcessor(rule);
+
+String currentDir = new File(".").getCanonicalPath();
+
+processor.process(new File(currentDir));
+

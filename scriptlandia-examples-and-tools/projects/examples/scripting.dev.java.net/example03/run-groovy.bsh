@@ -1,0 +1,25 @@
+// run-groovy.bsh
+
+sourceRelative("../load-libraries.bsh");
+
+import javax.script.*;
+
+import org.sf.scriptlandia.ScriptlandiaHelper;
+
+
+ClassLoader myloader = ScriptlandiaHelper.class.getClassLoader();
+
+ScriptEngineManager manager = new ScriptEngineManager(myloader);
+
+ScriptEngine groovyEngine = manager.getEngineByName("groovy");
+
+groovyEngine.eval(new FileReader("scripts/HelloGroovy.groovy"));
+
+ScriptContext newContext = new SimpleScriptContext();
+
+Bindings engineScope = newContext.getBindings(ScriptContext.ENGINE_SCOPE);
+
+engineScope.put("name", "Universe!");
+
+groovyEngine.eval("println('Hello ' + name)", newContext);
+

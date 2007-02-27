@@ -1,0 +1,198 @@
+//
+
+import org.sf.scriptlandia.ScriptlandiaHelper;
+
+sourceRelative("ChecksumScript.bsh");
+
+class InstallFrame extends JFrame {
+  final String[] packagingValues = { "jar", "zip", "war", "ear", "pom" };
+
+  JTextField fileField = new JTextField(30);
+  JButton fileButton = new JButton("...");
+
+  JTextField groupIdField = new JTextField(15);
+  JTextField artifactIdField = new JTextField(15);
+  JTextField versionField = new JTextField(15);
+  JComboBox packagingBox = new JComboBox(packagingValues);
+
+  JButton installButton = new JButton("Install...");
+
+  InstallFrame(String[] args) {
+    setTitle("Installs file into Maven 2 repository");
+    setSize(600, 200);
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    fileButton.addActionListener(new ActionListener() {
+      void actionPerformed(ActionEvent event) {
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setCurrentDirectory(new File("."));
+
+        int returnVal = fileChooser.showDialog(InstallFrame.this, "Select file...");
+
+        if(returnVal == JFileChooser.APPROVE_OPTION) {
+          fileField.setText(fileChooser.getSelectedFile().getPath());
+        }
+      }
+    });
+
+    fileField.getDocument().addDocumentListener(new DocumentListener() {
+      public void changedUpdate(DocumentEvent e) {
+        populateValues(getFileToInstall());
+      }
+
+      public void insertUpdate(DocumentEvent e) {
+        populateValues(getFileToInstall());
+      }
+
+      public void removeUpdate(DocumentEvent e) {
+        populateValues(getFileToInstall());
+      }
+    });
+
+    installButton.addActionListener(new ActionListener() {
+      void actionPerformed(ActionEvent event) {
+        submit();
+      }
+    });
+
+    JPanel topPanel = createPanel();
+
+    if(args.length > 0) {
+      fileField.setText(args[0]);
+    }
+
+    setContentPane(topPanel);
+  }
+
+  JPanel createPanel() {
+    // panel 1
+    JPanel panel1 = new JPanel();
+    panel1.setLayout(new BoxLayout(panel1, BoxLayout.X_AXIS));
+
+    panel1.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel1.add(new JLabel("File:"));
+    panel1.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel1.add(fileField);
+    panel1.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel1.add(fileButton);
+    panel1.add(Box.createRigidArea(new Dimension(10, 0)));
+
+    // panel 2
+
+    JPanel panel2 = new JPanel();
+    panel2.setLayout(new BoxLayout(panel2, BoxLayout.X_AXIS));
+
+    panel2.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel2.add(new JLabel("Group ID:"));
+    panel2.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel2.add(groupIdField);
+    panel2.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel2.add(new JLabel("Artifact ID:"));
+    panel2.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel2.add(artifactIdField);
+    panel2.add(Box.createRigidArea(new Dimension(10, 0)));
+
+    // panel 3
+
+    JPanel panel3 = new JPanel();
+    panel3.setLayout(new BoxLayout(panel3, BoxLayout.X_AXIS));
+
+    panel3.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel3.add(new JLabel("Version:"));
+    panel3.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel3.add(versionField);
+    panel3.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel3.add(new JLabel("Packaging:"));
+    panel3.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel3.add(packagingBox);
+    panel3.add(Box.createRigidArea(new Dimension(10, 0)));
+
+    // panel 4
+
+    JPanel panel4 = new JPanel();
+    panel4.setLayout(new BoxLayout(panel4, BoxLayout.X_AXIS));
+
+    panel4.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel4.add(installButton);
+    panel4.add(Box.createRigidArea(new Dimension(10, 0)));
+
+    // top panel
+    JPanel topPanel = new JPanel();
+
+    topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
+    topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+    topPanel.add(panel1);
+    topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+    topPanel.add(panel2);
+    topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+    topPanel.add(panel3);
+    topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+    topPanel.add(panel4);
+    topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+
+    return topPanel;
+  }
+
+  void populateValues(String name) {
+    String fileName = new File(name).getName();
+
+    int index1 = fileName.lastIndexOf("-");
+    int index2 = fileName.lastIndexOf(".");
+
+    if(index1 != -1 && index2 != -1) {
+      artifactIdField.setText(fileName.substring(0, index1));
+      versionField.setText(fileName.substring(index1+1, index2));
+    }
+    else {
+      artifactIdField.setText(fileName.substring(0, index2));
+    }
+  }
+
+  void submit() {
+    String[] args = new String[] {
+      "install:install-file",
+      "-Dfile=" + getFileToInstall(),
+      "-DgroupId=" + getGroupId(),
+      "-DartifactId=" + getArtifactId(),
+      "-Dversion=" + getVersion(),
+      "-Dpackaging=" + getPackaging(),
+      "-DgeneratePom=true"
+    };
+
+    ScriptlandiaHelper.executeMaven(args);
+
+    String repositoryHome = System.getProperty("repository.home");
+
+    String dir = repositoryHome + "/" + getGroupId() + "/" + getArtifactId() + "/" + getVersion();
+
+    ChecksumScript checksum = new ChecksumScript();
+
+    checksum.calculate(new File(dir));
+  }
+
+  String getFileToInstall() {
+    return fileField.getText();
+  }
+
+  String getGroupId() {
+    return groupIdField.getText();
+  }
+
+  String getArtifactId() {
+    return artifactIdField.getText();
+  }
+
+  String getVersion() {
+    return versionField.getText();
+  }
+
+  String getPackaging() {
+    return packagingBox.getSelectedItem();
+  }
+
+}
+
+
+InstallFrame installFrame = new InstallFrame(bsh.args);
+
+installFrame.setVisible(true);

@@ -1,0 +1,43 @@
+<!-- prepare.ant -->
+
+<project name="prepare" default="prepare" basedir=".">
+
+  <target name="init">
+    <property name="debug" value="false"/>
+    <property name="optimize" value="false"/>
+    <property name="deprecation" value="false"/>
+
+    <property name="src.dir" value="."/>
+    <property name="destination.dir" value="classes"/>
+  </target>
+
+  <target name="prepare" depends="init">
+    <mkdir dir="${destination.dir}"/>
+
+    <javac destdir="${destination.dir}"
+           includeAntRuntime="false"
+           debug="${debug}"
+           optimize="${optimize}"
+           deprecation ="${deprecation}">
+        <src path="${src.dir}"/>
+        <include name ="ListClassApf.java"/>
+        <classpath>
+          <path location="${java.home}/../lib/tools.jar"/>
+        </classpath>
+    </javac>
+  </target>
+
+  <target name="run" depends="prepare">
+    <java classname="com.sun.tools.apt.Main" fork="yes">
+      <arg line="-factory ListClassApf"/>
+      <arg line="-Atemplate ListClassApf.java"/>
+      <arg value="-nocompile"/>
+
+      <classpath>
+        <pathelement location="${java.home}/../lib/tools.jar"/>
+        <pathelement location="classes"/>
+      </classpath>
+    </java>
+  </target>
+
+</project>

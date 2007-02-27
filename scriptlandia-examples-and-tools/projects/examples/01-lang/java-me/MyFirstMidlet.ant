@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<project name="MyFirstMidlet" default="jar" basedir=".">
+
+  <property name="midlet.class.name" value="${ant.project.name}"/>
+  <property name="src.dir" value="src"/>
+  <property name="target.dir" value="target"/>
+
+  <property name="midlet.command.line" value=""/>
+
+  <path id="mobile.classpath">
+    <pathelement location="${mobile.java.home}/lib/cldcapi11.jar"/>
+    <pathelement location="${mobile.java.home}/lib/midpapi20.jar"/>
+
+    <pathelement location="${mobile.java.home}/lib/wma20.jar"/>
+    <pathelement location="${mobile.java.home}/lib/mmapi.jar"/>
+    <pathelement location="${mobile.java.home}/lib/j2me-ws.jar"/>
+    <pathelement location="${mobile.java.home}/lib/jsr75.jar"/>
+    <pathelement location="${mobile.java.home}/lib/jsr082.jar"/>
+    <pathelement location="${mobile.java.home}/lib/jsr184.jar"/>
+    <pathelement location="${mobile.java.home}/lib/jsr179.jar"/>
+    <pathelement location="${mobile.java.home}/lib/jsr177.jar"/>
+    <pathelement location="${mobile.java.home}/lib/jsr211.jar"/>
+  </path>
+
+  <property name="mobile.classpath" refid="mobile.classpath"/>
+
+  <target name="init">
+    <tstamp/>
+  </target>
+
+  <target name="clean">
+    <delete dir="${target.dir}"/>
+  </target>
+
+  <target name="compile" depends="init">
+    <mkdir dir="${target.dir}/classes"/>
+
+    <javac srcdir="${src.dir}" destdir="${target.dir}/classes"
+           bootclasspathref="mobile.classpath"
+           source="1.1" target="1.1"/>
+  </target>
+
+  <target name="preverify" depends="compile">
+    <mkdir dir="${target.dir}/preverified"/>
+
+    <exec executable="${mobile.java.home}/bin/preverify">
+      <arg line="-classpath ${mobile.classpath}"/>
+      <arg line="-d ${target.dir}/preverified"/>
+      <arg line="${target.dir}/classes"/>
+    </exec>
+  </target>
+
+  <target name="jar" depends="preverify">
+    <mkdir dir="${target.dir}/bin"/>
+
+    <jar basedir="${target.dir}/preverified"
+         jarfile="${target.dir}/bin/${ant.project.name}.jar"
+         manifest="bin/MANIFEST.MF">
+      <fileset dir="res"/>
+    </jar>
+
+    <copy file="bin/${ant.project.name}.jad"
+          tofile="${target.dir}/bin/${ant.project.name}.jad"/>
+
+  </target>
+
+  <target name="run" depends="jar">
+    <java fork="yes" classname="com.sun.kvem.environment.EmulatorWrapper">
+      <sysproperty key="kvem.home" value="${mobile.java.home}"/>
+      <sysproperty key="java.library.path" value="${mobile.java.home}/bin"/>
+      <sysproperty key="sun.java2d.ddlock" value="true"/>
+      <sysproperty key="sun.java2d.gdiblit" value="false"/>
+
+      <arg line="-Xdevice:DefaultGrayPhone"/>
+      <arg line="-Xdescriptor:${basedir}/${target.dir}/bin/${ant.project.name}.jad"/>
+
+      <arg line="-classpath ${mobile.classpath};${target.dir}/bin/${ant.project.name}.jar"/>
+      <arg line="${midlet.class.name}"/>
+      <arg line="${midlet.command.line}"/>
+      <arg line="0"/>
+    </java>
+  </target>
+
+  <target name="run2" depends="jar">
+    <exec executable="${mobile.java.home}/bin/emulator">
+      <!-- device: DefaultColorPhone, DefaultGrayPhone, MediaControlSkin, QwertyDevice  -->
+      <arg line="-Xdevice:DefaultColorPhone"/>
+      <arg line="-Xdescriptor:${basedir}/${target.dir}/bin/${ant.project.name}.jad"/>
+
+      <arg line="-classpath ${mobile.classpath};${basedir}/${target.dir}/bin/${ant.project.name}.jar"/>
+    </exec>
+  </target>
+
+</project>

@@ -1,0 +1,96 @@
+// missingPomsGen.bsh
+
+String getExtension(String name) {
+  String ext;
+
+  int index = name.lastIndexOf('.');
+
+  if(index != -1) {
+    ext = name.substring(index+1).toLowerCase();
+  }
+  else {
+    ext = null;
+  }
+
+  return ext;
+}
+
+void generateMissingPoms(File dir) {
+  File[] files = dir.listFiles();
+
+  for(int i=0; i &lt; files.length; i++) {
+    File file = files[i];
+
+    if(file.isDirectory()) {
+      generateMissingPoms(file);
+    }
+    else if(file.isFile()) {
+      String fileName = file.getName();
+
+      String ext = getExtension(fileName);
+
+      if(ext != null &amp;&amp; ext.endsWith("jar")) {
+        String name = fileName.substring(0, fileName.lastIndexOf('.'));
+
+        int index = name.lastIndexOf("-");
+
+        if(index != -1) {
+          String artifactId = name.substring(0, index);
+          String version = name.substring(index+1);
+
+          File versionDir = file.getParentFile();
+          File artifactIdDir = versionDir.getParentFile();
+
+          File pomFile = new File(file.getParent(), artifactId + "-" + version + ".pom");
+
+          if(!pomFile.exists()) {
+            print(pomFile.getCanonicalPath());
+
+            File currentDir = artifactIdDir.getParentFile();
+
+            Stack stack = new Stack();
+
+            while(!currentDir.getCanonicalPath().equals(new File(bsh.cwd).getCanonicalPath())) {
+              stack.push(currentDir.getName());
+
+              currentDir = currentDir.getParentFile();
+            }
+
+            StringBuffer sb = new StringBuffer();
+
+            while(!stack.isEmpty()) {
+              sb.append(stack.pop());
+
+              if(!stack.isEmpty()) {
+                sb.append('.');
+              }
+            }
+
+            String groupId = sb.toString();
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(pomFile));
+
+            writer.write("&lt;project&gt;");
+            writer.newLine();
+            writer.write("  &lt;modelVersion>4.0.0&lt;/modelVersion&gt;");
+            writer.newLine();
+            writer.write("  &lt;groupId>" + groupId + "&lt;/groupId&gt;");
+            writer.newLine();
+            writer.write("  &lt;artifactId>" + artifactId + "&lt;/artifactId&gt;");
+            writer.newLine();
+            writer.write("  &lt;version>" + version + "&lt;/version&gt;");
+            writer.newLine();
+            writer.write("&lt;/project&gt;");
+            writer.newLine();
+
+            writer.close();
+          }
+        }
+      }
+    }
+  }
+}
+
+File currentDirectory = new File(".");
+
+generateMissingPoms(currentDirectory);

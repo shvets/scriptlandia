@@ -1,0 +1,52 @@
+// BaseDAO.bsh
+
+import java.io.IOException;
+import java.io.Reader;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.ibatis.common.resources.Resources;
+import com.ibatis.sqlmap.client.SqlMapClient;
+import com.ibatis.sqlmap.client.SqlMapClientBuilder;
+
+public class BaseDAO {
+  private SqlMapClient sqlMap = null;
+
+  public void setupIbatis() throws IOException {
+    String resource = "sqlmap-config.xml";
+
+    Reader reader = null;
+
+    try {
+      reader = Resources.getResourceAsReader(resource);
+
+      sqlMap = SqlMapClientBuilder.buildSqlMapClient(reader);
+    }
+    catch(e) {
+      e.printStackTrace();
+    }
+    finally {
+      if(reader != null) {
+        reader.close();
+      }
+    }
+  }
+
+  public List getList(String statementName, Object parameterObject)
+          throws SQLException {
+    List list = null;
+
+    try {
+      sqlMap.startTransaction();
+      list = sqlMap.queryForList(statementName, parameterObject);
+
+      sqlMap.commitTransaction();
+    }
+    finally {
+     sqlMap.endTransaction();
+    }
+
+    return list;
+  }
+
+}

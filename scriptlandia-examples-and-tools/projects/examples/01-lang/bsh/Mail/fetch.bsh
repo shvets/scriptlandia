@@ -1,0 +1,126 @@
+// CLASSPATH section
+
+String repositoryHome = System.getProperty("repository.home");
+
+addClassPath(repositoryHome + "/javax/activation/activation/1.0.2/activation-1.0.2.jar");
+addClassPath(repositoryHome + "/javax/mail/mail/1.3.3_01/mail-1.3.3_01.jar");
+
+
+// import section
+
+import java.io.InputStream;
+import java.io.FileInputStream;
+import java.util.Properties;
+
+import javax.mail.Session;
+import javax.mail.Store;
+import javax.mail.Folder;
+import javax.mail.Message;
+import javax.mail.Part;
+import javax.mail.Multipart;
+import javax.mail.Flags;
+
+// init section
+
+// methods section
+
+boolean isAttachment(Part part) {
+  String disposition = part.getDisposition();
+
+  if(disposition != null) {
+    if(disposition.equals(Part.ATTACHMENT) ||
+      disposition.equals(Part.INLINE)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+void saveAttachment(Part part) {
+  String fileName = part.getFileName();
+
+  InputStream is = part.getInputStream();
+
+  OutputStream os = new FileOutputStream("IN/" + fileName);
+
+  while(true) {
+    byte[] buffer = new byte[1024];
+
+    int n = is.read(buffer);
+
+    if(n == -1) {
+      break;
+    }
+
+    os.write(buffer, 0, n);
+  }
+
+  is.close();
+  os.close();
+}
+
+void fetch(Properties props) {
+  String mailStoreProtocol = props.getProperty("mail.store.protocol");
+  String mailHostName = props.getProperty("mail.pop3.host");
+  String mailUserName = props.getProperty("mail.user");
+  String mailPassword = props.getProperty("mail.password");
+
+  // Get session
+  Session session = Session.getDefaultInstance(props, null);
+
+  // Get the store
+  Store store = session.getStore(mailStoreProtocol);
+  store.connect(mailHostName, mailUserName, mailPassword);
+
+  // Get folder
+  Folder folder = store.getFolder("INBOX");
+  folder.open(Folder.READ_WRITE);
+
+  // Get directory
+  Message[] messages = folder.getMessages();
+
+  for(int i=0, n=messages.length; i < n; i++) {
+    Message message = messages[i];
+
+    String subject = message.getSubject();
+
+    if(subject.equals("Transparent send-fetch")) {
+      System.out.println("Fetching message # " + (i+1));
+
+      Object content = message.getContent();
+
+      if(content instanceof Multipart) {
+        Multipart multipartContent = (Multipart)content;
+
+        for(int i=0, n = multipartContent.getCount(); i<n; i++) {
+          Part part = multipartContent.getBodyPart(i);
+
+          if(isAttachment(part)) {
+            saveAttachment(part);
+          }
+        }
+      }
+
+      System.out.println(i + ": " + message.getFrom()[0] + "\t" + subject);
+
+      message.setFlag(Flags.Flag.DELETED, true);
+    }
+  }
+
+  // Close connection
+  folder.close(true);
+  store.close();
+}
+
+// execution area
+
+Properties props = new Properties();
+
+InputStream is = new FileInputStream("mail.fetch.properties");
+
+props.load(is);
+
+is.close();
+
+fetch(props);

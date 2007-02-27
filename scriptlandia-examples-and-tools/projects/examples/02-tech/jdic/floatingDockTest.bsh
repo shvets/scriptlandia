@@ -1,0 +1,23 @@
+//
+/*
+JButton button1, button2, button3;
+FloatingDock fd;
+	
+GridLayout gl = new GridLayout(3, 1);
+
+fd = new FloatingDock();
+fd.setLocation (FloatingDock.LEFT);
+fd.setLayout(gl);
+button1 = new JButton("Button 1");
+button1.setVisible(true);
+button2 = new JButton("Button 2");
+button2.setVisible(true);
+button3 = new JButton("Button 3");
+button3.setVisible(true);
+fd.add(button1);
+fd.add(button2);
+fd.add(button3);
+fd.setSize(new Dimension(100, 300));
+
+fd.setVisible(true);
+*/

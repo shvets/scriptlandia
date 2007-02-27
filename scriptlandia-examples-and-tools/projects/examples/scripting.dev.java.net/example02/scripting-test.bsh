@@ -1,0 +1,55 @@
+//
+
+sourceRelative("../load-libraries.bsh");
+
+
+import java.util.*;
+import javax.script.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        try {
+            ScriptEngineManager mgr = new ScriptEngineManager();
+            List factories = mgr.getEngineFactories();
+            System.out.println("Available script engines:");
+            for ( int i = 0; i < factories.size(); i++ )
+            {
+                ScriptEngineFactory factory = (ScriptEngineFactory)factories.get(i);
+
+                System.out.println("-------------------------------------------");
+                System.out.println("Language: " + factory.getLanguageName() );
+                System.out.println("Engine: " + factory.getEngineName());
+
+                Object engine = null;
+
+                try {
+                  engine = factory.getScriptEngine();
+                }
+                catch(Throwable t) {
+                  print(t.getMessage());
+                }
+
+                System.out.println("Engine implementation: " + engine);
+                //System.out.println("Language Version: " + factory.getLaunguageVersion());
+                System.out.println("Engine Version: " + factory.getEngineVersion());
+                System.out.println("-------------------------------------------");
+
+                List names = factory.getNames();
+                for (int j=0; j < names.size(); j++) {
+                  System.out.println("\tEngine Alias: \n" + names.get(j));
+                }
+
+            }
+            System.out.println("Done.");
+        }
+        catch ( Exception e ) {
+            e.printStackTrace();
+        }
+    }
+    
+}
+
+
+

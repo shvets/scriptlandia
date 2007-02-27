@@ -1,0 +1,52 @@
+<html jwcid="@Shell" title="Add New Project">
+  <body jwcid="@Body">
+    <h1>Add New Project</h1>
+    <form jwcid="form@Form" success="listener:doSubmit">
+      <table>
+        <tr>
+          <th>Name</th>
+          <td>
+            <input jwcid="name@TextField" value="ognl:project.name" size="40"/>
+          </td>
+        </tr>
+        <tr>
+          <th>Release ID</th>
+          <td>
+            <input jwcid="release@TextField" value="ognl:project.releaseId" size="20"/>
+          </td>
+        </tr>
+        <tr>
+          <th>Short Description</th>
+          <td>
+            <input jwcid="short@TextField" value="ognl:project.shortDescription" size="40"/>
+          </td>
+        </tr>
+        <tr>
+          <th>Long Description</th>
+          <td>
+            <textarea jwcid="long@TextArea" value="ognl:project.longDescription" rows="10" cols="40"/>
+          </td>
+        </tr>
+        <tr>
+          <th>Tapestry Version</th>
+          <td>
+            <input jwcid="tapestryVersion@TextField" value="ognl:project.tapestryVersion" size="20"/>
+          </td>
+        </tr>
+        <tr>
+          <th>Release Date</th>
+          <td>
+            <input jwcid="releaseDate@DatePicker" value="ognl:project.releaseDate"/>
+          </td>
+        </tr>
+        <tr>
+          <th>Public</th>
+          <td>
+            <input jwcid="public@Checkbox" value="ognl:project.public"/>
+          </td>
+        </tr>
+      </table>
+      <input type="submit" value="Add Project"/>
+    </form>
+  </body>
+</html>

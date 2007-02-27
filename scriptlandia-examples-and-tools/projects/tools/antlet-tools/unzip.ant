@@ -1,0 +1,39 @@
+<!-- zip.ant -->
+
+<project name="unzip" default="unzip"  basedir=".">
+
+  <target name="init">
+    <script language="beanshell"> <![CDATA[
+      String zipFileName = null;
+
+      List parameters = (List)project.getReference("parameters");
+
+      if(parameters == null || parameters.size() == 0) {
+        File userDir = new File(System.getProperty("user.dir"));
+
+        File[] files = userDir.listFiles();
+
+        for(int i=0; i < files.length && zipFileName == null; i++) {
+          String fileName = files[i].getName().toLowerCase();
+
+          if(fileName.endsWith(".zip") || fileName.endsWith(".zip")) {
+            zipFileName = files[i].getPath();
+          }
+        }
+      }
+      else {
+        zipFileName = bsh.args[0];
+      }
+
+      if(zipFileName != null && new File(zipFileName).exists()) {
+        project.setProperty("archive.found", "true");
+        project.setProperty("archive.name", zipFileName);
+      }
+    ]]></script>
+  </target>
+
+  <target name="unzip" depends="init" if="archive.found">
+    <unzip src="${archive.name}" dest="${user.dir}"/>
+  </target>
+
+</project>

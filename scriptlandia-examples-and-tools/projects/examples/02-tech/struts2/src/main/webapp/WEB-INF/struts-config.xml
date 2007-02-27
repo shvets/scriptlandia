@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+  "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+  "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+
+<struts-config>
+  <form-beans>
+    <form-bean name="userForm" type="struts1.form.UserForm"/>
+  </form-beans>
+
+  <global-exceptions></global-exceptions>
+
+  <global-forwards></global-forwards>
+
+  <action-mappings>
+    <action path="/struts1/user" type="struts1.action.Struts1Action"
+            name="userForm" parameter="command"
+            scope="request" validate="false">
+      <forward name="list" path="/struts1/list.jsp" redirect="false"/>
+      <forward name="view" path="/struts1/view.jsp" redirect="false"/>
+      <forward name="create" path="/struts1/update.jsp" redirect="false"/>
+      <forward name="update" path="/struts1/update.jsp" redirect="false"/>
+      <forward name="delete" path="/struts1/user.do?command=list" redirect="false"/>
+      <forward name="save" path="/struts1/user.do?command=list" redirect="false"/>
+    </action>
+  </action-mappings>
+
+  <message-resources parameter="application"/>
+
+</struts-config>

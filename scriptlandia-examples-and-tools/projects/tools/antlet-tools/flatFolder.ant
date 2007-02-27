@@ -1,0 +1,15 @@
+<!-- flatFolder.ant -->
+
+<project name="flatFolder.ant" default="start"  basedir=".">
+
+  <target name="start">
+    <move todir=".">
+      <fileset dir=".">
+        <include name="**/*.*"/>
+      </fileset>
+
+      <mapper type="flatten"/>
+    </move>
+  </target>
+
+</project>

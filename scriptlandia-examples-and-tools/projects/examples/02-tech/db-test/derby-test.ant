@@ -1,0 +1,54 @@
+<!-- derby-test.ant -->
+
+<project name="derby-test.antlet" default="run" basedir=".">
+
+  <script language="beanshell">
+    import org.sf.scriptlandia.ScriptlandiaHelper;
+
+    ScriptlandiaHelper.resolveMavenDependencies(project, "derby-deps.maven", "compile");
+  </script>
+
+  <target name="sysinfo">
+    <java classname="org.apache.derby.tools.sysinfo" fork="yes">
+      <classpath>
+        <path refid="maven.compile.classpath"/>
+      </classpath>
+    </java>
+  </target>
+
+  <target name="ij">
+    <java classname="org.apache.derby.tools.ij" fork="yes">
+      <classpath>
+        <path refid="maven.compile.classpath"/>
+      </classpath>
+    </java>
+  </target>
+
+  <target name="dblook">
+    <java classname="org.apache.derby.tools.dblook" fork="yes">
+      <arg line="-d jdbc:derby:test"/>
+      <classpath>
+        <path refid="maven.compile.classpath"/>
+      </classpath>
+    </java>
+  </target>
+
+  <target name="compile">
+    <script language="beanshell">
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      ScriptlandiaHelper.executeMaven("derby-deps.maven", new String[] {"compile"});
+    </script>
+  </target>
+
+  <target name="run" depends="compile">
+
+    <java classname="DbTest" fork="true">
+      <classpath>
+        <path refid="maven.compile.classpath"/>
+        <path location="target/classes"/>
+      </classpath>
+    </java>
+  </target>
+ 
+</project>

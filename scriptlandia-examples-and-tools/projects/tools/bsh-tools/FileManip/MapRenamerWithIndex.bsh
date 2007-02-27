@@ -1,0 +1,65 @@
+sourceRelative("RuleProcessor.bsh");
+
+class RenameByMapAndIndexRule extends RenameByMapRule {
+
+  public RenameByMapAndIndexRule(File fileMap) {
+    super(fileMap);
+  }
+
+  public Object execute(Object[] parameters) {
+    File file = (File)parameters[0];
+
+    int index = ((Integer)parameters[1]).intValue();
+
+    String oldName = file.getName();
+
+    String extension = FileUtil.getExtension(oldName);
+
+    String newName = getNewName(FileUtil.getIndex(index));
+
+    if(newName != null) {
+      File newFile = new File(FileUtil.getIndex(index) + ". " + newName);
+
+      if(!newName.equals(oldName)) {
+        boolean ok = file.renameTo(newFile);
+
+        if(!ok) {
+          print("File " + oldName + " cannot be renamed.");
+        }
+
+        return new Object();
+      }
+    }
+
+    return null;
+  }
+
+}
+
+
+String fileName = "";
+
+if(bsh.args.length == 0) {
+  print("Please specify file with names.");
+}
+else {
+  fileName = bsh.args[0];
+
+  File file = new File(fileName);
+
+  if(file.exists()) {
+    Rule rule = new RenameByMapAndIndexRule(file);
+
+    Processor processor = new RuleProcessor(rule);
+
+    List extensions = new ArrayList();
+    extensions.add("mp3");
+    extensions.add("wav");
+
+    processor.setExtensions(extensions);
+
+    String currentDir = new File(".").getCanonicalPath();
+
+    processor.process(new File(currentDir));
+  }
+}

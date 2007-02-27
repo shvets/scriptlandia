@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="fixcrlf" default="run" basedir=".">
+
+  <input message="Input folder name:"
+         addproperty="dir"/>
+
+  <target name="run">
+    <fixcrlf eol="unix" srcdir="${dir}" includes="*.sh"/>
+  </target>
+
+</project>

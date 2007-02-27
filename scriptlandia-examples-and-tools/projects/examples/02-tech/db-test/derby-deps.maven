@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>derby-deps</groupId>
+  <artifactId>derby-deps</artifactId>
+  <version>1.0</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.13</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.0.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>ibatis</groupId> 
+      <artifactId>ibatis-common</artifactId> 
+      <version>2</version> 
+    </dependency>
+
+    <dependency>
+      <groupId>ibatis</groupId> 
+      <artifactId>ibatis-sqlmap</artifactId> 
+      <version>2</version> 
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.derby</groupId> 
+      <artifactId>derby</artifactId> 
+      <version>10.1.2.1</version> 
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.derby</groupId> 
+      <artifactId>derbytools</artifactId> 
+      <version>10.1.2.1</version> 
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <defaultGoal>compile</defaultGoal>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>scriptlandia-repo</id>
+      <name>Scriptlandia Maven2 repository</name>
+      <url>http://scriptlandia.sourceforge.net/maven2-tools</url>
+    </repository>
+  </repositories>
+</project>

@@ -1,0 +1,11 @@
+<component-set>
+  <components>
+    <component>
+      <role>org.codehaus.plexus.tutorial.HelloWorld</role>
+      <implementation>org.codehaus.plexus.tutorial.DefaultHelloWorld</implementation>
+      <configuration>
+        <greeting>Hello World!</greeting>
+      </configuration>
+    </component>
+  </components>
+</component-set>

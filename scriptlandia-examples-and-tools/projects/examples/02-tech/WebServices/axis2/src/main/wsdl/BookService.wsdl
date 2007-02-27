@@ -1,0 +1,35 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:axis2="http://ws.apache.org/axis2/samples/book/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns0="http://ws.apache.org/axis2/samples/book/xsd/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://ws.apache.org/axis2/samples/book/"><wsdl:types><xs:schema xmlns:ns="http://ws.apache.org/axis2/samples/book/xsd/" xmlns:stn_2="http://demo.samples/xsd" targetNamespace="http://ws.apache.org/axis2/samples/book/xsd/" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+<xs:import namespace="http://demo.samples/xsd" />
+<xs:element type="ns:Book" name="Book" />
+<xs:complexType name="Book">
+<xs:sequence>
+<xs:element type="xs:string" name="author" />
+<xs:element type="xs:string" name="title" />
+<xs:element type="xs:string" name="isbn" />
+</xs:sequence>
+</xs:complexType>
+<xs:element name="getBooks">
+<xs:complexType />
+</xs:element>
+<xs:element name="getBooksResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" type="stn_2:Book" name="return" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="findBook">
+<xs:complexType>
+<xs:sequence>
+<xs:element type="xs:string" name="isbn" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="findBookResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element type="stn_2:Book" name="return" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema></wsdl:types><wsdl:message name="getBooksMessage"><wsdl:part element="ns0:getBooks" name="part1" /></wsdl:message><wsdl:message name="getBooksResponse"><wsdl:part element="ns0:getBooksResponse" name="part1" /></wsdl:message><wsdl:message name="findBookMessage"><wsdl:part element="ns0:findBook" name="part1" /></wsdl:message><wsdl:message name="findBookResponse"><wsdl:part element="ns0:findBookResponse" name="part1" /></wsdl:message><wsdl:portType name="BookServicePortType"><wsdl:operation name="getBooks"><wsdl:input message="axis2:getBooksMessage" /><wsdl:output message="axis2:getBooksResponse" /></wsdl:operation><wsdl:operation name="findBook"><wsdl:input message="axis2:findBookMessage" /><wsdl:output message="axis2:findBookResponse" /></wsdl:operation></wsdl:portType><wsdl:binding type="axis2:BookServicePortType" name="BookServiceSOAP11Binding"><soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /><wsdl:operation name="getBooks"><soap:operation style="document" soapAction="urn:getBooks" /><wsdl:input><soap:body namespace="http://ws.apache.org/axis2/samples/book/" use="literal" /></wsdl:input><wsdl:output><soap:body namespace="http://ws.apache.org/axis2/samples/book/" use="literal" /></wsdl:output></wsdl:operation><wsdl:operation name="findBook"><soap:operation style="document" soapAction="urn:findBook" /><wsdl:input><soap:body namespace="http://ws.apache.org/axis2/samples/book/" use="literal" /></wsdl:input><wsdl:output><soap:body namespace="http://ws.apache.org/axis2/samples/book/" use="literal" /></wsdl:output></wsdl:operation></wsdl:binding><wsdl:binding type="axis2:BookServicePortType" name="BookServiceSOAP12Binding"><soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /><wsdl:operation name="getBooks"><soap12:operation style="document" soapAction="urn:getBooks" /><wsdl:input><soap12:body namespace="http://ws.apache.org/axis2/samples/book/" use="literal" /></wsdl:input><wsdl:output><soap12:body namespace="http://ws.apache.org/axis2/samples/book/" use="literal" /></wsdl:output></wsdl:operation><wsdl:operation name="findBook"><soap12:operation style="document" soapAction="urn:findBook" /><wsdl:input><soap12:body namespace="http://ws.apache.org/axis2/samples/book/" use="literal" /></wsdl:input><wsdl:output><soap12:body namespace="http://ws.apache.org/axis2/samples/book/" use="literal" /></wsdl:output></wsdl:operation></wsdl:binding><wsdl:binding type="axis2:BookServicePortType" name="BookServiceHttpBinding"><http:binding verb="POST" /><wsdl:operation name="getBooks"><http:operation location="getBooks" /><wsdl:input><mime:content type="text/xml" /></wsdl:input><wsdl:output><mime:content type="text/xml" /></wsdl:output></wsdl:operation><wsdl:operation name="findBook"><http:operation location="findBook" /><wsdl:input><mime:content type="text/xml" /></wsdl:input><wsdl:output><mime:content type="text/xml" /></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service name="BookService"><wsdl:port binding="axis2:BookServiceSOAP11Binding" name="BookServiceSOAP11port0"><soap:address location="http://localhost:8080/axis2/services/BookService" /></wsdl:port><wsdl:port binding="axis2:BookServiceSOAP12Binding" name="BookServiceSOAP12port0"><soap12:address location="http://localhost:8080/axis2/services/BookService" /></wsdl:port><wsdl:port binding="axis2:BookServiceHttpBinding" name="BookServiceHttpport0"><http:address location="http://localhost:8080/axis2/rest/BookService" /></wsdl:port></wsdl:service></wsdl:definitions>

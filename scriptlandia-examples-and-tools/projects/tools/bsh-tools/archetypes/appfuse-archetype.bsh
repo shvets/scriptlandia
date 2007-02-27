@@ -1,0 +1,18 @@
+// appfuse-archetype.bsh
+
+sourceRelative("create-archetype.bsh");
+
+String[] archetypes = { 
+  "basic-jsf", "basic-spring", "basic-struts", "basic-tapestry", 
+  "modular-jsf", "modular-spring", "modular-struts", "modular-tapestry"
+};
+
+CreateArchetype frame = new CreateArchetype("Appfuse");
+
+frame.setArchetypes(archetypes);
+frame.setArchetypeGroupId("org.appfuse");
+frame.setArchetypeArtifactIdPrefix("appfuse-");
+frame.setArchetypeVersion("1.0-m3");
+frame.setRemoteRepositories("http://static.appfuse.org/repository");
+
+frame.setVisible(true);

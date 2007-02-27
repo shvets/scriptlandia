@@ -1,0 +1,20 @@
+// webtide-archetype.bsh
+
+// Resource: http://www.webtide.com/resources.jsp
+
+sourceRelative("create-archetype.bsh");
+
+String[] archetypes = { 
+  "ActiveMQ", "DOJO", "DWR", "JSF", "SiteMesh", "Spring", "Struts", "Tapestry", "WebWork" 
+};
+
+
+CreateArchetype frame = new CreateArchetype("WebTide");
+
+frame.setArchetypes(archetypes);
+frame.setArchetypeGroupId("com.webtide");
+frame.setArchetypeArtifactIdPrefix("maven-archetype-");
+frame.setArchetypeVersion("1.0");
+frame.setRemoteRepositories("http://scriptlandia.sourceforge.net/maven2-tools");
+
+frame.setVisible(true);

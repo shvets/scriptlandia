@@ -1,0 +1,44 @@
+sourceRelative("RuleProcessor.bsh");
+
+class RenameByMapRule2Chars extends RenameByMapRule {
+
+  RenameByMapRule2Chars(File fileMap) {
+    super(fileMap);
+  }
+
+  String getNewName(String oldName) {
+    String key = oldName.substring(0, 2);
+
+    String newName = super.getNewName(key);
+
+    if(newName == null) {
+      newName = oldName;
+    }
+
+    return newName;
+  }
+
+}
+
+
+String fileName = "in_names.txt";
+
+File file = new File(fileName);
+
+if(file.exists()) {
+  Rule rule = new RenameByMapRule2Chars(file);
+
+  Processor processor = new RuleProcessor(rule);
+
+  List extensions = new ArrayList();
+  extensions.add("mp3");
+  extensions.add("wav");
+
+  processor.setExtensions(extensions);
+
+
+  String currentDir = new File(".").getCanonicalPath();
+
+  processor.process(new File(currentDir));
+}
+

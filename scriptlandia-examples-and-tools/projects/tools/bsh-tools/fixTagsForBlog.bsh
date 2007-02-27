@@ -1,0 +1,61 @@
+/* fixTagsForBlog.bsh */
+
+void fixTagsForBlog(String inputFileName, String outputFileName) {
+  BufferedReader reader = new BufferedReader(new FileReader(inputFileName));
+
+  BufferedWriter writer = new BufferedWriter(new FileWriter(outputFileName));
+
+  
+  for(boolean ok = false; !ok;) {
+    String line = reader.readLine();
+
+    if(line == null) {
+      ok = true;
+    }
+    else {
+      line = line.replaceAll("<", "&lt;");
+      line = line.replaceAll(">", "&gt;");
+
+      int pos = 0;
+
+      if(line.startsWith(" ")) {
+        for(; pos < line.length()-1 && Character.isWhitespace(line.charAt(pos)); pos++);
+
+        for(int i=0; i < pos; i++) {
+          writer.write("&nbsp;");
+        }
+      }
+
+      writer.write(line.substring(pos));
+      writer.newLine();
+    }
+  }
+
+  reader.close();
+  writer.close();
+}
+
+
+if(bsh.args.length == 0) {
+  print("Please specify the file to process.");
+}
+else {
+  String inputFileName = bsh.args[0];
+
+  String outputFileName;
+
+  if(bsh.args.length > 1) {
+    outputFileName = bsh.args[1];
+  }
+  else {
+    outputFileName = inputFileName + ".out";
+  }
+
+  print("Input file: " + inputFileName);
+  print("Output file: " + outputFileName);
+
+  fixTagsForBlog(inputFileName, outputFileName);
+
+  print("Processed.");
+}
+

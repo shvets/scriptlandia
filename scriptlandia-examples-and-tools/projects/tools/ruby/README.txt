@@ -1,0 +1,1 @@
+This tool helps to install Ruby and Rails projects.

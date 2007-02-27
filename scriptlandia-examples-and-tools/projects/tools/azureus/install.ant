@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<project name="install.ant" default="install" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+
+  <target name="init">
+    <script language="beanshell">
+      System.getProperties().put("proxySet", "true");
+      System.getProperties().put("proxyPort", "8080");
+      System.getProperties().put("proxyHost", "proxyHost");
+    </script>
+
+    <artifact:localRepository id="local.repository" location="${repository.home}" layout="default"/>
+
+    <artifact:pom file="azureus.sl" id="maven.project" />
+
+    <artifact:dependencies pathId="compile.classpath" filesetId="compile.fileset" useScope="compile">
+      <pom refid="maven.project"/>
+    </artifact:dependencies>
+
+    <condition property="azureus.lib.present">
+      <available file="${repository.home}/azureus/azureus/2.5.0.0/azureus-2.5.0.0.jar"/>
+    </condition>
+  </target>
+
+  <target name="get" depends="init" unless="azureus.lib.present">
+    <get src="http://easynews.dl.sourceforge.net/sourceforge/azureus/Azureus2.5.0.0.jar" 
+         dest="${repository.home}/azureus/azureus/2.5.0.0/azureus-2.5.0.0.jar"
+         verbose="true"/>
+  </target>
+
+  <target name="install" depends="init, get">
+    <copy tofile="${repository.home}/azureus/azureus/2.5.0.0/azureus-2.5.0.0.pom" 
+          file="src/main/maven/pom.xml" overwrite="true"/>
+
+    <unzip src="${repository.home}/org/eclipse/swt-win32/3.2.1/swt-win32-3.2.1.jar"
+           dest="${repository.home}/org/eclipse/swt-win32/3.2.1">
+      <patternset>
+        <include name="*.dll"/>
+      </patternset>
+    </unzip>
+  </target>
+
+</project>
+

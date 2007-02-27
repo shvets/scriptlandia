@@ -1,0 +1,19 @@
+<!-- test.ant -->
+
+<project name="test.ant" default="main">
+
+  <taskdef resource="antscriptella.properties">
+    <classpath>
+      <pathelement path="${repository.home}/scriptella/scriptella-core/0.7/scriptella-core-0.7.jar"/>
+      <pathelement path="${repository.home}/scriptella/scriptella-drivers/0.7/scriptella-drivers-0.7.jar"/>
+      <pathelement path="${repository.home}/scriptella/scriptella-tools/0.7/scriptella-tools-0.7.jar"/>
+    </classpath>
+  </taskdef>
+
+  <target name="main">
+    <etl debug="true">
+      <fileset file="test1.etl"/>
+    </etl>
+  </target>
+
+</project>

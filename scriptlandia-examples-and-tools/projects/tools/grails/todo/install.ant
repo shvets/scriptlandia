@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+
+<project name="install.ant" default="install.projects" basedir=".">
+  <property file="scriptlandia-tools.properties"/>
+
+  <filterset id="copy.filterset">
+    <filter token="java.home" value="${java.home}"/>
+    <filter token="mobile.java.home" value="${mobile.java.home}"/>
+
+    <filter token="proxy.server.host" value="${proxy.server.host}"/>
+    <filter token="proxy.server.port" value="${proxy.server.port}"/>
+
+    <filter token="repository.home" value="${repository.home}"/>
+    <filter token="maven.repo.local" value="${repository.home}"/>
+    <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
+    <filter token="ruby.home" value="${ruby.home}"/>
+
+    <filter token="scriptlandia.version" value="${scriptlandia.version}"/>
+    <filter token="classworlds.version" value="${classworlds.version}"/>
+    <filter token="maven.version" value="${maven.version}"/>
+    <filter token="ant.version" value="${ant.version.internal}"/>
+    <filter token="beanshell.version" value="${beanshell.version}"/>
+    <filter token="groovy.version" value="${groovy.version}"/>
+    <filter token="javascript.version" value="${javascript.version}"/>
+    <filter token="jruby.version" value="${jruby.version}"/>
+    <filter token="pnuts.version" value="${pnuts.version}"/>
+    <filter token="jython.version" value="${jython.version}"/>
+    <filter token="jelly.version" value="${jelly.version}"/>
+    <filter token="velocity.version" value="${velocity.version}"/>
+    <filter token="scala.version" value="${scala.version}"/>
+    <filter token="jaskell.version" value="${jaskell.version}"/>
+    <filter token="grails.version" value="${grails.version}"/>
+
+    <filter token="scriptlandia.base" value="${scriptlandia.base}"/>
+    <filter token="classworlds.base" value="${classworlds.base}"/>
+    <filter token="maven.base" value="${maven.base}"/>
+    <filter token="ant.base" value="${ant.base}"/>
+    <filter token="beanshell.base" value="${beanshell.base}"/>
+    <filter token="groovy.base" value="${groovy.base}"/>
+    <filter token="javascript.base" value="${javascript.base}"/>
+    <filter token="jruby.base" value="${jruby.base}"/>
+    <filter token="pnuts.base" value="${pnuts.base}"/>
+    <filter token="jython.base" value="${jython.base}"/>
+    <filter token="jython.lib.base" value="${jython.lib.base}"/>
+    <filter token="jelly.base" value="${jelly.base}"/>
+    <filter token="velocity.base" value="${velocity.base}"/>
+    <filter token="jaskell.base" value="${jaskell.base}"/>
+  </filterset>
+
+  <target name="copy.tools">
+    <copy todir="${scriptlandia.home}" overwrite="true">
+      <filterset refid="copy.filterset"/>
+
+      <fileset dir="projects/scriptlandia-tools/src/main/config/grails"/>
+      <fileset dir="projects/scriptlandia-tools/src/main/config/jruby"/>
+      <fileset dir="projects/scriptlandia-tools/src/main/config/ruby"/>
+    </copy>
+
+    <condition property="grails.templates.lib.is.present">
+      <available file="${repository.home}/groovy/grails-templates/${grails.version}/grails-templates-${grails.version}.jar"/>
+    </condition>
+
+    <antcall target="unzip.grails.templates.lib"/>
+
+    <copy todir="${repository.home}/groovy/grails-templates/${grails.version}/src/grails/templates/maven" 
+          file="projects/scriptlandia-tools/src/main/config/grails/pom.xml"
+          overwrite="true"/>
+
+    <copy tofile="${scriptlandia.home}/grails.sl" 
+          file="projects/scriptlandia-tools/src/main/maven/grails/pom.xml"
+          overwrite="true"/>
+
+    <copy tofile="${scriptlandia.home}/grails.sl" 
+          file="projects/scriptlandia-tools/src/main/maven/grails/pom.xml"
+          overwrite="true"/>
+  </target>
+
+  <target name="update.for.windows" if="os.is.windows">
+    <dirname property="scriptlandia.base.dirname" file="${scriptlandia.home}/launcher.bat"/>
+    <!--pathconvert targetos="unix" property="repo.path.unix">
+      <map from="c:" to=""/>
+      <path>
+        <pathelement location="${basedir}/target/deployment-repo-scm"/>
+      </path>
+@{commandLine}
+    </pathconvert-->
+
+    <condition property="jdic.native.libs.present">
+      <available file="${repository.home}/org/jdesktop/jdic-native-libs/0.9.1/jdic-native-libs-0.9.1.jar"/>
+    </condition>
+
+    <condition property="nailgun.binaries.present">
+      <available file="${repository.home}/com/martiansoftware/nailgun-bin/0.7.1/nailgun-bin-0.7.1.jar"/>
+    </condition>
+
+    <antcall target="unzip.jdic.native.libs"/>
+    <antcall target="unzip.nailgun.binaries"/>
+  </target>
+
+  <target name="copy.settings.xml.with.proxy" 
+          unless="settings.xml.file.exists" if="proxy.server.host">
+    <copy todir="${user.home}/.m2" overwrite="false">
+      <filterset>
+        <filter token="proxy.server.host" value="${proxy.server.host}"/>
+        <filter token="proxy.server.port" value="${proxy.server.port}"/>
+
+        <filter token="repository.home" value="${repository.home}"/>
+      </filterset>
+
+      <fileset dir="projects/scriptlandia-launcher/src/main/config">
+       <include name="settings.xml"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="copy.settings.xml.no.proxy" unless="settings.xml.file.exists">
+    <antcall target="copy.settings.xml.no.proxy.internal"/>
+  </target>
+
+  <target name="copy.settings.xml.no.proxy.internal" unless="proxy.server.host">
+    <copy todir="${user.home}/.m2" overwrite="false">
+      <filterset>
+        <filter token="proxy.server.host" value=""/>
+        <filter token="proxy.server.port" value=""/>
+
+        <filter token="repository.home" value="${repository.home}"/>
+      </filterset>
+
+      <fileset dir="projects/scriptlandia-launcher/src/main/config">
+       <include name="settings.xml"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="unzip.jython.lib" if="jython.lib.is.present">
+    <unzip src="${jython.lib.base}/jython-lib-${jython.version}.jar"
+           dest="${jython.base}/Lib" overwrite="false"/>
+  </target>
+
+  <target name="unzip.jruby.lib" if="jruby.lib.is.present">
+    <unzip src="${jruby.base}/jruby-lib-${jruby.version}.jar"
+           dest="${jruby.base}/lib/ruby" overwrite="false"/>
+  </target>
+
+  <target name="unzip.grails.templates.lib" if="grails.templates.lib.is.present">
+    <unzip src="${repository.home}/groovy/grails-templates/${grails.version}/grails-templates-${grails.version}.jar"
+           dest="${repository.home}/groovy/grails-templates/${grails.version}" overwrite="false"/>
+  </target>
+
+  <target name="unzip.jdic.native.libs" if="jdic.native.libs.present">
+    <unzip src="${repository.home}/org/jdesktop/jdic-native-libs/0.9.1/jdic-native-libs-0.9.1.jar"
+           dest="${repository.home}/org/jdesktop/jdic/0.9.1" overwrite="false"/>
+  </target>
+
+  <target name="unzip.nailgun.binaries" if="nailgun.binaries.present">
+    <unzip src="${repository.home}/com/martiansoftware/nailgun-bin/0.7.1/nailgun-bin-0.7.1.jar"
+           dest="${repository.home}/com/martiansoftware/nailgun-bin/0.7.1" overwrite="false"/>
+  </target>
+
+  <target name="update.for.unix" if="os.is.unix">
+    <!-- todo -->
+
+    <!-- for UNIX -->
+    <fixcrlf eol="unix" srcdir="${scriptlandia.base}" includes="*.sh"/>
+
+    <chmod perm="ugo+x">
+      <fileset dir="${scriptlandia.base}">
+        <include name="*.sh"/>
+      </fileset>
+    </chmod>
+  </target>
+
+</project>
+

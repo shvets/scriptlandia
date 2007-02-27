@@ -1,0 +1,324 @@
+// search-obsolete-versions.bsh
+
+sourceRelative("RuleProcessor.bsh");
+sourceRelative("XmlHelper.bsh");
+
+
+public class Artifact {
+  private String groupId;
+  private String artifactId;
+  private String version;
+
+  private List dependencies = new ArrayList();
+
+  public Artifact(String groupId, String artifactId, String version) {
+    this.groupId = groupId;
+    this.artifactId = artifactId;
+    this.version = version;
+  }
+
+  public void addDependencies(List dependencies) {
+    this.dependencies.clear();
+    this.dependencies.addAll(dependencies);
+  }
+
+  public String getGroupId() {
+    return groupId;
+  }
+
+  public String getArtifactId() {
+    return artifactId;
+  }
+
+  public String getVersion() {
+    return version;
+  }
+
+  public List getDependencies() {
+    return dependencies;
+  }
+
+  public int hashCode() {
+    return (groupId + artifactId + version).hashCode();
+  }
+
+  public boolean equals(Object object) {
+    if(object instanceof Artifact) {
+      Artifact artifact = (Artifact)object;
+
+      return this.groupId.equals(artifact.groupId) &&
+             this.artifactId.equals(artifact.artifactId) &&
+             this.version.equals(artifact.version);
+    }
+
+    return false;
+  }
+
+  public String toString() {
+    StringBuffer sb = new StringBuffer();
+
+    sb.append("Artifact {\n");
+    sb.append("  (groupId, artifactId, version): " + groupId + " : " + artifactId + " : " + version + "\n");
+    sb.append("  dependencies: " + dependencies + "\n");
+    sb.append("}");
+
+    return sb.toString();
+  }
+
+}
+
+public class Classification {
+  private List artifacts = new ArrayList();
+
+  private String id;
+
+  public Classification(String id) {
+    this.id = id;
+  }
+
+  public void addArtifact(Artifact artifact) {
+    if(!artifacts.contains(artifact)) {
+      artifacts.add(artifact);
+    }
+  }
+
+  public String getId() {
+    return id;
+  }
+
+  public List getArtifacts() {
+    return artifacts;
+  }
+
+  public String toString() {
+    StringBuffer sb = new StringBuffer();
+
+    sb.append("Classification {\n");
+    sb.append("  id: " + id + "\n");
+
+    sb.append("  versions: [ ");
+
+    for(int i=0; i < artifacts.size(); i++) {
+      Artifact artifact = (Artifact)artifacts.get(i);
+
+      sb.append(artifact.getVersion());
+
+      if(i < artifacts.size()-1) {
+        sb.append(", ");
+      }
+    }
+    sb.append("] \n");
+
+    sb.append("}");
+
+    return sb.toString();
+  }
+
+}
+
+
+class ObsoleteVersionXmlHelper extends XmlHelper {
+  protected String getGroupId() {
+    return getText(getElementByPath(document.getRootElement(), new String[] { "groupId" }));
+  }
+
+  protected String getArtifactId() {
+    return getText(getElementByPath(document.getRootElement(), new String[] { "artifactId" }));
+  }
+
+  protected String getVersion() {
+    return getText(getElementByPath(document.getRootElement(), new String[] { "version" }));
+  }
+
+  protected List getDependencies() {
+    List dependencies = new ArrayList();
+
+    Element dependenciesElement = getElementByPath(document.getRootElement(), new String[] { "dependencies" });
+
+    if(dependenciesElement != null) {
+      List children = dependenciesElement.getChildren();
+
+      for(int i=0; i < children.size(); i++) {
+        Element child = (Element)children.get(i);
+
+        String groupId = getText(getElementByName(child, "groupId"));
+        String artifactId = getText(getElementByName(child, "artifactId"));
+        String version = getText(getElementByName(child, "version"));
+
+        Artifact dependency = new Artifact(groupId, artifactId, version);
+
+        dependencies.add(dependency);
+      }
+    }
+
+    return dependencies;
+  }
+
+}
+
+
+class ObsoleteVersionRule implements Rule {
+  private Map classifications = new HashMap();
+
+  public Object execute(Object[] parameters) {
+    try {
+      File file = parameters[0];
+
+      ObsoleteVersionXmlHelper xmlHelper = new ObsoleteVersionXmlHelper();
+
+      xmlHelper.read(file);
+
+      String groupId = xmlHelper.getGroupId();
+      String artifactId = xmlHelper.getArtifactId();
+      String version = xmlHelper.getVersion();
+
+      Artifact artifact = new Artifact(groupId, artifactId, version);
+
+      List dependencies = xmlHelper.getDependencies();
+
+      String id = buildId(groupId, artifactId);
+
+      Classification classification = classifications.get(id);
+
+      if(classification == null) {
+        classification = new Classification(id);
+
+        classifications.put(id, classification);
+      }
+
+      artifact.addDependencies(dependencies);
+
+      classification.addArtifact(artifact);
+    }
+    catch(Throwable t) {
+      t.printStackTrace();
+    }
+
+    return null;
+  }
+
+  public Map getClassifications() {
+    return classifications;
+  }
+
+  public static String buildId(String groupId, String artifactId) {
+    return groupId + " : " + artifactId;
+  }
+
+}
+
+class ObsoleteVersionSeeker extends RuleProcessor {
+  public ObsoleteVersionSeeker() {
+    super(new ObsoleteVersionRule());
+
+    List extensions = new ArrayList();
+    extensions.add("pom");
+
+    setExtensions(extensions);
+  }
+
+  public void seek() {
+    String currentDir = new File(".").getCanonicalPath();
+
+    process(new File(currentDir));
+
+    Map classifications = rule.getClassifications();
+
+    Map duplicatedClassifications = seekDuplicatedClassifications(classifications);
+
+    System.out.println("Duplicated classifications:");
+    System.out.println();
+    System.out.println(duplicatedClassifications);
+    System.out.println();
+
+    System.out.println("Duplicated classifications found in dependencies:");
+    System.out.println();
+    seekLocations(classifications, duplicatedClassifications);
+  }
+
+  private Map seekDuplicatedClassifications(Map classifications) {
+    Map map = new HashMap();
+
+    Iterator iterator = classifications.keySet().iterator();
+
+    while(iterator.hasNext()) {
+      String id = (String)iterator.next();
+
+      Classification classification = (Classification)classifications.get(id);
+
+      List artifacts = classification.getArtifacts();
+
+      if(artifacts.size() > 1) {
+        map.put(id, classification);
+      }
+    }
+
+    return map;
+  }
+
+  private void seekLocations(Map classifications, Map duplicatedClassifications) {
+    Iterator iterator = duplicatedClassifications.keySet().iterator();
+
+    while(iterator.hasNext()) {
+      String id = (String)iterator.next();
+
+      Classification duplicatedClassification = (Classification)duplicatedClassifications.get(id);
+
+      List duplicatedArtifacts = duplicatedClassification.getArtifacts();
+
+      for(int i=0; i < duplicatedArtifacts.size(); i++) {
+        Artifact duplicatedArtifact = (Artifact)duplicatedArtifacts.get(i);
+
+        String groupId = duplicatedArtifact.getGroupId();
+        String artifactId = duplicatedArtifact.getArtifactId();
+        String version = duplicatedArtifact.getVersion();
+
+        String id = groupId + " : " + artifactId;
+
+        Iterator iterator3 = classifications.keySet().iterator();
+
+        while(iterator3.hasNext()) {
+          String id3 = (String)iterator3.next();
+
+          Classification classification = (Classification)classifications.get(id3);
+
+          List artifacts = classification.getArtifacts();
+
+          for(int j=0; j < artifacts.size(); j++) {
+            Artifact artifact = (Artifact)artifacts.get(j);
+
+            String groupId3 = artifact.getGroupId();
+            String artifactId3 = artifact.getArtifactId();
+            String version3 = artifact.getVersion();
+
+            if(groupId.equals(groupId3) && artifactId.equals(artifactId3) && version.equals(version3)) {
+              // skip
+            }
+            else {
+              List dependencies = artifact.getDependencies();
+
+              for(int i=0; i < dependencies.size(); i++) {
+                Artifact dependencyArtifact = (Artifact)dependencies.get(i);
+
+                String groupId4 = dependencyArtifact.getGroupId();
+                String artifactId4 = dependencyArtifact.getArtifactId();
+                String version4 = dependencyArtifact.getVersion();
+
+                if(groupId4.equals(groupId) && artifactId4.equals(artifactId)) {
+                  System.out.println("  Artifact " + id + " : " + version + " is present at: " +
+                                     groupId3 + " : " + artifactId3 + " : " + version3);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+ObsoleteVersionSeeker seeker = new ObsoleteVersionSeeker();
+
+seeker.seek();

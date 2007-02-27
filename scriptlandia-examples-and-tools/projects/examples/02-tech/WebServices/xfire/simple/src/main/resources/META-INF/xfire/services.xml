@@ -1,0 +1,16 @@
+<beans xmlns="http://xfire.codehaus.org/config/1.0">
+
+  <service>
+    <name>SimpleService</name>
+    <namespace>http://org.sf.ws.simpleservice/SimpleService</namespace>
+    <serviceClass>SimpleServiceImpl</serviceClass>
+  </service>
+
+  <service>
+    <name>SimpleService2</name>
+    <namespace>http://org.sf.ws.simpleservice/SimpleService2</namespace>
+    <serviceClass>SimpleService2Impl</serviceClass>
+  </service>
+
+</beans>
+

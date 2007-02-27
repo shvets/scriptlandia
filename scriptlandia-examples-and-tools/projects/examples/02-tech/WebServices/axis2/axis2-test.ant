@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="ws.client.ant" default="run">
+  <description>
+    @author Alexander Shvets
+  </description>
+
+  <property name="wsdl.file.name" value="src/main/wsdl/BookService.wsdl"/>
+  <property name="package.name" value="test"/>
+
+  <target name="init">
+    <script language="beanshell">
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      ScriptlandiaHelper.resolveMavenDependencies(project, "axis2-test.maven", "compile", false);
+    </script>
+  </target>
+
+  <target name="wsdl.get">
+    <!--setproxy proxyhost="proxyhost" proxyport="8080"/-->
+
+    <mkdir dir="src/main/wsdl"/>
+
+    <get src="http://localhost:8080/axis2/services/BookService?wsdl" dest="${wsdl.file.name}"/>
+  </target>
+
+  <target name="wsgen" depends="init, wsdl.get">
+    <script language="beanshell">
+      import org.apache.axis2.tool.ant.AntCodegenTask;
+
+      AntCodegenTask wsGenTask = new AntCodegenTask();
+      wsGenTask.setProject(project);
+
+      wsGenTask.setOutput("target/generated-source");
+
+      String wsdlFileName = project.getProperty("wsdl.file.name");
+      String packageName = project.getProperty("package.name");
+
+      wsGenTask.setWSDLFileName(wsdlFileName);
+      wsGenTask.setPackageName(packageName);
+      //wsGenTask.setDatabindingName("xmlbeans");
+
+      wsGenTask.execute();
+    </script>
+  </target>
+
+  <target name="compile" depends="init">
+    <mkdir dir="target/classes"/>
+
+    <javac destdir="target/classes"
+           includeAntRuntime="false"
+           debug="${debug}"
+           optimize="${optimize}"
+           deprecation ="${deprecation}">
+        <classpath refid="maven.compile.classpath"/>
+        <!--src path="target/generated-source"/-->
+        <src path="src/main/java"/>
+        <src path="src/test/java"/>
+    </javac>
+  </target>
+
+  <target name="run" depends="compile">
+    <java classname="WSClientTest" 
+          classpathref="maven.compile.classpath">
+      <classpath>
+        <pathelement location="target/classes"/>
+        <path refid="maven.compile.classpath"/>
+      </classpath>
+    </java>
+  </target>
+
+</project>

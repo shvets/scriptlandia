@@ -1,0 +1,83 @@
+/* Please try the NoviceExamples before the MultiMethodExamples
+To compile:
+   nicec --sourcepath=.. -a benderfsm.jar benderfsm
+To run:
+   java -jar benderfsm.jar
+*/
+
+private enum FsmState {Idle, On, Active}
+
+class BenderFSM {
+   public void event(String e) = this.transition(state,e);
+   
+   private FsmState state = Idle;
+   String last = "Unknown";
+
+
+   private void transition(FsmState s, String e){    last = "Unknown"; }
+
+// Transition  State    Event        Action 
+  
+   transition( Idle,   "TurnOn"   ){ state = On;     last = "TurnOn"; }
+   transition( On,     "TurnOff"  ){ state = Idle;   last = "TurnOff"; }
+   transition( On,     "Activate" ){ state = Active; last = "Activate"; }
+   transition( Active, "Walk"     ){                 last = "Walk"; }
+   transition( Active, "Run"      ){                 last = "Run"; }
+   transition( Active, "Talk"     ){                 last = "Talk"; }
+   transition( Active, "Stop"     ){ state = On;     last = "Stop"; }
+}
+
+
+class SuperBenderFSM extends BenderFSM {
+
+// Transition  State    Event        Action
+
+   transition( Active, "Skip"     ){                 last = "Skip"; }
+   transition( Active, "Jump"     ){                 last = "Jump"; }
+}
+
+
+void main(String[] args){ 
+
+   let String[] events = [ 
+      "TurnOn", "Activate",  
+      "Talk", "Run", 
+      "Skip", "Jump",       // Only SuperBenderFSM 
+      "Stop", "TurnOff"
+      ];
+
+   let bender = new BenderFSM();
+   let superB = new SuperBenderFSM();
+           
+   for (e : events){ 
+      println("\n" + "Bender" +"\t"+"\t"+ "Super Bender");
+      println("State: " + bender.state + "\t" + superB.state);
+
+      bender.event(e); superB.event(e);
+
+      println("Event: " + bender.last + "\t" + superB.last);
+      println("State: " + bender.state + "\t" + superB.state);
+   }
+}
+
+
+/* Notes - language
+Compare with Java and C++ at "Finite State Machine Tutorial"
+http://www.generation5.org/content/2003/FSM_Tutorial.asp
+
+   private enum FsmState {Idle, On, Active} 
+Simple enumeration of possible Bender FSM states
+
+// Transition  State    Event        Action
+   transition( Idle,   "TurnOn"   ){ state = On;     last = "TurnOn"; }
+
+Multi methods allow a declarative encoding of FSM transitions as simple 
+message sends. In BenderFSM, Nice will dispatch the transition method by 
+BenderFSM instance, and by FsmState instance, and by String value, so we
+simply provide an implementation of transition for each legal transition.
+
+   class SuperBenderFSM extends BenderFSM {
+Simply subclass the Bender Finite State Machine to create a FSM with
+additional transitions.
+
+*/

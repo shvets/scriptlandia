@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<project name="install-macrodefs" basedir=".">
+
+  <macrodef name="installPackage">
+    <attribute name="name"/>
+    <attribute name="version"/>
+
+    <sequential>
+      <exec dir="${scriptlandia.tools.home}" executable="gem.bat">
+        <arg line="install --no-rdoc --no-ri -p ${http.proxy} -v @{version} @{name}"/>
+      </exec>
+    </sequential>
+  </macrodef>
+
+</project>

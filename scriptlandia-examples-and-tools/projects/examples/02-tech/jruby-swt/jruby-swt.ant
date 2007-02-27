@@ -1,0 +1,17 @@
+<!-- jruby-swt.ant -->
+
+<project name="jruby-swt.ant" default="run" basedir=".">
+
+  <target name="run">
+    <addtoclassloader>
+      <path>
+        <fileset dir="${repository.home}/org/eclipse/swt-win32/3.2.1">
+          <include name="swt-win32-3.2.1.jar"/>
+        </fileset>
+      </path>
+    </addtoclassloader>
+
+    <script language="ruby" src="jruby-swt.ruby"/>
+  </target>
+
+</project>

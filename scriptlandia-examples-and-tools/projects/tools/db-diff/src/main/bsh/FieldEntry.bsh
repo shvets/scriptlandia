@@ -1,0 +1,35 @@
+public class FieldEntry {
+  String name;
+  String type;
+  int precision;
+  int scale;
+
+  FieldEntry(String name, String type, int precision, int scale) {
+    this.name = name;
+    this.type = type;
+    this.precision = precision;
+    this.scale = scale;
+  }
+
+  public String toString() {
+    StringBuffer sb = new StringBuffer();
+
+    sb.append(name);
+    sb.append(" ");
+    sb.append(type);
+
+    if(precision > 0) {
+      sb.append("(");
+      sb.append(precision);
+
+      if(scale > 0) {
+        sb.append(", ");
+        sb.append(scale);
+      }
+
+      sb.append(")");
+    }
+
+    return sb.toString();
+  }
+}

@@ -1,0 +1,74 @@
+/* Please try the BeginnerExamples before the IntermediateExamples
+
+   We've already created jar file toggle.jar containing the 
+   the java implementation of the Toggle class.
+   Let's see how to compile Nice using classes in a Java jar
+   and then how to reference that jar from the executable 
+   jar containing the Nice program.
+
+To compile:
+   \methcall>nicec --sourcepath .. --classpath toggle.jar -a methcall.jar methcall
+   nice.lang: parsing
+   methcall: parsing
+   methcall: typechecking
+   methcall: generating code
+   methcall: linking
+   methcall: writing in archive
+   nice.lang: writing in archive
+
+Create toggle_classpath.txt file with contents
+   Class-Path: ./ toggle.jar
+
+Update manifest to include toggle.jar on classpath
+   \methcall> jar umf toggle_classpath.txt methcall.jar
+
+To run:
+   \methcall> java -jar methcall.jar 10
+*/
+
+
+import java_toggle.*; // Java Toggle class
+
+class NToggle extends Toggle {
+    int toggleTrigger = 0;
+    int count = 0;
+}
+
+
+activate(NToggle t){ 
+    t.count++;
+    if (t.count >= t.toggleTrigger){
+        t.state = !t.state;
+        t.count = 0;
+    }
+    return t; }
+
+
+void main(String[] args){
+    int n =  nTimes(args);
+
+    var val = true;
+    let toggle = new Toggle(true);
+    for(int i=0; i<n; i++) {
+       val = toggle.activate().value();
+    }
+    println(val);
+
+    val = true;
+    let ntoggle = new NToggle(true, toggleTrigger: 3);
+    for(int i=0; i<n; i++) {
+       val = ntoggle.activate().value();
+    }
+    println(val);
+}
+
+
+int nTimes(String[] s){
+    try { return Integer.parseInt(s[0]); }
+    catch (Exception e){ return 1; } }
+
+
+/* Notes - language
+Compare with Java at the "Win32 Language Shootout"
+
+*/

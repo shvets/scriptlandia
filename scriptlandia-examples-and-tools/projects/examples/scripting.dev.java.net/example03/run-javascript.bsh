@@ -1,0 +1,18 @@
+// run-javascript.bsh
+
+sourceRelative("../load-libraries.bsh");
+
+import javax.script.*;
+
+import org.sf.scriptlandia.ScriptlandiaHelper;
+
+
+//ClassLoader myloader = ScriptlandiaHelper.class.getClassLoader();
+
+ScriptEngineManager manager = new ScriptEngineManager(/*myloader*/);
+
+ScriptEngine jsengine = manager.getEngineByName("js");
+
+print(jsengine);
+
+jsengine.eval(new FileReader("scripts/HelloJavaScript.js"));
