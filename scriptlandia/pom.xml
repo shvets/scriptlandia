@@ -14,12 +14,22 @@
   <url>http://sf.net/projects/scriptlandia/</url>
   <inceptionYear>2006</inceptionYear>
 
-<!--
   <issueManagement>
-    <system></system>
+    <system>Sourceforge bugtracker</system>
     <url>http://sourceforge.net/tracker/?group_id=127753</url>
   </issueManagement>
--->
+
+  <licenses>
+    <license>
+      <name>GNU General Public License</name>
+      <url>http://www.gnu.org/copyleft/gpl.html</url>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:svn:http://scriptlandia.svn.sourceforge.net/svnroot/scriptlandia/trunk/scriptlandia</connection>
+    <url>http://svn.sourceforge.net/scriptlandia</url>
+  </scm>
 
   <organization>
     <name>Dream Programs Inc.</name>
@@ -37,13 +47,6 @@
       </roles>
     </developer>
   </developers>
-
-  <licenses>
-    <license>
-      <name>GNU General Public License</name>
-      <url>http://www.gnu.org/copyleft/gpl.html</url>
-    </license>
-  </licenses>
 
   <modules>
     <module>projects/antrun</module>
