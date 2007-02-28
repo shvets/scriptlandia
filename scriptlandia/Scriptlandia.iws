@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project relativePaths="false" version="4">
+<project version="4" relativePaths="false">
   <component name="AspectsView" />
   <component name="BookmarkManager" />
   <component name="ChangeBrowserSettings">
@@ -17,10 +17,17 @@
     <option name="USER" value="" />
   </component>
   <component name="ChangeListManager">
-    <list comment="" default="true" name="Default" />
+    <list default="true" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.ipr" afterPath="$PROJECT_DIR$/Scriptlandia.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.iws" afterPath="$PROJECT_DIR$/Scriptlandia.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.iml" afterPath="$PROJECT_DIR$/Scriptlandia.iml" />
+    </list>
   </component>
   <component name="ChangeListSynchronizer" />
-  <component flattened_view="false" name="ChangesViewManager" show_ignored="false" />
+  <component name="ChangesViewManager" flattened_view="false" />
+  <component name="CheckStyle-IDEA">
+    <checkstyle-config />
+  </component>
   <component name="CheckinPanelState" />
   <component name="ClearCaseConfiguration">
     <option name="implementation" value="net.sourceforge.transparent.NativeClearCase" />
@@ -111,11 +118,11 @@
   </component>
   <component name="DebuggerManager">
     <line_breakpoints>
-      <breakpoint class="org.sf.scriptlandia.ClassworldStarter" line="119" package="org.sf.scriptlandia" url="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/ClassworldStarter.java">
+      <breakpoint url="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/ClassworldStarter.java" line="119" class="org.sf.scriptlandia.ClassworldStarter" package="org.sf.scriptlandia">
         <option name="ENABLED" value="true" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="false" />
@@ -124,11 +131,11 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint class="org.sf.scriptlandia.ClassworldStarter" line="81" package="org.sf.scriptlandia" url="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/ClassworldStarter.java">
+      <breakpoint url="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/ClassworldStarter.java" line="81" class="org.sf.scriptlandia.ClassworldStarter" package="org.sf.scriptlandia">
         <option name="ENABLED" value="true" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="false" />
@@ -137,11 +144,11 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint class="org.sf.scriptlandia.nailgun.NGServerShutdowner" line="28" package="org.sf.scriptlandia.nailgun" url="file://$PROJECT_DIR$/projects/scriptlandia-nailgun/src/main/java/org/sf/scriptlandia/nailgun/NGServerShutdowner.java">
+      <breakpoint url="file://$PROJECT_DIR$/projects/scriptlandia-nailgun/src/main/java/org/sf/scriptlandia/nailgun/NGServerShutdowner.java" line="28" class="org.sf.scriptlandia.nailgun.NGServerShutdowner" package="org.sf.scriptlandia.nailgun">
         <option name="ENABLED" value="true" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="false" />
@@ -150,11 +157,11 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint class="com.martiansoftware.nailgun.NGServer" line="282" package="com.martiansoftware.nailgun" url="file://$PROJECT_DIR$/projects/nailgun/src/main/java/com/martiansoftware/nailgun/NGServer.java">
+      <breakpoint url="file://$PROJECT_DIR$/projects/nailgun/src/main/java/com/martiansoftware/nailgun/NGServer.java" line="282" class="com.martiansoftware.nailgun.NGServer" package="com.martiansoftware.nailgun">
         <option name="ENABLED" value="true" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="false" />
@@ -163,11 +170,11 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint class="org.sf.scriptlandia.pomreader.PomReader" line="113" package="org.sf.scriptlandia.pomreader" url="file://$PROJECT_DIR$/projects/pomreader/src/main/java/org/sf/scriptlandia/pomreader/PomReader.java">
+      <breakpoint url="file://$PROJECT_DIR$/projects/pomreader/src/main/java/org/sf/scriptlandia/pomreader/PomReader.java" line="113" class="org.sf.scriptlandia.pomreader.PomReader" package="org.sf.scriptlandia.pomreader">
         <option name="ENABLED" value="true" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="false" />
@@ -182,9 +189,9 @@
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
         <option name="ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="false" />
@@ -197,9 +204,9 @@
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
         <option name="ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="false" />
@@ -265,7 +272,17 @@
     <option name="myCurrentFavoritesList" value="Scriptlandia" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="clean.bat" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/clean.bat">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="105" selection-start="553" selection-end="553" vertical-scroll-proportion="0.32258064">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -287,8 +304,7 @@
     <option name="SCOPE_TYPE" value="1" />
     <option name="CUSTOM_SCOPE_NAME" value="" />
     <option name="SHOW_ONLY_DIFF" value="false" />
-    <option name="SHOW_STRUCTURE" value="true" />
-    <option name="ANALYSIS_IN_BACKGROUND" value="false" />
+    <option name="myCurrentProfileName" value="Default" />
   </component>
   <component name="IntelliJConfiguration">
     <option name="PROPERTY_FILES">
@@ -363,29 +379,43 @@
     <option name="SERVER_TIMEOUT" value="20000" />
   </component>
   <component name="ProjectLevelVcsManager">
-    <OptionsSetting id="Add" value="true" />
-    <OptionsSetting id="Remove" value="true" />
-    <OptionsSetting id="Checkin" value="true" />
-    <OptionsSetting id="Checkout" value="true" />
-    <OptionsSetting id="Update" value="true" />
-    <OptionsSetting id="Status" value="true" />
-    <OptionsSetting id="Edit" value="true" />
-    <OptionsSetting id="Undo Check Out" value="true" />
-    <OptionsSetting id="Compare with SourceSafe Version" value="true" />
-    <OptionsSetting id="Get Latest Version" value="true" />
-    <ConfirmationsSetting id="Add" value="0" />
-    <ConfirmationsSetting id="Remove" value="0" />
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkin" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <OptionsSetting value="true" id="Undo Check Out" />
+    <OptionsSetting value="true" id="Compare with SourceSafe Version" />
+    <OptionsSetting value="true" id="Get Latest Version" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectPane">
     <subPane>
       <PATH>
         <PATH_ELEMENT>
-          <option name="myItemId" value="Scriptlandia" />
+          <option name="myItemId" value="Scriptlandia.ipr" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
           <option name="myItemId" value="Scriptlandia" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Scriptlandia.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
     </subPane>
@@ -407,14 +437,14 @@
     <option name="lastEditedConfigurable" value="Scriptlandia" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="0.16666667" splitterProportion="0.5" version="1">
+    <navigator currentView="ProjectPane" proportions="0.16666667" version="1" splitterProportion="0.5">
       <flattenPackages ProjectPane="true" />
       <showMembers ProjectPane="false" />
       <showModules />
       <showLibraryContents />
       <hideEmptyPackages ProjectPane="true" />
       <abbreviatePackageNames />
-      <showStructure Favorites="false" PackagesPane="false" ProjectPane="false" Scope="false" />
+      <showStructure ProjectPane="false" PackagesPane="false" Scope="false" Favorites="false" />
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
@@ -466,7 +496,7 @@
   </component>
   <component name="RestoreUpdateTree" />
   <component name="RunManager" selected="Application.bsh">
-    <configuration default="true" enabled="false" factoryName="JUnit" merge="false" type="JUnit">
+    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -485,14 +515,35 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="true" factoryName="Remote" type="Remote">
+    <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
     </configuration>
-    <configuration default="true" enabled="false" factoryName="Application" merge="false" type="Application">
+    <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <option name="PROPERTIES_FILE" />
+      <properties />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
@@ -505,7 +556,17 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="true" factoryName="Applet" type="Applet">
+    <configuration default="true" type="RUBY_RUN_CONFIGURATION_TYPE" factoryName="Ruby">
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="MODULE_NAME" VALUE="" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
       <option name="HTML_FILE_NAME" />
@@ -517,7 +578,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
     </configuration>
-    <configuration default="false" enabled="false" factoryName="Application" merge="false" name="maven" type="Application">
+    <configuration default="false" name="maven" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.sf.scriptlandia.Launcher" />
       <option name="VM_PARAMETERS" value="-Dclassworlds.conf=c:\scriptlandia\dummy" />
       <option name="PROGRAM_PARAMETERS" value="&quot;-m&quot; &quot;C:\Work\Scriptlandia-4\examples\src\main\maven\test.maven&quot; " />
@@ -543,7 +604,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" enabled="false" factoryName="Application" merge="false" name="velocity" type="Application">
+    <configuration default="false" name="velocity" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.sf.scriptlandia.Launcher" />
       <option name="VM_PARAMETERS" value="-Dclassworlds.conf=c:\scriptlandia\dummy" />
       <option name="PROGRAM_PARAMETERS" value="&quot;-m&quot; &quot;C:\Work\Scriptlandia-4\examples\src\main\velocity\example1\context.bsh " />
@@ -569,7 +630,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" enabled="false" factoryName="Application" merge="false" name="bsh" type="Application">
+    <configuration default="false" name="bsh" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.codehaus.classworlds.Launcher" />
       <option name="VM_PARAMETERS" value="-Drepository.home=d:\maven-repository -Dclassworlds.conf=d:\scriptlandia\scriptlandia.conf" />
       <option name="PROGRAM_PARAMETERS" value="&quot;-deps.file.name=d:\maven-repository\org\sf\scriptlandia\beanshell-starter\2.2.0\beanshell-starter-2.2.0.pom&quot; &quot;-main.class.name=bsh.Interpreter&quot; D:\Work\scriptlandia-2.2.0\examples\src\main\01-lang\bsh\Hello.bsh" />
@@ -595,7 +656,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" enabled="false" factoryName="Application" merge="false" name="ant" type="Application">
+    <configuration default="false" name="ant" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.sf.scriptlandia.Launcher" />
       <option name="VM_PARAMETERS" value="-Dclassworlds.conf=c:\scriptlandia\dummy" />
       <option name="PROGRAM_PARAMETERS" value="&quot;-m&quot; &quot;C:\Work\Scriptlandia-4\examples\src\main\ant\Hello.ant&quot;" />
@@ -615,7 +676,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" enabled="false" factoryName="Application" merge="false" name="mvn" type="Application">
+    <configuration default="false" name="mvn" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.sf.scriptlandia.Launcher" />
       <option name="VM_PARAMETERS" value="-Drepository.home=C:\scriptlandia\maven.cwd" />
       <option name="PROGRAM_PARAMETERS" value="&quot;clean&quot;" />
@@ -641,7 +702,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" enabled="false" factoryName="Application" merge="false" name="grails" type="Application">
+    <configuration default="false" name="grails" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.sf.scriptlandia.Launcher" />
       <option name="VM_PARAMETERS" value="-Drepository.home=c:/maven-repository -Dclassworlds.conf=dummy -Dgrails.home=c:\scriptlandia\grails-templates -Dbasedir=C:\Work\Scriptlandia-4\scriptlandia\projects\examples\src\main\groovy\grails\testgrails" />
       <option name="PROGRAM_PARAMETERS" value="&quot;-m&quot; &quot;c:/maven-repository\org\sf\scriptlandia\grails\2.1.1\grails-2.1.1.pom&quot; &quot;-c&quot; &quot;org.sf.scriptlandia.AntStarter&quot; &quot;-f&quot; &quot;c:\scriptlandia\grails-templates\src\grails\build.xml&quot; &quot;run-app&quot;" />
@@ -667,7 +728,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" enabled="false" factoryName="Application" merge="false" name="neptune" type="Application">
+    <configuration default="false" name="neptune" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.sf.scriptlandia.Launcher" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="-m c:\maven-repository/org/sf/scriptlandia/neptune-starter/2.1.1/neptune-starter-2.1.1.pom -c org.sf.scriptlandia.NeptuneStarter" />
@@ -682,7 +743,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" enabled="false" factoryName="Application" merge="false" name="Unnamed" type="Application">
+    <configuration default="false" name="Unnamed" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.sf.scriptlandia.test.TestAssociation" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -703,7 +764,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" enabled="false" factoryName="Application" merge="false" name="ng-server" type="Application">
+    <configuration default="false" name="ng-server" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.codehaus.classworlds.Launcher" />
       <option name="VM_PARAMETERS" value="-Drepository.home=d:\maven-repository -Dclassworlds.conf=d:\scriptlandia\scriptlandia.conf " />
       <option name="PROGRAM_PARAMETERS" value="-launcher.class.name=org.sf.scriptlandia.nailgun.NGServerLauncher" />
@@ -724,7 +785,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" enabled="false" factoryName="Application" merge="false" name="cwd" type="Application">
+    <configuration default="false" name="cwd" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.codehaus.classworlds.Launcher" />
       <option name="VM_PARAMETERS" value="-Drepository.home=c:\maven-repository -Dclassworlds.conf=c:\scriptlandia\scriptlandia.conf" />
       <option name="PROGRAM_PARAMETERS" value="-deps.file.name=c:\maven-repository\org\sf\scriptlandia\classworld-starter\2.2.0\classworld-starter-2.2.0.pom -main.class.name=org.sf.scriptlandia.ClassworldStarter -script.name=c:\Work\scriptlandia-2.2.0\tools\projects\jlgui\jlgui.cwd" />
@@ -745,7 +806,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" enabled="false" factoryName="Application" merge="false" name="project-installer" type="Application">
+    <configuration default="false" name="project-installer" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.sf.scriptlandia.install.ProjectInstaller" />
       <option name="VM_PARAMETERS" value="-Dbasedir=projects/bootstrap-mini -Dbuild.required=false -Dscriptlandia.home=c:\scriptlandia -Drepository.home=c:\maven-repository" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -766,7 +827,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" enabled="false" factoryName="Application" merge="false" name="ng-tray" type="Application">
+    <configuration default="false" name="ng-tray" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.codehaus.classworlds.Launcher" />
       <option name="VM_PARAMETERS" value="-Drepository.home=d:\maven-repository -Dclassworlds.conf=d:\scriptlandia\scriptlandia.conf " />
       <option name="PROGRAM_PARAMETERS" value="-ngtray" />
@@ -787,7 +848,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" enabled="false" factoryName="Application" merge="false" name="config" type="Application">
+    <configuration default="false" name="config" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.codehaus.classworlds.Launcher" />
       <option name="VM_PARAMETERS" value="-Dbeanshell.version=2.0b4 -Dant.version.internal=1.7.0 -Drepository.home=d:\maven-repository -Dclassworlds.conf=d:\scriptlandia\scriptlandia.conf " />
       <option name="PROGRAM_PARAMETERS" value="-config" />
@@ -808,7 +869,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" enabled="false" factoryName="Application" merge="false" name="gleam" type="Application">
+    <configuration default="false" name="gleam" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.codehaus.classworlds.Launcher" />
       <option name="VM_PARAMETERS" value="-Dbeanshell.version=2.0b4 -Dant.version.internal=1.7.0 -Drepository.home=c:\maven-repository -Dclassworlds.conf=c:\scriptlandia\scriptlandia.conf " />
       <option name="PROGRAM_PARAMETERS" value="&quot;-deps.file.name=c:\maven-repository\gleam\gleam\0.8.9\gleam-0.8.9.pom&quot; &quot;-main.class.name=gleam.Gleam&quot; C:\Work\scriptlandia-2.2.0\examples\src\main\01-lang\scheme\test1.scm" />
@@ -829,7 +890,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" factoryName="Remote" name="maven-remote" type="Remote">
+    <configuration default="false" name="maven-remote" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
@@ -850,7 +911,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" factoryName="Remote" name="grails-remote" type="Remote">
+    <configuration default="false" name="grails-remote" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
@@ -871,7 +932,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" factoryName="Remote" name="bsh-remote" type="Remote">
+    <configuration default="false" name="bsh-remote" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
@@ -892,38 +953,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="true" factoryName="Ruby" type="RUBY_RUN_CONFIGURATION_TYPE">
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="MODULE_NAME" VALUE="" />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
-    <configuration default="true" enabled="false" factoryName="TestNG" merge="false" type="TestNG">
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ADDITIONAL_CLASS_PATH" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <option name="PROPERTIES_FILE" />
-      <properties />
-    </configuration>
-    <configuration default="false" enabled="false" factoryName="TestNG" merge="false" name="testng" type="TestNG">
+    <configuration default="false" name="testng" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
       <module name="Scriptlandia" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
@@ -986,6 +1016,7 @@
         </PATH_ELEMENT>
       </PATH>
     </subPane>
+    <subPane subId="Problems" />
     <subPane subId="Production">
       <PATH>
         <PATH_ELEMENT>
@@ -994,7 +1025,6 @@
         </PATH_ELEMENT>
       </PATH>
     </subPane>
-    <subPane subId="Problems" />
     <subPane subId="Project">
       <PATH>
         <PATH_ELEMENT USER_OBJECT="Root">
@@ -1039,6 +1069,8 @@
     <option name="myReportErrorsAsWarnings" value="true" />
   </component>
   <component name="SvnChangesBrowserSettings">
+    <option name="USE_AUTHOR_FIELD" value="true" />
+    <option name="AUTHOR" value="" />
     <option name="LOCATION" value="" />
     <option name="USE_PROJECT_SETTINGS" value="true" />
     <option name="USE_ALTERNATE_LOCATION" value="false" />
@@ -1046,11 +1078,12 @@
   <component name="SvnConfiguration">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
+    <option name="PROCESS_UNRESOLVED" value="false" />
     <option name="LAST_MERGED_REVISION" />
     <option name="UPDATE_RUN_STATUS" value="false" />
     <option name="UPDATE_RECURSIVELY" value="true" />
     <option name="MERGE_DRY_RUN" value="false" />
-    <configuration useDefault="true">C:\Documents and Settings\alex\Application Data\Subversion</configuration>
+    <configuration useDefault="true">C:\Documents and Settings\shvetsa\Application Data\Subversion</configuration>
     <checkoutURL>https://scriptlandia.svn.sourceforge.net/svnroot/scriptlandia</checkoutURL>
   </component>
   <component name="TodoView" selected-index="0">
@@ -1068,62 +1101,63 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame extended-state="0" height="734" width="1024" x="0" y="0" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1024" height="738" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="false" anchor="bottom" auto_hide="false" id="SVN Repositories" internal_type="DOCKED" order="8" type="DOCKED" visible="false" weight="0.5369458" />
-      <window_info active="false" anchor="left" auto_hide="false" id="UI Designer" internal_type="DOCKED" order="4" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="true" anchor="bottom" auto_hide="false" id="CVS" internal_type="DOCKED" order="11" type="DOCKED" visible="true" weight="0.5730706" />
-      <window_info active="false" anchor="right" auto_hide="false" id="IDEtalk" internal_type="DOCKED" order="3" type="DOCKED" visible="false" weight="0.32958034" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="TODO" internal_type="DOCKED" order="7" type="DOCKED" visible="false" weight="0.32459018" />
-      <window_info active="false" anchor="left" auto_hide="true" id="Project" internal_type="DOCKED" order="0" type="DOCKED" visible="false" weight="0.2753623" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="Find" internal_type="DOCKED" order="1" type="DOCKED" visible="false" weight="0.31604537" />
-      <window_info active="false" anchor="left" auto_hide="true" id="Structure" internal_type="DOCKED" order="1" type="DOCKED" visible="false" weight="0.2517912" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="Messages" internal_type="DOCKED" order="13" type="DOCKED" visible="false" weight="0.4132901" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="Inspection" internal_type="DOCKED" order="6" type="DOCKED" visible="false" weight="0.4" />
-      <window_info active="false" anchor="right" auto_hide="false" id="Module Dependencies" internal_type="DOCKED" order="6" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="Dependency Viewer" internal_type="DOCKED" order="14" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="false" anchor="right" auto_hide="false" id="Palette" internal_type="DOCKED" order="8" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="false" anchor="right" auto_hide="true" id="Ant Build" internal_type="DOCKED" order="2" type="DOCKED" visible="false" weight="0.32665965" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="Changes" internal_type="DOCKED" order="22" type="DOCKED" visible="false" weight="0.32840723" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="Run" internal_type="DOCKED" order="2" type="DOCKED" visible="false" weight="0.07881773" />
-      <window_info active="false" anchor="right" auto_hide="false" id="Hierarchy" internal_type="DOCKED" order="3" type="DOCKED" visible="false" weight="0.25" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="Debug" internal_type="DOCKED" order="4" type="DOCKED" visible="false" weight="0.40518638" />
-      <window_info active="false" anchor="right" auto_hide="false" id="Commander" internal_type="DOCKED" order="1" type="DOCKED" visible="false" weight="0.39831403" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="IDEtalk Messages" internal_type="DOCKED" order="8" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="Version Control" internal_type="DOCKED" order="10" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="Duplicates" internal_type="DOCKED" order="8" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="false" anchor="right" auto_hide="false" id="Maven-2 Build" internal_type="DOCKED" order="3" type="DOCKED" visible="false" weight="0.25605902" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="Regex" internal_type="DOCKED" order="8" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="DocTree" internal_type="DOCKED" order="24" type="DOCKED" visible="false" weight="0.61374795" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="Maven-2 Build Output" internal_type="DOCKED" order="8" type="DOCKED" visible="true" weight="0.32786885" />
-      <window_info active="false" anchor="right" auto_hide="false" id="ScratchPad" internal_type="DOCKED" order="11" type="DOCKED" visible="false" weight="0.32953367" />
-      <window_info active="false" anchor="right" auto_hide="false" id="TestDox" internal_type="DOCKED" order="0" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="Minimized stickies" internal_type="DOCKED" order="8" type="DOCKED" visible="false" weight="0.32843137" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="IDEtalk History" internal_type="DOCKED" order="17" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="false" anchor="bottom" auto_hide="true" id="Dilbert" internal_type="DOCKED" order="9" type="DOCKED" visible="false" weight="0.38625205" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="Lib Finder" internal_type="DOCKED" order="20" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="TunnelliJ 1.2" internal_type="DOCKED" order="21" type="DOCKED" visible="false" weight="0.32840723" />
-      <window_info active="false" anchor="right" auto_hide="false" id="IDE talk" internal_type="DOCKED" order="10" type="DOCKED" visible="false" weight="0.26680455" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="JavaDoc Browser" internal_type="DOCKED" order="23" type="DOCKED" visible="false" weight="0.28735632" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="SQL" internal_type="DOCKED" order="8" type="DOCKED" visible="false" weight="0.32840723" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="Message" internal_type="DOCKED" order="0" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="false" anchor="right" auto_hide="false" id="Favorites" internal_type="DOCKED" order="4" type="DOCKED" visible="false" weight="0.32983193" />
-      <window_info active="false" anchor="right" auto_hide="false" id="Tapestry Palette" internal_type="DOCKED" order="9" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="Problems" internal_type="DOCKED" order="15" type="DOCKED" visible="false" weight="0.31862745" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="IView" internal_type="DOCKED" order="8" type="DOCKED" visible="false" weight="0.3295082" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="IntelliTail" internal_type="DOCKED" order="16" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="false" anchor="left" auto_hide="false" id="simpleUML" internal_type="DOCKED" order="3" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="BSFConsole" internal_type="DOCKED" order="18" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="false" anchor="right" auto_hide="false" id="TCPMON" internal_type="DOCKED" order="5" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="JProfiler" internal_type="DOCKED" order="19" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="false" anchor="left" auto_hide="false" id="Compare Directories" internal_type="DOCKED" order="3" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="false" anchor="left" auto_hide="false" id="Web" internal_type="DOCKED" order="2" type="DOCKED" visible="false" weight="0.25" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="Checkstyle" internal_type="DOCKED" order="12" type="DOCKED" visible="false" weight="0.32840723" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="EJB" internal_type="DOCKED" order="3" type="DOCKED" visible="false" weight="0.25" />
-      <window_info active="false" anchor="bottom" auto_hide="false" id="Cvs" internal_type="DOCKED" order="5" type="DOCKED" visible="false" weight="0.25" />
-      <window_info active="false" anchor="right" auto_hide="false" id="File View" internal_type="DOCKED" order="7" type="DOCKED" visible="false" weight="0.33" />
-      <window_info active="false" anchor="left" auto_hide="false" height="192" id="IntelliCalc" internal_type="DOCKED" order="3" type="FLOATING" visible="false" weight="0.33" width="178" x="423" y="273" />
+      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53594774" order="8" />
+      <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" order="8" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="4" />
+      <window_info id="Maven-2 Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25605902" order="3" />
+      <window_info id="Regex" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958034" order="3" />
+      <window_info id="DocTree" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.61374795" order="24" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32459018" order="7" />
+      <window_info id="ScratchPad" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" order="11" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="Minimized stickies" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" order="8" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32665965" order="2" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31862745" order="15" />
+      <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38625205" order="9" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40518638" order="4" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="10" />
+      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
+      <window_info id="CVS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5730706" order="11" />
+      <window_info id="Checkstyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" order="12" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2753623" order="0" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31604537" order="1" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2517912" order="1" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4132901" order="13" />
+      <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="6" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="14" />
+      <window_info id="TunnelliJ 1.2" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" order="21" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3267974" order="22" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.07881773" order="2" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="3" />
+      <window_info id="File View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39831403" order="1" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="IntelliCalc" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" order="3" x="423" y="273" width="178" height="192" />
+      <window_info id="Maven-2 Build Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32786885" order="8" />
+      <window_info id="TestDox" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
+      <window_info id="IDEtalk History" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="17" />
+      <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="Lib Finder" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="20" />
+      <window_info id="IDE talk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26680455" order="10" />
+      <window_info id="JavaDoc Browser" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28735632" order="23" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
+      <window_info id="Favorites" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983193" order="4" />
+      <window_info id="Tapestry Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="9" />
+      <window_info id="IView" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295082" order="8" />
+      <window_info id="IntelliTail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="16" />
+      <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
+      <window_info id="BSFConsole" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="18" />
+      <window_info id="TCPMON" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="5" />
+      <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="19" />
+      <window_info id="Compare Directories" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
+      <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="3" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
     </layout>
   </component>
   <component name="TransparentCheckInConfiguration">
@@ -1152,15 +1186,18 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="PERFORM_UPDATE_IN_BACKGROUND" value="false" />
     <option name="PERFORM_COMMIT_IN_BACKGROUND" value="false" />
+    <option name="PUT_FOCUS_INTO_COMMENT" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="LAST_COMMIT_MESSAGE" />
+    <option name="SAVE_LAST_COMMIT_MESSAGE" value="true" />
+    <option name="CHECKIN_DIALOG_SPLITTER_PROPORTION" value="0.8" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
     <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
     <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
     <option name="ERROR_OCCURED" value="false" />
-    <option name="ACTIVE_VCS_NAME" />
+    <option name="ACTIVE_VCS_NAME" value="svn" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
@@ -1200,6 +1237,7 @@
       <option name="RECURSIVE" value="false" />
       <option name="VERSION" />
     </GetOptions>
+    <VssConfigurableExcludedFilesTag />
   </component>
   <component name="XPathView.XPathProjectComponent">
     <history />
@@ -1221,99 +1259,106 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java">
-      <provider editor-type-id="text-editor" selected="true">
-        <state column="15" line="66" selection-end="1978" selection-start="1978" vertical-scroll-proportion="0.029010238">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="15" selection-start="1978" selection-end="1978" vertical-scroll-proportion="0.029010238">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-common/src/main/java/org/sf/scriptlandia/launcher/SimpleLauncher.java">
-      <provider editor-type-id="text-editor" selected="true">
-        <state column="14" line="108" selection-end="2429" selection-start="2429" vertical-scroll-proportion="0.5153584">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="14" selection-start="2429" selection-end="2429" vertical-scroll-proportion="0.5153584">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstallerFrame.java">
-      <provider editor-type-id="text-editor" selected="true">
-        <state column="53" line="26" selection-end="643" selection-start="643" vertical-scroll-proportion="0.029010238">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="53" selection-start="643" selection-end="643" vertical-scroll-proportion="0.029010238">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ProjectInstaller.java">
-      <provider editor-type-id="text-editor" selected="true">
-        <state column="13" line="0" selection-end="13" selection-start="13" vertical-scroll-proportion="0.0">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstaller.java">
-      <provider editor-type-id="text-editor" selected="true">
-        <state column="120" line="546" selection-end="18343" selection-start="18343" vertical-scroll-proportion="0.026642984">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="546" column="120" selection-start="18343" selection-end="18343" vertical-scroll-proportion="0.026642984">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/bsf/ScalaEngine.java">
-      <provider editor-type-id="text-editor" selected="true">
-        <state column="29" line="16" selection-end="490" selection-start="490" vertical-scroll-proportion="0.026642984">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="29" selection-start="490" selection-end="490" vertical-scroll-proportion="0.026642984">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/MavenStarter.java">
-      <provider editor-type-id="text-editor" selected="true">
-        <state column="4" line="26" selection-end="713" selection-start="713" vertical-scroll-proportion="0.4884547">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="4" selection-start="713" selection-end="713" vertical-scroll-proportion="0.4884547">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/WarStarter.java">
-      <provider editor-type-id="text-editor" selected="true">
-        <state column="4" line="45" selection-end="1195" selection-start="1195" vertical-scroll-proportion="0.40852576">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="4" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.40852576">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/bootstrap-mini/src/main/java/org/apache/maven/bootstrap/model/ProjectResolver.java">
-      <provider editor-type-id="text-editor" selected="true">
-        <state column="86" line="93" selection-end="3673" selection-start="3673" vertical-scroll-proportion="2.3540146">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="86" selection-start="3673" selection-end="3673" vertical-scroll-proportion="2.3540146">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/ScriptlandiaHelper.java">
-      <provider editor-type-id="text-editor" selected="true">
-        <state column="41" line="41" selection-end="1261" selection-start="1261" vertical-scroll-proportion="0.026642984">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="41" selection-start="1261" selection-end="1261" vertical-scroll-proportion="0.026642984">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/ScriptlandiaLauncher.java">
-      <provider editor-type-id="text-editor" selected="true">
-        <state column="0" line="151" selection-end="4368" selection-start="4368" vertical-scroll-proportion="0.7815275">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="151" column="0" selection-start="4368" selection-end="4368" vertical-scroll-proportion="0.7815275">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/DepsLauncher.java">
-      <provider editor-type-id="text-editor" selected="true">
-        <state column="0" line="130" selection-end="3176" selection-start="3176" vertical-scroll-proportion="0.62166965">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="0" selection-start="3176" selection-end="3176" vertical-scroll-proportion="0.62166965">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/pomreader/src/main/java/org/sf/scriptlandia/pomreader/PomReader.java">
-      <provider editor-type-id="text-editor" selected="true">
-        <state column="0" line="92" selection-end="2815" selection-start="2815" vertical-scroll-proportion="0.026642984">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="0" selection-start="2815" selection-end="2815" vertical-scroll-proportion="0.026642984">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/bootstrap-mini/src/main/java/org/apache/maven/bootstrap/model/ModelReader.java">
-      <provider editor-type-id="text-editor" selected="true">
-        <state column="0" line="462" selection-end="14266" selection-start="14266" vertical-scroll-proportion="0.6113139">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="462" column="0" selection-start="14266" selection-end="14266" vertical-scroll-proportion="0.6113139">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clean.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="105" selection-start="553" selection-end="553" vertical-scroll-proportion="0.32258064">
           <folding />
         </state>
       </provider>
@@ -1327,7 +1372,7 @@
   <component name="org.intellij.scratchpad.ScratchPadProjectComponent">
     <ScratchPad>
       <Name>Default</Name>
-      <Contents xml:space="preserve" />
+      <Contents xml:space="preserve"></Contents>
     </ScratchPad>
   </component>
   <component name="simpleUML.DiagramSettingsWorkspace" />

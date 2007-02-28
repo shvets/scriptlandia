@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module relativePaths="true" type="JAVA_MODULE" version="4">
+<module version="4" relativePaths="true" type="JAVA_MODULE">
   <component name="ModuleRootManager" />
-  <component LANGUAGE_LEVEL="JDK_1_5" inherit-compiler-output="false" name="NewModuleRootManager">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder isTestSource="false" url="file://$MODULE_DIR$/projects/antrun/src/main/java" />
-      <sourceFolder isTestSource="false" url="file://$MODULE_DIR$/projects/bootstrap-mini/src/main/java" />
-      <sourceFolder isTestSource="false" url="file://$MODULE_DIR$/projects/image4j/src/main/java" />
-      <sourceFolder isTestSource="false" url="file://$MODULE_DIR$/projects/nailgun/src/main/java" />
-      <sourceFolder isTestSource="false" url="file://$MODULE_DIR$/projects/pomreader/src/main/java" />
-      <sourceFolder isTestSource="false" url="file://$MODULE_DIR$/projects/scriptlandia-common/src/main/java" />
-      <sourceFolder isTestSource="false" url="file://$MODULE_DIR$/projects/scriptlandia-installer/src/main/java" />
-      <sourceFolder isTestSource="false" url="file://$MODULE_DIR$/projects/scriptlandia-launcher/src/main/java" />
-      <sourceFolder isTestSource="false" url="file://$MODULE_DIR$/projects/scriptlandia-nailgun/src/main/java" />
-      <sourceFolder isTestSource="false" url="file://$MODULE_DIR$/projects/scriptlandia/src/main/java" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/antrun/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/bootstrap-mini/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/image4j/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/nailgun/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/pomreader/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/scriptlandia-common/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/scriptlandia-installer/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/scriptlandia-launcher/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/scriptlandia-nailgun/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/scriptlandia/src/main/java" isTestSource="false" />
     </content>
-    <orderEntry jdkName="1.6" jdkType="JavaSDK" type="jdk" />
-    <orderEntry forTests="false" type="sourceFolder" />
+    <orderEntry type="jdk" jdkName="1.6" jdkType="JavaSDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
