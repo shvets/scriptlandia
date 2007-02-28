@@ -614,26 +614,6 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
   }
 
   public void install(final String[] args) throws LauncherException {
-    updatePrperties();
-
-    if(!languagesPanelUpdated) {
-      update();
-    }
-
-    for(int i=0; i < languages.size(); i++) {
-      Map language = (Map)languages.get(i);
-      String name = (String)language.get("name");
-
-      System.setProperty(name + ".install", String.valueOf(checkBoxes[i].isSelected()));
-    }
-
-    try {
-      save();
-    }
-    catch (IOException e) {
-      throw new LauncherException(e);
-    }
-  
     final PrintStream oldOut = System.out;
     final PrintStream oldErr = System.err;
 
@@ -649,6 +629,26 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
     try {
       System.setOut(new PrintStream(filterOutputStream));
       System.setErr(new PrintStream(filterOutputStream));
+
+      updatePrperties();
+
+      if(!languagesPanelUpdated) {
+        update();
+      }
+
+      for(int i=0; i < languages.size(); i++) {
+        Map language = (Map)languages.get(i);
+        String name = (String)language.get("name");
+
+        System.setProperty(name + ".install", String.valueOf(checkBoxes[i].isSelected()));
+      }
+
+      try {
+        save();
+      }
+      catch (IOException e) {
+        throw new LauncherException(e);
+      }
 
       GuiInstaller.super.install(args);
     }
