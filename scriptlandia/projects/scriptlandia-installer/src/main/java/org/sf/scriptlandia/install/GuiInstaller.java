@@ -47,6 +47,18 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
 
   private boolean languagesPanelUpdated = false;
 
+  private final PrintStream oldOut = System.out;
+  private final PrintStream oldErr = System.err;
+
+  private final FilterOutputStream filterOutputStream = new FilterOutputStream(new ByteArrayOutputStream()) {
+    public void write(byte b[], int off, int len) throws IOException {
+      super.write(b, off, len);
+
+      console.append(new String(b, off, len));
+      console.setCaretPosition(console.getDocument().getLength());
+    }
+  };
+
   private GuiInstallerFrame frame = new GuiInstallerFrame();
 
   private String[] args;
@@ -58,6 +70,9 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
    */
   public GuiInstaller(String[] args) throws LauncherException {
     this.args = args;
+
+    System.setOut(new PrintStream(filterOutputStream));
+    System.setErr(new PrintStream(filterOutputStream));
 
     try {
       load();
@@ -614,7 +629,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
   }
 
   public void install(final String[] args) throws LauncherException {
-    final PrintStream oldOut = System.out;
+/*    final PrintStream oldOut = System.out;
     final PrintStream oldErr = System.err;
 
     final FilterOutputStream filterOutputStream = new FilterOutputStream(new ByteArrayOutputStream()) {
@@ -625,10 +640,11 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
         console.setCaretPosition(console.getDocument().getLength());
       }
     };
-
+  */
     try {
-      System.setOut(new PrintStream(filterOutputStream));
+/*      System.setOut(new PrintStream(filterOutputStream));
       System.setErr(new PrintStream(filterOutputStream));
+*/
 
       updatePrperties();
 
@@ -656,8 +672,8 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
       e.printStackTrace();
     }
     finally {
-      System.setOut(oldOut);
-      System.setErr(oldErr);
+//      System.setOut(oldOut);
+//      System.setErr(oldErr);
     }
   }
 
