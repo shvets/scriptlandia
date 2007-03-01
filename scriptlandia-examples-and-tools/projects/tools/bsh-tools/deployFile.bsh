@@ -1,0 +1,46 @@
+// deployFile.bsh
+
+sourceRelative("ChecksumScript.bsh");
+
+import org.sf.scriptlandia.ScriptlandiaHelper;
+
+void deployFile(String[] args) {
+  String groupId = args[0].replace('.', '/');
+  String artifactId = args[1];
+  String version = args[2];
+  String file = args[3];
+
+  // 1. Installing artifact.
+
+  String[] args = new String[] {
+    "install:install-file",
+    "-Dfile=" + file,
+    "-DgroupId=" + groupId,
+    "-DartifactId=" + artifactId,
+    "-Dversion=" + version,
+    "-Dpackaging=" + "jar",
+    "-DgeneratePom=true"
+  };
+
+  ScriptlandiaHelper.executeMaven(args);
+
+  // 2. Generating checksums
+
+  String repositoryHome = System.getProperty("repository.home");
+
+  String dir = repositoryHome + "/" + groupId + "/" + artifactId + "/" + version;
+
+  ChecksumScript checksum = new ChecksumScript();
+
+  checksum.calculate(new File(dir));
+
+  // 3. Moving to remote server
+
+}
+
+if(bsh.args.length < 4) {
+  print("Use: deployFile.bsh <groupId> <artifactId> <version> <file>");
+}
+else {
+  deployFile(bsh.args);
+}
