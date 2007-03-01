@@ -22,36 +22,41 @@ class ChecksumScript {
   }
 
   void calculate(File dir) {
-    File[] files = dir.listFiles();
+    if(!dir.exists()) {
+      print("File " + dir + " does not exist.");
+    }
+    else {
+      File[] files = dir.listFiles();
 
-    for(int i=0; i < files.length; i++) {
-      File file = files[i];
+      for(int i=0; i < files.length; i++) {
+        File file = files[i];
 
-      if(file.isDirectory()) {
-        calculate(file);
-      }
-      else if(file.isFile()) {
-        String ext = getExtension(file.getName());
+        if(file.isDirectory()) {
+          calculate(file);
+        }
+        else if(file.isFile()) {
+          String ext = getExtension(file.getName());
 
-        if(ext != null && !ext.contains("md5") && !ext.contains("sha")) {
-          Checksum checksumTask = new Checksum(); 
+          if(ext != null && !ext.contains("md5") && !ext.contains("sha")) {
+            Checksum checksumTask = new Checksum(); 
 
-          checksumTask.setProject(new Project());
-          checksumTask.setFile(file);
-          checksumTask.setForceOverwrite(false);
+            checksumTask.setProject(new Project());
+            checksumTask.setFile(file);
+            checksumTask.setForceOverwrite(false);
 
-          checksumTask.setAlgorithm("sha1");
+            checksumTask.setAlgorithm("sha1");
 
-          if(!new File(file.getPath() + ".sha1").exists() &&
-             !new File(file.getPath() + ".SHA1").exists()) {
-            checksumTask.execute();
-          }
+            if(!new File(file.getPath() + ".sha1").exists() &&
+               !new File(file.getPath() + ".SHA1").exists()) {
+              checksumTask.execute();
+            }
 
-          checksumTask.setAlgorithm("md5");
+            checksumTask.setAlgorithm("md5");
 
-          if(!new File(file.getPath() + ".md5").exists()  &&
-             !new File(file.getPath() + ".MD5").exists()) {
-            checksumTask.execute();
+            if(!new File(file.getPath() + ".md5").exists()  &&
+               !new File(file.getPath() + ".MD5").exists()) {
+              checksumTask.execute();
+            }
           }
         }
       }
