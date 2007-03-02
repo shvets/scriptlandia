@@ -69,6 +69,7 @@
     <module>projects/war</module>
     <module>projects/jawk</module>
     <module>projects/janino</module>
+    <!--module>projects/xruby</module-->
 
     <module>projects/java-compiler</module>
   </modules>

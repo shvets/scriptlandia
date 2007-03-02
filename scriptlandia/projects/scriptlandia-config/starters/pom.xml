@@ -68,6 +68,7 @@
     <module>projects/war-starter</module>
     <module>projects/jawk-starter</module>
     <module>projects/janino-starter</module>
+    <!--module>projects/xruby-starter</module-->
   </modules>
 
 </project>

@@ -19,7 +19,7 @@
 
     <dependency>
       <groupId>org.apache.ant</groupId>
-      <artifactId>ant-launcher</artifactId>
+      <artifactId>ant-apache-bcel</artifactId>
       <version>1.7.0</version>
     </dependency>
 
@@ -37,7 +37,49 @@
 
     <dependency>
       <groupId>org.apache.ant</groupId>
+      <artifactId>ant-apache-oro</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ant</groupId>
+      <artifactId>ant-apache-regexp</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ant</groupId>
+      <artifactId>ant-apache-resolver</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ant</groupId>
       <artifactId>ant-commons-logging</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ant</groupId>
+      <artifactId>ant-commons-net</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ant</groupId>
+      <artifactId>ant-javamail</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ant</groupId>
+      <artifactId>ant-jdepend</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ant</groupId>
+      <artifactId>ant-jsch</artifactId>
       <version>1.7.0</version>
     </dependency>
 
@@ -49,13 +91,25 @@
 
     <dependency>
       <groupId>org.apache.ant</groupId>
+      <artifactId>ant-launcher</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ant</groupId>
       <artifactId>ant-nodeps</artifactId>
       <version>1.7.0</version>
     </dependency>
 
     <dependency>
       <groupId>org.apache.ant</groupId>
-      <artifactId>ant-jsch</artifactId>
+      <artifactId>ant-swing</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ant</groupId>
+      <artifactId>ant-testutil</artifactId>
       <version>1.7.0</version>
     </dependency>
 
@@ -74,6 +128,12 @@
     <dependency>
       <groupId>org.apache.ant</groupId>
       <artifactId>ant-apt</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ant</groupId>
+      <artifactId>ant-antlr</artifactId>
       <version>1.7.0</version>
     </dependency>
 
