@@ -2,6 +2,7 @@
 
 <project name="package.ant" default="package" basedir=".">
 
+  <property file="${user.home}/config.properties"/>
   <property file="config.properties"/>
 
   <import file="config-macrodefs.xml"/>

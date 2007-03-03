@@ -19,6 +19,7 @@
     <url>http://scriptlandia-repository.googlecode.com/svn/trunk/tools</url>
   </repository>
 
+<!--
   <repository>
     <id>scriptlandia-languages-repo2</id>
     <name>Scriptlandia languages Maven2 repository</name>
@@ -30,6 +31,7 @@
     <name>Scriptlandia tools Maven2 repository</name>
     <url>http://scriptlandia.sourceforge.net/maven2-tools</url>
   </repository>
+-->
 
   <repository>
     <id>mergere-repo</id>

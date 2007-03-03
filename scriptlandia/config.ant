@@ -2,6 +2,7 @@
 
 <project name="config.ant" default="config" basedir=".">
 
+  <property file="${user.home}/scriptlandia/config.properties"/>
   <property file="config.properties"/>
   <property file="scriptlandia.properties"/>
 
