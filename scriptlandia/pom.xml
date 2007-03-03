@@ -9,7 +9,7 @@
   <packaging>pom</packaging>
 
   <name>Scriptlandia Main Module</name>
-  <description>Scriptlandia Framework. Details &lt;a href="docs/README.txt"&gt;here&lt;/a&gt;.</description>
+  <description>Scriptlandia Framework.</description>
 
   <url>http://sf.net/projects/scriptlandia/</url>
   <inceptionYear>2006</inceptionYear>

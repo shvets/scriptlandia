@@ -1,7 +1,7 @@
 Installation
 
 
-Installation script helps to automatically install all required files. It depends only on 
+Installation script helps to install automatically all required files. It depends only on 
 Java Standard Edition (version 1.5 or higher). Java should be installed before the installation.
 
 Before running the installation, modify "JAVA_HOME" variable inside "config.bat" ("config.sh")
@@ -45,6 +45,21 @@ or
 
 The installation is completed. During the installation we associate extensions like ".ant", ".maven",
 ".bsh" etc. with appropriate dynamic language interpreter (thanks to JDIC library).
+
+During installation, a lot of files will be downloaded and installed into local repository. 
+To accelerate this process, you can download most of required files as one big archive
+(scriptlandia-accelerator-2.2.0.zip) and unzip it into some folder. All files will be located in
+some folder, e.g. in c:\maven-repository-accelerator.
+
+In "repositories.xml" file there is a description for this directory:
+
+  <repository>
+    <id>accelerator</id>
+    <name>Accelerator</name>
+    <url>file://${maven.repo.local}-accelerator</url>
+  </repository>
+
+Replace "url" tag with the location of unzipped files.
 
 After completing the installation, scripts can be launched from the command line, for example:
 

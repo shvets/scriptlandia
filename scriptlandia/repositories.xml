@@ -2,9 +2,9 @@
 
 <repositories>
   <repository>
-    <id>local-repo</id>
-    <name>Local repository</name>
-    <url>file://${maven.repo.local}-remote</url>
+    <id>accelerator</id>
+    <name>Accelerator</name>
+    <url>file://${maven.repo.local}-accelerator</url>
   </repository>
 
   <repository>

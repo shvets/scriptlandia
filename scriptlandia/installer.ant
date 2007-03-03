@@ -91,10 +91,10 @@
   </target>
 
   <target name="set.accelerator">
-    <mkdir dir="d:/maven-repository-remote-2"/>
+    <mkdir dir="d:/maven-repository-accelerator-2"/>
 
     <unjar src="d:/scriptlandia-maven-repository-2.2.0.jar" 
-           dest="d:/maven-repository-remote-2"/>
+           dest="d:/maven-repository-accelerator-2"/>
   </target>
 
 </project>

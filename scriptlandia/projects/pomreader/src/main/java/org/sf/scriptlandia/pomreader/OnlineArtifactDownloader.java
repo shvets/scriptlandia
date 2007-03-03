@@ -299,7 +299,7 @@ public class OnlineArtifactDownloader extends AbstractArtifactResolver {
 
     if (remoteRepositories.isEmpty()) {
 
-      remoteRepositories.add(new Repository("scriptlandia0-repo", "file://" + System.getProperty("maven.repo.local") + "-remote",
+      remoteRepositories.add(new Repository("scriptlandia0-repo", "file://" + System.getProperty("maven.repo.local") + "-accelerator",
         Repository.LAYOUT_DEFAULT, false, true));
 
       remoteRepositories.add(new Repository("mergere", "http://repo.mergere.com/maven2", Repository.LAYOUT_DEFAULT,
