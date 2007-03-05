@@ -130,7 +130,7 @@
       <fileset dir="${scriptlandia.home}">
        <include name="ant.bat"/>
        <include name="mvn.bat"/>
-       <include name="config.bat"/>
+       <include name="configure.bat"/>
        <include name="launcher*.bat"/>
        <include name="nailgun*.bat"/>
       </fileset>
@@ -140,7 +140,7 @@
       <fileset dir="${java.io.tmpdir}">
        <include name="ant.bat"/>
        <include name="mvn.bat"/>
-       <include name="config.bat"/>
+       <include name="configure.bat"/>
        <include name="launcher*.bat"/>
        <include name="nailgun*.bat"/>
       </fileset>

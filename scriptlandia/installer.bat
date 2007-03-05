@@ -1,6 +1,7 @@
 @ECHO OFF
 
-if exist "%HOMEDRIVE%%HOMEPATH%\scriptlandia\config.bat" @call "%HOMEDRIVE%%HOMEPATH%\scriptlandia\config.bat"
+rem if exist "%HOMEDRIVE%%HOMEPATH%\scriptlandia\config.bat" @call "%HOMEDRIVE%%HOMEPATH%\scriptlandia\config.bat"
+if exist "%USERPROFILE%\scriptlandia\config.bat" @call "%USERPROFILE%\scriptlandia\config.bat"
 
 @call config.bat
 
