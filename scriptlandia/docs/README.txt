@@ -188,7 +188,7 @@ Groovy         1.0          http://groovy.codehaus.org
 Jelly          1.0          http://jakarta.apache.org/commons/jelly
 Velocity       1.4          http://jakarta.apache.org/velocity
 Velocity Tools 1.1          http://jakarta.apache.org/velocity
-JRuby          0.9.2        http://jruby.codehaus.org
+JRuby          0.9.8        http://jruby.codehaus.org
 Pnuts          1.1          https://pnuts.dev.java.net
 Jython         2.2b1        http://www.jython.org
 Scriptlandia   2.2.0        http://sourceforge.net/projects/scriptlandia

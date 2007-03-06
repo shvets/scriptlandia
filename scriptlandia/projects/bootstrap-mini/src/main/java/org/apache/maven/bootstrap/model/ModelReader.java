@@ -344,7 +344,7 @@ public class ModelReader
             }
             else if ( rawName.equals( "artifactId" ) )
             {
-                currentDependency.setArtifactId( getBodyText() );
+                currentDependency.setArtifactId( interpolate(getBodyText()) );
             }
             else if ( rawName.equals( "scope" ) )
             {

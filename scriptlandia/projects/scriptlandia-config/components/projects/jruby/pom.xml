@@ -14,15 +14,16 @@
     <dependency>
       <groupId>jruby</groupId>
       <artifactId>jruby</artifactId>
-      <version>0.9.2</version>
+      <version>0.9.8</version>
     </dependency>
 
     <dependency>
       <groupId>jruby</groupId>
       <artifactId>jruby-lib</artifactId>
-      <version>0.9.2</version>
+      <version>0.9.8</version>
     </dependency>
 
+<!--
     <dependency>
       <groupId>jruby</groupId>
       <artifactId>jruby-lib</artifactId>
@@ -40,6 +41,7 @@
       <artifactId>jline</artifactId>
       <version>0.9.91</version>
     </dependency>
+-->
   </dependencies>
 
 </project>
