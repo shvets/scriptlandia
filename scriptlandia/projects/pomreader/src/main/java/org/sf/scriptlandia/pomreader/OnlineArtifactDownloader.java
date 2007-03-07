@@ -317,7 +317,7 @@ public class OnlineArtifactDownloader extends AbstractArtifactResolver {
       remoteRepositories.add(new Repository("central3", "http://repo1.maven.org/maven-spring", Repository.LAYOUT_DEFAULT,
         false, true));
 
-      remoteRepositories.add(new Repository("scriptlandia-languages-repo", "http://scriptlandia.sourceforge.net/maven2-languages",
+      remoteRepositories.add(new Repository("scriptlandia-languages-repo", "http://scriptlandia-repository.googlecode.com/svn/trunk/languages",
         Repository.LAYOUT_DEFAULT, false, true));
     }
 

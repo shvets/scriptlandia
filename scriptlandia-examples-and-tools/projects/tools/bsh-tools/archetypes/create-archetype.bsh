@@ -83,8 +83,6 @@ public class CreateArchetype extends JFrame {
     JPanel topPanel = new JPanel();
 
     topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
-//    topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
-//    topPanel.add(panel1);
     topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
     topPanel.add(panel2);
     topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
@@ -99,9 +97,6 @@ public class CreateArchetype extends JFrame {
   private void submit() {
     String repositoryHome = System.getProperty("repository.home");
     String scriptlandiaVersion = System.getProperty("scriptlandia.version");
-
-//    String pomFile = repositoryHome + "org/sf/scriptlandia/tools/webtide-archetypes/" + 
-//                     scriptlandiaVersion + "/webtide-archetypes-" + scriptlandiaVersion + ".xml";
 
     System.setProperty("archetypeGroupId", archetypeGroupId);
     System.setProperty("archetypeArtifactId", archetypeArtifactIdPrefix + getType());
@@ -157,4 +152,3 @@ public class CreateArchetype extends JFrame {
   }
 
 }
-

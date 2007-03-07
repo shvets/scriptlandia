@@ -22,7 +22,7 @@ frame.setArchetypes(archetypes);
 frame.setArchetypeGroupId("com.sourcebeat");
 frame.setArchetypeArtifactIdPrefix("jpa-");
 frame.setArchetypeVersion("1.0-SNAPSHOT");
-frame.setRemoteRepositories("http://scriptlandia.sourceforge.net/maven2-tools");
+frame.setRemoteRepositories("http://scriptlandia-repository.googlecode.com/svn/trunk/tools");
 
 frame.setVisible(true);
 

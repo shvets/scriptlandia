@@ -59,7 +59,7 @@
     <repository>
       <id>scriptlandia-tools-repo</id>
       <name>Scriptlandia tools Maven2 repository</name>
-      <url>http://scriptlandia.sourceforge.net/maven2-tools</url>
+      <url>http://scriptlandia-repository.googlecode.com/svn/trunk/tools</url>
     </repository>
   </repositories>
 

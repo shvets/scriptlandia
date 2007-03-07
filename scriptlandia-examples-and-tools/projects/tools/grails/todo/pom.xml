@@ -136,7 +136,7 @@
     <repository>
       <id>scriptlandia-repo</id>
       <name>Scriptlandia Maven2 repository</name>
-      <url>http://scriptlandia.sourceforge.net/maven2-languages</url>
+      <url>http://scriptlandia-repository.googlecode.com/svn/trunk/languages</url>
     </repository>
   </repositories>
 

@@ -338,20 +338,5 @@
     </plugins>
   </build>
 
-<!--
-  <repositories>
-    <repository>
-      <id>central</id>
-      <name>Mergere Maven2 repository</name>
-      <url>http://repo.mergere.com/maven2</url>
-    </repository>
-
-    <repository>
-      <id>scriptlandia-repo</id>
-      <name>Scriptlandia Maven2 repository</name>
-      <url>http://scriptlandia.sourceforge.net/maven2</url>
-    </repository>
-  </repositories>
--->
 </project>
 

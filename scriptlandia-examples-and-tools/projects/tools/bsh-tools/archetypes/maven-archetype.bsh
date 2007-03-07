@@ -1,6 +1,4 @@
-// webtide-archetype.bsh
-
-// Resource: http://www.webtide.com/resources.jsp
+// maven-archetype.bsh
 
 sourceRelative("create-archetype.bsh");
 
@@ -8,13 +6,11 @@ String[] archetypes = {
   "archetype", "j2ee-simple", "mojo", "quickstart", "site", "webapp"
 };
 
-
 CreateArchetype frame = new CreateArchetype("WebTide");
 
 frame.setArchetypes(archetypes);
 frame.setArchetypeGroupId("org.apache.maven.archetypes");
 frame.setArchetypeArtifactIdPrefix("maven-archetype-");
 frame.setArchetypeVersion("1.0");
-//frame.setRemoteRepositories("http://scriptlandia.sourceforge.net/maven2-tools");
 
 frame.setVisible(true);

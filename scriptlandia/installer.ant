@@ -84,18 +84,5 @@
     <copy-properties/>
   </target>
 
-  <target name="get.accelerator">
-    <get src="http://scriptlandia.sourceforge.net/maven2/scriptlandia-maven-repository-2.2.0.jar" 
-         dest="d:/scriptlandia-maven-repository-2.2.0.jar"
-         verbose="true"/>
-  </target>
-
-  <target name="set.accelerator">
-    <mkdir dir="d:/maven-repository-accelerator-2"/>
-
-    <unjar src="d:/scriptlandia-maven-repository-2.2.0.jar" 
-           dest="d:/maven-repository-accelerator-2"/>
-  </target>
-
 </project>
 
