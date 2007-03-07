@@ -19,29 +19,36 @@
   <target name="run" depends="init">
     <property name="xml.report.name" value="${user.dir}/findbugs-report.txt"/>
     <property name="html.report.name" value="${user.dir}/findbugs-report.html"/>
-    <property name="findbugs.home" value="C:/JavaPrograms/findbugs-1.1.3" />
 
-    <findbugs output="text" outputFile="${xml.report.name}"
-              home="${findbugs.home}">
+    <findbugs output="text" outputFile="${xml.report.name}">
       <class location="${user.dir}/target/classes"/>
 
       <sourcePath path="${user.dir}/src/main/java"/>
 
-<!--
       <classpath>
         <path refid="maven.compile.classpath"/>
       </classpath>
 
       <pluginList>
+        <path location="${repository.home}/findbugs/coreplugin/1.2.0-rc2/coreplugin-1.2.0-rc2.jar"/>
       </pluginList>
--->
+
       <auxClasspath>
         <path refid="maven.compile.classpath"/>
       </auxClasspath>
     </findbugs>
 
-    <!--style in="${xml.report.name}" out="${html.report.name}"
-           style="${global.repository.home}/findbugs/xsl/default.xsl"/-->
+<!--
+    <unzip src="${repository.home}/findbugs/findbugs/1.2.0-rc2/findbugs-1.2.0-rc2.jar"
+           dest="${user.dir}">
+      <patternset>
+        <include name="plain.xsl"/>
+      </patternset>
+    </unzip>
+
+    <xslt in="${xml.report.name}" out="${html.report.name}"
+           style="${user.dir}/plain.xsl"/>
+-->
   </target>
 
 </project>
