@@ -1,0 +1,6 @@
+import org.mortbay.jetty.Server;
+
+Server server = new Server(8080);    
+Context root = new Context(server,"/",Context.SESSIONS);
+root.addServlet(new ServletHolder(new HelloServlet("Ciao")), "/*");
+server.start();
