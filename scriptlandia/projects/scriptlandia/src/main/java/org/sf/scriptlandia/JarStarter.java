@@ -243,20 +243,58 @@ public final class JarStarter {
    * @param jarName the jar name
    * @param midletClassName the midlet class name
    * @param args the list of arguments
-   * @param mainAttributes main attributes
+   * @param attributes main attributes
    * @param mainRealm main class realm
    * @throws Exception the exception  
    */
-  private void launchMobileJarFile(String jarName, String midletClassName, String[] args,
-                                  Attributes mainAttributes, ClassRealm mainRealm) throws Exception {
-    final List<String> newArgsList = new ArrayList<String>();
+  public static void launchMobileJarFile(String jarName, String midletClassName, String[] args,
+                                  Map attributes, ClassRealm mainRealm) throws Exception {
+    String javaMobileHome = System.getProperty("mobile.java.home");
 
+    if(!new File(javaMobileHome).exists()) {
+      launchMobileJarFileWithMicroEmu(midletClassName, args, mainRealm);
+    }
+    else {
+      launchMobileJarFileWithMicroJava(jarName, midletClassName, args, attributes, mainRealm);
+    }
+  }
+
+  /**
+    * Launches mobile jar file.
+    *
+    * @param midletClassName the midlet class name
+    * @param args the list of arguments
+    * @param mainRealm main class realm
+    * @throws Exception the exception
+    */
+   private static void launchMobileJarFileWithMicroEmu(String midletClassName, String[] args, ClassRealm mainRealm)
+           throws Exception {
+     final List<String> newArgsList = new ArrayList<String>();
+
+     newArgsList.add(midletClassName);
+
+     for (int i = 1; i < args.length - 1; i++) {
+       newArgsList.add(args[i]);
+     }
+
+     String[] newArgs = new String[newArgsList.size()];
+     newArgsList.toArray(newArgs);
+
+     Class mainClass = mainRealm.loadClass("org.microemu.app.Main");
+
+     ReflectionUtil.launchClass(mainClass, newArgs,
+             "public static void main(String[] argv) main Method is missed.");
+   }
+
+  private static void launchMobileJarFileWithMicroJava(String jarName, String midletClassName, String[] args,
+                                                Map attributes, ClassRealm mainRealm) throws Exception {
+    final List<String> newArgsList = new ArrayList<String>();
     newArgsList.add("-classpath");
 
     Map<String, String> properties = new HashMap<String, String>();
     properties.put("MIDlet-Jar-URL", jarName);
-    properties.put("MicroEdition-Configuration", mainAttributes.getValue("MicroEdition-Configuration"));
-    properties.put("MicroEdition-Profile", mainAttributes.getValue("MicroEdition-Profile"));
+    properties.put("MicroEdition-Configuration", (String)attributes.get("MicroEdition-Configuration"));
+    properties.put("MicroEdition-Profile", (String)attributes.get("MicroEdition-Profile"));
 
     newArgsList.add(prepareMobileClasspath(properties));
 

@@ -4,8 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.*;
 
-import org.sf.scriptlandia.util.ReflectionUtil;
-import org.codehaus.classworlds.ClassWorld;
+import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 import org.codehaus.classworlds.ClassRealm;
 
 /**
@@ -27,7 +26,17 @@ public final class JadStarter {
     final String jadName = args[0];
 
     Properties jadProperties = new Properties();
-    jadProperties.load(new FileInputStream(jadName));
+
+    FileInputStream is = null;
+    try {
+      is = new FileInputStream(jadName);
+      jadProperties.load(is);
+    }
+    finally {
+      if(is != null) {
+        is.close();
+      }
+    }
 
     String midlet1 = (String)jadProperties.get("MIDlet-1");
 
@@ -40,32 +49,7 @@ public final class JadStarter {
 
       mainRealm.addConstituent(new File(jarName).toURI().toURL());
 
-      Map<String, Object> properties = new HashMap<String, Object>();
-      properties.put("MIDlet-Jar-URL", jarName);
-      properties.put("MicroEdition-Configuration", jadProperties.get("MicroEdition-Configuration"));
-      properties.put("MicroEdition-Profile", jadProperties.get("MicroEdition-Profile"));
-
-      final List<String> newArgsList = new ArrayList<String>();
-
-      newArgsList.add("-classpath");
-
-      newArgsList.add(JarStarter.prepareMobileClasspath(properties));
-
-      newArgsList.add(midletClassName);
-
-      for (int i = 1; i < args.length - 1; i++) {
-        newArgsList.add(args[i]);
-      }
-
-      newArgsList.add("0");
-
-      Class mainClass = mainRealm.loadClass("com.sun.kvem.environment.EmulatorWrapper");
-
-      String[] newArgs = new String[newArgsList.size()];
-      newArgsList.toArray(newArgs);
-
-      ReflectionUtil.launchClass(mainClass, newArgs,
-              "public static void main(String[] argv) main Method is missed.");
+      JarStarter.launchMobileJarFile(jarName, midletClassName, args, jadProperties, mainRealm);
     }
   }
 
@@ -74,16 +58,13 @@ public final class JadStarter {
    *
    * @param args the command line arguments
    * @throws Exception the exception
-   * @param classWorld class world
    */
-  public static void main(String[] args, ClassWorld classWorld) throws Exception {
-    Iterator iterator = classWorld.getRealms().iterator();
+  public static void main(String[] args) throws Exception {
+    ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
 
-    if(iterator.hasNext()) {
-      ClassRealm mainRealm = ((ClassRealm)iterator.next());
+    ClassRealm mainRealm = launcher.getMainRealm();
 
-      new JadStarter().start(args, mainRealm);
-    }
+    new JadStarter().start(args, mainRealm);
   }
 
 }

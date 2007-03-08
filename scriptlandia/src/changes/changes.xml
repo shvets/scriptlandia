@@ -169,5 +169,11 @@
       </action>        
     </release>
 
+    <release version="2.2.1" date="1-Apr-2007" description="New Features Release">    
+      <action dev="Alexander Shvets" type="add">
+        Microemu library is used for JME support.
+      </action>        
+    </release>
+
    </body>
 </document>
