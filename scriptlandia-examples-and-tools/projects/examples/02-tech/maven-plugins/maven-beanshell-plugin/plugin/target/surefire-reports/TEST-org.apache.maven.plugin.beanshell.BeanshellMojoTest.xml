@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" skipped="0" tests="2" time="0.25" failures="0" name="org.apache.maven.plugin.beanshell.BeanshellMojoTest">
+  <properties>
+    <property value="Java(TM) 2 Runtime Environment, Standard Edition" name="java.runtime.name"/>
+    <property value="C:\Java\jdk1.5.0\jre\bin" name="sun.boot.library.path"/>
+    <property value="1.5.0_08-b03" name="java.vm.version"/>
+    <property value="Sun Microsystems Inc." name="java.vm.vendor"/>
+    <property value="http://java.sun.com/" name="java.vendor.url"/>
+    <property value=";" name="path.separator"/>
+    <property value="Java HotSpot(TM) Client VM" name="java.vm.name"/>
+    <property value="sun.io" name="file.encoding.pkg"/>
+    <property value="US" name="user.country"/>
+    <property value="Service Pack 2" name="sun.os.patch.level"/>
+    <property value="Java Virtual Machine Specification" name="java.vm.specification.name"/>
+    <property value="C:\Work\scriptlandia\trunk\scriptlandia-examples-and-tools\projects\examples\02-tech\maven-plugins\maven-beanshell-plugin\plugin" name="user.dir"/>
+    <property value="1.5.0_08-b03" name="java.runtime.version"/>
+    <property value="sun.awt.Win32GraphicsEnvironment" name="java.awt.graphicsenv"/>
+    <property value="C:\Work\scriptlandia\trunk\scriptlandia-examples-and-tools\projects\examples\02-tech\maven-plugins\maven-beanshell-plugin\plugin" name="basedir"/>
+    <property value="C:\Java\jdk1.5.0\jre\lib\endorsed" name="java.endorsed.dirs"/>
+    <property value="x86" name="os.arch"/>
+    <property value="C:\DOCUME~1\shvetsa\LOCALS~1\Temp\" name="java.io.tmpdir"/>
+    <property value="
+" name="line.separator"/>
+    <property value="Sun Microsystems Inc." name="java.vm.specification.vendor"/>
+    <property value="" name="user.variant"/>
+    <property value="Windows XP" name="os.name"/>
+    <property value="Cp1251" name="sun.jnu.encoding"/>
+    <property value="C:\Java\jdk1.5.0\jre\bin;.;C:\WINNT\system32;C:\WINNT;C:\Program Files\Far;c:\Ruby\ruby-1.8.5-21\bin;C:\Program Files\Documentum\Shared;c:\oracle\products\9.2.0.1\bin;C:\Program Files\Oracle\jre\1.3.1\bin;C:\Program Files\Oracle\jre\1.1.8\bin;C:\WINNT\system32;C:\WINNT;C:\WINNT\System32\Wbem;C:\WINNT\system32\nls;C:\WINNT\system32\nls\ENGLISH;C:\Program Files\Novell\ZENworks\;C:\WINNT\system32;C:\WINNT;C:\WINNT\system32\nls;C:\WINNT\system32\nls\English;C:\ixos-a~1\bin;C:\Program Files\Rational\common;C:\Program Files\Reflection\;C:\Program Files\Rational\ClearCase\bin;C:\Program Files\QuickTime\QTSystem\;c:\Env;C:\Program Files\jprofiler4\bin\windows ;C:\Program Files\Documentum\Shared;c:\scriptlandia;c:\scriptlandia-tools;Z:.;W:.;" name="java.library.path"/>
+    <property value="Java Platform API Specification" name="java.specification.name"/>
+    <property value="49.0" name="java.class.version"/>
+    <property value="HotSpot Client Compiler" name="sun.management.compiler"/>
+    <property value="5.1" name="os.version"/>
+    <property value="C:\Documents and Settings\shvetsa" name="user.home"/>
+    <property value="" name="user.timezone"/>
+    <property value="sun.awt.windows.WPrinterJob" name="java.awt.printerjob"/>
+    <property value="Cp1252" name="file.encoding"/>
+    <property value="1.5" name="java.specification.version"/>
+    <property value="shvetsa" name="user.name"/>
+    <property value="C:\maven-repository\org\codehaus\plexus\plexus-archiver\1.0-alpha-7\plexus-archiver-1.0-alpha-7.jar;C:\maven-repository\junit\junit\3.8.1\junit-3.8.1.jar;C:\maven-repository\org\codehaus\plexus\plexus-container-default\1.0-alpha-8\plexus-container-default-1.0-alpha-8.jar;C:\maven-repository\org\apache\maven\surefire\surefire-api\2.3\surefire-api-2.3.jar;C:\maven-repository\classworlds\classworlds\1.1-alpha-2\classworlds-1.1-alpha-2.jar;C:\maven-repository\org\codehaus\plexus\plexus-utils\1.1\plexus-utils-1.1.jar;C:\maven-repository\commons-lang\commons-lang\2.1\commons-lang-2.1.jar;C:\maven-repository\org\apache\maven\surefire\surefire-booter\2.3\surefire-booter-2.3.jar" name="java.class.path"/>
+    <property value="1.0" name="java.vm.specification.version"/>
+    <property value="32" name="sun.arch.data.model"/>
+    <property value="C:\Java\jdk1.5.0\jre" name="java.home"/>
+    <property value="Sun Microsystems Inc." name="java.specification.vendor"/>
+    <property value="en" name="user.language"/>
+    <property value="sun.awt.windows.WToolkit" name="awt.toolkit"/>
+    <property value="mixed mode" name="java.vm.info"/>
+    <property value="1.5.0_08" name="java.version"/>
+    <property value="C:\Java\jdk1.5.0\jre\lib\ext" name="java.ext.dirs"/>
+    <property value="C:\Java\jdk1.5.0\jre\lib\rt.jar;C:\Java\jdk1.5.0\jre\lib\i18n.jar;C:\Java\jdk1.5.0\jre\lib\sunrsasign.jar;C:\Java\jdk1.5.0\jre\lib\jsse.jar;C:\Java\jdk1.5.0\jre\lib\jce.jar;C:\Java\jdk1.5.0\jre\lib\charsets.jar;C:\Java\jdk1.5.0\jre\classes" name="sun.boot.class.path"/>
+    <property value="Sun Microsystems Inc." name="java.vendor"/>
+    <property value="C:/maven-repository" name="localRepository"/>
+    <property value="\" name="file.separator"/>
+    <property value="http://java.sun.com/cgi-bin/bugreport.cgi" name="java.vendor.url.bug"/>
+    <property value="little" name="sun.cpu.endian"/>
+    <property value="UnicodeLittle" name="sun.io.unicode.encoding"/>
+    <property value="windows" name="sun.desktop"/>
+    <property value="" name="sun.cpu.isalist"/>
+  </properties>
+  <testcase time="0.203" name="testExecuteWithSource"/>
+  <testcase time="0.016" name="testExecuteWithContent"/>
+</testsuite>

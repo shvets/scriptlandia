@@ -1,0 +1,54 @@
+<plugin>
+  <description>Allows the user to run Beanshell scripts</description>
+  <groupId>org.apache.maven</groupId>
+  <artifactId>maven-beanshell-plugin</artifactId>
+  <version>1.0.0</version>
+  <goalPrefix>beanshell</goalPrefix>
+  <isolatedRealm>false</isolatedRealm>
+  <inheritedByDefault>true</inheritedByDefault>
+  <mojos>
+    <mojo>
+      <goal>run</goal>
+      <description></description>
+      <requiresDirectInvocation>false</requiresDirectInvocation>
+      <requiresProject>true</requiresProject>
+      <requiresReports>false</requiresReports>
+      <aggregator>false</aggregator>
+      <requiresOnline>false</requiresOnline>
+      <inheritedByDefault>true</inheritedByDefault>
+      <implementation>org.apache.maven.plugin.beanshell.BeanshellMojo</implementation>
+      <language>java</language>
+      <instantiationStrategy>per-lookup</instantiationStrategy>
+      <executionStrategy>once-per-session</executionStrategy>
+      <parameters>
+        <parameter>
+          <name>content</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>project</name>
+          <type>org.apache.maven.project.MavenProject</type>
+          <required>true</required>
+          <editable>false</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>source</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+      </parameters>
+      <configuration>
+        <project implementation="org.apache.maven.project.MavenProject">${project}</project>
+        <content implementation="java.lang.String">${content}</content>
+        <source implementation="java.lang.String">${source}</source>
+      </configuration>
+    </mojo>
+  </mojos>
+  <dependencies/>
+</plugin>
