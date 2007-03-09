@@ -8,7 +8,7 @@
 
     <sequential>
       <exec dir="${scriptlandia.tools.home}" executable="gem.bat">
-        <arg line="install --no-rdoc --no-ri -p ${http.proxy} -v @{version} @{name}"/>
+        <arg line="install --no-rdoc --no-ri ${http.proxy} -v @{version} @{name}"/>
       </exec>
     </sequential>
   </macrodef>

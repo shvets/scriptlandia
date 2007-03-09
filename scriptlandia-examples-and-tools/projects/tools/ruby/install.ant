@@ -4,9 +4,26 @@
 
   <import file="install-macrodefs.xml"/>
 
-  <property file="tool.properties"/>
+  <!--property file="tool.properties"/-->
 
-  <target name="install" depends="copy, test.ruby.gem, update, test.rails"/>
+  <target name="install" depends="init, copy, test.ruby, test.gem, update, test.rails"/>
+
+  <target name="init">
+    <script language="beanshell">
+      String proxyServerHost = System.getProperty("proxy.server.host");
+      String proxyServerPort = System.getProperty("proxy.server.port");
+
+      if(proxyServerHost != null &amp;&amp; proxyServerHost.length() > 0) {
+        project.setNewProperty("http.proxy", "-p http://" + proxyServerHost + ":" + proxyServerPort);
+      } 
+
+      Properties props = new Properties();
+      props.load(new FileInputStream(System.getProperty("user.home") + "/.scriptlandia"));
+
+      project.setNewProperty("ruby.home", props.get("ruby.home"));
+      project.setNewProperty("scriptlandia.tools.home", System.getProperty("scriptlandia.home") + "/tools");
+    </script>
+  </target>
 
   <target name="copy">
     <filterset id="copy.filterset">
@@ -24,11 +41,13 @@
     </copy>
   </target>
 
-  <target name="test.ruby.gem">
+  <target name="test.ruby">
     <exec dir="${scriptlandia.tools.home}" executable="ruby.bat">
       <arg line="-v"/>
     </exec>
+  </target>
 
+  <target name="test.gem">
     <exec dir="${scriptlandia.tools.home}" executable="gem.bat">
       <arg line="-v"/>
     </exec>
@@ -36,7 +55,7 @@
 
   <target name="update">
     <installPackage name="rake" version="0.7.1"/>
-
+<!--
     <installPackage name="rubygems-update" version="0.9.0"/>
 
     <installPackage name="activesupport" version="1.3.1"/>
@@ -54,12 +73,15 @@
     <installPackage name="rails" version="1.1.6"/>
 
     <installPackage name="raven" version="1.1.2"/>
+-->
   </target>
 
   <target name="test.rails">
+<!--
     <exec dir="${scriptlandia.tools.home}" executable="rails.bat">
       <arg line="-v"/>
     </exec>
+-->
   </target>
 
 </project>
