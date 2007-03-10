@@ -167,6 +167,15 @@
       <action dev="Alexander Shvets" type="fix">
         Using maven 2.0.5.
       </action>        
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgrade Jython up to version 2.2b1.
+      </action>        
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgrade JRuby up to version 0.9.8.
+      </action>        
+
     </release>
 
     <release version="2.2.1" date="1-Apr-2007" description="New Features Release">    
