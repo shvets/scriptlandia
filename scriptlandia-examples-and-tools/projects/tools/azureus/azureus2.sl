@@ -5,8 +5,8 @@
 <project>
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.gudy.azureus2.ui.common</groupId>
-  <artifactId>Main</artifactId>
+  <groupId>azureus-exec</groupId>
+  <artifactId>azureus-exec</artifactId>
   <version>1.0</version>
   <packaging>pom</packaging>
 
@@ -49,5 +49,27 @@
       <url>http://scriptlandia-repository.googlecode.com/svn/trunk/tools</url>
     </repository>
   </repositories>
+
+  <build>
+    <defaultGoal>exec:exec</defaultGoal>
+
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+          </execution>
+        </executions>
+
+        <configuration>
+          <mainClass>org.gudy.azureus2.ui.common.Main</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
