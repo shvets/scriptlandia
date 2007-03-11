@@ -257,7 +257,7 @@
     </registration>
   </language>
 
-  <language name="scala" groupId="scala" artifactId="scala-library" version="2.3.3">
+  <language name="scala" groupId="scala" artifactId="scala-library" version="2.4-RC1">
     <registration mimeType="text/velocity" icon="scala.ico">
       <extensions>
         <extension>scala</extension>

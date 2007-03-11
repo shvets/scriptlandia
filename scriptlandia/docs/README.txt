@@ -199,7 +199,7 @@ Jaskell        1.0          http://jaskell.codehaus.org
 TCL            1.4.0        http://tcljava.sourceforge.net
 AWK            0.14         http://jawk.sourceforge.net
 F3             1.0          http://blogs.sun.com/chrisoliver/resource/tutorial.jnlp
-Scala          2.3.3        http://scala-lang.org
+Scala          2.4-RC1      http://scala-lang.org
 
 
 e-mail:        shvets_alexander@yahoo.com, shvets@comcast.net
