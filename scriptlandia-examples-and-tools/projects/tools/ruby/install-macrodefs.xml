@@ -4,11 +4,10 @@
 
   <macrodef name="installPackage">
     <attribute name="name"/>
-    <attribute name="version"/>
 
     <sequential>
       <exec dir="${scriptlandia.tools.home}" executable="gem.bat">
-        <arg line="install --no-rdoc --no-ri ${http.proxy} -v @{version} @{name}"/>
+        <arg line="install -y --no-rdoc --no-ri @{name}"/>
       </exec>
     </sequential>
   </macrodef>
