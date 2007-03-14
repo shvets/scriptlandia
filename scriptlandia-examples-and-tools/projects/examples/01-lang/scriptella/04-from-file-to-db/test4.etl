@@ -9,10 +9,10 @@
 
   <connection id="test" 
               driver="${driver}" url="${url}" user="${user}" password="${password}" 
-              classpath="${repository.home.for.scriptella}\\hsqldb\\hsqldb\\1.8.0.1\\hsqldb-1.8.0.1.jar"/>
+              classpath="file:/${repository.home}/hsqldb/hsqldb/1.8.0.1/hsqldb-1.8.0.1.jar"/>
 
   <connection id="velocity" driver="velocity" url="report.txt" 
-              classpath="${repository.home.for.scriptella}\\velocity\\velocity-dep\\1.4\\velocity-dep-1.4.jar"/>
+              classpath="file:/${repository.home}/velocity/velocity-dep/1.4/velocity-dep-1.4.jar"/>
 
   <script connection-id="test">
       CREATE TABLE Track (

@@ -11,12 +11,27 @@
     <include href="etl.properties"/>
   </properties>
 
+    <!--Set up a connection to janino compiler.-->
+  <connection id="janino" driver="janino"
+              classpath="file:/${repository.home}/janino/janino/2.4.3/janino-2.4.3.jar"/>
+
+  <query connection-id="janino">
+    /*import java.util.Properties;
+    import java.io.FileInputStream;
+    import org.sf.scriptlandia.ScriptlandiaHelper;
+
+    Properties props = new Properties();
+    props.load(new FileInputStream(System.getProperty("user.home") + "/.scriptlandia"));
+
+    ScriptlandiaHelper.resolveMavenDependencies("../get-libraries.maven", "compile");*/
+  </query>
+
   <connection id="test" 
               driver="${driver}" url="${url}" user="${user}" password="${password}" 
-              classpath="${repository.home.for.scriptella}\\hsqldb\\hsqldb\\1.8.0.1\\hsqldb-1.8.0.1.jar"/>
+              classpath="file:/${repository.home}/hsqldb/hsqldb/1.8.0.1/hsqldb-1.8.0.1.jar"/>
 
   <connection id="velocity" driver="velocity" url="report.txt" 
-              classpath="${repository.home.for.scriptella}\\velocity\\velocity-dep\\1.4\\velocity-dep-1.4.jar"/>
+              classpath="file:/${repository.home}/velocity/velocity-dep/1.4/velocity-dep-1.4.jar"/>
 
   <script connection-id="test">
       DROP TABLE User IF EXISTS; 

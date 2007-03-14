@@ -13,21 +13,21 @@
 
   <connection id="test" 
               driver="${driver}" url="${url}" user="${user}" password="${password}" 
-              classpath="${repository.home.for.scriptella}\\hsqldb\\hsqldb\\1.8.0.1\\hsqldb-1.8.0.1.jar"/>
+              classpath="file:/${repository.home}/hsqldb/hsqldb/1.8.0.1/hsqldb-1.8.0.1.jar"/>
 
   <connection id="in" driver="csv" url="bugs-in.csv"
-              classpath="${repository.home.for.scriptella}\\milyn\\opencsv\\1.6\\opencsv-1.6.jar"/>
+              classpath="file:/${repository.home}/milyn/opencsv/1.6/opencsv-1.6.jar"/>
 
   <!--Filtered output to another file -->
   <connection id="out" driver="csv" url="bugs-out.csv"
-              classpath="${repository.home.for.scriptella}\\milyn\\opencsv\\1.6\\opencsv-1.6.jar">
+              classpath="file:/${repository.home}/milyn/opencsv/1.6/opencsv-1.6.jar">
       #Use empty quote to turn off quoting
       quote=
   </connection>
 
   <!--Connection to output a filtered list of bugs as an Excel CSV file -->
   <connection id="outFiltered" driver="csv" url="bugs-out-filtered.csv"
-              classpath="${repository.home.for.scriptella}\\milyn\\opencsv\\1.6\\opencsv-1.6.jar">
+              classpath="file:/${repository.home}/milyn/opencsv/1.6/opencsv-1.6.jar">
     separator=;
   </connection>
 
