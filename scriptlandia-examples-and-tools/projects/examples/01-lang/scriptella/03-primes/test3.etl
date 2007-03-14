@@ -32,7 +32,7 @@
   <!--Set up a connection to velocity engine.
   url parameter specifies a path to file relative to a script file directory-->
   <connection id="velocity" driver="velocity" url="report.html" 
-              classpath="file:/${repository.home}/velocity/velocity-dep/1.4/velocity-dep-1.4.jar"/>
+              classpath="file:/${repository.home}/velocity/velocity/1.5/velocity-dep-1.5.jar"/>
 
   <connection id="test" 
               driver="${driver}" url="${url}" user="${user}" password="${password}" 

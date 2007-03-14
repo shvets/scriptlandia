@@ -1,7 +1,7 @@
-require 'java'
+require "java"
 
-include_class 'java.util.Random'
+# Include Java's String as JString
+include_class("java.lang.String") { |package, name| "J" + name }
 
-r = Random.new
-
-puts r.nextInt
+s = JString.new("Hello World from JRuby!")
+puts s

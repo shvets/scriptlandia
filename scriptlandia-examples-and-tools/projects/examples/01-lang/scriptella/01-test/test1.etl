@@ -31,7 +31,7 @@
               classpath="file:/${repository.home}/hsqldb/hsqldb/1.8.0.1/hsqldb-1.8.0.1.jar"/>
 
   <connection id="velocity" driver="velocity" url="report.txt" 
-              classpath="file:/${repository.home}/velocity/velocity-dep/1.4/velocity-dep-1.4.jar"/>
+              classpath="file:/${repository.home}/velocity/velocity/1.5/velocity-1.5.jar"/>
 
   <script connection-id="test">
       DROP TABLE User IF EXISTS; 

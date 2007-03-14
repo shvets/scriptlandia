@@ -1,0 +1,36 @@
+//
+
+org.sf.scriptlandia.ScriptlandiaHelper.addMavenDependencies("pom.xml");
+
+import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+launcher.addClasspathEntry("target/classes");
+
+//source("Coconut.bsh");
+//source("Lime.bsh");
+
+import org.springframework.context.ApplicationContext;
+//import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+
+
+public class ScriptingTest {
+
+  public static void main(String[] args) throws Exception {
+//    ApplicationContext factory = new ClassPathXmlApplicationContext("beans.xml");
+    ApplicationContext factory = new FileSystemXmlApplicationContext(
+            new String[] {
+              "scripting-spring-test.xml"
+            });
+  
+    Coconut coconut = (Coconut) factory.getBean("coconut1");
+    coconut.drinkThemBothUp();
+
+    Coconut coconut2 = (Coconut) factory.getBean("coconut2");
+    coconut2.drinkThemBothUp();
+
+    Coconut coconut3 = (Coconut) factory.getBean("coconut3");
+    coconut3.drinkThemBothUp();
+  }
+
+}
