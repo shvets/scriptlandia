@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<project name="install.ant" default="install" basedir=".">
+
+  <target name="install" depends="init, copy"/>
+
+  <target name="init">
+    <script language="beanshell">
+      Properties props = new Properties();
+      props.load(new FileInputStream(System.getProperty("user.home") + "/.scriptlandia"));
+
+      project.setNewProperty("jruby.home", props.get("jruby.home"));
+      project.setNewProperty("scriptlandia.home", props.get("scriptlandia.home"));
+      project.setNewProperty("repository.home", props.get("repository.home"));
+      project.setNewProperty("scriptlandia.tools.home", props.get("scriptlandia.home") + "/tools");
+    </script>
+  </target>
+
+  <target name="copy">
+    <filterset id="copy.filterset">
+      <filter token="java.home" value="${java.home}"/>
+      <filter token="jruby.home" value="${jruby.home}"/>
+      <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
+      <filter token="repository.home" value="${repository.home}"/>
+      <filter token="scriptlandia.tools.home" value="${scriptlandia.home}/tools"/>
+    </filterset>
+
+    <copy todir="${scriptlandia.tools.home}" overwrite="true">
+      <filterset refid="copy.filterset"/>
+
+      <fileset dir="src/main/config">
+       <include name="*.bat"/>
+       <include name="*"/>
+      </fileset>
+    </copy>
+  </target>
+
+</project>
+
