@@ -218,7 +218,7 @@
     </registration>
   </language>
 
-  <language name="velocity" groupId="velocity" artifactId="velocity" version="1.4">
+  <language name="velocity" groupId="velocity" artifactId="velocity" version="1.5">
     <registration mimeType="text/velocity" icon="velocity.ico">
       <extensions>
         <extension>vm</extension>
@@ -384,7 +384,7 @@
     </registration>
   </language>
 
-  <language name="etl" groupId="unknown" artifactId="unknown" version="unknown">
+  <language name="etl" groupId="scriptella" artifactId="scriptella-core" version="0.7">
     <registration mimeType="text/etl" icon="etl.ico">
       <extensions>
         <extension>etl</extension>

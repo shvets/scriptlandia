@@ -178,9 +178,13 @@
 
     </release>
 
-    <release version="2.2.1" date="1-Apr-2007" description="New Features Release">    
+    <release version="2.2.1" date="1-Apr-2007" description="Bug Fix Release">    
       <action dev="Alexander Shvets" type="add">
-        Microemu library is used for JME support.
+        Microemu library is used for JME support when JME is not installed.
+      </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Upgrade Velocity up to version 1.5.
       </action>        
     </release>
 

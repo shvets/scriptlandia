@@ -80,7 +80,6 @@
         <include name="projects/scriptlandia-config/src/main/config/**"/>
       </fileset>
     </copy>
-
     <copy-properties/>
   </target>
 

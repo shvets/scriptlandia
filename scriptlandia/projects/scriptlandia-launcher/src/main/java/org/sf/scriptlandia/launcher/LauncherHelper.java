@@ -65,7 +65,7 @@ public class LauncherHelper {
     String repositoryHome = (String) scriptlandiaProps1.get("repository.home");
     String scriptlandiaHome = (String) scriptlandiaProps1.get("scriptlandia.home");
     //String rubyHome = System.getProperty("ruby.home");
-    String rubyHome = (String) scriptlandiaProps1.get("ruby.home");
+    String rubyHome = (String) scriptlandiaProps1.get("native.ruby.home");
 
     String scalaVersion = (String)scriptlandiaProps1.get("scala.version");
     String scriptlandiaVersion = (String)scriptlandiaProps1.get("scriptlandia.version");
@@ -86,15 +86,24 @@ public class LauncherHelper {
     System.setProperty("python.home", repositoryHome + "/jython/jython/" + jythonVersion);
     System.setProperty("python.cachedir", repositoryHome + "/jython/jython/" + jythonVersion + "/cachedir");
 
-    if(rubyHome != null && new File(rubyHome).exists()) {
+//    String jrubyHome = repositoryHome + "/jruby/jruby-lib/" + jrubyVersion;
+
+/*    if(rubyHome != null && new File(rubyHome).exists()) {
       System.setProperty("jruby.home", rubyHome);
     }
     else {
-      System.setProperty("jruby.home", repositoryHome + "/jruby/jruby-lib/" + jrubyVersion);
+
+      System.setProperty("jruby.home", jrubyHome);
     }
+*/
+    String jRubyHome = repositoryHome + "/jruby/jruby/" + jrubyVersion;
 
     System.setProperty("jruby.shell", "cmd.exe");
     System.setProperty("jruby.script", "jruby.bat");
+//    System.setProperty("jruby.lib", jRubyHome + "/lib");
+//    System.setProperty("jruby.home", jRubyHome);
+//    System.setProperty("jruby.base", jRubyHome);
+
     System.setProperty("jaskell.home", repositoryHome + "/jaskell/jaskell/" + jaskellVersion);
     System.setProperty("scala.version", scalaVersion);
     System.setProperty("scriptlandia.version", scriptlandiaVersion);

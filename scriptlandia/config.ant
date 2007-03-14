@@ -36,7 +36,7 @@
       <filter token="repository.home" value="${repository.home}"/>
       <filter token="maven.repo.local" value="${repository.home}"/>
       <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
-      <filter token="ruby.home" value="${ruby.home}"/>
+      <filter token="native.ruby.home" value="${native.ruby.home}"/>
 
       <filter token="scriptlandia.version" value="${scriptlandia.version}"/>
       <filter token="classworlds.version" value="${classworlds.version}"/>
@@ -117,6 +117,7 @@
       <filterset refid="copy.filterset"/>
 
       <fileset dir="projects/scriptlandia-config/bin">
+       <include name="*"/>
        <include name="*.bat"/>
        <include name="*.ant"/>
        <include name="*.conf"/>
@@ -210,7 +211,7 @@
 
   <target name="unzip.jruby.lib" if="jruby.lib.is.present">
     <unzip src="${repository.home}/jruby/jruby-lib/${jruby.version}/jruby-lib-${jruby.version}.jar"
-           dest="${jruby.base}/lib/ruby" overwrite="false"/>
+           dest="${repository.home}/jruby/jruby-lib/${jruby.version}/ruby" overwrite="false"/>
   </target>
 
   <target name="unzip.jdic.native.libs" if="jdic.native.libs.present">

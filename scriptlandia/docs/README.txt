@@ -186,7 +186,7 @@ Beanshell      2.0b5        http://www.beanshell.org/bsh-2.0b5.jar
 Javascript     1.6R4        http://www.mozilla.org/rhino
 Groovy         1.0          http://groovy.codehaus.org
 Jelly          1.0          http://jakarta.apache.org/commons/jelly
-Velocity       1.4          http://jakarta.apache.org/velocity
+Velocity       1.5          http://velocity.apache.org
 Freemarker     2.3.9        http://freemarker.sourceforge.net
 Velocity Tools 1.1          http://jakarta.apache.org/velocity
 JRuby          0.9.8        http://jruby.codehaus.org

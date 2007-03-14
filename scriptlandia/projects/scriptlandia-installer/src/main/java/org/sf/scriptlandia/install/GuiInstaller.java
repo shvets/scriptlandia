@@ -510,8 +510,8 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
         System.setProperty("repository.home", repositoryHomeField.getText().trim());
       }
 
-      if(System.getProperty("ruby.home") == null) {
-        System.setProperty("ruby.home", rubyHomeField.getText().trim());
+      if(System.getProperty("native.ruby.home") == null) {
+        System.setProperty("native.ruby.home", rubyHomeField.getText().trim());
       }
 
       Thread thread = new Thread() {
@@ -625,7 +625,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
     System.setProperty("scriptlandia.home", scriptlandiaHomeField.getText().trim());
     System.setProperty("repository.home", repositoryHomeField.getText().trim());
     System.setProperty("maven.repo.local", repositoryHomeField.getText().trim());    
-    System.setProperty("ruby.home", rubyHomeField.getText().trim());
+    System.setProperty("native.ruby.home", rubyHomeField.getText().trim());
   }
 
   public void install(final String[] args) throws LauncherException {
@@ -687,7 +687,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
     scriptlandiaProps.updateProperty(mobileJavaHomeField, "mobile.java.home");
     scriptlandiaProps.updateProperty(scriptlandiaHomeField, "scriptlandia.home");
     scriptlandiaProps.updateProperty(repositoryHomeField, "repository.home");
-    scriptlandiaProps.updateProperty(rubyHomeField, "ruby.home");
+    scriptlandiaProps.updateProperty(rubyHomeField, "native.ruby.home");
 
     scriptlandiaProps.updateProperty(useProxyCheckbox, "use.proxy");
     scriptlandiaProps.updateProperty(proxyHostField, "proxy.server.host");
@@ -704,7 +704,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
 
     scriptlandiaProps.saveProperty(scriptlandiaHomeField, "scriptlandia.home");
     scriptlandiaProps.saveProperty(repositoryHomeField, "repository.home");
-    scriptlandiaProps.saveProperty(rubyHomeField, "ruby.home");    
+    scriptlandiaProps.saveProperty(rubyHomeField, "native.ruby.home");    
 
     scriptlandiaProps.saveProperty(useProxyCheckbox, "use.proxy");
     scriptlandiaProps.saveProperty(proxyHostField, "proxy.server.host");
