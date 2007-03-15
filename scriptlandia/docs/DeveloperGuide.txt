@@ -506,7 +506,7 @@ command line:
 These commands will pick up all libraries from "lib" folder and add them to "CLASSPATH" variable.
 
 
-Maven scripts as regular scriptlets (maven-lets) and dependencies siles
+Maven scripts as regular scriptlets (maven-lets) and dependencies files
 
 
 Maven project files can also be used as scripts. Instead of having predefined "pom.xml" file
