@@ -1,0 +1,76 @@
+// scripting-spring-test.bsh
+
+org.sf.scriptlandia.ScriptlandiaHelper.addMavenDependencies("pom.xml");
+
+import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+import org.codehaus.janino.*;
+
+import org.sf.scriptlandia.util.*;
+import org.codehaus.classworlds.ClassRealm;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+
+
+public class Dynamo {
+  private ClassRealm classRealm;
+  private ApplicationContext factory;
+
+  public Dynamo(String basedir, String[] classNames, String beansFile) {
+    ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+
+    classRealm = launcher.getMainRealm();
+
+    register(basedir, classNames);
+
+    factory = new FileSystemXmlApplicationContext(new String[] { basedir + "/" + beansFile });
+  }
+
+  private void register(String basedir, String[] classNames) {
+    ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+
+    ClassLoader sourceClassloader = new JavaSourceClassLoader(
+      launcher.getClass().getClassLoader(),  // parentClassLoader
+      new File[] { new File(basedir) }, // optionalSourcePath
+      (String) null,                     // optionalCharacterEncoding
+      DebuggingInformation.NONE          // debuggingInformation
+    );
+
+    for(int i=0; i < classNames.length; i++) {
+      loadClass(classNames[i], sourceClassloader);
+    }
+  }
+
+  private void loadClass(String name, ClassLoader classLoader) {
+    String[] args = new String[] { name };
+
+    Map bytecodes = ReflectionUtil.invokePrivateMethod(
+      classLoader, 
+      new Object[] { name }, 
+      JavaSourceClassLoader.class, 
+      "generateBytecodes", 
+      new Class[] { String.class });
+
+    classRealm.addConstituent(name, bytecodes.get(name));
+  }
+
+  public Object getBean(String beanName) {
+    return factory.getBean(beanName);
+  }
+
+  public static void main(String[] args) throws Exception {
+    String[] classNames = new String[] {"Lime", "Coconut" };
+    String basedir = System.getProperty("user.dir");
+
+    Dynamo dynamo = new Dynamo(basedir, classNames, "dynamo-test.xml");
+
+    Coconut coconut1 = dynamo.getBean("coconut1");
+    Coconut coconut2 = dynamo.getBean("coconut2");
+    Coconut coconut3 = dynamo.getBean("coconut3");
+
+    coconut1.drinkThemBothUp();
+    coconut2.drinkThemBothUp();
+    coconut3.drinkThemBothUp();
+  }
+
+}
