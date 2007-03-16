@@ -466,6 +466,11 @@ public class ModelReader
     {
         Map map = new HashMap();
         map.put( "pom.groupId", model.getGroupId() );
+        map.put( "pom.artifactId", model.getArtifactId() );
+        map.put( "pom.version", model.getVersion() );
+        map.put( "project.groupId", model.getGroupId() );
+        map.put( "project.artifactId", model.getArtifactId() );
+        map.put( "project.version", model.getVersion() );
 
         return StringUtils.interpolate( text, map );
     }
