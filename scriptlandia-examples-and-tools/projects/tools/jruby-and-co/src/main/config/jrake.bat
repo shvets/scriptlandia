@@ -1,3 +1,3 @@
 @echo off
 
-@scriptlandia.home@\jruby.bat @scriptlandia.home@\rake %*
+@scriptlandia.tools.home@\jruby.bat @scriptlandia.tools.home@\rake %*

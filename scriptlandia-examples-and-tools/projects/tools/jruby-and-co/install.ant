@@ -12,7 +12,23 @@
       project.setNewProperty("jruby.home", props.get("jruby.home"));
       project.setNewProperty("scriptlandia.home", props.get("scriptlandia.home"));
       project.setNewProperty("repository.home", props.get("repository.home"));
+      project.setNewProperty("scriptlandia.version", props.get("scriptlandia.version"));
       project.setNewProperty("scriptlandia.tools.home", props.get("scriptlandia.home") + "/tools");
+
+      String proxyHost = props.get("proxy.server.host");
+
+      if(proxyHost == null) {
+        proxyHost = "";
+      }
+
+      String proxyPort = props.get("proxy.server.port");
+
+      if(proxyPort == null) {
+        proxyPort = "";
+      }
+
+      project.setNewProperty("proxy.server.host", proxyHost);
+      project.setNewProperty("proxy.server.port", proxyPort);
     </script>
   </target>
 
@@ -21,8 +37,12 @@
       <filter token="java.home" value="${java.home}"/>
       <filter token="jruby.home" value="${jruby.home}"/>
       <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
+      <filter token="scriptlandia.version" value="${scriptlandia.version}"/>
       <filter token="repository.home" value="${repository.home}"/>
       <filter token="scriptlandia.tools.home" value="${scriptlandia.home}/tools"/>
+
+      <filter token="proxy.server.host" value="${proxy.server.host}"/>
+      <filter token="proxy.server.port" value="${proxy.server.port}"/>
     </filterset>
 
     <copy todir="${scriptlandia.tools.home}" overwrite="true">

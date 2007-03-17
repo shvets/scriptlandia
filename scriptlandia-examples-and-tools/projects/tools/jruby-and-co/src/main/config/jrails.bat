@@ -1,3 +1,3 @@
 @echo off
 
-@scriptlandia.home@\jruby.bat @scriptlandia.home@\rails %*
+@scriptlandia.tools.home@\jruby.bat @scriptlandia.tools.home@\rails %*

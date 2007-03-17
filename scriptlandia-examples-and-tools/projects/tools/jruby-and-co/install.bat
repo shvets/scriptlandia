@@ -1,3 +1,3 @@
-SET HTTP_PROXY=http://proxy-server.bms.com:8080
+SET HTTP_PROXY=
 
 install.ant
