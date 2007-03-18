@@ -80,6 +80,7 @@ set SYSTEM_PARAMETERS=%SYSTEM_PARAMETERS% -Dclassworlds.conf=@scriptlandia.home@
 rem SET SYSTEM_PARAMETERS=%SYSTEM_PARAMETERS% -Djavax.xml.parsers.SAXParserFactory=com.bluecast.xml.JAXPSAXParserFactory
 rem SET CLASSPATH=@repository.home@\classworlds\classworlds\@classworlds.version@\classworlds-@classworlds.version@.jar
 SET CLASSPATH=@classworlds.base@\classworlds-@classworlds.version@.jar
+SET CLASSPATH=%CLASSPATH%;@repository.home@\org\sf\scriptlandia\classworlds-launcher\2.2.1\classworlds-launcher-2.2.1.jar
 
 rem due to fortress-120
 SET CLASSPATH=%CLASSPATH%;D:\maven-repository\com\sun\fortress\fortress\120\fortress-120.jar
@@ -106,7 +107,8 @@ rem 3. launch JVM
 
 :run
 
-SET LAUNCHER_CLASS=org.codehaus.classworlds.Launcher
+rem SET LAUNCHER_CLASS=org.codehaus.classworlds.Launcher
+SET LAUNCHER_CLASS=org.sf.scriptlandia.classworlds.launcher.Launcher
 
 if "%NAILGUN_MODE%"=="true" goto nailgun
 goto runJava
