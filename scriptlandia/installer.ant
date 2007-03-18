@@ -16,6 +16,7 @@
     <installProject basedir="projects/pomreader" build="false"/>
 
     <installProject basedir="projects/antrun"/>
+    <installProject basedir="projects/classworlds-launcher"/>
     <installProject basedir="projects/nailgun"/>
 
     <installProject basedir="projects/scriptlandia-config/components"/>

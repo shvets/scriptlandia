@@ -5,6 +5,8 @@ if exist projects\image4j\target rmdir /S /Q projects\image4j\target
 if exist projects\pomreader\target rmdir /S /Q projects\pomreader\target
 if exist projects\scriptlandia-common\target rmdir /S /Q projects\scriptlandia-common\target
 if exist projects\antrun\target rmdir /S /Q projects\antrun\target
+if exist projects\classworlds-launcher\target rmdir /S /Q projects\classworlds-launcher\target
+ 
 
 if exist projects\scriptlandia-launcher\target rmdir /S /Q projects\scriptlandia-launcher\target
 if exist projects\scriptlandia-nailgun\target rmdir /S /Q projects\scriptlandia-nailgun\target
