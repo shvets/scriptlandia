@@ -101,7 +101,7 @@ public class LauncherHelper {
     System.setProperty("jruby.shell", "cmd.exe");
     System.setProperty("jruby.script", "jruby.bat");
 //    System.setProperty("jruby.lib", jRubyHome + "/lib");
-//    System.setProperty("jruby.home", jRubyHome);
+    System.setProperty("jruby.home", jRubyHome);
 //    System.setProperty("jruby.base", jRubyHome);
 
     System.setProperty("jaskell.home", repositoryHome + "/jaskell/jaskell/" + jaskellVersion);
