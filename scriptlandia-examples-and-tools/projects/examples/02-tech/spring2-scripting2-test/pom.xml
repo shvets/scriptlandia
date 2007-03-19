@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- pom.xml -->
+
 <project>
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>spring-2-test</groupId>
-  <artifactId>spring-2-test</artifactId>
+  <groupId>dynamo-test</groupId>
+  <artifactId>dynamo-test</artifactId>
   <version>1.0</version>
 
   <dependencies>
@@ -73,35 +75,14 @@
       <artifactId>scriptlandia-common</artifactId>
       <version>2.2.1</version>
     </dependency>
-
   </dependencies>
 
-  <build>
-    <defaultGoal>compile</defaultGoal>
-
-    <plugins>
-      <!-- It's alternative way of launching. -->
-      <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <version>1.1</version>
-
-        <executions>
-          <execution>
-            <id>compile</id>
-            <phase>verify</phase>
-            <configuration>
-              <tasks>
-                <java classname="ScriptingTest" classpathref="maven.compile.classpath" fork="yes"/>
-              </tasks>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-
-  </build>
+  <repositories>
+    <repository>
+      <id>scriptlandia-languages-repo</id>
+      <name>Scriptlandia languages Maven2 repository</name>
+      <url>http://scriptlandia-repository.googlecode.com/svn/trunk/patches</url>
+    </repository>
+  </repositories>
 
 </project>

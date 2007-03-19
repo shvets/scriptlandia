@@ -1,4 +1,4 @@
-// scripting-spring-test.bsh
+// dynamo-test.bsh
 
 org.sf.scriptlandia.ScriptlandiaHelper.addMavenDependencies("pom.xml");
 
@@ -41,6 +41,9 @@ public class Dynamo {
     }
   }
 
+  /**
+   * Loads class specified by the name.
+   */
   private void loadClass(String name, ClassLoader classLoader) {
     String[] args = new String[] { name };
 
@@ -59,18 +62,15 @@ public class Dynamo {
   }
 
   public static void main(String[] args) throws Exception {
-    String[] classNames = new String[] {"Lime", "Coconut" };
+    // Java classes that needs to be registered.
+    String[] classNames = new String[] {"Animal", "AnimalFarm" };
     String basedir = System.getProperty("user.dir");
 
     Dynamo dynamo = new Dynamo(basedir, classNames, "dynamo-test.xml");
 
-    Coconut coconut1 = dynamo.getBean("coconut1");
-    Coconut coconut2 = dynamo.getBean("coconut2");
-    Coconut coconut3 = dynamo.getBean("coconut3");
+    AnimalFarm animalFarm = dynamo.getBean("farm");
 
-    coconut1.drinkThemBothUp();
-    coconut2.drinkThemBothUp();
-    coconut3.drinkThemBothUp();
+    animalFarm.wakeUp();
   }
 
 }

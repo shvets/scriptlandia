@@ -1,32 +1,36 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 
+<!-- dynamo-test.xml -->
+
 <beans>
+  <!-- Enables spring-scripting. -->
   <bean class="org.springframework.scripting.support.ScriptFactoryPostProcessor"/>
 
-  <bean id="lime1" class="org.springframework.scripting.jruby.JRubyScriptFactory">
-    <constructor-arg value="file:Lime.ruby" />
-    <constructor-arg value="Lime" />
+  <!-- Creates cat. -->
+  <bean id="cat" class="org.springframework.scripting.groovy.GroovyScriptFactory">
+    <constructor-arg value="file:Cat.groovy" />
   </bean>
 
-  <bean id="coconut1" class="Coconut">
-    <property name="lime" ref="lime1" />
+  <!-- Creates dog. -->
+  <bean id="dog" class="org.springframework.scripting.jruby.JRubyScriptFactory">
+    <constructor-arg value="file:Dog.ruby" />
+    <constructor-arg value="Animal" />
   </bean>
 
-  <bean id="lime2" class="org.springframework.scripting.groovy.GroovyScriptFactory">
-    <constructor-arg value="file:Lime.groovy" />
+  <!-- Creates cow. -->
+  <bean id="cow" class="org.springframework.scripting.bsh.BshScriptFactory">
+    <constructor-arg value="file:Cow.bsh" />
+    <constructor-arg value="Animal" />
   </bean>
 
-  <bean id="coconut2" class="Coconut">
-    <property name="lime" ref="lime2" />
+  <!-- Creates animal farm. -->
+  <bean id="farm" class="AnimalFarm">
+    <property name="animals">
+      <list>
+        <ref bean="cat"/>
+        <ref bean="dog"/>
+        <ref bean="cow"/>
+      </list>
+    </property>
   </bean>
-
-  <bean id="lime3" class="org.springframework.scripting.bsh.BshScriptFactory">
-    <constructor-arg value="file:Lime-bsh.bsh" />
-    <constructor-arg value="Lime" />
-  </bean>
-
-  <bean id="coconut3" class="Coconut">
-    <property name="lime" ref="lime3" />
-  </bean>
-
 </beans>
