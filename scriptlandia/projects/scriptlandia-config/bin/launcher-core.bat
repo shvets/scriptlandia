@@ -82,13 +82,6 @@ rem SET CLASSPATH=@repository.home@\classworlds\classworlds\@classworlds.version
 SET CLASSPATH=@classworlds.base@\classworlds-@classworlds.version@.jar
 SET CLASSPATH=%CLASSPATH%;@repository.home@\org\sf\scriptlandia\classworlds-launcher\2.2.1\classworlds-launcher-2.2.1.jar
 
-rem due to fortress-120
-SET CLASSPATH=%CLASSPATH%;D:\maven-repository\com\sun\fortress\fortress\120\fortress-120.jar
-SET CLASSPATH=%CLASSPATH%;D:\maven-repository\xtc\xtc\1.10.0\xtc-1.10.0.jar
-SET CLASSPATH=%CLASSPATH%;D:\maven-repository\concurrent\concurrent\1.3.4\concurrent-1.3.4.jar
-SET CLASSPATH=%CLASSPATH%;D:\maven-repository\dstm\dstm\2.0\dstm-2.0.jar
-SET CLASSPATH=%CLASSPATH%;D:\maven-repository\bcel\bcel\5.2\bcel-5.2.jar
-
 if "%MOBILE_JAVA_HOME%"=="" goto run
 
 SET MOBILE_CLASSPATH=%MOBILE_JAVA_HOME%\wtklib\kenv.zip

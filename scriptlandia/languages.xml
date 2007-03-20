@@ -348,7 +348,7 @@
     </registration>
   </language>
 
-  <language name="fortress" groupId="com.sun.fortress" artifactId="fortress" version="120">
+  <language name="fortress" groupId="com.sun.fortress" artifactId="fortress" version="152">
     <registration mimeType="text/fortress" icon="fortress.ico">
       <extensions>
         <extension>fss</extension>
