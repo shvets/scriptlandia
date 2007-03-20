@@ -1,0 +1,61 @@
+// compile.bsh
+
+String javaVersion = System.getProperty("java.version");
+String repositoryHome = System.getProperty("repository.home");
+
+if(javaVersion.startsWith("1.5")) {
+  String compilerPomFileName = repositoryHome + 
+    "/org/sf/scriptlandia/compiler/2.2.0/compiler-2.2.0.pom";
+
+  import org.sf.scriptlandia.ScriptlandiaHelper;
+
+  ScriptlandiaHelper.addMavenDependencies(compilerPomFileName);
+}
+
+import javax.tools.StandardJavaFileManager;
+import javax.tools.ToolProvider;
+import javax.tools.JavaCompiler;
+
+import java.io.File;
+
+JavaCompiler compiler = null;
+
+if(javaVersion.startsWith("1.5")) {
+  compiler = new com.sun.tools.javac.api.JavacTool();
+}
+else {
+  compiler = ToolProvider.getSystemJavaCompiler();
+}
+
+StandardJavaFileManager fileManager = compiler.getStandardFileManager(null, null, null);
+
+File javaFile = new File("Test.java");
+
+Iterable fileObjects = fileManager.getJavaFileObjects(new File[] { javaFile });
+
+File outputDir = new File("target/classes");
+outputDir.mkdirs();
+
+String[] options = null;
+
+if(javaVersion.startsWith("1.5")) {
+  options = new String[] {"-d", "target/classes", "-source", "1.5", "-target", "1.5"};
+}
+else {
+  options = new String[] {"-d", "target/classes"};
+}
+
+compiler.getTask(null, fileManager, null, Arrays.asList(options), null, fileObjects).call();
+
+fileManager.close();
+
+URL[] urls = new URL[]{ outputDir.toURL() };
+
+URLClassLoader ucl = new URLClassLoader(urls, null);
+
+Class clazz = ucl.loadClass("Test");
+
+((Runnable)clazz.newInstance()).run();
+
+
+

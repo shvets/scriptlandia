@@ -1,0 +1,203 @@
+//
+
+import org.sf.scriptlandia.ScriptlandiaHelper;
+
+String repositoryHome = System.getProperty("repository.home");
+
+String javaVersion = System.getProperty("java.version");
+
+print("Java Version: " + javaVersion);
+
+//if(javaVersion.startsWith("1.5")) {
+  String pom1 = "javax-script-jdk15-install.maven";
+  ScriptlandiaHelper.addMavenDependencies(pom1);
+//}
+
+String pom2 = "scripting-engines-install.maven";
+ScriptlandiaHelper.addMavenDependencies(pom2);
+
+
+import java.util.*;
+import javax.script.*;
+
+public class ScriptingTest {
+  private ScriptEngineManager manager = new ScriptEngineManager();
+
+  public void listEngines(PrintStream out) throws Exception {
+    List factories = manager.getEngineFactories();
+
+    out.println("Available script engines:");
+
+    for ( int i = 0; i < factories.size(); i++ ) {
+      ScriptEngineFactory factory = (ScriptEngineFactory)factories.get(i);
+
+      out.println("-------------------------------------------");
+      out.println("Language: " + factory.getLanguageName() );
+      out.println("Engine: " + factory.getEngineName());
+
+      Object engine = null;
+
+      try {
+        engine = factory.getScriptEngine();
+      }
+      catch(Throwable t) {
+        out.println(t.getMessage());
+      }
+
+      out.println("Engine implementation: " + engine);
+      //System.out.println("Language Version: " + factory.getLaunguageVersion());
+      out.println("Engine Version: " + factory.getEngineVersion());
+      out.println("-------------------------------------------");
+
+      List names = factory.getNames();
+
+      for (int j=0; j < names.size(); j++) {
+        out.println("\tEngine Alias: \n" + names.get(j));
+      }
+    }
+
+    out.println("Done.");
+  }
+
+  public void testGroovy() {
+    ScriptEngine engine = manager.getEngineByName("groovy");
+    System.out.println(engine);
+
+    engine.eval(new FileReader("scripts/HelloGroovy.groovy"));
+
+/*    ScriptContext newContext = new SimpleScriptContext();
+
+    Bindings engineScope = newContext.getBindings(ScriptContext.ENGINE_SCOPE);
+
+    engineScope.put("name", "Universe!");
+
+    engine.eval("println('Hello ' + name)", newContext);
+*/
+  }
+
+  public void testJRuby() {
+    ScriptEngine engine = manager.getEngineByName("jruby");
+    System.out.println(engine);
+
+    engine.eval(new FileReader("scripts/HelloJRuby.rb"));
+
+/*    Invocable invocable = (Invocable)engine;
+
+    invocable.invokeFunction("Hello", new Object[] {"World" });
+*/
+  }
+
+  public void testBeanshell() {
+    ScriptEngine engine = manager.getEngineByName("beanshell");
+    System.out.println(engine);
+
+    engine.eval(new FileReader("scripts/hello.bsh"));
+  }
+
+  public void testJavascript1() {
+    ScriptEngine engine = manager.getEngineByName("js");
+    System.out.println(engine);
+
+    engine.eval(new FileReader("scripts/HelloJavaScript.js"));
+  }
+
+  public void testJavascript2() {
+    ScriptEngine engine = manager.getEngineByName("js");
+    System.out.println(engine);
+
+    engine.eval("function add(opt1, opt2) {return opt1 + opt2;}");
+    Invocable invocable = (Invocable) engine;
+    Object result = invocable.invokeFunction("add", new Object[] { 10,15 });
+    
+    System.out.println("Result = " + result);
+  }
+
+  public void testJavascript3() {
+    ScriptEngine engine = manager.getEngineByName("js");
+    System.out.println(engine);
+
+    Compilable compilable = (Compilable) engine;
+
+    CompiledScript script = compilable.compile("op1 + op2");
+
+    Bindings bindings = engine.createBindings();
+    bindings.put("op1", 26);
+    bindings.put("op2", 100);
+    Object result = script.eval(bindings);
+    
+    System.out.println("Result = " + result);
+  }
+
+  public void testJavascript4() {
+    ScriptEngine engine = manager.getEngineByName("js");
+    System.out.println(engine);
+
+    Map m = new HashMap();
+    CompiledScript script = m.get("fib");
+    if(script == null) {
+    	Compilable compilingEngine = (Compilable)engine;
+    	script = compilingEngine.compile(
+    			"fib(num);" +
+    			"function fib(n) {" +
+    			"  if(n <= 1) return n; " +
+    			"  return fib(n-1) + fib(n-2); " +
+    			"};"		
+    	);
+    	m.put("fib", script);
+
+    }
+
+    Bindings bindings = engine.createBindings();
+    bindings.put("num", "20");
+
+    Object result = script.eval(bindings);
+
+    System.out.println(result);
+  }
+
+  public void testJava() {
+    ScriptEngine engine = manager.getEngineByExtension("java");
+    System.out.println(engine);
+
+    Compilable compilingEngine = (Compilable)engine;
+
+    ScriptContext ctx = compilingEngine.getContext();
+    ctx.setAttribute("javax.script.filename", "scripts/Test.java", ScriptContext.GLOBAL_SCOPE);
+
+    Object result = engine.eval(new FileReader("scripts/Test.java"), ctx);
+
+    ((Runnable)result.newInstance()).run();
+  }
+
+  public static void main(String[] args) {
+    ScriptingTest test = new ScriptingTest();
+
+    if(javaVersion.startsWith("1.5")) {
+  //    test.listEngines(System.out);
+  //    test.listEngines(new PrintStream(new FileOutputStream("result.txt")));
+      test.testGroovy();
+      test.testBeanshell();
+      test.testJava();
+  //    test.testJRuby();
+  //    test.testJavascript1();
+  //    test.testJavascript2();
+  //    test.testJavascript3();
+  //    test.testJavascript4();
+    }
+    else {
+  //    test.listEngines(System.out);
+      test.listEngines(new PrintStream(new FileOutputStream("result.txt")));
+      test.testGroovy();
+      test.testBeanshell();
+      test.testJava();
+//      test.testJRuby();
+      test.testJavascript1();
+      test.testJavascript2();
+      test.testJavascript3();
+      test.testJavascript4();
+    }
+
+    System.exit(0);
+  }
+    
+}
