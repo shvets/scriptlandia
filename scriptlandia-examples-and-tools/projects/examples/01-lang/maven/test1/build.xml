@@ -7,9 +7,6 @@
 
   <artifact:localRepository id="local.repository" location="${repository.home}" layout="default"/>
 
-  <echo>
-    ? ${repository.home}
-  </echo>
   <artifact:pom file="test.maven" id="maven.project" />
 
   <target name="resolve.dependencies">
