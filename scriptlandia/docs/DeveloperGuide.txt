@@ -622,3 +622,23 @@ manifest file has specific attributes, unique to phone applications only.
 
 This is very convenient way to test mobile application before moving it to your cell phone.
 
+Starting scripts as batch files
+
+In Unix:
+
+#!/bin/sh
+exec scala "$0" "$@"
+!#
+Console.println("Hello, world!")
+argv.toList foreach Console.println
+
+
+In Windows:
+
+::#!
+@echo off
+call scala -savecompiled %0 %*
+goto :eof
+::!#
+Console.println("Hello, world!")
+argv.toList foreach Console.println
