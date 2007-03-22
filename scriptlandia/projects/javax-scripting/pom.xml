@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>javax.script</groupId>
+  <artifactId>main</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>beanshell</module>
+    <module>browserjs</module>
+    <module>freemarker</module>
+    <module>groovy</module>
+    <module>jacl</module>
+    <module>jaskell</module>
+    <module>java</module>
+    <module>javascript</module>
+    <module>jawk</module>
+    <module>jelly</module>
+    <module>jep</module>
+    <module>jexl</module>
+    <module>jruby</module>
+    <module>judo</module>
+    <module>juel</module>
+    <module>jython</module>
+    <module>ognl</module>
+    <module>pnuts</module>
+    <module>scheme</module>
+    <module>sleep</module>
+    <module>velocity</module>
+    <module>xpath</module>
+    <module>xslt</module>
+
+    <module>all-engines</module>
+  </modules>
+
+  <build>
+    <defaultGoal>package</defaultGoal>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>scriptlandia-repo</id>
+      <name>Scriptlandia Maven2 repository</name>
+      <url>http://scriptlandia-repository.googlecode.com/svn/trunk/languages</url>
+    </repository>
+  </repositories>
+
+</project>

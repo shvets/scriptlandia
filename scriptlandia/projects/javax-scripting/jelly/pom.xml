@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>javax.script</groupId>
+  <artifactId>jelly-engine</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <properties>
+    <classifier></classifier>
+    <java.specification.version>1.5</java.specification.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>commons-jelly</groupId>
+      <artifactId>commons-jelly</artifactId>
+      <version>1.0</version>
+
+      <exclusions>
+        <exclusion>
+          <groupId>dom4j</groupId>
+          <artifactId>dom4j</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>servletapi</groupId>
+          <artifactId>servletapi</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>commons-discovery</groupId>
+          <artifactId>commons-discovery</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>forehead</groupId>
+          <artifactId>forehead</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>jstl</groupId>
+          <artifactId>jstl</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-jelly</groupId>
+      <artifactId>commons-jelly-tags-ant</artifactId>
+      <version>1.1</version>
+
+      <exclusions>
+        <exclusion>
+          <groupId>dom4j</groupId>
+          <artifactId>dom4j</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>ant</groupId>
+          <artifactId>ant</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>ant</groupId>
+          <artifactId>ant-launcher</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>ant</groupId>
+          <artifactId>ant-junit</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ant</groupId>
+      <artifactId>ant</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ant</groupId>
+      <artifactId>ant-launcher</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ant</groupId>
+      <artifactId>ant-junit</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-jelly</groupId>
+      <artifactId>commons-jelly-tags-bean</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-jelly</groupId>
+      <artifactId>commons-jelly-tags-define</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-jelly</groupId>
+      <artifactId>commons-jelly-tags-dynabean</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-jelly</groupId>
+      <artifactId>commons-jelly-tags-fmt</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-jelly</groupId>
+      <artifactId>commons-jelly-tags-interaction</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-jelly</groupId>
+      <artifactId>commons-jelly-tags-junit</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-jelly</groupId>
+      <artifactId>commons-jelly-tags-xml</artifactId>
+      <version>1.1</version>
+
+      <exclusions>
+        <exclusion>
+          <groupId>dom4j</groupId>
+          <artifactId>dom4j</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-jelly</groupId>
+      <artifactId>commons-jelly-tags-util</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-jelly</groupId>
+      <artifactId>commons-jelly-tags-beanshell</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-jelly</groupId>
+      <artifactId>commons-jelly-tags-sql</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-jelly</groupId>
+      <artifactId>commons-jelly-tags-swing</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-jelly</groupId>
+      <artifactId>commons-jelly-tags-swt</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-jelly</groupId>
+      <artifactId>commons-jelly-tags-log</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <!--dependency>
+      <groupId>apt-jelly</groupId>
+      <artifactId>apt-jelly-core</artifactId>
+      <version>2.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>apt-jelly</groupId>
+      <artifactId>apt-jelly-jelly</artifactId>
+      <version>2.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>apt-jelly</groupId>
+      <artifactId>apt-jelly-freemarker</artifactId>
+      <version>2.0</version>
+    </dependency-->
+
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.0.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>dom4j</groupId>
+      <artifactId>dom4j</artifactId>
+      <version>1.6.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>script-api</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>package</defaultGoal>
+    <finalName>${artifactId}-${version}-jdk${java.specification.version}</finalName>
+
+    <resources>
+      <resource>
+        <directory>src/main/java/META-INF/services</directory>
+        <targetPath>META-INF/services</targetPath>
+        <filtering>false</filtering>
+      </resource>
+    </resources>
+    
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>${java.specification.version}</source>
+          <target>${java.specification.version}</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <classifier>${classifier}</classifier>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

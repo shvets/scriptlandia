@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+
+<!-- prepare.ant -->
+
+<project name="prepare" default="prepare" basedir=".">
+
+  <import file="prepare-macrodefs.xml"/>
+
+  <target name="get">
+    <script language="beanshell">
+      addClassPath("org-netbeans-lib-cvsclient.jar");
+
+      import org.netbeans.lib.cvsclient.*;
+      import org.netbeans.lib.cvsclient.connection.*;
+
+      String userName = "guest";
+      String hostName = "cvs.dev.java.net";
+      String repository = "cvs";
+
+      PServerConnection c = new PServerConnection();
+
+//      connection = c;
+//      c.setEncodedPassword(encodedPassword);
+
+      c.setUserName(userName);
+      c.setHostName(hostName);
+      c.setRepository(repository);        
+      c.open();
+
+
+    </script>
+  </target>
+
+  <target name="clean">
+    <clean-project name="beanshell"/>
+    <clean-project name="browserjs"/>
+    <clean-project name="freemarker"/>
+    <clean-project name="groovy"/>
+    <clean-project name="jacl"/>
+    <clean-project name="jaskell"/>
+    <clean-project name="java"/>
+    <clean-project name="javascript"/>
+    <clean-project name="jawk"/>
+    <clean-project name="jelly"/>
+    <clean-project name="jep"/>
+    <clean-project name="jexl"/>
+    <clean-project name="jruby"/>
+    <clean-project name="judo"/>
+    <clean-project name="juel"/>
+    <clean-project name="jython"/>
+    <clean-project name="ognl"/>
+    <clean-project name="pnuts"/>
+    <clean-project name="scheme"/>
+    <clean-project name="sleep"/>
+    <clean-project name="velocity"/>
+    <clean-project name="xpath"/>
+    <clean-project name="xslt"/>
+  </target>
+
+  <target name="clean-sources">
+    <clean-sources name="beanshell"/>
+    <clean-sources name="browserjs"/>
+    <clean-sources name="freemarker"/>
+    <clean-sources name="groovy"/>
+    <clean-sources name="jacl"/>
+    <clean-sources name="jaskell"/>
+    <clean-sources name="java"/>
+    <clean-sources name="javascript"/>
+    <clean-sources name="jawk"/>
+    <clean-sources name="jelly"/>
+    <clean-sources name="jep"/>
+    <clean-sources name="jexl"/>
+    <clean-sources name="jruby"/>
+    <clean-sources name="judo"/>
+    <clean-sources name="juel"/>
+    <clean-sources name="jython"/>
+    <clean-sources name="ognl"/>
+    <clean-sources name="pnuts"/>
+    <clean-sources name="scheme"/>
+    <clean-sources name="sleep"/>
+    <clean-sources name="velocity"/>
+    <clean-sources name="xpath"/>
+    <clean-sources name="xslt"/>
+  </target>
+
+  <target name="synch">
+    <property name="original.scripting.home" value="C:/Work/scripting/engines"/>
+
+    <copy-project name="beanshell">
+      <excludes>
+        <exclude name="TestBshScriptEngine.java"/>
+      </excludes>
+    </copy-project>
+
+    <copy-project name="browserjs"/>
+    <copy-project name="freemarker"/>
+    <copy-project name="groovy"/>
+    <copy-project name="jacl"/>
+    <copy-project name="jaskell"/>
+    <copy-project name="java"/>
+    <copy-project name="javascript"/>
+    <copy-project name="jawk"/>
+    <copy-project name="jelly"/>
+    <copy-project name="jep"/>
+    <copy-project name="jexl"/>
+    <copy-project name="jruby"/>
+    <copy-project name="judo"/>
+    <copy-project name="juel"/>
+    <copy-project name="jython"/>
+    <copy-project name="ognl"/>
+    <copy-project name="pnuts"/>
+    <copy-project name="scheme"/>
+    <copy-project name="sleep"/>
+    <copy-project name="velocity"/>
+    <copy-project name="xpath"/>
+    <copy-project name="xslt"/>
+  </target>
+
+  <target name="init">
+    <property name="java.specification.version" value="1.5"/>
+  </target>
+
+  <target name="prepare" depends="init">
+    <script language="beanshell">
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      String[] args = new String[] { "install", "-Dclassifier=" };
+
+      ScriptlandiaHelper.executeMaven("pom.xml", args);
+
+      args = new String[] { "install", "-Dclassifier=jdk" + System.getProperty("java.specification.version")};
+
+      ScriptlandiaHelper.executeMaven("pom.xml", args);
+    </script>
+  </target>
+
+</project>
