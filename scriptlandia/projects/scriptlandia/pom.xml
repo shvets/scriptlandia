@@ -196,6 +196,7 @@
     </plugins>
   </build>
 
+<!--
   <pluginRepositories>
     <pluginRepository>
       <id>stat-scm-sourceforge</id>
@@ -207,6 +208,7 @@
       <url>http://stat-scm.sourceforge.net/maven2-snapshots</url>
     </pluginRepository>
   </pluginRepositories>
+-->
 
   <reporting>
     <plugins>

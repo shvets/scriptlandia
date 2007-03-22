@@ -5,8 +5,10 @@ import org.apache.tools.ant.types.Path;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.DefaultLogger;
 import org.apache.tools.ant.BuildLogger;
+import org.sf.scriptlandia.util.FileUtil;
 
 import java.io.File;
+import java.util.Random;
 
 /**
  * This class is used for compiling scala source file and then
@@ -26,6 +28,13 @@ public final class ScalaStarter {
    * @throws Exception the exception
    */
   public void start(final String[] args) throws Exception {
+    String fullFileName = args[0];
+    String fileName = new File(fullFileName).getName();
+
+    File file = File.createTempFile("scala-tmp", "");
+    file.delete();
+    file.mkdir();
+
     Project project = createProject();
 
     Java javaTask1 = createJavaTask(project, COMPILER_CLASS);
@@ -33,55 +42,27 @@ public final class ScalaStarter {
 
     javaTask1.setClasspath(classpath1);
 
-    for (String arg : args) {
-      javaTask1.createArg().setValue(arg);
-    }
+    javaTask1.createArg().setValue("-d");
+    javaTask1.createArg().setValue(file.getPath());
+    javaTask1.createArg().setValue(fullFileName);
 
     javaTask1.execute();
 
     Java javaTask2 = createJavaTask(project, RUNNER_CLASS);
     Path classpath2 = getClasspath(project);
-    classpath2.setLocation(new File("."));
+    classpath2.setLocation(/*new File(".")*/file);
     
     javaTask2.setClasspath(classpath2);
 
-    String fileName = new File(args[0]).getName();
-
     args[0] = fileName.substring(0, fileName.indexOf(".scala"));
 
-    //javaTask2.setArgs(convertCommandLine(args));
     for (String arg : args) {
       javaTask2.createArg().setValue(arg);
     }
 
     javaTask2.execute();
 
-
-//    ReflectionUtil.launchClass(Class.forName(RUNNER_CLASS), args,
-//        "main(String[] argv) method does not exist for this class: " + RUNNER_CLASS);
-
-/*    System.out.println("before comp");
-    //Method method1 = ReflectionUtil.getMainMethodName(Class.forName("scala.tools.nsc.Main"));
-
-    ReflectionUtil.launchClass(Class.forName(COMPILER_CLASS), args,
-        "main(String[] argv) method does not exist for this class: " + COMPILER_CLASS);
-
-    //scala.tools.nsc.Main.main(args);
-    System.out.println("after comp");
-
-    //scala.tools.nsc.MainGenericRunner.addClasspathExtras(".");
-
-    System.out.println("before int" + fileName.substring(0, fileName.indexOf(".scala")));
-    //Method method2 = ReflectionUtil.getMainMethodName(Class.forName(RUNNER_CLASS));
-    //scala.tools.nsc.MainGenericRunner.main(new String[] { fileName.substring(0, fileName.indexOf(".scala")) });
-
-    //method2.invoke(null, new String[] { fileName.substring(0, fileName.indexOf(".scala")) });
-    ReflectionUtil.launchClass(Class.forName(RUNNER_CLASS),
-        new String[] { fileName.substring(0, fileName.indexOf(".scala")) },
-        "main(String[] argv) method does not exist for this class: " + RUNNER_CLASS);
-
-    System.out.println("after int");
-    */
+    file.deleteOnExit();
   }
 
   private Java createJavaTask(Project project, String className) {
@@ -121,10 +102,13 @@ public final class ScalaStarter {
         "/scala-compiler-" + scalaVersion + ".jar"));
     classpath.setLocation(new File(repositoryHome + "/scala/scala-actors/" + scalaVersion +
         "/scala-actors-" + scalaVersion + ".jar"));
+    classpath.setLocation(new File(repositoryHome + "/scala/scala-dbc/" + scalaVersion +
+        "/scala-dbc-" + scalaVersion + ".jar"));
+    classpath.setLocation(new File(repositoryHome + "/scala/scala-decoder/" + scalaVersion +
+        "/scala-decoder-" + scalaVersion + ".jar"));
 
     return classpath;
   }
-
   /**
    * The main method.
    *
