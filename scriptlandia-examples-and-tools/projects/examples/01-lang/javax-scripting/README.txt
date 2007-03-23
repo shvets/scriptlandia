@@ -1,33 +1,11 @@
-1. In scriptlandia project run: 
+1. In scriptlandia project install javax-scripting
 
->projects\javax-scripting\prepare.ant
+>cd projects\javax-scripting
+>cvs -d :pserver:guest@cvs.dev.java.net:/cvs login
+>cvs -d :pserver:guest@cvs.dev.java.net:/cvs checkout tmp\scripting
+
+>prepare.ant
 
 2. Run:
 
 >scripting-test.bsh
-
-
-
-
-
-
-
-
-
-
-1.
-
->javax-script-jdk15-install.maven 
-
-2.
-
->scripting-engines-install.maven 
-
-
-3.
-
-
-
-
-
-

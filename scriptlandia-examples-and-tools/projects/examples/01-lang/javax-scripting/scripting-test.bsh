@@ -188,10 +188,6 @@ public class ScriptingTest {
       test.testBeanshell();
       test.testJava();
       test.testJRuby();
-      test.testJavascript1();
-//      test.testJavascript2();
-//      test.testJavascript3();
-//      test.testJavascript4();
     }
     else {
       //test.listEngines(System.out);
