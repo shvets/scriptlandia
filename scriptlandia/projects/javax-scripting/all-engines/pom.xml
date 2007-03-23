@@ -18,6 +18,13 @@
 
     <dependency>
       <groupId>javax.script</groupId>
+      <artifactId>javascript-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
       <artifactId>bsh-engine</artifactId>
       <version>1.0</version>
       <classifier>jdk1.5</classifier>

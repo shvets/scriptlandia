@@ -4,32 +4,9 @@
 
 <project name="prepare" default="prepare" basedir=".">
 
-  <import file="prepare-macrodefs.xml"/>
+  <property name="original.scripting.home" value="C:/Work/scripting/engines"/>
 
-  <target name="get">
-    <script language="beanshell">
-      addClassPath("org-netbeans-lib-cvsclient.jar");
-
-      import org.netbeans.lib.cvsclient.*;
-      import org.netbeans.lib.cvsclient.connection.*;
-
-      String userName = "guest";
-      String hostName = "cvs.dev.java.net";
-      String repository = "cvs";
-
-      PServerConnection c = new PServerConnection();
-
-//      connection = c;
-//      c.setEncodedPassword(encodedPassword);
-
-      c.setUserName(userName);
-      c.setHostName(hostName);
-      c.setRepository(repository);        
-      c.open();
-
-
-    </script>
-  </target>
+  <import file="${basedir}/prepare-macrodefs.xml"/>
 
   <target name="clean">
     <clean-project name="beanshell"/>
@@ -84,8 +61,6 @@
   </target>
 
   <target name="synch">
-    <property name="original.scripting.home" value="C:/Work/scripting/engines"/>
-
     <copy-project name="beanshell">
       <excludes>
         <exclude name="TestBshScriptEngine.java"/>
@@ -116,11 +91,7 @@
     <copy-project name="xslt"/>
   </target>
 
-  <target name="init">
-    <property name="java.specification.version" value="1.5"/>
-  </target>
-
-  <target name="prepare" depends="init">
+  <target name="prepare">
     <script language="beanshell">
       import org.sf.scriptlandia.ScriptlandiaHelper;
 
@@ -128,7 +99,7 @@
 
       ScriptlandiaHelper.executeMaven("pom.xml", args);
 
-      args = new String[] { "install", "-Dclassifier=jdk" + System.getProperty("java.specification.version")};
+      args = new String[] { "install", "-Dclassifier=jdk1.5" };
 
       ScriptlandiaHelper.executeMaven("pom.xml", args);
     </script>
