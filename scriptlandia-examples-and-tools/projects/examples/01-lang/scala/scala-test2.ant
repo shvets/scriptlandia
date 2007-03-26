@@ -1,0 +1,63 @@
+<!-- scala-test2.ant -->
+
+<project name="scala-test2" default="run" basedir="." 
+         xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+
+  <description>
+    @author Alexander Shvets
+  </description>
+
+  <!-- 1. Define common properties. -->
+
+  <property name="src.dir" value="src/main/scala"/>
+  <property name="build.dir" value="target/classes"/>
+
+  <!-- 2. Define Scala CLASSPATH with the help of Maven 2. -->
+
+  <!--property name="repository.home" value="c:/maven-repository"/-->
+
+  <artifact:localRepository id="local.repository" location="${repository.home}" layout="default"/>
+
+  <artifact:pom file="scala-compile-test2.maven" id="maven.project" />
+
+  <artifact:dependencies pathId="scala.classpath" filesetId="compile.fileset" useScope="compile">
+    <pom refid="maven.project"/>
+  </artifact:dependencies>
+
+  <!-- 3. Define project CLASSPATH. -->
+
+  <path id="project.classpath">
+    <path refid="scala.classpath"/>
+
+    <pathelement location="${build.dir}"/>
+  </path>
+
+  <!-- 4. Define scala compiler command. -->
+
+  <taskdef resource="scala/tools/ant/antlib.xml">
+    <classpath refid="scala.classpath"/>
+  </taskdef>
+
+  <!-- 5. Compiles sources by using "scalac" command. -->
+
+  <target name="compile">
+    <mkdir dir="${build.dir}"/>
+
+    <scalac srcdir="${src.dir}" destdir="${build.dir}" classpathref="project.classpath" force="changed">
+      <include name="**/*.scala"/>
+    </scalac>
+  </target>
+
+  <!-- 6. Runs scala executable. -->
+
+  <target name="run" depends="compile">
+    <java classname="scala.tools.nsc.MainGenericRunner" fork="true">
+      <classpath>
+        <path refid="project.classpath"/>
+      </classpath>
+
+      <arg line="HelloWorld"/>
+    </java>
+  </target>
+
+</project>
