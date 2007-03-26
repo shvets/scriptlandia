@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>javax.script</groupId>
+  <artifactId>all-engines</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>browserjs-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>javascript-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>bsh-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>freemarker-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>groovy-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>jacl-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>jaskell-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>java-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>jawk-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>jelly-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>jep-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>jexl-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>jruby-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>javascript-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>judo-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>juel-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>jython-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>ognl-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>pnuts-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>sleep-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>velocity-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>xpath-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>xslt-engine</artifactId>
+      <version>1.0</version>
+      <classifier>jdk1.5</classifier>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>scriptlandia-repo</id>
+      <name>Scriptlandia Maven2 repository</name>
+      <url>http://scriptlandia-repository.googlecode.com/svn/trunk/languages</url>
+    </repository>
+  </repositories>
+
+</project>

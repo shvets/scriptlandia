@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.codehaus.plexus</groupId>
+    <artifactId>plexus-compilers</artifactId>
+    <version>1.5.3</version>
+  </parent>
+
+  <artifactId>plexus-compiler-scalac</artifactId>
+  <name>Plexus Scala Compiler</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-utils</artifactId>
+      <version>1.0.5</version>
+    </dependency>
+
+    <dependency>
+      <groupId>scala</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>2.4.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>scala</groupId>
+      <artifactId>scala-compiler</artifactId>
+      <version>2.4.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>install</defaultGoal>
+  </build>
+</project>
+

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>javax.script</groupId>
+  <artifactId>javascript-engine</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <properties>
+    <classifier></classifier>
+    <java.specification.version>1.5</java.specification.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>rhino</groupId>
+      <artifactId>js</artifactId>
+      <version>1.6R4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
+      <artifactId>script-api</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>package</defaultGoal>
+    <finalName>${artifactId}-${version}-jdk${java.specification.version}</finalName>
+
+    <resources>
+      <resource>
+        <directory>src/main/java/META-INF/services</directory>
+        <targetPath>META-INF/services</targetPath>
+        <filtering>false</filtering>
+      </resource>
+    </resources>
+    
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>${java.specification.version}</source>
+          <target>${java.specification.version}</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <classifier>${classifier}</classifier>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

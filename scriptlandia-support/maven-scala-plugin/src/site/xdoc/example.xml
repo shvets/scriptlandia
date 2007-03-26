@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <properties>
+        <title>Example</title>
+        <authors>
+            <person name="Brice Lambi" email="bricelambi@gmail.com"/>
+        </authors>
+    </properties>
+    <body>
+        <section name="Introduction">
+            <p>This is a quick example of creating a maven project and using the maven-scala-plugin.
+                For more details check out <a target="new" href="http://maven.apache.org"
+                    >http://maven.apache.org</a> or there is a quick guide at <a
+                    href="http://blambi.blogspot.com" target="new"
+            >http://blambi.blogspot.com</a></p>
+        </section>
+        <section name="Setup">
+            <p>Create a new project:</p>
+            <source> mvn archetype:create -DgroupId=org.example -DartifactId=myapp</source>
+            <p>This will create a directory named myapp and build an empty maven project.  Now add a scala source directory.</p>
+            <source> mkdir src/main/scala</source>
+            <p>This is where the plugin will look for source files to compile.  Add the file HelloWorld.scala to this directory</p>
+          <source><![CDATA[
+object HelloWorld {
+  def main(args: Array[String]) = {
+    Console.println("Hello, world!")
+  }
+}]]>
+          </source>
+        </section>
+        <section name="pom.xml">
+            <p>This is an example pom.xml, notice if you specify a scala home then you do not need the dependencies.</p>
+            <source><![CDATA[
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.example</groupId>
+  <artifactId>myapp</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>re</name>
+  <url>http://maven.apache.org</url>
+
+  <repositories>
+    <repository>
+      <id>maven2.iodp.usio</id>
+      <name>IODP Maven2 Repository</name>
+      <url>http://millstone.iodp.tamu.edu/maven2</url>
+      <layout>default</layout>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>maven2.iodp.usio</id>
+      <name>IODP Maven2 Repository</name>
+      <url>http://millstone.iodp.tamu.edu/maven2</url>
+      <layout>default</layout>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>scala</groupId>
+      <artifactId>scala-compiler</artifactId>
+      <version>2.3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>scala</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>2.3.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>myapp</finalName>
+    <plugins>
+      <plugin>
+        <groupId>iodp.usio</groupId>
+        <artifactId>maven-scala-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+</project>]]>
+            </source>
+        </section>
+        <section name="Building">
+            <p>To compile your scala code run the following command from your project directory.</p>
+            <source>mvn scala:compile</source>
+          <p>Now you will notice the compiled class files in target/classes/</p>
+        </section>
+        <section name="Running">
+          <p>You can now run your scala app by adding the mainClass configuration to your plugin definition.</p>
+          <source><![CDATA[
+      <plugin>
+        <groupId>iodp.usio</groupId>
+        <artifactId>maven-scala-plugin</artifactId>
+        <configuration>
+          <mainClass>org.example.MyClass</mainClass>
+        </configuration>
+      </plugin>]]>
+          </source>
+          <p>Now you can run the following command to run your scala app.</p>
+          <source>mvn scala:run</source>
+        </section>
+    </body>
+</document>

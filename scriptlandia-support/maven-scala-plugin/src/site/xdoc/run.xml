@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <properties>
+        <title>maven-scala-plugin</title>
+        <authors>
+            <person name="Brice Lambi" email="bricelambi@gmail.com"/>
+        </authors>
+    </properties>
+    <body>
+        <section name="Run">
+            <p>Runs a scala class, one parameter: mainClass.</p>
+      </section>
+    </body>
+</document>

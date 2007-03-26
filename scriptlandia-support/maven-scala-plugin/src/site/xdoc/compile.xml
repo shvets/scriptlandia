@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <properties>
+        <title>maven-scala-plugin</title>
+        <authors>
+            <person name="Brice Lambi" email="bricelambi@gmail.com"/>
+        </authors>
+    </properties>
+    <body>
+        <section name="Compile">
+            <p>You can either build the plugin from source, or get it from the IODP maven2
+                repository. To get it from the repository, add this to your pom.xml</p>
+        <source>
+            <![CDATA[
+  <pluginRepositories>
+    <pluginRepository>
+      <id>maven2.iodp.usio</id>
+      <name>IODP Maven2 Repository</name>
+      <url>http://millstone.iodp.tamu.edu/maven2</url>
+      <layout>default</layout>
+    </pluginRepository>
+  </pluginRepositories>
+            ]]>
+        </source>
+        <p>To build from source, download the source package and install it in your local repository with this command:</p>
+        <source> mvn install </source>
+        <p>To use the plugin add this to your pom.xml</p>
+        <source>
+            <![CDATA[
+ <plugin>
+    <groupId>iodp.usio</groupId>
+    <artifactId>maven-scala-plugin</artifactId>
+  </plugin>
+            ]]>
+        </source>
+            <p>And add the following dependencies.  You can get these from the IODP maven2 repository.</p>
+            <source>
+                <![CDATA[
+<dependency>
+    <groupId>scala</groupId>
+    <artifactId>scala-compiler</artifactId>
+    <version>2.3.0</version>
+</dependency>
+<dependency>
+    <groupId>scala</groupId>
+    <artifactId>scala-library</artifactId>
+    <version>2.3.0</version>
+</dependency>
+                ]]>
+            </source>
+            <p>If you would rather use an existing version of scala on your system either set SCALA_HOME or add scalaHome to the plugin configuration.  This makes it unnecessary to add the scala library and compiler dependencies.</p>
+            <source>export SCALA_HOME=/opt/scala</source>
+            <p>or</p>
+            <source>
+                <![CDATA[
+ <plugin>
+    <groupId>iodp.usio</groupId>
+    <artifactId>maven-scala-plugin</artifactId>
+    <configuration>
+      <scalaHome>/opt/scala</scalaHome>
+    </configuration>
+  </plugin>
+            ]]>
+            </source>
+            <p>To add the IODP maven2 repository to your project</p>
+            <source>
+                <![CDATA[
+  <repositories>
+    <repository>
+      <id>maven2.iodp.usio</id>
+      <name>IODP Maven2 Repository</name>
+      <url>http://millstone.iodp.tamu.edu/maven2</url>
+      <layout>default</layout>
+    </repository>
+  </repositories>
+                ]]>
+            </source>
+            <p>To compile your scala code, place it in</p>
+            <source> src/main/scala</source>
+            <p>Then run the command</p>
+            <source> mvn scala:compile</source>
+            <p>If you only installed the plugin in your local repository, you will need to use the full name</p>
+            <source> mvn iodp.usio:maven-scala-plugin:compile</source>
+            <p>To install the scala dependencies (if they are in your pom) and your compiled scala code into your local maven
+            repository ~/.m2/repositoy run the following command.</p>
+            <source> mvn install</source>
+            <p>This will create the following structure on your local filesystem.</p>
+            <source>
+                <![CDATA[
+/home/<user>/.m2/repository/scala
+|-- scala-compiler
+|   `-- 2.3.0
+|       |-- scala-compiler-2.3.0.jar
+|       |-- scala-compiler-2.3.0.jar.sha1
+|       |-- scala-compiler-2.3.0.pom
+|       `-- scala-compiler-2.3.0.pom.sha1
+`-- scala-library
+    `-- 2.3.0
+        |-- scala-library-2.3.0.jar
+        |-- scala-library-2.3.0.jar.sha1
+        |-- scala-library-2.3.0.pom
+        `-- scala-library-2.3.0.pom.sha1
+                ]]>
+            </source>
+      </section>
+    </body>
+</document>

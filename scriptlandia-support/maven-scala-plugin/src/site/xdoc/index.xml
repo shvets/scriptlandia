@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <properties>
+        <title>maven-scala-plugin</title>
+        <authors>
+            <person name="Brice Lambi" email="bricelambi@gmail.com"/>
+        </authors>
+    </properties>
+    <body>
+        <section name="maven-scala-plugin">
+            <p>The maven-scala-plugin is used for compiling scala code in maven. It hasn't been
+            tested much and it has only been tested on Linux, so if there are problems please let me know.</p>
+            <p>You'll notice the plugin only notices code in src/main/scala.  This means it can't be attached to the process-test-sources phase.</p>
+        </section>
+        <section name="Requirements">
+            <ul>
+                <li>Maven 2.0.4</li>
+                <li>JDK 1.5</li>
+            </ul>
+        </section>
+        <section name="Goals">
+            <table>
+                <tr>
+                    <th>Goal</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><a href="compile.html">scala:compile</a></td>
+                    <td>compiles scala source files in src/main/scala</td>
+                </tr>
+                <tr>
+                    <td><a href="run.html">scala:run</a></td>
+                    <td>runs a scala class</td>
+                </tr>
+            </table>
+        </section>
+    </body>
+</document>

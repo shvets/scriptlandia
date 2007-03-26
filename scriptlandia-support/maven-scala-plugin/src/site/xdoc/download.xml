@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <properties>
+        <title>maven-scala-plugin</title>
+        <authors>
+            <person name="Brice Lambi" email="bricelambi@gmail.com"/>
+        </authors>
+    </properties>
+    <body>
+        <section name="Downloads">
+            <ul>
+                <li><a href="maven-scala-plugin.tar.gz">maven-scala-plugin.tar.gz</a></li>
+                <li><a href="maven-scala-plugin.zip">maven-scala-plugin.zip</a></li>
+            </ul>
+        </section>
+    </body>
+</document>

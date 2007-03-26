@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<project name="maven-scala-plugin">
+    <bannerLeft>
+        <name>TAS</name>
+        <src>images/tas-logo.jpg</src>
+        <href>http://millstone.iodp.tamu.edu/rms</href>
+    </bannerLeft>
+
+    <bannerRight>
+        <name>IODP</name>
+        <src>images/iodp.gif</src>
+        <href>http://iodp.org</href>
+    </bannerRight>
+    <body>
+        <links>
+            <item name="IODP-USIO" href="http://iodp-usio.org" target="_blank"/>
+        </links>
+        <menu name="maven-scala-plugin">
+            <item name="Introduction" href="index.html"/>
+            <item name="Example" href="example.html"/>
+            <item name="Download" href="download.html"/>
+        </menu>
+    </body>
+</project>
