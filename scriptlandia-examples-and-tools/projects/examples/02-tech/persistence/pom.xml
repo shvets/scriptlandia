@@ -8,7 +8,6 @@
   <version>1.0</version>
 
   <dependencies>
-
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
@@ -18,37 +17,37 @@
     <dependency>
       <groupId>hsqldb</groupId> 
       <artifactId>hsqldb</artifactId> 
-      <version>1.8.0.1</version> 
+      <version>1.8.0.7</version> 
     </dependency>
 
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate</artifactId>
-      <version>3.2.0.ga</version>
+      <version>3.2.2.ga</version>
     </dependency>
 
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-annotations</artifactId>
-      <version>3.2.0.ga</version>
+      <version>3.2.1.ga</version>
     </dependency>
 
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
-      <version>3.2.0.ga</version>
+      <version>3.2.1.ga</version>
     </dependency>
 
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-tools</artifactId>
-      <version>3.2.0.beta8</version>
+      <version>3.2.0.beta9a</version>
     </dependency>
 
     <dependency>
       <groupId>c3p0</groupId>
       <artifactId>c3p0</artifactId>
-      <version>0.9.0</version>
+      <version>0.9.1</version>
     </dependency>
   </dependencies>
 

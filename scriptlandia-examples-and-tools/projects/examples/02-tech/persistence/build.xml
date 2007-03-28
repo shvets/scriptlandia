@@ -1,8 +1,9 @@
 <!-- persistence-test.ant -->
 
-<project name="persistence-test.antlet" default="run" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+<project name="persistence-test.antlet" default="run" basedir="." 
+         xmlns:artifact="antlib:org.apache.maven.artifact.ant">
 
-  <property name="repository.home" value="c:/maven-repository"/>
+  <!--property name="repository.home" value="c:/maven-repository"/-->
 
   <property name="database.dir" value="database"/>
 
@@ -23,7 +24,6 @@
   <artifact:dependencies pathId="maven.runtime.classpath" filesetId="runtime.fileset" useScope="runtime">
     <pom refid="maven.project"/>
   </artifact:dependencies>
-
 
   <target name="clean" description="Removes all compiled classes">
     <delete dir="${maven.project.build.directory}"/>
@@ -48,7 +48,7 @@
            debug="${debug}"
            optimize="${optimize}"
            deprecation ="${deprecation}">
-        <classpath refid="compile.classpath"/>
+        <classpath refid="maven.compile.classpath"/>
         <src path="${maven.project.build.sourceDirectory}"/>
     </javac>
   </target>
