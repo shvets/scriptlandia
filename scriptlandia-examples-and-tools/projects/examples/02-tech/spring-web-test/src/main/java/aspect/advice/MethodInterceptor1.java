@@ -10,6 +10,8 @@ public class MethodInterceptor1 implements MethodInterceptor {
 
     Object returnValue = invocation.proceed();
 
+    System.out.println("returnValue " + returnValue);
+
     System.out.println("Calling " + getClass().getName() + ".invoke() - after proceed()");
 
     return returnValue;

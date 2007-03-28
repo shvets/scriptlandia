@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
-                       "http://www.springframework.org/dtd/spring-beans.dtd">
-
-<beans>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+    
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/tx
+      http://www.springframework.org/schema/tx/spring-tx.xsd
+	  http://www.springframework.org/schema/lang 
+	  http://www.springframework.org/schema/lang/spring-lang.xsd
+	  http://www.springframework.org/schema/aop 
+	  http://www.springframework.org/schema/aop/spring-aop.xsd"
+      
+	default-autowire="no">
   <!-- System Beans -->
 
   <bean id="exceptionResolver"
@@ -88,7 +99,7 @@
 
     <property name="mappings">
       <props>
-        <!--prop key="/test1.spring">test1Controller</prop-->
+        <prop key="/test1.spring">test1Controller</prop>
         <prop key="/test2.spring">test2Controller</prop>
         <prop key="/test3.spring">test3Controller</prop>
         <prop key="/testTiles.spring">testTilesController</prop>
@@ -106,6 +117,7 @@
         <prop key="/test10.spring">test10Controller</prop>
         <prop key="/test11.spring">test11Controller</prop>
         <prop key="/test12.spring">test12Controller</prop>
+        <prop key="/test-groovy.spring">testGroovyController</prop>
         <prop key="/*.html">staticViewController</prop>
         <!--prop key="/test13.spring">test13Controller</prop-->
       </props>
@@ -288,6 +300,22 @@
 
   <bean name="/test13.spring" class="controller.Test13Controller"/>
 
+  <!-- Enables spring-scripting. -->
+
+  <bean class="org.springframework.scripting.support.ScriptFactoryPostProcessor"/>
+
+  <bean id="testGroovyController" class="org.springframework.scripting.groovy.GroovyScriptFactory">
+    <constructor-arg value="file:src/main/groovy/groovycontroller/GroovyController.groovy" />
+    <property name="message" value="Hello"/>
+  </bean>
+
+<!--
+  <lang:groovy id="testGroovyController"
+        refresh-check-delay="3000"
+        script-source="file:src/main/groovy/groovycontroller/GroovyController.groovy">
+    <lang:property name="message" value="Hello"/>
+  </lang:groovy>
+-->
   <!-- Views -->
 
   <bean id="plainTextView" class="view.PlainTextView"/>

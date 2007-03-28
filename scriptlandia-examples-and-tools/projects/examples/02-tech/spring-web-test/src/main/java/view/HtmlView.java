@@ -56,4 +56,8 @@ public class HtmlView implements View {
 
   }
 
+  public String getContentType() {
+    return "text/html";
+  }
+
 }

@@ -28,4 +28,8 @@ public class PlainTextView implements View {
     }
   }
 
+  public String getContentType() {
+    return "text/plain";
+  }
+
 }

@@ -9,7 +9,6 @@
   <h1><fmt:message key="heading"/></h1>
 
   <p>JSTL -> <fmt:message key="greeting"/> : <c:out value="${model.date}"/></p>
-
   <p>Spring -> <spring:message code="greeting"/> : <c:out value="${model.date}"/></p>
 
   <h3>Items</h3>
