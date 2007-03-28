@@ -9,18 +9,21 @@
   <!-- Creates cat. -->
   <bean id="cat" class="org.springframework.scripting.groovy.GroovyScriptFactory">
     <constructor-arg value="file:Cat.groovy" />
+    <property name="name" value="cat-name"/>
   </bean>
 
   <!-- Creates dog. -->
   <bean id="dog" class="org.springframework.scripting.jruby.JRubyScriptFactory">
     <constructor-arg value="file:Dog.ruby" />
     <constructor-arg value="Animal" />
+    <property name="name" value="dog_name"/>
   </bean>
 
   <!-- Creates cow. -->
   <bean id="cow" class="org.springframework.scripting.bsh.BshScriptFactory">
     <constructor-arg value="file:Cow.bsh" />
     <constructor-arg value="Animal" />
+    <property name="name" value="cow-name"/>
   </bean>
 
   <!-- Creates animal farm. -->

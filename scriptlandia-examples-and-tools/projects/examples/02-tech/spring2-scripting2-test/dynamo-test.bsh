@@ -39,6 +39,8 @@ public class Dynamo {
     for(int i=0; i < classNames.length; i++) {
       loadClass(classNames[i], sourceClassloader);
     }
+
+    launcher.addClasspathEntry(basedir);
   }
 
   /**
@@ -66,7 +68,7 @@ public class Dynamo {
     String[] classNames = new String[] {"Animal", "AnimalFarm" };
     String basedir = System.getProperty("user.dir");
 
-    Dynamo dynamo = new Dynamo(basedir, classNames, "dynamo-test.xml");
+    Dynamo dynamo = new Dynamo(basedir, classNames, "dynamo-test2.xml");
 
     AnimalFarm animalFarm = dynamo.getBean("farm");
 
