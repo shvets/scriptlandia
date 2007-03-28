@@ -81,6 +81,7 @@ rem SET SYSTEM_PARAMETERS=%SYSTEM_PARAMETERS% -Djavax.xml.parsers.SAXParserFacto
 rem SET CLASSPATH=@repository.home@\classworlds\classworlds\@classworlds.version@\classworlds-@classworlds.version@.jar
 SET CLASSPATH=@classworlds.base@\classworlds-@classworlds.version@.jar
 SET CLASSPATH=%CLASSPATH%;@repository.home@\org\sf\scriptlandia\classworlds-launcher\2.2.1\classworlds-launcher-2.2.1.jar
+SET CLASSPATH=%CLASSPATH%;@repository.home@\org\sf\scriptlandia\scriptlandia-common\2.2.1\scriptlandia-common-2.2.1.jar
 
 if "%MOBILE_JAVA_HOME%"=="" goto run
 

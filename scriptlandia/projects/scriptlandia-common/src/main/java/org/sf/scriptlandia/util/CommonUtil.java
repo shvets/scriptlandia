@@ -1,6 +1,10 @@
 package org.sf.scriptlandia.util;
 
 import java.io.File;
+import java.io.IOException;
+
+import java.util.jar.Manifest;
+import java.util.jar.Attributes;
 
 /**
  * This is the class for holding common utilities.
@@ -128,6 +132,33 @@ public class CommonUtil {
     }
 
     return compilerJar;
+  }
+
+  /**
+   * Sets up the java specification version.
+   */
+  public static String getJavaSpecificationVersion() throws IOException {
+    String specificationVersion = null;
+
+    String rtJarName = System.getProperty("java.home") + "../jre/lib/rt.jar";
+
+    if (!new File(rtJarName).exists()) {
+      rtJarName = System.getProperty("java.home") + "/jre/lib/rt.jar";
+
+      if (!new File(rtJarName).exists()) {  
+        rtJarName = System.getProperty("java.home.internal") + "/jre/lib/rt.jar";
+      }
+
+      if (new File(rtJarName).exists()) {  
+        final Manifest manifest = FileUtil.getManifest(rtJarName);
+
+        final Attributes mainAttributes = manifest.getMainAttributes();
+
+        specificationVersion = mainAttributes.getValue("Specification-Version");
+      }
+    }
+
+    return specificationVersion;
   }
 
 }

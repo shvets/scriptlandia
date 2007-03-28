@@ -14,19 +14,19 @@
     <dependency>
       <groupId>scriptella</groupId>
       <artifactId>scriptella-core</artifactId>
-      <version>0.7</version>
+      <version>${etl.version}</version>
     </dependency>
 
     <dependency>
       <groupId>scriptella</groupId>
       <artifactId>scriptella-drivers</artifactId>
-      <version>0.7</version>
+      <version>${etl.version}</version>
     </dependency>
 
     <dependency>
       <groupId>scriptella</groupId>
       <artifactId>scriptella-tools</artifactId>
-      <version>0.7</version>
+      <version>${etl.version}</version>
     </dependency>
   </dependencies>
 

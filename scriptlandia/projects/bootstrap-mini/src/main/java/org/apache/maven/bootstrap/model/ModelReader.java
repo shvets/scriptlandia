@@ -464,7 +464,9 @@ public class ModelReader
 
     private String interpolate( String text )
     {
-        Map map = new HashMap();
+      if(text.contains("${")) {
+        Map map = System.getProperties();
+
         map.put( "pom.groupId", model.getGroupId() );
         map.put( "pom.artifactId", model.getArtifactId() );
         map.put( "pom.version", model.getVersion() );
@@ -472,6 +474,12 @@ public class ModelReader
         map.put( "project.artifactId", model.getArtifactId() );
         map.put( "project.version", model.getVersion() );
 
-        return StringUtils.interpolate( text, map );
+
+        return StringUtils.interpolate(text, map);
+      }
+
+      return text;
     }
+
+
 }

@@ -193,7 +193,7 @@ JRuby          0.9.8        http://jruby.codehaus.org
 Pnuts          1.1          https://pnuts.dev.java.net
 Jython         2.2b1        http://www.jython.org
 Scriptlandia   2.2.1        http://sourceforge.net/projects/scriptlandia
-Scriptella     0.7          http://scriptella.javaforge.com
+Scriptella     0.8          http://scriptella.javaforge.com
 Jscheme        7.2          http://jscheme.sourceforge.net
 Jaskell        1.0          http://jaskell.codehaus.org
 TCL            1.4.0        http://tcljava.sourceforge.net
