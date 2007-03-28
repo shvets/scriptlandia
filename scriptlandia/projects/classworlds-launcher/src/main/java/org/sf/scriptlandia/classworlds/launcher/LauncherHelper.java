@@ -19,33 +19,33 @@ import java.io.IOException;
  */
 public class LauncherHelper {
   /** First properties file name, located in "user.home". */
-  private final static String SCRIPTLANDIA_PROPERTIES1 =
+  private final static String SCRIPTLANDIA_PROPERTIES =
           System.getProperty("user.home") + File.separatorChar + ".scriptlandia";
 
   /** Second properties file name, located in "scriptlandia.home". */
-  private final static String SCRIPTLANDIA_PROPERTIES2 = "scriptlandia.properties";
+//  private final static String SCRIPTLANDIA_PROPERTIES2 = "scriptlandia.properties";
 
   /** First properties file, located in "user.home". */
-  private Properties scriptlandiaProps1 = new Properties();
+  private Properties scriptlandiaProps = new Properties();
 
   /** Second properties file, located in "scriptlandia.home". */
-  private Properties scriptlandiaProps2 = new Properties();
+//  private Properties scriptlandiaProps2 = new Properties();
 
   /**
    * Creates new launcher helper.
    */
   public LauncherHelper() {
-    File scriptlandiaPropsFile = new File(SCRIPTLANDIA_PROPERTIES1);
+    File scriptlandiaPropsFile = new File(SCRIPTLANDIA_PROPERTIES);
 
     if(scriptlandiaPropsFile.exists()) {
       try {
-        scriptlandiaProps1.load(new FileInputStream(SCRIPTLANDIA_PROPERTIES1));
+        scriptlandiaProps.load(new FileInputStream(SCRIPTLANDIA_PROPERTIES));
       }
       catch (IOException e) {
         e.printStackTrace();
       }
     }
-
+/*
     String scriptlandiaHome = (String) scriptlandiaProps1.get("scriptlandia.home");
 
     File scriptlandiaPropsFile2 = new File(scriptlandiaHome + "/" + SCRIPTLANDIA_PROPERTIES2);
@@ -58,53 +58,56 @@ public class LauncherHelper {
         e.printStackTrace();
       }
     }
+*/
   }
 
   /**
    * Sets up system properties, required for running scriptlandia.
    */
   public void setupProperties() {
-    String repositoryHome = (String) scriptlandiaProps1.get("repository.home");
-    String rubyHome = (String) scriptlandiaProps1.get("native.ruby.home");
+    String repositoryHome = (String) scriptlandiaProps.get("repository.home");
+//    String rubyHome = (String) scriptlandiaProps1.get("native.ruby.home");
 
-    String jaskellVersion = (String)scriptlandiaProps1.get("jaskell.version");
-    String jrubyVersion = (String)scriptlandiaProps1.get("jruby.version");
-    String jythonVersion = (String)scriptlandiaProps1.get("jython.version");
-    String javacInternalVersion = (String)scriptlandiaProps2.get("javac.internal.version");
+//    String jaskellVersion = (String)scriptlandiaProps1.get("jaskell.version");
+//    String jrubyVersion = (String)scriptlandiaProps1.get("jruby.version");
+//    String jythonVersion = (String)scriptlandiaProps1.get("jython.version");
+//    String javacInternalVersion = (String)scriptlandiaProps2.get("javac.internal.version");
 
-    String javacInternalBase = (String) scriptlandiaProps2.get("javac.internal.base");
+//    String javacInternalBase = (String) scriptlandiaProps2.get("javac.internal.base");
     
     System.setProperty("maven.repo.local", repositoryHome);
 
-    System.setProperty("javac.internal.base", javacInternalBase);    
-    System.setProperty("javac.internal.version", javacInternalVersion);
+//    System.setProperty("javac.internal.base", javacInternalBase);    
+//    System.setProperty("javac.internal.version", javacInternalVersion);
 
-    System.setProperty("python.home", repositoryHome + "/jython/jython/" + jythonVersion);
-    System.setProperty("python.cachedir", repositoryHome + "/jython/jython/" + jythonVersion + "/cachedir");
+    System.setProperty("python.home", (String)scriptlandiaProps.get("jython.base"));
+    System.setProperty("python.cachedir", (String)scriptlandiaProps.get("jython.base") + "/cachedir");
 
-    String jRubyHome = repositoryHome + "/jruby/jruby/" + jrubyVersion;
+//    String jRubyHome = repositoryHome + "/jruby/jruby/" + jrubyVersion;
 
     System.setProperty("jruby.shell", "cmd.exe");
     System.setProperty("jruby.script", "jruby.bat");
-    System.setProperty("jruby.home", jRubyHome);
+    System.setProperty("jruby.home", (String)scriptlandiaProps.get("jruby.base"));
 
-    System.setProperty("jaskell.home", repositoryHome + "/jaskell/jaskell/" + jaskellVersion);
+    System.setProperty("jaskell.home", (String)scriptlandiaProps.get("jaskell.base"));
 
-    Iterator iterator = scriptlandiaProps1.keySet().iterator();
+    Iterator iterator = scriptlandiaProps.keySet().iterator();
 
     while(iterator.hasNext()) {
       String key = (String)iterator.next();
 
-      System.setProperty(key, (String)scriptlandiaProps1.get(key));
-
+      if(!key.equals("java.home")) {
+        System.setProperty(key, (String)scriptlandiaProps.get(key));
+      }
     }
 
-    try {
+/*    try {
       System.setProperty("java.specification.version", CommonUtil.getJavaSpecificationVersion());
     }
     catch(IOException e) {
       e.printStackTrace();
     }
+*/
   }
  
 

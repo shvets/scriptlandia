@@ -145,17 +145,18 @@ public class CommonUtil {
     if (!new File(rtJarName).exists()) {
       rtJarName = System.getProperty("java.home") + "/jre/lib/rt.jar";
 
-      if (!new File(rtJarName).exists()) {  
+/*      if (!new File(rtJarName).exists()) {  
         rtJarName = System.getProperty("java.home.internal") + "/jre/lib/rt.jar";
       }
+*/
+    }
 
-      if (new File(rtJarName).exists()) {  
-        final Manifest manifest = FileUtil.getManifest(rtJarName);
+    if (new File(rtJarName).exists()) {  
+      final Manifest manifest = FileUtil.getManifest(rtJarName);
 
-        final Attributes mainAttributes = manifest.getMainAttributes();
+      final Attributes mainAttributes = manifest.getMainAttributes();
 
-        specificationVersion = mainAttributes.getValue("Specification-Version");
-      }
+      specificationVersion = mainAttributes.getValue("Specification-Version");
     }
 
     return specificationVersion;
