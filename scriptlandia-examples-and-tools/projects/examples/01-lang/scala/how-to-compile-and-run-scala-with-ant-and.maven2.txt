@@ -19,8 +19,8 @@ and want to compile/run it. In order to do it, we have to perform some additiona
 
 a). Scala is preinstalled
 
-You need to have "scala-library" and "scala compiler" packages in order to compile Scala programs. 
-You can download them for Scala web site (http://scala-lang.org). 
+You need to have "scala-library" and "scala compiler" libraries in order to compile Scala programs. 
+You can download them from Scala web site (http://scala-lang.org). 
 
 Your ant script will start with the following lines:
 
@@ -125,7 +125,7 @@ standard extension to the plexus compiler
 The extension is located in the following repository:
 http://scriptlandia-repository.googlecode.com/svn/trunk/languages
 
-Another plugin for scala is implemented as regular scala plugin 
+Another plugin for scala is implemented as regular maven plugin 
 (see details here: http://millstone.iodp.tamu.edu/~blambi/maven-scala-plugin).
 
 a). plexus-compiler-scalac
@@ -152,7 +152,7 @@ First, you have to specify the location of scala sources. We'll do it with the h
     </executions>
   </plugin>
 
-  Then, you configure "maven-compiler-plugin" plugin:
+Then you configure "maven-compiler-plugin" plugin:
 
   <plugin>
     <groupId>org.apache.maven.plugins</groupId>
@@ -175,6 +175,16 @@ First, you have to specify the location of scala sources. We'll do it with the h
       </dependency>
     </dependencies>
   </plugin>
+
+And don't forget about right repository:
+
+  <repositories>
+    <repository>
+      <id>scriptlandia-repo</id>
+      <name>Scriptlandia Maven2 repository</name>
+      <url>http://scriptlandia-repository.googlecode.com/svn/trunk/languages</url>
+    </repository>
+  </repositories>
 
 Now, compilation is easy:
 
@@ -205,7 +215,7 @@ And run it:
 
 b). maven-scala-plugin 
 
-This plugin contains 2 parts: compiler and runner. It reqires small configuration:
+This plugin contains 2 parts: compiler and runner. It requires small configuration:
 
   <plugin>
     <groupId>iodp.usio</groupId>
@@ -234,7 +244,7 @@ You also have to specify the location of this plugin:
     </pluginRepository>
   </pluginRepositories>
 
-Now you will be able to compile and run scala code:
+Now you will be able to compile and run scala code now:
 
 >mvn scala:compile
 
