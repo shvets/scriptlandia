@@ -1,0 +1,31 @@
+<!-- persistence-test.ant -->
+
+<project name="persistence-groovy.antlet" default="init" basedir=".">
+
+  <target name="init">
+    <script language="groovy">
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      ScriptlandiaHelper.addMavenDependencies("pom.xml");
+
+      import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+
+      String repositoryHome = System.getProperty("repository.home");
+
+      ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+
+//      launcher.addClasspathEntry("toplink-essentials.jar");
+//    launcher.addClasspathEntry("derby.jar");
+      launcher.addClasspathEntry("src/main/groovy");
+      launcher.addClasspathEntry("src/main/groovy/META-INF");
+    </script>
+  </target>
+
+  <target name="populate" depends="init">
+    <script language="groovy" src="src/main/groovy/PopulateAddressBook.groovy"/>
+  </target>
+
+  <target name="query" depends="init">
+    <script language="groovy" src="src/main/groovy/QueryAddressBook.groovy"/>
+  </target>
+</project>
