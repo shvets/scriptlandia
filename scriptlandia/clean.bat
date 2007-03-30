@@ -17,5 +17,3 @@ if exist projects\scriptlandia\target rmdir /S /Q projects\scriptlandia\target
 
 if exist target rmdir /S /Q target
 if exist classes rmdir /S /Q classes
-
-projects\javax-scripting\prepare.ant clean clean-sources
