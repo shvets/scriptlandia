@@ -191,6 +191,10 @@
         Upgrade Scriptella up to version 0.8.
       </action>        
 
+      <action dev="Alexander Shvets" type="fix">
+        Using maven 2.0.6.
+      </action>
+
     </release>
 
    </body>

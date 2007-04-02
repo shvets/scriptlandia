@@ -6,13 +6,12 @@
   <groupId>org.sf.scriptlandia</groupId>
   <artifactId>scriptlandia-config</artifactId>
   <version>2.2.1</version>
+  <packaging>pom</packaging>
 
   <name>Scriptlandia Config Module</name>
   <description>
     This project is used for installing/configuring scriptlandia framework.
   </description>
-
-  <packaging>jar</packaging>
 
   <url>http://sf.net/projects/scriptlandia/</url>
   <inceptionYear>2006</inceptionYear>
@@ -45,6 +44,11 @@
       <url>http://www.gnu.org/copyleft/gpl.html</url>
     </license>
   </licenses>
+
+  <modules>
+    <module>components</module>
+    <module>starters</module>
+  </modules>
 
   <build>
     <finalName>${artifactId}</finalName>

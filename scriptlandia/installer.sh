@@ -2,7 +2,7 @@
 
 JAVA_HOME=/opt/java_1.5.0
 MOBILE_JAVA_HOME=/opt/j2me-2.3
-MAVEN_HOME=/opt/maven-2.0.5
+MAVEN_HOME=/opt/maven-2.0.6
 
 
 :step1

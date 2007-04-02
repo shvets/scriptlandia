@@ -1,23 +1,21 @@
 package org.sf.scriptlandia.pomreader;
 
+
+import org.apache.maven.bootstrap.download.AbstractArtifactResolver;
+import org.apache.maven.bootstrap.download.DownloadFailedException;
+import org.apache.maven.bootstrap.download.HttpUtils;
+import org.apache.maven.bootstrap.download.RepositoryMetadata;
 import org.apache.maven.bootstrap.model.Dependency;
 import org.apache.maven.bootstrap.model.Model;
 import org.apache.maven.bootstrap.model.Repository;
 import org.apache.maven.bootstrap.util.FileUtils;
 import org.apache.maven.bootstrap.util.StringUtils;
-import org.apache.maven.bootstrap.download.DownloadFailedException;
-import org.apache.maven.bootstrap.download.HttpUtils;
-import org.apache.maven.bootstrap.download.AbstractArtifactResolver;
-import org.apache.maven.bootstrap.download.RepositoryMetadata;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-public class OnlineArtifactDownloader extends AbstractArtifactResolver {
+public class OnlineArtifactDownloader
+        extends AbstractArtifactResolver {
   public static final String SNAPSHOT_SIGNATURE = "-SNAPSHOT";
 
   private boolean useTimestamp = true;
@@ -39,7 +37,7 @@ public class OnlineArtifactDownloader extends AbstractArtifactResolver {
   private List<Repository> remoteRepositories;
 
   public OnlineArtifactDownloader(Repository localRepository)
-    throws Exception {
+          throws Exception {
     super(localRepository);
   }
 
@@ -52,7 +50,7 @@ public class OnlineArtifactDownloader extends AbstractArtifactResolver {
   }
 
   public void downloadDependencies(Collection dependencies)
-    throws DownloadFailedException {
+          throws DownloadFailedException {
     for (Object dependency : dependencies) {
       Dependency dep = (Dependency) dependency;
 
@@ -88,6 +86,17 @@ public class OnlineArtifactDownloader extends AbstractArtifactResolver {
   }
 
   private static boolean isSnapshot(Dependency dep) {
+    // Assume managed snapshot
+    if (dep == null || dep.getGroupId().startsWith("org.apache.maven")) {
+      return false;
+
+    }
+
+    // Assume managed snapshot
+    if (dep.getVersion() == null) {
+      return false;
+    }
+
     return dep.getVersion().indexOf(SNAPSHOT_SIGNATURE) >= 0;
   }
 
@@ -123,42 +132,45 @@ public class OnlineArtifactDownloader extends AbstractArtifactResolver {
         if (snapshot) {
           String filename = "maven-metadata-" + remoteRepo.getId() + ".xml";
           File localFile = getLocalRepository().getMetadataFile(dep.getGroupId(), dep.getArtifactId(),
-            dep.getVersion(), dep.getType(),
-            "maven-metadata-local.xml");
+                  dep.getVersion(), dep.getType(),
+                  "maven-metadata-local.xml");
           File remoteFile = getLocalRepository().getMetadataFile(dep.getGroupId(), dep.getArtifactId(),
-            dep.getVersion(), dep.getType(), filename);
+                  dep.getVersion(), dep.getType(), filename);
           String metadataPath = remoteRepo.getMetadataPath(dep.getGroupId(), dep.getArtifactId(),
-            dep.getVersion(), dep.getType(),
-            "maven-metadata.xml");
+                  dep.getVersion(), dep.getType(),
+                  "maven-metadata.xml");
           String metaUrl = remoteRepo.getBasedir() + "/" + metadataPath;
           log("Downloading " + metaUrl);
 
 
           if (metaUrl.startsWith("file://")) {
             loadFileLocally(metaUrl, remoteFile);
-          } else {
-            try {
-              HttpUtils.getFile(metaUrl, remoteFile, ignoreErrors, true, proxyHost, proxyPort, proxyUserName,
-                proxyPassword, false);
-            }
-            catch (IOException e) {
-              log("WARNING: remote metadata version not found, using local: " + e.getMessage());
-              remoteFile.delete();
-            }
+          }
+          else {
+          try {
+            HttpUtils.getFile(metaUrl, remoteFile, ignoreErrors, true, proxyHost, proxyPort, proxyUserName,
+                    proxyPassword, false);
+          }
+          catch (IOException e) {
+            log("WARNING: remote metadata version not found, using local: " + e.getMessage());
+            remoteFile.delete();
+          }
           }
 
           File file = localFile;
           if (remoteFile.exists()) {
             if (!localFile.exists()) {
               file = remoteFile;
-            } else {
+            }
+            else {
               RepositoryMetadata localMetadata = RepositoryMetadata.read(localFile);
 
               RepositoryMetadata remoteMetadata = RepositoryMetadata.read(remoteFile);
 
               if (remoteMetadata.getLastUpdatedUtc() > localMetadata.getLastUpdatedUtc()) {
                 file = remoteFile;
-              } else {
+              }
+              else {
                 file = localFile;
               }
             }
@@ -176,10 +188,11 @@ public class OnlineArtifactDownloader extends AbstractArtifactResolver {
             dep.setResolvedVersion(version);
             if (!version.endsWith("SNAPSHOT")) {
               String ver =
-                version.substring(version.lastIndexOf("-", version.lastIndexOf("-") - 1) + 1);
+                      version.substring(version.lastIndexOf("-", version.lastIndexOf("-") - 1) + 1);
               String extension = url.substring(url.length() - 4);
               url = getSnapshotMetadataFile(url, ver + extension);
-            } else if (destinationFile.exists()) {
+            }
+            else if (destinationFile.exists()) {
               // It's already there
               return true;
             }
@@ -188,14 +201,14 @@ public class OnlineArtifactDownloader extends AbstractArtifactResolver {
         if (!"pom".equals(dep.getType())) {
           String name = dep.getArtifactId() + "-" + dep.getResolvedVersion() + ".pom";
           File file = getLocalRepository().getMetadataFile(dep.getGroupId(), dep.getArtifactId(),
-            dep.getVersion(), dep.getType(), name);
+                  dep.getVersion(), dep.getType(), name);
 
           file.getParentFile().mkdirs();
 
           if (!file.exists() || version.indexOf("SNAPSHOT") >= 0) {
             String filename = dep.getArtifactId() + "-" + version + ".pom";
             String metadataPath = remoteRepo.getMetadataPath(dep.getGroupId(), dep.getArtifactId(),
-              dep.getVersion(), dep.getType(), filename);
+                    dep.getVersion(), dep.getType(), filename);
             String metaUrl = remoteRepo.getBasedir() + "/" + metadataPath;
             log("Downloading " + metaUrl);
 
@@ -204,15 +217,15 @@ public class OnlineArtifactDownloader extends AbstractArtifactResolver {
               loadFileLocally(metaUrl, file);
             } else {
 
-              try {
-                HttpUtils.getFile(metaUrl, file, ignoreErrors, false, proxyHost, proxyPort, proxyUserName,
-                  proxyPassword, false);
-              }
-              catch (IOException e) {
-                log("Couldn't find POM - ignoring: " + e.getMessage());
-              }
+            try {
+              HttpUtils.getFile(metaUrl, file, ignoreErrors, false, proxyHost, proxyPort, proxyUserName,
+                      proxyPassword, false);
+            }
+            catch (IOException e) {
+              log("Couldn't find POM - ignoring: " + e.getMessage());
             }
           }
+        }
         }
 
         destinationFile = getLocalRepository().getArtifactFile(dep);
@@ -223,13 +236,13 @@ public class OnlineArtifactDownloader extends AbstractArtifactResolver {
             loadFileLocally(url, destinationFile);
           } else {
 
-            HttpUtils.getFile(url, destinationFile, ignoreErrors, useTimestamp, proxyHost, proxyPort,
-              proxyUserName, proxyPassword, true);
-            if (dep.getVersion().indexOf("SNAPSHOT") >= 0) {
-              String name = StringUtils.replace(destinationFile.getName(), version, dep.getVersion());
-              FileUtils.copyFile(destinationFile, new File(destinationFile.getParentFile(), name));
-            }
+          HttpUtils.getFile(url, destinationFile, ignoreErrors, useTimestamp, proxyHost, proxyPort,
+                  proxyUserName, proxyPassword, true);
+          if (dep.getVersion().indexOf("SNAPSHOT") >= 0) {
+            String name = StringUtils.replace(destinationFile.getName(), version, dep.getVersion());
+            FileUtils.copyFile(destinationFile, new File(destinationFile.getParentFile(), name));
           }
+        }
         }
 
         // Artifact was found, continue checking additional remote repos (if any)
@@ -304,12 +317,12 @@ public class OnlineArtifactDownloader extends AbstractArtifactResolver {
 
       remoteRepositories.add(new Repository("mergere", "http://repo.mergere.com/maven2", Repository.LAYOUT_DEFAULT,
         false, true));
-      // TO DO: use super POM?
+      // TODO: use super POM?
 //            remoteRepositories.add( new Repository( "central", REPO_URL, Repository.LAYOUT_DEFAULT, false, true ) );
 
-      // TO DO: use maven root POM?
+      // TODO: use maven root POM?
       remoteRepositories.add(new Repository("apache.snapshots", "http://cvs.apache.org/maven-snapshot-repository",
-        Repository.LAYOUT_DEFAULT, true, false));
+              Repository.LAYOUT_DEFAULT, true, false));
 
       remoteRepositories.add(new Repository("central2", "http://repo1.maven.org/maven2", Repository.LAYOUT_DEFAULT,
         false, true));

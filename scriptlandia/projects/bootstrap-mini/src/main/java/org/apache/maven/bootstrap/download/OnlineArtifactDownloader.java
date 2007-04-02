@@ -73,6 +73,7 @@ public class OnlineArtifactDownloader
     public void downloadDependencies( Collection dependencies )
         throws DownloadFailedException
     {
+
         for ( Iterator j = dependencies.iterator(); j.hasNext(); )
         {
             Dependency dep = (Dependency) j.next();
@@ -117,6 +118,19 @@ public class OnlineArtifactDownloader
 
     private static boolean isSnapshot( Dependency dep )
     {
+        // Assume managed snapshot
+        if ( dep == null || dep.getGroupId().startsWith( "org.apache.maven" ) )
+        {
+            return false;
+
+        }
+
+        // Assume managed snapshot
+        if ( dep.getVersion() == null )
+        {
+            return false;
+        }
+
         return dep.getVersion().indexOf( SNAPSHOT_SIGNATURE ) >= 0;
     }
 

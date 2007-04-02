@@ -88,6 +88,10 @@ public class ModelReader
 
     private boolean insidePlugin;
 
+    private boolean insideProperties = false;
+
+    private Map pomProperties = new HashMap();
+
     public ModelReader( ArtifactResolver resolver, boolean resolveTransitiveDependencies )
     {
         this( resolver, null, resolveTransitiveDependencies, Collections.EMPTY_SET );
@@ -182,6 +186,11 @@ public class ModelReader
         {
             insideConfiguration = true;
         }
+        else if ( rawName.equals( "properties" ) )
+        {
+            insideProperties = true;
+        }
+
         depth++;
     }
 
@@ -223,7 +232,7 @@ public class ModelReader
 
             if ( model.getVersion() == null )
             {
-                model.setVersion( model.getParentVersion() );
+                model.setVersion( interpolate(model.getParentVersion()) );
             }
 
             Model p = ProjectResolver.retrievePom( resolver, model.getParentGroupId(), model.getParentArtifactId(),
@@ -378,7 +387,7 @@ public class ModelReader
             }
             else if ( rawName.equals( "version" ) )
             {
-                currentPlugin.setVersion( getBodyText() );
+                currentPlugin.setVersion( interpolate(getBodyText()) );
             }
         }
         else if ( insideResource )
@@ -430,6 +439,15 @@ public class ModelReader
                 insideReleases = false;
             }
         }
+        else if ( rawName.equals( "properties" ) )
+        {
+          insideProperties = false;
+        }
+        else if (insideProperties)
+        {
+          pomProperties.put(rawName, getBodyText());
+        }
+
         else if ( depth == 2 )
         {
             if ( rawName.equals( "artifactId" ) )
@@ -438,7 +456,7 @@ public class ModelReader
             }
             else if ( rawName.equals( "version" ) )
             {
-                model.setVersion( getBodyText() );
+                model.setVersion( interpolate(getBodyText()) );
             }
             else if ( rawName.equals( "groupId" ) )
             {
@@ -465,21 +483,31 @@ public class ModelReader
     private String interpolate( String text )
     {
       if(text.contains("${")) {
-        Map map = System.getProperties();
+        String result = StringUtils.interpolate( text, System.getProperties());
 
-        map.put( "pom.groupId", model.getGroupId() );
-        map.put( "pom.artifactId", model.getArtifactId() );
-        map.put( "pom.version", model.getVersion() );
-        map.put( "project.groupId", model.getGroupId() );
-        map.put( "project.artifactId", model.getArtifactId() );
-        map.put( "project.version", model.getVersion() );
+        if(result.equals(text)) {
+          result = StringUtils.interpolate( text, pomProperties);
+        }
+
+        if(result.equals(text)) {
+          Map map = new HashMap();
+
+          map.put( "pom.groupId", model.getGroupId() );
+          map.put( "pom.artifactId", model.getArtifactId() );
+          map.put( "pom.version", model.getVersion() );
+          map.put( "project.groupId", model.getGroupId() );
+          map.put( "project.artifactId", model.getArtifactId() );
+          map.put( "project.version", model.getVersion() );
 
 
-        return StringUtils.interpolate(text, map);
-      }
+          result = StringUtils.interpolate( text, map );
+        }
+
+        return result;
+    }
 
       return text;
-    }
+  }
 
 
 }
