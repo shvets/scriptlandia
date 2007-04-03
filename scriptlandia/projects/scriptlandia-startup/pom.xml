@@ -101,7 +101,7 @@
     <dependency>
       <groupId>com.sun.fortress</groupId>
       <artifactId>fortress-lib</artifactId>
-      <version>152</version>
+      <version>${fortress.version}</version>
     </dependency>
 
     <dependency>

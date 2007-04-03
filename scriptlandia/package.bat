@@ -104,6 +104,7 @@ SET BASIC_CLASSPATH=%BASIC_CLASSPATH%;%SCRIPTLANDIA_INSTALLER_PROJECT%\target\sc
 %JAVA_HOME%\bin\java ^
   -Dmaven.repo.local=%REPOSITORY_HOME% %PROXY_PARAMS% -Dbasedir=projects\scriptlandia-startup ^
   -classpath %BASIC_CLASSPATH% ^
+  %SYSTEM_PROPERTIES% ^
   org.sf.scriptlandia.install.ProjectInstaller
 
 echo ---### Installing required projects and configuration files...

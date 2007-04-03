@@ -83,6 +83,13 @@ SET CLASSPATH=@classworlds.base@\classworlds-@classworlds.version@.jar
 SET CLASSPATH=%CLASSPATH%;@repository.home@\org\sf\scriptlandia\classworlds-launcher\2.2.1\classworlds-launcher-2.2.1.jar
 SET CLASSPATH=%CLASSPATH%;@repository.home@\org\sf\scriptlandia\scriptlandia-common\2.2.1\scriptlandia-common-2.2.1.jar
 
+rem due to fortess issue
+SET CLASSPATH=%CLASSPATH%;@repository.home@\com\sun\fortress\fortress\156\fortress-156.jar
+SET CLASSPATH=%CLASSPATH%;@repository.home@\concurrent\concurrent\1.3.4\concurrent-1.3.4.jar
+SET CLASSPATH=%CLASSPATH%;@repository.home@\xtc\xtc\1.10.0\xtc-1.10.0.jar
+SET CLASSPATH=%CLASSPATH%;@repository.home@\dstm\dstm\2.0\dstm-2.0.jar
+SET CLASSPATH=%CLASSPATH%;@repository.home@\bcel\bcel\5.2\bcel-5.2.jar
+
 if "%MOBILE_JAVA_HOME%"=="" goto run
 
 SET MOBILE_CLASSPATH=%MOBILE_JAVA_HOME%\wtklib\kenv.zip

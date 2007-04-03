@@ -195,6 +195,10 @@
         Using maven 2.0.6.
       </action>
 
+      <action dev="Alexander Shvets" type="fix">
+       Fixed issue with fortress launch. Upgraded to build 156.
+      </action>
+
     </release>
 
    </body>
