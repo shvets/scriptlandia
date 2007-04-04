@@ -19,6 +19,10 @@
   <url>http://sf.net/projects/scriptlandia/</url>
   <inceptionYear>2006</inceptionYear>
 
+  <properties>
+    <maven.version>2.0.6</maven.version>
+  </properties>
+
   <issueManagement>
     <system>SourceForge</system>
     <url>http://sourceforge.net/tracker/?group_id=127753</url>

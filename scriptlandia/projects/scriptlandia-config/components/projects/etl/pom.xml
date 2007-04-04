@@ -10,6 +10,10 @@
   <name>Scriptlandia ETL Module</name>
   <description>Scriptlandia ETL Module</description>
 
+  <properties>
+    <etl.version>0.8</etl.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>scriptella</groupId>

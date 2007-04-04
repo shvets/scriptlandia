@@ -10,11 +10,15 @@
   <name>Scriptlandia F3 Module</name>
   <description>Scriptlandia F3 Module</description>
 
+  <properties>
+    <f3.version>1.0</f3.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>net.java</groupId>
       <artifactId>f3</artifactId>
-      <version>1.0</version>
+      <version>${f3.version}</version>
     </dependency>
   </dependencies>
 

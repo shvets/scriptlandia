@@ -10,6 +10,10 @@
   <name>Scriptlandia Groovy Module</name>
   <description>Scriptlandia Groovy Module</description>
 
+  <properties>
+    <groovy.version>1.0</groovy.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>groovy</groupId>

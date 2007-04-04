@@ -10,17 +10,21 @@
   <name>Scriptlandia Pnuts Module</name>
   <description>Scriptlandia Pnuts Module</description>
 
+  <properties>
+    <pnuts.version>1.1</pnuts.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>pnuts</groupId>
       <artifactId>pnuts</artifactId>
-      <version>1.1</version>
+      <version>${pnuts.version}</version>
     </dependency>
 
     <dependency>
       <groupId>pnuts</groupId>
       <artifactId>pnuts-modules</artifactId>
-      <version>1.1</version>
+      <version>${pnuts.version}</version>
     </dependency>
   </dependencies>
 

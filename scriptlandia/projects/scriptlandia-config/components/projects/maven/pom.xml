@@ -10,18 +10,21 @@
   <name>Scriptlandia Maven Module</name>
   <description>Scriptlandia Maven Module</description>
 
+  <properties>
+    <maven.version>2.0.6</maven.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-core</artifactId>
-      <version>2.0.6</version>
+      <version>${maven.version}</version>
     </dependency>
-
 
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-settings</artifactId>
-      <version>2.0.6</version>
+      <version>${maven.version}</version>
     </dependency>
 
     <dependency>
@@ -33,7 +36,7 @@
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-plugin-parameter-documenter</artifactId>
-      <version>2.0.6</version>
+      <version>${maven.version}</version>
     </dependency>
 
     <dependency>
@@ -45,25 +48,25 @@
     <dependency>
       <groupId>org.apache.maven.reporting</groupId>
       <artifactId>maven-reporting-api</artifactId>
-      <version>2.0.6</version>
+      <version>${maven.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-profile</artifactId>
-      <version>2.0.6</version>
+      <version>${maven.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-model</artifactId>
-      <version>2.0.6</version>
+      <version>${maven.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-artifact</artifactId>
-      <version>2.0.6</version>
+      <version>${maven.version}</version>
     </dependency>
 
     <dependency>
@@ -81,19 +84,19 @@
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-repository-metadata</artifactId>
-      <version>2.0.6</version>
+      <version>${maven.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-error-diagnostics</artifactId>
-      <version>2.0.6</version>
+      <version>${maven.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-project</artifactId>
-      <version>2.0.6</version>
+      <version>${maven.version}</version>
     </dependency>
 
     <dependency>
@@ -115,7 +118,7 @@
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-plugin-api</artifactId>
-      <version>2.0.6</version>
+      <version>${maven.version}</version>
     </dependency>
 
     <dependency>
@@ -127,7 +130,7 @@
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-plugin-descriptor</artifactId>
-      <version>2.0.6</version>
+      <version>${maven.version}</version>
     </dependency>
 
     <dependency>
@@ -149,13 +152,13 @@
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-artifact-manager</artifactId>
-      <version>2.0.6</version>
+      <version>${maven.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-monitor</artifactId>
-      <version>2.0.6</version>
+      <version>${maven.version}</version>
     </dependency>
 
     <dependency>

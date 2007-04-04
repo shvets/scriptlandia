@@ -10,17 +10,21 @@
   <name>Scriptlandia JRuby Module</name>
   <description>Scriptlandia JRuby Module</description>
 
+  <properties>
+    <jruby.version>0.9.8</jruby.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>jruby</groupId>
       <artifactId>jruby</artifactId>
-      <version>0.9.8</version>
+      <version>${jruby.version}</version>
     </dependency>
 
     <dependency>
       <groupId>jruby</groupId>
       <artifactId>jruby-lib</artifactId>
-      <version>0.9.8</version>
+      <version>${jruby.version}</version>
     </dependency>
   </dependencies>
 

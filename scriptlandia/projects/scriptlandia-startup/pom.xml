@@ -13,6 +13,10 @@
     of scriptlandia framework.
   </description>
 
+  <properties>
+    <fortress.version>156</fortress.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.apache.ant</groupId>

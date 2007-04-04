@@ -78,7 +78,6 @@
 
         <jre minVersion="1.5.0">
           <opt>-Dant.version.internal=1.7.0</opt>
-          <opt>-Dmaven.version=2.0.6</opt>
           <opt>-Dbeanshell.version=2.0b5</opt>
           <opt>-Dscriptlandia.version=2.2.1</opt>
         </jre>
@@ -99,7 +98,6 @@
 
         <jre minVersion="1.5.0">
           <opt>-Dant.version.internal=1.7.0</opt>
-          <opt>-Dmaven.version=2.0.6</opt>
           <opt>-Dbeanshell.version=2.0b5</opt>
           <opt>-Dscriptlandia.version=2.2.1</opt>
         </jre>
@@ -119,7 +117,6 @@
 
         <jre minVersion="1.5.0">
           <opt>-Dant.version.internal=1.7.0</opt>
-          <opt>-Dmaven.version=2.0.6</opt>
           <opt>-Dbeanshell.version=2.0b5</opt>
           <opt>-Dscriptlandia.version=2.2.1</opt>
         </jre>

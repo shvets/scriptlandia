@@ -10,29 +10,33 @@
   <name>Scriptlandia TCL Module</name>
   <description>Scriptlandia TCL Module</description>
 
+  <properties>
+    <tcl.version>1.4.0</tcl.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>tcl</groupId>
       <artifactId>jacl</artifactId>
-      <version>1.4.0</version>
+      <version>${tcl.version}</version>
     </dependency>
 
     <dependency>
       <groupId>tcl</groupId>
       <artifactId>tcljava</artifactId>
-      <version>1.4.0</version>
+      <version>${tcl.version}</version>
     </dependency>
 
     <dependency>
       <groupId>tcl</groupId>
       <artifactId>itcl</artifactId>
-      <version>1.4.0</version>
+      <version>${tcl.version}</version>
     </dependency>
 
     <dependency>
       <groupId>tcl</groupId>
       <artifactId>tjc</artifactId>
-      <version>1.4.0</version>
+      <version>${tcl.version}</version>
     </dependency>
   </dependencies>
 

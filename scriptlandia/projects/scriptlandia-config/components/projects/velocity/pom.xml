@@ -10,11 +10,15 @@
   <name>Scriptlandia Velocity Module</name>
   <description>Scriptlandia Velocity Module</description>
 
+  <properties>
+    <velocity.version>1.5</velocity.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>velocity</groupId>
       <artifactId>velocity</artifactId>
-      <version>1.5</version>
+      <version>${velocity.version}</version>
     </dependency>
   </dependencies>
 
