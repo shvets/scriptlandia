@@ -1,0 +1,19 @@
+<ivyconf>
+    <conf defaultResolver="dotsrc-maven2-resolver" defaultLatestStragegy="latest-revision" validate="false"/>
+    <resolvers>
+        <ibiblio name="dotsrc-maven2-resolver"
+                checkconsistency="false"
+                m2compatible="true"
+                root="http://mirrors.dotsrc.org/maven2/"/>
+        <ibiblio name="ibiblio-maven2-resolver"
+                m2compatible="true"
+                root="http://www.ibiblio.org/maven2/"/>
+    </resolvers>
+<!--
+    <modules>
+        <module organisation="commons-pool" name="commons-pool"
+                resolver="ibiblio-maven2-resolver"/>
+    </modules>
+-->
+</ivyconf>
+

@@ -1,0 +1,43 @@
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingEnumeration;
+import javax.naming.Binding;
+import javax.naming.NameClassPair;
+import javax.naming.NameNotFoundException;
+
+void list(NamingEnumeration iterator) {
+  while(iterator.hasMore()) {
+    Binding binding = (Binding)iterator.next();
+
+    String name = binding.getName();
+    String className = binding.getClassName();
+    Object object = binding.getObject();
+
+    print("  name: " + name);
+    print("  className: " + className);
+
+    if(object instanceof Context) {
+      Context context = (Context)object;
+
+      try {
+        list(context.listBindings(name));
+      }
+      catch(NameNotFoundException e) {
+        print(e);
+      }
+    }
+  }
+}
+
+
+Properties props = new Properties();
+
+InputStream is = new FileInputStream("jndi.properties");
+
+props.load(is);
+
+is.close();
+
+InitialContext context = new InitialContext(props);
+
+list(context.listBindings(""));

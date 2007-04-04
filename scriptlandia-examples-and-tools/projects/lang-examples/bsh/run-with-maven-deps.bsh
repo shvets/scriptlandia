@@ -1,0 +1,18 @@
+// run-with-maven-deps.bsh
+
+import org.sf.scriptlandia.ScriptlandiaHelper;
+
+//ScriptlandiaHelper.addMavenDependencies("run-maven.maven");
+ScriptlandiaHelper.resolveMavenDependencies("deps.maven", "compile");
+
+
+import org.jdom.Document;
+import org.jdom.input.SAXBuilder;
+
+SAXBuilder builder = new SAXBuilder();
+
+File file = new File("deps.maven");
+
+Document document = builder.build(file);
+
+print("document: " + document);

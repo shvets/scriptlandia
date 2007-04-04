@@ -1,0 +1,74 @@
+/*The BuilderPattern Director is written directly in main; and instead of creating multiple builder classes, we define default multi methods GeneratorMultiMethodExample and specialize them InstanceGeneratorMultiMethodExample and NiceGeneratorMultiMethodExample.
+*/
+
+/* Please try the NoviceExamples before the MultiMethodExamples
+To compile:
+   nicec --sourcepath=.. -a builderpattern.jar builderpattern
+To run:
+   java -jar builderpattern.jar
+*/
+
+package builderpattern;
+
+import java.io.*;
+
+
+enum Style {InstanceStyle, VisitorStyle, DedicatedStyle,
+            RunaboutStyle, MultiStyle, NiceStyle }
+
+//let Style STYLE = InstanceStyle;
+//let Style STYLE = VisitorStyle;
+//let Style STYLE = DedicatedStyle;
+//let Style STYLE = RunaboutStyle;
+//let Style STYLE = MultiStyle;
+let Style STYLE = NiceStyle;
+
+
+// flat class hierarchy or maximum-depth?
+enum Hierarchy {FLAT, DEEP}
+
+let Hierarchy HIERARCHY = FLAT;
+//let Hierarchy HIERARCHY = DEEP;
+
+
+let int MAX_VISITEES = 4;
+let int ITERS = 2;    // how many iterations (total)
+let int VISITORS = 3; // how many visitors?
+let int REPEATS = 1;  // how often to repeat in the same VM (to run hot)
+let boolean GP_OUTPUT = true; 
+
+var int VISITEES = 0;
+
+var PrintStream out = new PrintStream( 
+   new FileOutputStream( new File( outFile(STYLE) )));
+
+
+void main(String[] args){ 
+   for (VISITEES=0; VISITEES<=MAX_VISITEES; VISITEES++){
+
+      out.close;
+      out = new PrintStream( 
+         new FileOutputStream( new File( outFile(STYLE) )));
+
+
+      println(
+         "Generating code with " + 
+         VISITEES + " " + HIERARCHY + " classes" +
+         " and " + VISITORS + " visitors running " + 
+         ITERS + " iterations");
+
+      dumpHeader(STYLE);
+      dumpInnerClasses(STYLE);
+      dumpMainHeader(STYLE);
+      dumpLoop(STYLE);
+      dumpMainFooter(STYLE);
+      dumpFun(STYLE);
+      dumpFooter(STYLE);
+   }
+}
+
+
+/* Notes - language
+
+
+*/

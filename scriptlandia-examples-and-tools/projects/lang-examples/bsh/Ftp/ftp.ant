@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<project name="ftp.antlet" default="usage" basedir=".">
+
+  <property file="build.properties"/>
+
+  <property file="ftp.properties"/>
+
+  <target name="info">
+    <echo message="----------- ${ant.project.name} v. ${version} [${year}] ------------"/>
+    <echo message="----------- ${company} All Right reserved ------------"/>
+
+    <echo message="    Operating System : ${os.name}" />
+    <echo message="    Java Version     : ${ant.java.version}" />
+    <echo message="    Java Home        : ${java.home}" />
+    <echo message="    Java Vendor      : ${java.vendor}" />
+    <echo message="    Compiler         : ${build.compiler}" />
+    <echo message="    Ant              : ${ant.version}"/>
+
+    <tstamp/>
+  </target>
+
+  <target name="usage">
+    <java classname="org.apache.tools.ant.Main">
+       <arg line="-projecthelp"/>
+       <arg line="-f ftp.ant"/>
+    </java>
+  </target>
+
+  <target name="init" depends="info">
+    <tstamp/>
+
+    <echo message="----------- ${ant.project.name} ${version} [${year}] ------------"/>
+
+    <input message="Enter password:" addproperty="ftp.password"/>
+  </target>
+
+  <target name ="list" depends="init">
+    <ftp server="${ftp.server}" port="21"
+         userid="${ftp.user}" password="${ftp.password}"
+         ignoreNoncriticalErrors="yes"
+         remotedir="${ftp.remotedir}"
+         depends="yes"  binary="yes"
+         action="list" listing="ftp.listing">
+      <fileset dir="**"/>
+    </ftp>
+  </target>
+
+  <target name ="get" depends="init">
+    <ftp action="get"
+         server="${ftp.server}" port="21"
+         userid="${ftp.user}" password="${ftp.password}"
+         ignoreNoncriticalErrors="yes"
+         depends="yes"  binary="yes">
+     <fileset dir=".">
+        <include name="home/ashvets/app/*.*"/>
+      </fileset>
+    </ftp>
+  </target>
+
+</project>

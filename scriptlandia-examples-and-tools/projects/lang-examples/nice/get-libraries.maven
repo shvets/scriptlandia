@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>get-libraries</groupId>
+  <artifactId>get-libraries</artifactId>
+  <version>1.0</version>
+
+  <name>Get libraries</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>nice</groupId>
+      <artifactId>nice</artifactId>
+      <version>0.9.10</version>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <defaultGoal>compile</defaultGoal>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>scriptlandia-languages-repo</id>
+      <name>Scriptlandia languages Maven2 repository</name>
+      <url>http://scriptlandia-repository.googlecode.com/svn/trunk/languages</url>
+    </repository>
+  </repositories>
+</project>

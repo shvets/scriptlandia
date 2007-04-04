@@ -1,0 +1,36 @@
+<!-- prepare.ant -->
+
+<project name="nice-test" default="compile" basedir=".">
+
+  <property name="repository.home" value="c:/maven-repository"/>
+
+  <target name="init">
+    <property name="src.dir" value="src/main/nice"/>
+    <property name="target.dir" value="target"/>
+
+    <property name="nice.lib" value="${repository.home}/nice/nice/0.9.10/nice-0.9.10.jar"/>
+  </target>
+
+  <target name="compile" depends="init">
+    <mkdir dir="${target.dir}/obj"/>
+
+    <java classname="nice.tools.compiler.console.dispatch" fork="yes">
+      <classpath>
+        <pathelement location="${nice.lib}" />
+      </classpath>
+
+      <arg line="--runtime=${nice.lib}"/>
+      <arg line="--sourcepath=${src.dir}"/>
+      <arg line="--destination=${target.dir}/obj"/>
+      <arg line="-a ${target.dir}/hello.jar"/>
+      <arg line="hello"/>
+    </java>
+  </target>
+
+  <target name="run" depends="compile">
+    <java jar="${target.dir}/hello.jar" fork="true"/>
+  </target>
+
+</project>
+
+
