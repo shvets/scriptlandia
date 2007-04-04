@@ -20,4 +20,12 @@
       <version>1.1.2</version>
     </dependency>
   </dependencies>
+
+  <repositories>
+    <repository>
+      <id>scriptlandia-repo</id>
+      <name>Scriptlandia Maven2 repository</name>
+      <url>http://scriptlandia-repository.googlecode.com/svn/trunk/tools</url>
+    </repository>
+  </repositories>
 </project>
