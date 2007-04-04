@@ -1,5 +1,0 @@
-  <@file name="testForAllPackages.properties">
-    <@forAllPackages var="package">
-${package.qualifiedName}=visited
-    </@forAllPackages>
-  </@file>
