@@ -10,6 +10,10 @@
   <name>Scriptlandia Beanshell Starter Module</name>
   <description>Scriptlandia Beanshell Starter Module</description>
 
+  <properties>
+    <maven.version>2.0.6</maven.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
@@ -29,6 +33,12 @@
       <artifactId>ant</artifactId>
       <version>2.2.1</version>
       <type>pom</type>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-ant-tasks</artifactId>
+      <version>${maven.version}</version>
     </dependency>
 
 <!--

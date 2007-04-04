@@ -64,7 +64,7 @@ public class LauncherCommandLineParser {
           newArgsList.add(args[i+1]);
           ++i;
         }
-        else if (arg.toLowerCase().startsWith("-e")) {
+        else if (arg.toLowerCase().startsWith("-expr")) {
           int index = arg.indexOf("=");
           String expr = arg.substring(index+1);
 
