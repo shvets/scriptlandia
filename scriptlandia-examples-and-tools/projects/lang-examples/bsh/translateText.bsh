@@ -5,7 +5,9 @@ import java.text.*;
 import java.util.regex.*;
 
 Format formActionURLFormat = new MessageFormat("http://translate.google.com/translate_t?text={0}&langpair={1}|{2}&hl=en&submit=Translate&ie=ASCII&oe=ASCII");
-Pattern resultPattern = Pattern.compile(".*<textarea name=q[^>]*>([^<]*)</textarea>.*", Pattern.CASE_INSENSITIVE);
+//Pattern resultPattern = Pattern.compile(".*<textarea name=q[^>]*>([^<]*)</textarea>.*", Pattern.CASE_INSENSITIVE);
+Pattern resultPattern = Pattern.compile(".*<div id=result_box dir=ltr>([^<]*)</div>.*", Pattern.CASE_INSENSITIVE);
+
 
 String translateText(String text, String langFrom, String langTo)
 {
@@ -29,10 +31,13 @@ String translateText(String text, String langFrom, String langTo)
 	{
 		while((line = reader.readLine()) != null)
 		{
+//print(line);
 			Matcher m = resultPattern.matcher(line);
 			if(m.matches())
 			{
 				result =  m.group(1);
+print("1" + m.group(1));
+//print("2" + m.group(2));
 				break;
 			}
 		}
@@ -45,3 +50,6 @@ String translateText(String text, String langFrom, String langTo)
 
 	return result;
 }
+
+
+print(translateText("fish", "en", "ru"));
