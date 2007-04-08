@@ -3,21 +3,14 @@
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sf.scriptlandia</groupId>
-  <artifactId>jscheme-starter</artifactId>
+  <artifactId>kawa-starter</artifactId>
   <version>2.2.1</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia JScheme Starter Module</name>
-  <description>Scriptlandia JScheme Starter Module</description>
+  <name>Scriptlandia Kawa Starter Module</name>
+  <description>Scriptlandia Kawa Starter Module</description>
 
   <dependencies>
-    <dependency>
-      <groupId>org.sf.scriptlandia</groupId>
-      <artifactId>jscheme</artifactId>
-      <version>2.2.1</version>
-      <type>pom</type>
-    </dependency>
-
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>scriptlandia</artifactId>

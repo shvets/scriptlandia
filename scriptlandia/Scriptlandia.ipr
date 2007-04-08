@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="4" relativePaths="false">
+<project relativePaths="false" version="4">
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
   </component>
@@ -70,6 +70,15 @@
         <option name="WHILE_ON_NEW_LINE" value="true" />
         <option name="CATCH_ON_NEW_LINE" value="true" />
         <option name="FINALLY_ON_NEW_LINE" value="true" />
+        <ADDITIONAL_INDENT_OPTIONS fileType="js">
+          <option name="INDENT_SIZE" value="4" />
+          <option name="CONTINUATION_INDENT_SIZE" value="8" />
+          <option name="TAB_SIZE" value="4" />
+          <option name="USE_TAB_CHARACTER" value="false" />
+          <option name="SMART_TABS" value="false" />
+          <option name="LABEL_INDENT_SIZE" value="0" />
+          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+        </ADDITIONAL_INDENT_OPTIONS>
       </value>
     </option>
     <option name="USE_PER_PROJECT_SETTINGS" value="true" />
@@ -115,7 +124,7 @@
   </component>
   <component name="EmbeddedBrowser.BrowserComponent" show="false" xPos="424" yPos="539" width="600" height="200" />
   <component name="EntryPointsManager">
-    <entry_points />
+    <entry_points version="2.0" />
   </component>
   <component name="ExportToHTMLSettings">
     <option name="PRINT_LINE_NUMBERS" value="false" />
@@ -204,7 +213,7 @@
   </component>
   <component name="MavenBuildProjectComponent">
     <option name="mavenExecutable" value="" />
-    <option name="Settings File" value="C:\Documents and Settings\shvetsa\.m2\settings.xml" />
+    <option name="Settings File" value="C:\Documents and Settings\alex\.m2\settings.xml" />
     <option name="mavenCommandLineParams" value="hjfghgf" />
     <option name="vmOptions" value="" />
     <option name="useMavenEmbedder" value="false" />
@@ -229,6 +238,298 @@
     <pom-list>
       <pom>
         <option name="path" value="$PROJECT_DIR$/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/antrun/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/antrun/target/classes/META-INF/maven/org.sf.scriptlandia/antrun/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/bootstrap-mini/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/classworlds-launcher/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/classworlds-launcher/target/classes/META-INF/maven/org.sf.scriptlandia/classworlds-launcher/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/image4j/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/nailgun/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/nailgun/target/classes/META-INF/maven/com.martiansoftware/nailgun/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/pomreader/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia/target/classes/META-INF/maven/org.sf.scriptlandia/scriptlandia/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-common/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/ant/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/apt/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/beanshell/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/class/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/etl/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/f3/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/fortress/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/freemarker/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/groovy/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/jad/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/janino/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/jar/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/jaskell/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/java-compiler/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/javascript/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/jawk/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/jelly/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/jruby/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/jscheme/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/jython/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/maven/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/pnuts/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/scala/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/tcl/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/velocity/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/war/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/components/projects/xruby/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/ant-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/apt-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/beanshell-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/classworld-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/etl-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/f3-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/fortress-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/freemarker-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/groovy-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/janino-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/jaskell-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/javascript-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/jawk-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/jelly-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/jruby-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/jscheme-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/jython-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/maven-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/pnuts-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/scala-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/scriptlandia-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/tcl-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/velocity-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/war-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/starters/projects/xruby-starter/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-installer/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-launcher/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-launcher/target/classes/META-INF/maven/org.sf.scriptlandia/scriptlandia-launcher/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-nailgun/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-nailgun/target/classes/META-INF/maven/org.sf.scriptlandia/scriptlandia-nailgun/pom.xml" />
+        <plugin-list />
+      </pom>
+      <pom>
+        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-startup/pom.xml" />
         <plugin-list />
       </pom>
     </pom-list>
