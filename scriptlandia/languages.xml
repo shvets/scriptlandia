@@ -277,7 +277,7 @@
       </extensions>
 
       <starter groupId="org.sf.scriptlandia" artifactId="jscheme-starter" version="2.2.1">
-        <mainClass>jscheme.REPL</mainClass>
+        <mainClass>org.sf.scriptlandia.JSchemeStarter</mainClass>
       </starter>
     </registration>
   </language>

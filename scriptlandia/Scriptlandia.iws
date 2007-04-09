@@ -29,7 +29,6 @@
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.iml" afterPath="$PROJECT_DIR$/Scriptlandia.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.ipr" afterPath="$PROJECT_DIR$/Scriptlandia.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.iws" afterPath="$PROJECT_DIR$/Scriptlandia.iws" />
     </list>
   </component>
@@ -280,10 +279,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="KawaStarter.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/KawaStarter.java">
+      <file leaf-file-name="JSchemeStarter.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/JSchemeStarter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="26" selection-start="1446" selection-end="1446" vertical-scroll-proportion="0.88235295">
+            <state line="12" column="25" selection-start="252" selection-end="252" vertical-scroll-proportion="0.3529412">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -291,37 +290,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JarStarter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/JarStarter.java">
+      <file leaf-file-name="Scheme.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$maven-repository$/jscheme/jscheme/7.2/jscheme-7.2.jar!/jsint/Scheme.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="19" selection-start="589" selection-end="589" vertical-scroll-proportion="-8.558824">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AntStarter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/AntStarter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="13" selection-start="539" selection-end="539" vertical-scroll-proportion="0.29411766">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="F3Starter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/F3Starter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="19" selection-start="541" selection-end="541" vertical-scroll-proportion="0.23529412">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InPort.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://D:/Work/kawa-1.9.1.jar!/gnu/mapping/InPort.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="13" selection-start="149" selection-end="149" vertical-scroll-proportion="0.120781526">
+            <state line="29" column="21" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.84547067">
               <folding />
             </state>
           </provider>
@@ -1287,20 +1259,6 @@
     <option name="myLastEditedConfigurable" value="Default" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherCommandLineParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="52" selection-start="2242" selection-end="2242" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$maven-repository$/classworlds/classworlds/1.1/classworlds-1.1.jar!/org/codehaus/classworlds/Launcher.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="0" selection-start="3301" selection-end="3301" vertical-scroll-proportion="0.8363636">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="73" column="0" selection-start="2213" selection-end="2213" vertical-scroll-proportion="0.026548672">
@@ -1318,34 +1276,6 @@
     <entry file="jar://D:/Work/kawa-1.9.1.jar!/gnu/mapping/Future.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="9" selection-start="504" selection-end="504" vertical-scroll-proportion="0.3321492">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Work/kawa-1.9.1.jar!/gnu/mapping/InPort.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="149" selection-end="149" vertical-scroll-proportion="0.120781526">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/JarStarter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="19" selection-start="589" selection-end="589" vertical-scroll-proportion="-8.558824">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/AntStarter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="539" selection-end="539" vertical-scroll-proportion="0.29411766">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/F3Starter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="19" selection-start="541" selection-end="541" vertical-scroll-proportion="0.23529412">
           <folding />
         </state>
       </provider>
@@ -1388,6 +1318,50 @@
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/KawaStarter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="26" selection-start="1446" selection-end="1446" vertical-scroll-proportion="0.88235295">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/JarStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="19" selection-start="589" selection-end="589" vertical-scroll-proportion="-8.558824">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/AntStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="13" selection-start="539" selection-end="539" vertical-scroll-proportion="0.29411766">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/F3Starter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="19" selection-start="541" selection-end="541" vertical-scroll-proportion="0.23529412">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Work/kawa-1.9.1.jar!/gnu/mapping/InPort.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="149" selection-end="149" vertical-scroll-proportion="0.120781526">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$maven-repository$/jscheme/jscheme/7.2/jscheme-7.2.jar!/jsint/Scheme.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="21" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.84547067">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/JSchemeStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="25" selection-start="252" selection-end="252" vertical-scroll-proportion="0.3529412">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

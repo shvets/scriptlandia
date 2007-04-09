@@ -409,7 +409,16 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../kawa-1.9.1.jar!/" />
+          <root url="jar://$maven-repository$/jscheme/jscheme/7.2/jscheme-7.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$maven-repository$/kawa/kawa/1.9.1/kawa-1.9.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
