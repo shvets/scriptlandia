@@ -1,4 +1,4 @@
-//
+// scripting-test.bsh 
 
 import org.sf.scriptlandia.ScriptlandiaHelper;
 
@@ -8,23 +8,21 @@ String javaVersion = System.getProperty("java.version");
 
 print("Java Version: " + javaVersion);
 
-/*if(javaVersion.startsWith("1.5")) {
-  String pom1 = "javax-script-jdk15-install.maven";
-  ScriptlandiaHelper.addMavenDependencies(pom1);
-}
-else {
-  String pom1 = "javax-script-jdk16-install.maven";
-  ScriptlandiaHelper.addMavenDependencies(pom1);
-}
-
-String pom2 = "scripting-engines-install.maven";
-ScriptlandiaHelper.addMavenDependencies(pom2);
-*/
+String javaSpecifivationVersion = "jdk1.5";
 
 if(javaVersion.startsWith("1.5")) {
-  String pom = repositoryHome + "/javax/script/all-engines/1.0/all-engines-1.0.pom";
-  ScriptlandiaHelper.addMavenDependencies(pom);
+  javeapecifivationVersion = "jdk1.5";
 }
+else if(javaVersion.startsWith("1.6")) {
+  javaSpecifivationVersion = "jdk1.6";
+}
+
+
+String pom = repositoryHome + "/javax/script/all-engines-" + javaSpecifivationVersion + "/1.0/all-engines-" + 
+             javaSpecifivationVersion + "-1.0.pom";
+
+ScriptlandiaHelper.addMavenDependencies(pom);
+
 
 import java.util.*;
 import javax.script.*;
@@ -43,6 +41,7 @@ public class ScriptingTest {
       out.println("-------------------------------------------");
       out.println("Language: " + factory.getLanguageName() );
       out.println("Engine: " + factory.getEngineName());
+      //public abstract List getExtensions();
 
       Object engine = null;
 
@@ -50,6 +49,7 @@ public class ScriptingTest {
         engine = factory.getScriptEngine();
       }
       catch(Throwable t) {
+        t.printStackTrace();
         out.println(t.getMessage());
       }
 
@@ -165,7 +165,8 @@ public class ScriptingTest {
   }
 
   public void testJava() {
-    ScriptEngine engine = manager.getEngineByExtension("java");
+//    ScriptEngine engine = manager.getEngineByExtension("java");
+    ScriptEngine engine = manager.getEngineByName("java");
     System.out.println(engine);
 
     Compilable compilingEngine = (Compilable)engine;
@@ -181,28 +182,14 @@ public class ScriptingTest {
   public static void main(String[] args) {
     ScriptingTest test = new ScriptingTest();
 
-    if(javaVersion.startsWith("1.5")) {
-  //    test.listEngines(System.out);
-      test.listEngines(new PrintStream(new FileOutputStream("result.txt")));
-      test.testGroovy();
-      test.testBeanshell();
-      test.testJava();
-      test.testJRuby();
-    }
-    else {
-      //test.listEngines(System.out);
-      //test.listEngines(new PrintStream(new FileOutputStream("result.txt")));
-      test.testGroovy();
-      test.testBeanshell();
-      test.testJava();
-      test.testJRuby();
-      test.testJavascript1();
-      test.testJavascript2();
-      test.testJavascript3();
-      test.testJavascript4();
-    }
-
-    System.exit(0);
+    test.testGroovy();
+    test.testBeanshell();
+    test.testJava();
+    test.testJRuby();
+    test.testJavascript1();
+    test.testJavascript2();
+    test.testJavascript3();
+    test.testJavascript4();
   }
     
 }
