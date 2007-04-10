@@ -8,18 +8,18 @@ String javaVersion = System.getProperty("java.version");
 
 print("Java Version: " + javaVersion);
 
-String javaSpecifivationVersion = "jdk1.5";
+String javaSpecificationVersion = "jdk1.5";
 
 if(javaVersion.startsWith("1.5")) {
   javeapecifivationVersion = "jdk1.5";
 }
 else if(javaVersion.startsWith("1.6")) {
-  javaSpecifivationVersion = "jdk1.6";
+  javaSpecificationVersion = "jdk1.6";
 }
 
 
-String pom = repositoryHome + "/javax/script/all-engines-" + javaSpecifivationVersion + "/1.0/all-engines-" + 
-             javaSpecifivationVersion + "-1.0.pom";
+String pom = repositoryHome + "/javax/script/all-engines-" + javaSpecificationVersion + "/1.0/all-engines-" + 
+             javaSpecificationVersion + "-1.0.pom";
 
 ScriptlandiaHelper.addMavenDependencies(pom);
 
@@ -182,6 +182,8 @@ public class ScriptingTest {
   public static void main(String[] args) {
     ScriptingTest test = new ScriptingTest();
 
+    // test.listEngines(System.out);
+    test.listEngines(new PrintStream(new FileOutputStream("result.txt")));
     test.testGroovy();
     test.testBeanshell();
     test.testJava();
