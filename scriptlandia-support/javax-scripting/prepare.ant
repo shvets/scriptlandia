@@ -4,7 +4,7 @@
 
 <project name="prepare" default="prepare" basedir=".">
 
-  <property name="original.scripting.home" value="C:/Work/scripting/engines"/>
+  <property name="original.project.home" value="C:/Work/scripting/engines"/>
 
   <import file="${basedir}/prepare-macrodefs.xml"/>
 
@@ -99,7 +99,7 @@
 
       ScriptlandiaHelper.executeMaven("pom.xml", args);
 
-      args = new String[] { "install", "-Dclassifier=jdk1.5" };
+      args = new String[] { "install", "-Dclassifier=jdk1.6" };
 
       ScriptlandiaHelper.executeMaven("pom.xml", args);
     </script>

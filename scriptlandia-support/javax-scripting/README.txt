@@ -1,11 +1,11 @@
-1. Retrieve lates version of javax-scripting:
+1. Retrieve latest version of javax-scripting:
 
 >cvs -d :pserver:guest@cvs.dev.java.net:/cvs login
 >cvs -d :pserver:guest@cvs.dev.java.net:/cvs checkout scripting
 
-2. In prepare.ant file modify "original.scripting.home":
+2. In prepare.ant file modify "original.project.home":
 
-  <property name="original.scripting.home" value="scripting"/>
+  <property name="original.project.home" value="scripting"/>
 
 3. 
 
