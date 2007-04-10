@@ -41,6 +41,8 @@ public class Model
 
     private String groupId;
 
+    private String classifier;
+
     private String parentGroupId;
 
     private String parentArtifactId;
@@ -80,7 +82,11 @@ public class Model
 
     public String getId()
     {
-        return groupId + ":" + artifactId + ":" + packaging + ":" + version;
+        if(classifier == null) {
+          return groupId + ":" + artifactId + ":" + packaging + ":" + version;
+        }
+
+        return groupId + ":" + artifactId + ":" + packaging + ":" + version + ":" + classifier;
     }
 
     public String getArtifactId()
@@ -103,7 +109,16 @@ public class Model
         this.version = version;
     }
 
-    public String getGroupId()
+
+  public String getClassifier() {
+    return classifier;
+  }
+
+  public void setClassifier(String classifier) {
+    this.classifier = classifier;
+  }
+
+  public String getGroupId()
     {
         return groupId;
     }
@@ -235,6 +250,11 @@ public class Model
         result = 37 * result + groupId.hashCode();
         result = 37 * result + artifactId.hashCode();
         result = 37 * result + packaging.hashCode();
+
+        if(classifier != null) {
+          result = 37 * result + classifier.hashCode();
+        }
+
         result = 37 * result + version.hashCode();
         return result;
     }
@@ -269,6 +289,12 @@ public class Model
         {
             return false;
         }
+        else if (d.getClassifier() != null && classifier != null &&  !d.getClassifier().equals( classifier) )
+        {
+            return false;
+        }
+
+
         return true;
     }
 

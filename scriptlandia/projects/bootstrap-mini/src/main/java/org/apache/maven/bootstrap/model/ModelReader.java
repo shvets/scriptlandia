@@ -236,6 +236,7 @@ public class ModelReader
             }
 
             Model p = ProjectResolver.retrievePom( resolver, model.getParentGroupId(), model.getParentArtifactId(),
+                                                   model.getClassifier(),
                                                    model.getParentVersion(), inheritedScope, false, excluded, model.getChain() );
 
             ProjectResolver.addDependencies( p.getAllDependencies(), model.getParentDependencies(), inheritedScope, excluded );
@@ -317,6 +318,10 @@ public class ModelReader
             {
                 model.setParentVersion( getBodyText() );
             }
+            else if ( rawName.equals( "classifier" ) )
+            {
+                model.setClassifier( getBodyText() );
+            }
         }
         else if ( insideDependency )
         {
@@ -362,6 +367,9 @@ public class ModelReader
             else if ( rawName.equals( "optional" ) )
             {
                 currentDependency.setOptional( Boolean.valueOf( getBodyText() ).booleanValue() );
+            }
+            else if ( rawName.equals( "classifier" ) ) {
+              currentDependency.setClassifier(getBodyText());              
             }
         }
         else if ( insideBuild && insidePlugin )
@@ -466,6 +474,10 @@ public class ModelReader
             {
                 model.setPackaging( getBodyText() );
             }
+            else if ( rawName.equals( "classifier" ) )
+            {
+                model.setClassifier( getBodyText() );
+            }
         }
 
         if ( depth == 1 ) // model / project
@@ -499,6 +511,11 @@ public class ModelReader
           map.put( "project.artifactId", model.getArtifactId() );
           map.put( "project.version", model.getVersion() );
 
+          String classifier = model.getClassifier();
+
+          if(classifier != null) {
+            map.put( "project.classifier", classifier );            
+          }
 
           result = StringUtils.interpolate( text, map );
         }

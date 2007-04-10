@@ -73,7 +73,7 @@ public final class ProjectResolver
                         excluded2.addAll( dependency.getExclusions() );
 
                         Model p = retrievePom( resolver, dependency.getGroupId(), dependency.getArtifactId(),
-                                               dependency.getVersion(), dependency.getScope(),
+                                               dependency.getClassifier(), dependency.getVersion(), dependency.getScope(),
                                                resolveTransitiveDependencies, excluded2, dependency.getChain() );
 
                         addDependencies( p.getAllDependencies(), model.getTransitiveDependencies(), dependency.getScope(),
@@ -131,12 +131,16 @@ public final class ProjectResolver
         return false;
     }
 
-    public static Model retrievePom( ArtifactResolver resolver, String groupId, String artifactId, String version,
-                                     String inheritedScope, boolean resolveTransitiveDependencies, Set excluded,
-                                     List chain )
+    public static Model retrievePom( ArtifactResolver resolver, String groupId, String artifactId, String classifier,
+                                     String version, String inheritedScope, boolean resolveTransitiveDependencies,
+                                     Set excluded, List chain )
         throws SAXException
     {
         String key = groupId + ":" + artifactId + ":" + version;
+
+        if(classifier != null) {
+          key = key + ":" + classifier;
+        }
 
         if ( inProgress.contains( key ) )
         {
@@ -151,6 +155,7 @@ public final class ProjectResolver
         {
             // download the POM
             Dependency pom = new Dependency( groupId, artifactId, version, "pom", chain );
+            pom.setClassifier(classifier);
 
             resolver.downloadDependencies( Collections.singletonList( pom ) );
 

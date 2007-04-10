@@ -88,6 +88,25 @@ public class DepsLauncher extends ClassworldLauncher {
   }
 
   /**
+   * Resolves dependencies for specified pom maven2 dependencies file.
+   *
+   * @throws Exception the exception
+   * @param groupId group ID
+   * @param artifactId artifact ID
+   * @param version version
+   */
+  public void resolveDependencies(String groupId, String artifactId, String version)
+    throws Exception {
+    ClassRealm classRealm = getMainRealm();
+
+    List<URL> deps = pomReader.calculateDependencies(groupId, artifactId, version);
+
+    for (URL dep : deps) {
+      classRealm.addConstituent(dep);
+    }
+  }
+
+  /**
    * Configures the launcher.
    *
    * @param parentClassLoader parent class loader

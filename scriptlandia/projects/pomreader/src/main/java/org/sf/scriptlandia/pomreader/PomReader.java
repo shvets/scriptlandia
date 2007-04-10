@@ -118,6 +118,49 @@ public class PomReader {
       currentDep.setGroupId(model.getGroupId());
       currentDep.setArtifactId(model.getArtifactId());
       currentDep.setVersion(model.getVersion());
+      currentDep.setArtifactId(model.getArtifactId());
+
+      model.getParentDependencies().put(currentDep.getConflictId(), currentDep);
+    }
+
+    for (Object o : model.getAllDependencies()) {
+      Dependency dependency = (Dependency) o;
+
+      //noinspection unchecked
+      dependency.getRepositories().addAll(model.getRepositories());
+
+      File file = getArtifactFile(dependency);
+
+      if (!FileUtil.getExtension(file).equals("pom")) {
+        dependencies.add(file.toURI().toURL());
+      }
+    }
+
+    resolver.downloadDependencies(model.getAllDependencies());
+
+    return dependencies;
+  }
+
+  /**
+   * Resolves dependencies for specified pom maven2 dependencies file.
+   * @throws Exception the exception
+   * @return the list of dependent URLs
+   */
+  public List<URL> calculateDependencies(String groupId, String artifactId, String version) throws Exception {
+    List<URL> dependencies = new ArrayList<URL>();
+
+    Model model = new Model();
+    model.setGroupId(groupId);
+    model.setArtifactId(artifactId);
+    model.setVersion(version);
+    model.setPackaging("jar");
+
+    if(model.getPackaging() != null && model.getPackaging().equals("jar")) {
+      Dependency currentDep = new Dependency(new ArrayList());
+      currentDep.setGroupId(model.getGroupId());
+      currentDep.setArtifactId(model.getArtifactId());
+      currentDep.setVersion(model.getVersion());
+      currentDep.setArtifactId(model.getArtifactId());
 
       model.getParentDependencies().put(currentDep.getConflictId(), currentDep);
     }
