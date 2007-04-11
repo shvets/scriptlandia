@@ -196,8 +196,13 @@
       </action>
 
       <action dev="Alexander Shvets" type="fix">
-       Fixed issue with fortress launch. Upgraded to build 156.
+        Fixed issue with fortress launch. Upgraded to build 156.
       </action>
+
+      <action dev="Alexander Shvets" type="add">
+        Using generic scripts from java-app-launcher project.
+      </action>
+
 
     </release>
 
