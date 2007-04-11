@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+<project name="jsmooth.ant" default="installer.exe" basedir=".">
+
+  <import file="config-macrodefs.xml"/>
+  <load-properties/>
+
+  <property file="scriptlandia.properties"/>
+
+  <target name="prepare">
+    <script language="beanshell">
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      System.setProperty("java.specification.version", "1.5");
+
+      ScriptlandiaHelper.executeMaven("projects/bootstrap-mini/pom.xml", new String[] {"compile", "jar:jar"});
+      ScriptlandiaHelper.executeMaven("projects/pomreader/pom.xml", new String[] {"compile", "jar:jar"});
+      ScriptlandiaHelper.executeMaven("projects/antrun/pom.xml", new String[] {"compile", "jar:jar"});
+      ScriptlandiaHelper.executeMaven("projects/nailgun/pom.xml", new String[] {"compile", "jar:jar"});
+
+      ScriptlandiaHelper.executeMaven("projects/scriptlandia-installer/pom.xml", new String[] {"compile", "jar:jar"});
+      ScriptlandiaHelper.executeMaven("projects/scriptlandia/pom.xml", new String[] {"compile", "jar:jar"});
+      ScriptlandiaHelper.executeMaven("projects/scriptlandia-launcher/pom.xml", new String[] {"compile", "jar:jar"});
+    </script>
+  </target>
+
+  <target name="jsmooth">
+    <property name="jsmooth.version" value="0.9.9-4"/>
+    <property name="jsmooth.base" value="${repository.home}/jsmooth/jsmoothgen-ant/${jsmooth.version}"/>
+    <property name="jsmooth.skeletons.base" value="${repository.home}/jsmooth/skeletons/${jsmooth.version}"/>
+
+    <taskdef name="jsmoothgen"
+         classname="net.charabia.jsmoothgen.ant.JSmoothGen"
+         classpath="${jsmooth.base}/jsmoothgen-ant-${jsmooth.version}.jar"/>
+
+    <mkdir dir="target"/>
+
+    <jar destfile="target/scriptlandia.jar">
+      <zipfileset src="${classworlds.base}/classworlds-${classworlds.version}.jar"/>
+
+      <fileset dir="projects/scriptlandia-config/bin">
+        <include name="scriptlandia.conf"/>
+      </fileset>
+
+      <manifest>
+        <attribute name="Main-Class" value="org.codehaus.classworlds.Launcher"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="installer.exe" depends="jsmooth">
+    <script language="beanshell">
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      System.setProperty("java.specification.version", "1.5");
+
+      ScriptlandiaHelper.executeMaven("projects/scriptlandia-installer/pom.xml", new String[] {"compile", "jar:jar"});
+    </script>
+
+    <jsmoothgen project="scriptlandia" skeletonroot="${jsmooth.skeletons.base}/skeletons"/>
+  </target>
+
+  <target name="all" depends="installer.exe"/>
+
+</project>
+

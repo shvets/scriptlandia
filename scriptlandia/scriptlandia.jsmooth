@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<jsmoothproject>
+  <JVMSearchPath>registry</JVMSearchPath>
+  <JVMSearchPath>javahome</JVMSearchPath>
+  <JVMSearchPath>jrepath</JVMSearchPath>
+  <JVMSearchPath>jdkpath</JVMSearchPath>
+  <JVMSearchPath>exepath</JVMSearchPath>
+  <!--JVMSearchPath>jview</JVMSearchPath-->
+
+  <embeddedJar>true</embeddedJar>
+  <executableName>installer.exe</executableName>
+  <initialMemoryHeap>50331648</initialMemoryHeap>
+  <!--iconLocation>projects/scriptlandia-config/bin\images/scriptlandia.ico</iconLocation-->
+  <jarLocation>projects/scriptlandia-installer/target/scriptlandia-installer.jar</jarLocation>
+
+  <classPath>projects/scriptlandia-common/target/scriptlandia-common.jar</classPath>
+  <classPath>projects/bootstrap-mini/target/bootstrap-mini.jar</classPath>
+  <classPath>projects/pomreader/target/pomreader.jar</classPath>
+  <classPath>projects/image4j/target/image4j.jar</classPath>
+  <classPath>projects/scriptlandia-installer/target/scriptlandia-installer.jar</classPath>
+
+  <mainClassName>org.sf.scriptlandia.install.GuiInstaller</mainClassName>
+  <maximumMemoryHeap>67108864</maximumMemoryHeap>
+  <minimumVersion>1.5</minimumVersion>
+  <maximumVersion>1.7</maximumVersion>
+
+  <skeletonName>Console Wrapper</skeletonName>
+
+  <javaProperties>
+    <name>nom1</name>
+    <value>valeur1</value>
+  </javaProperties>
+
+  <javaProperties>
+    <name>MONPATH</name>
+    <value>%PATH%</value>
+  </javaProperties>
+
+  <javaProperties>
+    <name>MONHOME</name>
+    <value>%JAVA_HOME%</value>
+  </javaProperties>
+
+  <javaProperties>
+    <name>COMPUTERNAME</name>
+    <value>${COMPUTERNAME}</value>
+  </javaProperties>
+
+  <javaProperties>
+    <name>EXEPATH</name>
+    <value>${EXECUTABLEPATH}</value>
+  </javaProperties>
+
+  <javaProperties>
+    <name>EXENAME</name>
+    <value>${EXECUTABLENAME}</value>
+  </javaProperties>
+
+  <javaProperties>
+    <name>ant.version.internal</name>
+    <value>1.7.0</value>
+  </javaProperties>
+
+  <javaProperties>
+    <name>beanshell.version</name>
+    <value>2.0b5</value>
+  </javaProperties>
+
+  <javaProperties>
+    <name>scriptlandia.version</name>
+    <value>2.2.1</value>
+  </javaProperties>
+
+  <skeletonProperties>
+    <key>Message</key>
+    <value>Java has not been found on your computer.
+  Do you want to download it?</value>
+  </skeletonProperties>
+
+  <skeletonProperties>
+    <key>PressKey</key>
+    <value>0</value>
+  </skeletonProperties>
+
+  <skeletonProperties>
+    <key>Debug</key>
+    <value>0</value>
+  </skeletonProperties>
+</jsmoothproject>
