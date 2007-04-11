@@ -3,14 +3,20 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.sf</groupId>
-  <artifactId>launch4j-install</artifactId>
+  <artifactId>jsmooth-install</artifactId>
   <version>1.0</version>
 
   <dependencies>
     <dependency>
-      <groupId>launch4j</groupId>
-      <artifactId>launch4j</artifactId>
-      <version>3.0.0-pre2</version>
+      <groupId>jsmooth</groupId>
+      <artifactId>jsmoothgen-ant</artifactId>
+      <version>0.9.9-4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>jsmooth</groupId>
+      <artifactId>skeletons</artifactId>
+      <version>0.9.9-4</version>
     </dependency>
   </dependencies>
 
@@ -26,10 +32,10 @@
             <phase>validate</phase>
             <configuration>
               <tasks>
-                <property name="launch4j.version" value="3.0.0-pre2"/>
+                <property name="jsmooth.version" value="0.9.9-4"/>
 
-                <unzip src="${repository.home}/launch4j/launch4j-win32/${launch4j.version}/launch4j-win32-${launch4j.version}.jar"
-                       dest="${repository.home}/launch4j/launch4j/${launch4j.version}">
+                <unzip src="${repository.home}/jsmooth/skeletons/${jsmooth.version}/skeletons-${jsmooth.version}.jar"
+                       dest="${repository.home}/jsmooth/skeletons/${jsmooth.version}">
                   <patternset>
                     <include name="**/*.*"/>
                     <exclude name="**/META-INF/**"/>
