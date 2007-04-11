@@ -2,10 +2,14 @@
 
 org.sf.scriptlandia.ScriptlandiaHelper.addMavenDependencies("pom.xml");
 
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 import org.codehaus.janino.*;
 
-import org.sf.scriptlandia.util.*;
 import org.codehaus.classworlds.ClassRealm;
 
 import org.springframework.context.ApplicationContext;
@@ -49,7 +53,7 @@ public class Dynamo {
   private void loadClass(String name, ClassLoader classLoader) {
     String[] args = new String[] { name };
 
-    Map bytecodes = ReflectionUtil.invokePrivateMethod(
+    Map bytecodes = invokePrivateMethod(
       classLoader, 
       new Object[] { name }, 
       JavaSourceClassLoader.class, 
@@ -57,6 +61,20 @@ public class Dynamo {
       new Class[] { String.class });
 
     classRealm.addConstituent(name, bytecodes.get(name));
+  }
+
+  public Object invokePrivateMethod(Object source, Object[] parameters, Class clazz,
+                                    String name, Class[] parameterTypes)
+          throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+    Method method = clazz.getDeclaredMethod(name, parameterTypes);
+
+    method.setAccessible(true);
+
+    Object methodResult = method.invoke(source, parameters);
+
+    method.setAccessible(false);
+
+    return methodResult;
   }
 
   public Object getBean(String beanName) {

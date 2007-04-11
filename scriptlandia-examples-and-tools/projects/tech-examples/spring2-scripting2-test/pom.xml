@@ -11,16 +11,10 @@
   <packaging>pom</packaging>
 
   <properties>
-    <spring.version>2.0.3</spring.version>
+    <spring.version>2.0.4</spring.version>
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-scripting</artifactId>
-      <version>1.0</version>
-    </dependency>
-
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring</artifactId>
@@ -49,6 +43,12 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>
       <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>cglib</groupId>
+      <artifactId>cglib-nodep</artifactId>
+      <version>2.1_3</version>
     </dependency>
 
     <dependency>
@@ -81,13 +81,5 @@
       <version>2.5.5</version>
     </dependency>
   </dependencies>
-
-  <repositories>
-    <repository>
-      <id>scriptlandia-languages-repo</id>
-      <name>Scriptlandia languages Maven2 repository</name>
-      <url>http://scriptlandia-repository.googlecode.com/svn/trunk/patches</url>
-    </repository>
-  </repositories>
 
 </project>
