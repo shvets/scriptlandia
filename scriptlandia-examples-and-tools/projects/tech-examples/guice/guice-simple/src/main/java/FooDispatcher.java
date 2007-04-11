@@ -6,9 +6,9 @@ public class FooDispatcher {
     public static void main(String[] args) {
 
         Injector injector = Guice.createInjector(new FooModule());
-//        FooController controller = new FooController();
+//        Injector injector = Guice.createInjector();
+        FooController controller = new FooController();
 
-        Injector injector = Guice.createInjector();
         injector.injectMembers(controller);
 
         //Our action is now injected with a FooManager, so let's use it
