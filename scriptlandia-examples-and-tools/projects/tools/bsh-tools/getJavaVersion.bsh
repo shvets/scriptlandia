@@ -98,21 +98,27 @@ public class AnalyzeJar {
   }
 }
 
-
-if(bsh.args.length == 0) {
-  print("Usage: analyzeJavaVersion.bsh <some-jar-file-list>");
-
-  return;
-}
-
 List files = new ArrayList();
 
-String fileName = bsh.args[0];
+String fileName = null;
+
+if(bsh.args.length == 0) {
+  fileName = System.getProperty("user.dir");
+}
+else {
+  fileName = bsh.args[0];
+}
 
 File file = new File(fileName);
 
 if(file.isDirectory()) {
-  files.addAll(file.dirFiles());
+  File[] listFiles = file.listFiles();
+
+  for(int i=0; i < listFiles.length; i++) {
+    if(listFiles[i].getName().endsWith(".jar")) {
+      files.add(listFiles[i]);
+    }
+  }
 }
 else if (fileName.endsWith(".jar")) {
   files.add(file);
