@@ -69,7 +69,7 @@
     <module>projects/jawk-starter</module>
     <module>projects/janino-starter</module>
     <module>projects/kawa-starter</module>
-    <!--module>projects/xruby-starter</module-->
+    <module>projects/xruby-starter</module>
   </modules>
 
 </project>

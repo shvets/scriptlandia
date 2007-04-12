@@ -236,7 +236,7 @@
         <plugin-list />
       </pom>
       <pom>
-        <option name="path" value="$PROJECT_DIR$/projects/antrun/target/classes/META-INF/maven/org.sf.scriptlandia/antrun/pom.xml" />
+        <option name="path" value="target/classes/META-INF/maven/org.sf.scriptlandia/antrun/pom.xml" />
         <plugin-list />
       </pom>
       <pom>
@@ -248,7 +248,7 @@
         <plugin-list />
       </pom>
       <pom>
-        <option name="path" value="$PROJECT_DIR$/projects/classworlds-launcher/target/classes/META-INF/maven/org.sf.scriptlandia/classworlds-launcher/pom.xml" />
+        <option name="path" value="target/classes/META-INF/maven/org.sf.scriptlandia/classworlds-launcher/pom.xml" />
         <plugin-list />
       </pom>
       <pom>
@@ -260,7 +260,7 @@
         <plugin-list />
       </pom>
       <pom>
-        <option name="path" value="$PROJECT_DIR$/projects/nailgun/target/classes/META-INF/maven/com.martiansoftware/nailgun/pom.xml" />
+        <option name="path" value="target/classes/META-INF/maven/com.martiansoftware/nailgun/pom.xml" />
         <plugin-list />
       </pom>
       <pom>
@@ -272,7 +272,7 @@
         <plugin-list />
       </pom>
       <pom>
-        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia/target/classes/META-INF/maven/org.sf.scriptlandia/scriptlandia/pom.xml" />
+        <option name="path" value="target/classes/META-INF/maven/org.sf.scriptlandia/scriptlandia/pom.xml" />
         <plugin-list />
       </pom>
       <pom>
@@ -508,7 +508,7 @@
         <plugin-list />
       </pom>
       <pom>
-        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-launcher/target/classes/META-INF/maven/org.sf.scriptlandia/scriptlandia-launcher/pom.xml" />
+        <option name="path" value="target/classes/META-INF/maven/org.sf.scriptlandia/scriptlandia-launcher/pom.xml" />
         <plugin-list />
       </pom>
       <pom>
@@ -516,7 +516,7 @@
         <plugin-list />
       </pom>
       <pom>
-        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-nailgun/target/classes/META-INF/maven/org.sf.scriptlandia/scriptlandia-nailgun/pom.xml" />
+        <option name="path" value="target/classes/META-INF/maven/org.sf.scriptlandia/scriptlandia-nailgun/pom.xml" />
         <plugin-list />
       </pom>
       <pom>
