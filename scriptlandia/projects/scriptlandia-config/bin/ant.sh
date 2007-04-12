@@ -1,17 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
-# init
+export JAVA_HOME=@java.home@
+export SCRIPTLANDIA_VERSION=@scriptlandia.version@
+export REPOSITORY_HOME=@repository.home@
 
-JAVA_HOME=@java.home@
-CONFIG_NAME=ant.classworlds.conf
+DEPS_FILE=$REPOSITORY_HOME/org/sf/scriptlandia/ant-starter/$SCRIPTLANDIA_VERSION/ant-starter-$SCRIPTLANDIA_VERSION.pom
+MAIN_CLASS_NAME=org.sf.scriptlandia.AntStarter
 
-LAUNCHER_CLASS=org.codehaus.classworlds.Launcher
-CLASSPATH=@repository.home@/classworlds/classworlds/@classworlds.version@/classworlds-@classworlds.version@.jar
-CONFIG_FILE=-Dclassworlds.conf=@scriptlandia.home@/$CONFIG_NAME
-
-SYSTEM_PARAMETERS=-Xmx256m $CONFIG_FILE
-
-$JAVA_HOME/bin/java $SYSTEM_PARAMETERS -classpath $CLASSPATH $LAUNCHER_CLASS $CMD_LINE_ARGS $*
-
-
-pause
+@scriptlandia.home@/launcher.sh "-deps.file.name=$DEPS_FILE" -main.class.name=$MAIN_CLASS_NAME $*

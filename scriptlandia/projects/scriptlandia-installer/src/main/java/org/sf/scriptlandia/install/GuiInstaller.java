@@ -528,7 +528,8 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
           });
 
           try {
-            updatePrperties();
+            updateProperties();
+
             update();
 
             panel.setLayout(new GridBagLayout());
@@ -542,10 +543,16 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
               Map language = (Map)languages.get(i);
               String name = (String)language.get("name");
 
-              File file = new File("projects/scriptlandia-config/bin/images/" + language.get("icon"));
+              String location = "projects/scriptlandia-config/bin/images";
+
+              if(isConfigMode() ) {
+                location = "images";
+              }
+
+              File file = new File(location + "/" + language.get("icon"));
 
               if(!file.exists()) {
-                file = new File("projects/scriptlandia-config/bin/images/" + "scriptlandia.ico");                
+                file = new File(location + "/" + "scriptlandia.ico");
               }
 
               java.util.List<java.awt.image.BufferedImage> images = ICODecoder.read(file);
@@ -588,8 +595,20 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
     return panel;
   }
 
+  public boolean isConfigMode() {
+    String config = System.getProperty("config");
+
+    if(config == null || config.equalsIgnoreCase(("false"))) {
+      return false;
+    }
+
+    return true;
+  }
+
   private void update() throws LauncherException {
-    coreInstall();
+    if(!isConfigMode() ) {
+      coreInstall();
+    }
 
     languages = readLanguages();
 
@@ -607,7 +626,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
     }
   }
 
-  private void updatePrperties() {
+  private void updateProperties() {
    System.setProperty("java.specification.version", (String)javaSpecVersionComboBox.getSelectedItem());
 
    System.setProperty("java.home.internal", javaHomeField.getText().trim());
@@ -646,7 +665,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
       System.setErr(new PrintStream(filterOutputStream));
 */
 
-      updatePrperties();
+      updateProperties();
 
       if(!languagesPanelUpdated) {
         update();

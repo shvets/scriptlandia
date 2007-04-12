@@ -1,5 +1,6 @@
 @echo off
 
+REM see https://java-app-launcher.dev.java.net
 REM JavaAppLauncher: Generic Java Application Launcher
 REM Copyright (C) 2007  Santhosh Kumar T
 REM 
@@ -22,6 +23,10 @@ goto end
 set CMD=java.exe
 if defined JAVA_HOME SET CMD=%JAVA_HOME%\bin\%CMD%
 
+SET PARAMETERS=
+
+call "%~p0"processArgs.bat %*
+
 set SECTION=
 set RESULT=
 FOR /F "delims=" %%i in (%APP%.conf) DO call :processline "%%i"
@@ -29,9 +34,15 @@ FOR /F "delims=" %%i in (%APP%.conf) DO call :processline "%%i"
 rem append result to command
 if DEFINED RESULT call :processresult
 
-%CMD% %*
+
+call "%~p0"customizeExecution.bat %*
+
+if not defined PROCEED goto end
+
+%CMD% %PARAMETERS% %CMD_LINE_ARGS%
 
 goto end
+
 :processline
 if %1 == "<java.classpath>" goto option
 if %1 == "<java.endorsed.dirs>" goto option
@@ -127,6 +138,6 @@ goto end
 
 :processresult
 if "%SECTION%" == "java.ext.dirs" set RESULT=%JAVA_HOME%\lib\ext;%JAVA_HOME%\jre\lib\ext;%RESULT%
-set CMD=%CMD% %SECTION_PREFIX%%RESULT%
+set PARAMETERS=%PARAMETERS% %SECTION_PREFIX%%RESULT%
 
 :end
