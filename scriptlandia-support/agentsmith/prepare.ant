@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+
+<!-- prepare.ant -->
+
+<project name="prepare" default="prepare" basedir=".">
+
+  <property name="original.project.home" value="smith"/>
+
+   <property name="agentsmith.version" value="0.9.2"/>
+
+  <target name="clean">
+    <delete includeEmptyDirs="true" failonerror="false">
+      <fileset dir="target"/>
+    </delete>
+  </target>
+
+  <target name="clean-sources">
+    <delete includeEmptyDirs="true" failonerror="false">
+      <fileset dir="src"/>
+    </delete>
+  </target>
+
+  <target name="synch">
+    <copy todir="src/main/java" overwrite="true">
+      <fileset dir="${original.project.home}/src">
+        <include name="**/*.java"/>
+        <include name="META-INF/**"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="prepare">
+    <script language="beanshell">
+       import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+
+       ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+
+       launcher.resolveDependencies("javax.servlet", "servlet-api", "2.4");
+    </script>
+
+    <mkdir dir="target/classes"/>
+
+    <javac srcdir="src/main/java" debug="true" destdir="target/classes" source="1.5" target="1.5">
+      <include name="**/*.java" />
+      <exclude name="**/it/fridrik/agent/SmithLoader.java" />
+      <exclude name="**/it/fridrik/agent/servlet/*.java" />
+    </javac>
+
+   <jar destfile="target/smith-${agentsmith.version}-jdk1.5.jar">
+     <fileset dir="target/classes">
+       <include name="**/*.class"/>
+      </fileset>
+    </jar>
+
+    <delete dir="target/classes"/>
+    <mkdir dir="target/classes"/>
+
+    <javac srcdir="src/main/java" fork="true" debug="true" destdir="target/classes" source="1.6" target="1.6">
+      <classpath>
+        <path location="${repository.home}/javax/servlet/servlet-api/2.4/servlet-api-2.4.jar"/>
+        <path location="${java.home}/../lib/tools.jar"/>
+      </classpath>
+
+      <include name="**/*.java" />
+    </javac>
+
+   <jar destfile="target/smith-${agentsmith.version}-jdk1.6.jar">
+     <fileset dir="target/classes">
+       <include name="**/*.class"/>
+      </fileset>
+    </jar>
+
+  </target>
+
+</project>
