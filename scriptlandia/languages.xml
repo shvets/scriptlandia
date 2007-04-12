@@ -153,7 +153,6 @@
     </registration>
   </language>
 
-<!--
   <language name="jruby" groupId="jruby" artifactId="jruby" version="0.9.8">
     <registration mimeType="text/ruby" icon="ruby.ico">
       <extensions>
@@ -166,8 +165,8 @@
       </starter>
     </registration>
   </language>
--->
 
+<!--
   <language name="xruby" groupId="xruby" artifactId="xruby" version="0.1.4">
     <registration mimeType="text/ruby" icon="ruby.ico">
       <extensions>
@@ -180,6 +179,7 @@
       </starter>
     </registration>
   </language>
+-->
 
   <language name="pnuts" groupId="pnuts" artifactId="pnuts" version="1.1">
     <registration mimeType="text/pnuts" icon="pnuts.ico">
