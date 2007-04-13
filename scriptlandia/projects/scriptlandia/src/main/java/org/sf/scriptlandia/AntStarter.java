@@ -211,6 +211,8 @@ public class AntStarter extends Main {
 
         ProjectHelper.configureProject(project, (File)getField("buildFile"));
 
+        analyzeCommandLine(project, arguments, specialArguments);
+
         if ((Boolean)getField("projectHelp")) {
           printDescription(project);
           printTargets(project, (Integer)getField("msgOutputLevel") > Project.MSG_INFO);
@@ -251,6 +253,41 @@ public class AntStarter extends Main {
     }
   }
 
+  private void analyzeCommandLine(Project project, List<String> arguments, List<String> specialArguments) {
+    String userDir = System.getProperty("user.dir");
+
+    Map targets = project.getTargets();
+
+    Iterator iterator = arguments.iterator();
+
+    while(iterator.hasNext()) {
+      String arg = (String)iterator.next();
+
+      if(arg.equals("-f") || arg.equals("-find")) {
+        iterator.next();
+      }
+      else {
+        if (targets.get(arg) == null) {
+          File file = new File(arg);
+
+          if(!file.exists()) {
+            file = new File(userDir + "/" + arg);
+          }
+
+          if(file.exists()) {
+            if (!specialArguments.contains(file.getPath())) {
+              specialArguments.add(file.getPath());
+              iterator.remove();
+              Vector currentTargets = (Vector)getField("targets");
+              currentTargets.remove(arg);
+              setField("targets", currentTargets);
+            }
+          }
+        }
+      }
+    }
+  }
+  
   private void processArgs(String[] args) {
     try {
       ReflectionUtil.invokePrivateMethod(
@@ -390,6 +427,15 @@ public class AntStarter extends Main {
     }
   }
 
+  private void setField(String name, Vector value) {
+    try {
+      ReflectionUtil.setPrivateField(this, Main.class, name, value);
+    }
+    catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
   public List<String> getArguments() {
     return arguments;
   }
@@ -418,7 +464,7 @@ public class AntStarter extends Main {
     for (final String arg : args) {
       if (isSpecialArgument(arg)) {
         if (!specialArguments.contains(arg)) {
-          specialArguments.add(arg);
+          specialArguments.add(arg.substring(1, arg.length()-1));
         }
       } else {
         if (!arguments.contains(arg)) {
