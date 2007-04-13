@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>get2</groupId>
+  <artifactId>get2</artifactId>
+  <version>1.0</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.gjt.jclasslib</groupId>
+      <artifactId>browser</artifactId>
+      <version>3.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>compile</defaultGoal>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>scriptlandia-repo</id>
+      <name>Scriptlandia Maven2 repository</name>
+      <url>http://scriptlandia-repository.googlecode.com/svn/trunk/tools</url>
+    </repository>
+  </repositories>
+</project>

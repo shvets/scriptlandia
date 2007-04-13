@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>get1</groupId>
+  <artifactId>get1</artifactId>
+  <version>1.0</version>
+
+  <name>Get Pomstrap</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.prefetch</groupId>
+      <artifactId>pomstrap</artifactId>
+      <version>1.0.6</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>compile</defaultGoal>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>scriptlandia-languages-repo</id>
+      <name>Scriptlandia languages Maven2 repository</name>
+      <url>http://scriptlandia-repository.googlecode.com/svn/trunk/tools</url>
+    </repository>
+  </repositories>
+
+</project>

@@ -1,10 +1,14 @@
 This example shows how to use pomstrap
 
-1. Install this example (default goal is "install"):
+1. Download/install pomstrap:
 
->mvn 
+>get-pomstrap.maven
 
+2. Download/install project to be used woth pomstrap:
 
-2. run it:
+>get-jclasslib.maven
 
->run.bat
+3. Run it:
+
+>run-jclasslib.bat
+
