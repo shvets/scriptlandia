@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<project name="install.ant" default="install" basedir=".">
+
+  <target name="install">
+    <copy todir="${scriptlandia.home}/tools" file="compile-flex2.ant" overwrite="true"/>
+  </target>
+
+</project>
+

@@ -1,0 +1,1 @@
+"C:\Program Files\Adobe\Flex Builder 2\Player\debug\SAFlashPlayer.exe" %1
