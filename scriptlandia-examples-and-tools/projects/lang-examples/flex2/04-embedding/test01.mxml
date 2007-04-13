@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application 
+    xmlns:mx="http://www.adobe.com/2006/mxml" 
+    viewSourceURL="src/EmbeddingImages/index.html"
+    layout="horizontal" width="350" height="250"
+>
+    
+    <mx:Script>
+        <![CDATA[
+            [Embed(source="assets/logo.png")]
+            [Bindable]
+
+            public var Logo:Class;            
+        ]]>
+    </mx:Script>
+
+    <mx:Image id="myLogo" source="{Logo}"/>
+
+    <mx:Image id="myLogo2" source="{Logo}"/>
+
+</mx:Application>

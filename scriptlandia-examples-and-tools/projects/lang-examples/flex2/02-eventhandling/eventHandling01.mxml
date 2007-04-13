@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mx:Application 
+    xmlns:mx="http://www.adobe.com/2006/mxml" 
+    width="300" height="200"
+    horizontalAlign="center" verticalAlign="middle" 
+    viewSourceURL="src/HandlingEventsEventHandler/index.html"
+
+>
+    <mx:Script>
+        <![CDATA[
+            import flash.events.MouseEvent;
+        
+            private function clickHandler ( event:MouseEvent ):void
+            {
+                myLabel.text = "Hello, World!";
+            }
+        ]]>
+    </mx:Script>
+
+    
+    <mx:Panel 
+        title="My Application" horizontalAlign="center"
+        paddingTop="10" paddingBottom="10" paddingLeft="10" paddingRight="10" 
+    >
+
+        <mx:Label id="myLabel" width="180" fontWeight="bold" fontSize="24"/>
+        <mx:Button id="myButton" label="Click Me!" click="clickHandler(event);" />
+
+    </mx:Panel>
+</mx:Application>

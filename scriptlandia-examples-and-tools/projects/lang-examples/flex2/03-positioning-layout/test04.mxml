@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application 
+    xmlns:mx="http://www.adobe.com/2006/mxml" 
+    viewSourceURL="src/LayoutConstraintsEdges/index.html"
+    horizontalAlign="center" verticalAlign="middle"
+    width="360" height="200"
+
+>
+    <mx:Panel 
+        title="My Application" layout="absolute" 
+        width="300" height="130"
+    >
+        <mx:Button 
+            id="myButton" 
+            label="A button" 
+            top="10"
+            bottom="10" 
+            left="10"
+            right="10"
+			
+
+			/>
+
+    </mx:Panel>
+</mx:Application>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application 
+    xmlns:mx="http://www.adobe.com/2006/mxml" 
+    viewSourceURL="src/LayoutAbsolute/index.html"
+    horizontalAlign="center" verticalAlign="middle"
+    width="280" height="170"
+
+>
+    <mx:Panel 
+        title="My Application" layout="absolute"
+        width="220" height="90" 
+    >
+        <mx:Label 
+            id="myLabel" 
+            x="10" y="10" width="180" 
+            fontWeight="bold" fontSize="24"
+        />
+
+        <mx:Button 
+            id="myButton" 
+            x="60" y="10" 
+            label="Click Me!" 
+            click="myLabel.text = &apos;Hello, World!&apos;;" 
+        />
+
+    </mx:Panel>
+</mx:Application>

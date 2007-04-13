@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application 
+    xmlns:mx="http://www.adobe.com/2006/mxml" 
+     viewSourceURL="src/HandlingEventsActionScript/index.html"
+    horizontalAlign="center" verticalAlign="middle" 
+    width="300" height="200"
+    creationComplete="creationCompleteHandler(event);"
+
+>
+    <mx:Script>
+        <![CDATA[
+            import flash.events.MouseEvent;
+            import mx.events.FlexEvent;
+
+            private function creationCompleteHandler(event:FlexEvent):void
+
+            {
+                // Listen for the click event on the Button control
+                myButton.addEventListener (MouseEvent.CLICK, clickHandler);
+            }
+        
+            private function clickHandler ( event:Event ):void
+
+            {
+                myLabel.text = "Hello, World!";
+            }
+        ]]>
+    </mx:Script>
+
+    
+    <mx:Panel 
+        title="My Application" horizontalAlign="center"
+        paddingTop="10" paddingBottom="10" paddingLeft="10" paddingRight="10"
+    >
+
+        <mx:Label id="myLabel" width="180" fontWeight="bold" fontSize="24"/>
+        <mx:Button id="myButton" label="Click Me!" />
+
+    </mx:Panel>
+</mx:Application>

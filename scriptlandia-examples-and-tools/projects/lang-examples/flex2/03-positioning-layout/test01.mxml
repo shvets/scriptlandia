@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application 
+    xmlns:mx="http://www.adobe.com/2006/mxml" 
+    viewSourceURL="src/LayoutAutomatic/index.html"
+    horizontalAlign="center" verticalAlign="middle" 
+    width="380" height="150"
+
+>
+    <mx:Panel 
+        title="My Application" 
+        paddingTop="10" paddingBottom="10" 
+        paddingLeft="10" paddingRight="10" 
+        layout="horizontal" verticalAlign="middle"
+    >
+
+        <mx:Label id="myLabel" width="180" fontWeight="bold" fontSize="24"/>
+        <mx:Button 
+            id="myButton" label="Click Me!" 
+            click="myLabel.text = 'Hello, World!';" 
+        />
+
+    </mx:Panel>
+</mx:Application>
