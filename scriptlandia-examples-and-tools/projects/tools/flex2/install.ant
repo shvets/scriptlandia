@@ -4,6 +4,7 @@
 
   <target name="install">
     <copy todir="${scriptlandia.home}/tools" file="compile-flex2.ant" overwrite="true"/>
+    <copy todir="${scriptlandia.home}/tools" file="compile-flex2.ant" overwrite="true"/>
   </target>
 
 </project>

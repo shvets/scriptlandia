@@ -8,7 +8,7 @@
     <taskdef resource="flexTasks.tasks" 
              classpath="${repository.home}/adobe/flex2/flex2-anttasks/1.0/flex2-anttasks-1.0.jar"/>
 
-    <property name="flex.home" value="C:/Flex/sdk"/>
+    <property name="flex.home" value="d:/Java/flex/sdk"/>
 
     <script language="beanshell">
       project.setNewProperty("FLEX_HOME", project.getProperty("flex.home"));
