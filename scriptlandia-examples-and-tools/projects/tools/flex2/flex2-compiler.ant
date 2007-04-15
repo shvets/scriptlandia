@@ -60,9 +60,6 @@
         compileFlexTask.init();
         compileFlexTask.setTarget("compile.flex2");
 
-//        compileFlexTask.setInheritAll(true);
-//        compileFlexTask.setInheritRefs(true);
-
         Property p1 = compileFlexTask.createParam();
         p1.setName("flex2.source.name");
         p1.setValue(name);
@@ -81,10 +78,6 @@
   </target>
 
   <target name="compile.flex2">
-<echo>
-*********************************${flex2.source.name}
-</echo>
-
      <mxmlc file="${flex2.source.name}"
             output="${flex2.output.name}"
             keep-generated-actionscript="false">
