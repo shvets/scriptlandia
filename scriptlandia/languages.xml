@@ -32,6 +32,7 @@
       <extensions>
         <extension>mvn</extension>
         <extension>maven</extension>
+        <extension>pom</extension>
       </extensions>
 
       <starter groupId="org.sf.scriptlandia" artifactId="maven-starter" version="2.2.1">
