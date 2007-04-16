@@ -8,20 +8,22 @@
     <taskdef resource="flexTasks.tasks" 
              classpath="${repository.home}/adobe/flex2/flex2-anttasks/1.0/flex2-anttasks-1.0.jar"/>
 
-    <property name="flex.home" value="d:/Java/flex/sdk"/>
+    <property name="flex.home" value="c:/Java/flex/sdk"/>
 
     <property name="FLEX_HOME" value="${flex.home}"/>
   </target>
 
   <target name="run" depends="init">
     <script language="beanshell">
+      String userDir = System.getProperty("user.dir");
+
       List files = new ArrayList();
 
       List parameters = (List)project.getReference("parameters");
 
       if(parameters.size() > 0) {
         for(int i=0; i &lt; parameters.size(); i++) {
-          files.add(new File(parameters.get(i)));
+          files.add(new File(userDir + "/" + parameters.get(i)));
         }
       }
       else {
