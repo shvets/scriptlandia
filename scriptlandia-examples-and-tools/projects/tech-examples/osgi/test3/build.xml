@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="test3" default="compile" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+  <description>
+    @author Alexander Shvets
+  </description>
+
+  <property name="archive1.name" value="MoviesInterface.jar"/>
+  <property name="archive2.name" value="BasicMovieFinder.jar"/>
+
+  <artifact:localRepository id="local.repository" location="${repository.home}" layout="default"/>
+
+  <artifact:pom file="pom.xml" id="maven.project"/>
+
+  <target name="resolve.dependencies">
+    <artifact:dependencies pathId="compile.classpath" filesetId="compile.fileset" useScope="compile">
+      <pom refid="maven.project"/>
+    </artifact:dependencies>
+  </target>
+
+  <target name="clean" description="Removes all compiled classes">
+    <delete dir="${maven.project.build.directory}"/>
+  </target>
+
+  <target name="clean.osgi" description="Removes OSGI files">
+    <delete dir="${repository.home}/org/eclipse/equinox/osgi/3.2.2/configuration"/>
+  </target>
+
+  <target name="compile1" depends="resolve.dependencies">
+    <mkdir dir="${maven.project.build.outputDirectory}"/>
+
+    <javac destdir="${maven.project.build.outputDirectory}"
+           includeAntRuntime="false"
+           source="1.5" target="1.5"
+           debug="${debug}"
+           optimize="${optimize}"
+           deprecation ="${deprecation}">
+        <classpath refid="compile.classpath"/>
+        <src path="${maven.project.build.sourceDirectory}"/>
+
+        <exclude name="osgitut/movies/impl/**"/>
+    </javac>
+  </target>
+
+  <target name="compile2" depends="resolve.dependencies">
+    <mkdir dir="${maven.project.build.outputDirectory}"/>
+
+    <javac destdir="${maven.project.build.outputDirectory}"
+           includeAntRuntime="false"
+           source="1.5" target="1.5"
+           debug="${debug}"
+           optimize="${optimize}"
+           deprecation ="${deprecation}">
+        <classpath refid="compile.classpath"/>
+        <src path="${maven.project.build.sourceDirectory}"/>
+
+        <include name="osgitut/movies/impl/**"/>
+    </javac>
+  </target>
+
+  <target name="jar1" depends="compile1">
+    <script language="beanshell">
+      project.setProperty("export.package", "osgitut.movies;version=\"1.0.0\"");
+    </script>
+
+    <jar destfile="${maven.project.build.directory}/${archive1.name}">
+      <fileset dir="${maven.project.build.outputDirectory}">
+        <exclude name="osgitut/movies/impl/**"/>
+      </fileset>
+
+      <manifest>
+        <attribute name="Manifest-Version" value="1.0"/>
+        <attribute name="Bundle-ManifestVersion" value="2"/>
+        <attribute name="Bundle-Name" value="Movies Interface"/>
+        <attribute name="Bundle-SymbolicName" value="MoviesInterface"/>
+        <attribute name="Bundle-Version" value="1.0.0"/>
+        <attribute name="Export-Package" value="${export.package}"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="jar2" depends="compile2">
+    <script language="beanshell">
+      project.setProperty("import.package", "osgitut.movies;version=\"[1.0.0,2.0.0)\"");
+    </script>
+
+    <jar destfile="${maven.project.build.directory}/${archive2.name}">
+      <fileset dir="${maven.project.build.outputDirectory}">
+        <include name="osgitut/movies/impl/**"/>
+      </fileset>
+
+      <manifest>
+        <attribute name="Manifest-Version" value="1.0"/>
+        <attribute name="Bundle-ManifestVersion" value="2"/>
+        <attribute name="Bundle-Name" value="Basic Movie Finder"/>
+        <attribute name="Bundle-SymbolicName" value="BasicMovieFinder"/>
+        <attribute name="Bundle-Version" value="1.0.0"/>
+        <attribute name="Import-Package" value="${import.package}"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="jar" depends="jar1, jar2"/>
+
+  <target name="osgi" depends="resolve.dependencies">
+    <java classname="org.eclipse.core.runtime.adaptor.EclipseStarter" fork="yes">
+      <classpath>
+        <path refid="compile.classpath"/>
+      </classpath>
+
+      <arg line="-console"/>
+    </java>
+  </target>
+
+</project>
