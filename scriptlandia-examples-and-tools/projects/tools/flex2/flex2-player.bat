@@ -1,1 +1,1 @@
-"d:/Java/flex/player/SAFlashPlayer.exe" %1
+"c:/Java/flex/player/SAFlashPlayer.exe" %1

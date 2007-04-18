@@ -1,0 +1,24 @@
+import java.awt.*;
+
+config.setSize(32, 32);
+config.setAntiAlias(false);
+config.setDithered(true);
+config.setTransparentColor(0, 128, 0);
+
+config.setOutputType(config.IMAGE_TYPE_PNG);
+
+public void render(Graphics2D g)
+{
+	g.setColor(new Color(0, 128, 0));
+	g.fillRect(0, 0, 32, 32);
+	g.setStroke(new BasicStroke(2));
+	g.setColor(Color.BLACK);
+	g.drawRect(5,5,17,17);
+
+	g.setStroke(new BasicStroke(0));
+	g.setColor(new Color(255, 128, 0));
+	g.fillRect(12, 12, 15, 15);
+	g.setColor(Color.BLACK);
+	g.setStroke(new BasicStroke(2));
+	g.drawRect(12, 12, 15, 15);
+}

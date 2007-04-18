@@ -1,0 +1,41 @@
+import java.awt.*;
+import java.io.*;
+import java.net.*;
+
+config.setSize(200, 100);
+config.setAntiAlias(true);
+
+public void render(Graphics g)
+{	File f = context.getResourceAsFile("counter.txt");
+	int counter = 0;
+	try
+	{	BufferedReader reader = new BufferedReader(new FileReader(f));
+		String counterLine = reader.readLine();
+		reader.close();
+		counter = Integer.parseInt(counterLine);
+	}
+	catch(Throwable th){}
+
+	counter++;
+
+	try
+	{	PrintWriter writer = new PrintWriter(new FileWriter(f));
+		writer.println("" + counter);
+		writer.flush();
+		writer.close();
+	}
+	catch(Throwable th){}
+
+	g.setColor(Color.WHITE);
+	g.fillRect(0, 0, 200, 100);
+	Image bgImage = context.loadImage("mouse_click.jpg");
+	bgImage = bgImage.getScaledInstance(267/2, 157/2, Image.SCALE_SMOOTH);
+	g.drawImage(bgImage, 200 - bgImage.getWidth(null) - 5, 100 - bgImage.getHeight(null) - 5, null);
+	Font font1 = context.loadFont("DS-DIGIB.TTF").deriveFont(36f);
+	g.setFont(font1);
+	g.setColor(Color.GRAY);
+	g.drawString("" + counter, 10, 40);
+	Font font2 = new Font("Arial", Font.BOLD, 14);
+	g.setFont(font2);
+	g.drawString("Hits Today", 10, 60);
+}

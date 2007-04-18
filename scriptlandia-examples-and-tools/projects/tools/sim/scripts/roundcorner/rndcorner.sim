@@ -1,0 +1,38 @@
+import java.awt.*;
+
+int imageWidth = 7;
+int imageHeight = 7;
+
+config.setSize(imageWidth, imageHeight);
+//context.imageType = "png";
+config.setAntiAlias(true);
+
+public void render(Graphics gr)
+{	Graphics2D g = (Graphics2D) gr;
+	g.setColor(Color.WHITE);
+	g.fillRect(0, 0, imageWidth, imageHeight);
+
+	String corner = context.getParameter("anchor");
+	if(corner == null)
+		corner = "tl";
+
+	String color = context.getParameter("color");
+	if(color == null)
+		color = "000000";
+
+	g.setColor(Color.decode("0x" + color));
+
+	if(corner.equalsIgnoreCase("bl"))
+	{	g.fillOval(0, -imageHeight, imageWidth *2, imageHeight * 2);
+		return;
+	}
+	if(corner.equalsIgnoreCase("br"))
+	{	g.fillOval(-imageWidth, -imageHeight, imageWidth *2, imageHeight * 2);
+		return;
+	}
+	if(corner.equalsIgnoreCase("tr"))
+	{	g.fillOval(-imageWidth, 0, imageWidth *2, imageHeight * 2);
+		return;
+	}
+	g.fillOval(0, 0, imageWidth *2, imageHeight * 2);
+}

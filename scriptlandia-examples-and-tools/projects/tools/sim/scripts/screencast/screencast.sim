@@ -1,0 +1,17 @@
+import java.awt.*;
+import java.awt.image.*;
+
+Dimension screenDim = Toolkit.getDefaultToolkit().getScreenSize();
+
+int imgWidth = screenDim.width / 1.5;
+int imgHeight = screenDim.height / 1.5;
+
+config.setSize(imgWidth, imgHeight);
+config.setAntiAlias(true);
+
+public void render(Graphics g)
+{	Robot robot = new Robot();
+	BufferedImage image = robot.createScreenCapture(new Rectangle(0, 0, screenDim.width, screenDim.height));
+	Image shot = image.getScaledInstance(imgWidth, imgHeight, Image.SCALE_SMOOTH);
+	g.drawImage(shot, 0, 0, null);
+}

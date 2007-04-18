@@ -1,0 +1,55 @@
+import java.awt.*;
+import java.util.*;
+
+int imgWidth = 200;
+int imgHeight = 200;
+int atomNum = 10;
+
+config.setSize(imgWidth, imgHeight);
+config.setAntiAlias(true);
+
+public void render(Graphics2D g)
+{
+	Color[] colors = new Color[]
+		{	Color.decode("0xF7941C"),
+			Color.decode("0xB38F00"),
+			Color.decode("0x6BB300"),
+			Color.decode("0x820808"),
+			Color.decode("0x8696C2"),
+			Color.decode("0xFF6600"),
+			Color.decode("0xC39AA2"),
+			Color.decode("0x6C8385"),
+			Color.decode("0x9252AF"),
+			Color.decode("0x037434"),
+		};
+
+	g.setColor(Color.WHITE);
+	g.fillRect(0, 0, imgWidth, imgHeight);
+
+	Random random = new Random();
+
+	Point[] points = new Point[atomNum];
+	for(int i = 0; i<points.length; i++)
+	{	int x = random.nextInt(imgWidth - 50) + 25;
+		int y = random.nextInt(imgHeight - 50) + 25;
+		points[i] = new Point(x, y);
+	}
+
+	g.setColor(Color.decode("0xDDDDDD"));
+	for(int i = 0; i<points.length; i++)
+	{	for(int j = i; j<points.length; j+=2)
+		{	g.drawLine(points[i].x, points[i].y, points[j].x, points[j].y);
+		}
+	}
+
+	for(int i = 0; i<points.length; i++)
+	{	g.setColor(colors[i]);
+		int radius = random.nextInt(15) + 10;
+		g.fillOval(points[i].x - radius/2, points[i].y - radius/2, radius, radius);
+	}
+
+	Font font = context.loadFont("flythick.ttf", 22);
+	g.setFont(font);
+	g.setColor(Color.decode("0x3F73A9"));
+	g.drawString("Molecules", 5, random.nextInt(imgHeight - 50) + 25);
+}
