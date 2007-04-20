@@ -7,7 +7,7 @@ public class Bar {
 	}
 
 	public void doSomething() {
-		System.out.println(getClass().getName() + ": I'm doing something222");
+		System.out.println(getClass().getName() + ": I'm doing something");
 		foo.doSomethingElse();
 	}
 
