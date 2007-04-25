@@ -11,7 +11,7 @@
   <description>Scriptlandia JRuby Module</description>
 
   <properties>
-    <jruby.version>0.9.8</jruby.version>
+    <jruby.version>0.9.9</jruby.version>
   </properties>
 
   <dependencies>

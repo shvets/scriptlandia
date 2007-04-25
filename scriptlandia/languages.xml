@@ -154,7 +154,7 @@
     </registration>
   </language>
 
-  <language name="jruby" groupId="jruby" artifactId="jruby" version="0.9.8">
+  <language name="jruby" groupId="jruby" artifactId="jruby" version="0.9.9">
     <registration mimeType="text/ruby" icon="ruby.ico">
       <extensions>
         <extension>rb</extension>

@@ -203,7 +203,9 @@
         Using generic scripts from java-app-launcher project.
       </action>
 
-
+      <action dev="Alexander Shvets" type="fix">
+        Upgrade JRuby up to version 0.9.9.
+      </action>
     </release>
 
    </body>
