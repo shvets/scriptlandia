@@ -1,0 +1,56 @@
+<project name="GORMSansGrails-impl" default="run" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+
+  <description>
+    @author Alexander Shvets
+  </description>
+
+  <property name="archive.name" value="HelloWorld.jar"/>
+
+  <artifact:localRepository id="local.repository" location="${repository.home}" layout="default"/>
+
+  <artifact:pom file="pom.xml" id="maven.project"/>
+
+  <target name="resolve.dependencies">
+    <artifact:dependencies pathId="compile.classpath" filesetId="compile.fileset" useScope="compile">
+      <pom refid="maven.project"/>
+    </artifact:dependencies>
+
+    <taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc">
+      <classpath>
+        <fileset dir="${repository.home}/groovy/groovy-all/1.0">
+          <include name="groovy-all-1.0.jar"/>
+        </fileset>
+      </classpath>
+    </taskdef>
+  </target>
+
+  <target name="clean" description="Removes all compiled classes">
+    <delete dir="${maven.project.build.directory}"/>
+  </target>
+
+  <target name="compile" depends="resolve.dependencies">
+    <mkdir dir="${maven.project.build.directory}/classes"/>
+
+    <groovyc destdir="${maven.project.build.directory}/classes" srcdir="src" listfiles="true">
+      <classpath>
+        <path refid="compile.classpath"/>
+      </classpath>
+    </groovyc>
+
+    <!-- TODO: create jar including classes in build and grails-app directories -->
+    <copy todir="${maven.project.build.directory}/classes/grails-app">
+      <fileset dir="grails-app"/>
+    </copy>
+  </target>
+	
+  <target name="run" depends="compile">
+    <java classname="com.jweldin.gormtest.Test">
+      <classpath>
+        <path refid="compile.classpath"/>
+
+        <pathelement location="${maven.project.build.directory}/classes"/>
+      </classpath>
+    </java>
+  </target>
+
+</project>
