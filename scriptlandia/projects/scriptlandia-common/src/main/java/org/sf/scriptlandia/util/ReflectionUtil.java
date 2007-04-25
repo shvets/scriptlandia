@@ -74,7 +74,7 @@ public class ReflectionUtil {
       final boolean correctSignature =
               Modifier.isStatic(modifiers) &&
                       Modifier.isPublic(modifiers) &&
-                      method.getReturnType() == Void.TYPE;
+                      (method.getReturnType() == Void.TYPE || method.getReturnType() == Object.class);
 
       if (correctSignature) {
         final Class[] currentParamTypes = method.getParameterTypes();
