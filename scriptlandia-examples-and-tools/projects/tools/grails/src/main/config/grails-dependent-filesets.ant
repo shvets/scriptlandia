@@ -1,0 +1,170 @@
+<!-- Grails Dependent Filesets -->
+
+  <fileset dir="${repository.home}\groovy\grails\0.2.1">
+    <include name="grails-0.2.1.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\antlr\antlr\2.7.6rc1">
+    <include name="antlr-2.7.6rc1.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\asm\asm\1.5.3">
+    <include name="asm-1.5.3.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\asm\asm-attrs\1.5.3">
+    <include name="asm-attrs-1.5.3.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\bsf\bsf\2.3.0">
+    <include name="bsf-2.3.0.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\cglib\cglib\2.1_3">
+    <include name="cglib-2.1_3.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\commons-cli\commons-cli\1.0">
+    <include name="commons-cli-1.0.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\commons-collections\commons-collections\3.0">
+    <include name="commons-collections-3.0.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\commons-dbcp\commons-dbcp\1.2.1">
+    <include name="commons-dbcp-1.2.1.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\commons-pool\commons-pool\1.2">
+    <include name="commons-pool-1.2.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\commons-el\commons-el\1.0">
+    <include name="commons-el-1.0.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\commons-fileupload\commons-fileupload\1.0">
+    <include name="commons-fileupload-1.0.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\commons-lang\commons-lang\2.0">
+    <include name="commons-lang-2.0.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\commons-logging\commons-logging\1.0.4">
+    <include name="commons-logging-1.0.4.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\commons-validator\commons-validator\1.2.0">
+    <include name="commons-validator-1.2.0.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\dom4j\dom4j\1.6.1">
+    <include name="dom4j-1.6.1.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\ehcache\ehcache\1.1">
+    <include name="ehcache-1.1.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\hsqldb\hsqldb\1.8.0.4">
+    <include name="hsqldb-1.8.0.4.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\oro\oro\2.0.8">
+    <include name="oro-2.0.8.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\quartz\quartz\1.5.2">
+    <include name="quartz-1.5.2.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\opensymphony\sitemesh\2.2.1-1">
+    <include name="sitemesh-2.2.1-1.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\ognl\ognl\2.6.7">
+    <include name="ognl-2.6.7.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\javax\servlet\jstl\1.1.2">
+    <include name="jstl-1.1.2.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\javax\transaction\jta\1.0.1B">
+    <include name="jta-1.0.1B.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\taglibs\standard\1.0.6">
+    <include name="standard-1.0.6.jar"/>
+  </fileset>
+
+<!--
+  <fileset dir="${repository.home}\javax\servlet\servlet-api\2.4">
+    <include name="servlet-api-2.4.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\javax\servlet\jsp-api\2.0">
+    <include name="jsp-api-2.0.jar"/>
+  </fileset>
+-->
+
+  <fileset dir="${repository.home}\taglibs\standard\1.0.6">
+    <include name="standard-1.0.6.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\javax\persistence\persistence-api\1.0">
+    <include name="persistence-api-1.0.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\org\springframework\spring\1.2.6">
+    <include name="spring-1.2.6.jar"/>
+  </fileset>
+
+<!--
+  <fileset dir="${repository.home}\org\springframework\spring-core\1.2.6">
+    <include name="spring-core-1.2.6.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\org\springframework\spring-beans\1.2.6">
+    <include name="spring-beans-1.2.6.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\org\springframework\spring-context\1.2.6">
+    <include name="spring-context-1.2.6.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\org\springframework\spring-orm\1.2.6">
+    <include name="spring-orm-1.2.6.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\org\springframework\spring-mock\1.2.6">
+    <include name="spring-mock-1.2.6.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\org\springframework\spring-web\1.2.6">
+    <include name="spring-web-1.2.6.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\org\springframework\spring-webmvc\1.2.6">
+    <include name="spring-webmvc-1.2.6.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\org\springframework\spring-support\1.2.6">
+    <include name="spring-support-1.2.6.jar"/>
+  </fileset>
+-->
+
+  <fileset dir="${repository.home}\org\springmodules\springmodules\dev-20050807">
+    <include name="springmodules-dev-20050807.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\org\hibernate\hibernate\3.1.2">
+    <include name="hibernate-3.1.2.jar"/>
+  </fileset>
+
+  <fileset dir="${repository.home}\org\hibernate\hibernate-annotations\3.1beta8">
+    <include name="hibernate-annotations-3.1beta8.jar"/>
+  </fileset>
+

@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+
+<!-- grails.ant -->
+
+<!DOCTYPE project [
+  <!ENTITY dependent_filesets SYSTEM "grails-dependent-filesets.ant">
+]>
+
+<project name="grails" default="run" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+
+  <description>
+    @author Alexander Shvets
+  </description>
+
+  <property name="grails.home" value="C:/JavaPrograms/grails-0.4.2"/>
+
+<!--
+
+
+  <artifact:localRepository id="local.repository" location="${repository.home}" layout="default"/>
+
+  <artifact:pom file="grail-starter.maven" id="maven.project"/>
+
+  <target name="resolve.dependencies">
+    <artifact:dependencies pathId="compile.classpath" filesetId="compile.fileset" useScope="compile">
+      <pom refid="maven.project"/>
+    </artifact:dependencies>
+  </target>
+
+    &dependent_filesets;
+
+        <fileset dir="${repository.home}/org/sf/scriptlandia/scriptlandia/2.2.1">
+
+      <java classname="org.sf.scriptlandia.GroovyStarter" fork="true">
+      <java classname="org.codehaus.groovy.tools.GroovyStarter" fork="true">
+
+      <classpath>
+        <fileset dir="${grails.home}/lib">
+          <include name="groovy-starter.jar"/>
+        </fileset>
+
+-->
+
+  <path id="compile.classpath">
+    <fileset dir="${grails.home}/lib">
+      <include name="*.jar"/>
+    </fileset>
+  </path>
+
+  <target name="run">
+      <java classname="org.codehaus.groovy.tools.GroovyStarter" fork="true">
+      <classpath>
+        <fileset dir="${repository.home}/org/sf/scriptlandia/scriptlandia/2.2.1">
+          <include name="scriptlandia-2.2.1.jar"/>
+        </fileset>
+
+<!--
+        <fileset dir="${repository.home}/org/sf/scriptlandia/scriptlandia-launcher/2.2.1">
+          <include name="scriptlandia-launcher-2.2.1.jar"/>
+        </fileset>
+ 
+       <fileset dir="${repository.home}/org/sf/scriptlandia/scriptlandia-common/2.2.1">
+          <include name="scriptlandia-common-2.2.1.jar"/>
+        </fileset>
+
+       <fileset dir="${repository.home}/org/sf/scriptlandia/scriptlandia-common/2.2.1">
+          <include name="scriptlandia-common-2.2.1.jar"/>
+        </fileset>
+
+       <fileset dir="${repository.home}/org/sf/scriptlandia/pomreader/2.2.1">
+          <include name="pomreader-2.2.1.jar"/>
+        </fileset>
+
+       <fileset dir="${repository.home}/classworlds/classworlds/1.1">
+          <include name="classworlds-1.1.jar"/>
+        </fileset>
+
+       <fileset dir="${repository.home}/org/apache/maven/bootstrap/bootstrap-mini/2.0.6">
+          <include name="bootstrap-mini-2.0.6.jar"/>
+        </fileset>
+-->
+      </classpath>
+
+      <jvmarg value="-Xmx128m"/>
+
+      <sysproperty key="grails.home" value="${grails.home}"/>
+      <sysproperty key="env.GRAILS_HOME" value="${grails.home}"/>
+      <sysproperty key="groovy.starter.conf" value="${grails.home}/conf/groovy-starter.conf"/>
+
+      <arg line="--main org.codehaus.groovy.grails.cli.GrailsScriptRunner"/>
+
+      <arg line="create-app"/>
+    </java>
+  </target>
+
+</project>
