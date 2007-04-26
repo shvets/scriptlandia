@@ -7,7 +7,7 @@ import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 import org.codehaus.classworlds.ClassRealm;
 
 /**
- * This class is used for running F3 scripts.
+ * This class is used for running groovy tools.
  *
  * @author Alexander Shvets
  * @version 1.0 12/16/2006
