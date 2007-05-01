@@ -93,6 +93,13 @@
       </and>
     </condition>
 
+    <condition property="jacob.lib.is.present">
+      <and>
+        <available file="${repository.home}/jacob/jacob-dll/1.10.1/jacob-dll-1.10.1.jar"/>
+        <istrue value="true"/>
+      </and>
+    </condition>
+
     <antcall target="copy.settings.xml"/>
 
     <antcall target="unzip.jython.lib"/>
@@ -100,6 +107,8 @@
     <antcall target="unzip.jruby.lib"/>
 
     <antcall target="unzip.fortress.lib"/>
+
+    <antcall target="unzip.jacob.lib"/>
 
     <script language="beanshell">
       source("projects/scriptlandia-config/src/main/bsh/ChecksumScript.bsh");
@@ -229,6 +238,15 @@
            dest="${fortress.base}" overwrite="false">
       <patternset>
         <include name="FortressLibrary.fss"/>
+      </patternset>
+    </unzip>
+  </target>
+
+  <target name="unzip.jacob.lib" if="jacob.lib.is.present">
+    <unzip src="${repository.home}/jacob/jacob-dll/1.10.1/jacob-dll-1.10.1.jar"
+           dest="${repository.home}/jacob/jacob-dll/1.10.1" overwrite="false">
+      <patternset>
+        <include name="*.dll"/>
       </patternset>
     </unzip>
   </target>
