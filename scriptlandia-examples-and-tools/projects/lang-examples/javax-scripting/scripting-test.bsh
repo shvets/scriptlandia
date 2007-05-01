@@ -36,6 +36,10 @@ public class ScriptingTest {
     out.println("Available script engines:");
 
     for ( int i = 0; i < factories.size(); i++ ) {
+      if(i == 2) {
+        continue;
+      }
+
       ScriptEngineFactory factory = (ScriptEngineFactory)factories.get(i);
 
       out.println("-------------------------------------------");
@@ -43,6 +47,11 @@ public class ScriptingTest {
       out.println("Engine: " + factory.getEngineName());
       //public abstract List getExtensions();
 
+      out.println("index " + i);
+/*      if(factory.getEngineName().equals("java")) {
+        continue;
+      }
+*/
       Object engine = null;
 
       try {
@@ -184,7 +193,7 @@ public class ScriptingTest {
 
     // test.listEngines(System.out);
     test.listEngines(new PrintStream(new FileOutputStream("result.txt")));
-    test.testGroovy();
+/*    test.testGroovy();
     test.testBeanshell();
     test.testJava();
     test.testJRuby();
@@ -192,6 +201,7 @@ public class ScriptingTest {
     test.testJavascript2();
     test.testJavascript3();
     test.testJavascript4();
+*/
   }
     
 }
