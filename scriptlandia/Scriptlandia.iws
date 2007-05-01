@@ -27,12 +27,7 @@
     <option name="USER" value="" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/GrailsStarter.java" afterPath="$PROJECT_DIR$/projects/scriptlandia/src/main/java/org/sf/scriptlandia/GrailsStarter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.ipr" afterPath="$PROJECT_DIR$/Scriptlandia.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.iws" afterPath="$PROJECT_DIR$/Scriptlandia.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.iml" afterPath="$PROJECT_DIR$/Scriptlandia.iml" />
-    </list>
+    <list default="true" name="Default" comment="" />
   </component>
   <component name="ChangeListSynchronizer" />
   <component name="ChangesViewManager" flattened_view="false" />
