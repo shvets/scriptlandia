@@ -194,6 +194,18 @@
     </registration>
   </language>
 
+  <language name="sleep" groupId="sleep" artifactId="sleep" version="2.1-beta15">
+    <registration mimeType="text/sleep" icon="scriptlandia.ico">
+      <extensions>
+        <extension>sleep</extension>
+      </extensions>
+
+      <starter groupId="org.sf.scriptlandia" artifactId="sleep" version="2.2.1">
+        <mainClass>sleep.console.TextConsole</mainClass>
+      </starter>
+    </registration>
+  </language>
+
   <language name="jython" groupId="jython" artifactId="jython" version="2.2b1">
     <registration mimeType="text/python" icon="jython.ico">
       <extensions>

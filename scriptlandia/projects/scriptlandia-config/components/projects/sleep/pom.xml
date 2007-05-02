@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>sleep</artifactId>
+  <version>2.2.1</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia Sleep Module</name>
+  <description>Scriptlandia Sleep Module</description>
+
+  <properties>
+    <sleep.version>2.1-beta15</sleep.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>sleep</groupId>
+      <artifactId>sleep</artifactId>
+      <version>${sleep.version}</version>
+    </dependency>
+  </dependencies>
+
+</project>
