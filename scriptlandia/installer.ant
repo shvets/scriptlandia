@@ -13,6 +13,8 @@
     <installProject basedir="projects/scriptlandia-common" build="false"/>
     <installProject basedir="projects/image4j" build="false"/>
 
+    <installProject basedir="projects/classworlds-launcher" build="false"/>
+
     <installProject basedir="projects/pomreader" build="false"/>
 
     <installProject basedir="projects/antrun"/>
@@ -30,6 +32,7 @@
 
   <target name="install.projects">
     <script language="beanshell">
+      addClassPath("projects/classworlds-launcher/target/classworlds-launcher.jar");
       addClassPath("projects/scriptlandia-common/target/scriptlandia-common.jar");
       addClassPath("projects/bootstrap-mini/target/bootstrap-mini.jar");
       addClassPath("projects/pomreader/target/pomreader.jar");
@@ -43,6 +46,7 @@
       installer.install("projects/bootstrap-mini", false);
       installer.install("projects/image4j", false);
       installer.install("projects/scriptlandia-common", false);
+      installer.install("projects/classworlds-launcher", false);
 
       installer.install("projects/pomreader", false);
       installer.install("projects/nailgun", false);

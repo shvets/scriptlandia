@@ -25,19 +25,17 @@
       <type>pom</type>
     </dependency>
 
-    <dependencies>
-      <dependency>
-        <groupId>groovy</groupId>
-        <artifactId>scriptom</artifactId>
-        <version>1.2</version>
-      </dependency>
+    <dependency>
+      <groupId>groovy</groupId>
+      <artifactId>scriptom</artifactId>
+      <version>1.2</version>
+    </dependency>
 
-      <dependency>
-        <groupId>jacob</groupId>
-        <artifactId>jacob</artifactId>
-        <version>1.10.1</version>
-      </dependency>
-    </dependencies>
+    <dependency>
+      <groupId>jacob</groupId>
+      <artifactId>jacob</artifactId>
+      <version>1.10.1</version>
+    </dependency>
   </dependencies>
 
 </project>

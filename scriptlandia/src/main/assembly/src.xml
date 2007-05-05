@@ -36,6 +36,9 @@
         <include>pomreader/pom.xml</include>
         <include>pomreader/src/**</include>
 
+        <include>classworlds-launcher/pom.xml</include>
+        <include>classworlds-launcher/src/**</include>
+
         <include>image4j/pom.xml</include>
         <include>image4j/src/**</include>
 
@@ -69,18 +72,6 @@
         <include>scriptlandia-nailgun/src/**</include>
       </includes>
     </fileSet>
-
-<!--
-    <fileSet>
-      <directory>examples</directory>
-      <outputDirectory>examples</outputDirectory>
-    </fileSet>
-
-    <fileSet>
-      <directory>tools</directory>
-      <outputDirectory>tools</outputDirectory>
-    </fileSet>
--->
   </fileSets>
 
 </assembly>

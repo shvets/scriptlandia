@@ -35,6 +35,9 @@
         <include>image4j/pom.xml</include>
         <include>image4j/target/image4j.jar</include>
 
+        <include>classworlds-launcher/pom.xml</include>
+        <include>classworlds-launcher/target/classworlds-launcher.jar</include>
+
         <include>scriptlandia-common/pom.xml</include>
         <include>scriptlandia-common/target/scriptlandia-common.jar</include>
 
@@ -67,44 +70,6 @@
         <include>scriptlandia-config/starters/**</include>
       </includes>
     </fileSet>
-
-<!--
-    <fileSet>
-      <directory>target</directory>
-      <outputDirectory>examples</outputDirectory>
-    
-      <includes>
-        <include>examples.zip</include>
-      </includes>
-    </fileSet>
-
-    <fileSet>
-      <directory>target</directory>
-      <outputDirectory>tools</outputDirectory>
-    
-      <includes>
-        <include>tools.zip</include>
-      </includes>
-    </fileSet>
-
-    <fileSet>
-      <directory>tools/projects/antlet-tools</directory>
-      <outputDirectory>examples</outputDirectory>
-    
-      <includes>
-        <include>unzip.ant</include>
-      </includes>
-    </fileSet>
-
-    <fileSet>
-      <directory>tools/projects/antlet-tools</directory>
-      <outputDirectory>tools</outputDirectory>
-    
-      <includes>
-        <include>unzip.ant</include>
-      </includes>
-    </fileSet>
--->
   </fileSets>
 
 </assembly>
