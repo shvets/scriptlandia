@@ -1,3 +1,5 @@
+#
+
 require "java"
 module JavaLang
    include_package "java.lang"

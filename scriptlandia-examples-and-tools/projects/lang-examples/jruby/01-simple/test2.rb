@@ -1,3 +1,5 @@
+#
+
 require "java"
 
 # Include Java's String as JString

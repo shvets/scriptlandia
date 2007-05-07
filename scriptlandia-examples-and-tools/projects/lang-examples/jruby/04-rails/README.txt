@@ -44,5 +44,4 @@ Test it:
 
 
 
-
 ruby.bat script/generate migration contact_db

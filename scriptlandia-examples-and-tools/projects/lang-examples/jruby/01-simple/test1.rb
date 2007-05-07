@@ -1,4 +1,4 @@
-//
+#
 
 class MyClass
   def say_hello_three_times

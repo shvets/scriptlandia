@@ -1,3 +1,5 @@
+#
+
 require 'java'
 
 include_class "javax.swing.JFrame"
