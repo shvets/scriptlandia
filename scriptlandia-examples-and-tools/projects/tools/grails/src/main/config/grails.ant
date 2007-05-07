@@ -29,7 +29,7 @@
 
     &dependent_filesets;
 
-        <fileset dir="${repository.home}/org/sf/scriptlandia/scriptlandia/2.2.1">
+        <fileset dir="${repository.home}/org/sf/scriptlandia/scriptlandia/2.2.2">
 
       <java classname="org.sf.scriptlandia.GroovyStarter" fork="true">
       <java classname="org.codehaus.groovy.tools.GroovyStarter" fork="true">
@@ -50,25 +50,25 @@
   <target name="run">
       <java classname="org.codehaus.groovy.tools.GroovyStarter" fork="true">
       <classpath>
-        <fileset dir="${repository.home}/org/sf/scriptlandia/scriptlandia/2.2.1">
-          <include name="scriptlandia-2.2.1.jar"/>
+        <fileset dir="${repository.home}/org/sf/scriptlandia/scriptlandia/2.2.2">
+          <include name="scriptlandia-2.2.2.jar"/>
         </fileset>
 
 <!--
-        <fileset dir="${repository.home}/org/sf/scriptlandia/scriptlandia-launcher/2.2.1">
-          <include name="scriptlandia-launcher-2.2.1.jar"/>
+        <fileset dir="${repository.home}/org/sf/scriptlandia/scriptlandia-launcher/2.2.2">
+          <include name="scriptlandia-launcher-2.2.2.jar"/>
         </fileset>
  
-       <fileset dir="${repository.home}/org/sf/scriptlandia/scriptlandia-common/2.2.1">
-          <include name="scriptlandia-common-2.2.1.jar"/>
+       <fileset dir="${repository.home}/org/sf/scriptlandia/scriptlandia-common/2.2.2">
+          <include name="scriptlandia-common-2.2.2.jar"/>
         </fileset>
 
-       <fileset dir="${repository.home}/org/sf/scriptlandia/scriptlandia-common/2.2.1">
-          <include name="scriptlandia-common-2.2.1.jar"/>
+       <fileset dir="${repository.home}/org/sf/scriptlandia/scriptlandia-common/2.2.2">
+          <include name="scriptlandia-common-2.2.2.jar"/>
         </fileset>
 
-       <fileset dir="${repository.home}/org/sf/scriptlandia/pomreader/2.2.1">
-          <include name="pomreader-2.2.1.jar"/>
+       <fileset dir="${repository.home}/org/sf/scriptlandia/pomreader/2.2.2">
+          <include name="pomreader-2.2.2.jar"/>
         </fileset>
 
        <fileset dir="${repository.home}/classworlds/classworlds/1.1">
