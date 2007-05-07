@@ -48,7 +48,7 @@ The installation is completed. During the installation we associate extensions l
 
 During installation, a lot of files will be downloaded and installed into local repository. 
 To accelerate this process, you can download most of required files as one big archive
-(scriptlandia-accelerator-2.2.1.zip) and unzip it into some folder. All files will be located in
+(scriptlandia-accelerator-2.x.x.zip) and unzip it into some folder. All files will be located in
 some folder, e.g. in c:\maven-repository-accelerator.
 
 In "repositories.xml" file there is a description for this directory:

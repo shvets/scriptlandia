@@ -224,5 +224,7 @@
       </action>
     </release>
 
-   </body>
+    <release version="2.2.2" date="1-July-2007" description="Bug Fix Release">    
+    </release>
+  </body>
 </document>

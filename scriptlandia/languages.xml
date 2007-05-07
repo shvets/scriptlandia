@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 
 <languages>
-  <language name="scriptlandia" groupId="org.sf.scriptlandia" artifactId="scriptlandia" version="2.2.1">
+  <language name="scriptlandia" groupId="org.sf.scriptlandia" artifactId="scriptlandia" version="2.2.2">
     <registration mimeType="text/scriptlandia" icon="scriptlandia.ico">
       <extensions>
         <extension>sl</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="scriptlandia-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="scriptlandia-starter" version="2.2.2">
         <mainClass>org.sf.scriptlandia.ScriptlandiaStarter</mainClass>
         <commandLine>-script.name=</commandLine>
       </starter>
@@ -20,7 +20,7 @@
         <extension>cwd</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="classworld-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="classworld-starter" version="2.2.2">
         <mainClass>org.sf.scriptlandia.ClassworldStarter</mainClass>
         <commandLine>-script.name=</commandLine>
       </starter>
@@ -35,7 +35,7 @@
         <extension>pom</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="maven-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="maven-starter" version="2.2.2">
         <mainClass>org.sf.scriptlandia.MavenStarter</mainClass>
         <commandLine>-f</commandLine>
       </starter>
@@ -48,7 +48,7 @@
         <extension>ant</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="ant-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="ant-starter" version="2.2.2">
         <mainClass>org.sf.scriptlandia.AntStarter</mainClass>
         <commandLine>-f</commandLine>
       </starter>
@@ -61,7 +61,7 @@
         <extension>bsh</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="beanshell-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="beanshell-starter" version="2.2.2">
         <mainClass>bsh.Interpreter</mainClass>
       </starter>
     </registration>
@@ -73,7 +73,7 @@
         <extension>java</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="janino-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="janino-starter" version="2.2.2">
         <mainClass>org.sf.scriptlandia.JaninoStarter</mainClass>
       </starter>
     </registration>
@@ -85,7 +85,7 @@
         <extension>class</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="class" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="class" version="2.2.2">
         <mainClass>org.sf.scriptlandia.ClassStarter</mainClass>
       </starter>
     </registration>
@@ -97,7 +97,7 @@
         <extension>jar</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="jar" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="jar" version="2.2.2">
         <mainClass>org.sf.scriptlandia.JarStarter</mainClass>
       </starter>
     </registration>
@@ -109,7 +109,7 @@
         <extension>jad</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="jad" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="jad" version="2.2.2">
         <mainClass>org.sf.scriptlandia.JadStarter</mainClass>
       </starter>
     </registration>
@@ -122,7 +122,7 @@
         <extension>war</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="war-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="war-starter" version="2.2.2">
         <mainClass>org.sf.scriptlandia.WarStarter</mainClass>
         <commandLine>-script.name=</commandLine>
       </starter>
@@ -136,7 +136,7 @@
         <extension>groovy</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="groovy-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="groovy-starter" version="2.2.2">
         <mainClass>groovy.ui.GroovyMain</mainClass>
       </starter>
     </registration>
@@ -148,7 +148,7 @@
         <extension>js</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="javascript-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="javascript-starter" version="2.2.2">
         <mainClass>org.mozilla.javascript.tools.shell.Main</mainClass>
       </starter>
     </registration>
@@ -161,7 +161,7 @@
         <extension>ruby</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="jruby-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="jruby-starter" version="2.2.2">
         <mainClass>org.jruby.Main</mainClass>
       </starter>
     </registration>
@@ -175,7 +175,7 @@
         <extension>ruby</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="xruby-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="xruby-starter" version="2.2.2">
         <mainClass>com.xruby.Main</mainClass>
       </starter>
     </registration>
@@ -188,7 +188,7 @@
         <extension>pnut</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="pnuts" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="pnuts" version="2.2.2">
         <mainClass>pnuts.tools.Main</mainClass>
       </starter>
     </registration>
@@ -200,7 +200,7 @@
         <extension>sleep</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="sleep" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="sleep" version="2.2.2">
         <mainClass>sleep.console.TextConsole</mainClass>
       </starter>
     </registration>
@@ -213,7 +213,7 @@
         <extension>python</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="jython" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="jython" version="2.2.2">
         <mainClass>org.python.util.jython</mainClass>
       </starter>
     </registration>
@@ -225,7 +225,7 @@
         <extension>jelly</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="jelly" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="jelly" version="2.2.2">
         <mainClass>org.apache.commons.jelly.Jelly</mainClass>
       </starter>
     </registration>
@@ -238,7 +238,7 @@
         <extension>velocity</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="velocity-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="velocity-starter" version="2.2.2">
         <mainClass>org.sf.scriptlandia.VelocityStarter</mainClass>
       </starter>
     </registration>
@@ -251,7 +251,7 @@
         <extension>freemarker</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="freemarker-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="freemarker-starter" version="2.2.2">
         <mainClass>org.sf.scriptlandia.FreeMarkerStarter</mainClass>
       </starter>
     </registration>
@@ -264,7 +264,7 @@
         <extension>jaskell</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="jaskell-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="jaskell-starter" version="2.2.2">
         <mainClass>jfun.jaskell.shell.Shell</mainClass>
       </starter>
     </registration>
@@ -276,7 +276,7 @@
         <extension>scala</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="scala-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="scala-starter" version="2.2.2">
         <mainClass>org.sf.scriptlandia.ScalaStarter</mainClass>
       </starter>
     </registration>
@@ -289,7 +289,7 @@
         <extension>scheme</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="jscheme-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="jscheme-starter" version="2.2.2">
         <mainClass>org.sf.scriptlandia.JSchemeStarter</mainClass>
       </starter>
     </registration>
@@ -301,7 +301,7 @@
         <extension>lisp</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="kawa-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="kawa-starter" version="2.2.2">
         <mainClass>org.sf.scriptlandia.KawaStarter</mainClass>
       </starter>
     </registration>
@@ -327,14 +327,14 @@
         <extension>tcl</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="tcl-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="tcl-starter" version="2.2.2">
         <mainClass>tcl.lang.Shell</mainClass>
       </starter>
     </registration>
   </language>
 
 <!--
-  <language name="jawk" groupId="jawk" artifactId="jawk" version="2.2.1">
+  <language name="jawk" groupId="jawk" artifactId="jawk" version="2.2.2">
 -->
   <language name="jawk" groupId="org.jawk" artifactId="jawk" version="0.14">
     <registration mimeType="text/awk" icon="awk.ico">
@@ -344,7 +344,7 @@
       </extensions>
 
 <!--
-      <starter groupId="org.sf.scriptlandia" artifactId="jawk-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="jawk-starter" version="2.2.2">
         <mainClass>org.jawk.Awkorg.sf.scriptlandia.JawkStarter</mainClass>
         <commandLine>-f</commandLine>
       </starter>
@@ -367,7 +367,7 @@
         <extension>f3</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="f3-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="f3-starter" version="2.2.2">
         <mainClass>org.sf.scriptlandia.F3Starter</mainClass>
       </starter>
     </registration>
@@ -379,7 +379,7 @@
         <extension>fss</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="fortress-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="fortress-starter" version="2.2.2">
         <mainClass>com.sun.fortress.interpreter.drivers.fs</mainClass>
       </starter>
     </registration>
@@ -391,7 +391,7 @@
         <extension>apt-fmt</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="apt-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="apt-starter" version="2.2.2">
         <mainClass>org.sf.scriptlandia.AptStarter</mainClass>
       </starter>
     </registration>
@@ -403,7 +403,7 @@
         <extension>apt-jelly</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="apt-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="apt-starter" version="2.2.2">
         <mainClass>org.sf.scriptlandia.AptStarter</mainClass>
       </starter>
     </registration>
@@ -415,7 +415,7 @@
         <extension>etl</extension>
       </extensions>
 
-      <starter groupId="org.sf.scriptlandia" artifactId="etl-starter" version="2.2.1">
+      <starter groupId="org.sf.scriptlandia" artifactId="etl-starter" version="2.2.2">
         <mainClass>scriptella.tools.launcher.EtlLauncher</mainClass>
       </starter>
     </registration>

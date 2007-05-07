@@ -880,7 +880,7 @@
     <configuration default="false" name="sl" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.codehaus.classworlds.Launcher" />
       <option name="VM_PARAMETERS" value="-Drepository.home=C:\maven-repository -Dclassworlds.conf=C:\scriptlandia\scriptlandia.conf  " />
-      <option name="PROGRAM_PARAMETERS" value="&quot;-deps.file.name=C:\maven-repository\org\sf\scriptlandia\scriptlandia-starter\2.2.1\scriptlandia-starter-2.2.1.pom&quot;  &quot;-main.class.name=org.sf.scriptlandia.ScriptlandiaStarter&quot;  -script.name=C:\Work\scriptlandia\trunk\scriptlandia-examples-and-tools\projects\examples\01-lang\sl\cafebabe.sl" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;-deps.file.name=C:\maven-repository\org\sf\scriptlandia\scriptlandia-starter\2.2.2\scriptlandia-starter-2.2.2.pom&quot;  &quot;-main.class.name=org.sf.scriptlandia.ScriptlandiaStarter&quot;  -script.name=C:\Work\scriptlandia\trunk\scriptlandia-examples-and-tools\projects\examples\01-lang\sl\cafebabe.sl" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
@@ -901,7 +901,7 @@
     <configuration default="false" name="maven" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.codehaus.classworlds.Launcher" />
       <option name="VM_PARAMETERS" value="-Dhttp.proxyHost=proxy-server.bms.com -Dhttp.proxyPort=8080 -Drepository.home=C:\maven-repository -Dclassworlds.conf=C:\scriptlandia\scriptlandia.conf -Dmaven.version=2.0.6" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;-deps.file.name=C:\maven-repository\org\sf\scriptlandia\maven-starter\2.2.1\maven-starter-2.2.1.pom&quot; -main.class.name=org.sf.scriptlandia.MavenStarter -f test.maven -e" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;-deps.file.name=C:\maven-repository\org\sf\scriptlandia\maven-starter\2.2.2\maven-starter-2.2.2.pom&quot; -main.class.name=org.sf.scriptlandia.MavenStarter -f test.maven -e" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
@@ -922,7 +922,7 @@
     <configuration default="false" name="ant" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.sf.scriptlandia.classworlds.launcher.Launcher" />
       <option name="VM_PARAMETERS" value="-Dhttp.proxyHost=proxy-server.bms.com -Dhttp.proxyPort=8080 -Drepository.home=C:\maven-repository -Dclassworlds.conf=C:\scriptlandia\scriptlandia.conf -Dmaven.version=2.0.6" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;-deps.file.name=C:\maven-repository\org\sf\scriptlandia\ant-starter\2.2.1\ant-starter-2.2.1.pom&quot; &quot;-main.class.name=org.sf.scriptlandia.AntStarter&quot; -f C:\Work\scriptlandia\trunk\scriptlandia-examples-and-tools\projects\lang-examples\flex2\compile-flex2.ant  test1.mxml" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;-deps.file.name=C:\maven-repository\org\sf\scriptlandia\ant-starter\2.2.2\ant-starter-2.2.2.pom&quot; &quot;-main.class.name=org.sf.scriptlandia.AntStarter&quot; -f C:\Work\scriptlandia\trunk\scriptlandia-examples-and-tools\projects\lang-examples\flex2\compile-flex2.ant  test1.mxml" />
       <option name="WORKING_DIRECTORY" value="file://C:/Work/scriptlandia/trunk/scriptlandia-examples-and-tools/projects/lang-examples/flex2" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
