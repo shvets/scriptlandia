@@ -5,7 +5,7 @@ SET REPOSITORY_HOME=c:\maven-repository
 SET SYSTEM_PROPS=-Dpomstrap.maven2.repository=file:/%REPOSITORY_HOME%
 SET SYSTEM_PROPS=%SYSTEM_PROPS% -Dpomstrap.autogroup.dependencies=false
 
-SET CLASSPATH=%REPOSITORY_HOME%\com\prefetch\pomstrap\1.0.6\pomstrap-1.0.6.jar
+SET CLASSPATH=%REPOSITORY_HOME%\com\prefetch\pomstrap\1.0.7\pomstrap-1.0.7.jar
 
 SET BOOTSTRAP_CLASS=com.prefetch.pomstrap.Bootstrap
 
