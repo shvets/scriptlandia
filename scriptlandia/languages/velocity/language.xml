@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<language name="velocity" groupId="velocity" artifactId="velocity" version="1.5">
+  <registration mimeType="text/velocity" icon="velocity.ico">
+    <extensions>
+      <extension>vm</extension>
+      <extension>velocity</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="velocity-starter" version="2.2.2">
+      <mainClass>org.sf.scriptlandia.VelocityStarter</mainClass>
+    </starter>
+  </registration>
+</language>

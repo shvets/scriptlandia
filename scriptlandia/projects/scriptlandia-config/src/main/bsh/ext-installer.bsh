@@ -26,7 +26,7 @@ public class ExtInstaller {
    *
    */
   public void install() {
-    boolean mavenInstall = Boolean.valueOf(System.getProperty("maven.install")).booleanValue();
+/*    boolean mavenInstall = Boolean.valueOf(System.getProperty("maven.install")).booleanValue();
     boolean antInstall = Boolean.valueOf(System.getProperty("ant.install")).booleanValue();
     boolean beanshellInstall = Boolean.valueOf(System.getProperty("beanshell.install")).booleanValue();
     boolean groovyInstall = Boolean.valueOf(System.getProperty("groovy.install")).booleanValue();
@@ -51,16 +51,22 @@ public class ExtInstaller {
     boolean jadInstall = Boolean.valueOf(System.getProperty("jad.install")).booleanValue();
     boolean aptFmtInstall = Boolean.valueOf(System.getProperty("aptfmt.install")).booleanValue();
     boolean aptJellyInstall = Boolean.valueOf(System.getProperty("aptjelly.install")).booleanValue();
-
-    ExtXmlHelper xmlHelper = new ExtXmlHelper();
-    xmlHelper.read(new File("languages.xml"));
+*/
+    ExtXmlHelper xmlHelper = new ExtXmlHelper("languages");
+    xmlHelper.readLanguages();
 
     List languages = xmlHelper.getLanguages();
 
     for(int i=0; i < languages.size(); i++) {
       Map language = (Map)languages.get(i);
 
-      registerLanguage(language);
+      boolean requiresInstallation = Boolean.valueOf(System.getProperty(language + ".install")).booleanValue();
+      print(language);
+      print(requiresInstallation);
+
+//      if(requiresInstallation) {
+        registerLanguage(language);
+//      }
     }
 
     //registerRubyGemExtensions(new String[] { "gem" });
@@ -70,10 +76,6 @@ public class ExtInstaller {
     List extensions = language.get("extensions");
 
     Boolean[] registrations = new Boolean[extensions.size()];
-
-//    String groupId = "org.sf.scriptlandia";
-
-//    String version = project.getProperty("scriptlandia.version");
 
     String groupId = language.get("starter.groupId");
     String artifactId = language.get("starter.artifactId");

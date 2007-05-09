@@ -82,6 +82,26 @@
       <artifactId>pomreader</artifactId>
       <version>2.2.2</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>ant</artifactId>
+      <version>${scriptlandia.version}</version>
+      <type>pom</type>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>maven</artifactId>
+      <version>2.2.2</version>
+      <type>pom</type>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-ant-tasks</artifactId>
+      <version>2.0.6</version>
+    </dependency>
   </dependencies>
 
   <build>

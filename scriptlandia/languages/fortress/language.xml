@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<language name="fortress" groupId="com.sun.fortress" artifactId="fortress" version="156">
+  <registration mimeType="text/fortress" icon="fortress.ico">
+    <extensions>
+      <extension>fss</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="fortress-starter" version="2.2.2">
+      <mainClass>com.sun.fortress.interpreter.drivers.fs</mainClass>
+    </starter>
+  </registration>
+</language>

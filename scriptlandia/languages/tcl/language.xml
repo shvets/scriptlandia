@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<language name="tcl" groupId="tcl" artifactId="tcl" version="1.4.0">
+  <registration mimeType="text/tcl" icon="tcl.ico">
+    <extensions>
+      <extension>tcl</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="tcl-starter" version="2.2.2">
+      <mainClass>tcl.lang.Shell</mainClass>
+    </starter>
+  </registration>
+</language>

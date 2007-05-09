@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<language name="jelly" groupId="commons-jelly" artifactId="commons-jelly" version="1.0">
+  <registration mimeType="text/jelly" icon="jelly.ico">
+    <extensions>
+      <extension>jelly</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="jelly" version="2.2.2">
+      <mainClass>org.apache.commons.jelly.Jelly</mainClass>
+    </starter>
+  </registration>
+</language>

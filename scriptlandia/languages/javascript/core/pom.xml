@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>javascript</artifactId>
+  <version>2.2.2</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia Javascript Module</name>
+  <description>Scriptlandia Javascript Module</description>
+
+  <properties>
+    <javascript.version>1.6R4</javascript.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>rhino</groupId>
+      <artifactId>js</artifactId>
+      <version>${javascript.version}</version>
+    </dependency>
+  </dependencies>
+
+</project>

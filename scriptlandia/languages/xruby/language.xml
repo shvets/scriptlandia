@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<language name="xruby" groupId="xruby" artifactId="xruby" version="0.1.4" disabled="true">
+  <registration mimeType="text/ruby" icon="ruby.ico">
+    <extensions>
+      <extension>rb</extension>
+      <extension>ruby</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="xruby-starter" version="2.2.2">
+      <mainClass>com.xruby.Main</mainClass>
+    </starter>
+  </registration>
+</language>

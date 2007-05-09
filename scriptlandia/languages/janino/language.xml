@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<language name="janino" groupId="janino" artifactId="janino" version="2.5.5">
+  <registration mimeType="text/janino" icon="java.ico">
+    <extensions>
+      <extension>java</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="janino-starter" version="2.2.2">
+      <mainClass>org.sf.scriptlandia.JaninoStarter</mainClass>
+    </starter>
+  </registration>
+</language>

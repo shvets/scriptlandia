@@ -11,13 +11,16 @@
         <include>install.*</include>
         <include>scriptlandia.properties</include>
         <include>repositories.xml</include>
-        <include>languages.xml</include>
+        <!--include>languages.xml</include-->
         <include>installer.exe</include>
         <include>installer.bat</include>
         <include>installer.ant</include>
         <include>config-macrodefs.xml</include>
         <include>install-macrodefs.xml</include>
         <include>docs/**</include>
+
+        <include>languages/**/*.xml</include>
+        <include>languages/**/src/**/*.java</include>
       </includes>
     </fileSet>
 

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<language name="fx" groupId="javafx" artifactId="javafx" version="20070506220507">
+  <registration mimeType="text/f3" icon="f3.ico">
+    <extensions>
+      <extension>f3</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="f3-starter" version="2.2.2">
+      <mainClass>net.java.javafx.FXShell</mainClass>
+    </starter>
+  </registration>
+</language>

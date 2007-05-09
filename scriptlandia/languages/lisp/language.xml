@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<language name="lisp" groupId="kawa" artifactId="kawa" version="1.9.1">
+  <registration mimeType="text/lisp" icon="lisp.ico">
+    <extensions>
+      <extension>lisp</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="kawa-starter" version="2.2.2">
+      <mainClass>org.sf.scriptlandia.KawaStarter</mainClass>
+    </starter>
+  </registration>
+</language>

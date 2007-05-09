@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<language name="jython" groupId="jython" artifactId="jython" version="2.2b1">
+  <registration mimeType="text/python" icon="jython.ico">
+    <extensions>
+      <extension>py</extension>
+      <extension>python</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="jython" version="2.2.2">
+      <mainClass>org.python.util.jython</mainClass>
+    </starter>
+  </registration>
+</language>

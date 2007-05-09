@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<language name="scala" groupId="scala" artifactId="scala-library" version="2.4.0">
+  <registration mimeType="text/velocity" icon="scala.ico">
+    <extensions>
+      <extension>scala</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="scala-starter" version="2.2.2">
+      <mainClass>org.sf.scriptlandia.ScalaStarter</mainClass>
+    </starter>
+  </registration>
+</language>

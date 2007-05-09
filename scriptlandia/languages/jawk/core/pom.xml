@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>jawk</artifactId>
+  <version>2.2.2</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia Jawk Module</name>
+  <description>Scriptlandia Jawk Module</description>
+
+  <properties>
+    <jawk.version>0.14</jawk.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.jawk</groupId>
+      <artifactId>jawk</artifactId>
+      <version>${jawk.version}</version>
+    </dependency>
+  </dependencies>
+
+</project>

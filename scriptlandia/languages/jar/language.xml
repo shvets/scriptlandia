@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<language name="jar">
+  <registration mimeType="binary/jar" icon="jar.ico">
+    <extensions>
+      <extension>jar</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="jar" version="2.2.2">
+      <mainClass>org.sf.scriptlandia.JarStarter</mainClass>
+    </starter>
+  </registration>
+</language>

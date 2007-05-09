@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<language name="scriptlandia" groupId="org.sf.scriptlandia" artifactId="scriptlandia" version="2.2.2">
+  <registration mimeType="text/scriptlandia" icon="scriptlandia.ico">
+    <extensions>
+      <extension>sl</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="scriptlandia-starter" version="2.2.2">
+      <mainClass>org.sf.scriptlandia.ScriptlandiaStarter</mainClass>
+      <commandLine>-script.name=</commandLine>
+    </starter>
+  </registration>
+</language>

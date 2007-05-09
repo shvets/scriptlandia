@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<language name="class">
+  <registration mimeType="binary/class" icon="duke.ico">
+    <extensions>
+      <extension>class</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="class" version="2.2.2">
+      <mainClass>org.sf.scriptlandia.ClassStarter</mainClass>
+    </starter>
+  </registration>
+</language>

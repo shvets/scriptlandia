@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<language name="ant" groupId="org.apache.ant" artifactId="ant" version="1.7.0">
+  <registration mimeType="text/ant" icon="ant.ico">
+    <extensions>
+      <extension>ant</extension>
+    </extensions>
+
+    <starter>
+      <mainClass>org.sf.scriptlandia.AntStarter</mainClass>
+      <commandLine>-f</commandLine>
+    </starter>
+  </registration>
+</language>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<language name="classworlds" groupId="classworlds" artifactId="classworlds" version="1.1">
+  <registration mimeType="text/classworlds" icon="classworld.ico">
+    <extensions>
+      <extension>cwd</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="classworld-starter" version="2.2.2">
+      <mainClass>org.sf.scriptlandia.ClassworldStarter</mainClass>
+      <commandLine>-script.name=</commandLine>
+    </starter>
+  </registration>
+</language>

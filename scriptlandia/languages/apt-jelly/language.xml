@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<language name="apt-jelly" version="2.0">
+  <registration mimeType="text/apt-jelly" icon="apt-jelly.ico">
+    <extensions>
+      <extension>apt-jelly</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="apt-starter" version="2.2.2">
+      <mainClass>org.sf.scriptlandia.AptStarter</mainClass>
+    </starter>
+  </registration>
+</language>

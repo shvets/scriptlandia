@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>apt-fmt</artifactId>
+  <version>2.2.2</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia Apt FMT Module</name>
+  <description>Scriptlandia Apt FMT Module</description>
+
+  <properties>
+    <apt.version>2.0</apt.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>commons-beanutils</groupId>
+      <artifactId>commons-beanutils</artifactId>
+      <version>1.7.0</version>
+
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>commons-logging</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.0.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-jexl</groupId>
+      <artifactId>commons-jexl</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>dom4j</groupId>
+      <artifactId>dom4j</artifactId>
+      <version>1.6.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>apt-jelly</groupId>
+      <artifactId>apt-jelly-core</artifactId>
+      <version>${apt.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>apt-jelly</groupId>
+      <artifactId>apt-jelly-freemarker</artifactId>
+      <version>${apt.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>apt-jelly</groupId>
+      <artifactId>apt-jelly-jelly</artifactId>
+      <version>${apt.version}</version>
+    </dependency>
+  </dependencies>
+</project>
+

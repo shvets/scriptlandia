@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<language name="jruby" groupId="jruby" artifactId="jruby" version="0.9.9">
+  <registration mimeType="text/ruby" icon="ruby.ico">
+    <extensions>
+      <extension>rb</extension>
+      <extension>ruby</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="jruby-starter" version="2.2.2">
+      <mainClass>org.jruby.Main</mainClass>
+    </starter>
+  </registration>
+</language>

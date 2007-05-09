@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<language name="beanshell" groupId="bsh" artifactId="bsh" version="2.0b5">
+  <registration mimeType="text/beanshell" icon="beanshell.ico">
+    <extensions>
+      <extension>bsh</extension>
+    </extensions>
+
+    <starter>
+      <mainClass>bsh.Interpreter</mainClass>
+    </starter>
+  </registration>
+</language>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<language name="pnuts" groupId="pnuts" artifactId="pnuts" version="1.1">
+  <registration mimeType="text/pnuts" icon="pnuts.ico">
+    <extensions>
+      <extension>pnut</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="pnuts" version="2.2.2">
+      <mainClass>pnuts.tools.Main</mainClass>
+    </starter>
+  </registration>
+</language>

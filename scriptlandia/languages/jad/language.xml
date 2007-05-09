@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<language name="jad">
+  <registration mimeType="text/jad" icon="jad.ico">
+    <extensions>
+      <extension>jad</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="jad" version="2.2.2">
+      <mainClass>org.sf.scriptlandia.JadStarter</mainClass>
+    </starter>
+  </registration>
+</language>

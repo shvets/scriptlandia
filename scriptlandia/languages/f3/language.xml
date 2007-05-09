@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<language name="f3" groupId="net.java" artifactId="f3" version="1.0">
+  <registration mimeType="text/f3" icon="f3.ico">
+    <extensions>
+      <extension>f3</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="f3-starter" version="2.2.2">
+      <mainClass>org.sf.scriptlandia.F3Starter</mainClass>
+    </starter>
+  </registration>
+</language>

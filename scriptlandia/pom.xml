@@ -55,7 +55,7 @@
     <module>projects/image4j</module>
     <module>projects/classworlds-launcher</module>
     <module>projects/pomreader</module>
-    <module>projects/scriptlandia</module>
+    <!--module>projects/scriptlandia</module-->
     <module>projects/scriptlandia-common</module>
     <!--module>projects/scriptlandia-config</module-->
     <module>projects/scriptlandia-installer</module>
@@ -164,6 +164,28 @@
             </goals>
           </execution>
 -->
+
+          <execution>
+            <id>clean</id>
+            <phase>clean</phase>
+            <configuration>
+              <tasks>
+                <echo>
+************************************
+                </echo>
+                <delete includeemptydirs="true">
+                  <fileset dir="languages">
+                    <include name="**/core/target/**"/>
+                    <include name="**/starter/target/**"/>
+                  </fileset>
+                </delete>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+
         </executions>
       </plugin>
     </plugins>

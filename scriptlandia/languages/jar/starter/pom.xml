@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>jar-starter</artifactId>
+  <version>2.2.2</version>
+  <packaging>jar</packaging>
+
+  <name>Scriptlandia JAR Starter  Module</name>
+  <description>Scriptlandia JAR Starter Module</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>jar</artifactId>
+      <version>2.2.2</version>
+      <type>pom</type>
+    </dependency>
+
+<!--
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>scriptlandia</artifactId>
+      <version>2.2.2</version>
+    </dependency>
+-->
+
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>scriptlandia-launcher</artifactId>
+      <version>2.2.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>ant</artifactId>
+      <version>2.2.2</version>
+      <type>pom</type>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>ant-starter</artifactId>
+      <version>2.2.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>beanshell</artifactId>
+      <version>2.2.2</version>
+      <type>pom</type>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>javascript</artifactId>
+      <version>2.2.2</version>
+      <type>pom</type>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>${java.specification.version}</source>
+          <target>${java.specification.version}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

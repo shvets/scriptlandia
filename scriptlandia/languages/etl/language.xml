@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<language name="etl" groupId="scriptella" artifactId="scriptella-core" version="0.8">
+  <registration mimeType="text/etl" icon="etl.ico">
+    <extensions>
+      <extension>etl</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="etl-starter" version="2.2.2">
+      <mainClass>scriptella.tools.launcher.EtlLauncher</mainClass>
+    </starter>
+  </registration>
+</language>

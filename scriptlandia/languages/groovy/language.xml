@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<language name="groovy" groupId="groovy" artifactId="groovy-all" version="1.1-BETA-1">
+  <registration mimeType="text/groovy" icon="groovy.ico">
+    <extensions>
+      <extension>groovy</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="groovy-starter" version="2.2.2">
+      <mainClass>groovy.ui.GroovyMain</mainClass>
+    </starter>
+  </registration>
+</language>

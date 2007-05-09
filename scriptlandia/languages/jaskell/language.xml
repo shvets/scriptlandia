@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<language name="jaskell" groupId="jaskell" artifactId="jaskell" version="1.0">
+  <registration mimeType="text/jaskell" icon="jaskell.ico">
+    <extensions>
+      <extension>jsl</extension>
+      <extension>jaskell</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="jaskell-starter" version="2.2.2">
+      <mainClass>jfun.jaskell.shell.Shell</mainClass>
+    </starter>
+  </registration>
+</language>
