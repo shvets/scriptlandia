@@ -21,7 +21,7 @@
            includeAntRuntime="false"
            debug="${debug}"
            optimize="${optimize}"
-           deprecation ="${deprecation}">
+           deprecation ="${deprecation}" source="1.5" target="1.5">
         <src path="${src.dir}"/>
         <include name ="${files.mask}"/>
     </javac>
