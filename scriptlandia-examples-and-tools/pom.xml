@@ -60,16 +60,46 @@
             <phase>clean</phase>
             <configuration>
               <tasks>
-               <delete includeemptydirs="true">
-                  <fileset dir="projects">
+                <delete includeemptydirs="true">
+                  <fileset dir="projects/incubator">
                     <include name="**/*.class"/>
                     <include name="**/*.jar"/>
                     <include name="**/*.log"/>
                     <include name="**/target/**"/>
+                    <include name="**/classes/**"/>
+                  </fileset>
+                </delete>
+
+                <delete includeemptydirs="true">
+                  <fileset dir="projects/lang-examples">
+                    <include name="**/*.class"/>
+                    <include name="**/*.jar"/>
+                    <include name="**/*.log"/>
+                    <include name="**/target/**"/>
+                    <include name="**/classes/**"/>
+                  </fileset>
+                </delete>
+
+                <delete includeemptydirs="true">
+                  <fileset dir="projects/tech-examples">
+                    <include name="**/*.class"/>
+                    <include name="**/*.jar"/>
+                    <include name="**/*.log"/>
+                    <include name="**/target/**"/>
+                    <include name="**/classes/**"/>
+                  </fileset>
+                </delete>
+
+                <delete includeemptydirs="true">
+                  <fileset dir="projects/tools">
+                    <include name="**/*.class"/>
+                    <include name="**/*.jar"/>
+                    <include name="**/*.log"/>
+                    <include name="**/target/**"/>
+                    <include name="**/classes/**"/>
                   </fileset>
                 </delete>
               </tasks>
-
             </configuration>
             <goals>
               <goal>run</goal>
