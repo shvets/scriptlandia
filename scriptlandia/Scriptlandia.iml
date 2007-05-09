@@ -78,7 +78,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$maven-repository$/org/jdesktop/jdic/0.9.1/jdic-0.9.1.jar!/" />
+          <root url="jar://$maven-repository$/org/jdesktop/jdic/0.9.2/jdic-0.9.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
