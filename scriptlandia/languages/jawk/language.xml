@@ -1,8 +1,5 @@
 <?xml version="1.0"?>
 
-<!--
-  <language name="jawk" groupId="jawk" artifactId="jawk" version="2.2.2">
--->
 <language name="jawk" groupId="org.jawk" artifactId="jawk" version="0.14">
   <registration mimeType="text/awk" icon="awk.ico">
     <extensions>
@@ -10,12 +7,6 @@
       <extension>jawk</extension>
     </extensions>
 
-<!--
-    <starter groupId="org.sf.scriptlandia" artifactId="jawk-starter" version="2.2.2">
-      <mainClass>org.jawk.Awkorg.sf.scriptlandia.JawkStarter</mainClass>
-      <commandLine>-f</commandLine>
-    </starter>
--->
     <groupId>org.jawk</groupId>
     <artifactId>jawk</artifactId>
     <version>0.14</version>
@@ -24,6 +15,13 @@
       <mainClass>org.jawk.Awk</mainClass>
       <commandLine>-f</commandLine>
     </starter>
+
+<!--
+    <starter groupId="org.sf.scriptlandia" artifactId="jawk-starter" version="2.2.2">
+      <mainClass>org.jawk.Awkorg.sf.scriptlandia.JawkStarter</mainClass>
+      <commandLine>-f</commandLine>
+    </starter>
+-->
 
   </registration>
 </language>

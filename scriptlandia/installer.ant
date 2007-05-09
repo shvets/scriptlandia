@@ -38,17 +38,17 @@
       File[] files = new File("languages").listFiles();
 
       for(int i=0; i &lt; files.length; i++) {
-        String language = files[i].getName();
+        if(!files[i].isHidden()) {
+          String language = files[i].getName();
 
-        print(language);
-
-        installer.install("languages/" + language + "/core", false);
+          installer.install("languages/" + language + "/core", false);
+        }
       }
     </script>
 
-    <installProject basedir="projects/scriptlandia-launcher"/>
-
     <installProject basedir="projects/scriptlandia-nailgun"/>
+
+    <installProject basedir="projects/scriptlandia-launcher"/>
     <!--installProject basedir="projects/scriptlandia"/-->
 
     <!--installProject basedir="projects/scriptlandia-config/starters"/-->
@@ -68,11 +68,17 @@
       File[] files = new File("languages").listFiles();
 
       for(int i=0; i &lt; files.length; i++) {
-        String language = files[i].getName();
+        if(!files[i].isHidden()) {
+          String language = files[i].getName();
 
-        print(language);
+          boolean compile = false;
 
-        installer.install("languages/" + language + "/starter", false);
+          if(new File("languages/" + language + "/starter/src/main/java").exists()) {
+            compile = true;
+          }
+
+          installer.install("languages/" + language + "/starter", compile);
+        }
       }
     </script>
   </target>
@@ -102,9 +108,11 @@
       File[] files = new File("languages").listFiles();
 
       for(int i=0; i &lt; files.length; i++) {
-        String language = files[i].getName();
+        if(!files[i].isHidden()) {
+          String language = files[i].getName();
 
-        installer.install("languages/" + language + "/core", false);
+          installer.install("languages/" + language + "/core", false);
+        }
       }
 
 //      installer.install("projects/scriptlandia-config/components", false);
@@ -116,15 +124,17 @@
 //      installer.install("projects/scriptlandia-config/starters", false);
 
       for(int i=0; i &lt; files.length; i++) {
-        String language = files[i].getName();
+        if(!files[i].isHidden()) {
+          String language = files[i].getName();
 
-        boolean compile = false;
+          boolean compile = false;
 
-        if(new File("languages/" + language + "/starter/src/main/java").exists()) {
-          compile = true;
+          if(new File("languages/" + language + "/starter/src/main/java").exists()) {
+            compile = true;
+          }
+
+          installer.install("languages/" + language + "/starter", compile);
         }
-
-        installer.install("languages/" + language + "/starter", compile);
       }
     </script>
   </target>
@@ -136,7 +146,6 @@
        <include name="config.ant"/>
        <include name="scriptlandia.properties"/>
        <include name="config-macrodefs.xml"/>
-       <!--include name="languages.xml"/-->
       </fileset>
     </copy>
 

@@ -11,14 +11,6 @@
   <description>Scriptlandia FreeMarker Starter Module</description>
 
   <dependencies>
-<!--
-    <dependency>
-      <groupId>org.sf.scriptlandia</groupId>
-      <artifactId>scriptlandia</artifactId>
-      <version>2.2.2</version>
-    </dependency>
--->
-
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>scriptlandia-launcher</artifactId>
