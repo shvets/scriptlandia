@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="class">
-  <registration mimeType="binary/class" icon="duke.ico">
+  <registration mimeType="binary/class" icon="class.ico">
     <extensions>
       <extension>class</extension>
     </extensions>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="xruby" groupId="xruby" artifactId="xruby" version="0.1.4" disabled="true">
-  <registration mimeType="text/ruby" icon="ruby.ico">
+  <registration mimeType="text/ruby" icon="xruby.ico">
     <extensions>
       <extension>rb</extension>
       <extension>ruby</extension>

@@ -543,7 +543,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
               Map language = (Map)languages.get(i);
               String name = (String)language.get("name");
 
-              String location = "projects/scriptlandia-config/bin/images";
+              String location = "languages/" + name;
 
               if(isConfigMode() ) {
                 location = "images";
@@ -552,7 +552,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
               File file = new File(location + "/" + language.get("icon"));
 
               if(!file.exists()) {
-                file = new File(location + "/" + "scriptlandia.ico");
+                file = new File("languages/scriptlandia/scriptlandia.ico");
               }
 
               java.util.List<java.awt.image.BufferedImage> images = ICODecoder.read(file);

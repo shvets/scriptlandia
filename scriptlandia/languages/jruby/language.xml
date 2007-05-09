@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="jruby" groupId="jruby" artifactId="jruby" version="0.9.9">
-  <registration mimeType="text/ruby" icon="ruby.ico">
+  <registration mimeType="text/ruby" icon="jruby.ico">
     <extensions>
       <extension>rb</extension>
       <extension>ruby</extension>

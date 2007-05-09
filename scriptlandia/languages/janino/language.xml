@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="janino" groupId="janino" artifactId="janino" version="2.5.5">
-  <registration mimeType="text/janino" icon="java.ico">
+  <registration mimeType="text/janino" icon="janino.ico">
     <extensions>
       <extension>java</extension>
     </extensions>
