@@ -176,9 +176,9 @@ public class ExtXmlHelper extends XmlHelper {
 
   public static void main(String[] args) throws IOException, JDOMException {
     ExtXmlHelper xmlHelper = new ExtXmlHelper("../../../../../languages");
-    xmlHelperreadLanguages();
+    xmlHelper.readLanguages();
 
-//    System.out.println(xmlHelper.getLanguages());
+    System.out.println(xmlHelper.getLanguages());
   }
 
 }

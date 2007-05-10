@@ -567,12 +567,8 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
               constraints.gridx = j++;
               panel.add(label, constraints);
 
-              //System.out.println("constraints1 " + constraints.gridy + " " + constraints.gridx);
-
               constraints.gridx = j++;
               panel.add(checkBoxes[i], constraints);
-
-              //System.out.println("constraints2 " + constraints.gridy + " " + constraints.gridx);              
 
               if(j == (COLUMNS*2)) {
                 j = 0;
@@ -664,6 +660,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
 /*      System.setOut(new PrintStream(filterOutputStream));
       System.setErr(new PrintStream(filterOutputStream));
 */
+
 
       updateProperties();
 

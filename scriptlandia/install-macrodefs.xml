@@ -66,4 +66,47 @@
     </sequential>
   </macrodef>
 
+  <macrodef name="installLanguages">
+    <attribute name="section"/>
+
+    <sequential>
+      <script language="beanshell">
+        addClassPath("projects/classworlds-launcher/target/classworlds-launcher.jar");
+        addClassPath("projects/scriptlandia-common/target/scriptlandia-common.jar");
+        addClassPath("projects/bootstrap-mini/target/bootstrap-mini.jar");
+        addClassPath("projects/pomreader/target/pomreader.jar");
+        addClassPath("projects/image4j/target/image4j.jar");
+        addClassPath("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
+
+        import org.sf.scriptlandia.install.ProjectInstaller;
+
+        ProjectInstaller installer = new ProjectInstaller();
+
+        File[] files = new File("languages").listFiles();
+
+        for(int i=0; i &lt; files.length; i++) {
+          if(!files[i].isHidden()) {
+            String name = files[i].getName();
+
+            boolean requiresInstallation = false;
+
+            if(Boolean.valueOf(System.getProperty(name + ".install")).booleanValue()) {
+              requiresInstallation = true;
+            }
+
+            if(requiresInstallation) {
+              boolean compile = false;
+
+              if(new File("languages/" + name + "/@{section}/src/main/java").exists()) {
+                compile = true;
+              }
+
+              installer.install("languages/" + name + "/@{section}", compile);
+            }
+          }
+        }
+      </script>
+    </sequential>
+  </macrodef>
+
 </project>

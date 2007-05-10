@@ -14,8 +14,6 @@ import java.util.Arrays;
  */
 public class ExtInstaller {
   private final String OS_NAME = System.getProperty("os.name");
-  //private final String JAVA_VERSION = System.getProperty("java.version");
-
   private final String repositoryHome = System.getProperty("repository.home");
   private final String scriptlandiaHome = System.getProperty("scriptlandia.home");
 
@@ -26,32 +24,6 @@ public class ExtInstaller {
    *
    */
   public void install() {
-/*    boolean mavenInstall = Boolean.valueOf(System.getProperty("maven.install")).booleanValue();
-    boolean antInstall = Boolean.valueOf(System.getProperty("ant.install")).booleanValue();
-    boolean beanshellInstall = Boolean.valueOf(System.getProperty("beanshell.install")).booleanValue();
-    boolean groovyInstall = Boolean.valueOf(System.getProperty("groovy.install")).booleanValue();
-    boolean javascriptInstall = Boolean.valueOf(System.getProperty("javascript.install")).booleanValue();
-    boolean jellyInstall = Boolean.valueOf(System.getProperty("jelly.install")).booleanValue();
-    boolean velocityInstall = Boolean.valueOf(System.getProperty("velocity.install")).booleanValue();
-    boolean pnutsInstall = Boolean.valueOf(System.getProperty("pnuts.install")).booleanValue();
-    boolean jrubyInstall = Boolean.valueOf(System.getProperty("jruby.install")).booleanValue();
-    boolean jythonInstall = Boolean.valueOf(System.getProperty("jython.install")).booleanValue();
-    boolean scalaInstall = Boolean.valueOf(System.getProperty("scala.install")).booleanValue();
-    boolean jschemeInstall = Boolean.valueOf(System.getProperty("jscheme.install")).booleanValue();
-    boolean jaskellInstall = Boolean.valueOf(System.getProperty("jaskell.install")).booleanValue();
-    boolean tclInstall = Boolean.valueOf(System.getProperty("tcl.install")).booleanValue();
-    boolean f3Install = Boolean.valueOf(System.getProperty("f3.install")).booleanValue();
-    boolean fortressInstall = Boolean.valueOf(System.getProperty("fortress.install")).booleanValue();
-
-    boolean slInstall = Boolean.valueOf(System.getProperty("sl.install")).booleanValue();
-    boolean cwdInstall = Boolean.valueOf(System.getProperty("cwd.install")).booleanValue();
-    boolean etlInstall = Boolean.valueOf(System.getProperty("etl.install")).booleanValue();
-    boolean classInstall = Boolean.valueOf(System.getProperty("class.install")).booleanValue();
-    boolean jarInstall = Boolean.valueOf(System.getProperty("jar.install")).booleanValue();
-    boolean jadInstall = Boolean.valueOf(System.getProperty("jad.install")).booleanValue();
-    boolean aptFmtInstall = Boolean.valueOf(System.getProperty("aptfmt.install")).booleanValue();
-    boolean aptJellyInstall = Boolean.valueOf(System.getProperty("aptjelly.install")).booleanValue();
-*/
     ExtXmlHelper xmlHelper = new ExtXmlHelper("languages");
     xmlHelper.readLanguages();
 
@@ -60,13 +32,13 @@ public class ExtInstaller {
     for(int i=0; i < languages.size(); i++) {
       Map language = (Map)languages.get(i);
 
-      boolean requiresInstallation = Boolean.valueOf(System.getProperty(language + ".install")).booleanValue();
-      print(language);
-      print(requiresInstallation);
+      String name = (String)language.get("name");
 
-//      if(requiresInstallation) {
+      boolean requiresInstallation = Boolean.valueOf(System.getProperty(name + ".install")).booleanValue();
+
+      if(requiresInstallation) {
         registerLanguage(language);
-//      }
+      }
     }
 
     //registerRubyGemExtensions(new String[] { "gem" });

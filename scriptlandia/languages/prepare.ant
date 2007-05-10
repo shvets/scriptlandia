@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<project name="prepare.ant" default="prepare" basedir="..">
+
+  <target name="prepare">
+    <script language="beanshell">
+      String basedir = project.getProperty("basedir");
+
+      addClassPath(basedir + "/projects/classworlds-launcher/target/classworlds-launcher.jar");
+      addClassPath(basedir + "/projects/scriptlandia-common/target/scriptlandia-common.jar");
+      addClassPath(basedir + "/projects/bootstrap-mini/target/bootstrap-mini.jar");
+      addClassPath(basedir + "/projects/pomreader/target/pomreader.jar");
+      addClassPath(basedir + "/projects/image4j/target/image4j.jar");
+      addClassPath(basedir + "/projects/scriptlandia-installer/target/scriptlandia-installer.jar");
+
+      import org.sf.scriptlandia.install.ProjectInstaller;
+
+      ProjectInstaller installer = new ProjectInstaller();
+
+      File[] files = new File(basedir + "/languages").listFiles();
+
+      for(int i=0; i &lt; files.length; i++) {
+        if(!files[i].isHidden() &amp;&amp; files[i].isDirectory()) {
+          String name = files[i].getName();
+
+          installer.install(basedir + "/languages/" + name + "/core", true);
+        }
+      }
+
+      for(int i=0; i &lt; files.length; i++) {
+        if(!files[i].isHidden() &amp;&amp; files[i].isDirectory()) {
+          String name = files[i].getName();
+
+          installer.install(basedir + "/languages/" + name + "/starter", true);
+        }
+      }
+    </script>
+  </target>
+
+  <target name="clean">
+    <delete includeemptydirs="true">
+      <fileset dir="languages">
+        <include name="**/core/target/**"/>
+        <include name="**/starter/target/**"/>
+      </fileset>
+    </delete>
+  </target>
+
+</project>

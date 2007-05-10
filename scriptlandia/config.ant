@@ -132,7 +132,10 @@
        <include name="*.conf"/>
        <include name="*.ini"/>
 
-       <include name="images/*.*"/>
+       <exclude name="*-exe.bat"/>
+       <exclude name="*.l4j.ini"/>
+
+       <!--include name="images/*.*"/-->
       </fileset>
     </copy>
 
@@ -224,8 +227,31 @@
   </target>
 
   <target name="unzip.jdic.native.libs" if="jdic.native.libs.present">
+    <script language="beanshell">
+      String osName = System.getProperty("os.name").toLowerCase();
+
+      if(osName.startsWith("windows")) {
+        osName = "windows";
+      }
+      else if(osName.startsWith("linux")) {
+        osName = "linux";
+      }
+      else if(osName.startsWith("sunos")) {
+        osName = "sunos";
+      }
+
+      project.setNewProperty("os.name.temp", osName);
+    </script>
+
     <unzip src="${repository.home}/org/jdesktop/jdic-native-libs/${jdic.version}/jdic-native-libs-${jdic.version}.jar"
-           dest="${repository.home}/org/jdesktop/jdic/${jdic.version}" overwrite="false"/>
+           dest="${repository.home}/org/jdesktop/jdic/${jdic.version}" overwrite="false">
+      <mapper type="flatten"/>
+
+      <patternset>
+        <include name="${os.name.temp}/jdic_stub.jar"/>
+        <include name="${os.name.temp}/${os.arch}/*.*"/>
+      </patternset>
+    </unzip>
   </target>
 
   <target name="unzip.nailgun.binaries" if="nailgun.binaries.present">

@@ -21,66 +21,13 @@
     <installProject basedir="projects/classworlds-launcher"/>
     <installProject basedir="projects/nailgun"/>
 
-    <!--installProject basedir="projects/scriptlandia-config/components"/-->
-
-    <script language="beanshell">
-      addClassPath("projects/classworlds-launcher/target/classworlds-launcher.jar");
-      addClassPath("projects/scriptlandia-common/target/scriptlandia-common.jar");
-      addClassPath("projects/bootstrap-mini/target/bootstrap-mini.jar");
-      addClassPath("projects/pomreader/target/pomreader.jar");
-      addClassPath("projects/image4j/target/image4j.jar");
-      addClassPath("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
-
-      import org.sf.scriptlandia.install.ProjectInstaller;
-
-      ProjectInstaller installer = new ProjectInstaller();
-
-      File[] files = new File("languages").listFiles();
-
-      for(int i=0; i &lt; files.length; i++) {
-        if(!files[i].isHidden()) {
-          String language = files[i].getName();
-
-          installer.install("languages/" + language + "/core", false);
-        }
-      }
-    </script>
+    <installLanguages section="core"/>
 
     <installProject basedir="projects/scriptlandia-nailgun"/>
 
     <installProject basedir="projects/scriptlandia-launcher"/>
-    <!--installProject basedir="projects/scriptlandia"/-->
 
-    <!--installProject basedir="projects/scriptlandia-config/starters"/-->
-
-    <script language="beanshell">
-      addClassPath("projects/classworlds-launcher/target/classworlds-launcher.jar");
-      addClassPath("projects/scriptlandia-common/target/scriptlandia-common.jar");
-      addClassPath("projects/bootstrap-mini/target/bootstrap-mini.jar");
-      addClassPath("projects/pomreader/target/pomreader.jar");
-      addClassPath("projects/image4j/target/image4j.jar");
-      addClassPath("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
-
-      import org.sf.scriptlandia.install.ProjectInstaller;
-
-      ProjectInstaller installer = new ProjectInstaller();
-
-      File[] files = new File("languages").listFiles();
-
-      for(int i=0; i &lt; files.length; i++) {
-        if(!files[i].isHidden()) {
-          String language = files[i].getName();
-
-          boolean compile = false;
-
-          if(new File("languages/" + language + "/starter/src/main/java").exists()) {
-            compile = true;
-          }
-
-          installer.install("languages/" + language + "/starter", compile);
-        }
-      }
-    </script>
+    <installLanguages section="starter"/>
   </target>
 
   <target name="install.projects">
@@ -104,39 +51,20 @@
       installer.install("projects/pomreader", false);
       installer.install("projects/nailgun", false);
       installer.install("projects/scriptlandia-installer", false);
+    </script>
 
-      File[] files = new File("languages").listFiles();
+    <installLanguages section="core"/>
 
-      for(int i=0; i &lt; files.length; i++) {
-        if(!files[i].isHidden()) {
-          String language = files[i].getName();
+    <script language="beanshell">
+      import org.sf.scriptlandia.install.ProjectInstaller;
 
-          installer.install("languages/" + language + "/core", false);
-        }
-      }
-
-//      installer.install("projects/scriptlandia-config/components", false);
+      ProjectInstaller installer = new ProjectInstaller();
 
       installer.install("projects/scriptlandia-launcher", false);
       installer.install("projects/scriptlandia-nailgun", false);
-      //installer.install("projects/scriptlandia", false);
-
-//      installer.install("projects/scriptlandia-config/starters", false);
-
-      for(int i=0; i &lt; files.length; i++) {
-        if(!files[i].isHidden()) {
-          String language = files[i].getName();
-
-          boolean compile = false;
-
-          if(new File("languages/" + language + "/starter/src/main/java").exists()) {
-            compile = true;
-          }
-
-          installer.install("languages/" + language + "/starter", compile);
-        }
-      }
     </script>
+
+    <installLanguages section="starter"/>
   </target>
 
   <target name="install.libraries">
@@ -172,6 +100,7 @@
         <include name="projects/scriptlandia-config/src/main/config/**"/>
       </fileset>
     </copy>
+
     <copy-properties/>
   </target>
 
