@@ -1,3 +1,5 @@
+@echo off 
+
 if exist projects\bootstrap-mini\target  rmdir /S /Q projects\bootstrap-mini\target
 if exist projects\nailgun\target rmdir /S /Q projects\nailgun\target
 if exist projects\image4j\target rmdir /S /Q projects\image4j\target

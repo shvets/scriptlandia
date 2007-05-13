@@ -33,15 +33,23 @@ public class ExtXmlHelper extends XmlHelper {
     File[] list = new File(languageDir).listFiles();
 
     for(int i=0; i < list.length; i++) {
-      if(!list[i].isHidden()) {
+      if(!list[i].isHidden() && list[i].isDirectory()) {
         String language = list[i].getName();
 
-        read(new File(languageDir + "/" + language + "/language.xml"));
+        String fileName = languageDir + "/" + language + "/language.xml";
 
-        Map map = getLanguage(language);
+        try {
+          read(new File(fileName));
 
-        if(map != null) {
-          languages.add(map);
+          Map map = getLanguage(language);
+
+          if(map != null) {
+            languages.add(map);
+          }
+
+        }
+        catch(Throwable t) {
+          print("Error reding file: " + fileName + ".");
         }
       }
     }

@@ -241,17 +241,32 @@
       }
 
       project.setNewProperty("os.name.temp", osName);
+
+      String osArch = System.getProperty("os.arch").toLowerCase();
+
+      if(osArch.startsWith("i386")) {
+        osArch = "x86";
+      }
+
+      project.setNewProperty("os.arch.temp", osArch);
     </script>
 
+<!--    
     <unzip src="${repository.home}/org/jdesktop/jdic-native-libs/${jdic.version}/jdic-native-libs-${jdic.version}.jar"
            dest="${repository.home}/org/jdesktop/jdic/${jdic.version}" overwrite="false">
       <mapper type="flatten"/>
 
       <patternset>
         <include name="${os.name.temp}/jdic_stub.jar"/>
-        <include name="${os.name.temp}/${os.arch}/*.*"/>
+        <include name="${os.name.temp}/${os.arch.temp}/*.*"/>
       </patternset>
     </unzip>
+-->
+
+    <unzip src="${repository.home}/org/jdesktop/jdic-native-libs/${jdic.version}/jdic-native-libs-${jdic.version}.jar"
+           dest="${repository.home}/org/jdesktop/jdic/${jdic.version}" overwrite="false">
+    </unzip>
+
   </target>
 
   <target name="unzip.nailgun.binaries" if="nailgun.binaries.present">
@@ -285,10 +300,10 @@
     <!-- todo -->
 
     <!-- for UNIX -->
-    <fixcrlf eol="unix" srcdir="${scriptlandia.base}" includes="*.sh"/>
+    <fixcrlf eol="unix" srcdir="${scriptlandia.home}" includes="*.sh"/>
 
     <chmod perm="ugo+x">
-      <fileset dir="${scriptlandia.base}">
+      <fileset dir="${scriptlandia.home}">
         <include name="*.sh"/>
       </fileset>
     </chmod>

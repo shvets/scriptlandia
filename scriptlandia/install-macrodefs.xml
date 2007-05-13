@@ -85,7 +85,7 @@
         File[] files = new File("languages").listFiles();
 
         for(int i=0; i &lt; files.length; i++) {
-          if(!files[i].isHidden()) {
+          if(!files[i].isHidden() &amp;&amp; files[i].isDirectory()) {
             String name = files[i].getName();
 
             boolean requiresInstallation = false;
