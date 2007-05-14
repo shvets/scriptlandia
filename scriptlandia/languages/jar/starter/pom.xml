@@ -20,6 +20,12 @@
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>jad-starter</artifactId>
+      <version>2.2.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
       <artifactId>scriptlandia-launcher</artifactId>
       <version>2.2.2</version>
     </dependency>
