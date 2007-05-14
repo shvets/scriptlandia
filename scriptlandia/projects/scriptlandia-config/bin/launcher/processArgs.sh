@@ -1,16 +1,16 @@
-#  1. init
+# 1. init
 
-set CMD_LINE_ARGS=
+CMD_LINE_ARGS=
 
-rem 2. Process bootclasspath, command line arguments
+# 2. Process bootclasspath, command line arguments
 
 :setupArgs
 
 if "%~1"=="" goto doneStart
 
-set TEMP=%~1
-set PARAM=%TEMP:~0,15%
-set PARAM=%TEMP:~0,2%
+TEMP=%~1
+PARAM=%TEMP:~0,15%
+PARAM=%TEMP:~0,2%
 
 if "%PARAM%"=="-D" goto prepareSystemParameters
 
@@ -22,11 +22,11 @@ set PARAM=%TEMP:~0,4%
 
 if "%PARAM%"=="-ng" goto prepareNailgunMode
 
-set PARAM=%TEMP:~0,19%
+PARAM=%TEMP:~0,19%
 
 if "%PARAM%"=="-Djava.library.path" goto prepareJavaLibraryPath
 
-set CMD_LINE_ARGS=%CMD_LINE_ARGS% "%~1%"
+CMD_LINE_ARGS=%CMD_LINE_ARGS% "%~1%"
 
 :endSetupArgs
 
@@ -36,7 +36,7 @@ goto setupArgs
 
 
 :prepareBootClasspath
-set PARAMETERS=%PARAMETERS% "%~1%"
+PARAMETERS=%PARAMETERS% "%~1%"
 
 goto endSetupArgs
 

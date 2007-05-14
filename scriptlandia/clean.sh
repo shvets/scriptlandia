@@ -1,6 +1,6 @@
 #!/bin/sh
 
-rm -d -r -f projects/bootstrap-mini/target
+rm -d -r -f -v projects/bootstrap-mini/target
 rm -d -r -f projects/nailgun/target
 rm -d -r -f projects/image4j/target
 rm -d -r -f projects/pomreader/target

@@ -99,7 +99,7 @@ public class ExtInstaller {
     System.out.print("Registering extension(s): " + extensions + "... ");
 
     for(int i=0; i < extensions.size(); i++) {
-      registrations[i] = registerExtension(extensions.get(i), language.get("mimeType"), 
+      registrations[i] = registerExtension(extensions.get(i), language.get("name"), language.get("mimeType"),
                                            language.get("icon"), openAction.toString());
 
       print(openAction.toString());
@@ -167,7 +167,7 @@ public class ExtInstaller {
     System.out.print("Registering extension(s): " + Arrays.asList(extensions) + "... ");
 
     for(int i=0; i < extensions.length; i++) {
-      registrations[i] = registerExtension(extensions[i], mimeType, iconName, openAction.toString());
+      registrations[i] = registerExtension(extensions[i], "", mimeType, iconName, openAction.toString());
 
       print(openAction.toString());
     }
@@ -187,7 +187,7 @@ public class ExtInstaller {
    */
   private void registerExtensions(String[] extensions, String mimeType, String iconName, 
                                   String artifactId, String mainClassName) {
-    registerExtensions(extensions, mimeType, iconName, artifactId, mainClassName, "");
+    registerExtensions(extensions, "", mimeType, iconName, artifactId, mainClassName, "");
   }
 
   /**
@@ -221,8 +221,8 @@ public class ExtInstaller {
    *,@param iconName icon name
    * @return true if the extension is registered; false otherwise
    */
-  private boolean registerExtension(String extension, String mimeType, String iconName,
-                                    String openAction) {
+  private boolean registerExtension(String extension, String name, String mimeType,
+                                    String iconName, String openAction) {
     boolean registered = false;
 
     Association existingAssociation = associationService.getFileExtensionAssociation(extension);
@@ -231,23 +231,21 @@ public class ExtInstaller {
        (!existingAssociation.getFileExtList().contains("." + extension) ||
         !existingAssociation.getMimeType().equals(mimeType) ||
         !existingAssociation.getActionByVerb("open").getCommand().equals(openAction))) {
-      Association assosiation = new Association();
-
+      Association association = new Association();
+      association.setName(name);
       // Adds specific type to the Association object.
-      assosiation.addFileExtension(extension);
-
-      assosiation.setMimeType(mimeType);
-      assosiation.setIconFileName((scriptlandiaHome + "/images/" + iconName).replace('/', File.separatorChar));
+      association.addFileExtension(extension);
+      association.setMimeType(mimeType);
+      association.setIconFileName((scriptlandiaHome + "/images/" + iconName).replace('/', File.separatorChar));
 
       // Adds an Action to the Association object that will 
       // open file of this type with some executable. 
-      assosiation.addAction(new Action("open", openAction));
+      association.addAction(new Action("open", openAction));
 
       try {
         // Adds the Association to the file types' table 
         // at the user level using an AssociationService object.
-        associationService.registerUserAssociation(assosiation);
-
+        associationService.registerSystemAssociation(association);
         registered = true;
       }
       catch (java.lang.IllegalArgumentException e) {
@@ -263,8 +261,8 @@ public class ExtInstaller {
         //System.err.println(e);
 
         try {
-          associationService.unregisterUserAssociation(assosiation);
-          associationService.registerUserAssociation(assosiation);
+          associationService.unregisterUserAssociation(association);
+          associationService.registerUserAssociation(association);
 
           registered = true;
         }
@@ -278,8 +276,8 @@ public class ExtInstaller {
 
         //System.err.println(e);
         try {
-          associationService.unregisterUserAssociation(assosiation);
-          associationService.registerUserAssociation(assosiation);
+          associationService.unregisterUserAssociation(association);
+          associationService.registerUserAssociation(association);
 
           registered = true;
         }
@@ -340,7 +338,8 @@ public class ExtInstaller {
       scriptExt = "%1 %*";
     }
     else {
-      scriptExt = "$<";
+      //scriptExt = "$<";
+      scriptExt = "";
     }
 
     return scriptExt;

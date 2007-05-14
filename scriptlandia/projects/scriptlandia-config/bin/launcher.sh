@@ -8,4 +8,4 @@ export NAILGUN=@repository.home@/com/martiansoftware/nailgun-bin/@nailgun.versio
 APP=%~nx0
 export APP=@scriptlandia.home@/%APP:~0,-4%
 
-. @scriptlandia.home@/launcher/app.bat $*
+. @scriptlandia.home@/launcher/app.sh $*
