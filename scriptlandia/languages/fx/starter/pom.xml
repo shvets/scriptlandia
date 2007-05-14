@@ -5,7 +5,7 @@
   <groupId>org.sf.scriptlandia</groupId>
   <artifactId>fx-starter</artifactId>
   <version>2.2.2</version>
-  <packaging>pom</packaging>
+  <packaging>jar</packaging>
 
   <name>Scriptlandia JavaFX Starter Module</name>
   <description>Scriptlandia JavaFX Starter Module</description>
@@ -30,11 +30,11 @@
       <version>1.0.1</version>
     </dependency>
 
-    <dependency>
+    <!--dependency>
       <groupId>com.jhlabs</groupId>
       <artifactId>filters</artifactId>
       <version>2.0.235</version>
-    </dependency>
+    </dependency-->
   </dependencies>
 
   <build>

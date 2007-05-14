@@ -5,7 +5,9 @@ export MOBILE_JAVA_HOME=@mobile.java.home@
 
 export NAILGUN=@repository.home@/com/martiansoftware/nailgun-bin/@nailgun.version@/ng
 
-APP=%~nx0
-export APP=@scriptlandia.home@/%APP:~0,-4%
+APP=`dirname "$0"`
+
+# Make the path absolute
+export APP=`cd "$APP" && pwd`
 
 . @scriptlandia.home@/launcher/app.sh $*

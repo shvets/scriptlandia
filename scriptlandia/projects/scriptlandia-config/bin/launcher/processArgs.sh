@@ -1,62 +1,41 @@
-# 1. init
+#!/bin/sh
 
-CMD_LINE_ARGS=
+CMD_LINE_ARGS=""
+PARAMETERS=""
+NAILGUN_MODE=false
 
-# 2. Process bootclasspath, command line arguments
+#. Process bootclasspath, command line arguments
+processArgs() {
+  while [ "x$1" != "x" ]; do
+    temp=$1
+    param="${temp:0:2}" 
 
-:setupArgs
+    if [ "$param" = "-D" ]; then
+      PARAMETERS="$PARAMETERS $1"
+    elif [ "$param" = "-X" ]; then
+      PARAMETERS="$PARAMETERS $1"
+    elif [ "$temp" = "-debug" ]; then
+      PARAMETERS="$PARAMETERS -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=6006"
+    fi
 
-if "%~1"=="" goto doneStart
+    param="${temp:0:4}"
 
-TEMP=%~1
-PARAM=%TEMP:~0,15%
-PARAM=%TEMP:~0,2%
+    if [ "$param" = "-ng" ]; then
+      NAILGUN_MODE=true
+    fi
 
-if "%PARAM%"=="-D" goto prepareSystemParameters
+    param="${temp:0:19}"
 
-if "%PARAM%"=="-X" goto prepareBootClasspath
+    if [ "$param" = "-Djava.library.path" ]; then
+      PARAMETERS="$PARAMETERS $1"
+    fi
 
-if "%TEMP%"=="-debug" goto prepareDebugParameters
+    CMD_LINE_ARGS="$CMD_LINE_ARGS $1"
 
-set PARAM=%TEMP:~0,4%
+    shift
+  done
+}
 
-if "%PARAM%"=="-ng" goto prepareNailgunMode
+processArgs "$@"
 
-PARAM=%TEMP:~0,19%
-
-if "%PARAM%"=="-Djava.library.path" goto prepareJavaLibraryPath
-
-CMD_LINE_ARGS=%CMD_LINE_ARGS% "%~1%"
-
-:endSetupArgs
-
-shift
-
-goto setupArgs
-
-
-:prepareBootClasspath
-PARAMETERS=%PARAMETERS% "%~1%"
-
-goto endSetupArgs
-
-
-:prepareSystemParameters
-set PARAMETERS=%PARAMETERS% "%~1%"
-
-goto endSetupArgs
-
-:prepareDebugParameters
-set PARAMETERS=%PARAMETERS% -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=6006
-
-goto endSetupArgs
-
-:prepareNailgunMode
-set NAILGUN_MODE=true
-goto endSetupArgs
-
-:prepareJavaLibraryPath
-set PARAMETERS=%PARAMETERS% "%~1%"
-goto endSetupArgs
-
-:doneStart
+export CMD_LINE_ARGS PARAMETERS NAILGUN_MODE

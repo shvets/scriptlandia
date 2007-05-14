@@ -13,7 +13,7 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 # Lesser General Public License for more details.
  
- join() {
+join() {
     if [ -n "$line" ] # skip lines of zero length
     then
         if [ `echo $line | cut -c 1` = '#' ]; then
@@ -120,6 +120,10 @@ readFile() {
     processline
     processresult
 }
+
+. `dirname "$0"`/processArgs.bat $*
+
+. `dirname "$0"`/customizeExecution.sh $*
 
 APP=`basename $0 .sh` # compute app name from this file name without prefix
 

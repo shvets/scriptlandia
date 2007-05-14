@@ -5,7 +5,7 @@
   <groupId>org.sf.scriptlandia</groupId>
   <artifactId>f3-starter</artifactId>
   <version>2.2.2</version>
-  <packaging>pom</packaging>
+  <packaging>jar</packaging>
 
   <name>Scriptlandia F3 Starter Module</name>
   <description>Scriptlandia F3 Starter Module</description>

@@ -20,5 +20,11 @@
       <artifactId>javafx</artifactId>
       <version>${fx.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>javafx</groupId>
+      <artifactId>filters</artifactId>
+      <version>${fx.version}</version>
+    </dependency>
   </dependencies>
 </project>

@@ -1,13 +1,9 @@
-if "%NAILGUN_MODE%"=="true" goto nailgun
-goto runJava
+#!/bin/sh
 
-:nailgun
-echo %NAILGUN% %LAUNCHER_CLASS% %CMD_LINE_ARGS% -ng
-goto end
-
-:runJava
-SET CMD_LINE_ARGS=%*
-SET PROCEED=true
-
-:end
+if [ "$NAILGUN_MODE" = "true" ]; then
+  $NAILGUN $LAUNCHER_CLASS $CMD_LINE_ARGS -ng
+else
+  export CMD_LINE_ARGS=$*
+  export PROCEED=true
+fi
 
