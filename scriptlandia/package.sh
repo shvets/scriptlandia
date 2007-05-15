@@ -6,8 +6,6 @@ fi
 
 . ./config.sh
 
-echo $REPOSITORY_HOME
-
 SCRIPTLANDIA_COMMON_PROJECT=$PWD/projects/scriptlandia-common
 BOOTSTRAP_MINI_PROJECT=$PWD/projects/bootstrap-mini
 POM_READER_PROJECT=$PWD/projects/pomreader

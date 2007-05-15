@@ -85,4 +85,26 @@
     </java>
   </target>
 
+  <target name="package.projects">
+    <installProject basedir="projects/bootstrap-mini" build="false"/>
+    <installProject basedir="projects/scriptlandia-common" build="false"/>
+    <installProject basedir="projects/image4j" build="false"/>
+
+    <installProject basedir="projects/classworlds-launcher"/>
+
+    <installProject basedir="projects/pomreader" build="false"/>
+
+    <installProject basedir="projects/antrun"/>
+    <installProject basedir="projects/classworlds-launcher"/>
+    <installProject basedir="projects/nailgun"/>
+
+    <installLanguages section="core"/>
+
+    <installProject basedir="projects/scriptlandia-nailgun"/>
+
+    <installProject basedir="projects/scriptlandia-launcher"/>
+
+    <installLanguages section="starter"/>
+  </target>
+
 </project>

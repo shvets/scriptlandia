@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<language name="lisp" groupId="kawa" artifactId="kawa" version="1.9.1">
+<language name="kawa" groupId="kawa" artifactId="kawa" version="1.9.1">
   <registration mimeType="text/lisp" icon="lisp.ico">
     <extensions>
       <extension>lisp</extension>

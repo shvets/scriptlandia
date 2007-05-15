@@ -97,7 +97,8 @@
             if(requiresInstallation) {
               boolean compile = false;
 
-              if(new File("languages/" + name + "/@{section}/src/main/java").exists()) {
+              if(new File("languages/" + name + "/@{section}/src/main/java").exists() &amp;&amp;
+                 !new File("languages/" + name + "/@{section}/target/" + name + "-@{section}.jar").exists()) {
                 compile = true;
               }
 

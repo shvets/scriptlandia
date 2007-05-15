@@ -1,14 +1,15 @@
 <?xml version="1.0"?>
 
-<project name="prepare.ant" default="prepare" basedir="..">
+<project name="package.ant" default="package" basedir="..">
 
-  <target name="prepare" depends="prepare.core, prepare.launcher">
+  <target name="package" depends="package.core, package.launcher">
   </target>
 
-  <target name="prepare.core">
+  <target name="package.core">
     <script language="beanshell">
       String basedir = project.getProperty("basedir");
 
+      print(basedir);
       addClassPath(basedir + "/projects/classworlds-launcher/target/classworlds-launcher.jar");
       addClassPath(basedir + "/projects/scriptlandia-common/target/scriptlandia-common.jar");
       addClassPath(basedir + "/projects/bootstrap-mini/target/bootstrap-mini.jar");
@@ -32,28 +33,35 @@
     </script>
   </target>
 
-  <target name="prepare.launcher">
+  <target name="package.launcher">
     <script language="beanshell">
       String basedir = project.getProperty("basedir");
 
-      addClassPath(basedir + "/projects/classworlds-launcher/target/classworlds-launcher.jar");
-      addClassPath(basedir + "/projects/scriptlandia-common/target/scriptlandia-common.jar");
-      addClassPath(basedir + "/projects/bootstrap-mini/target/bootstrap-mini.jar");
-      addClassPath(basedir + "/projects/pomreader/target/pomreader.jar");
-      addClassPath(basedir + "/projects/image4j/target/image4j.jar");
-      addClassPath(basedir + "/projects/scriptlandia-installer/target/scriptlandia-installer.jar");
+      File installJarFile = new File(basedir + "/projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
-      import org.sf.scriptlandia.install.ProjectInstaller;
+      if(!installJarFile.exists()) {
+        print("Pleaze run prepare.bat/prepare.sh for scriptlandia main project");
+      }
+      else {
+        addClassPath(basedir + "/projects/classworlds-launcher/target/classworlds-launcher.jar");
+        addClassPath(basedir + "/projects/scriptlandia-common/target/scriptlandia-common.jar");
+        addClassPath(basedir + "/projects/bootstrap-mini/target/bootstrap-mini.jar");
+        addClassPath(basedir + "/projects/pomreader/target/pomreader.jar");
+        addClassPath(basedir + "/projects/image4j/target/image4j.jar");
+        addClassPath(basedir + "/projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
-      ProjectInstaller installer = new ProjectInstaller();
+        import org.sf.scriptlandia.install.ProjectInstaller;
 
-      File[] files = new File(basedir + "/languages").listFiles();
+        ProjectInstaller installer = new ProjectInstaller();
 
-      for(int i=0; i &lt; files.length; i++) {
-        if(!files[i].isHidden() &amp;&amp; files[i].isDirectory()) {
-          String name = files[i].getName();
+        File[] files = new File(basedir + "/languages").listFiles();
 
-          installer.install(basedir + "/languages/" + name + "/starter", true);
+        for(int i=0; i &lt; files.length; i++) {
+          if(!files[i].isHidden() &amp;&amp; files[i].isDirectory()) {
+            String name = files[i].getName();
+
+            installer.install(basedir + "/languages/" + name + "/starter", true);
+          }
         }
       }
     </script>

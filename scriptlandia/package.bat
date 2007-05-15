@@ -120,4 +120,4 @@ SET CLASSPATH=%CLASSPATH%;%REPOSITORY_HOME%\bsh\bsh\%BEANSHELL_VERSION%\bsh-%BEA
 %JAVA_HOME%\bin\java ^
   -classpath %CLASSPATH% ^
   %SYSTEM_PROPERTIES% ^
-  org.apache.tools.ant.launch.Launcher -f installer.ant package.projects
+  org.apache.tools.ant.launch.Launcher -f package.ant package.projects

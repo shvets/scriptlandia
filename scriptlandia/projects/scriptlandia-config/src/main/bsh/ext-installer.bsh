@@ -236,6 +236,7 @@ public class ExtInstaller {
       // Adds specific type to the Association object.
       association.addFileExtension(extension);
       association.setMimeType(mimeType);
+      //association.setDescription("tst file");
       association.setIconFileName((scriptlandiaHome + "/images/" + iconName).replace('/', File.separatorChar));
 
       // Adds an Action to the Association object that will 
@@ -245,7 +246,24 @@ public class ExtInstaller {
       try {
         // Adds the Association to the file types' table 
         // at the user level using an AssociationService object.
-        associationService.registerSystemAssociation(association);
+        if(OS_NAME.toLowerCase().startsWith("windows")) {
+          associationService.registerUserAssociation(association);
+        }
+        else {
+          associationService.registerSystemAssociation(association);
+
+         // Register an association in system level.
+          // This requires root permission, would generate three files:
+          // javaws.keys and javaws.mime under /usr/share/mime-info or /usr/share/gnome/mime-info and
+          // javaws.applications under /usr/share/application-registry or /usr/share/gnome/application-registry.
+          //assocService.registerSystemAssociation(assoc);
+
+          // Register an association in user level.
+          // This would generate three files: javaws.keys and javaws.mime under ~/.gnome/mime-info,
+          // and javaws.applications under ~/.gnome/application-info.
+          //assocService.registerUserAssociation(assoc);
+        }
+
         registered = true;
       }
       catch (java.lang.IllegalArgumentException e) {
@@ -295,16 +313,33 @@ public class ExtInstaller {
 
   /**
    * Unregisters the extension.
-   * @param extension the extension
+   * @param string the extension or name
    * @throws AssociationNotRegisteredException the exception
    * @throws RegisterFailedException the exception
    */
-  public void unregisterExtension(String extension)
+  public void unregisterExtension(String string)
     throws AssociationNotRegisteredException, RegisterFailedException {
-    Association assosiation = associationService.getFileExtensionAssociation(extension);
-    System.out.println(assosiation);
+    if(OS_NAME.toLowerCase().startsWith("windows")) {
+      Association assosiation = associationService.getFileExtensionAssociation(extension);
+      System.out.println(assosiation);
 
-    associationService.unregisterUserAssociation(assosiation);
+      associationService.unregisterUserAssociation(assosiation);
+    }
+    else {
+      Association assosiation = new Association();
+
+      assosiation.setName(string);
+
+      // Unregister an association in system level.
+      // This requires root permission, would remove all the three files registered/generated:
+      // javaws.keys, javaws.mime and javaws.applications at system level.
+      associationService.unregisterSystemAssociation(assosiation);
+
+      // Unregister an association in user level.
+      // This would remove all the three files registered/generated:
+      // javaws.keys, javaws.mime and javaws.applications at user level.
+      //associationService.unregisterUserAssociation(assoc);
+    }
   }
 
   /**

@@ -226,12 +226,12 @@
 
     <release version="2.2.2" date="1-July-2007" description="Bug Fix Release">    
       <action dev="Alexander Shvets" type="add">
-        Upgrade JDIC library up to 0.9.2.
-      </action>        
+        Refactoting languages as plugins.
+      </action>
 
       <action dev="Alexander Shvets" type="add">
-        Refactoting languages as plugins.
-      </action>        
+        Added support for Java FX.
+      </action>
     </release>
   </body>
 </document>
