@@ -1,0 +1,1 @@
+Run JavaFXPad.fx.
