@@ -2,7 +2,8 @@ package org.sf.scriptlandia;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.io.File;
+import java.util.StringTokenizer;
+import java.io.*;
 
 import org.sf.scriptlandia.util.ReflectionUtil;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
@@ -24,13 +25,26 @@ public final class FxStarter {
    * @throws Exception the exception
    */
   public void start(final String[] args, ClassRealm mainRealm) throws Exception {
-    String fileName = new File(args[0]).getName();
+    String fullFileName = args[0];
+    String fullDirName = new File(new File(fullFileName).getCanonicalPath()).getParent();
 
-    String fullScriptName = getScriptName(fileName);
+    String packageName = getPackageName(fullFileName);
 
-    File parent = new File(new File(fileName).getCanonicalPath()).getParentFile();
+    String fileName = new File(fullFileName).getName();
+    String scriptName = fileName.substring(0, fileName.lastIndexOf('.'));
 
-    mainRealm.addConstituent(parent.getParentFile().toURI().toURL());
+    String fullScriptName = (packageName.length() == 0) ? scriptName : packageName + "." + scriptName;
+
+    String root = null;
+
+    if(fullDirName.replace('\\', '/').replace('/', '.').endsWith(packageName)) {
+      int index = fullDirName.replace('\\', '/').indexOf(packageName.replace('.', '/'));
+      root = fullDirName.substring(0, index);
+    }
+
+    if(root != null) {
+      mainRealm.addConstituent(new File(root).toURI().toURL());
+    }
 
     String fullClassName = "net.java.javafx.FXShell";
 
@@ -49,11 +63,47 @@ public final class FxStarter {
 
     ReflectionUtil.launchClass(mainClass, newArgs,
             "public static void main(String[] argv) main Method is missed.");
-        System.out.println("5");
   }
 
-  private String getScriptName(String fileName) {
-    return "tutorial.Driver";
+  private String getPackageName(String fileName) throws IOException {
+    String packageName = "";
+
+    BufferedReader reader = null;
+
+    try {
+      reader = new BufferedReader(new FileReader(fileName));
+
+      boolean  done = false;
+
+      while(!done) {
+        String line = reader.readLine();
+
+        if(line == null) {
+          done = true;
+        }
+        else {
+          line = line.trim();
+
+          if(line.startsWith("package ")) {
+            StringTokenizer st = new StringTokenizer(line);
+            st.nextToken();
+
+            String token = st.nextToken();
+
+            packageName = token.substring(0, token.lastIndexOf(';')).trim();
+
+            done = true;
+          }
+        }
+      }
+    }
+    finally {
+      if(reader != null) {
+        reader.close();
+      }
+    }
+
+    return packageName;
   }
 
   /**
