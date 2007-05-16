@@ -56,6 +56,7 @@
       <fileset dir="languages">
        <include name="**/*.xml"/>
        <include name="**/src/**/*.java"/>
+       <include name="**/*.ico"/>
       </fileset>
     </copy>
 

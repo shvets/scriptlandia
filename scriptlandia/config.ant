@@ -126,7 +126,6 @@
       <filterset refid="copy.filterset"/>
 
       <fileset dir="projects/scriptlandia-config/bin">
-       <include name="*"/>
        <include name="*.bat"/>
        <include name="*.ant"/>
        <include name="*.conf"/>
@@ -134,8 +133,6 @@
 
        <exclude name="*-exe.bat"/>
        <exclude name="*.l4j.ini"/>
-
-       <!--include name="images/*.*"/-->
       </fileset>
     </copy>
 

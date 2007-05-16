@@ -24,17 +24,19 @@ public class ProxiesXmlHelper extends XmlHelper {
     if(proxyServer != null && proxyServer.trim().length() > 0) {
       Element proxies = getProxiesElement();
 
-      if(proxies == null) {
-        proxies = new Element("proxies");
+      if(proxies != null) {
+        proxies.detach();
+      } 
 
-        Element root = document.getRootElement();
+      proxies = new Element("proxies");
 
-        int index = root.indexOf(localRepository);
+      Element root = document.getRootElement();
 
-        root.addContent(index+1, new Text("\n  "));
-        root.addContent(index+2, new Text("\n  "));
-        root.addContent(index+3, proxies);
-      }
+      int index = root.indexOf(localRepository);
+
+      root.addContent(index+1, new Text("\n  "));
+      root.addContent(index+2, new Text("\n  "));
+      root.addContent(index+3, proxies);
 
       addProxy(proxies);
     }
