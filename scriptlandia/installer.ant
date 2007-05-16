@@ -25,7 +25,6 @@
       installer.install("projects/classworlds-launcher", false);
 
       installer.install("projects/pomreader", false);
-      installer.install("projects/nailgun", false);
       installer.install("projects/scriptlandia-installer", false);
     </script>
 

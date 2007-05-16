@@ -1,7 +1,6 @@
 #!/bin/sh
 
 rm -d -r -f -v projects/bootstrap-mini/target
-rm -d -r -f projects/nailgun/target
 rm -d -r -f projects/pomreader/target
 rm -d -r -f projects/scriptlandia-common/target
 rm -d -r -f projects/antrun\target

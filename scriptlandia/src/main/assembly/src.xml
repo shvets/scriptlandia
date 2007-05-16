@@ -39,11 +39,6 @@
         <include>classworlds-launcher/pom.xml</include>
         <include>classworlds-launcher/src/**</include>
 
-<!--
-        <include>image4j/pom.xml</include>
-        <include>image4j/src/**</include>
--->
-
         <include>scriptlandia-common/pom.xml</include>
         <include>scriptlandia-common/src/**</include>
 
@@ -60,9 +55,6 @@
         <include>scriptlandia-config/starters/**</include>
         <include>scriptlandia-config/src/**</include>
         <include>scriptlandia-config/pom.xml</include>
-
-        <include>nailgun/*.xml</include>
-        <include>nailgun/src/**</include>
 
         <include>scriptlandia/pom.xml</include>
         <include>scriptlandia/src/**</include>

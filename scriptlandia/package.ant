@@ -88,7 +88,6 @@
 
     <installProject basedir="projects/antrun"/>
     <installProject basedir="projects/classworlds-launcher"/>
-    <installProject basedir="projects/nailgun"/>
 
     <installLanguages section="core"/>
 

@@ -45,9 +45,6 @@
         <include>antrun/pom.xml</include>
         <include>antrun/target/antrun.jar</include>
 
-        <include>nailgun/*.xml</include>
-        <include>nailgun/target/nailgun.jar</include>
-
         <include>scriptlandia/pom.xml</include>
         <include>scriptlandia/target/scriptlandia.jar</include>
 
