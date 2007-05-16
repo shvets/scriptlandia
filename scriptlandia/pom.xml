@@ -127,6 +127,19 @@
             </goals>
           </execution>
 
+          <execution>
+            <id>assembly</id>
+            <phase>package</phase>
+            <configuration>
+              <tasks>
+                <exec executable="package.bat" dir="languages"/>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+
 <!--
           <execution>
             <id>assembly</id>

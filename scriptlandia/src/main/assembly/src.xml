@@ -22,6 +22,7 @@
 
         <include>docs/**</include>
         <include>src/**</include>
+        <include>user/**</include>
       </includes>
     </fileSet>
 
@@ -66,6 +67,23 @@
         <include>scriptlandia-nailgun/src/**</include>
       </includes>
     </fileSet>
+
+    <fileSet>
+      <directory>languages</directory>
+      <outputDirectory>languages</outputDirectory>
+
+      <includes>
+        <include>**/pom.xml</include>
+        <include>**/language.xml</include>
+        <include>**/*.ico</include>
+        <include>**/src/**</include>
+      </includes>
+
+      <excludes>
+        <exclude>**/target/**/pom.xml</exclude>
+      </excludes>
+    </fileSet>
+
   </fileSets>
 
 </assembly>
