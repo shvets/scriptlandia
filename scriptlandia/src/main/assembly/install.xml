@@ -11,7 +11,6 @@
         <include>install.*</include>
         <include>scriptlandia.properties</include>
         <include>repositories.xml</include>
-        <!--include>languages.xml</include-->
         <include>installer.exe</include>
         <include>installer.bat</include>
         <include>installer.ant</include>
@@ -35,7 +34,6 @@
         <include>pomreader/pom.xml</include>
         <include>pomreader/target/pomreader.jar</include>
 
-        <include>image4j/pom.xml</include>
         <include>image4j/target/image4j.jar</include>
 
         <include>classworlds-launcher/pom.xml</include>

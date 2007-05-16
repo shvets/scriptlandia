@@ -108,8 +108,8 @@ public class ScriptlandialProperties extends Properties {
 
       put("use.proxy", "false");
 
-      put("proxy.server.host", "");
-      put("proxy.server.port", "");
+      put("proxyHost", "");
+      put("proxyPort", "");
       put("native.ruby.home", "");
     }
 

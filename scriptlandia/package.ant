@@ -16,7 +16,6 @@
     <delete dir="projects/scriptlandia-common/target"/>
     <delete dir="projects/bootstrap-mini/target"/>
     <delete dir="projects/pomreader/target"/>
-    <delete dir="projects/image4j/target"/>
     <delete dir="projects/scriptlandia-installer/target"/>
   </target>
 
@@ -24,8 +23,6 @@
     <echo>Java Specification Version: ${java.specification.version}</echo>
 
     <compileProject basedir="projects/scriptlandia-common"/>
-
-    <compileProject basedir="projects/image4j"/>
 
     <compileProject basedir="projects/bootstrap-mini"/>
 
@@ -41,7 +38,6 @@
        <path location="projects/bootstrap-mini/target/classes"/>
        <path location="projects/pomreader/target/classes"/>
        <path location="projects/scriptlandia-common/target/classes"/>
-       <path location="projects/image4j/target/classes"/>
       </classpath-entries>
     </compileProject>
   </target>
@@ -49,7 +45,6 @@
   <target name="jar" depends="compile">
     <jarProject basedir="projects/bootstrap-mini" name="bootstrap-mini"/>
     <jarProject basedir="projects/pomreader" name="pomreader"/>
-    <jarProject basedir="projects/image4j" name="image4j"/>
     <jarProject basedir="projects/scriptlandia-common" name="scriptlandia-common"/>
     <jarProject basedir="projects/scriptlandia-installer" name="scriptlandia-installer"/>
   </target>
@@ -63,7 +58,6 @@
         <path location="projects/scriptlandia-common/target/scriptlandia-common.jar"/>
         <path location="projects/bootstrap-mini/target/bootstrap-mini.jar"/>
         <path location="projects/pomreader/target/pomreader.jar"/>
-        <path location="projects/image4j/target/image4j.jar"/>
         <path location="projects/scriptlandia-installer/target/scriptlandia-installer.jar"/>
       </classpath>
     </java>
@@ -88,8 +82,6 @@
   <target name="package.projects">
     <installProject basedir="projects/bootstrap-mini" build="false"/>
     <installProject basedir="projects/scriptlandia-common" build="false"/>
-    <installProject basedir="projects/image4j" build="false"/>
-
     <installProject basedir="projects/classworlds-launcher"/>
 
     <installProject basedir="projects/pomreader" build="false"/>

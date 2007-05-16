@@ -108,10 +108,10 @@ public class LauncherHelper {
     System.setProperty("scala.version", scalaVersion);
     System.setProperty("scriptlandia.version", scriptlandiaVersion);
 
-    System.setProperty("proxy.server.host", (String) scriptlandiaProps1.get("proxy.server.host"));
-    System.setProperty("proxy.server.port", (String) scriptlandiaProps1.get("proxy.server.port"));
-    System.setProperty("http.proxyHost", (String) scriptlandiaProps1.get("proxy.server.host"));
-    System.setProperty("http.proxyPort", (String) scriptlandiaProps1.get("proxy.server.port"));
+    System.setProperty("proxyHost", (String) scriptlandiaProps1.get("proxyHost"));
+    System.setProperty("proxyPort", (String) scriptlandiaProps1.get("proxyPort"));
+    System.setProperty("http.proxyHost", (String) scriptlandiaProps1.get("proxyHost"));
+    System.setProperty("http.proxyPort", (String) scriptlandiaProps1.get("proxyPort"));
 
     setupJavaSpecificationVersion();
   }

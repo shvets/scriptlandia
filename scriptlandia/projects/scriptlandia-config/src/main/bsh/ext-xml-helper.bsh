@@ -2,9 +2,15 @@
 
 package org.sf.scriptlandia.install;
 
+String repositoryHome = System.getProperty("repository.home");
+addClassPath(repositoryHome + "/jdom/jdom/1.0/jdom-1.0.jar");
+addClassPath(repositoryHome + "/org/sf/image4j/0.6/image4j-0.6.jar");
+
 import org.jdom.Element;
 import org.jdom.Attribute;
 import org.jdom.JDOMException;
+
+import net.sf.image4j.codec.ico.ICODecoder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,7 +80,9 @@ public class ExtXmlHelper extends XmlHelper {
       return null;
     }
 
-    map.put("name", child.getAttribute("name").getValue());
+    String name = child.getAttribute("name").getValue();
+
+    map.put("name", name);
 
     Attribute groupId = child.getAttribute("groupId");
 
@@ -96,6 +104,19 @@ public class ExtXmlHelper extends XmlHelper {
 
     map.put("mimeType", registration.getAttribute("mimeType").getValue());
     map.put("icon", registration.getAttribute("icon").getValue());
+
+    String location = "languages/" + name;
+
+    File file = new File(location + "/" + registration.getAttribute("icon").getValue());
+
+    if(!file.exists()) {
+      file = new File("languages/scriptlandia/scriptlandia.ico");
+    }
+
+    java.util.List images = ICODecoder.read(file);
+    javax.swing.ImageIcon icon = new javax.swing.ImageIcon(images.get(0));
+
+    map.put("imageIcon", icon);
 
     Element starter = getElementByName(registration, "starter");
 

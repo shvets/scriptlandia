@@ -14,8 +14,6 @@ import java.awt.event.*;
 import java.io.*;
 import java.util.Map;
 
-import net.sf.image4j.codec.ico.ICODecoder;
-
 /**
  * The class perform initial (gui) installation of scriprlandia.
  *
@@ -107,8 +105,6 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
     SimpleLauncher launcher = new SimpleLauncher();
 
     prepare(launcher, true);
-    String repositoryHome = System.getProperty("repository.home");
-    launcher.addClasspathEntry(repositoryHome + "/jdom/jdom/1.0/jdom-1.0.jar");
 
     launcher.configure(Thread.currentThread().getContextClassLoader());
 
@@ -542,25 +538,10 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
             for(int i=0, j=0; i < languages.size(); i++) {
               Map language = (Map)languages.get(i);
               String name = (String)language.get("name");
-
-              String location = "languages/" + name;
-
-              if(isConfigMode() ) {
-                location = "images";
-              }
-
-              File file = new File(location + "/" + language.get("icon"));
-
-              if(!file.exists()) {
-                file = new File("languages/scriptlandia/scriptlandia.ico");
-              }
-
-              java.util.List<java.awt.image.BufferedImage> images = ICODecoder.read(file);
-
-              ImageIcon icon = new ImageIcon(images.get(0));
+              ImageIcon imageIcon = (ImageIcon)language.get("imageIcon");
 
               JLabel label = new JLabel(name);
-              label.setIcon(icon);
+              label.setIcon(imageIcon);
 
               constraints.gridy = i / COLUMNS;
 
@@ -628,11 +609,11 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
    System.setProperty("java.home.internal", javaHomeField.getText().trim());
 
     if (useProxyCheckbox.isSelected()) {
-      System.setProperty("proxy.server.host", proxyHostField.getText().trim());
-      System.setProperty("proxy.server.port", proxyPortField.getText().trim());
+      System.setProperty("proxyHost", proxyHostField.getText().trim());
+      System.setProperty("proxyPort", proxyPortField.getText().trim());
     } else {
-      System.setProperty("proxy.server.host", "");
-      System.setProperty("proxy.server.port", "");
+      System.setProperty("proxyHost", "");
+      System.setProperty("proxyPort", "");
     }
 
     System.setProperty("mobile.java.home", mobileJavaHomeField.getText().trim());
@@ -644,24 +625,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
   }
 
   public void install(final String[] args) throws LauncherException {
-/*    final PrintStream oldOut = System.out;
-    final PrintStream oldErr = System.err;
-
-    final FilterOutputStream filterOutputStream = new FilterOutputStream(new ByteArrayOutputStream()) {
-      public void write(byte b[], int off, int len) throws IOException {
-        super.write(b, off, len);
-
-        console.append(new String(b, off, len));
-        console.setCaretPosition(console.getDocument().getLength());
-      }
-    };
-  */
     try {
-/*      System.setOut(new PrintStream(filterOutputStream));
-      System.setErr(new PrintStream(filterOutputStream));
-*/
-
-
       updateProperties();
 
       if(!languagesPanelUpdated) {
@@ -687,10 +651,6 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
     catch (Exception e) {
       e.printStackTrace();
     }
-    finally {
-//      System.setOut(oldOut);
-//      System.setErr(oldErr);
-    }
   }
 
   @SuppressWarnings({"MismatchedQueryAndUpdateOfCollection"})
@@ -706,8 +666,8 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
     scriptlandiaProps.updateProperty(rubyHomeField, "native.ruby.home");
 
     scriptlandiaProps.updateProperty(useProxyCheckbox, "use.proxy");
-    scriptlandiaProps.updateProperty(proxyHostField, "proxy.server.host");
-    scriptlandiaProps.updateProperty(proxyPortField, "proxy.server.port");
+    scriptlandiaProps.updateProperty(proxyHostField, "proxyHost");
+    scriptlandiaProps.updateProperty(proxyPortField, "proxyPort");
   }
 
   @SuppressWarnings({"MismatchedQueryAndUpdateOfCollection"})
@@ -723,8 +683,8 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
     scriptlandiaProps.saveProperty(rubyHomeField, "native.ruby.home");    
 
     scriptlandiaProps.saveProperty(useProxyCheckbox, "use.proxy");
-    scriptlandiaProps.saveProperty(proxyHostField, "proxy.server.host");
-    scriptlandiaProps.saveProperty(proxyPortField, "proxy.server.port");
+    scriptlandiaProps.saveProperty(proxyHostField, "proxyHost");
+    scriptlandiaProps.saveProperty(proxyPortField, "proxyPort");
 
     for(int i=0; i < languages.size(); i++) {
       Map language = (Map)languages.get(i);

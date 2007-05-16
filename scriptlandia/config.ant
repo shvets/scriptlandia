@@ -30,8 +30,8 @@
       <filter token="java.home" value="${java.home.internal}"/>
       <filter token="mobile.java.home" value="${mobile.java.home}"/>
 
-      <filter token="proxy.server.host" value="${proxy.server.host}"/>
-      <filter token="proxy.server.port" value="${proxy.server.port}"/>
+      <filter token="proxyHost" value="${proxyHost}"/>
+      <filter token="proxyPort" value="${proxyPort}"/>
 
       <filter token="repository.home" value="${repository.home}"/>
       <filter token="maven.repo.local" value="${repository.home}"/>
@@ -204,8 +204,8 @@
   <target name="copy.settings.xml">
     <copy todir="${user.home}/.m2" overwrite="false">
       <filterset>
-        <filter token="proxy.server.host" value="${proxy.server.host}"/>
-        <filter token="proxy.server.port" value="${proxy.server.port}"/>
+        <filter token="proxyHost" value="${proxyHost}"/>
+        <filter token="proxyHost" value="${proxyPort}"/>
 
         <filter token="repository.home" value="${repository.home}"/>
       </filterset>

@@ -47,15 +47,6 @@
   </licenses>
 
   <dependencies>
-<!--
-    <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>5.1</version>
-      <scope>test</scope>
-      <classifier>jdk15</classifier>
-    </dependency>
--->
     <dependency>
       <groupId>org.apache.maven.bootstrap</groupId>
       <artifactId>bootstrap-mini</artifactId>
@@ -72,12 +63,6 @@
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>scriptlandia-common</artifactId>
       <version>2.2.2</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.sf</groupId>
-      <artifactId>image4j</artifactId>
-      <version>0.6</version>
     </dependency>
   </dependencies>
 
@@ -144,5 +129,19 @@
 
     </plugins>
   </reporting>
+
+  <repositories>
+    <repository>
+      <id>scriptlandia-languages-repo</id>
+      <name>Scriptlandia languages Maven2 repository</name>
+      <url>http://scriptlandia-repository.googlecode.com/svn/trunk/languages</url>
+    </repository>
+
+    <repository>
+      <id>scriptlandia-languages-repo</id>
+      <name>Scriptlandia languages Maven2 repository</name>
+      <url>http://scriptlandia-repository.googlecode.com/svn/trunk/tools</url>
+    </repository>
+  </repositories>
 
 </project>

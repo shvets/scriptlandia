@@ -14,7 +14,6 @@
       addClassPath(basedir + "/projects/scriptlandia-common/target/scriptlandia-common.jar");
       addClassPath(basedir + "/projects/bootstrap-mini/target/bootstrap-mini.jar");
       addClassPath(basedir + "/projects/pomreader/target/pomreader.jar");
-      addClassPath(basedir + "/projects/image4j/target/image4j.jar");
       addClassPath(basedir + "/projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
       import org.sf.scriptlandia.install.ProjectInstaller;
@@ -47,7 +46,6 @@
         addClassPath(basedir + "/projects/scriptlandia-common/target/scriptlandia-common.jar");
         addClassPath(basedir + "/projects/bootstrap-mini/target/bootstrap-mini.jar");
         addClassPath(basedir + "/projects/pomreader/target/pomreader.jar");
-        addClassPath(basedir + "/projects/image4j/target/image4j.jar");
         addClassPath(basedir + "/projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
         import org.sf.scriptlandia.install.ProjectInstaller;

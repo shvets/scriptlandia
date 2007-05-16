@@ -46,8 +46,8 @@ public class PomReader {
       settings.setLocalRepository(System.getProperty("repository.home"));
     }
 
-    String proxyServerHost = System.getProperty("proxy.server.host");
-    String proxyServerPort = System.getProperty("proxy.server.port");
+    String proxyServerHost = System.getProperty("proxyHost");
+    String proxyServerPort = System.getProperty("proxyPort");
 
     if (proxyServerHost != null && proxyServerHost.trim().length() > 0) {
       Proxy proxy = new Proxy();

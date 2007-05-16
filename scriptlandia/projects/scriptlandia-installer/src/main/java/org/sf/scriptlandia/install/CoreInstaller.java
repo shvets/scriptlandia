@@ -60,7 +60,6 @@ public class CoreInstaller {
     launcher.addClasspathEntry("projects/scriptlandia-common/target/scriptlandia-common.jar");
     launcher.addClasspathEntry("projects/bootstrap-mini/target/bootstrap-mini.jar");
     launcher.addClasspathEntry("projects/pomreader/target/pomreader.jar");
-//    launcher.addClasspathEntry("projects/image4j/target/image4j.jar");
     launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
     launcher.configure(Thread.currentThread().getContextClassLoader());
@@ -103,7 +102,6 @@ public class CoreInstaller {
     launcher.addClasspathEntry("projects/scriptlandia-common/target/scriptlandia-common.jar");
     launcher.addClasspathEntry("projects/bootstrap-mini/target/bootstrap-mini.jar");
     launcher.addClasspathEntry("projects/pomreader/target/pomreader.jar");
-//    launcher.addClasspathEntry("projects/image4j/target/image4j.jar");
     launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
     launcher.addClasspathEntry(repositoryHome + "/org/apache/ant/ant-launcher/" + antVersion +

@@ -9,7 +9,6 @@ fi
 SCRIPTLANDIA_COMMON_PROJECT=$PWD/projects/scriptlandia-common
 BOOTSTRAP_MINI_PROJECT=$PWD/projects/bootstrap-mini
 POM_READER_PROJECT=$PWD/projects/pomreader
-IMAGE4J_PROJECT=$PWD/projects/image4j
 SCRIPTLANDIA_INSTALLER_PROJECT=$PWD/projects/scriptlandia-installer
 
 echo ---### Java Specification Version: $JAVA_SPECIFICATION_VERSION
@@ -67,26 +66,6 @@ $JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_S
 $JAVA_HOME/bin/jar cf $POM_READER_PROJECT/target/pomreader.jar \
   -C $POM_READER_PROJECT/target/classes .
 
-
-echo ---### Builds Image4j project
-
-if [ ! -f $IMAGE4J_PROJECT/target/classes ]; then
-  mkdir -p $IMAGE4J_PROJECT/target/classes
-fi
-
-IMAGE4J_CLASSPATH=$IMAGE4J_PROJECT/target/classes
-
-$JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_SPECIFICATION_VERSION \
-  -classpath $IMAGE4J_CLASSPATH \
-  -d $IMAGE4J_PROJECT/target/classes \
-  $IMAGE4J_PROJECT/src/main/java/net/sf/image4j/codec/ico/*.java \
-  $IMAGE4J_PROJECT/src/main/java/net/sf/image4j/codec/bmp/*.java \
-  $IMAGE4J_PROJECT/src/main/java/net/sf/image4j/io/*.java \
-  $IMAGE4J_PROJECT/src/main/java/net/sf/image4j/util/*.java
-
-$JAVA_HOME/bin/jar cf $IMAGE4J_PROJECT/target/image4j.jar \
-  -C $IMAGE4J_PROJECT/target/classes .
-
 echo ---### Builds Installer project
 
 if [ ! -f $SCRIPTLANDIA_INSTALLER_PROJECT/target/classes ]; then
@@ -95,7 +74,6 @@ fi
 
 INST_CLASSPATH=$BOOTSTRAP_MINI_PROJECT/target/classes
 INST_CLASSPATH=$INST_CLASSPATH:$POM_READER_PROJECT/target/classes
-INST_CLASSPATH=$INST_CLASSPATH:$IMAGE4J_PROJECT/target/classes
 INST_CLASSPATH=$INST_CLASSPATH:$SCRIPTLANDIA_COMMON_PROJECT/target/classes
 INST_CLASSPATH=$INST_CLASSPATH:$SCRIPTLANDIA_INSTALLER_PROJECT/src/main/java
 
@@ -112,7 +90,6 @@ echo ---### Installing basic dependencies...
 BASIC_CLASSPATH=$SCRIPTLANDIA_COMMON_PROJECT/target/scriptlandia-common.jar
 BASIC_CLASSPATH=$BASIC_CLASSPATH:$BOOTSTRAP_MINI_PROJECT/target/bootstrap-mini.jar
 BASIC_CLASSPATH=$BASIC_CLASSPATH:$POM_READER_PROJECT/target/pomreader.jar
-BASIC_CLASSPATH=$BASIC_CLASSPATH:$IMAGE4J_PROJECT/target/image4j.jar
 BASIC_CLASSPATH=$BASIC_CLASSPATH:$SCRIPTLANDIA_INSTALLER_PROJECT/target/scriptlandia-installer.jar
 
 $JAVA_HOME/bin/java \

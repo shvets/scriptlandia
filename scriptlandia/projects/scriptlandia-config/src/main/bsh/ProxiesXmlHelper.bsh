@@ -19,7 +19,7 @@ public class ProxiesXmlHelper extends XmlHelper {
   public void process(List parameters) throws IOException, JDOMException {
     Element localRepository = getLocalRepositoryElement();
 
-    String proxyServer = System.getProperty("proxy.server.host");
+    String proxyServer = System.getProperty("proxyHost");
 
     if(proxyServer != null && proxyServer.trim().length() > 0) {
       Element proxies = getProxiesElement();
@@ -81,8 +81,8 @@ public class ProxiesXmlHelper extends XmlHelper {
     Element password = new Element("password");
     password.setText("");
 
-    String proxyHost = System.getProperty("proxy.server.host");
-    String proxyPort = System.getProperty("proxy.server.port");
+    String proxyHost = System.getProperty("proxyHost");
+    String proxyPort = System.getProperty("proxyPort");
 
     Element port = new Element("port");
     port.setText(proxyPort);

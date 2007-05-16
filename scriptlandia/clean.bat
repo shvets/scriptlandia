@@ -2,7 +2,6 @@
 
 if exist projects\bootstrap-mini\target  rmdir /S /Q projects\bootstrap-mini\target
 if exist projects\nailgun\target rmdir /S /Q projects\nailgun\target
-if exist projects\image4j\target rmdir /S /Q projects\image4j\target
 
 if exist projects\pomreader\target rmdir /S /Q projects\pomreader\target
 if exist projects\scriptlandia-common\target rmdir /S /Q projects\scriptlandia-common\target

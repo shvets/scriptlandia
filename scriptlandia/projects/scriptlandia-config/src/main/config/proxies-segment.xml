@@ -9,8 +9,8 @@
       <protocol>http</protocol>
       <username></username>
       <password></password>
-      <port>@proxy.server.port@</port>
-      <host>@proxy.server.host@</host>
+      <port>@pproxyHost@</port>
+      <host>@proxyHost@</host>
       <id/>
     </proxy>
 

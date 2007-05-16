@@ -52,12 +52,9 @@
     <module>projects/antrun</module>
     <module>projects/bootstrap-mini</module>
     <module>projects/nailgun</module>
-    <module>projects/image4j</module>
     <module>projects/classworlds-launcher</module>
     <module>projects/pomreader</module>
-    <!--module>projects/scriptlandia</module-->
     <module>projects/scriptlandia-common</module>
-    <!--module>projects/scriptlandia-config</module-->
     <module>projects/scriptlandia-installer</module>
     <module>projects/scriptlandia-launcher</module>
     <module>projects/scriptlandia-nailgun</module>
@@ -195,4 +192,3 @@
     </site>
   </distributionManagement>
 </project>
-
