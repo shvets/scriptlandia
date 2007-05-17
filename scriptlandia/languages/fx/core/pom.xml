@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia JavaFX Module</name>
-  <description>Scriptlandia JavaFX Module</description>
+  <name>Scriptlandia JavaFX Core Module</name>
+  <description>Scriptlandia JavaFX Core Module</description>
 
   <properties>
     <fx.version>20070506220507</fx.version>

@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia Groovy Module</name>
-  <description>Scriptlandia Groovy Module</description>
+  <name>Scriptlandia Groovy Core Module</name>
+  <description>Scriptlandia Groovy Core Module</description>
 
   <properties>
     <groovy.version>1.1-BETA-1</groovy.version>

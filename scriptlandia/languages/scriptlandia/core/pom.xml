@@ -3,12 +3,12 @@
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sf.scriptlandia</groupId>
-  <artifactId>scriptlandia-new</artifactId>
+  <artifactId>scriptlandia</artifactId>
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia Module</name>
-  <description>Scriptlandia Module</description>
+  <name>Scriptlandia Core Module</name>
+  <description>Scriptlandia Core Module</description>
 
 <!--
   <dependencies>

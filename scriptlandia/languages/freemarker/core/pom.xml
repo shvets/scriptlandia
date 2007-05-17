@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia Freemarker Module</name>
-  <description>Scriptlandia Freemarker Module</description>
+  <name>Scriptlandia Freemarker Core Module</name>
+  <description>Scriptlandia Freemarker Core Module</description>
 
   <properties>
     <freemarker.version>2.3.9</freemarker.version>

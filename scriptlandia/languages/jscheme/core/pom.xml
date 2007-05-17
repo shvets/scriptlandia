@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia JScheme Module</name>
-  <description>Scriptlandia JScheme Module</description>
+  <name>Scriptlandia JScheme Core Module</name>
+  <description>Scriptlandia JScheme Core Module</description>
 
   <properties>
     <jscheme.version>7.2</jscheme.version>

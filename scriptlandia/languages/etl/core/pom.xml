@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia ETL Module</name>
-  <description>Scriptlandia ETL Module</description>
+  <name>Scriptlandia ETL Core Module</name>
+  <description>Scriptlandia ETL Core Module</description>
 
   <properties>
     <etl.version>0.9</etl.version>

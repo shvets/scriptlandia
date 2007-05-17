@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia Beanshell Module</name>
-  <description>Scriptlandia Beanshell Module</description>
+  <name>Scriptlandia Beanshell Core Module</name>
+  <description>Scriptlandia Beanshell Core Module</description>
 
   <properties>
     <beanshell.version>2.0b5</beanshell.version>

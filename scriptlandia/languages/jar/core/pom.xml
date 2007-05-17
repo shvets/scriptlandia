@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia JAR Module</name>
-  <description>Scriptlandia JAR Module</description>
+  <name>Scriptlandia JAR Core Module</name>
+  <description>Scriptlandia JAR Core Module</description>
 
   <dependencies>
     <dependency>

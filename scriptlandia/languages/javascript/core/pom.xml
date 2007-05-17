@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia Javascript Module</name>
-  <description>Scriptlandia Javascript Module</description>
+  <name>Scriptlandia Javascript Core Module</name>
+  <description>Scriptlandia Javascript Core Module</description>
 
   <properties>
     <javascript.version>1.6R4</javascript.version>

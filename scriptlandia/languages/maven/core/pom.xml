@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia Maven Module</name>
-  <description>Scriptlandia Maven Module</description>
+  <name>Scriptlandia Maven Core Module</name>
+  <description>Scriptlandia Maven Core Module</description>
 
   <properties>
     <maven.version>2.0.6</maven.version>

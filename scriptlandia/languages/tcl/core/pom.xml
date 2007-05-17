@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia TCL Module</name>
-  <description>Scriptlandia TCL Module</description>
+  <name>Scriptlandia TCL Core Module</name>
+  <description>Scriptlandia TCL Core Module</description>
 
   <properties>
     <tcl.version>1.4.0</tcl.version>

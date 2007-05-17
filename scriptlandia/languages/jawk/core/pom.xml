@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia Jawk Module</name>
-  <description>Scriptlandia Jawk Module</description>
+  <name>Scriptlandia Jawk Core Module</name>
+  <description>Scriptlandia Jawk Core Module</description>
 
   <properties>
     <jawk.version>0.14</jawk.version>

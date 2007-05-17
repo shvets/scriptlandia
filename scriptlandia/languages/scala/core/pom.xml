@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia Scala Module</name>
-  <description>Scriptlandia Scala Module</description>
+  <name>Scriptlandia Scala Core Module</name>
+  <description>Scriptlandia Scala Core Module</description>
 
   <properties>
     <scala.version>2.4.0</scala.version>

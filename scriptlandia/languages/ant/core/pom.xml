@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia Ant Module</name>
-  <description>Scriptlandia Ant Module</description>
+  <name>Scriptlandia Ant Core Module</name>
+  <description>Scriptlandia Ant Core Module</description>
 
   <properties>
     <ant.version>1.7.0</ant.version>

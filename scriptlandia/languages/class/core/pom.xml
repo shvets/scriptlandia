@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia Class Module</name>
-  <description>Scriptlandia Class Module</description>
+  <name>Scriptlandia Class Core Module</name>
+  <description>Scriptlandia Class Core Module</description>
 
   <dependencies>
     <dependency>

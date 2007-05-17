@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia Kawa Module</name>
-  <description>Scriptlandia Kawa Module</description>
+  <name>Scriptlandia Kawa Core Module</name>
+  <description>Scriptlandia Kawa Core Module</description>
 
   <properties>
     <kawa.version>1.9.1</kawa.version>

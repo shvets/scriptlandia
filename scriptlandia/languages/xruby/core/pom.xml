@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia XRuby Module</name>
-  <description>Scriptlandia XRuby Module</description>
+  <name>Scriptlandia XRuby Core Module</name>
+  <description>Scriptlandia Core XRuby Module</description>
 
   <properties>
     <xruby.version>0.1.4</xruby.version>

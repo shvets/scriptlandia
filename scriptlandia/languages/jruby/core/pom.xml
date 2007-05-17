@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia JRuby Module</name>
-  <description>Scriptlandia JRuby Module</description>
+  <name>Scriptlandia JRuby Core Module</name>
+  <description>Scriptlandia JRuby Core Module</description>
 
   <properties>
     <jruby.version>0.9.9</jruby.version>

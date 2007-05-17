@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia Jaskell Module</name>
-  <description>Scriptlandia Jaskell Module</description>
+  <name>Scriptlandia Jaskell Core Module</name>
+  <description>Scriptlandia Jaskell Core Module</description>
 
   <properties>
     <jaskell.version>1.0</jaskell.version>

@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia Velocity Module</name>
-  <description>Scriptlandia Velocity Module</description>
+  <name>Scriptlandia Velocity Core Module</name>
+  <description>Scriptlandia Velocity Core Module</description>
 
   <properties>
     <velocity.version>1.5</velocity.version>

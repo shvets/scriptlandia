@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia WAR Module</name>
-  <description>Scriptlandia WAR Module</description>
+  <name>Scriptlandia WAR Core Module</name>
+  <description>Scriptlandia WAR Core Module</description>
 
 <!--
   <dependencies>

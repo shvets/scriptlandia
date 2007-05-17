@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia Jelly Module</name>
-  <description>Scriptlandia Jelly Module</description>
+  <name>Scriptlandia Jelly Core Module</name>
+  <description>Scriptlandia Jelly Core Module</description>
 
   <properties>
     <jelly.version>1.0</jelly.version>

@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia Janino Module</name>
-  <description>Scriptlandia Janino Module</description>
+  <name>Scriptlandia Janino Core Module</name>
+  <description>Scriptlandia Janino Core Module</description>
 
   <properties>
     <janino.version>2.5.5</janino.version>

@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia Fortress Module</name>
-  <description>Scriptlandia Fortress Module</description>
+  <name>Scriptlandia Fortress Core Module</name>
+  <description>Scriptlandia Fortress Core Module</description>
 
   <properties>
     <fortress.version>156</fortress.version>

@@ -7,8 +7,8 @@
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia F3 Module</name>
-  <description>Scriptlandia F3 Module</description>
+  <name>Scriptlandia F3 Core Module</name>
+  <description>Scriptlandia F3 Core Module</description>
 
   <properties>
     <f3.version>1.0</f3.version>
