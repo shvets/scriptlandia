@@ -232,6 +232,14 @@
       <action dev="Alexander Shvets" type="add">
         Added support for Java FX.
       </action>
+
+      <action dev="Alexander Shvets" type="add">
+        Removing image4j and nailgun projects. Used binaries freom repository instead.
+      </action>
+
+      <action dev="Alexander Shvets" type="add">
+        Upgrade Scriptella up to version 0.9.
+      </action>        
     </release>
   </body>
 </document>

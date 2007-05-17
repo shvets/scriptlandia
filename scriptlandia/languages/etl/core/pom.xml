@@ -11,7 +11,7 @@
   <description>Scriptlandia ETL Module</description>
 
   <properties>
-    <etl.version>0.8</etl.version>
+    <etl.version>0.9</etl.version>
   </properties>
 
   <dependencies>

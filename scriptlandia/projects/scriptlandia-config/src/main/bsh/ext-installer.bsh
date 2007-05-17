@@ -226,7 +226,7 @@ public class ExtInstaller {
     boolean registered = false;
 
     Association existingAssociation = associationService.getFileExtensionAssociation(extension);
-          print("existingAssociation " + existingAssociation);
+
     if(existingAssociation == null || existingAssociation.getMimeType() == null ||
        (!existingAssociation.getFileExtList().contains("." + extension) ||
         !existingAssociation.getMimeType().equals(mimeType) ||
@@ -250,7 +250,6 @@ public class ExtInstaller {
           associationService.registerUserAssociation(association);
         }
         else {
-          print("OS_NAME " + OS_NAME);
           associationService.registerUserAssociation(association);
 
          // Register an association in system level.

@@ -22,16 +22,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$maven-repository$/velocity/velocity-dep/1.4/velocity-dep-1.4.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$maven-repository$/velocity/velocity/1.4/velocity-1.4.jar!/" />
+          <root url="jar://$maven-repository$/velocity/velocity-dep/1.4/velocity-1.4.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
