@@ -6,6 +6,7 @@ if exist projects\scriptlandia-common\target rmdir /S /Q projects\scriptlandia-c
 if exist projects\antrun\target rmdir /S /Q projects\antrun\target
 if exist projects\classworlds-launcher\target rmdir /S /Q projects\classworlds-launcher\target
 
+if exist projects\scriptlandia-helper\target rmdir /S /Q projects\scriptlandia-helper\target
 if exist projects\scriptlandia-launcher\target rmdir /S /Q projects\scriptlandia-launcher\target
 if exist projects\scriptlandia-installer\target rmdir /S /Q projects\scriptlandia-installer\target
 if exist projects\scriptlandia-config\target rmdir /S /Q projects\scriptlandia-config\target

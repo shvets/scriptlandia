@@ -69,6 +69,7 @@ public class LauncherManager {
    * @param classWorld class world
    */
   public static void main(String[] args, ClassWorld classWorld) throws Exception {
+    System.out.println("in LaunchManager main: " + Arrays.asList(args));
     LauncherCommandLineParser parser = new LauncherCommandLineParser();
 
     String[] newArgs = parser.parse(args);
@@ -103,6 +104,8 @@ public class LauncherManager {
     ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
     
     LauncherManager launcherManager = new LauncherManager();
+
+    System.out.println("launcherClassName " + launcherClassName);
 
     CoreLauncher launcher = launcherManager.createLauncher(launcherClassName, classWorld);
 

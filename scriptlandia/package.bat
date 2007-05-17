@@ -69,7 +69,7 @@ SET INST_CLASSPATH=%INST_CLASSPATH%;%SCRIPTLANDIA_INSTALLER_PROJECT%\src\main\ja
 %JAVA_HOME%\bin\javac -nowarn -source %JAVA_SPECIFICATION_VERSION% -target %JAVA_SPECIFICATION_VERSION% ^
   -classpath %INST_CLASSPATH% ^
   -d %SCRIPTLANDIA_INSTALLER_PROJECT%\target\classes ^
-  %SCRIPTLANDIA_INSTALLER_PROJECT%\src\main\java\org\sf\scriptlandia\install\ProjectInstaller.java
+  %SCRIPTLANDIA_INSTALLER_PROJECT%\src\main\java\org\sf\scriptlandia\install\*.java
 
 %JAVA_HOME%\bin\jar cf %SCRIPTLANDIA_INSTALLER_PROJECT%\target\scriptlandia-installer.jar ^
   -C %SCRIPTLANDIA_INSTALLER_PROJECT%\target\classes .
@@ -87,23 +87,23 @@ SET BASIC_CLASSPATH=%BASIC_CLASSPATH%;%SCRIPTLANDIA_INSTALLER_PROJECT%\target\sc
   %SYSTEM_PROPERTIES% ^
   org.sf.scriptlandia.install.ProjectInstaller
 
-echo ---### Builds Installer 2 project
+rem echo ---### Builds Installer 2 project
 
-if not exist %SCRIPTLANDIA_INSTALLER_PROJECT%\target\classes mkdir %SCRIPTLANDIA_INSTALLER_PROJECT%\target\classes
+rem if not exist %SCRIPTLANDIA_INSTALLER_PROJECT%\target\classes mkdir %SCRIPTLANDIA_INSTALLER_PROJECT%\target\classes
 
-SET INST2_CLASSPATH=%BOOTSTRAP_MINI_PROJECT%\target\classes
-SET INST2_CLASSPATH=%INST2_CLASSPATH%;%POM_READER_PROJECT%\target\classes
-SET INST2_CLASSPATH=%INST2_CLASSPATH%;%REPOSITORY_HOME%\org\sf\image4j\0.6\image4j-0.6.jar
-SET INST2_CLASSPATH=%INST2_CLASSPATH%;%SCRIPTLANDIA_COMMON_PROJECT%\target\classes
-SET INST2_CLASSPATH=%INST2_CLASSPATH%;%SCRIPTLANDIA_INSTALLER_PROJECT%\src\main\java
+rem SET INST2_CLASSPATH=%BOOTSTRAP_MINI_PROJECT%\target\classes
+rem SET INST2_CLASSPATH=%INST2_CLASSPATH%;%POM_READER_PROJECT%\target\classes
+rem SET INST2_CLASSPATH=%INST2_CLASSPATH%;%REPOSITORY_HOME%\org\sf\image4j\0.6\image4j-0.6.jar
+rem SET INST2_CLASSPATH=%INST2_CLASSPATH%;%SCRIPTLANDIA_COMMON_PROJECT%\target\classes
+rem SET INST2_CLASSPATH=%INST2_CLASSPATH%;%SCRIPTLANDIA_INSTALLER_PROJECT%\src\main\java
 
-%JAVA_HOME%\bin\javac -nowarn -source %JAVA_SPECIFICATION_VERSION% -target %JAVA_SPECIFICATION_VERSION% ^
-   -classpath %INST2_CLASSPATH% ^
-   -d %SCRIPTLANDIA_INSTALLER_PROJECT%\target\classes ^
-   %SCRIPTLANDIA_INSTALLER_PROJECT%\src\main\java\org\sf\scriptlandia\install\*.java
+rem %JAVA_HOME%\bin\javac -nowarn -source %JAVA_SPECIFICATION_VERSION% -target %JAVA_SPECIFICATION_VERSION% ^
+rem    -classpath %INST2_CLASSPATH% ^
+rem    -d %SCRIPTLANDIA_INSTALLER_PROJECT%\target\classes ^
+rem    %SCRIPTLANDIA_INSTALLER_PROJECT%\src\main\java\org\sf\scriptlandia\install\*.java
 
-%JAVA_HOME%\bin\jar cf %SCRIPTLANDIA_INSTALLER_PROJECT%\target\scriptlandia-installer.jar ^
-  -C %SCRIPTLANDIA_INSTALLER_PROJECT%\target\classes .
+rem %JAVA_HOME%\bin\jar cf %SCRIPTLANDIA_INSTALLER_PROJECT%\target\scriptlandia-installer.jar ^
+rem   -C %SCRIPTLANDIA_INSTALLER_PROJECT%\target\classes .
 
 echo ---### Installing required projects and configuration files...
 

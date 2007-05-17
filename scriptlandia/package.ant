@@ -96,6 +96,8 @@
     <installProject basedir="projects/scriptlandia-launcher"/>
 
     <installLanguages section="starter"/>
+
+    <installProject basedir="projects/scriptlandia-helper"/>
   </target>
 
 </project>

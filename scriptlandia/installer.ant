@@ -40,6 +40,14 @@
     </script>
 
     <installLanguages section="starter"/>
+
+    <script language="beanshell">
+      import org.sf.scriptlandia.install.ProjectInstaller;
+
+      ProjectInstaller installer = new ProjectInstaller();
+
+      installer.install("projects/scriptlandia-helper", false);
+    </script>
   </target>
 
   <target name="install.libraries">
