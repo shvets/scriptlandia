@@ -15,6 +15,10 @@
     libraries to be loaded.
   </description>
 
+  <properties>
+    <maven.version>2.0.6</maven.version>
+  </properties>
+
   <packaging>jar</packaging>
 
   <url>http://sf.net/projects/scriptlandia/</url>
@@ -83,10 +87,11 @@
       <version>2.2.2</version>
     </dependency>
 
+<!--
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>ant</artifactId>
-      <version>${scriptlandia.version}</version>
+      <version>2.2.2</version>
       <type>pom</type>
     </dependency>
 
@@ -96,7 +101,28 @@
       <version>2.2.2</version>
       <type>pom</type>
     </dependency>
+-->
 
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-core</artifactId>
+      <version>${maven.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-embedder</artifactId>
+      <version>${maven.version}</version>
+    </dependency>
+
+<!--
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>maven</artifactId>
+      <version>2.2.2</version>
+      <type>pom</type>
+    </dependency>
+-->
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-ant-tasks</artifactId>

@@ -67,6 +67,7 @@
 
   <macrodef name="installLanguages">
     <attribute name="section"/>
+    <attribute name="install" default="false"/>
 
     <sequential>
       <script language="beanshell">
@@ -88,7 +89,8 @@
 
             boolean requiresInstallation = false;
 
-            if(Boolean.valueOf(System.getProperty(name + ".install")).booleanValue()) {
+            if(Boolean.valueOf(System.getProperty(name + ".install")).booleanValue() ||
+               @{install} == true) {
               requiresInstallation = true;
             }
 

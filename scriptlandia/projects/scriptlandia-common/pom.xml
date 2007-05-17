@@ -45,15 +45,7 @@
       <url>http://www.gnu.org/copyleft/gpl.html</url>
     </license>
   </licenses>
-<!--
-  <dependencies>
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>1.2.13</version>
-    </dependency>
-  </dependencies>
--->
+
   <build>
     <finalName>${artifactId}</finalName>
     <defaultGoal>package</defaultGoal>

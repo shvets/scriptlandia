@@ -45,11 +45,6 @@
     </license>
   </licenses>
 
-  <modules>
-    <module>components</module>
-    <module>starters</module>
-  </modules>
-
   <build>
     <finalName>${artifactId}</finalName>
     <defaultGoal>package</defaultGoal>

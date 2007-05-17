@@ -248,14 +248,6 @@
         <plugin-list />
       </pom>
       <pom>
-        <option name="path" value="$PROJECT_DIR$/projects/image4j/pom.xml" />
-        <plugin-list />
-      </pom>
-      <pom>
-        <option name="path" value="$PROJECT_DIR$/projects/nailgun/pom.xml" />
-        <plugin-list />
-      </pom>
-      <pom>
         <option name="path" value="$PROJECT_DIR$/projects/pomreader/pom.xml" />
         <plugin-list />
       </pom>
