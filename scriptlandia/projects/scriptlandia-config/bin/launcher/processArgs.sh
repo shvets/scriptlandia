@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /bin/sh
 
 CMD_LINE_ARGS=""
 PARAMETERS=""
@@ -8,7 +8,8 @@ NAILGUN_MODE=false
 processArgs() {
   while [ "x$1" != "x" ]; do
     temp=$1
-    param="${temp:0:2}" 
+#    param=`${temp:0:2}`
+param=""
 
     if [ "$param" = "-D" ]; then
       PARAMETERS="$PARAMETERS $1"
@@ -18,13 +19,15 @@ processArgs() {
       PARAMETERS="$PARAMETERS -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=6006"
     fi
 
-    param="${temp:0:4}"
+#    param=`${temp:0:4}`
+param=""
 
     if [ "$param" = "-ng" ]; then
       NAILGUN_MODE=true
     fi
 
-    param="${temp:0:19}"
+#    param=`${temp:0:19}`
+param=""
 
     if [ "$param" = "-Djava.library.path" ]; then
       PARAMETERS="$PARAMETERS $1"

@@ -121,11 +121,13 @@ readFile() {
     processresult
 }
 
-. `dirname "$0"`/processArgs.bat $*
+. `dirname "$0"`/launcher/processArgs.sh $*
 
-. `dirname "$0"`/customizeExecution.sh $*
+. `dirname "$0"`/launcher/customizeExecution.sh $*
 
-APP=`basename $0 .sh` # compute app name from this file name without prefix
+# APP=`basename $0 .sh` # compute app name from this file name without prefix
+
+echo $APP
 
 if [ $JAVA_HOME ] # is JAVA_HOME defined
 then
@@ -136,7 +138,7 @@ fi
 
 CMD=$CMD' '-DPID=$$
 
-FILE=$APP'.conf'
+FILE=$APP'/launcher.conf'
 if [ -r $FILE ]; then
     readFile
     exec $CMD $*

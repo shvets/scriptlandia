@@ -21,4 +21,4 @@ CLASSPATH=$CLASSPATH:$REPOSITORY_HOME/bsh/bsh/$BEANSHELL_VERSION/bsh-$BEANSHELL_
 $JAVA_HOME/bin/java \
   -classpath $CLASSPATH \
   $SYSTEM_PROPERTIES \
-  org.apache.tools.ant.launch.Launcher -f package.ant package
+  org.apache.tools.ant.launch.Launcher -f package.ant $*
