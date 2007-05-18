@@ -13,7 +13,7 @@ public class Bar {
 
 	class Foo {
 		void doSomethingElse() {
-			System.out.println(getClass().getName() + ": What else???");
+			System.out.println(getClass().getName() + ": What else???!!!");
 		}
 	}
 }
