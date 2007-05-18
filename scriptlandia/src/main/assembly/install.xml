@@ -48,6 +48,9 @@
         <include>scriptlandia-launcher/pom.xml</include>
         <include>scriptlandia-launcher/target/scriptlandia-launcher.jar</include>
 
+        <include>scriptlandia-helper/pom.xml</include>
+        <include>scriptlandia-helper/target/scriptlandia-helper.jar</include>
+
         <include>scriptlandia-nailgun/pom.xml</include>
         <include>scriptlandia-nailgun/target/scriptlandia-nailgun.jar</include>
 
@@ -57,7 +60,7 @@
         <include>scriptlandia-installer/target/scriptlandia-installer.jar</include>
 
         <include>scriptlandia-config/pom.xml</include>
-        <include>scriptlandia-config/bin/*.*</include>
+        <include>scriptlandia-config/bin/**</include>
         <include>scriptlandia-config/bin/images/*.*</include>
         <include>scriptlandia-config/src/main/bsh/**</include>
         <include>scriptlandia-config/src/main/config/**</include>

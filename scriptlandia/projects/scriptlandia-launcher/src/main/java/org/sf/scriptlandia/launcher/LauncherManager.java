@@ -105,8 +105,6 @@ public class LauncherManager {
     
     LauncherManager launcherManager = new LauncherManager();
 
-    System.out.println("launcherClassName " + launcherClassName);
-
     CoreLauncher launcher = launcherManager.createLauncher(launcherClassName, classWorld);
 
     if(parser.isLauncherMode()) {
