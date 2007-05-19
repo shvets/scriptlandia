@@ -69,7 +69,6 @@ public class LauncherManager {
    * @param classWorld class world
    */
   public static void main(String[] args, ClassWorld classWorld) throws Exception {
-    System.out.println("in LaunchManager main: " + Arrays.asList(args));
     LauncherCommandLineParser parser = new LauncherCommandLineParser();
 
     String[] newArgs = parser.parse(args);
