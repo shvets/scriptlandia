@@ -3,6 +3,7 @@
   <component name="BookmarkManager" />
   <component name="CCaseConfig">
     <option name="implementation" value="net.sourceforge.transparent.CommandLineClearCase" />
+    <option name="clearcaseRoot" value="" />
     <option name="checkoutReserved" value="false" />
     <option name="markExternalChangeAsUpToDate" value="true" />
     <option name="checkInUseHijack" value="true" />
@@ -27,45 +28,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/groovy/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/groovy/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/janino/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/janino/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jaskell/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/jaskell/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/freemarker/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/freemarker/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jscheme/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/jscheme/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/sleep/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/sleep/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/apt-fmt/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/apt-fmt/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/scriptlandia/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/scriptlandia/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.bat" afterPath="$PROJECT_DIR$/package.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherManager.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/pnuts/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/pnuts/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/kawa/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/kawa/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/war/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/war/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jar/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/jar/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/velocity/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/velocity/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/class/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/class/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.iml" afterPath="$PROJECT_DIR$/Scriptlandia.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jruby/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/jruby/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jelly/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/jelly/starter/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/ant/starter/src/main/java/org/sf/scriptlandia/BeanshellScriptEngine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.ipr" afterPath="$PROJECT_DIR$/Scriptlandia.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/ant/starter/src/main/java/org/sf/scriptlandia/BSFScriptEngineBridge.java" afterPath="$PROJECT_DIR$/languages/ant/starter/src/main/java/org/sf/scriptlandia/BSFScriptEngineBridge.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/ant/starter/src/main/java/org/sf/scriptlandia/JavaFXScriptEngine.java" afterPath="$PROJECT_DIR$/languages/ant/starter/src/main/java/org/sf/scriptlandia/JavaFXScriptEngine.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.iws" afterPath="$PROJECT_DIR$/Scriptlandia.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/apt-jelly/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/apt-jelly/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jad/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/jad/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/scala/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/scala/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/fx/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/fx/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jython/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/jython/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/classworlds/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/classworlds/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/maven/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/maven/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/ant/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/ant/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jawk/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/jawk/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/xruby/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/xruby/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/javascript/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/javascript/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-launcher/pom.xml" afterPath="$PROJECT_DIR$/projects/scriptlandia-launcher/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/fortress/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/fortress/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/tcl/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/tcl/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/f3/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/f3/starter/pom.xml" />
     </list>
   </component>
   <component name="ChangeListSynchronizer" />
-  <component name="ChangesViewManager" flattened_view="false" />
+  <component name="ChangesViewManager" flattened_view="false" show_ignored="false" />
   <component name="CheckinPanelState" />
   <component name="ClearCaseConfiguration">
     <option name="implementation" value="net.sourceforge.transparent.NativeClearCase" />
@@ -103,7 +74,6 @@
   <component name="CoverageDataManager" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
-    <option name="REVERSE_PATCH" value="false" />
   </component>
   <component name="Cvs2Configuration">
     <option name="PRUNE_EMPTY_DIRECTORIES" value="true" />
@@ -161,9 +131,9 @@
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
         <option name="ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="false" />
@@ -176,9 +146,9 @@
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
         <option name="ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="false" />
@@ -247,7 +217,44 @@
     <option name="currentFolder" value="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="BSFScriptEngineBridge.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/languages/ant/starter/src/main/java/org/sf/scriptlandia/BSFScriptEngineBridge.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="69" column="59" selection-start="1983" selection-end="1983" vertical-scroll-proportion="0.6672355">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScriptEngine.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="jar://D:/Java/jdk1.6.0/src.zip!/javax/script/ScriptEngine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="142" column="93" selection-start="5597" selection-end="5597" vertical-scroll-proportion="0.39078498">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JavaFXScriptEngine.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/languages/ant/starter/src/main/java/org/sf/scriptlandia/JavaFXScriptEngine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="13" selection-start="583" selection-end="583" vertical-scroll-proportion="0.3771331">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BeanshellScriptEngine.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/languages/ant/starter/src/main/java/org/sf/scriptlandia/BeanshellScriptEngine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="20" selection-start="596" selection-end="596" vertical-scroll-proportion="0.3771331">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -269,7 +276,8 @@
     <option name="SCOPE_TYPE" value="1" />
     <option name="CUSTOM_SCOPE_NAME" value="" />
     <option name="SHOW_ONLY_DIFF" value="false" />
-    <option name="myCurrentProfileName" value="Default" />
+    <option name="SHOW_STRUCTURE" value="true" />
+    <option name="ANALYSIS_IN_BACKGROUND" value="false" />
   </component>
   <component name="IntelliJConfiguration">
     <option name="PROPERTY_FILES">
@@ -366,7 +374,7 @@
     <subPane>
       <PATH>
         <PATH_ELEMENT>
-          <option name="myItemId" value="Scriptlandia.ipr" />
+          <option name="myItemId" value="Scriptlandia" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -376,7 +384,7 @@
       </PATH>
       <PATH>
         <PATH_ELEMENT>
-          <option name="myItemId" value="Scriptlandia.ipr" />
+          <option name="myItemId" value="Scriptlandia" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -384,13 +392,13 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
         <PATH_ELEMENT>
-          <option name="myItemId" value="Scriptlandia.ipr" />
+          <option name="myItemId" value="Scriptlandia" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -398,17 +406,17 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\src" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
         <PATH_ELEMENT>
-          <option name="myItemId" value="Scriptlandia.ipr" />
+          <option name="myItemId" value="Scriptlandia" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -416,17 +424,17 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\languages" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
         <PATH_ELEMENT>
-          <option name="myItemId" value="Scriptlandia.ipr" />
+          <option name="myItemId" value="Scriptlandia" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -434,21 +442,21 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\languages" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\languages\ant" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
         <PATH_ELEMENT>
-          <option name="myItemId" value="Scriptlandia.ipr" />
+          <option name="myItemId" value="Scriptlandia" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -456,37 +464,25 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\languages" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\languages\ant" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher\src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher\src\main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher\src\main\java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher\src\main\java\org\sf\scriptlandia\launcher" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\languages\ant\starter" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
         <PATH_ELEMENT>
-          <option name="myItemId" value="Scriptlandia.ipr" />
+          <option name="myItemId" value="Scriptlandia" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -494,33 +490,37 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\languages" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\languages\ant" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher\src" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\languages\ant\starter" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher\src\main" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\languages\ant\starter\src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher\src\main\java" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\languages\ant\starter\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\languages\ant\starter\src\main\java" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
         <PATH_ELEMENT>
-          <option name="myItemId" value="Scriptlandia.ipr" />
+          <option name="myItemId" value="Scriptlandia" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -528,11 +528,35 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\languages" />
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\languages" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\languages\ant" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\languages\ant\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\languages\ant\starter\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\languages\ant\starter\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\languages\ant\starter\src\main\java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:D:\Work\scriptlandia\trunk\scriptlandia\languages\ant\starter\src\main\java\org\sf\scriptlandia" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -562,7 +586,7 @@
       <showLibraryContents />
       <hideEmptyPackages ProjectPane="true" />
       <abbreviatePackageNames />
-      <showStructure ProjectPane="false" PackagesPane="false" Scope="false" Favorites="false" />
+      <showStructure Favorites="false" Scope="false" PackagesPane="false" ProjectPane="false" />
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
@@ -581,8 +605,8 @@
     <property name="cvs_file_history_flatOrder1" value="1" />
     <property name="cvs_file_history_flatWidth1" value="231" />
     <property name="cvs_file_history_treeWidth1" value="231" />
-    <property name="cvs_file_history_treeWidth3" value="231" />
     <property name="cvs_file_history_treeOrder2" value="2" />
+    <property name="cvs_file_history_treeWidth3" value="231" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="cvs_file_history_flatOrder2" value="2" />
     <property name="MemberChooser.showClasses" value="true" />
@@ -591,8 +615,8 @@
     <property name="cvs_file_history_treeWidth2" value="232" />
     <property name="cvs_file_history_flatOrder3" value="3" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="cvs_file_history_treeOrder0" value="0" />
     <property name="RunManagerConfig.showSettingsBeforeRunnig" value="true" />
+    <property name="cvs_file_history_treeOrder0" value="0" />
   </component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="true" />
@@ -630,61 +654,12 @@
   </component>
   <component name="RestoreUpdateTree" />
   <component name="RunManager" selected="Application.bsh">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ADDITIONAL_CLASS_PATH" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <option name="PROPERTIES_FILE" />
-      <properties />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <module name="" />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="RUBY_RUN_CONFIGURATION_TYPE" factoryName="Ruby">
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="MODULE_NAME" VALUE="" />
-      <method>
-        <option name="Make" value="true" />
-      </method>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
@@ -705,12 +680,30 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <module name="" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
     </configuration>
     <configuration default="false" name="ng-server" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.sf.scriptlandia.classworlds.launcher.Launcher" />
@@ -979,6 +972,37 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <option name="PROPERTIES_FILE" />
+      <properties />
+    </configuration>
+    <configuration default="true" type="RUBY_RUN_CONFIGURATION_TYPE" factoryName="Ruby">
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="MODULE_NAME" VALUE="" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
     <configuration default="false" name="testng" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
       <module name="Scriptlandia" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1042,6 +1066,7 @@
         </PATH_ELEMENT>
       </PATH>
     </subPane>
+    <subPane subId="Problems" />
     <subPane subId="Production">
       <PATH>
         <PATH_ELEMENT USER_OBJECT="Root">
@@ -1050,7 +1075,6 @@
         </PATH_ELEMENT>
       </PATH>
     </subPane>
-    <subPane subId="Problems" />
     <subPane subId="Project">
       <PATH>
         <PATH_ELEMENT USER_OBJECT="Root">
@@ -1061,6 +1085,7 @@
     </subPane>
   </component>
   <component name="SelectInManager" />
+  <component name="ShelveChangesManager" />
   <component name="StarteamConfiguration">
     <option name="SERVER" value="" />
     <option name="PORT" value="49201" />
@@ -1103,12 +1128,11 @@
   <component name="SvnConfiguration">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
-    <option name="PROCESS_UNRESOLVED" value="false" />
     <option name="LAST_MERGED_REVISION" />
     <option name="UPDATE_RUN_STATUS" value="false" />
     <option name="UPDATE_RECURSIVELY" value="true" />
     <option name="MERGE_DRY_RUN" value="false" />
-    <configuration useDefault="true">C:\Documents and Settings\shvetsa\Application Data\Subversion</configuration>
+    <configuration useDefault="true">C:\Documents and Settings\alex\Application Data\Subversion</configuration>
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1125,67 +1149,67 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1032" height="746" extended-state="6" />
+    <frame x="-4" y="-4" width="1032" height="742" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" order="10" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
       <window_info id="Maven-2 Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25605902" order="3" />
-      <window_info id="Regex" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="11" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958034" order="4" />
-      <window_info id="DocTree" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.61374795" order="8" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32459018" order="8" />
-      <window_info id="ScratchPad" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" order="13" />
-      <window_info id="Minimized stickies" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281893" order="10" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="10" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32665965" order="2" />
-      <window_info id="Problems" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31790122" order="9" />
-      <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38625205" order="17" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" order="5" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42647058" order="18" />
-      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="12" />
-      <window_info id="CVS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5730706" order="19" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27572018" order="0" />
+      <window_info id="Digger" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="1" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27533266" order="0" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5746753" order="2" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25129804" order="11" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="7" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40836012" order="21" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="7" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="22" />
-      <window_info id="TunnelliJ 1.2" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" order="28" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="10" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32665965" order="2" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32247558" order="30" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3488746" order="3" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
-      <window_info id="File View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="9" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39831403" order="1" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" order="5" />
+      <window_info id="TCPMON" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="13" />
-      <window_info id="IntelliCalc" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" order="4" x="423" y="273" width="178" height="192" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42647058" order="18" />
+      <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="15" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53594774" order="9" />
+      <window_info id="Regex" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="11" />
+      <window_info id="DocTree" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.61374795" order="8" />
       <window_info id="Maven-2 Build Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32786885" order="14" />
-      <window_info id="Digger" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="1" />
+      <window_info id="ScratchPad" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" order="13" />
       <window_info id="TestDox" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
+      <window_info id="Minimized stickies" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281893" order="10" />
+      <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38625205" order="17" />
       <window_info id="IDEtalk History" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="24" />
       <window_info id="FileBrowser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982087" order="3" />
-      <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="15" />
       <window_info id="Lib Finder" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="27" />
+      <window_info id="TunnelliJ 1.2" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" order="28" />
       <window_info id="IDE talk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26680455" order="12" />
       <window_info id="JavaDoc Browser" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28735632" order="29" />
+      <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" order="10" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="1" />
       <window_info id="Favorites" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983193" order="6" />
+      <window_info id="Problems" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31790122" order="9" />
       <window_info id="Tapestry Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="11" />
       <window_info id="IView" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295082" order="16" />
       <window_info id="IntelliTail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="23" />
-      <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="5" />
       <window_info id="BSFConsole" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="25" />
-      <window_info id="TCPMON" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
-      <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="26" />
+      <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="5" />
       <window_info id="DBHelper" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="DBOutput" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
+      <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="26" />
       <window_info id="Compare Directories" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="6" />
+      <window_info id="DBOutput" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
+      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="12" />
+      <window_info id="CVS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5730706" order="19" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
       <window_info id="Checkstyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" order="20" />
       <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="4" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="6" />
+      <window_info id="File View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="9" />
+      <window_info id="IntelliCalc" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" order="4" x="423" y="273" width="178" height="192" />
     </layout>
   </component>
   <component name="Translate.Configuration" />
@@ -1215,11 +1239,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="PERFORM_UPDATE_IN_BACKGROUND" value="false" />
     <option name="PERFORM_COMMIT_IN_BACKGROUND" value="false" />
-    <option name="PUT_FOCUS_INTO_COMMENT" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="LAST_COMMIT_MESSAGE" value="work on ruby scripts" />
-    <option name="SAVE_LAST_COMMIT_MESSAGE" value="true" />
-    <option name="CHECKIN_DIALOG_SPLITTER_PROPORTION" value="0.8" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -1267,7 +1288,6 @@
       <option name="RECURSIVE" value="false" />
       <option name="VERSION" />
     </GetOptions>
-    <VssConfigurableExcludedFilesTag />
   </component>
   <component name="XPathView.XPathProjectComponent">
     <history />
@@ -1287,34 +1307,6 @@
     <option name="myLastEditedConfigurable" value="Default" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="47" selection-start="3318" selection-end="3318" vertical-scroll-proportion="0.6592179">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/ScriptlandiaLauncher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="155" column="0" selection-start="4405" selection-end="4405" vertical-scroll-proportion="2.8379889">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/languages/ant/starter/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="6" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.3018868">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/languages/ant/starter/target/classes/META-INF/maven/org.sf.scriptlandia/ant-starter/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="6" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.3301887">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/languages/apt-fmt/starter/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="6" selection-start="405" selection-end="405" vertical-scroll-proportion="0.3301887">
@@ -1392,6 +1384,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/languages/ant/starter/src/main/java/org/sf/scriptlandia/JavaFXScriptEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="13" selection-start="583" selection-end="583" vertical-scroll-proportion="0.3771331">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/languages/ant/starter/src/main/java/org/sf/scriptlandia/BeanshellScriptEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="20" selection-start="596" selection-end="596" vertical-scroll-proportion="0.3771331">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/languages/ant/starter/src/main/java/org/sf/scriptlandia/BSFScriptEngineBridge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="59" selection-start="1983" selection-end="1983" vertical-scroll-proportion="0.6672355">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Java/jdk1.6.0/src.zip!/javax/script/ScriptEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="93" selection-start="5597" selection-end="5597" vertical-scroll-proportion="0.39078498">
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="org.intellij.doctree.ProjectDocsWorkspace">
     <Application>:1</Application>
@@ -1400,7 +1420,7 @@
   <component name="org.intellij.scratchpad.ScratchPadProjectComponent">
     <ScratchPad>
       <Name>Default</Name>
-      <Contents xml:space="preserve"></Contents>
+      <Contents xml:space="preserve" />
     </ScratchPad>
   </component>
   <component name="simpleUML.UMLToolWindowPlugin">

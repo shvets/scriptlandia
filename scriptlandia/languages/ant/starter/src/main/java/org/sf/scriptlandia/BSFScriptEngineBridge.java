@@ -10,6 +10,7 @@ import javax.script.ScriptException;
 import javax.script.Invocable;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
+import java.io.StringReader;
 
 
 /**
@@ -65,7 +66,10 @@ public class BSFScriptEngineBridge extends BSFEngineImpl {
     System.out.println("engine " + engine);
 
     try {
-      return engine.eval(string);
+    StringReader reader = new StringReader(string);
+      System.out.println("engine.eval(string) " + engine.eval(reader));
+
+      return engine.eval(reader);
     }
     catch (ScriptException e) {
       throw new BSFException(e.getMessage());

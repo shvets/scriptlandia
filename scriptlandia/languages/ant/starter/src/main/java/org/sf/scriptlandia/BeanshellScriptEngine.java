@@ -16,10 +16,10 @@ import java.io.FileNotFoundException;
  * @author Alexander Shvets
  * @version 1.0 05/19/2007
  */
-public class JavaFXScriptEngine extends BSFScriptEngineBridge {
+public class BeanshellScriptEngine extends BSFScriptEngineBridge {
 
-  public JavaFXScriptEngine() {
-    super("FX");
+  public BeanshellScriptEngine() {
+    super("beanshell");
   }
 
 }
