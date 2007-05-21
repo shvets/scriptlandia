@@ -4,7 +4,7 @@
   <property environment="env"/>
 
   <target name="all">
-<!--    <antcall target="javafx"/>-->
+    <antcall target="javafx"/>
 
     <antcall target="ant"/>
     <antcall target="bsh"/>
@@ -148,6 +148,7 @@ ClassLoader loader =
         engine.eval(script);
 */
       BSFManager.registerScriptingEngine("javafx", "org.sf.scriptlandia.JavaFXScriptEngine", new String[] { "fx" });
+        //print(Class.forName("org.sf.scriptlandia.JavaFXScriptEngine"));
     </script>
 
     <script language="javafx">
