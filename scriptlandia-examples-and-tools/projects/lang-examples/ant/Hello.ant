@@ -4,6 +4,9 @@
   <property environment="env"/>
 
   <target name="all">
+    <antcall target="bsh2"/>
+    <antcall target="sleep"/>
+<!--
     <antcall target="javafx"/>
 
     <antcall target="ant"/>
@@ -13,9 +16,9 @@
 
     <antcall target="groovy"/>
     <antcall target="jelly"/>
-    <!--antcall target="scala"/-->
     <antcall target="jscheme"/>
     <antcall target="jaskell"/>
+-->
   </target>
 
   <target name="ant">
@@ -174,6 +177,107 @@ ClassLoader loader =
 
           visible: true
       }
+    </script>
+  </target>
+
+  <target name="sleep">
+    <script language="beanshell">
+      import org.apache.bsf.BSFManager;
+
+      import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+
+      String repositoryHome = System.getProperty("repository.home");
+
+      String javaVersion = System.getProperty("java.version");
+
+      print("Java Version: " + javaVersion);
+
+      String javaSpecificationVersion = "jdk1.5";
+
+      if(javaVersion.startsWith("1.5")) {
+        javeapecifivationVersion = "jdk1.5";
+      }
+      else if(javaVersion.startsWith("1.6")) {
+        javaSpecificationVersion = "jdk1.6";
+      }
+
+      print("javaSpecificationVersion: " + javaSpecificationVersion);
+
+//      String pom = repositoryHome + "/javax/script/all-engines-" + javaSpecificationVersion + "/1.0/all-engines-" + 
+//                   javaSpecificationVersion + "-1.0.pom";
+
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+//      ScriptlandiaHelper.addMavenDependencies(repositoryHome + "/javax/script/script-api/1.0/script-api-xml.pom");
+//      ScriptlandiaHelper.addMavenDependencies(repositoryHome + "/javafx/javafx/20070506220507/javafx-20070506220507.pom");
+
+
+      ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+      print("launcher " + launcher);
+
+      launcher.addClasspathEntry(repositoryHome + "/javax/script/script-api/1.0/script-api-1.0.jar");
+      launcher.addClasspathEntry(repositoryHome + "/javax/script/sleep-engine/1.0/sleep-engine-1.0-jdk1.5.jar");
+      launcher.addClasspathEntry(repositoryHome + "/sleep/sleep/2.1-beta15/sleep-2.1-beta15.jar");
+    </script>
+
+    <script language="sleep" manager="javax">
+      import javax.swing.JFrame;
+      import javax.swing.JTree;
+      import javax.swing.WindowConstants;
+
+      $frame = [new JFrame:"Simplest GUI"];
+      [$frame setDefaultCloseOperation:[WindowConstants DISPOSE_ON_CLOSE]];
+      $tree = [new JTree];
+      [[$frame getContentPane] add:$tree];
+      [$frame pack];
+      [$frame show];
+    </script>
+  </target>
+
+  <target name="bsh2">
+    <script language="beanshell">
+      import org.apache.bsf.BSFManager;
+
+      import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+
+      String repositoryHome = System.getProperty("repository.home");
+
+      String javaVersion = System.getProperty("java.version");
+
+      print("Java Version: " + javaVersion);
+
+      String javaSpecificationVersion = "jdk1.5";
+
+      if(javaVersion.startsWith("1.5")) {
+        javeapecifivationVersion = "jdk1.5";
+      }
+      else if(javaVersion.startsWith("1.6")) {
+        javaSpecificationVersion = "jdk1.6";
+      }
+
+      print("javaSpecificationVersion: " + javaSpecificationVersion);
+
+/*      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      ScriptlandiaHelper.addMavenDependencies(repositoryHome + "/javax/script/script-api/1.0/script-api-1.0.pom");
+      ScriptlandiaHelper.addMavenDependencies(repositoryHome + "/javax/script/bsh-engine/1.0/bsh-engine-1.0.pom");
+      ScriptlandiaHelper.addMavenDependencies(repositoryHome + "/bsh/bsh/2.0b5/bsh-2.0b5.pom");
+*/
+
+      ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+      print("launcher " + launcher);
+/*
+      launcher.addClasspathEntry(repositoryHome + "/javax/script/script-api/1.0/script-api-1.0.jar");
+      launcher.addClasspathEntry(repositoryHome + "/javax/script/bsh-engine/1.0/bsh-engine-1.0-jdk1.5.jar");
+      launcher.addClasspathEntry(repositoryHome + "/bsh/bsh/2.0b5/bsh-2.0b5.jar");
+*/
+      launcher.resolveDependencies(repositoryHome + "/javax/script/script-api/1.0/script-api-1.0.pom");
+      launcher.resolveDependencies(repositoryHome + "/javax/script/bsh-engine/1.0/bsh-engine-1.0.pom");
+      launcher.resolveDependencies(repositoryHome + "/bsh/bsh/2.0b5/bsh-2.0b5.pom");
+    </script>
+
+    <script language="beanshell" manager="javax">
+      System.out.println("Hello, World from BeanShell!");
     </script>
   </target>
 </project>
