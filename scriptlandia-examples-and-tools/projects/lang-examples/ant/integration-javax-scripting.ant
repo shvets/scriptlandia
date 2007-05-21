@@ -1,0 +1,220 @@
+<!-- integration-javax-scripting.ant -->
+
+<project name="integration-javax-scripting.antlet" default="all" basedir=".">
+
+  <scriptdef name="configure-javax-language" language="beanshell">
+    <attribute name="name"/>
+
+    <![CDATA[
+      import org.apache.bsf.BSFManager;
+
+      import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+
+      String repositoryHome = System.getProperty("repository.home");
+
+      String javaVersion = System.getProperty("java.version");
+
+//      print("Java Version: " + javaVersion);
+
+      String javaSpecificationVersion = "jdk1.5";
+
+      if(javaVersion.startsWith("1.5")) {
+        javeapecifivationVersion = "jdk1.5";
+      }
+      else if(javaVersion.startsWith("1.6")) {
+        javaSpecificationVersion = "jdk1.6";
+      }
+
+      String name = attributes.get("name");
+
+      ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+
+      launcher.resolveDependencies(repositoryHome + "/javax/script/" + name + "-engine/1.0/" + name + "-engine-1.0.pom");
+
+
+//    <element name="fileset" type="fileset"/>
+//    <element name="path" type="path"/>
+
+//      self.log("Hello from script");
+//      self.log("Attribute attr1 = " + attributes.get("attr1"));
+//      self.log("First fileset basedir = "
+//        + elements.get("fileset").get(0).getDir(project));
+
+//attr1="test"
+//      <path>
+//        <pathelement location="src"/>
+//      </path>
+//      <fileset dir="src"/>
+//      <fileset dir="main"/>
+
+    ]]>
+  </scriptdef>
+
+  <target name="all">
+    <antcall target="bsh"/>
+
+    <antcall target="js"/>
+    <antcall target="groovy"/>
+    <antcall target="ruby"/>
+
+    <antcall target="jelly"/>
+    <antcall target="jaskell"/>
+
+    <antcall target="sleep"/>
+<!--
+    <antcall target="javafx"/>
+-->
+  </target>
+
+
+  <target name="bsh">
+    <configure-javax-language name="bsh"/>
+
+    <script language="beanshell" manager="javax">
+      System.out.println("Hello, World from BeanShell!");
+    </script>
+  </target>
+
+  <target name="js">
+    <configure-javax-language name="javascript"/>
+
+    <script language="javascript" manager="javax">
+      importPackage(Packages.java.lang);
+
+      System.out.println("Hello, World from JS!");
+    </script>
+  </target>
+
+  <target name="groovy">
+    <configure-javax-language name="groovy"/>
+
+    <script language="groovy">
+      println("Hello world from Groovy!")
+    </script>
+  </target>
+
+  <target name="ruby">
+    <configure-javax-language name="jruby"/>
+
+    <script language="ruby">
+      require 'java'
+
+      include_class "java.util.Locale"
+
+      print "Hello, World from JRuby!. My locale is: ", Locale.getDefault()
+    </script>
+  </target>
+
+
+  <target name="jelly">
+    <configure-javax-language name="jelly"/>
+
+    <taskdef name="jelly" classname="org.apache.commons.jelly.task.JellyTask">
+      <classpath>
+        <fileset dir="${repository.home}/commons-jelly/commons-jelly-tags-ant/1.1">
+          <include name="*.jar"/>
+        </fileset>
+      </classpath>
+    </taskdef>
+
+    <jelly script="../jelly/hello_world.jelly"/>
+  </target>
+
+  <target name="jaskell">
+    <configure-javax-language name="jaskell"/>
+
+    <script language="jaskell">
+      print "Hello World from Jaskell!"
+    </script>
+  </target>
+
+  <target name="sleep">
+    <configure-javax-language name="sleep"/>
+
+    <script language="sleep" manager="javax">
+      import javax.swing.JFrame;
+      import javax.swing.JTree;
+      import javax.swing.WindowConstants;
+
+      $frame = [new JFrame:"Simplest GUI"];
+      [$frame setDefaultCloseOperation:[WindowConstants DISPOSE_ON_CLOSE]];
+      $tree = [new JTree];
+      [[$frame getContentPane] add:$tree];
+      [$frame pack];
+      [$frame show];
+    </script>
+  </target>
+
+  <target name="javafx">
+    <configure-javax-language name="fx"/>
+
+    <script language="beanshell">
+      import org.apache.bsf.BSFManager;
+
+      import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+
+      String repositoryHome = System.getProperty("repository.home");
+
+      String javaVersion = System.getProperty("java.version");
+
+      print("Java Version: " + javaVersion);
+
+      String javaSpecificationVersion = "jdk1.5";
+
+      if(javaVersion.startsWith("1.5")) {
+        javeapecifivationVersion = "jdk1.5";
+      }
+      else if(javaVersion.startsWith("1.6")) {
+        javaSpecificationVersion = "jdk1.6";
+      }
+
+      print("javaSpecificationVersion: " + javaSpecificationVersion);
+
+//      String pom = repositoryHome + "/javax/script/all-engines-" + javaSpecificationVersion + "/1.0/all-engines-" + 
+//                   javaSpecificationVersion + "-1.0.pom";
+
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+//      ScriptlandiaHelper.addMavenDependencies(repositoryHome + "/javax/script/script-api/1.0/script-api-xml.pom");
+//      ScriptlandiaHelper.addMavenDependencies(repositoryHome + "/javafx/javafx/20070506220507/javafx-20070506220507.pom");
+
+
+      ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+      print("launcher " + launcher);
+
+      launcher.addClasspathEntry(repositoryHome + "/javax/script/script-api/1.0/script-api-1.0.jar");
+      launcher.addClasspathEntry(repositoryHome + "/javafx/javafx/20070506220507/javafx-20070506220507.jar");
+      launcher.addClasspathEntry(repositoryHome + "/javafx/filters/20070506220507/filters-20070506220507.jar");
+
+      BSFManager.registerScriptingEngine("javafx", "org.sf.scriptlandia.JavaFXScriptEngine", new String[] { "fx" });
+        //print(Class.forName("org.sf.scriptlandia.JavaFXScriptEngine"));
+    </script>
+
+    <script language="javafx">
+      import java.lang.System;
+
+      import javafx.ui.*;
+
+      Frame {
+          onClose: operation() {
+              System.exit(0);
+          }
+
+          title: "Hello World Java FX"
+
+          width: 200
+          height: 200
+
+          content: Label {
+
+              text: "Hello World"
+
+          }
+
+          visible: true
+      }
+    </script>
+  </target>
+
+
+</project>
