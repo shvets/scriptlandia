@@ -37,7 +37,6 @@
 
   <build>
     <defaultGoal>package</defaultGoal>
-    <finalName>${artifactId}-${version}-jdk${java.specification.version}</finalName>
 
     <resources>
       <resource>

@@ -8,17 +8,17 @@
   <version>1.0</version>
   <packaging>jar</packaging>
 
+  <properties>
+    <classifier></classifier>
+    <java.specification.version>1.5</java.specification.version>
+  </properties>
+
   <parent>
     <groupId>javax.script</groupId>
     <artifactId>main</artifactId>
     <version>1.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
-
-  <properties>
-    <classifier></classifier>
-    <java.specification.version>1.5</java.specification.version>
-  </properties>
 
   <dependencies>
     <dependency>

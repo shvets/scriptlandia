@@ -95,11 +95,31 @@
     <script language="beanshell">
       import org.sf.scriptlandia.ScriptlandiaHelper;
 
-      String[] args = new String[] { "install", "-Dclassifier=" };
+      ScriptlandiaHelper.executeMaven("pom.xml", new String[] { "clean" });
+
+      String[] args = new String[] { "package", "-Djava.specification.version=1.5", "-Dclassifier=jdk1.5" };
 
       ScriptlandiaHelper.executeMaven("pom.xml", args);
+    </script>
 
-      args = new String[] { "install", "-Dclassifier=jdk1.6" };
+    <script language="beanshell">
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      String[] args = new String[] { "package", "-Djava.specification.version=1.5", "-Dclassifier=" };
+
+      ScriptlandiaHelper.executeMaven("pom.xml", args);
+    </script>
+
+    <delete includeEmptyDirs="true" failonerror="false">
+      <fileset dir=".">
+        <include name="**/target/classes/**"/>
+      </fileset>
+    </delete>
+
+    <script language="beanshell">
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      args = new String[] { "package", "-Dclassifier=jdk1.6", "-Djava.specification.version=1.6" };
 
       ScriptlandiaHelper.executeMaven("pom.xml", args);
     </script>

@@ -1,3 +1,6 @@
+Note: You should use Java 6 Compiler.
+
+
 1. Retrieve latest version of javax-scripting:
 
 >cvs -d :pserver:guest@cvs.dev.java.net:/cvs login

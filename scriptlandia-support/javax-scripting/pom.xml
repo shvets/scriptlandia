@@ -10,6 +10,7 @@
 
   <modules>
     <module>beanshell</module>
+    <module>javafx</module>
     <module>browserjs</module>
     <module>freemarker</module>
     <module>groovy</module>
