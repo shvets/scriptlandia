@@ -31,7 +31,7 @@ class ChecksumScript {
       for(int i=0; i < files.length; i++) {
         File file = files[i];
 
-        if(file.isDirectory()) {
+        if(file.isDirectory() && !file.isHidden()) {
           calculate(file);
         }
         else if(file.isFile()) {
