@@ -162,4 +162,37 @@ public class CommonUtil {
     return specificationVersion;
   }
 
+  /**
+   *  1.1: 00 2D (= 45)
+   *  1.2: 00 2E (= 46)
+   *  1.3: 00 2F (= 47)
+   *  1.4: 00 30 (= 48)
+   *  1.5: 00 31 (= 49)
+   *  1.6: 00 32 (= 50) 
+   */
+  public String calculateJavaSpecificationVersion(int majorVersion) {
+    String javaSpecificationVersion = "1.1";
+
+    if(majorVersion == 45) {
+      javaSpecificationVersion = "1.1";
+    }
+    else if(majorVersion == 46) {
+      javaSpecificationVersion = "1.2";
+    }
+    else if(majorVersion == 47) {
+      javaSpecificationVersion = "1.3";
+    }
+    else if(majorVersion == 48) {
+      javaSpecificationVersion = "1.4";
+    }
+    else if(majorVersion == 49) {
+      javaSpecificationVersion = "1.5";
+    }
+    else if(majorVersion == 50) {
+      javaSpecificationVersion = "1.6";
+    }
+
+    return javaSpecificationVersion;
+  }
+
 }
