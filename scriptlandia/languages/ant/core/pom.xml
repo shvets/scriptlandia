@@ -140,18 +140,6 @@
       <artifactId>ant-antlr</artifactId>
       <version>${ant.version}</version>
     </dependency>
-
-    <dependency>
-      <groupId>commons-logging</groupId>
-      <artifactId>commons-logging</artifactId>
-      <version>1.0.4</version>
-    </dependency>
-
-    <dependency>
-      <groupId>janino</groupId>
-      <artifactId>janino</artifactId>
-      <version>2.5.5</version>
-    </dependency>
   </dependencies>
 
 </project>

@@ -240,6 +240,10 @@
       <action dev="Alexander Shvets" type="add">
         Upgrade Scriptella up to version 0.9.
       </action>        
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for Judo language ver. 0.9.
+      </action>
     </release>
   </body>
 </document>

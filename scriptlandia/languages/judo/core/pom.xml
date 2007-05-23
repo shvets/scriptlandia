@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>judo</artifactId>
+  <version>2.2.2</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia Judo Core Module</name>
+  <description>Scriptlandia Judo Core Module</description>
+
+  <properties>
+    <judo.version>0.9</judo.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>judo</groupId>
+      <artifactId>judo</artifactId>
+      <version>${judo.version}</version>
+    </dependency>
+  </dependencies>
+
+</project>

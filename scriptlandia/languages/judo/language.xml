@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<language name="judo" groupId="judo" artifactId="judo" version="0.9">
+  <registration mimeType="text/judo" icon="judo.ico">
+    <extensions>
+      <extension>judo</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="judo-starter" version="2.2.2">
+      <mainClass>judo</mainClass>
+    </starter>
+  </registration>
+</language>
