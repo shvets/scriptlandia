@@ -3,7 +3,7 @@
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sf.scriptlandia</groupId>
-  <artifactId>fx</artifactId>
+  <artifactId>javafx</artifactId>
   <version>2.2.2</version>
   <packaging>pom</packaging>
 
@@ -11,20 +11,27 @@
   <description>Scriptlandia JavaFX Core Module</description>
 
   <properties>
-    <fx.version>20070506220507</fx.version>
+    <javafx.version>20070506220507</javafx.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>javafx</groupId>
       <artifactId>javafx</artifactId>
-      <version>${fx.version}</version>
+      <version>${javafx.version}</version>
     </dependency>
 
     <dependency>
       <groupId>javafx</groupId>
       <artifactId>filters</artifactId>
-      <version>${fx.version}</version>
+      <version>${javafx.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>net.java.dev.swing-layout</groupId>
+      <artifactId>swing-layout</artifactId>
+      <version>1.0.1</version>
     </dependency>
   </dependencies>
+
 </project>

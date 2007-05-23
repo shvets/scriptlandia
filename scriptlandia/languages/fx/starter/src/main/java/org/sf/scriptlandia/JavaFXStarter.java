@@ -15,7 +15,7 @@ import org.codehaus.classworlds.ClassRealm;
  * @author Alexander Shvets
  * @version 1.0 12/16/2006
  */
-public final class FxStarter {
+public final class JavaFXStarter {
 
   /**
    * The main starter method.
@@ -117,7 +117,7 @@ public final class FxStarter {
 
     ClassRealm mainRealm = launcher.getMainRealm();
 
-    new FxStarter().start(args, mainRealm);
+    new JavaFXStarter().start(args, mainRealm);
   }
 
 }
