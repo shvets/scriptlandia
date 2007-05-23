@@ -29,6 +29,13 @@
 
     <dependency>
       <groupId>javax.script</groupId>
+      <artifactId>javafx-engine</artifactId>
+      <version>1.0</version>
+      <classifier>${classifier}</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.script</groupId>
       <artifactId>bsh-engine</artifactId>
       <version>1.0</version>
       <classifier>${classifier}</classifier>

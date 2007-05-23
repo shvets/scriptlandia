@@ -14,8 +14,6 @@
 
       String javaVersion = System.getProperty("java.version");
 
-//      print("Java Version: " + javaVersion);
-
       String javaSpecificationVersion = "jdk1.5";
 
       if(javaVersion.startsWith("1.5")) {
@@ -51,6 +49,8 @@
   </scriptdef>
 
   <target name="all">
+    <antcall target="javafx"/>
+
     <antcall target="bsh"/>
 
     <antcall target="js"/>
@@ -59,11 +59,9 @@
 
     <antcall target="jelly"/>
     <antcall target="jaskell"/>
+    <!--antcall target="judo"/-->
 
     <antcall target="sleep"/>
-<!--
-    <antcall target="javafx"/>
--->
   </target>
 
 
@@ -105,7 +103,6 @@
     </script>
   </target>
 
-
   <target name="jelly">
     <configure-javax-language name="jelly"/>
 
@@ -128,6 +125,14 @@
     </script>
   </target>
 
+  <target name="judo">
+    <configure-javax-language name="judo"/>
+
+    <script language="judo">
+      println 'Hello World';
+    </script>
+  </target>
+
   <target name="sleep">
     <configure-javax-language name="sleep"/>
 
@@ -146,51 +151,9 @@
   </target>
 
   <target name="javafx">
-    <configure-javax-language name="fx"/>
+    <configure-javax-language name="javafx"/>
 
-    <script language="beanshell">
-      import org.apache.bsf.BSFManager;
-
-      import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
-
-      String repositoryHome = System.getProperty("repository.home");
-
-      String javaVersion = System.getProperty("java.version");
-
-      print("Java Version: " + javaVersion);
-
-      String javaSpecificationVersion = "jdk1.5";
-
-      if(javaVersion.startsWith("1.5")) {
-        javeapecifivationVersion = "jdk1.5";
-      }
-      else if(javaVersion.startsWith("1.6")) {
-        javaSpecificationVersion = "jdk1.6";
-      }
-
-      print("javaSpecificationVersion: " + javaSpecificationVersion);
-
-//      String pom = repositoryHome + "/javax/script/all-engines-" + javaSpecificationVersion + "/1.0/all-engines-" + 
-//                   javaSpecificationVersion + "-1.0.pom";
-
-      import org.sf.scriptlandia.ScriptlandiaHelper;
-
-//      ScriptlandiaHelper.addMavenDependencies(repositoryHome + "/javax/script/script-api/1.0/script-api-xml.pom");
-//      ScriptlandiaHelper.addMavenDependencies(repositoryHome + "/javafx/javafx/20070506220507/javafx-20070506220507.pom");
-
-
-      ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
-      print("launcher " + launcher);
-
-      launcher.addClasspathEntry(repositoryHome + "/javax/script/script-api/1.0/script-api-1.0.jar");
-      launcher.addClasspathEntry(repositoryHome + "/javafx/javafx/20070506220507/javafx-20070506220507.jar");
-      launcher.addClasspathEntry(repositoryHome + "/javafx/filters/20070506220507/filters-20070506220507.jar");
-
-      BSFManager.registerScriptingEngine("javafx", "org.sf.scriptlandia.JavaFXScriptEngine", new String[] { "fx" });
-        //print(Class.forName("org.sf.scriptlandia.JavaFXScriptEngine"));
-    </script>
-
-    <script language="javafx">
+    <script language="FX">
       import java.lang.System;
 
       import javafx.ui.*;
@@ -215,6 +178,5 @@
       }
     </script>
   </target>
-
 
 </project>
