@@ -80,14 +80,13 @@
       <type>pom</type>
     </dependency>
 
-
-<!--
     <dependency>
       <groupId>fr.jayasoft</groupId>
       <artifactId>ivy</artifactId>
       <version>1.4.1</version>
     </dependency>
 
+<!--
     <dependency>
       <groupId>janino</groupId>
       <artifactId>janino</artifactId>
