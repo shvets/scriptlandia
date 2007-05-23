@@ -2,99 +2,55 @@
 
 <project name="integration-javax-scripting.antlet" default="all" basedir=".">
 
-  <scriptdef name="configure-javax-language" language="beanshell">
-    <attribute name="name"/>
-
-    <![CDATA[
-      import org.apache.bsf.BSFManager;
-
-      import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
-
-      String repositoryHome = System.getProperty("repository.home");
-
-      String javaVersion = System.getProperty("java.version");
-
-      String javaSpecificationVersion = "jdk1.5";
-
-      if(javaVersion.startsWith("1.5")) {
-        javeapecifivationVersion = "jdk1.5";
-      }
-      else if(javaVersion.startsWith("1.6")) {
-        javaSpecificationVersion = "jdk1.6";
-      }
-
-      String name = attributes.get("name");
-
-      ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
-
-      launcher.resolveDependencies(repositoryHome + "/javax/script/" + name + "-engine/1.0/" + name + "-engine-1.0.pom");
-
-
-//    <element name="fileset" type="fileset"/>
-//    <element name="path" type="path"/>
-
-//      self.log("Hello from script");
-//      self.log("Attribute attr1 = " + attributes.get("attr1"));
-//      self.log("First fileset basedir = "
-//        + elements.get("fileset").get(0).getDir(project));
-
-//attr1="test"
-//      <path>
-//        <pathelement location="src"/>
-//      </path>
-//      <fileset dir="src"/>
-//      <fileset dir="main"/>
-
-    ]]>
-  </scriptdef>
+  <import file="configure-language.xml"/>
 
   <target name="all">
-    <antcall target="javafx"/>
+    <antcall target="javascript"/>
+
+    <antcall target="judo"/>
 
     <antcall target="bsh"/>
 
-    <antcall target="js"/>
     <antcall target="groovy"/>
     <antcall target="ruby"/>
 
     <antcall target="jelly"/>
     <antcall target="jaskell"/>
-    <!--antcall target="judo"/-->
 
     <antcall target="sleep"/>
+    <antcall target="javafx"/>
   </target>
 
-
   <target name="bsh">
-    <configure-javax-language name="bsh"/>
+    <configure-language name="bsh" manager="javax"/>
 
     <script language="beanshell" manager="javax">
       System.out.println("Hello, World from BeanShell!");
     </script>
   </target>
 
-  <target name="js">
-    <configure-javax-language name="javascript"/>
+  <target name="javascript">
+    <configure-language name="javascript" manager="javax"/>
 
     <script language="javascript" manager="javax">
       importPackage(Packages.java.lang);
 
-      System.out.println("Hello, World from JS!");
+      System.out.println("Hello, World from javascript!");
     </script>
   </target>
 
   <target name="groovy">
-    <configure-javax-language name="groovy"/>
+    <configure-language name="groovy" manager="javax"/>
 
-    <script language="groovy">
+    <script language="groovy" manager="javax">
       println("Hello world from Groovy!")
     </script>
   </target>
 
   <target name="ruby">
-    <configure-javax-language name="jruby"/>
+    <configure-language name="jruby" manager="javax"/>
 
-    <script language="ruby">
+    <script language="ruby" manager="javax">
       require 'java'
 
       include_class "java.util.Locale"
@@ -104,37 +60,29 @@
   </target>
 
   <target name="jelly">
-    <configure-javax-language name="jelly"/>
+    <configure-language name="jelly" manager="javax"/>
 
-    <taskdef name="jelly" classname="org.apache.commons.jelly.task.JellyTask">
-      <classpath>
-        <fileset dir="${repository.home}/commons-jelly/commons-jelly-tags-ant/1.1">
-          <include name="*.jar"/>
-        </fileset>
-      </classpath>
-    </taskdef>
-
-    <jelly script="../jelly/hello_world.jelly"/>
+    <script language="jelly" manager="javax" src="../jelly/hello_world.jelly"/>
   </target>
 
   <target name="jaskell">
-    <configure-javax-language name="jaskell"/>
+    <configure-language name="jaskell" manager="javax"/>
 
-    <script language="jaskell">
+    <script language="jaskell" manager="javax">
       print "Hello World from Jaskell!"
     </script>
   </target>
 
   <target name="judo">
-    <configure-javax-language name="judo"/>
+    <configure-language name="judo" manager="javax"/>
 
-    <script language="judo">
+    <script language="judo" manager="javax">
       println 'Hello World';
     </script>
   </target>
 
   <target name="sleep">
-    <configure-javax-language name="sleep"/>
+    <configure-language name="sleep" manager="javax"/>
 
     <script language="sleep" manager="javax">
       import javax.swing.JFrame;
@@ -151,9 +99,9 @@
   </target>
 
   <target name="javafx">
-    <configure-javax-language name="javafx"/>
+    <configure-language name="javafx" manager="javax"/>
 
-    <script language="FX">
+    <script language="FX" manager="javax">
       import java.lang.System;
 
       import javafx.ui.*;

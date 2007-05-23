@@ -2,16 +2,18 @@
 
 <project name="integration-bsf-scripting.antlet" default="all" basedir=".">
 
+  <import file="configure-language.xml"/>
+
   <target name="all">
     <antcall target="ant"/>
     <antcall target="bsh"/>
-    <antcall target="js"/>
-    <antcall target="ruby"/>
-
+    <antcall target="javascript"/>
+    <antcall target="jruby"/>
     <antcall target="groovy"/>
-    <antcall target="jelly"/>
     <antcall target="jscheme"/>
     <antcall target="jaskell"/>
+
+    <antcall target="jelly"/>
   </target>
 
   <target name="ant">
@@ -26,21 +28,39 @@
     </script>
   </target>
 
-  <target name="js">
+  <target name="javascript">
+    <configure-language name="javascript" manager="bsf"/>
+
     <script language="javascript">
       importPackage(Packages.java.lang);
 
-      System.out.println("Hello, World from JS!");
+      System.out.println("Hello, World from javascript!");
     </script>
   </target>
 
   <target name="groovy">
+    <configure-language name="groovy" manager="bsf"/>
+
     <script language="groovy">
       println("Hello world from Groovy!")
     </script>
   </target>
 
+  <target name="jruby">
+    <configure-language name="jruby" manager="bsf"/>
+
+    <script language="ruby">
+      require 'java'
+
+      include_class "java.util.Locale"
+
+      print "Hello, World from JRuby!. My locale is: ", Locale.getDefault()
+    </script>
+  </target>
+
   <target name="jelly">
+    <configure-language name="jelly" manager="bsf"/>
+
     <taskdef name="jelly" classname="org.apache.commons.jelly.task.JellyTask">
       <classpath>
         <fileset dir="${repository.home}/commons-jelly/commons-jelly-tags-ant/1.1">
@@ -52,16 +72,6 @@
     <jelly script="../jelly/hello_world.jelly"/>
   </target>
 
-  <target name="ruby">
-    <script language="ruby">
-      require 'java'
-
-      include_class "java.util.Locale"
-
-      print "Hello, World from JRuby!. My locale is: ", Locale.getDefault()
-    </script>
-  </target>
-
   <target name="scala">
     <script language="scala">
       Console.println("Hello, world from Scala!")
@@ -69,12 +79,16 @@
   </target>
 
   <target name="jscheme">
+    <configure-language name="jscheme" manager="bsf"/>
+
     <script language="jscheme">
       (display "Hello World from JScheme!") (newline)
     </script>
   </target>
 
   <target name="jaskell">
+    <configure-language name="jaskell" manager="bsf"/>
+
     <script language="jaskell">
       print "Hello World from Jaskell!"
     </script>
