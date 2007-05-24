@@ -74,6 +74,16 @@ public class Repository
             repositoryPath = dependency.getGroupId().replace( '.', '/' );
             repositoryPath = repositoryPath + "/" + dependency.getArtifactId() + "/" + dependency.getVersion();
             repositoryPath = repositoryPath + "/" + dependency.getArtifact();
+
+
+          if(dependency.getPackaging().equalsIgnoreCase("jar")) {
+            String classifier = dependency.getClassifier();
+
+            if(classifier != null && classifier.trim().length() > 0) {
+              int index = repositoryPath.lastIndexOf(".");
+              repositoryPath = repositoryPath.substring(0, index) + "-" + classifier + repositoryPath.substring(index);
+            }
+          }
         }
         else
         {
