@@ -118,7 +118,7 @@ public class PomReader {
       currentDep.setGroupId(model.getGroupId());
       currentDep.setArtifactId(model.getArtifactId());
       currentDep.setVersion(model.getVersion());
-      currentDep.setArtifactId(model.getArtifactId());
+      currentDep.setClassifier(model.getClassifier());
 
       model.getParentDependencies().put(currentDep.getConflictId(), currentDep);
     }
@@ -141,46 +141,66 @@ public class PomReader {
     return dependencies;
   }
 
+  private File downloadPom(String groupId, String artifactId, String version, String classifier)
+          throws IOException {
+    File pomFile = File.createTempFile(groupId, artifactId + "-" + version + ".pom");
+    BufferedWriter writer = new BufferedWriter(new FileWriter(pomFile));
+
+    writer.write("<?xml version=\"1.0\"?>");
+    writer.write("\n");
+    writer.write("<project>\n");
+    writer.write("  <modelVersion>4.0.0</modelVersion>\n");
+    writer.write("  <groupId>temp</groupId>\n");
+    writer.write("  <artifactId>temp</artifactId>\n");
+    writer.write("  <version>1.0</version>\n");
+    writer.write("\n");
+    writer.write("  <dependencies>\n");
+    writer.write("    <dependency>\n");
+    writer.write("      <groupId>" + groupId + "</groupId>\n");
+    writer.write("      <artifactId>" + artifactId + "</artifactId>\n");
+    writer.write("      <version>" + version + "</version>\n");
+    writer.write("      <classifier>" + classifier + "</classifier>\n");
+    writer.write("    </dependency>\n");
+    writer.write("  </dependencies>\n");
+    writer.write("\n");
+    writer.write("  <build>\n");
+    writer.write("    <defaultGoal>install</defaultGoal>\n");
+    writer.write("  </build>\n");
+    writer.write("\n");
+    writer.write("</project>\n");
+
+    writer.close();
+
+    return pomFile;
+  }
+
   /**
    * Resolves dependencies for specified pom maven2 dependencies file.
    * @throws Exception the exception
    * @return the list of dependent URLs
    */
-  public List<URL> calculateDependencies(String groupId, String artifactId, String version) throws Exception {
+  public List<URL> calculateDependencies(String groupId, String artifactId, String version, String classifier)
+         throws Exception {
     List<URL> dependencies = new ArrayList<URL>();
 
-    Model model = new Model();
-    model.setGroupId(groupId);
-    model.setArtifactId(artifactId);
-    model.setVersion(version);
-    model.setPackaging("jar");
+    String repositoryHome = System.getProperty("repository.home");
 
-    if(model.getPackaging() != null && model.getPackaging().equals("jar")) {
-      Dependency currentDep = new Dependency(new ArrayList());
-      currentDep.setGroupId(model.getGroupId());
-      currentDep.setArtifactId(model.getArtifactId());
-      currentDep.setVersion(model.getVersion());
-      currentDep.setArtifactId(model.getArtifactId());
+    String pom = repositoryHome + "/" + groupId.replace('.', '/') + "/" + artifactId + "/" + version +
+            "/" + artifactId + "-" + version + ".pom";
 
-      model.getParentDependencies().put(currentDep.getConflictId(), currentDep);
+    File pomFile = new File(pom);
+
+    if(!pomFile.exists()) {
+      File tmpPom = downloadPom(groupId, artifactId, version, classifier);
+
+      dependencies.addAll(calculateDependencies(tmpPom));
+
+      tmpPom.delete();
     }
 
-    for (Object o : model.getAllDependencies()) {
-      Dependency dependency = (Dependency) o;
+    dependencies.addAll(calculateDependencies(pomFile));
 
-      //noinspection unchecked
-      dependency.getRepositories().addAll(model.getRepositories());
-
-      File file = getArtifactFile(dependency);
-
-      if (!FileUtil.getExtension(file).equals("pom")) {
-        dependencies.add(file.toURI().toURL());
-      }
-    }
-
-    resolver.downloadDependencies(model.getAllDependencies());
-
-    return dependencies;
+    return dependencies;    
   }
 
   /**
