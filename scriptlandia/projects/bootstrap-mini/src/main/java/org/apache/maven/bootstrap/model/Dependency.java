@@ -173,7 +173,7 @@ public class Dependency extends Model
 
     public String toString()
     {
-        return "Dependency[" + getId() + ":" + getVersion() + ":" + getType() + "]";
+        return "Dependency[" + getId() + ":" + getVersion() + ":" + getType() +  ":" + getClassifier() + "]";
     }
 
 
