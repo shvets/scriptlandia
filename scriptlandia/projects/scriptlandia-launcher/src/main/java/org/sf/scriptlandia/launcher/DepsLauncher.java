@@ -4,7 +4,6 @@ import org.codehaus.classworlds.ClassRealm;
 import org.codehaus.classworlds.ClassWorld;
 import org.sf.scriptlandia.pomreader.PomReader;
 import org.sf.scriptlandia.util.CommonUtil;
-import org.apache.maven.bootstrap.model.Dependency;
 
 import java.io.File;
 import java.net.URL;
@@ -76,8 +75,7 @@ public class DepsLauncher extends ClassworldLauncher {
    * @param pomFileName the pom file name
    * @throws Exception the exception
    */
-  public void resolveDependencies(String pomFileName)
-    throws Exception {
+  public void resolveDependencies(String pomFileName) throws Exception {
     ClassRealm classRealm = getMainRealm();
 
     List<URL> deps = pomReader.calculateDependencies(new File(pomFileName));
@@ -95,11 +93,11 @@ public class DepsLauncher extends ClassworldLauncher {
    * @param artifactId artifact ID
    * @param version version
    */
-  public void resolveDependencies(String groupId, String artifactId, String version)
-    throws Exception {
+  public void resolveDependencies(String groupId, String artifactId, String version, String classifier)
+         throws Exception {
     ClassRealm classRealm = getMainRealm();
 
-    List<URL> deps = pomReader.calculateDependencies(groupId, artifactId, version);
+    List<URL> deps = pomReader.calculateDependencies(groupId, artifactId, version, classifier);
 
     for (URL dep : deps) {
       classRealm.addConstituent(dep);
