@@ -14,7 +14,7 @@
   </description>
 
   <properties>
-    <fortress.version>156</fortress.version>
+    <fortress.version>163</fortress.version>
     <ant.version>1.7.0</ant.version>
   </properties>
 

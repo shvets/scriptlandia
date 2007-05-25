@@ -199,8 +199,10 @@ Jaskell        1.0          http://jaskell.codehaus.org
 TCL            1.4.0        http://tcljava.sourceforge.net
 AWK            0.14         http://jawk.sourceforge.net
 F3             1.0          http://blogs.sun.com/chrisoliver/resource/tutorial.jnlp
-Fortress       156          http://fortress.sunsource.net
+Fortress       163          http://fortress.sunsource.net
 Scala          2.4.0        http://scala-lang.org
+Judo           0.9          http://www.judoscript.com
+XGQL           2.0          https://sourceforge.net/projects/xgql
 
 
 e-mail:        shvets_alexander@yahoo.com, shvets@comcast.net

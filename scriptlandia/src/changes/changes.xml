@@ -244,6 +244,14 @@
       <action dev="Alexander Shvets" type="add">
         Added support for Judo language ver. 0.9.
       </action>
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for XGQL language ver. 2.0.
+      </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgraded to build 163.
+      </action>
     </release>
   </body>
 </document>
