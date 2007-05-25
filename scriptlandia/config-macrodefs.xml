@@ -10,8 +10,8 @@
 
         source("projects/scriptlandia-config/src/main/bsh/ext-xml-helper.bsh");
 
-        ExtXmlHelper xmlHelper = new ExtXmlHelper("languages");
-        xmlHelper.readLanguages();
+        ExtXmlHelper xmlHelper = new ExtXmlHelper();
+        xmlHelper.readLanguages("languages");
 
         xmlHelper.setupProperties(project);
       </script>
@@ -26,8 +26,8 @@
 
         source("projects/scriptlandia-config/src/main/bsh/ext-xml-helper.bsh");
 
-        ExtXmlHelper xmlHelper = new ExtXmlHelper("languages");
-        xmlHelper.readLanguages();
+        ExtXmlHelper xmlHelper = new ExtXmlHelper();
+        xmlHelper.readLanguages("languages");
 
         xmlHelper.copyProperties(System.getProperty("user.home") + "/.scriptlandia");
       </script>

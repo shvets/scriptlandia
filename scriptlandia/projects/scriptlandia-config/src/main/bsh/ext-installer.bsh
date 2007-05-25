@@ -24,8 +24,8 @@ public class ExtInstaller {
    *
    */
   public void install() {
-    ExtXmlHelper xmlHelper = new ExtXmlHelper("languages");
-    xmlHelper.readLanguages();
+    ExtXmlHelper xmlHelper = new ExtXmlHelper();
+    xmlHelper.readLanguages("languages");
 
     List languages = xmlHelper.getLanguages();
 
@@ -42,6 +42,24 @@ public class ExtInstaller {
     }
 
     //registerRubyGemExtensions(new String[] { "gem" });
+  }
+
+  public void installLanguage() {
+    ExtXmlHelper xmlHelper = new ExtXmlHelper();
+    Map language =  xmlHelper.readLanguage();
+
+    registerLanguage(language);
+  }
+
+  public void uninstallLanguage() {
+    ExtXmlHelper xmlHelper = new ExtXmlHelper();
+    Map language = xmlHelper.readLanguage();
+
+    List extensions = language.get("extensions");
+
+    for(int i=0; i < extensions.size(); i++) {
+      unregisterExtension(extensions.get(i), language.get("mimeType"), language.get("name"));
+    }
   }
 
   private void registerLanguage(Map language) {
@@ -239,6 +257,7 @@ public class ExtInstaller {
       //association.setDescription("tst file");
       association.setIconFileName((scriptlandiaHome + "/images/" + iconName).replace('/', File.separatorChar));
 
+
       // Adds an Action to the Association object that will 
       // open file of this type with some executable. 
       association.addAction(new Action("open", openAction));
@@ -313,22 +332,27 @@ public class ExtInstaller {
 
   /**
    * Unregisters the extension.
-   * @param string the extension or name
+   * @param extension the extension or name
    * @throws AssociationNotRegisteredException the exception
    * @throws RegisterFailedException the exception
    */
-  public void unregisterExtension(String string)
+  public void unregisterExtension(String extension, String mimeType, String name)
     throws AssociationNotRegisteredException, RegisterFailedException {
     if(OS_NAME.toLowerCase().startsWith("windows")) {
-      Association assosiation = associationService.getFileExtensionAssociation(extension);
-      System.out.println(assosiation);
+//      Association assosiation = associationService.getFileExtensionAssociation(extension);
+//      System.out.println(assosiation);
+
+      Association assosiation = new Association();
+
+      assosiation.addFileExtension(extension);
+      assosiation.setMimeType(mimeType);
 
       associationService.unregisterUserAssociation(assosiation);
     }
     else {
       Association assosiation = new Association();
 
-      assosiation.setName(string);
+      assosiation.setName(name);
 
       // Unregister an association in system level.
       // This requires root permission, would remove all the three files registered/generated:

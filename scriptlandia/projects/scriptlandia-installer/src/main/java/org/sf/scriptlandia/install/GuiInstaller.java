@@ -114,8 +114,8 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
 
       String command =
         "source(\"projects/scriptlandia-config/src/main/bsh/ext-xml-helper.bsh\");" +
-        "ExtXmlHelper xmlHelper = new ExtXmlHelper(\"languages\");" +
-        "xmlHelper.readLanguages();" +
+        "ExtXmlHelper xmlHelper = new ExtXmlHelper();" +
+        "xmlHelper.readLanguages(\"languages\");" +
         "languages = xmlHelper.getLanguages();";
 
       languages = (java.util.List)ReflectionUtil.invokePrivateMethod(

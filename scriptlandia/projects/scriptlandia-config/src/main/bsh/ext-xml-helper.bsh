@@ -27,32 +27,25 @@ sourceRelative("XmlHelper.bsh");
 public class ExtXmlHelper extends XmlHelper {
   private List languages = new ArrayList();
 
-  private String languageDir;
-
-  public ExtXmlHelper(String languageDir) {
-    this.languageDir = languageDir;
+  public List getLanguages() {
+    return languages;
   }
 
-  public void readLanguages() {
+  public void readLanguages(String languageDir) {
     languages.clear();
 
     File[] list = new File(languageDir).listFiles();
 
     for(int i=0; i < list.length; i++) {
       if(!list[i].isHidden() && list[i].isDirectory()) {
-        String language = list[i].getName();
-
-        String fileName = languageDir + "/" + language + "/language.xml";
+        String name = list[i].getName();
 
         try {
-          read(new File(fileName));
-
-          Map map = getLanguage(language);
+          Map map = readLanguage(languageDir, name);
 
           if(map != null) {
             languages.add(map);
           }
-
         }
         catch(Throwable t) {
           print("Error reding file: " + fileName + ".");
@@ -61,18 +54,28 @@ public class ExtXmlHelper extends XmlHelper {
     }
   }
 
-  public List getLanguages() {
-    return languages;
+  public Map readLanguage() {
+    String userDir = System.getProperty("user.dir");
+
+    String path = new File(userDir).getCanonicalPath();
+
+//    String fileName = userDir + "/language.xml";
+
+    return readLanguage(new File(path).getParentFile().getPath(), new File(userDir).getName());
   }
 
-  public Map getLanguage(String language) {
+  public Map readLanguage(String languageDir, String name) {
+    Map map = new HashMap();
+
+    String fileName = languageDir + "/" + name + "/language.xml";
+
+    read(new File(fileName));
+
     Element child = document.getRootElement();
 
     Element registration = getElementByName(child, "registration");
 
     List extensions = getElementByName(registration, "extensions").getChildren();
-
-    Map map = new HashMap();
 
     Attribute disabled = child.getAttribute("disabled");
 
@@ -105,12 +108,12 @@ public class ExtXmlHelper extends XmlHelper {
     map.put("mimeType", registration.getAttribute("mimeType").getValue());
     map.put("icon", registration.getAttribute("icon").getValue());
 
-    String location = "languages/" + name;
+    String location = languageDir + "/" + name;
 
     File file = new File(location + "/" + registration.getAttribute("icon").getValue());
 
     if(!file.exists()) {
-      file = new File("languages/scriptlandia/scriptlandia.ico");
+      file = new File(languageDir + "/scriptlandia/scriptlandia.ico");
     }
 
     java.util.List images = ICODecoder.read(file);
@@ -125,7 +128,7 @@ public class ExtXmlHelper extends XmlHelper {
 //    map.put("starter.version", starter.getAttribute("version").getValue());
 
     map.put("starter.groupId", "org.sf.scriptlandia");
-    map.put("starter.artifactId", language + "-starter");
+    map.put("starter.artifactId", name + "-starter");
     map.put("starter.version", "2.2.2");
 
     map.put("mainClass", getElementByName(starter, "mainClass").getValue());
@@ -204,8 +207,8 @@ public class ExtXmlHelper extends XmlHelper {
   }
 
   public static void main(String[] args) throws IOException, JDOMException {
-    ExtXmlHelper xmlHelper = new ExtXmlHelper("../../../../../languages");
-    xmlHelper.readLanguages();
+    ExtXmlHelper xmlHelper = new ExtXmlHelper();
+    xmlHelper.readLanguages("../../../../../languages");
 
     System.out.println(xmlHelper.getLanguages());
   }

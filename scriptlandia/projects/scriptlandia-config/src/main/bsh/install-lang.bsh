@@ -1,0 +1,7 @@
+// install-lang.bsh
+
+sourceRelative("ext-installer.bsh");
+
+ExtInstaller installer = new ExtInstaller();
+
+installer.installLanguage();
