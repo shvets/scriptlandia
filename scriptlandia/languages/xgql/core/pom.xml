@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>xgql</artifactId>
+  <version>2.2.2</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia Core XGQL Module</name>
+  <description>Scriptlandia XGQL Core Module</description>
+
+  <properties>
+    <xgql.version>2.0</xgql.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.symeria.xgql</groupId>
+      <artifactId>xgql</artifactId>
+      <version>${xgql.version}</version>
+    </dependency>
+  </dependencies>
+
+</project>
