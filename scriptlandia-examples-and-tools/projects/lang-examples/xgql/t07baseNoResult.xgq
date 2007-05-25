@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Test 07 : select data where id is 2 or 3
+Result : 'No result'
+-->
+<xgql:root xmlns:xgql="http://www.symeria.com/xgql/">
+    <xgql:var name="select">SELECT * FROM testXGQL WHERE id=2 OR id=3</xgql:var>
+    <xgql:execute name="select">
+        <xgql:row>
+            <xgql:var name="id">
+                <xgql:column name="id" wrap="false"/>
+            </xgql:var>
+            <xgql:var name="test">
+                <xgql:column name="name" wrap="false"/>
+            </xgql:var>
+            <value id="$id">$test</value>
+            <xgql:norow>No result</xgql:norow>
+        </xgql:row>
+    </xgql:execute>
+</xgql:root>

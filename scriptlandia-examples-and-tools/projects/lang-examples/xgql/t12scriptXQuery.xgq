@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Test 12 : xmlDoc is declared as a xml.
+          This test selected the node in xmlDoc where attribut id is '3'
+Result : <result>3</result>
+-->
+<xgql:root xmlns:xgql="http://www.symeria.com/xgql/">
+    <xgql:var name="xmlDoc">
+        <result>
+            <value>1</value>
+            <value>2</value>
+            <value id="3">3</value>
+            <value>4</value>
+            <value>5</value>
+        </result>
+    </xgql:var>
+
+    <result><xgql:process>let $doc := document{$xmlDoc} return $doc/result/value[@id='3']/text()</xgql:process></result>
+</xgql:root>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Test 02 : Create new table in database
+Result : new table testXQL. No XML result return
+-->
+<xgql:root xmlns:xgql="http://www.symeria.com/xgql/">
+    <xgql:var name="create">CREATE TABLE testXGQL (id integer, name varchar(20))</xgql:var>
+    <xgql:execute name="create"/>
+</xgql:root>

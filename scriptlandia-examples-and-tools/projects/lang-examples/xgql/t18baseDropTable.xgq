@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Test 18 : Drop the textXGQL table.
+Result : No XML return
+-->
+<xgql:root xmlns:xgql="http://www.symeria.com/xgql/">
+    <xgql:var name="drop">DROP TABLE testXGQL</xgql:var>
+    <xgql:execute name="drop"/>
+</xgql:root>

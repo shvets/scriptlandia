@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Test 16 : select id in document with xpath expression
+Result : <result><value>42</value></result>
+-->
+<xgql:root xmlns:xgql="http://www.symeria.com/xgql/">
+    <result>
+        <xgql:var name='theId'><xgql:process>let $doc :=  document{<account id='42'><name>Aurel</name><firstname>Marc</firstname><login>martin_p</login><pwd>mypassword</pwd></account>} return $doc/account/data(@id)</xgql:process></xgql:var>
+        <value id="$theId"></value>
+    </result>
+</xgql:root>

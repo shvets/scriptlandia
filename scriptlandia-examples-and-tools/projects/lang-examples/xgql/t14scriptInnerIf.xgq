@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Test 14 : multiple "if" instruction
+Result : <result><value>3</value><value>True 1</value><value>False 2</value></result>
+-->
+<xgql:root xmlns:xgql="http://www.symeria.com/xgql/">
+    <result>
+        <value>3</value>
+        <xgql:if test="1 = 1">
+            <value>True 1</value>
+            <xgql:if test="1 = 2">
+                <value>True 2</value>
+                <xgql:else>
+                    <value>False 2</value>
+                </xgql:else>
+            </xgql:if>
+            <xgql:else>
+                <value>False 1</value>
+                <xgql:if test="3 = 3">
+                    <value>True 3</value>
+                    <xgql:else>
+                        <value>False 3</value>
+                    </xgql:else>
+                </xgql:if>
+            </xgql:else>
+        </xgql:if>
+    </result>
+</xgql:root>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Test 10 : test function. 
+          func1 print <value>$theVar<value> and call func2
+          func2 decrement $theVar by 1 and call func1 if $theVar > 0
+          theVar is initialize to 5
+Result : <result><value>5</value><value>4</value><value>3</value><value>2</value><value>1</value></result>
+-->
+<xgql:root xmlns:xgql="http://www.symeria.com/xgql/">
+    <xgql:var name="theVar">5</xgql:var>
+    <xgql:function name="func1">
+        <value>$theVar</value>
+        <xgql:call name="func2"/>
+    </xgql:function>
+    <xgql:function name="func2">
+        <xgql:var name="theVar">
+            <xgql:process>$theVar - 1</xgql:process>
+        </xgql:var>
+        <xgql:if test="$theVar &gt; 0">
+            <xgql:call name="func1"/>
+        </xgql:if>
+    </xgql:function>
+    <result>
+        <xgql:call name="func1"/>
+    </result>
+</xgql:root>

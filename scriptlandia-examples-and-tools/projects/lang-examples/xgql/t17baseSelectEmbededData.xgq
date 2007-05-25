@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Test 17 : select data
+Result : <result><value id='1'>test 1</value><value id='4'>test 4</value></result>
+-->
+<xgql:root xmlns:xgql="http://www.symeria.com/xgql/">
+    <xgql:var name="select">SELECT id FROM testXGQL</xgql:var>
+    <xgql:execute name="select">
+        <result>
+            <xgql:row>
+                <xgql:var name="id"><xgql:column name="id" wrap="false"/></xgql:var>
+                <xgql:var name="select">SELECT name FROM testXGQL WHERE id='$id'</xgql:var>
+                <xgql:execute name="select">
+                    <xgql:row>
+                        <xgql:var name="name"><xgql:column name="name" wrap="false"/></xgql:var>
+                        <value id="$id">$name</value>
+                    </xgql:row>
+                </xgql:execute>
+            </xgql:row>
+        </result>
+    </xgql:execute>
+</xgql:root>

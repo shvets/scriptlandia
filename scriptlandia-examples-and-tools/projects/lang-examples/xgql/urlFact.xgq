@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Test : generate XHTML
+Result : HTML Page which calculate factoriel of number
+-->
+<xgql:root xmlns:xgql="http://www.symeria.com/xgql/">
+    <html>
+        <head>
+            <title>Fact - xgql test</title>
+        </head>
+        <body>
+            <form name="name" action="urlFact.xgq" method="post">
+                Factoriel :<input name="value" type="text"/>
+                <input name="ok" type="submit" value="OK"/><br/>
+            </form>
+            <xgql:var name="result">1</xgql:var>
+            <xgql:if test="'$request_value' != string('')">
+                $request_value! = 
+                <xgql:while test="$request_value > 0">
+                    <xgql:var name="result">
+                        <xgql:process>$result * $request_value</xgql:process>
+                    </xgql:var>
+                    <xgql:var name="request_value">
+                        <xgql:process>$request_value - 1</xgql:process>
+                    </xgql:var>
+                </xgql:while>
+                $result
+            </xgql:if>
+        </body>
+    </html>    
+</xgql:root>

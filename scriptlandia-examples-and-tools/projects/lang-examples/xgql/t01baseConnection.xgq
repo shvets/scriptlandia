@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Test 01 : Connect XGQL API to database
+Result : Test OK
+-->
+<xgql:root xmlns:xgql="http://www.symeria.com/xgql/">Test OK</xgql:root>

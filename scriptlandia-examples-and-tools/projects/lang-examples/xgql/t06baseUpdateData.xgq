@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Test 06 : update data (3, 'test 3') to (4, 'test 4')
+Result : <result><value id="1">test 1</value><value id="4">test 4</value></result>
+-->
+<xgql:root xmlns:xgql="http://www.symeria.com/xgql/">
+    <xgql:var name="delete">UPDATE testXGQL SET id=4, name='test 4' WHERE id=3</xgql:var>
+    <xgql:execute name="delete"/>
+    <xgql:var name="select">SELECT * FROM testXGQL</xgql:var>
+    <xgql:execute name="select">
+        <result>
+            <xgql:row>
+                <xgql:var name="id">
+                    <xgql:column name="id" wrap="false"/>
+                </xgql:var>
+                <xgql:var name="test">
+                    <xgql:column name="name" wrap="false"/>
+                </xgql:var>
+                <value id="$id">$test</value>
+            </xgql:row>
+        </result>
+    </xgql:execute>
+</xgql:root>

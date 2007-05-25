@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Test 08 : test variable. value1, value2 and value4 are declared in the script. value3 is declared in java. value5 is not declared.
+Result : <result><value>1</value><value>2</value><value>3</value><value>4</value><value>$value5</value></result>
+-->
+<xgql:root xmlns:xgql="http://www.symeria.com/xgql/">
+    <xgql:var name="value1">1</xgql:var>
+    <xgql:var name="value2">2</xgql:var>
+    <xgql:var name="value4">4</xgql:var>
+    <result>
+        <value>$value1</value>
+        <value>$value2</value>
+        <value>$value3</value>
+        <value>$value4</value>
+        <value>$value5</value>
+    </result>
+</xgql:root>

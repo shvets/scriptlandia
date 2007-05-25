@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Test O3 : insert data in base
+Result : (1, 'test 1'), (2, 'test 2') and (3, 'test 3') has insert in table testXGQL. No XML result return
+-->
+<xgql:root xmlns:xgql="http://www.symeria.com/xgql/">
+    <xgql:var name="insert1">INSERT INTO testXGQL2 VALUES (1, 'test 1')</xgql:var>
+    <xgql:var name="insert2">INSERT INTO testXGQL2 VALUES (2, 'test 2')</xgql:var>
+    <xgql:var name="insert3">INSERT INTO testXGQL2 VALUES (3, 'test 3')</xgql:var>
+    <xgql:execute name="insert1" connectId="myHsql2"/>
+    <xgql:execute name="insert2" connectId="myHsql2"/>
+    <xgql:execute name="insert3" connectId="myHsql2"/>
+</xgql:root>

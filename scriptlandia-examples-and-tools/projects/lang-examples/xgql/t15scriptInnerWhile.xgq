@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Test 15 : multiple while
+Result : <result><valueWhile>5</valueWhile><valueInnerWhile>4</valueInnerWhile><valueInnerWhile>3</valueInnerWhile><valueInnerWhile>2</valueInnerWhile><valueInnerWhile>1</valueInnerWhile><endInnerWhile></endInnerWhile><endWhile></endWhile></result>
+-->
+<xgql:root xmlns:xgql="http://www.symeria.com/xgql/">
+    <result>
+        <xgql:var name='theVar'>5</xgql:var>
+        <xgql:while test="$theVar &gt; 0">
+            <valueWhile>$theVar</valueWhile>
+            <xgql:var name='theVar'><xgql:process>$theVar - 1</xgql:process></xgql:var>
+            <xgql:while test="$theVar &gt; 0">
+                <valueInnerWhile>$theVar</valueInnerWhile>
+                <xgql:var name='theVar'><xgql:process>$theVar - 1</xgql:process></xgql:var>
+                <xgql:if test="$theVar = 0">
+                    <endInnerWhile/>
+                </xgql:if>
+            </xgql:while>
+            <xgql:if test="$theVar = 0">
+                <endWhile/>
+            </xgql:if>
+        </xgql:while>
+    </result>
+</xgql:root>

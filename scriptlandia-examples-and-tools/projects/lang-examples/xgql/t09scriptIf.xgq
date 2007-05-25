@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Test 09 : test if and else command. value3 is declared in preceding java test.
+Result : <result><value>3</value>TrueFalseTrue</result>
+-->
+<xgql:root xmlns:xgql="http://www.symeria.com/xgql/">
+    <result>
+        <value>$value3</value>
+        <xgql:if test="1 = 1">True<xgql:else>False</xgql:else></xgql:if>
+        <xgql:if test="1 = 2">True<xgql:else>False</xgql:else></xgql:if>
+        <xgql:if test="$value3 = 3">True<xgql:else>False</xgql:else></xgql:if>
+    </result>
+</xgql:root>

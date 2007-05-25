@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Test 13 : XSLT generation
+Result : the XSLT
+-->
+<xgql:root xmlns:xgql="http://www.symeria.com/xgql/">
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+        <xsl:param name="param"/>
+
+        <xsl:template match="@*|node()">
+            <xsl:apply-templates select="@*|node()" />
+        </xsl:template>
+
+        <xsl:template match="state">
+            <state><xsl:value-of select="$param"/></state>
+        </xsl:template>
+
+    </xsl:stylesheet>
+</xgql:root>
