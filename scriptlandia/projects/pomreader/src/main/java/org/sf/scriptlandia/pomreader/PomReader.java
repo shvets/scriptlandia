@@ -153,6 +153,7 @@ public class PomReader {
     writer.write("  <groupId>temp</groupId>\n");
     writer.write("  <artifactId>temp</artifactId>\n");
     writer.write("  <version>1.0</version>\n");
+    writer.write("  <packaging>pom</packaging>\n");
     writer.write("\n");
     writer.write("  <dependencies>\n");
     writer.write("    <dependency>\n");

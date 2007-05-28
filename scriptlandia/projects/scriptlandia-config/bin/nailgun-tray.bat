@@ -1,6 +1,5 @@
 @echo off
 
-SET JAVA_HOME=@java.home@
-SET MOBILE_JAVA_HOME=@mobile.java.home@
+SET SCRIPTLANDIA_HOME=@scriptlandia.home@
 
-@scriptlandia.home@\launcher.bat -ngtray %*
+$SCRIPTLANDIA_HOME\launcher.bat -ngtray %*

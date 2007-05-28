@@ -1,6 +1,5 @@
 #!/bin/sh
 
-export JAVA_HOME=@java.home@
-export MOBILE_JAVA_HOME=@mobile.java.home@
+SCRIPTLANDIA_HOME=@scriptlandia.home@
 
-@scriptlandia.home@/launcher.sg -ngtray $*
+$SCRIPTLANDIA_HOME/launcher.sh -ngtray $*
