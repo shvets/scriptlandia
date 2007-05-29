@@ -11,7 +11,7 @@
   <description>Scriptlandia Scala Core Module</description>
 
   <properties>
-    <scala.version>2.4.0</scala.version>
+    <scala.version>2.5.0</scala.version>
   </properties>
 
   <dependencies>
@@ -24,12 +24,6 @@
     <dependency>
       <groupId>scala</groupId>
       <artifactId>scala-compiler</artifactId>
-      <version>${scala.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>scala</groupId>
-      <artifactId>scala-actors</artifactId>
       <version>${scala.version}</version>
     </dependency>
 

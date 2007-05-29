@@ -6,27 +6,18 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/languages/ant/starter/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/fx/starter/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/antrun/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/bootstrap-mini/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/classworlds-launcher/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/pomreader/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/scriptlandia-common/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/scriptlandia-helper/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/scriptlandia-installer/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/scriptlandia-launcher/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/scriptlandia-nailgun/src/main/java" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="1.6" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$maven-repository$/velocity/velocity-dep/1.4/velocity-1.4.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -122,15 +113,6 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$maven-repository$/org/testng/testng/5.1/testng-5.1-jdk15.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
           <root url="jar://$maven-repository$/net/java/f3/1.0/f3-1.0.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -186,24 +168,6 @@
       <library>
         <CLASSES>
           <root url="jar://$maven-repository$/janino/janino/2.5.5/janino-2.5.5.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/maven/maven-embedder/2.0.4/maven-embedder-2.0.4.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$maven-repository$/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -447,6 +411,15 @@
       <library>
         <CLASSES>
           <root url="jar://$maven-repository$/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$maven-repository$/org/apache/maven/maven-embedder/2.0.6/maven-embedder-2.0.6.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

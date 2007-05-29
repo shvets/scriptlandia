@@ -250,8 +250,13 @@
       </action>
 
       <action dev="Alexander Shvets" type="fix">
-        Upgraded to build 163.
+        Upgraded to Fortress build  163.
       </action>
+
+      <action dev="Alexander Shvets" type="add">
+        Upgraded to Scala ver. 2.5.0.
+      </action>
+
     </release>
   </body>
 </document>
