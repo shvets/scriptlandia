@@ -2,7 +2,19 @@
 
 <project name="integration-bsf-scripting.antlet" default="all" basedir=".">
 
-  <import file="configure-language.xml"/>
+  <scriptdef name="configure-language" language="beanshell">
+    <attribute name="manager"/>
+    <attribute name="name"/>
+
+    <![CDATA[
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      String name = attributes.get("name");
+      String manager = attributes.get("manager");
+
+      ScriptlandiaHelper.resolveLanguageDependencies(name, manager);
+    ]]>
+  </scriptdef>
 
   <target name="all">
     <antcall target="ant"/>
