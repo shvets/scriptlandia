@@ -364,4 +364,54 @@ public class ScriptlandiaHelper {
     executeMaven("pom.xml", args);
   }
 
+  /**
+   * Resolves and downloads (if required) all libraries for the language.
+   *
+   * @param name language name
+   * @param manager language manager ("bsf" or "javax")
+   * @throws Exception the exception
+   */
+  public static void resolveLanguageDependencies(String name, String manager)
+         throws Exception {
+    String repositoryHome = System.getProperty("repository.home");
+    String scriptlandiaVersion = System.getProperty("scriptlandia.version");
+
+    ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+
+    String pom = null;
+
+    if(manager.equalsIgnoreCase("bsf")) {
+      pom = repositoryHome + "/org/sf/scriptlandia/" + name + "/" + scriptlandiaVersion +
+            "/" + name + "-" + scriptlandiaVersion + ".pom";
+      launcher.resolveDependencies(pom);
+    }
+    else {
+      pom = repositoryHome + "/javax/script/" + name + "-engine/1.0/" + name + "-engine-1.0.pom";
+
+      File pomFile = new File(pom);
+
+      if(pomFile.exists()) {
+        launcher.resolveDependencies(pom);
+      }
+      else {
+        String groupId = "javax.script";
+        String artifactId = name + "-engine";
+        String version = "1.0";
+
+        String javaVersion = System.getProperty("java.version");
+
+        String classifier = "jdk1.5";
+
+        if(javaVersion.startsWith("1.5")) {
+          classifier = "jdk1.5";
+        }
+        else if(javaVersion.startsWith("1.6")) {
+          classifier = "jdk1.6";
+        }
+
+        launcher.resolveDependencies(groupId, artifactId, version, classifier);
+      }
+    }
+  }
+
 }
