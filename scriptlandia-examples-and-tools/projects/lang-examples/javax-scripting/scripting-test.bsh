@@ -2,26 +2,17 @@
 
 import org.sf.scriptlandia.ScriptlandiaHelper;
 
-String repositoryHome = System.getProperty("repository.home");
-
 String javaVersion = System.getProperty("java.version");
 
 print("Java Version: " + javaVersion);
 
-String javaSpecificationVersion = "jdk1.5";
+import org.sf.scriptlandia.ScriptlandiaHelper;
 
-if(javaVersion.startsWith("1.5")) {
-  javeapecifivationVersion = "jdk1.5";
-}
-else if(javaVersion.startsWith("1.6")) {
-  javaSpecificationVersion = "jdk1.6";
-}
-
-
-String pom = repositoryHome + "/javax/script/all-engines-" + javaSpecificationVersion + "/1.0/all-engines-" + 
-             javaSpecificationVersion + "-1.0.pom";
-
-ScriptlandiaHelper.addMavenDependencies(pom);
+ScriptlandiaHelper.resolveLanguageDependencies("bsh", "javax");
+ScriptlandiaHelper.resolveLanguageDependencies("javascript", "javax");
+ScriptlandiaHelper.resolveLanguageDependencies("jruby", "javax");
+ScriptlandiaHelper.resolveLanguageDependencies("java", "javax");
+ScriptlandiaHelper.resolveLanguageDependencies("groovy", "javax");
 
 
 import java.util.*;
@@ -77,6 +68,13 @@ public class ScriptingTest {
     out.println("Done.");
   }
 
+  public void testBeanshell() {
+    ScriptEngine engine = manager.getEngineByName("beanshell");
+    System.out.println(engine);
+
+    engine.eval(new FileReader("scripts/hello.bsh"));
+  }
+
   public void testGroovy() {
     ScriptEngine engine = manager.getEngineByName("groovy");
     System.out.println(engine);
@@ -103,13 +101,6 @@ public class ScriptingTest {
 
     invocable.invokeFunction("Hello", new Object[] {"World" });
 */
-  }
-
-  public void testBeanshell() {
-    ScriptEngine engine = manager.getEngineByName("beanshell");
-    System.out.println(engine);
-
-    engine.eval(new FileReader("scripts/hello.bsh"));
   }
 
   public void testJavascript1() {
@@ -191,9 +182,6 @@ public class ScriptingTest {
   public static void main(String[] args) {
     ScriptingTest test = new ScriptingTest();
 
-    // test.listEngines(System.out);
-    test.listEngines(new PrintStream(new FileOutputStream("result.txt")));
-/*    test.testGroovy();
     test.testBeanshell();
     test.testJava();
     test.testJRuby();
@@ -201,6 +189,13 @@ public class ScriptingTest {
     test.testJavascript2();
     test.testJavascript3();
     test.testJavascript4();
+    test.testGroovy();
+
+    // test.listEngines(System.out);
+//    test.listEngines(new PrintStream(new FileOutputStream("result.txt")));
+//
+/*
+
 */
   }
     

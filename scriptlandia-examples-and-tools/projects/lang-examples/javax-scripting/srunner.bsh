@@ -30,8 +30,12 @@ int index = scriptName.lastIndexOf(".");
 String language = scriptName.substring(index+1);
 
 if(language.equals("rb")) {
-  language = "ruby";
+  language = "jruby";
 }
+else if(language.equals("js")) {
+  language = "javascript";
+}
+
 
 String repositoryHome = System.getProperty("repository.home");
 String scriptlandiaVersion = System.getProperty("scriptlandia.version");
@@ -41,7 +45,7 @@ String javaVersion = System.getProperty("java.version");
 
 print("Java Version: " + javaVersion);
 
-String javaSpecificationVersion = "jdk1.5";
+/*String javaSpecificationVersion = "jdk1.5";
 
 if(javaVersion.startsWith("1.5")) {
   javeapecifivationVersion = "jdk1.5";
@@ -55,6 +59,11 @@ String pom = repositoryHome + "/javax/script/all-engines-" + javaSpecificationVe
              javaSpecificationVersion + "-1.0.pom";
 
 ScriptlandiaHelper.addMavenDependencies(pom);
+*/
+
+import org.sf.scriptlandia.ScriptlandiaHelper;
+
+ScriptlandiaHelper.resolveLanguageDependencies(language, "javax");
 
 
 /*String pom = repositoryHome + "/javax/script/" + language + "-engine/1.0/" + 
