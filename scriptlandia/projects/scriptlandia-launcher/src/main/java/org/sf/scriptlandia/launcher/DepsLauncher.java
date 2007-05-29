@@ -93,6 +93,20 @@ public class DepsLauncher extends ClassworldLauncher {
    * @param artifactId artifact ID
    * @param version version
    */
+  public void resolveDependencies(String groupId, String artifactId, String version)
+         throws Exception {
+    resolveDependencies(groupId, artifactId, version, null);
+  }
+
+  /**
+   * Resolves dependencies for specified pom maven2 dependencies file.
+   *
+   * @throws Exception the exception
+   * @param groupId group ID
+   * @param artifactId artifact ID
+   * @param version version
+   * @param classifier the classifier
+   */
   public void resolveDependencies(String groupId, String artifactId, String version, String classifier)
          throws Exception {
     ClassRealm classRealm = getMainRealm();
