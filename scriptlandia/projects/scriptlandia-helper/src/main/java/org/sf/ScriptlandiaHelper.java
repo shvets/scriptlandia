@@ -421,6 +421,7 @@ public class ScriptlandiaHelper {
    * @param groupId group ID
    * @param artifactId artifact ID
    * @param version version
+   * @param classifier classifier
    */
   public void resolveDependencies(String groupId, String artifactId, String version, String classifier)
          throws Exception {
