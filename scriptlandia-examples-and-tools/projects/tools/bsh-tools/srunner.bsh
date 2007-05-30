@@ -35,15 +35,19 @@ String scriptlandiaVersion = System.getProperty("scriptlandia.version");
 
 String javaVersion = System.getProperty("java.version");
 
-print("Java Version: " + javaVersion);
+print("language: " + language);
+print("java version: " + javaVersion);
 
 import org.sf.scriptlandia.ScriptlandiaHelper;
+
+ScriptlandiaHelper.resolveLanguageDependencies("bsh", "javax");
 
 ScriptlandiaHelper.resolveLanguageDependencies(language, "javax");
 
 ScriptEngineManager manager = new ScriptEngineManager();
 
 ScriptEngine engine = manager.getEngineByName(language);
+print(engine);
 
 ScriptContext scriptContext = engine.getContext();
 scriptContext.setAttribute("javax.script.filename", scriptName, ScriptContext.GLOBAL_SCOPE);
@@ -52,7 +56,6 @@ Object result = engine.eval(new FileReader(scriptName), scriptContext);
 if(language.equals("java")) {
   ((Runnable)result.newInstance()).run();
 }
-
 
 //engine.eval(new FileReader(new File(scriptName).getPath()));
 
