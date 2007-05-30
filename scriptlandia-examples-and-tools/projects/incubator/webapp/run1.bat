@@ -1,1 +1,0 @@
-mvn -f demo.webapp jetty:run-war -Dapplication.server.port=8080
