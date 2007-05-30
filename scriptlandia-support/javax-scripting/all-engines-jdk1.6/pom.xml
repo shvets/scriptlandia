@@ -9,7 +9,7 @@
   <packaging>pom</packaging>
 
   <properties>
-    <classifier>jdk1.5</classifier>
+    <classifier>jdk1.6</classifier>
   </properties>
 
   <dependencies>
