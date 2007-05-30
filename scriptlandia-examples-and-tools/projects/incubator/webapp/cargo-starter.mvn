@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>cargo-starter</groupId>
+<!--
+  <artifactId>cargo-starter</artifactId>
+-->
+  <artifactId>demo</artifactId>
+  <version>1.0</version>
+  <packaging>war</packaging>
+
+  <properties>
+<!--
+    <container.id>jetty6x</container.id>
+    <configuration.type></configuration.type>
+    <container.type>embedded</container.type>
+
+    <container.id>jboss4x</container.id>
+    <configuration.type>runtime</configuration.type>
+    <container.type>remote</container.type>
+
+    <container.id>tomcat5x</container.id>
+    <configuration.type>standalone</configuration.type>
+    <container.type>installed</container.type>
+
+-->
+
+    <container.id>tomcat5x</container.id>
+    <configuration.type>standalone</configuration.type>
+    <container.type>installed</container.type>
+
+    <container.home>C:/AppServers/apache-tomcat-5.5.12</container.home>
+    <container.configuration.home>${project.build.directory}/${containerId}</container.configuration.home>
+
+    <server.port>8080</server.port>
+  </properties>
+
+  <build>
+    <defaultGoal>cargo:start</defaultGoal>
+
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.cargo</groupId>
+        <artifactId>cargo-maven2-plugin</artifactId>
+
+        <configuration>
+          <!-- Container configuration -->
+          <container>
+            <containerId>${container.id}</containerId>
+            <home>${container.home}</home>
+            <type>${container.type}</type>
+          </container>
+
+          <!-- Configuration to use with the container -->
+          <configuration>
+            <type>${configurationType}</type>
+
+            <home>${container.configuration.home}</home>
+
+            <properties>
+              <cargo.servlet.port>${server.port}</cargo.servlet.port>
+              <cargo.logging>high</cargo.logging>
+            </properties>
+          </configuration>
+
+        </configuration>
+      </plugin>
+
+      <plugin>
+       <groupId>org.apache.maven</groupId>
+        <artifactId>maven-beanshell-plugin</artifactId>
+        <version>1.0.0</version>
+
+        <executions>
+          <execution>
+            <id>package</id>
+            <phase>package</phase>
+            <configuration>
+              <content>
+                import org.jdesktop.jdic.desktop.Desktop;
+
+                Desktop.browse(new URL("http://localhost:${application.server.port}/${artifactId}-${version}"));
+              </content>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

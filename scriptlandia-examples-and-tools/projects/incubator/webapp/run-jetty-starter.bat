@@ -1,0 +1,1 @@
+mvn -f jetty-starter.mvn -Dserver.port=8080 -Dweb.application=target/demo-1.0.war
