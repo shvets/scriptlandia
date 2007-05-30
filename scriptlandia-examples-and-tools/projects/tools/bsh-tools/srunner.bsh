@@ -1,0 +1,59 @@
+// srunner.bsh
+
+import javax.script.*;
+
+import org.sf.scriptlandia.ScriptlandiaHelper;
+
+String[] args = bsh.args;
+
+String language = null;
+
+if(args.length == 0) {
+  print("Usage: srunner.bsh <script-name>");
+
+  return;
+}
+
+String scriptName = args[0];
+
+int index = scriptName.lastIndexOf(".");
+
+String extension = scriptName.substring(index+1);
+
+Map map = new HashMap();
+
+map.put("rb", "jruby");
+map.put("js", "javascript");
+map.put("bsh", "bsh");
+map.put("java", "java");
+map.put("groovy", "groovy");
+
+String language = (String)map.get(extension);
+
+String repositoryHome = System.getProperty("repository.home");
+String scriptlandiaVersion = System.getProperty("scriptlandia.version");
+
+String javaVersion = System.getProperty("java.version");
+
+print("Java Version: " + javaVersion);
+
+import org.sf.scriptlandia.ScriptlandiaHelper;
+
+ScriptlandiaHelper.resolveLanguageDependencies(language, "javax");
+
+ScriptEngineManager manager = new ScriptEngineManager();
+
+ScriptEngine engine = manager.getEngineByName(language);
+
+ScriptContext scriptContext = engine.getContext();
+scriptContext.setAttribute("javax.script.filename", scriptName, ScriptContext.GLOBAL_SCOPE);
+Object result = engine.eval(new FileReader(scriptName), scriptContext);
+
+if(language.equals("java")) {
+  ((Runnable)result.newInstance()).run();
+}
+
+
+//engine.eval(new FileReader(new File(scriptName).getPath()));
+
+
