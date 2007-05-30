@@ -72,14 +72,14 @@ public class ScriptingTest {
     ScriptEngine engine = manager.getEngineByName("beanshell");
     System.out.println(engine);
 
-    engine.eval(new FileReader("scripts/hello.bsh"));
+    engine.eval(new FileReader("hello.bsh"));
   }
 
   public void testGroovy() {
     ScriptEngine engine = manager.getEngineByName("groovy");
     System.out.println(engine);
 
-    engine.eval(new FileReader("scripts/HelloGroovy.groovy"));
+    engine.eval(new FileReader("HelloGroovy.groovy"));
 
 /*    ScriptContext newContext = new SimpleScriptContext();
 
@@ -95,7 +95,7 @@ public class ScriptingTest {
     ScriptEngine engine = manager.getEngineByName("jruby");
     System.out.println(engine);
 
-    engine.eval(new FileReader("scripts/HelloJRuby.rb"));
+    engine.eval(new FileReader("HelloJRuby.rb"));
 
 /*    Invocable invocable = (Invocable)engine;
 
@@ -107,7 +107,7 @@ public class ScriptingTest {
     ScriptEngine engine = manager.getEngineByName("js");
     System.out.println(engine);
 
-    engine.eval(new FileReader("scripts/HelloJavaScript.js"));
+    engine.eval(new FileReader("HelloJavaScript.js"));
   }
 
   public void testJavascript2() {
@@ -172,9 +172,9 @@ public class ScriptingTest {
     Compilable compilingEngine = (Compilable)engine;
 
     ScriptContext ctx = compilingEngine.getContext();
-    ctx.setAttribute("javax.script.filename", "scripts/Test.java", ScriptContext.GLOBAL_SCOPE);
+    ctx.setAttribute("javax.script.filename", "Test.java", ScriptContext.GLOBAL_SCOPE);
 
-    Object result = engine.eval(new FileReader("scripts/Test.java"), ctx);
+    Object result = engine.eval(new FileReader("Test.java"), ctx);
 
     ((Runnable)result.newInstance()).run();
   }
