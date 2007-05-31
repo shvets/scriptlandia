@@ -15,6 +15,17 @@
     ]]>
   </scriptdef>
 
+  <script language="beanshell">
+    List parameters = (List)project.getReference("parameters");
+
+    if(parameters == null || parameters.size() == 0) {
+      print("Please specify file name.");
+      System.exit(0);
+    }
+
+    project.setNewProperty("script.name", parameters.get(0));
+  </script>
+
   <target name="prepare">
     <configure-language name="jruby" manager="bsf"/>
 
@@ -37,7 +48,7 @@
       </path>
     </addtoclassloader>
 
-    <script language="ruby" src="jruby-swt.ruby"/>
+    <script language="ruby" src="${script.name}"/>
   </target>
 
 </project>
