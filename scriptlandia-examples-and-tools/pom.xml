@@ -61,16 +61,6 @@
             <configuration>
               <tasks>
                 <delete includeemptydirs="true">
-                  <fileset dir="projects/incubator">
-                    <include name="**/*.class"/>
-                    <include name="**/*.jar"/>
-                    <include name="**/*.log"/>
-                    <include name="**/target/**"/>
-                    <include name="**/classes/**"/>
-                  </fileset>
-                </delete>
-
-                <delete includeemptydirs="true">
                   <fileset dir="projects/lang-examples">
                     <include name="**/*.class"/>
                     <include name="**/*.jar"/>
