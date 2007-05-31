@@ -19,6 +19,7 @@ join() {
         if [ `echo $line | cut -c 1` = '#' ]; then
             return # ignore lines starting with '#'
         fi
+        line=`echo $line | sed 's/\(%\)\([a-zA-Z0-9_]*\)\(\%\)/\$\2/g'`
         line=`eval echo "$line"` # evaluate environment variables used, if any
         if [ -n "$RESULT" ]; then
             RESULT=$RESULT$SEPARATOR
@@ -31,7 +32,7 @@ processresult() {
     if [ -n "$RESULT" ]; then
         if [ "$SECTION" = "<java.ext.dirs>" ]; then
             if [ -n "$JAVA_HOME" ]; then
-                RESULT=$JAVA_HOME/lib/ext:$JAVA_HOME/jre/lib/ext:$RESULT
+                RESULT="$JAVA_HOME/lib/ext":"$JAVA_HOME/jre/lib/ext":$RESULT
             fi
         fi
         CMD=$CMD' '$SECTION_PREFIX$RESULT
@@ -99,6 +100,7 @@ processline() {
             ;;
         '<jvm.args>')
             processresult
+            CMD=$CMD' '-DSCRIPT_FILE=`basename $0`
             RESULT="";
             SECTION_PREFIX=""
             PREFIX=""
@@ -113,35 +115,56 @@ readFile() {
     SECTION=""
     RESULT=""
     line=""
+
+    if [ -n "`tail -1 $FILE`" ]; then
+        echo>>$FILE
+    fi
+
+    temp_dir=`date "+%d%m%y%H%M%S%N"`
+    mkdir $temp_dir
+    # in solaris bash shell, while loop spawns a new subshell
+    # http://www.kilala.nl/Sysadmin/script-variablescope.php
+    # so using temporary file read/write to gain access to
+    # changes in variables from while loop
     while read line
     do
         processline
-    done < $FILE 
-    processline
+	echo "$RESULT">$temp_dir/RESULT
+        echo "$SEPARATOR">$temp_dir/SEPARATOR
+        echo "$line">$temp_dir/line
+        echo "$SECTION">$temp_dir/SECTION
+        echo "$SECTION_PREFIX">$temp_dir/SECTION_PREFIX
+        echo "$PREFIX">$temp_dir/PREFIX
+        echo "$CMD">$temp_dir/CMD
+    done < $FILE
+    RESULT=`cat $temp_dir/RESULT`
+    SEPARATOR=`cat $temp_dir/SEPARATOR`
+    line=`cat $temp_dir/line`
+    SECTION=`cat $temp_dir/SECTION`
+    PREFIX=`cat $temp_dir/PREFIX`
+    SECTION_PREFIX=`cat $temp_dir/SECTION_PREFIX`
+    CMD=`cat $temp_dir/CMD`
+    rm -rf $temp_dir
+    #processline
     processresult
 }
 
-. `dirname "$0"`/launcher/processArgs.sh $*
+APP=`dirname $0`/`basename $0 .sh` # compute app name from this file name without prefix
 
-. `dirname "$0"`/launcher/customizeExecution.sh $*
-
-# APP=`basename $0 .sh` # compute app name from this file name without prefix
-
-echo $APP
-
-if [ $JAVA_HOME ] # is JAVA_HOME defined
+if [ -n "$JAVA_CMD" ]
 then
-    CMD=$JAVA_HOME/bin/java
+    CMD="$JAVA_CMD"
+elif [ -n "$JAVA_HOME" ] # is JAVA_HOME defined
+then
+    CMD="$JAVA_HOME/bin/java"
 else
     CMD=java
 fi
 
-CMD=$CMD' '-DPID=$$
-
-FILE=$APP'/launcher.conf'
-if [ -r $FILE ]; then
+FILE=$APP'.conf'
+if [ -r "$FILE" ]; then
     readFile
-    exec $CMD $*
+    $CMD $*
 else
     echo $FILE not found
 fi
