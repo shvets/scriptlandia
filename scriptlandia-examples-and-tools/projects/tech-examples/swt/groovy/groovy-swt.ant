@@ -19,6 +19,15 @@
     import org.sf.scriptlandia.ScriptlandiaHelper;
 
     ScriptlandiaHelper.resolveDependencies("groovy", "groovy-swt", "1.0", "");
+
+    List parameters = (List)project.getReference("parameters");
+
+    if(parameters == null || parameters.size() == 0) {
+      print("Please specify file name.");
+      System.exit(0);
+    }
+
+    project.setNewProperty("script.name", parameters.get(0));
   </script>
 
   <target name="run">
@@ -38,7 +47,7 @@
       </path>
     </addtoclassloader>
 
-    <script language="groovy" src="AwtSwtDemo.groovy"/>
+    <script language="groovy" src="${script.name}"/>
   </target>
 
 </project>
