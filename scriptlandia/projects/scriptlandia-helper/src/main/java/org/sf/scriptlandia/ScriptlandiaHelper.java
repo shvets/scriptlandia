@@ -423,7 +423,7 @@ public class ScriptlandiaHelper {
    * @param version version
    * @param classifier classifier
    */
-  public void resolveDependencies(String groupId, String artifactId, String version, String classifier)
+  public static void resolveDependencies(String groupId, String artifactId, String version, String classifier)
          throws Exception {
     ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
 
