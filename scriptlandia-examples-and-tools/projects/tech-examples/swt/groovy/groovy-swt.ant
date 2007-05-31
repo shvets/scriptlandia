@@ -1,0 +1,44 @@
+<!-- jruby-swt.ant -->
+
+<project name="jruby-swt.ant" default="run" basedir=".">
+  <scriptdef name="configure-language" language="beanshell">
+    <attribute name="manager"/>
+    <attribute name="name"/>
+
+    <![CDATA[
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      String name = attributes.get("name");
+      String manager = attributes.get("manager");
+
+      ScriptlandiaHelper.resolveLanguageDependencies(name, manager);
+    ]]>
+  </scriptdef>
+
+  <script language="beanshell">
+    import org.sf.scriptlandia.ScriptlandiaHelper;
+
+    ScriptlandiaHelper.resolveDependencies("groovy", "groovy-swt", "1.0", "");
+  </script>
+
+  <target name="run">
+    <configure-language name="groovy" manager="bsf"/>
+
+    <property name="eclipse.home" location="C:/Editors/eclipse-3.2.2"/>
+
+    <addtoclassloader>
+      <path>
+        <fileset dir="${eclipse.home}/plugins">
+          <include name="org.eclipse.swt.win32.win32.x86_3.2.2.v3236.jar"/>
+          <include name="org.eclipse.jface_3.2.2.M20061214-1200.jar"/>
+          <include name="org.eclipse.ui.forms_3.2.0.v20060602.jar"/>
+          <include name="org.eclipse.core.runtime_3.2.0.v20060603.jar"/>
+          <include name="org.eclipse.osgi_3.2.2.R32x_v20070118.jar"/>
+        </fileset>
+      </path>
+    </addtoclassloader>
+
+    <script language="groovy" src="AwtSwtDemo.groovy"/>
+  </target>
+
+</project>

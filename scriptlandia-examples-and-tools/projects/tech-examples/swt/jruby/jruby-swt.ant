@@ -1,0 +1,43 @@
+<!-- jruby-swt.ant -->
+
+<project name="jruby-swt.ant" default="run" basedir=".">
+  <scriptdef name="configure-language" language="beanshell">
+    <attribute name="manager"/>
+    <attribute name="name"/>
+
+    <![CDATA[
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      String name = attributes.get("name");
+      String manager = attributes.get("manager");
+
+      ScriptlandiaHelper.resolveLanguageDependencies(name, manager);
+    ]]>
+  </scriptdef>
+
+  <target name="prepare">
+    <configure-language name="jruby" manager="bsf"/>
+
+    <unzip src="${repository.home}/org/eclipse/swt-win32/3.2.1/swt-win32-3.2.1.jar"
+           dest="${repository.home}/org/eclipse/swt-win32/3.2.1">
+      <patternset>
+        <include name="*.dll"/>
+      </patternset>
+    </unzip>
+  </target>
+
+  <target name="run">
+    <configure-language name="jruby" manager="bsf"/>
+
+    <addtoclassloader>
+      <path>
+        <fileset dir="${repository.home}/org/eclipse/swt-win32/3.2.1">
+          <include name="swt-win32-3.2.1.jar"/>
+        </fileset>
+      </path>
+    </addtoclassloader>
+
+    <script language="ruby" src="jruby-swt.ruby"/>
+  </target>
+
+</project>
