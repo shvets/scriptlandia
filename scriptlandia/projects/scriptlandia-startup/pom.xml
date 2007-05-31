@@ -16,6 +16,7 @@
   <properties>
     <fortress.version>163</fortress.version>
     <ant.version>1.7.0</ant.version>
+    <jruby.version>1.0.0RC2</jruby.version>
   </properties>
 
   <dependencies>
@@ -100,7 +101,7 @@
     <dependency>
       <groupId>jruby</groupId>
       <artifactId>jruby-lib</artifactId>
-      <version>0.9.9</version>
+      <version>${jruby.version}</version>
     </dependency>
 
     <dependency>

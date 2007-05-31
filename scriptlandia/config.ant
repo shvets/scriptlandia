@@ -221,7 +221,7 @@
 
   <target name="unzip.jruby.lib" if="jruby.lib.is.present">
     <unzip src="${repository.home}/jruby/jruby-lib/${jruby.version}/jruby-lib-${jruby.version}.jar"
-           dest="${repository.home}/jruby/jruby/${jruby.version}/lib/ruby" overwrite="false"/>
+           dest="${repository.home}/jruby/jruby/${jruby.version}/lib" overwrite="false"/>
   </target>
 
   <target name="unzip.jdic.native.libs" if="jdic.native.libs.present">

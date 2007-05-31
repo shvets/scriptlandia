@@ -257,6 +257,9 @@
         Upgraded to Scala ver. 2.5.0.
       </action>
 
+      <action dev="Alexander Shvets" type="fix">
+        Upgrade JRuby up to version 1.0.0RC2.
+      </action>
     </release>
   </body>
 </document>

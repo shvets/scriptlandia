@@ -29,7 +29,6 @@
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.iws" afterPath="$PROJECT_DIR$/Scriptlandia.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-config/bin/launcher/app.bat" afterPath="$PROJECT_DIR$/projects/scriptlandia-config/bin/launcher/app.bat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-config/bin/launcher/app.sh" afterPath="$PROJECT_DIR$/projects/scriptlandia-config/bin/launcher/app.sh" />
     </list>
     <list name="Failed commit: Default" comment="adding new method" />
@@ -275,7 +274,7 @@
       <file leaf-file-name="app.bat" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/projects/scriptlandia-config/bin/launcher/app.bat">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="2990" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="5470" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -1381,7 +1380,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-config/bin/launcher/app.bat">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="2990" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="5470" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
