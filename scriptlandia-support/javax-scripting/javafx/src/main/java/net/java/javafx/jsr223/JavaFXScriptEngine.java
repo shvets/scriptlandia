@@ -36,8 +36,8 @@ public class JavaFXScriptEngine extends AbstractScriptEngine {
     if(scriptName == null) {
       scriptName = "JavaFXScript";
     }
-    applyBindings(200);
-    applyBindings(100);
+    applyBindings(200, context);
+    applyBindings(100, context);
     CompilationUnit compilationUnit = compilation.readCompilationUnit(scriptName.toString(), reader);
     net.java.javafx.type.expr.ValidationError err = compilation.getLastError();
     if(err != null) {
@@ -69,8 +69,14 @@ public class JavaFXScriptEngine extends AbstractScriptEngine {
     }
   }
 
-  private void applyBindings(int scope) throws ScriptException {
+  private void applyBindings(int scope, ScriptContext context) throws ScriptException {
+    if(context == null) {
+      return;
+    }
     Bindings bindings = context.getBindings(scope);
+    if(bindings == null) {
+      return;
+    }
     for(Iterator i$ = bindings.keySet().iterator(); i$.hasNext();) {
       String objectName = (String)i$.next();
       int colon = objectName.indexOf(":");
@@ -93,7 +99,7 @@ public class JavaFXScriptEngine extends AbstractScriptEngine {
 
         type.addNamedValue(objName, valueList);
       } else {
-        throw new ScriptException((new StringBuilder()).append("Invalid binding name ").append(objectName).toString());
+        throw new ScriptException((new StringBuilder()).append("Invalid binding name '").append(objectName).append("'. Must be of the form 'beanName:javaTypeFQN'").toString());
       }
     }
 

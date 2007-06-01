@@ -3,6 +3,7 @@ package net.java.javafx.jsr223;
 import java.util.*;
 import javax.script.*;
 
+
 public class JavaFXScriptEngineFactory
   implements ScriptEngineFactory {
 
@@ -46,10 +47,10 @@ public class JavaFXScriptEngineFactory
     int len$ = arr$.length;
     for(int i$ = 0; i$ < len$; i$++) {
       String argument = arr$[i$];
-      builder.append(argument);
       if(more) {
         builder.append(',');
       }
+      builder.append(argument);
       more = true;
     }
 

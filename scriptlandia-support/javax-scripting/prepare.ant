@@ -32,6 +32,7 @@
     <clean-project name="velocity"/>
     <clean-project name="xpath"/>
     <clean-project name="xslt"/>
+    <clean-project name="javafx"/>
   </target>
 
   <target name="clean-sources">
