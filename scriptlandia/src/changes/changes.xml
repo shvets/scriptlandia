@@ -258,7 +258,7 @@
       </action>
 
       <action dev="Alexander Shvets" type="fix">
-        Upgrade JRuby up to version 1.0.0RC2.
+        Upgrade JRuby up to version 1.0.0RC3.
       </action>
     </release>
   </body>

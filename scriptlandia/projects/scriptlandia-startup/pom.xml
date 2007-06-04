@@ -16,7 +16,7 @@
   <properties>
     <fortress.version>163</fortress.version>
     <ant.version>1.7.0</ant.version>
-    <jruby.version>1.0.0RC2</jruby.version>
+    <jruby.version>1.0.0RC3</jruby.version>
   </properties>
 
   <dependencies>

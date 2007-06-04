@@ -11,7 +11,7 @@
   <description>Scriptlandia JavaFX Core Module</description>
 
   <properties>
-    <javafx.version>20070506220507</javafx.version>
+    <javafx.version>200706011412</javafx.version>
   </properties>
 
   <dependencies>
@@ -19,18 +19,6 @@
       <groupId>javafx</groupId>
       <artifactId>javafx</artifactId>
       <version>${javafx.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>javafx</groupId>
-      <artifactId>filters</artifactId>
-      <version>${javafx.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>net.java.dev.swing-layout</groupId>
-      <artifactId>swing-layout</artifactId>
-      <version>1.0.1</version>
     </dependency>
   </dependencies>
 
