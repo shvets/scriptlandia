@@ -1,8 +1,8 @@
 @echo off
 
 set JAVA_HOME=@java.home@
-SET MOBILE_JAVA_HOME=@mobile.java.home@
-SET SCRIPTLANDIA_HOME=@scriptlandia.home@
+set MOBILE_JAVA_HOME=@mobile.java.home@
+set SCRIPTLANDIA_HOME=@scriptlandia.home@
 
 SET NAILGUN=@repository.home@\com\martiansoftware\nailgun-bin\@nailgun.version@\ng
 

@@ -20,7 +20,8 @@ pause
 goto end
 
 :conf
-set CMD=java.exe
+rem set CMD=java.exe
+if not defined CMD set CMD=java.exe
 if defined JAVA_HOME set CMD="%JAVA_HOME%\bin\%CMD%"
 if defined JAVA_CMD set CMD="%JAVA_CMD%"
 set JAVA_CMD=
