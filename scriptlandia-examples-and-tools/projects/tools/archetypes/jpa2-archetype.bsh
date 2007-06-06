@@ -1,0 +1,19 @@
+// jpa2-archetype.bsh
+
+sourceRelative("create-archetype.bsh");
+
+String[] archetypes = { 
+  "jpa-maven-archetype" // JPA application
+};
+
+
+CreateArchetype frame = new CreateArchetype("JPA");
+
+frame.setArchetypes(archetypes);
+frame.setArchetypeGroupId("com.rfc.maven.archetypes");
+frame.setArchetypeArtifactIdPrefix("");
+frame.setArchetypeVersion("1.0-SNAPSHOT");
+frame.setRemoteRepositories("http://maven.rodcoffin.com/repo");
+
+frame.setVisible(true);
+

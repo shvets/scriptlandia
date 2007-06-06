@@ -1,0 +1,18 @@
+// appfuse-archetype.bsh
+
+sourceRelative("create-archetype.bsh");
+
+String[] archetypes = { 
+  "struts2-archetype-starter" // A starter Struts 2 application with Sitemesh, DWR, and Spring
+};
+
+
+CreateArchetype frame = new CreateArchetype("Struts2");
+
+frame.setArchetypes(archetypes);
+frame.setArchetypeGroupId("org.apache.struts");
+frame.setArchetypeArtifactIdPrefix("");
+frame.setArchetypeVersion("2.0.5-SNAPSHOT");
+frame.setRemoteRepositories("http://people.apache.org/repo/m2-snapshot-repository");
+
+frame.setVisible(true);

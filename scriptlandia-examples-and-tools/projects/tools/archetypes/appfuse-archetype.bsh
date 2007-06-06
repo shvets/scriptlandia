@@ -3,8 +3,15 @@
 sourceRelative("create-archetype.bsh");
 
 String[] archetypes = { 
-  "basic-jsf", "basic-spring", "basic-struts", "basic-tapestry", 
-  "modular-jsf", "modular-spring", "modular-struts", "modular-tapestry"
+  "basic-jsf",       // archetype for creating a web application with Hibernate, Spring and JSF
+  "basic-spring",    // archetype for creating a web application with Hibernate, Spring and Spring MVC
+  "basic-struts",    // archetype for creating a web application with Hibernate, Spring and Struts 2
+  "basic-tapestry",  // archetype for creating a web application with Hibernate, Spring and Tapestry 4
+  "core",            // archetype for creating a jar application with Hibernate and Spring and XFire
+  "modular-jsf",     // archetype for creating a modular application with Hibernate, Spring and JSF
+  "modular-spring",  // archetype for creating a modular application with Hibernate, Spring and Spring MVC
+  "modular-struts",  // archetype for creating a modular application with Hibernate, Spring and Struts 2
+  "modular-tapestry" // archetype for creating a modular application with Hibernate, Spring and Tapestry 4
 };
 
 CreateArchetype frame = new CreateArchetype("Appfuse");
@@ -12,7 +19,7 @@ CreateArchetype frame = new CreateArchetype("Appfuse");
 frame.setArchetypes(archetypes);
 frame.setArchetypeGroupId("org.appfuse");
 frame.setArchetypeArtifactIdPrefix("appfuse-");
-frame.setArchetypeVersion("1.0-m3");
+frame.setArchetypeVersion("2.0-m5");
 frame.setRemoteRepositories("http://static.appfuse.org/repository");
 
 frame.setVisible(true);

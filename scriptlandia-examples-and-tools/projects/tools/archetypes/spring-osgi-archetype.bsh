@@ -1,0 +1,17 @@
+// appfuse-archetype.bsh
+
+sourceRelative("create-archetype.bsh");
+
+String[] archetypes = { 
+  "spring-osgi-bundle-archetype" // Spring-OSGi archetype
+};
+
+CreateArchetype frame = new CreateArchetype("Spring-OSGI");
+
+frame.setArchetypes(archetypes);
+frame.setArchetypeGroupId("org.springframework.osgi");
+frame.setArchetypeArtifactIdPrefix("");
+frame.setArchetypeVersion("1.0-SNAPSHOT");
+frame.setRemoteRepositories("http://static.springframework.org/maven2-snapshots");
+
+frame.setVisible(true);
