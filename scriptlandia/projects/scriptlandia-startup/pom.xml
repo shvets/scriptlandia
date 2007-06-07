@@ -128,13 +128,11 @@
       <version>0.6</version>
     </dependency>
 
-<!--
     <dependency>
       <groupId>com.sun.tools</groupId>
       <artifactId>javac</artifactId>
       <version>7.0-b13</version>
     </dependency>
--->
   </dependencies>
 
   <build>
