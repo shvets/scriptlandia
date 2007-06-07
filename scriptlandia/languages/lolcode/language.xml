@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<language name="lolcode" groupId="lolcode" artifactId="lolcode" version="0.1">
+  <registration mimeType="text/lolcode" icon="scriptlandia.ico">
+    <extensions>
+      <extension>lol</extension>
+      <extension>LOL</extension>
+      <extension>lcd</extension>
+    </extensions>
+
+    <starter groupId="org.sf.scriptlandia" artifactId="lolcode" version="2.2.2">
+      <mainClass>com.lolcode.Run</mainClass>
+    </starter>
+  </registration>
+</language>

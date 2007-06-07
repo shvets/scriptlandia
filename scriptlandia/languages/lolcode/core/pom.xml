@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>lolcode</artifactId>
+  <version>2.2.2</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia LOLCODE Core Module</name>
+  <description>Scriptlandia LOLCODE Core Module</description>
+
+  <properties>
+    <lolcode.version>0.1</lolcode.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>lolcode</groupId>
+      <artifactId>lolcode</artifactId>
+      <version>${lolcode.version}</version>
+    </dependency>
+  </dependencies>
+
+</project>

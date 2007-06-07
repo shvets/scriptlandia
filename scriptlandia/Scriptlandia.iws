@@ -29,7 +29,7 @@
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.iws" afterPath="$PROJECT_DIR$/Scriptlandia.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-config/bin/launcher/app.sh" afterPath="$PROJECT_DIR$/projects/scriptlandia-config/bin/launcher/app.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-config/bin/launcher/app.bat" afterPath="$PROJECT_DIR$/projects/scriptlandia-config/bin/launcher/app.bat" />
     </list>
     <list name="Failed commit: Default" comment="adding new method" />
   </component>
@@ -217,10 +217,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PomReader.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PomReader.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/projects/pomreader/src/main/java/org/sf/scriptlandia/pomreader/PomReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="71" selection-start="3110" selection-end="3110" vertical-scroll-proportion="0.026833631">
+            <state line="34" column="22" selection-start="1094" selection-end="1094" vertical-scroll-proportion="0.509839">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileSystem.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://C:/Java/jdk1.6.0/src.zip!/java/io/FileSystem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="111" column="39" selection-start="3425" selection-end="3435" vertical-scroll-proportion="1.4597496">
               <folding />
             </state>
           </provider>
@@ -271,10 +280,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.bat" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="app.bat" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/scriptlandia-config/bin/launcher/app.bat">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="5470" vertical-scroll-proportion="0.0">
+            <state line="10" column="89" selection-start="428" selection-end="428" vertical-scroll-proportion="0.2757353">
               <folding />
             </state>
           </provider>
@@ -347,6 +356,60 @@
   <component name="NamedScopeManager" />
   <component name="PackagesPane">
     <subPane>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Scriptlandia.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewLibrariesNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Scriptlandia.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewLibrariesNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Scriptlandia.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewLibrariesNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="io" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+        </PATH_ELEMENT>
+      </PATH>
       <PATH>
         <PATH_ELEMENT>
           <option name="myItemId" value="Scriptlandia.ipr" />
@@ -545,14 +608,14 @@
     <option name="lastEditedConfigurable" value="Scriptlandia" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="0.5" version="1" splitterProportion="0.5">
+    <navigator currentView="PackagesPane" proportions="0.5" version="1" splitterProportion="0.5">
       <flattenPackages ProjectPane="true" />
       <showMembers ProjectPane="false" />
       <showModules />
       <showLibraryContents />
       <hideEmptyPackages ProjectPane="true" />
       <abbreviatePackageNames />
-      <showStructure Favorites="false" PackagesPane="false" Scope="false" ProjectPane="false" />
+      <showStructure ProjectPane="false" PackagesPane="false" Scope="false" Favorites="false" />
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
@@ -571,8 +634,8 @@
     <property name="cvs_file_history_flatOrder1" value="1" />
     <property name="cvs_file_history_flatWidth1" value="231" />
     <property name="cvs_file_history_treeWidth1" value="231" />
-    <property name="cvs_file_history_treeWidth3" value="231" />
     <property name="cvs_file_history_treeOrder2" value="2" />
+    <property name="cvs_file_history_treeWidth3" value="231" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="cvs_file_history_flatOrder2" value="2" />
     <property name="MemberChooser.showClasses" value="true" />
@@ -581,8 +644,8 @@
     <property name="cvs_file_history_treeWidth2" value="232" />
     <property name="cvs_file_history_flatOrder3" value="3" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="cvs_file_history_treeOrder0" value="0" />
     <property name="RunManagerConfig.showSettingsBeforeRunnig" value="true" />
+    <property name="cvs_file_history_treeOrder0" value="0" />
   </component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="true" />
@@ -1032,6 +1095,7 @@
         </PATH_ELEMENT>
       </PATH>
     </subPane>
+    <subPane subId="Problems" />
     <subPane subId="Production">
       <PATH>
         <PATH_ELEMENT USER_OBJECT="Root">
@@ -1040,7 +1104,6 @@
         </PATH_ELEMENT>
       </PATH>
     </subPane>
-    <subPane subId="Problems" />
     <subPane subId="Project">
       <PATH>
         <PATH_ELEMENT USER_OBJECT="Root">
@@ -1168,11 +1231,11 @@
       <window_info id="Tapestry Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="11" />
       <window_info id="IView" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295082" order="16" />
       <window_info id="IntelliTail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="23" />
-      <window_info id="BSFConsole" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="25" />
       <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="5" />
+      <window_info id="BSFConsole" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="25" />
       <window_info id="TCPMON" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
-      <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="26" />
       <window_info id="DBHelper" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
+      <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="26" />
       <window_info id="DBOutput" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
       <window_info id="Checkstyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" order="20" />
@@ -1280,13 +1343,6 @@
     <option name="myLastEditedConfigurable" value="Default" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/languages/class/starter/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="6" selection-start="579" selection-end="579" vertical-scroll-proportion="0.38045377">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/languages/classworlds/starter/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="6" selection-start="601" selection-end="601" vertical-scroll-proportion="0.38045377">
@@ -1329,13 +1385,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projects/pomreader/src/main/java/org/sf/scriptlandia/pomreader/PomReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="71" selection-start="3110" selection-end="3110" vertical-scroll-proportion="0.026833631">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projects/pomreader/src/main/java/org/sf/scriptlandia/pomreader/OnlineArtifactDownloader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="232" column="27" selection-start="8067" selection-end="8067" vertical-scroll-proportion="0.02757353">
@@ -1350,23 +1399,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projects/bootstrap-mini/src/main/java/org/apache/maven/bootstrap/model/Repository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="0" selection-start="2713" selection-end="2713" vertical-scroll-proportion="0.026833631">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projects/bootstrap-mini/src/main/java/org/apache/maven/bootstrap/model/Dependency.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="175" column="102" selection-start="3889" selection-end="3889" vertical-scroll-proportion="0.026833631">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/ScriptlandiaLauncher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="48" selection-start="554" selection-end="554" vertical-scroll-proportion="0.026833631">
           <folding />
         </state>
       </provider>
@@ -1378,9 +1413,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/ScriptlandiaLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="48" selection-start="554" selection-end="554" vertical-scroll-proportion="0.026833631">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-config/bin/launcher/app.bat">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="5470" vertical-scroll-proportion="0.0">
+        <state line="10" column="89" selection-start="428" selection-end="428" vertical-scroll-proportion="0.2757353">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/bootstrap-mini/src/main/java/org/apache/maven/bootstrap/model/Repository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="0" selection-start="2713" selection-end="2713" vertical-scroll-proportion="0.026833631">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.6.0/src.zip!/java/io/FileSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="39" selection-start="3425" selection-end="3435" vertical-scroll-proportion="1.4597496">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/pomreader/src/main/java/org/sf/scriptlandia/pomreader/PomReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="22" selection-start="1094" selection-end="1094" vertical-scroll-proportion="0.509839">
           <folding />
         </state>
       </provider>

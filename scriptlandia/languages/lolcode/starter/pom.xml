@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>lolcode-starter</artifactId>
+  <version>2.2.2</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia LOLCODE Starter Module</name>
+  <description>Scriptlandia LOLCODE Starter Module</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>scriptlandia-helper</artifactId>
+      <version>2.2.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>lolcode</artifactId>
+      <version>2.2.2</version>
+      <type>pom</type>
+    </dependency>
+  </dependencies>
+
+</project>
