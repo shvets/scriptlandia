@@ -72,16 +72,17 @@ public class LauncherHelper {
     String jaskellVersion = (String)scriptlandiaProps1.get("jaskell.version");
     String jrubyVersion = (String)scriptlandiaProps1.get("jruby.version");
     String jythonVersion = (String)scriptlandiaProps1.get("jython.version");
-    String javacInternalVersion = (String)scriptlandiaProps2.get("javac.internal.version");
+//    String javacInternalVersion = (String)scriptlandiaProps2.get("java.compiler.version");
 
-    String javacInternalBase = (String) scriptlandiaProps2.get("javac.internal.base");
+    String javaCompilerVersion = (String) scriptlandiaProps2.get("java.compiler.version");
     
     System.setProperty("maven.repo.local", repositoryHome);
     System.setProperty("repository.home", repositoryHome);
     System.setProperty("scriptlandia.home", scriptlandiaHome);
 
-    System.setProperty("javac.internal.base", javacInternalBase);    
-    System.setProperty("javac.internal.version", javacInternalVersion);
+//    System.setProperty("javac.internal.base", javacInternalBase);    
+//    System.setProperty("javac.internal.version", javacInternalVersion);
+    System.setProperty("java.compiler.version", javaCompilerVersion);
 
     System.setProperty("python.home", repositoryHome + "/jython/jython/" + jythonVersion);
     System.setProperty("python.cachedir", repositoryHome + "/jython/jython/" + jythonVersion + "/cachedir");

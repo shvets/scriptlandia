@@ -112,17 +112,19 @@ public class CommonUtil {
         compilerJar = toolsJar;
       }
       else {
-        String javacInternalVersion = System.getProperty("javac.internal.version");
+        String javaCompilerVersion = System.getProperty("java.compiler.version");
 
-        toolsJar = new File(System.getProperty("repository.home"),
-          "/com/sun/tools/javac/" + javacInternalVersion + "/javac-" + javacInternalVersion + ".jar");
-        if (toolsJar.exists()) {
-          compilerJar = toolsJar;
+        if(javaCompilerVersion != null) {
+          toolsJar = new File(System.getProperty("repository.home"),
+            "/com/sun/tools/javac/" + javaCompilerVersion + "/javac-" + javaCompilerVersion + ".jar");
+          if (toolsJar.exists()) {
+            compilerJar = toolsJar;
+          }
         }
       }
     }
 
-    String javaVersion = System.getProperty("java.version");
+/*    String javaVersion = System.getProperty("java.version");
 
     if(javaVersion.startsWith("1.5")) {
       String javacInternalVersion = "7.0-b07";
@@ -130,7 +132,7 @@ public class CommonUtil {
       compilerJar = new File(System.getProperty("repository.home"),
             "/com/sun/tools/javac/" + javacInternalVersion + "/javac-" + javacInternalVersion + ".jar");
     }
-
+  */
     return compilerJar;
   }
 
