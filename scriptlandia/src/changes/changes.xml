@@ -233,11 +233,11 @@
         Added support for Java FX.
       </action>
 
-      <action dev="Alexander Shvets" type="add">
+      <action dev="Alexander Shvets" type="remove">
         Removing image4j and nailgun projects. Used binaries freom repository instead.
       </action>
 
-      <action dev="Alexander Shvets" type="add">
+      <action dev="Alexander Shvets" type="fix">
         Upgrade Scriptella up to version 0.9.
       </action>        
 
@@ -253,12 +253,12 @@
         Upgraded to Fortress build  163.
       </action>
 
-      <action dev="Alexander Shvets" type="add">
+      <action dev="Alexander Shvets" type="fix">
         Upgraded to Scala ver. 2.5.0.
       </action>
 
       <action dev="Alexander Shvets" type="fix">
-        Upgrade JRuby up to version 1.0.0RC3.
+        Upgrade JRuby up to version 1.0.
       </action>
     </release>
   </body>
