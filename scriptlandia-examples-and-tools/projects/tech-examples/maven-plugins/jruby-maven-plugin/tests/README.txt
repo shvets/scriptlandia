@@ -1,1 +1,0 @@
-mvn -f jruby-maven-plugin-test.maven jruby:run
