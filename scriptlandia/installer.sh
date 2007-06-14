@@ -7,13 +7,13 @@ fi
 . ./config.sh
 
 BOOTSTRAP_MINI_PROJECT=projects/bootstrap-mini
-SCRIPTLANDIA_COMMON_PROJECT=projects/scriptlandia-common
+SCRIPTLANDIA_COMMON_PROJECT=projects/universal-launcher-common
 POM_READER_PROJECT=projects/pomreader
 SCRIPTLANDIA_INSTALLER_PROJECT=projects/scriptlandia-installer
 
 CLASSPATH=$BOOTSTRAP_MINI_PROJECT/target/bootstrap-mini.jar
 CLASSPATH=$CLASSPATH:$POM_READER_PROJECT/target/pomreader.jar
-CLASSPATH=$CLASSPATH:$SCRIPTLANDIA_COMMON_PROJECT/target/scriptlandia-common.jar
+CLASSPATH=$CLASSPATH:$SCRIPTLANDIA_COMMON_PROJECT/target/universal-launcher-common.jar
 CLASSPATH=$CLASSPATH:$SCRIPTLANDIA_INSTALLER_PROJECT/target/scriptlandia-installer.jar
 
 # MAIN_CLASS=org.sf.scriptlandia.install.CoreInstaller

@@ -8,7 +8,7 @@ import org.apache.tools.ant.Task;
 import org.apache.tools.ant.types.Path;
 import org.apache.tools.ant.types.Reference;
 
-import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+import org.sf.scriptlandia.launcher.UniversalLauncher;
 import org.sf.scriptlandia.launcher.LauncherException;
 
 /**
@@ -81,7 +81,7 @@ public final class AddToClassLoaderTask extends Task {
     final String [] list = path.list();
 
     if (list.length > 0) {
-      ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+      UniversalLauncher launcher = UniversalLauncher.getInstance();
 
       for (String aList : list) {
         final File file = new File(aList);

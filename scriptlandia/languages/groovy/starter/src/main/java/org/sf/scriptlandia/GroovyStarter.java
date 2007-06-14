@@ -46,7 +46,7 @@
 
 package org.sf.scriptlandia;
 
-import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+import org.sf.scriptlandia.launcher.UniversalLauncher;
 import org.codehaus.classworlds.ClassRealm;
 import org.codehaus.classworlds.NoSuchRealmException;
 
@@ -165,7 +165,7 @@ public class GroovyStarter {
     }*/
     
     public static void main(String args[]) throws Exception {
-      ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+      UniversalLauncher launcher = UniversalLauncher.getInstance();
 
       ClassRealm mainRealm = launcher.getMainRealm();
 

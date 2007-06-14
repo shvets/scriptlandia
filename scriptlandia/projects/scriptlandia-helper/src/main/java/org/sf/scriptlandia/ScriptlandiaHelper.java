@@ -17,7 +17,7 @@ import org.codehaus.classworlds.ClassRealm;
 import org.codehaus.classworlds.ClassWorld;
 import org.codehaus.plexus.embed.Embedder;
 import org.sf.scriptlandia.util.ReflectionUtil;
-import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+import org.sf.scriptlandia.launcher.UniversalLauncher;
 import org.sf.scriptlandia.pomreader.RepositoriesReader;
 
 import java.io.File;
@@ -85,7 +85,7 @@ public class ScriptlandiaHelper {
    * @throws Exception some exception
    */
   public static void addMavenDependencies(String pomName) throws Exception {
-    ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+    UniversalLauncher launcher = UniversalLauncher.getInstance();
     ClassRealm classRealm = launcher.getMainRealm();
 
     addMavenDependencies(pomName, classRealm);
@@ -233,7 +233,7 @@ public class ScriptlandiaHelper {
 
     dependenciesTask.execute();
 
-    ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+    UniversalLauncher launcher = UniversalLauncher.getInstance();
     ClassRealm classRealm = launcher.getMainRealm();
 
     Path path = (Path)project.getReference("maven." + useScope + ".classpath");
@@ -348,7 +348,7 @@ public class ScriptlandiaHelper {
 
     newArgsList.toArray(newArgs);
 
-    ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+    UniversalLauncher launcher = UniversalLauncher.getInstance();
     ClassWorld classWorld = launcher.getMainRealm().getWorld();
 
     MavenCli.main(newArgs, classWorld);
@@ -376,7 +376,7 @@ public class ScriptlandiaHelper {
     String repositoryHome = System.getProperty("repository.home");
     String scriptlandiaVersion = System.getProperty("scriptlandia.version");
 
-    ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+    UniversalLauncher launcher = UniversalLauncher.getInstance();
 
     String pom = null;
 
@@ -425,7 +425,7 @@ public class ScriptlandiaHelper {
    */
   public static void resolveDependencies(String groupId, String artifactId, String version, String classifier)
          throws Exception {
-    ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+    UniversalLauncher launcher = UniversalLauncher.getInstance();
 
     launcher.resolveDependencies(groupId, artifactId, version, classifier);
   }

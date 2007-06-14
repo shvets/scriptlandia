@@ -11,7 +11,7 @@
   <target name="install.projects">
     <script language="beanshell">
       addClassPath("projects/classworlds-launcher/target/classworlds-launcher.jar");
-      addClassPath("projects/scriptlandia-common/target/scriptlandia-common.jar");
+      addClassPath("projects/universal-launcher-common/target/universal-launcher-common.jar");
       addClassPath("projects/bootstrap-mini/target/bootstrap-mini.jar");
       addClassPath("projects/pomreader/target/pomreader.jar");
       addClassPath("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
@@ -21,7 +21,7 @@
       ProjectInstaller installer = new ProjectInstaller();
 
       installer.install("projects/bootstrap-mini", false);
-      installer.install("projects/scriptlandia-common", false);
+      installer.install("projects/universal-launcher-common", false);
       installer.install("projects/classworlds-launcher", false);
 
       installer.install("projects/pomreader", false);
@@ -35,11 +35,9 @@
 
       ProjectInstaller installer = new ProjectInstaller();
 
-      installer.install("projects/scriptlandia-launcher", false);
+      installer.install("projects/universal-launcher", false);
       installer.install("projects/scriptlandia-nailgun", false);
     </script>
-
-    <installLanguages section="starter"/>
 
     <script language="beanshell">
       import org.sf.scriptlandia.install.ProjectInstaller;
@@ -48,6 +46,8 @@
 
       installer.install("projects/scriptlandia-helper", false);
     </script>
+
+    <installLanguages section="starter"/>
   </target>
 
   <target name="install.libraries">

@@ -9,7 +9,7 @@ import org.sf.classfile.ClassFile;
 import org.sf.classfile.ConstPool;
 import org.sf.classfile.PoolEntry;
 import org.sf.scriptlandia.util.ReflectionUtil;
-import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+import org.sf.scriptlandia.launcher.UniversalLauncher;
 import org.codehaus.classworlds.ClassWorld;
 import org.codehaus.classworlds.ClassRealm;
 
@@ -72,7 +72,7 @@ public final class ClassStarter {
 
     String parent = new File(tmp2).getParent();
 
-    ScriptlandiaLauncher.getInstance().addClasspathEntry(new File(parent).toURI().toURL());
+    UniversalLauncher.getInstance().addClasspathEntry(new File(parent).toURI().toURL());
 
     final List<String> newArgsList = new ArrayList<String>();
 

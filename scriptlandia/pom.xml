@@ -53,9 +53,9 @@
     <module>projects/bootstrap-mini</module>
     <module>projects/classworlds-launcher</module>
     <module>projects/pomreader</module>
-    <module>projects/scriptlandia-common</module>
+    <module>projects/universal-launcher-common</module>
     <module>projects/scriptlandia-installer</module>
-    <module>projects/scriptlandia-launcher</module>
+    <module>projects/universal-launcher</module>
     <module>projects/scriptlandia-nailgun</module>
     <module>projects/scriptlandia-startup</module>
   </modules>

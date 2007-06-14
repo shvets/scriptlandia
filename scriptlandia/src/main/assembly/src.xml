@@ -40,8 +40,8 @@
         <include>classworlds-launcher/pom.xml</include>
         <include>classworlds-launcher/src/**</include>
 
-        <include>scriptlandia-common/pom.xml</include>
-        <include>scriptlandia-common/src/**</include>
+        <include>universal-launcher-common/pom.xml</include>
+        <include>universal-launcher-common/src/**</include>
 
         <include>antrun/pom.xml</include>
         <include>antrun/src/**</include>
@@ -60,8 +60,8 @@
         <include>scriptlandia/pom.xml</include>
         <include>scriptlandia/src/**</include>
 
-        <include>scriptlandia-launcher/pom.xml</include>
-        <include>scriptlandia-launcher/src/**</include>
+        <include>universal-launcher/pom.xml</include>
+        <include>universal-launcher/src/**</include>
 
         <include>scriptlandia-helper/pom.xml</include>
         <include>scriptlandia-helper/src/**</include>

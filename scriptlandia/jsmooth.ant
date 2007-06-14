@@ -19,7 +19,7 @@
 
       ScriptlandiaHelper.executeMaven("projects/scriptlandia-installer/pom.xml", new String[] {"compile", "jar:jar"});
       ScriptlandiaHelper.executeMaven("projects/scriptlandia/pom.xml", new String[] {"compile", "jar:jar"});
-      ScriptlandiaHelper.executeMaven("projects/scriptlandia-launcher/pom.xml", new String[] {"compile", "jar:jar"});
+      ScriptlandiaHelper.executeMaven("projects/universal-launcher/pom.xml", new String[] {"compile", "jar:jar"});
     </script>
   </target>
 

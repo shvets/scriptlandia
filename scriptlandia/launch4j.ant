@@ -19,7 +19,7 @@
 
       ScriptlandiaHelper.executeMaven("projects/scriptlandia-installer/pom.xml", new String[] {"compile", "jar:jar"});
       ScriptlandiaHelper.executeMaven("projects/scriptlandia/pom.xml", new String[] {"compile", "jar:jar"});
-      ScriptlandiaHelper.executeMaven("projects/scriptlandia-launcher/pom.xml", new String[] {"compile", "jar:jar"});
+      ScriptlandiaHelper.executeMaven("projects/universal-launcher/pom.xml", new String[] {"compile", "jar:jar"});
     </script>
   </target>
 
@@ -68,7 +68,7 @@
               downloadUrl="http://java.com/download"
               icon="projects/scriptlandia-config/bin/images/scriptlandia.ico">
         <classPath mainClass="org.sf.scriptlandia.install.GuiInstaller">
-          <cp>projects/scriptlandia-common/target/scriptlandia-common.jar</cp>
+          <cp>projects/universal-launcher-common/target/universal-launcher-common.jar</cp>
           <cp>projects/bootstrap-mini/target/bootstrap-mini.jar</cp>
           <cp>projects/pomreader/target/pomreader.jar</cp>
           <cp>projects/scriptlandia-installer/target/scriptlandia-installer.jar</cp>

@@ -155,7 +155,7 @@ public class LauncherHelper {
     launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/pomreader/" + scriptlandiaVersion +
       "/pomreader-" + scriptlandiaVersion + ".jar");
     launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/universal-launcher/" + scriptlandiaVersion +
-      "/scriptlandia-launcher-" + scriptlandiaVersion + ".jar");
+      "/universal-launcher-" + scriptlandiaVersion + ".jar");
     launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/scriptlandia-nailgun/" + scriptlandiaVersion +
       "/scriptlandia-nailgun-" + scriptlandiaVersion + ".jar");
     launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/scriptlandia-installer/" + scriptlandiaVersion +

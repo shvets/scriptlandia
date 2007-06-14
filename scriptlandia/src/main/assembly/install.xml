@@ -36,8 +36,8 @@
         <include>classworlds-launcher/pom.xml</include>
         <include>classworlds-launcher/target/classworlds-launcher.jar</include>
 
-        <include>scriptlandia-common/pom.xml</include>
-        <include>scriptlandia-common/target/scriptlandia-common.jar</include>
+        <include>universal-launcher-common/pom.xml</include>
+        <include>universal-launcher-common/target/universal-launcher-common.jar</include>
 
         <include>antrun/pom.xml</include>
         <include>antrun/target/antrun.jar</include>
@@ -45,8 +45,8 @@
         <include>scriptlandia/pom.xml</include>
         <include>scriptlandia/target/scriptlandia.jar</include>
 
-        <include>scriptlandia-launcher/pom.xml</include>
-        <include>scriptlandia-launcher/target/scriptlandia-launcher.jar</include>
+        <include>universal-launcher/pom.xml</include>
+        <include>universal-launcher/target/universal-launcher.jar</include>
 
         <include>scriptlandia-helper/pom.xml</include>
         <include>scriptlandia-helper/target/scriptlandia-helper.jar</include>

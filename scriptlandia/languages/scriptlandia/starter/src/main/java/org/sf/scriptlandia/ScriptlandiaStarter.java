@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.sf.scriptlandia.util.ReflectionUtil;
-import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+import org.sf.scriptlandia.launcher.UniversalLauncher;
 import org.codehaus.classworlds.ClassWorld;
 import org.codehaus.classworlds.ClassRealm;
 
@@ -24,7 +24,7 @@ public final class ScriptlandiaStarter {
    * @throws Exception the exception
    */
   public void start(final String[] args, ClassRealm mainRealm) throws Exception {
-    ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+    UniversalLauncher launcher = UniversalLauncher.getInstance();
 
     String scriptName = args[0];
 

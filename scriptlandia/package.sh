@@ -6,14 +6,14 @@ fi
 
 . ./config.sh
 
-SCRIPTLANDIA_COMMON_PROJECT=$PWD/projects/scriptlandia-common
+SCRIPTLANDIA_COMMON_PROJECT=$PWD/projects/universal-launcher-common
 BOOTSTRAP_MINI_PROJECT=$PWD/projects/bootstrap-mini
 POM_READER_PROJECT=$PWD/projects/pomreader
 SCRIPTLANDIA_INSTALLER_PROJECT=$PWD/projects/scriptlandia-installer
 
 echo ---### Java Specification Version: $JAVA_SPECIFICATION_VERSION
 
-echo ---### Builds Scriptlandia-Common project
+echo ---### Builds universal-launcher-common project
 
 if [ ! -f $SCRIPTLANDIA_COMMON_PROJECT/target/classes ]; then
   mkdir -p $SCRIPTLANDIA_COMMON_PROJECT/target/classes
@@ -27,10 +27,10 @@ $JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_S
   $SCRIPTLANDIA_COMMON_PROJECT/src/main/java/org/sf/scriptlandia/util/*.java \
   $SCRIPTLANDIA_COMMON_PROJECT/src/main/java/org/sf/scriptlandia/launcher/*.java
 
-$JAVA_HOME/bin/jar cf $SCRIPTLANDIA_COMMON_PROJECT/target/scriptlandia-common.jar \
+$JAVA_HOME/bin/jar cf $SCRIPTLANDIA_COMMON_PROJECT/target/universal-launcher-common.jar \
   -C $SCRIPTLANDIA_COMMON_PROJECT/target/classes .
 
-echo ---### Builds Bootstrap-Mini project
+echo ---### Builds bootstrap-mini project
 
 if [ ! -f $BOOTSTRAP_MINI_PROJECT/target/classes ]; then
   mkdir -p $BOOTSTRAP_MINI_PROJECT/target/classes
@@ -48,7 +48,7 @@ $JAVA_HOME/bin/jar cf $BOOTSTRAP_MINI_PROJECT/target/bootstrap-mini.jar \
   -C $BOOTSTRAP_MINI_PROJECT/target/classes .
 
 
-echo ---### Builds PomReader project
+echo ---### Builds pomreader project
 
 if [ ! -f $POM_READER_PROJECT/target/classes ]; then
   mkdir -p $POM_READER_PROJECT/target/classes
@@ -66,7 +66,7 @@ $JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_S
 $JAVA_HOME/bin/jar cf $POM_READER_PROJECT/target/pomreader.jar \
   -C $POM_READER_PROJECT/target/classes .
 
-echo ---### Builds Installer project
+echo ---### Builds installer project
 
 if [ ! -f $SCRIPTLANDIA_INSTALLER_PROJECT/target/classes ]; then
   mkdir -p $SCRIPTLANDIA_INSTALLER_PROJECT/target/classes
@@ -87,7 +87,7 @@ $JAVA_HOME/bin/jar cf $SCRIPTLANDIA_INSTALLER_PROJECT/target/scriptlandia-instal
 
 echo ---### Installing basic dependencies...
 
-BASIC_CLASSPATH=$SCRIPTLANDIA_COMMON_PROJECT/target/scriptlandia-common.jar
+BASIC_CLASSPATH=$SCRIPTLANDIA_COMMON_PROJECT/target/universal-launcher-common.jar
 BASIC_CLASSPATH=$BASIC_CLASSPATH:$BOOTSTRAP_MINI_PROJECT/target/bootstrap-mini.jar
 BASIC_CLASSPATH=$BASIC_CLASSPATH:$POM_READER_PROJECT/target/pomreader.jar
 BASIC_CLASSPATH=$BASIC_CLASSPATH:$SCRIPTLANDIA_INSTALLER_PROJECT/target/scriptlandia-installer.jar

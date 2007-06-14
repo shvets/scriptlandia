@@ -13,7 +13,7 @@
   <!--iconLocation>projects/scriptlandia-config/bin\images/scriptlandia.ico</iconLocation-->
   <jarLocation>projects/scriptlandia-installer/target/scriptlandia-installer.jar</jarLocation>
 
-  <classPath>projects/scriptlandia-common/target/scriptlandia-common.jar</classPath>
+  <classPath>projects/universal-launcher-common/target/universal-launcher-common.jar</classPath>
   <classPath>projects/bootstrap-mini/target/bootstrap-mini.jar</classPath>
   <classPath>projects/pomreader/target/pomreader.jar</classPath>
   <classPath>projects/scriptlandia-installer/target/scriptlandia-installer.jar</classPath>

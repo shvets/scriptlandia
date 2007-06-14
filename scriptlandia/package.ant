@@ -13,7 +13,7 @@
   <property file="scriptlandia.properties"/>
 
   <target name="clean">
-    <delete dir="projects/scriptlandia-common/target"/>
+    <delete dir="projects/universal-launcher-common/target"/>
     <delete dir="projects/bootstrap-mini/target"/>
     <delete dir="projects/pomreader/target"/>
     <delete dir="projects/scriptlandia-installer/target"/>
@@ -22,14 +22,14 @@
   <target name="compile">
     <echo>Java Specification Version: ${java.specification.version}</echo>
 
-    <compileProject basedir="projects/scriptlandia-common"/>
+    <compileProject basedir="projects/universal-launcher-common"/>
 
     <compileProject basedir="projects/bootstrap-mini"/>
 
     <compileProject basedir="projects/pomreader">
       <classpath-entries>
        <path location="projects/bootstrap-mini/target/classes"/>
-       <path location="projects/scriptlandia-common/target/classes"/>
+       <path location="projects/universal-launcher-common/target/classes"/>
       </classpath-entries>
     </compileProject>
 
@@ -37,7 +37,7 @@
       <classpath-entries>
        <path location="projects/bootstrap-mini/target/classes"/>
        <path location="projects/pomreader/target/classes"/>
-       <path location="projects/scriptlandia-common/target/classes"/>
+       <path location="projects/universal-launcher-common/target/classes"/>
       </classpath-entries>
     </compileProject>
   </target>
@@ -45,7 +45,7 @@
   <target name="jar" depends="compile">
     <jarProject basedir="projects/bootstrap-mini" name="bootstrap-mini"/>
     <jarProject basedir="projects/pomreader" name="pomreader"/>
-    <jarProject basedir="projects/scriptlandia-common" name="scriptlandia-common"/>
+    <jarProject basedir="projects/universal-launcher-common" name="universal-launcher-common"/>
     <jarProject basedir="projects/scriptlandia-installer" name="scriptlandia-installer"/>
   </target>
 
@@ -55,7 +55,7 @@
       <sysproperty key="basedir" value="projects/scriptlandia-startup"/>
 
       <classpath>
-        <path location="projects/scriptlandia-common/target/scriptlandia-common.jar"/>
+        <path location="projects/universal-launcher-common/target/universal-launcher-common.jar"/>
         <path location="projects/bootstrap-mini/target/bootstrap-mini.jar"/>
         <path location="projects/pomreader/target/pomreader.jar"/>
         <path location="projects/scriptlandia-installer/target/scriptlandia-installer.jar"/>
@@ -81,7 +81,7 @@
 
   <target name="package.projects">
     <installProject basedir="projects/bootstrap-mini" build="false"/>
-    <installProject basedir="projects/scriptlandia-common" build="false"/>
+    <installProject basedir="projects/universal-launcher-common" build="false"/>
     <installProject basedir="projects/classworlds-launcher"/>
 
     <installProject basedir="projects/pomreader" build="false"/>
@@ -93,7 +93,7 @@
 
     <installProject basedir="projects/scriptlandia-nailgun"/>
 
-    <installProject basedir="projects/scriptlandia-launcher"/>
+    <installProject basedir="projects/universal-launcher"/>
 
     <installLanguages section="starter"/>
 

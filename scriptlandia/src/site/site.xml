@@ -49,9 +49,8 @@
       <item name="Installer" href="scriptlandia-installer/index.html"/>
       <item name="AntRun" href="antrun/index.html"/>
       <item name="Classworlds-Launcher" href="classworlds-launcher/index.html"/>
-      <item name="Scriptlandia-Common" href="scriptlandia-common/index.html"/>
-      <item name="Scriptlandia-Launcher" href="scriptlandia-launcher/index.html"/>
-      <!--item name="Scriptlandia-Config" href="scriptlandia-config/index.html"/-->
+      <item name="Universal-Launcher-Common" href="universal-launcher-common/index.html"/>
+      <item name="Universal-Launcher" href="universal-launcher/index.html"/>
       <item name="Scriptlandia-Nailgun" href="scriptlandia-nailgun/index.html"/>
     </menu>
 

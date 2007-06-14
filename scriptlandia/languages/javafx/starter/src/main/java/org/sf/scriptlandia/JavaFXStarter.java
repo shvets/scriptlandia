@@ -6,7 +6,7 @@ import java.util.StringTokenizer;
 import java.io.*;
 
 import org.sf.scriptlandia.util.ReflectionUtil;
-import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+import org.sf.scriptlandia.launcher.UniversalLauncher;
 import org.codehaus.classworlds.ClassRealm;
 
 /**
@@ -113,7 +113,7 @@ public final class JavaFXStarter {
    * @throws Exception the exception
    */
   public static void main(String[] args) throws Exception {
-    ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+    UniversalLauncher launcher = UniversalLauncher.getInstance();
 
     ClassRealm mainRealm = launcher.getMainRealm();
 
