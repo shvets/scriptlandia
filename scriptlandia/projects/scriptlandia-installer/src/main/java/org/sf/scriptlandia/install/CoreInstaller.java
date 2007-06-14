@@ -57,7 +57,7 @@ public class CoreInstaller {
 
     launcher.setMainClassName("org.sf.scriptlandia.install.ProjectInstaller");
 
-    launcher.addClasspathEntry("projects/scriptlandia-common/target/scriptlandia-common.jar");
+    launcher.addClasspathEntry("projects/universal-launcher-common/target/universal-launcher-common.jar");
     launcher.addClasspathEntry("projects/bootstrap-mini/target/bootstrap-mini.jar");
     launcher.addClasspathEntry("projects/pomreader/target/pomreader.jar");
     launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
@@ -99,7 +99,7 @@ public class CoreInstaller {
 
     launcher.setMainClassName("org.sf.scriptlandia.install.ProjectInstaller");
 
-    launcher.addClasspathEntry("projects/scriptlandia-common/target/scriptlandia-common.jar");
+    launcher.addClasspathEntry("projects/universal-launcher-common/target/universal-launcher-common.jar");
     launcher.addClasspathEntry("projects/bootstrap-mini/target/bootstrap-mini.jar");
     launcher.addClasspathEntry("projects/pomreader/target/pomreader.jar");
     launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");

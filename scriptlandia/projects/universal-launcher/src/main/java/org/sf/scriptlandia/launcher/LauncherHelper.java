@@ -154,7 +154,7 @@ public class LauncherHelper {
     launcher.addClasspathEntry(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.6/bootstrap-mini-2.0.6.jar");
     launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/pomreader/" + scriptlandiaVersion +
       "/pomreader-" + scriptlandiaVersion + ".jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/scriptlandia-launcher/" + scriptlandiaVersion +
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/universal-launcher/" + scriptlandiaVersion +
       "/scriptlandia-launcher-" + scriptlandiaVersion + ".jar");
     launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/scriptlandia-nailgun/" + scriptlandiaVersion +
       "/scriptlandia-nailgun-" + scriptlandiaVersion + ".jar");
