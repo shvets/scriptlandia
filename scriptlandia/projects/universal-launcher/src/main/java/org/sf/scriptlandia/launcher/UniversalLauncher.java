@@ -17,12 +17,12 @@ import java.util.jar.Attributes;
  * @author Alexander Shvets
  * @version 2.0 02/19/2006
  */
-public class ScriptlandiaLauncher extends DepsLauncher {
+public class UniversalLauncher extends DepsLauncher {
 
   /**
    * The singleton object.
    */
-  protected static Map<String, ScriptlandiaLauncher> instances = new HashMap<String, ScriptlandiaLauncher>();
+  protected static Map<String, UniversalLauncher> instances = new HashMap<String, UniversalLauncher>();
 
   /** The current used extension within instances collection. */
   protected static String currentExtension;
@@ -33,13 +33,13 @@ public class ScriptlandiaLauncher extends DepsLauncher {
    * @param classWorld class world
    * @throws LauncherException the launcher exception
    */
-  public ScriptlandiaLauncher(ClassWorld classWorld) throws LauncherException {
+  public UniversalLauncher(ClassWorld classWorld) throws LauncherException {
     super(classWorld);
   }
 
-  private static ScriptlandiaLauncher createLauncher(Map<String, String> properties, ClassWorld classWorld)
+  private static UniversalLauncher createLauncher(Map<String, String> properties, ClassWorld classWorld)
           throws LauncherException {
-    ScriptlandiaLauncher launcher;
+    UniversalLauncher launcher;
 
     boolean instanceExists = currentExtension != null && instances.get(currentExtension) != null;
 
@@ -47,7 +47,7 @@ public class ScriptlandiaLauncher extends DepsLauncher {
       launcher = instances.get(currentExtension);
     }
     else {
-      launcher = new ScriptlandiaLauncher(classWorld);
+      launcher = new UniversalLauncher(classWorld);
 
       launcher.setMainClassName(properties.get("main.class.name"));
       launcher.setPomFileName(properties.get("deps.file.name"));
@@ -68,7 +68,7 @@ public class ScriptlandiaLauncher extends DepsLauncher {
    *
    * @return the singleton instance
    */
-  public static ScriptlandiaLauncher getInstance() {
+  public static UniversalLauncher getInstance() {
     return instances.get(currentExtension);
   }
 
@@ -147,7 +147,7 @@ public class ScriptlandiaLauncher extends DepsLauncher {
       currentExtension = null;
     }
 
-    ScriptlandiaLauncher launcher = createLauncher(parser.getCommandLine(), classWorld);
+    UniversalLauncher launcher = createLauncher(parser.getCommandLine(), classWorld);
 
     launcher.launch(newArgs);
   }
