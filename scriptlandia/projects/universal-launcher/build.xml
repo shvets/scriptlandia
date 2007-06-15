@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<!-- build.xml -->
+
+<project name="test" default="install" basedir=".">
+
+  <property name="install.dir" location="c:/launcher"/>
+  <property name="launcher.version" value="2.2.2"/>
+  <property name="classworlds.version" value="1.1"/>
+
+  <target name="install">
+    <mkdir dir="${install.dir}"/>
+
+    <copy todir="${install.dir}" overwrite="true">
+      <filterset>
+        <filter token="java.home" value="${java.home}"/>
+        <filter token="launcher.home" value="${install.dir}"/>
+        <filter token="launcher.version" value="${launcher.version}"/>
+        <filter token="classworlds.version" value="${classworlds.version}"/>
+        <filter token="proxyHost" value="${proxyHost}"/>
+        <filter token="proxyPort" value="${proxyPort}"/>
+        <filter token="http.proxyHost" value="${proxyHost}"/>
+        <filter token="http.proxyPort" value="${proxyPort}"/>
+      </filterset>
+
+      <fileset dir="src/main/config">
+       <include name="*.*"/>
+      </fileset>
+    </copy>
+
+    <copy todir="${install.dir}/lib" overwrite="true">
+      <fileset dir="lib">
+       <include name="*.jar"/>
+      </fileset>
+    </copy>
+  </target>
+
+</project>
