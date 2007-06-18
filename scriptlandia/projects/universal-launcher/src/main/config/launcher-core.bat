@@ -35,8 +35,10 @@ SET JAVA_BOOTCLASSPATH=
 SET JAVA_BOOTCLASSPATH_PREPEND=
 SET JAVA_BOOTCLASSPATH_APPEND=
 SET JVM_ARGS=
+SET LAUNCHER_CLASS=
 
 SET PARAMETERS=
+
 
 call "%~p0"processArgs.bat %*
 
@@ -55,7 +57,21 @@ rem append result to command
 if DEFINED RESULT call :processresult
 
 
-%CMD% %JAVA_BOOTCLASSPATH_APPEND% %JAVA_BOOTCLASSPATH_PREPEND% %JAVA_BOOTCLASSPATH% %JAVA_LIBRARY_PATH% %JAVA_EXT_DIRS% %JAVA_ENDORSED_DIRS% %JAVA_SYSTEM_PROPS% %JAVA_CLASSPATH% %JVM_ARGS% %CMD_LINE_ARGS% 
+if "%JAVA_CLASSPATH%" == "" goto execute
+
+SET JAVA_CLASSPATH=-classpath "%JAVA_CLASSPATH%"
+
+if "%JAVA_BOOTCLASSPATH_PREPEND%" == "" goto execute
+
+SET JAVA_BOOTCLASSPATH_PREPEND=-Xbootclasspath/p:"%JAVA_BOOTCLASSPATH_PREPEND%"
+
+if "%JAVA_BOOTCLASSPATH_APPPEND%" == "" goto execute
+
+SET JAVA_BOOTCLASSPATH_APPPEND=-Xbootclasspath/a:"%JAVA_BOOTCLASSPATH_APPPEND%"
+
+
+:execute
+%CMD% %JAVA_BOOTCLASSPATH_APPEND% %JAVA_BOOTCLASSPATH_PREPEND% %JAVA_BOOTCLASSPATH% %JAVA_LIBRARY_PATH% %JAVA_EXT_DIRS% %JAVA_ENDORSED_DIRS% %JAVA_SYSTEM_PROPS% %JVM_ARGS% %JAVA_CLASSPATH% %LAUNCHER_CLASS% %CMD_LINE_ARGS% 
 
 goto end
 
@@ -69,6 +85,7 @@ if %1 == "<java.bootclasspath>" goto option
 if %1 == "<java.bootclasspath.append>" goto option
 if %1 == "<java.bootclasspath.prepend>" goto option
 if %1 == "<jvm.args>" goto option
+if %1 == "<launcher.class>" goto option
 
 rem ignore if line is comment
 SET LINE=%1
@@ -93,7 +110,8 @@ goto %SECTION%
 set VARIABLE_NAME=JAVA_CLASSPATH
 set VARIABLE_VALUE=%JAVA_CLASSPATH%
 set RESULT=
-set SECTION_PREFIX=-classpath 
+rem set SECTION_PREFIX=-classpath
+set SECTION_PREFIX=
 set PREFIX=
 set SEPARATOR=;
 goto end
@@ -147,7 +165,8 @@ goto end
 set VARIABLE_NAME=JAVA_BOOTCLASSPATH_PREPEND
 set VARIABLE_VALUE=%JAVA_BOOTCLASSPATH_PREPEND%
 set RESULT=
-set SECTION_PREFIX=-Xbootclasspath/p:
+rem set SECTION_PREFIX=-Xbootclasspath/p:
+set SECTION_PREFIX=
 set PREFIX=
 set SEPARATOR=;
 goto end
@@ -156,7 +175,8 @@ goto end
 set VARIABLE_NAME=JAVA_BOOTCLASSPATH_APPEND
 set VARIABLE_VALUE=%JAVA_BOOTCLASSPATH_APPEND%
 set RESULT=
-set SECTION_PREFIX=-Xbootclasspath/a:
+rem set SECTION_PREFIX=-Xbootclasspath/a:
+set SECTION_PREFIX=
 set PREFIX=
 set SEPARATOR=;
 goto end
@@ -164,6 +184,17 @@ goto end
 :jvm.args
 set VARIABLE_NAME=JVM_ARGS
 set VARIABLE_VALUE=%JVM_ARGS%
+SET JVM_ARGS=
+set RESULT=
+set SECTION_PREFIX=
+set PREFIX=
+set SEPARATOR= 
+goto end
+
+:launcher.class
+set VARIABLE_NAME=LAUNCHER_CLASS
+set VARIABLE_VALUE=%LAUNCHER_CLASS%
+SET LAUNCHER_CLASS=
 set RESULT=
 set SECTION_PREFIX=
 set PREFIX=

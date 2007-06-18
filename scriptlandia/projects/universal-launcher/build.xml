@@ -7,6 +7,7 @@
   <property name="install.dir" location="c:/launcher"/>
   <property name="launcher.version" value="2.2.2"/>
   <property name="classworlds.version" value="1.1"/>
+  <property name="repository.home" value="c:/maven-repository"/>
 
   <target name="install">
     <mkdir dir="${install.dir}"/>

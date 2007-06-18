@@ -1,15 +1,15 @@
 package org.sf.scriptlandia.launcher;
 
 import org.codehaus.classworlds.ClassWorld;
-import org.sf.scriptlandia.util.FileUtil;
 import org.apache.maven.bootstrap.model.Model;
 import org.apache.maven.bootstrap.model.Dependency;
+import org.sf.scriptlandia.util.FileUtil;
 
-import java.io.*;
 import java.util.*;
 import java.util.jar.Manifest;
 import java.util.jar.JarFile;
 import java.util.jar.Attributes;
+import java.io.File;
 
 /**
  * This is the main launcher class. It should be able to launch any Java program.
@@ -18,14 +18,6 @@ import java.util.jar.Attributes;
  * @version 2.0 02/19/2006
  */
 public class UniversalLauncher extends DepsLauncher {
-
-  /**
-   * The singleton object.
-   */
-  protected static Map<String, UniversalLauncher> instances = new HashMap<String, UniversalLauncher>();
-
-  /** The current used extension within instances collection. */
-  protected static String currentExtension;
 
   /**
    * Creates new launcher.
@@ -37,39 +29,18 @@ public class UniversalLauncher extends DepsLauncher {
     super(classWorld);
   }
 
-  private static UniversalLauncher createLauncher(Map<String, String> properties, ClassWorld classWorld)
-          throws LauncherException {
-    UniversalLauncher launcher;
-
-    boolean instanceExists = currentExtension != null && instances.get(currentExtension) != null;
-
-    if (instanceExists) {
-      launcher = instances.get(currentExtension);
-    }
-    else {
-      launcher = new UniversalLauncher(classWorld);
-
-      launcher.setMainClassName(properties.get("main.class.name"));
-      launcher.setPomFileName(properties.get("deps.file.name"));
-      launcher.setScriptName(properties.get("script.name"));
-
-      launcher.configure(Thread.currentThread().getContextClassLoader());
-      
-      instances.put(currentExtension, launcher);
-    }
-
-    launcher.setInteractive(Boolean.parseBoolean(properties.get("is.interactive")));
-
-    return launcher;
-  }
-
   /**
-   * Gets the singleton instance.
+   * Configures the launcher.
    *
-   * @return the singleton instance
+   * @param parentClassLoader parent class loader
+   * @throws LauncherException the exception
    */
-  public static UniversalLauncher getInstance() {
-    return instances.get(currentExtension);
+  public void configure(ClassLoader parentClassLoader, Map<String, String> properties) throws LauncherException {
+    setMainClassName(properties.get("main.class.name"));
+    setPomFileName(properties.get("deps.file.name"));
+    setScriptName(properties.get("script.name"));
+
+    super.configure(parentClassLoader);
   }
 
   /**
@@ -139,15 +110,9 @@ public class UniversalLauncher extends DepsLauncher {
 
     String[] newArgs = parser.parse(args);
 
-    String scriptName = parser.getStarterScriptName();
+    UniversalLauncher launcher = new UniversalLauncher(classWorld);
 
-    if (scriptName != null) {
-      currentExtension = FileUtil.getExtension(scriptName);
-    } else {
-      currentExtension = null;
-    }
-
-    UniversalLauncher launcher = createLauncher(parser.getCommandLine(), classWorld);
+    launcher.configure(Thread.currentThread().getContextClassLoader(), parser.getCommandLine());
 
     launcher.launch(newArgs);
   }

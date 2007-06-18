@@ -151,7 +151,7 @@ public class LauncherCommandLineParser {
       launcherClassName = "org.sf.scriptlandia.nailgun.NailgunTray";
     }
     else {
-      launcherClassName = "org.sf.scriptlandia.launcher.UniversalLauncher";
+      launcherClassName = "org.sf.scriptlandia.launcher.ScriptlandiaLauncher";
     }
 
     return launcherClassName;

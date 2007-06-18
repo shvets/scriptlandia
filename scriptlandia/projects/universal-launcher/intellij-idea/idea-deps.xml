@@ -7,12 +7,31 @@
   <version>1.0</version>
   <packaging>pom</packaging>
 
+<!--
   <dependencies>
     <dependency>
-      <groupId>org.incava</groupId>
-      <artifactId>diffj</artifactId>
-      <version>1.1.1</version>
+      <groupId>classworlds</groupId>
+      <artifactId>classworlds</artifactId>
+      <version>1.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>universal-launcher-common</artifactId>
+      <version>2.2.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.bootstrap</groupId>
+      <artifactId>bootstrap-mini</artifactId>
+      <version>2.0.6</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>pomreader</artifactId>
+      <version>2.2.2</version>
     </dependency>
   </dependencies>
-
+-->
 </project>
