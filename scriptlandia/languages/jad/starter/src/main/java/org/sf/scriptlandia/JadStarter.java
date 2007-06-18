@@ -6,6 +6,7 @@ import java.util.*;
 
 import org.sf.scriptlandia.util.ReflectionUtil;
 import org.sf.scriptlandia.launcher.UniversalLauncher;
+import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 import org.codehaus.classworlds.ClassRealm;
 
 /**
@@ -218,7 +219,7 @@ public final class JadStarter {
    * @throws Exception the exception
    */
   public static void main(String[] args) throws Exception {
-    UniversalLauncher launcher = UniversalLauncher.getInstance();
+    UniversalLauncher launcher = ScriptlandiaLauncher.getInstance();
 
     ClassRealm mainRealm = launcher.getMainRealm();
 

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module version="4" relativePaths="true" type="JAVA_MODULE">
-  <component name="ModuleRootManager" />
+<module relativePaths="true" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/classes" />
     <exclude-output />
@@ -10,13 +9,13 @@
       <sourceFolder url="file://$MODULE_DIR$/projects/bootstrap-mini/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/classworlds-launcher/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/pomreader/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/projects/scriptlandia-common/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/scriptlandia-helper/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/scriptlandia-installer/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/projects/scriptlandia-launcher/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/scriptlandia-nailgun/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/universal-launcher-common/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/universal-launcher/src/main/java" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="1.6" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library>
@@ -420,6 +419,29 @@
       <library>
         <CLASSES>
           <root url="jar://$maven-repository$/org/apache/maven/maven-embedder/2.0.6/maven-embedder-2.0.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$maven-repository$/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/bootstrap.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/log4j.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/trove4j.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/extensions.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jdom.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

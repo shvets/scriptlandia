@@ -2,13 +2,11 @@ package org.sf.scriptlandia;
 
 import org.apache.maven.artifact.Artifact;
 import org.apache.maven.artifact.ant.*;
-import org.apache.maven.artifact.ant.Repository;
 import org.apache.maven.artifact.manager.WagonManager;
 import org.apache.maven.cli.MavenCli;
 import org.apache.maven.embedder.MavenEmbedder;
 import org.apache.maven.embedder.MavenEmbedderConsoleLogger;
 import org.apache.maven.project.MavenProject;
-import org.apache.maven.bootstrap.model.*;
 import org.apache.tools.ant.BuildLogger;
 import org.apache.tools.ant.DefaultLogger;
 import org.apache.tools.ant.Project;
@@ -18,6 +16,7 @@ import org.codehaus.classworlds.ClassWorld;
 import org.codehaus.plexus.embed.Embedder;
 import org.sf.scriptlandia.util.ReflectionUtil;
 import org.sf.scriptlandia.launcher.UniversalLauncher;
+import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 import org.sf.scriptlandia.pomreader.RepositoriesReader;
 
 import java.io.File;
@@ -85,7 +84,7 @@ public class ScriptlandiaHelper {
    * @throws Exception some exception
    */
   public static void addMavenDependencies(String pomName) throws Exception {
-    UniversalLauncher launcher = UniversalLauncher.getInstance();
+    UniversalLauncher launcher = ScriptlandiaLauncher.getInstance();
     ClassRealm classRealm = launcher.getMainRealm();
 
     addMavenDependencies(pomName, classRealm);
@@ -233,7 +232,7 @@ public class ScriptlandiaHelper {
 
     dependenciesTask.execute();
 
-    UniversalLauncher launcher = UniversalLauncher.getInstance();
+    UniversalLauncher launcher = ScriptlandiaLauncher.getInstance();
     ClassRealm classRealm = launcher.getMainRealm();
 
     Path path = (Path)project.getReference("maven." + useScope + ".classpath");
@@ -348,7 +347,7 @@ public class ScriptlandiaHelper {
 
     newArgsList.toArray(newArgs);
 
-    UniversalLauncher launcher = UniversalLauncher.getInstance();
+    UniversalLauncher launcher = ScriptlandiaLauncher.getInstance();
     ClassWorld classWorld = launcher.getMainRealm().getWorld();
 
     MavenCli.main(newArgs, classWorld);
@@ -376,9 +375,9 @@ public class ScriptlandiaHelper {
     String repositoryHome = System.getProperty("repository.home");
     String scriptlandiaVersion = System.getProperty("scriptlandia.version");
 
-    UniversalLauncher launcher = UniversalLauncher.getInstance();
+    UniversalLauncher launcher = ScriptlandiaLauncher.getInstance();
 
-    String pom = null;
+    String pom;
 
     if(manager.equalsIgnoreCase("bsf")) {
       pom = repositoryHome + "/org/sf/scriptlandia/" + name + "/" + scriptlandiaVersion +
@@ -425,7 +424,7 @@ public class ScriptlandiaHelper {
    */
   public static void resolveDependencies(String groupId, String artifactId, String version, String classifier)
          throws Exception {
-    UniversalLauncher launcher = UniversalLauncher.getInstance();
+    UniversalLauncher launcher = ScriptlandiaLauncher.getInstance();
 
     launcher.resolveDependencies(groupId, artifactId, version, classifier);
   }

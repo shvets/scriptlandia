@@ -223,7 +223,7 @@ public class PomReader {
     }
 
     if(!file.exists()) {
-      System.out.println("File \"repository.xml\" cannot be found.");
+      System.out.println("File " + file.getName() + " cannot be found.");
       repositories = new ArrayList<Repository>();
     }
     else {
