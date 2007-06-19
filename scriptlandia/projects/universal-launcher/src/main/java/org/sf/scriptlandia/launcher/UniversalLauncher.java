@@ -33,11 +33,23 @@ public class UniversalLauncher extends DepsLauncher {
    * Configures the launcher.
    *
    * @param parentClassLoader parent class loader
+   * @param properties properties 
    * @throws LauncherException the exception
    */
   public void configure(ClassLoader parentClassLoader, Map<String, String> properties) throws LauncherException {
     setMainClassName(properties.get("main.class.name"));
-    setPomFileName(properties.get("deps.file.name"));
+
+    String pomFileName = properties.get("deps.file.name");
+
+    if(pomFileName != null) {
+      if(new File(pomFileName).exists()) {
+        setPomFileName(pomFileName);
+      }
+      else {
+        System.out.println("File " + pomFileName + " does not exist.");
+      }
+    }
+
     setScriptName(properties.get("script.name"));
 
     super.configure(parentClassLoader);

@@ -212,14 +212,14 @@ public class PomReader {
    * @throws Exception the exception
    */
   private ArtifactResolver setupRepositories(Settings settings) throws Exception {
-    String scriptlandiaHome = System.getProperty("scriptlandia.home");
+    String launcherHome = System.getProperty("launcher.home");
     List<Repository> repositories;
 
     RepositoriesReader reader = new RepositoriesReader();
     File file = new File("repositories.xml");
 
     if(!file.exists()) {
-      file = new File(scriptlandiaHome + File.separatorChar + "repositories.xml");
+      file = new File(launcherHome + File.separatorChar + "repositories.xml");
     }
 
     if(!file.exists()) {

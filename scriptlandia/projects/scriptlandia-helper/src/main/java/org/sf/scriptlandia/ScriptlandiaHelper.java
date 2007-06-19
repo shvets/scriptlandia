@@ -200,18 +200,18 @@ public class ScriptlandiaHelper {
 
     DependenciesTask dependenciesTask = createDependenciesTask(project, id, useScope, online);
 
-   String scriptlandiaHome = System.getProperty("scriptlandia.home");
+   String launcherHome = System.getProperty("launcher.home");
     List<org.apache.maven.bootstrap.model.Repository> repositories;
 
     RepositoriesReader reader = new RepositoriesReader();
     File file = new File("repositories.xml");
 
     if(!file.exists()) {
-      file = new File(scriptlandiaHome + File.separatorChar + "repositories.xml");
+      file = new File(launcherHome + File.separatorChar + "repositories.xml");
     }
 
     if(!file.exists()) {
-      System.out.println("File \"repository.xml\" cannot be found.");
+      System.out.println("File " + file.getName() + " cannot be found.");
       repositories = new ArrayList<org.apache.maven.bootstrap.model.Repository>();
     }
     else {

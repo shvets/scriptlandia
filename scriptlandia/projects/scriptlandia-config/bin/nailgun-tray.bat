@@ -1,6 +1,6 @@
 @echo off
 
-set JAVA_CMD=javaw
+set CMD=javaw
 
 SET SCRIPTLANDIA_HOME=@scriptlandia.home@
 

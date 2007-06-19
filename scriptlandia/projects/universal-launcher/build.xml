@@ -4,18 +4,19 @@
 
 <project name="test" default="install" basedir=".">
 
-  <property name="install.dir" location="c:/launcher"/>
+  <property name="launcher.home" location="c:/launcher"/>
   <property name="launcher.version" value="2.2.2"/>
   <property name="classworlds.version" value="1.1"/>
   <property name="repository.home" value="c:/maven-repository"/>
 
   <target name="install">
-    <mkdir dir="${install.dir}"/>
+    <mkdir dir="${launcher.home}"/>
 
-    <copy todir="${install.dir}" overwrite="true">
+    <copy todir="${launcher.home}" overwrite="true">
       <filterset>
         <filter token="java.home" value="${java.home}"/>
-        <filter token="launcher.home" value="${install.dir}"/>
+        <filter token="repository.home" value="${repository.home}"/>
+        <filter token="launcher.home" value="${launcher.home}"/>
         <filter token="launcher.version" value="${launcher.version}"/>
         <filter token="classworlds.version" value="${classworlds.version}"/>
         <filter token="proxyHost" value="${proxyHost}"/>
@@ -29,7 +30,7 @@
       </fileset>
     </copy>
 
-    <copy todir="${install.dir}/lib" overwrite="true">
+    <copy todir="${launcher.home}/lib" overwrite="true">
       <fileset dir="lib">
        <include name="*.jar"/>
       </fileset>
