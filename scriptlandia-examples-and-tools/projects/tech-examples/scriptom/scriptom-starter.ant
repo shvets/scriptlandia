@@ -1,0 +1,50 @@
+<!-- scriptom-starter.ant -->
+
+<project name="scriptom-starter" default="run" basedir=".">
+  <scriptdef name="configure-language" language="beanshell">
+    <attribute name="manager"/>
+    <attribute name="name"/>
+
+    <![CDATA[
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      String name = attributes.get("name");
+      String manager = attributes.get("manager");
+
+      ScriptlandiaHelper.resolveLanguageDependencies(name, manager);
+    ]]>
+  </scriptdef>
+
+  <script language="beanshell">
+    import org.sf.scriptlandia.ScriptlandiaHelper;
+
+    //ScriptlandiaHelper.resolveDependencies("jacob", "jacob-dll", "1.10.1", "");
+//    ScriptlandiaHelper.resolveDependencies("jacob", "jacob", "1.10.1", "");
+  </script>
+
+  <target name="prepare">
+    <configure-language name="groovy" manager="bsf"/>
+
+    <unzip src="${repository.home}/jacob/jacob-dll/1.10.1/jacob-dll-1.10.1.jar"
+           dest="${repository.home}/jacob/jacob-dll/1.10.1" overwrite="false">
+      <patternset>
+        <include name="*.dll"/>
+      </patternset>
+    </unzip>
+  </target>
+
+  <target name="run">
+    <configure-language name="groovy" manager="bsf"/>
+
+    <addtoclassloader>
+      <path>
+        <fileset dir="${repository.home}">
+          <include name="jacob/jacob-dll/1.10.1/jacob-dll-1.10.1.jar"/>
+        </fileset>
+      </path>
+    </addtoclassloader>
+
+    <script language="groovy" src="ie.groovy"/>
+  </target>
+
+</project>
