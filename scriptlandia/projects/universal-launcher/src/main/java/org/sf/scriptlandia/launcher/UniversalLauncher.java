@@ -54,8 +54,6 @@ public class UniversalLauncher extends DepsLauncher {
       }
     }
 
-    setScriptName(commandLine.get("script.name"));
-
     super.configure(parentClassLoader);
   }
 

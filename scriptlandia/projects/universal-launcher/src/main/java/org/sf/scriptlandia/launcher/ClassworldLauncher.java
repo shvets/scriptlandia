@@ -252,7 +252,7 @@ public class ClassworldLauncher extends CoreLauncher {
     finally {
       if (!isExceptionThrown) {
 
-        if (isGuiMode(args) /*|| isContinuousMode()*/ && exitCode == 0) {
+        if (parser.isGuiMode()/*isGuiMode(args)*/ /*|| isContinuousMode()*/ && exitCode == 0) {
           try {
             Thread.currentThread().join();
           }

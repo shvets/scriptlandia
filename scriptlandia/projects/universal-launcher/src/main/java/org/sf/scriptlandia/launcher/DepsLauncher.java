@@ -21,9 +21,6 @@ public class DepsLauncher extends ClassworldLauncher {
   /** Pom file name. */
   private String pomFileName;
 
-  /** ScriptName. */
-  private String scriptName;
-
   /** The Pom reader. */
   protected PomReader pomReader = new PomReader();
 
@@ -44,15 +41,7 @@ public class DepsLauncher extends ClassworldLauncher {
    * @return the realm name
    */
   protected String getRealmName() {
-    String realmName = "pom-launcher";
-
-    if (scriptName != null) {
-      int index = scriptName.lastIndexOf(".");
-      realmName += "-";
-      realmName += scriptName.substring(index + 1);
-    }
-
-    return realmName;
+    return "pom-launcher";
   }
 
   /**
@@ -61,14 +50,6 @@ public class DepsLauncher extends ClassworldLauncher {
    */
   public void setPomFileName(String pomFileName) {
     this.pomFileName = pomFileName;
-  }
-
-  /**
-   * Sets the script name.
-   * @param scriptName the script name
-   */
-  public void setScriptName(String scriptName) {
-    this.scriptName = scriptName;
   }
 
   /**

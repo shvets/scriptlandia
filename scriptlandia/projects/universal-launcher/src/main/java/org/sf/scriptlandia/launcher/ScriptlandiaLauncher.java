@@ -18,6 +18,9 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
    */
   protected static Map<String, UniversalLauncher> instances = new HashMap<String, UniversalLauncher>();
 
+  /** ScriptName. */
+  private String scriptName;
+
   /** The current used extension within instances collection. */
   protected static String currentExtension;
 
@@ -32,6 +35,45 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
   public ScriptlandiaLauncher(LauncherCommandLineParser parser, String[] args, ClassWorld classWorld)
           throws LauncherException {
     super(parser, args, classWorld);
+  }
+
+  /**
+   * Configures the launcher.
+   *
+   * @param parentClassLoader parent class loader
+   * @throws LauncherException the exception
+   */
+  public void configure(ClassLoader parentClassLoader) throws LauncherException {
+    Map<String, String> commandLine = parser.getCommandLine();
+
+    setScriptName(commandLine.get("script.name"));
+
+    super.configure(parentClassLoader);
+  }
+
+  /**
+   * Sets the script name.
+   * @param scriptName the script name
+   */
+  public void setScriptName(String scriptName) {
+    this.scriptName = scriptName;
+  }
+
+  /**
+   * Gets the realm name.
+   *
+   * @return the realm name
+   */
+  protected String getRealmName() {
+    String realmName = super.getRealmName();
+
+    if (scriptName != null) {
+      int index = scriptName.lastIndexOf(".");
+      realmName += "-";
+      realmName += scriptName.substring(index + 1);
+    }
+
+    return realmName;
   }
 
   private static UniversalLauncher createLauncher(ClassWorld classWorld, LauncherCommandLineParser parser, String[] args)
