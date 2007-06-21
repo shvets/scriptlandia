@@ -6,6 +6,7 @@ import org.sf.scriptlandia.launcher.LauncherException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
 
 /**
  * The class perform initial (command line) installation of scriprlandia.
@@ -53,7 +54,7 @@ public class CoreInstaller {
    * @throws LauncherException the exception
    */
   private void installBasicDependencies() throws LauncherException {
-    SimpleLauncher launcher = new SimpleLauncher();
+    SimpleLauncher launcher = new SimpleLauncher(getBasicDependenciesArgsList());
 
     launcher.setMainClassName("org.sf.scriptlandia.install.ProjectInstaller");
 
@@ -63,7 +64,7 @@ public class CoreInstaller {
     launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
     launcher.configure(Thread.currentThread().getContextClassLoader());
-    launcher.launch(getBasicDependenciesArgsList());
+    launcher.launch();
   }
 
   /**
@@ -95,7 +96,7 @@ public class CoreInstaller {
     String antVersion = System.getProperty("ant.version.internal");
     String repositoryHome = System.getProperty("repository.home");
 
-    SimpleLauncher launcher = new SimpleLauncher();
+    SimpleLauncher launcher = new SimpleLauncher(getAntRunArgsList());
 
     launcher.setMainClassName("org.sf.scriptlandia.install.ProjectInstaller");
 
@@ -110,7 +111,7 @@ public class CoreInstaller {
                                 "/ant-" + antVersion + ".jar");
 
     launcher.configure(Thread.currentThread().getContextClassLoader());
-    launcher.launch(getAntRunArgsList());
+    launcher.launch();
   }
 
   /**
@@ -140,12 +141,12 @@ public class CoreInstaller {
    * @throws LauncherException the exception
    */
   private void instalRequiredlProjects(String[] args) throws LauncherException {
-    SimpleLauncher launcher = new SimpleLauncher();
+    SimpleLauncher launcher = new SimpleLauncher(getRequiredProjectsArgsList(args));
 
     prepare(launcher, false);
 
     launcher.configure(Thread.currentThread().getContextClassLoader());
-    launcher.launch(getRequiredProjectsArgsList(args));
+    launcher.launch();
   }
 
   /**
@@ -160,9 +161,7 @@ public class CoreInstaller {
     newArgsList.add("-f");
     newArgsList.add("installer.ant");
 
-    for (String arg : args) {
-      newArgsList.add(arg);
-    }
+    newArgsList.addAll(Arrays.asList(args));
 
     String[] newArgs = new String[newArgsList.size()];
 
@@ -178,12 +177,12 @@ public class CoreInstaller {
    * @throws LauncherException the exception
    */
   public void config(String[] args) throws LauncherException  {
-    SimpleLauncher launcher = new SimpleLauncher();
+    SimpleLauncher launcher = new SimpleLauncher(getConfigArgsList(args));
 
     prepare(launcher, true);
 
     launcher.configure(Thread.currentThread().getContextClassLoader());
-    launcher.launch(getConfigArgsList(args));
+    launcher.launch();
   }
 
   /**
@@ -198,9 +197,7 @@ public class CoreInstaller {
     newArgsList.add("-f");
     newArgsList.add("config.ant");
 
-    for (String arg : args) {
-      newArgsList.add(arg);
-    }
+    newArgsList.addAll(Arrays.asList(args));
 
     String[] newArgs = new String[newArgsList.size()];
 

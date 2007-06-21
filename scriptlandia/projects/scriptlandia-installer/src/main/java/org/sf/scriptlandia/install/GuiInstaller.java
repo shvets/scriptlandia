@@ -102,7 +102,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
   private java.util.List readLanguages() throws LauncherException {
     java.util.List languages;
 
-    SimpleLauncher launcher = new SimpleLauncher();
+    SimpleLauncher launcher = new SimpleLauncher(new String[] {});
 
     prepare(launcher, true);
 
