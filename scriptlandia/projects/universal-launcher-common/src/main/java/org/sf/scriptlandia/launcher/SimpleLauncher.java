@@ -27,6 +27,25 @@ public class SimpleLauncher extends AbstractLauncher {
   protected List<URL> classpath = new ArrayList<URL>();
 
   /**
+   * Creates new launcher.
+   *
+   * @param args command line arguments
+   */
+  public SimpleLauncher(String[] args) {
+    super(args);
+  }
+  
+  /**
+   * Creates new launcher.
+   *
+   * @param parser the parser
+   * @param args command line arguments
+   */
+  public SimpleLauncher(LauncherCommandLineParser parser, String[] args) {
+    super(parser, args);
+  }
+
+  /**
    * Gets the main method name.
    *
    * @return the method class name
@@ -103,10 +122,9 @@ public class SimpleLauncher extends AbstractLauncher {
   /**
    * Main launcher method.
    *
-   * @param args command line arguments
    * @throws LauncherException the exception
    */
-  public void launch(String[] args) throws LauncherException {
+  public void launch() throws LauncherException {
     try {
       Class clazz = classLoader.loadClass(mainClassName);
 

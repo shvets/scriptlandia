@@ -58,9 +58,8 @@ public interface Launcher {
   /**
    * Main launcher method.
    *
-   * @param args command line arguments 
    * @throws LauncherException the exception
    */
-  void launch(String[] args) throws LauncherException;
+  void launch() throws LauncherException;
 
 }

@@ -11,8 +11,38 @@ public abstract class AbstractLauncher implements Launcher {
   /** The main class name. */
   protected String mainClassName;
 
+  protected LauncherCommandLineParser parser;
+
+  protected String[] args;
+
   /** The exit code. */
   protected int exitCode = 0;
+
+  /**
+   * Creates new launcher.
+   *
+   * @param parser the parser
+   * @param args command line arguments
+   */
+  public AbstractLauncher(LauncherCommandLineParser parser, String[] args) {
+    this.parser = parser;
+
+    if(parser != null) {
+      this.args = parser.parse(args);
+    }
+    else {
+      this.args = args;       
+    }
+  }
+
+  /**
+   * Creates new launcher.
+   *
+   * @param args command line arguments
+   */
+  public AbstractLauncher(String[] args) {
+    this(null, args);
+  }
 
   /**
    * Gets the main class name.
@@ -41,4 +71,12 @@ public abstract class AbstractLauncher implements Launcher {
     return exitCode;
   }
 
+  public String[] getArgs() {
+    return args;
+  }
+
+  public void setArgs(String[] args) {
+    this.args = args;
+  }
+  
 }
