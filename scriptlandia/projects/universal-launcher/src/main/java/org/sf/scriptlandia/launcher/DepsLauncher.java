@@ -3,9 +3,11 @@ package org.sf.scriptlandia.launcher;
 import org.codehaus.classworlds.ClassRealm;
 import org.codehaus.classworlds.ClassWorld;
 import org.sf.scriptlandia.pomreader.PomReader;
-import org.sf.scriptlandia.util.CommonUtil;
+import org.sf.scriptlandia.util.FileUtil;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.net.URL;
 import java.util.List;
 
@@ -19,7 +21,7 @@ import java.util.List;
  */
 public class DepsLauncher extends ClassworldLauncher {
   /** Pom file name. */
-  private String pomFileName;
+  private String depsFileName;
 
   /** The Pom reader. */
   protected PomReader pomReader = new PomReader();
@@ -45,26 +47,86 @@ public class DepsLauncher extends ClassworldLauncher {
   }
 
   /**
-   * Sets the pom file name.
-   * @param pomFileName the pom file name
+   * Sets the deps file name.
+   * @param depsFileName the pom file name
    */
-  public void setPomFileName(String pomFileName) {
-    this.pomFileName = pomFileName;
+  public void setDepsFileName(String depsFileName) {
+    this.depsFileName = depsFileName;
   }
 
   /**
    * Resolves dependencies for specified pom maven2 dependencies file.
    *
-   * @param pomFileName the pom file name
+   * @param depsFileName the pom file name
    * @throws Exception the exception
    */
-  public void resolveDependencies(String pomFileName) throws Exception {
-    ClassRealm classRealm = getMainRealm();
+  public void resolveDependencies(String depsFileName) throws Exception {
+    File depsFile = new File(depsFileName);
 
-    List<URL> deps = pomReader.calculateDependencies(new File(pomFileName));
+    if(depsFile.exists()) {
+      ClassRealm classRealm = getMainRealm();
 
-    for (URL dep : deps) {
-      classRealm.addConstituent(dep);
+      String extension = FileUtil.getExtension(depsFileName);
+
+      if(extension.equalsIgnoreCase("classpath")) {
+        BufferedReader reader = new BufferedReader(new FileReader(depsFile));
+
+        boolean done1 = false;
+
+        while(!done1) {
+          String line = reader.readLine();
+          System.out.println("line " + line);
+
+          if(line == null) {
+            done1 = true;
+          }
+          else {
+            boolean done2 = false;
+
+            while(!done2) {
+              int index1 = line.indexOf("${");
+
+              if(index1 == -1) {
+                done2 = true;
+              }
+              else {
+                int index2 = line.substring(index1+1).indexOf("}");
+
+                if(index2 == -1) {
+                  done2 = true;
+                }
+                else {
+                  String propertyName = line.substring(index1+2, index2+1);
+                  String property = System.getProperty(propertyName);
+
+                  System.out.println("propertyName " + propertyName);
+                  System.out.println("property " + property);
+                  System.out.println("idea.home " + System.getProperty("idea.home"));
+
+                  if(property == null) {
+                    line = line.substring(0, index1) + "?" + propertyName + "?" + line.substring(index2+2);
+
+                    System.out.println("This property is not specified: " + propertyName);
+                  }
+                  else {
+                    line = line.substring(0, index1) + property + line.substring(index2+2);                    
+                  }
+                }
+              }
+            }
+
+            System.out.println("line2 " + line);
+            classRealm.addConstituent(new File(line).toURI().toURL());
+          }
+        }
+      }
+      else {
+        List<URL> deps = pomReader.calculateDependencies(new File(depsFileName));
+
+        for (URL dep : deps) {
+          classRealm.addConstituent(dep);
+        }
+      }
     }
   }
 
@@ -116,22 +178,6 @@ public class DepsLauncher extends ClassworldLauncher {
     }
 
     super.configure(parentClassLoader);
-
-    File compilerJar = CommonUtil.getCompilerJar();
-
-    if(compilerJar != null) {
-      try {
-        ClassRealm mainRealm = getMainRealm();
-        mainRealm.addConstituent(compilerJar.toURI().toURL());
-        //System.out.println("Using Java compiler: " + compilerJar);
-      }
-      catch (Exception e) {
-        throw new LauncherException(e);
-      }
-    }
-    else {
-      System.out.println("Compiler jar file could not be found: " + compilerJar);
-    }
   }
 
   /**
@@ -141,7 +187,7 @@ public class DepsLauncher extends ClassworldLauncher {
    */
   public void launch() throws LauncherException {
     try {
-      resolveDependencies(pomFileName);
+      resolveDependencies(depsFileName);
     }
     catch (Exception e) {
       throw new LauncherException(e);

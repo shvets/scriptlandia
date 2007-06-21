@@ -1,9 +1,11 @@
 package org.sf.scriptlandia.launcher;
 
 import org.codehaus.classworlds.ClassWorld;
+import org.codehaus.classworlds.ClassRealm;
 import org.apache.maven.bootstrap.model.Model;
 import org.apache.maven.bootstrap.model.Dependency;
 import org.sf.scriptlandia.util.FileUtil;
+import org.sf.scriptlandia.util.CommonUtil;
 
 import java.util.*;
 import java.util.jar.Manifest;
@@ -43,18 +45,34 @@ public class UniversalLauncher extends DepsLauncher {
 
     setMainClassName(parser.getCommandLine().get("main.class.name"));
 
-    String pomFileName = commandLine.get("deps.file.name");
+    String depsFileName = commandLine.get("deps.file.name");
 
-    if(pomFileName != null) {
-      if(new File(pomFileName).exists()) {
-        setPomFileName(pomFileName);
+    if(depsFileName != null) {
+      if(new File(depsFileName).exists()) {
+        setDepsFileName(depsFileName);
       }
       else {
-        System.out.println("File " + pomFileName + " does not exist.");
+        System.out.println("File " + depsFileName + " does not exist.");
       }
     }
 
     super.configure(parentClassLoader);
+
+    File compilerJar = CommonUtil.getCompilerJar();
+
+    if(compilerJar != null) {
+      try {
+        ClassRealm mainRealm = getMainRealm();
+        mainRealm.addConstituent(compilerJar.toURI().toURL());
+        //System.out.println("Using Java compiler: " + compilerJar);
+      }
+      catch (Exception e) {
+        throw new LauncherException(e);
+      }
+    }
+    else {
+      System.out.println("Compiler jar file could not be found: " + compilerJar);
+    }
   }
 
   /**
