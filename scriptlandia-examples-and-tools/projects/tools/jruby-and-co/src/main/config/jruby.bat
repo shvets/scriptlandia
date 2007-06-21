@@ -3,7 +3,7 @@
 SET JAVA_HOME=@java.home@
 SET SCRIPTLANDIA_VERSION=@scriptlandia.version@
 SET REPOSITORY_HOME=@repository.home@
-SET JRUBY_VERSION=0.9.9
+SET JRUBY_VERSION=1.0
 
 SET JAVA_BINARY="%JAVA_HOME%\bin\java" -server
 
