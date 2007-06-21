@@ -30,10 +30,12 @@ public class DepsLauncher extends ClassworldLauncher {
   /**
    * Creates new dependencies launcher.
    *
+   * @param parser the parser
+   * @param args command line arguments
    * @param classWorld the classworld
    */
-  public DepsLauncher(ClassWorld classWorld) {
-    super(classWorld);
+  public DepsLauncher(LauncherCommandLineParser parser, String[] args, ClassWorld classWorld) {
+    super(parser, args, classWorld);
   }
 
   /**
@@ -154,10 +156,9 @@ public class DepsLauncher extends ClassworldLauncher {
   /**
    * Main launcher method.
    *
-   * @param args command line arguments
    * @throws LauncherException the exception
    */
-  public void launch(String[] args) throws LauncherException {
+  public void launch() throws LauncherException {
     try {
       resolveDependencies(pomFileName);
     }
@@ -165,7 +166,7 @@ public class DepsLauncher extends ClassworldLauncher {
       throw new LauncherException(e);
     }
 
-    super.launch(args);
+    super.launch();
   }
 
 }

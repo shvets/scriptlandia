@@ -3,14 +3,12 @@ package org.sf.scriptlandia.launcher;
 import java.util.*;
 
 /**
- * The command line parser for the launcher.
+ * The command line parser for scriptlandia launcher.
  *
  * @author Alexander Shvets
  * @version 1.0 12/16/2006
  */
-public class LauncherCommandLineParser {
-  /** The collection of significant parameters. */
-  private Map<String, String> commandLine = new HashMap<String, String>();
+public class ScriptlandiaLauncherCommandLineParser extends LauncherCommandLineParser {
 
   /**
    * Parses the command line.
@@ -19,27 +17,15 @@ public class LauncherCommandLineParser {
    * @return the modified command line
    */
   public String[] parse(String[] args) {
+    args = super.parse(args);
+
     List<String> newArgsList = new ArrayList<String>();
 
     for (int i=0; i < args.length; i++) {
       String arg = args[i];
 
       if (arg.startsWith("-")) {
-        if (arg.equalsIgnoreCase("-i") || arg.equalsIgnoreCase("-is.interactive")) {
-          commandLine.put("is.interactive", "");
-          //newArgsList.add("-i");          
-        }
-        else if (arg.toLowerCase().startsWith("-deps.file.name=")) {
-          int index = arg.indexOf("=");
-
-          commandLine.put("deps.file.name", arg.substring(index + 1));
-        }
-        else if (arg.toLowerCase().startsWith("-main.class.name=")) {
-          int index = arg.indexOf("=");
-
-          commandLine.put("main.class.name", arg.substring(index + 1));
-        }
-        else if (arg.toLowerCase().startsWith("-script.name=")) {
+        if (arg.toLowerCase().startsWith("-script.name=")) {
           int index = arg.indexOf("=");
 
           commandLine.put("script.name", arg.substring(index+1));
@@ -54,6 +40,9 @@ public class LauncherCommandLineParser {
         }
         else if (arg.toLowerCase().startsWith("-ngtray")) {
           commandLine.put("is.nailgun.tray.mode", "");
+        }
+        else if (arg.toLowerCase().startsWith("-ng")) {
+          commandLine.put("is.nailgun.client.mode", "");
         }
         else if (arg.toLowerCase().startsWith("-config")) {
           commandLine.put("is.config.mode", "");
@@ -95,33 +84,6 @@ public class LauncherCommandLineParser {
     newArgsList.toArray(newArgs);
 
     return newArgs;
-  }
-
-  /**
-   * Checks if interactive mode has been requested.
-   *
-   * @return true if interactive mode has been requested; false otherwise
-   */
-  public boolean isInteractive() {
-    return commandLine.get("is.interactive") != null;
-  }
-
-  /**
-   * Gets the starter dependencies file name.
-   *
-   * @return starter dependencies file name
-   */
-  public String getStarterDepsFileName() {
-    return commandLine.get("deps.file.name");
-  }
-
-  /**
-   * Gets the starter class name.
-   *
-   * @return starter class name
-   */
-  public String getStarterClassName() {
-    return commandLine.get("main.class.name");
   }
 
   /**
@@ -176,6 +138,17 @@ public class LauncherCommandLineParser {
   }
 
   /**
+   * Checks for GUI mode.
+   *
+   * @return true if GUI mode; false otherwise
+   */
+  public boolean isNailgunClientMode() {
+    String ngClientMode = commandLine.get("nailgun.client.mode");
+
+    return ngClientMode != null && ngClientMode.equalsIgnoreCase("true");
+  }
+
+  /**
    * Checks if "config" mode has been requested.
    *
    * @return true if "tray" mode has been requested; false otherwise
@@ -194,13 +167,4 @@ public class LauncherCommandLineParser {
            (!isConfigMode() && !isNailgunServerMode() && !isNailgunTrayMode());
   }
 
-  /**
-   * Gets the command line parameters.
-   *
-   * @return the command line parameters
-   */
-  public Map<String, String> getCommandLine() {
-    return commandLine;
-  }
-  
 }

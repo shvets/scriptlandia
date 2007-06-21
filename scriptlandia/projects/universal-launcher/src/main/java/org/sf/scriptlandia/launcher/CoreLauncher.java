@@ -30,9 +30,25 @@ public class CoreLauncher extends AbstractLauncher {
   /**
    * Creates new core launcher.
    *
-   * @param classWorld the classworld
+   * @param parser the parser
+   * @param args command line arguments
+   * @param classWorld the classworld 
    */
-  public CoreLauncher(ClassWorld classWorld) {
+  public CoreLauncher(LauncherCommandLineParser parser, String[] args, ClassWorld classWorld) {
+    super(parser, args);
+
+    this.classWorld = classWorld;
+  }
+
+  /**
+   * Creates new core launcher.
+   *
+   * @param classWorld the classworld
+   * @param args command line arguments
+   */
+  public CoreLauncher(String[] args, ClassWorld classWorld) {
+    super(args);
+
     this.classWorld = classWorld;
   }
 
@@ -93,10 +109,9 @@ public class CoreLauncher extends AbstractLauncher {
   /**
    * Main launcher method.
    *
-   * @param args command line arguments
    * @throws LauncherException the exception
    */
-  public void launch(String[] args) throws LauncherException {
+  public void launch() throws LauncherException {
     Throwable throwable = null;
     try {
       ClassRealm mainRealm = getMainRealm();

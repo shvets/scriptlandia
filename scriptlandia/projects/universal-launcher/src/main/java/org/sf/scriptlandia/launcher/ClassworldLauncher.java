@@ -28,9 +28,11 @@ public class ClassworldLauncher extends CoreLauncher {
    * Creates new classworld launcher.
    *
    * @param classWorld the classworld
+   * @param parser the parser
+   * @param args command line arguments
    */
-  public ClassworldLauncher(ClassWorld classWorld) {
-    super(classWorld);
+  public ClassworldLauncher(LauncherCommandLineParser parser, String[] args, ClassWorld classWorld) {
+    super(parser, args, classWorld);
   }
 
   /**
@@ -95,9 +97,7 @@ public class ClassworldLauncher extends CoreLauncher {
 
       final List<String> newArgsList = new ArrayList<String>();
 
-      for (String arg : args) {
-        newArgsList.add(arg);
-      }
+      newArgsList.addAll(Arrays.asList(args));
 
       while (st.hasMoreTokens()) {
         newArgsList.add(st.nextToken());
@@ -108,7 +108,8 @@ public class ClassworldLauncher extends CoreLauncher {
 
       try {
         //classworldLauncher.launch(newArgs);
-        launch(newArgs);
+        this.args = newArgs;
+        launch();
       }
       catch (Throwable t) {
         // supress all exceptions to not to break the iteration
@@ -116,7 +117,6 @@ public class ClassworldLauncher extends CoreLauncher {
       }
     }
   }
-
 
   /*  protected void releaseResources() throws LauncherException {
       try {
@@ -195,10 +195,9 @@ public class ClassworldLauncher extends CoreLauncher {
   /**
    * Main launcher method.
    *
-   * @param args command line arguments
    * @throws LauncherException the exception
    */
-  public void launch(String[] args) throws LauncherException {
+  public void launch() throws LauncherException {
     boolean isExceptionThrown = false;
 
     try {
@@ -252,7 +251,8 @@ public class ClassworldLauncher extends CoreLauncher {
     }
     finally {
       if (!isExceptionThrown) {
-        if (isGuiMode(args) || isContinuousMode() && exitCode == 0) {
+
+        if (isGuiMode(args) /*|| isContinuousMode()*/ && exitCode == 0) {
           try {
             Thread.currentThread().join();
           }
@@ -271,7 +271,7 @@ public class ClassworldLauncher extends CoreLauncher {
    * @param args the list of raguments
    * @return true if "gui" mode; false otherwise
    */
-  private static boolean isGuiMode(String[] args) {
+  public static boolean isGuiMode(String[] args) {
     boolean isGuiMode = false;
     boolean isNGMode = false;
 
@@ -303,12 +303,12 @@ public class ClassworldLauncher extends CoreLauncher {
    *
    * @return true if it is contionuous mode; false otherwise
    */
-  private static boolean isContinuousMode() {
+/*  private static boolean isContinuousMode() {
     String isContinuousModeProperty = System.getProperty("scriptlandia.continuous.mode");
 
     return isContinuousModeProperty != null && isContinuousModeProperty.equalsIgnoreCase("true");
   }
-
+*/
   /**
    * Prints current classpath content.
    */

@@ -24,14 +24,17 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
   /**
    * Creates new launcher.
    *
+   * @param parser the parser
+   * @param args command line arguments
    * @param classWorld class world
-   * @throws org.sf.scriptlandia.launcher.LauncherException the launcher exception
+   * @throws LauncherException the launcher exception
    */
-  public ScriptlandiaLauncher(ClassWorld classWorld) throws LauncherException {
-    super(classWorld);
+  public ScriptlandiaLauncher(LauncherCommandLineParser parser, String[] args, ClassWorld classWorld)
+          throws LauncherException {
+    super(parser, args, classWorld);
   }
 
-  private static UniversalLauncher createLauncher(Map<String, String> properties, ClassWorld classWorld)
+  private static UniversalLauncher createLauncher(ClassWorld classWorld, LauncherCommandLineParser parser, String[] args)
           throws LauncherException {
     UniversalLauncher launcher;
 
@@ -41,14 +44,14 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
       launcher = instances.get(currentExtension);
     }
     else {
-      launcher = new UniversalLauncher(classWorld);
+      launcher = new UniversalLauncher(parser, args, classWorld);
 
-      launcher.configure(Thread.currentThread().getContextClassLoader(), properties);
+      launcher.configure(Thread.currentThread().getContextClassLoader());
 
       instances.put(currentExtension, launcher);
     }
 
-    launcher.setInteractive(Boolean.parseBoolean(properties.get("is.interactive")));
+    launcher.setInteractive(parser.isInteractive());
 
     return launcher;
   }
@@ -70,9 +73,9 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
    * @throws org.sf.scriptlandia.launcher.LauncherException exception
    */
   public static void main(String[] args, ClassWorld classWorld) throws LauncherException {
-    LauncherCommandLineParser parser = new LauncherCommandLineParser();
+    ScriptlandiaLauncherCommandLineParser parser = new ScriptlandiaLauncherCommandLineParser();
 
-    String[] newArgs = parser.parse(args);
+    parser.parse(args);
 
     String scriptName = parser.getStarterScriptName();
 
@@ -82,9 +85,9 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
       currentExtension = null;
     }
 
-    UniversalLauncher launcher = createLauncher(parser.getCommandLine(), classWorld);
+    UniversalLauncher launcher = createLauncher(classWorld, parser, args);
 
-    launcher.launch(newArgs);
+    launcher.launch();
   }
 
 }

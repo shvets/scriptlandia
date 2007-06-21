@@ -33,9 +33,12 @@ public class LauncherManager {
    * @param launcherClassName the launcher class name
    * @param classWorld the classworld
    * @return new launcher
+   * @param parser the parser 
+   * @param args command line arguments
    * @throws Exception the exception
    */
-  protected CoreLauncher createLauncher(String launcherClassName, ClassWorld classWorld) throws Exception {
+  protected CoreLauncher createLauncher(LauncherCommandLineParser parser, String[] args, 
+                                        String launcherClassName, ClassWorld classWorld) throws Exception {
     boolean instanceExists = currentExtension != null && instances.get(currentExtension) != null;
 
     CoreLauncher launcher;
@@ -47,7 +50,7 @@ public class LauncherManager {
       LauncherHelper launcherHelper = new LauncherHelper();
       launcherHelper.setupProperties();
 
-      launcher = new CoreLauncher(classWorld);
+      launcher = new CoreLauncher(parser, args, classWorld);
       launcher.setMainClassName(launcherClassName);
       launcher.configure(Thread.currentThread().getContextClassLoader());
 
@@ -69,9 +72,9 @@ public class LauncherManager {
    * @param classWorld class world
    */
   public static void main(String[] args, ClassWorld classWorld) throws Exception {
-    LauncherCommandLineParser parser = new LauncherCommandLineParser();
+    ScriptlandiaLauncherCommandLineParser parser = new ScriptlandiaLauncherCommandLineParser();
 
-    String[] newArgs = parser.parse(args);
+    parser.parse(args);
 
     String launcherClassName = parser.getLauncherClassName();
 
@@ -104,10 +107,11 @@ public class LauncherManager {
     
     LauncherManager launcherManager = new LauncherManager();
 
-    CoreLauncher launcher = launcherManager.createLauncher(launcherClassName, classWorld);
+    CoreLauncher launcher = launcherManager.createLauncher(parser, args, launcherClassName, classWorld);
 
     if(parser.isLauncherMode()) {
-      launcher.launch(args);
+      launcher.setArgs(args);
+      launcher.launch();
     }
     else {
       launcher.configure(classLoader);
@@ -116,7 +120,7 @@ public class LauncherManager {
         System.setProperty("config", "true");
       }
 
-      launcher.launch(newArgs);
+      launcher.launch(/*newArgs*/);
 
       Thread.currentThread().join();
     }

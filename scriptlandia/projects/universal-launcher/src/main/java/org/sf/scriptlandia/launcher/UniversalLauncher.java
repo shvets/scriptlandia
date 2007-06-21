@@ -22,24 +22,28 @@ public class UniversalLauncher extends DepsLauncher {
   /**
    * Creates new launcher.
    *
+   * @param parser the parser
+   * @param args command line arguments
    * @param classWorld class world
    * @throws LauncherException the launcher exception
    */
-  public UniversalLauncher(ClassWorld classWorld) throws LauncherException {
-    super(classWorld);
+  public UniversalLauncher(LauncherCommandLineParser parser, String[] args, ClassWorld classWorld)
+         throws LauncherException {
+    super(parser, args, classWorld);
   }
 
   /**
    * Configures the launcher.
    *
    * @param parentClassLoader parent class loader
-   * @param properties properties 
    * @throws LauncherException the exception
    */
-  public void configure(ClassLoader parentClassLoader, Map<String, String> properties) throws LauncherException {
-    setMainClassName(properties.get("main.class.name"));
+  public void configure(ClassLoader parentClassLoader) throws LauncherException {
+    Map<String, String> commandLine = parser.getCommandLine();
 
-    String pomFileName = properties.get("deps.file.name");
+    setMainClassName(parser.getCommandLine().get("main.class.name"));
+
+    String pomFileName = commandLine.get("deps.file.name");
 
     if(pomFileName != null) {
       if(new File(pomFileName).exists()) {
@@ -50,7 +54,7 @@ public class UniversalLauncher extends DepsLauncher {
       }
     }
 
-    setScriptName(properties.get("script.name"));
+    setScriptName(commandLine.get("script.name"));
 
     super.configure(parentClassLoader);
   }
@@ -120,13 +124,11 @@ public class UniversalLauncher extends DepsLauncher {
   public static void main(String[] args, ClassWorld classWorld) throws LauncherException {
     LauncherCommandLineParser parser = new LauncherCommandLineParser();
 
-    String[] newArgs = parser.parse(args);
+    UniversalLauncher launcher = new UniversalLauncher(parser, args, classWorld);
 
-    UniversalLauncher launcher = new UniversalLauncher(classWorld);
+    launcher.configure(Thread.currentThread().getContextClassLoader());
 
-    launcher.configure(Thread.currentThread().getContextClassLoader(), parser.getCommandLine());
-
-    launcher.launch(newArgs);
+    launcher.launch();
   }
 
 }
