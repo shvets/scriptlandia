@@ -37,10 +37,9 @@ public class LauncherCommandLineParser {
 
           commandLine.put("main.class.name", arg.substring(index + 1));
         }
-        else if(s.equalsIgnoreCase("-gui")) {
+        else if(arg.equalsIgnoreCase("-gui")) {
           commandLine.put("gui.mode", "true");
         }
-        else {
         else {
           newArgsList.add(arg);
         }
