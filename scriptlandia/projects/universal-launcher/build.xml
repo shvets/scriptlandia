@@ -4,10 +4,10 @@
 
 <project name="test" default="install" basedir=".">
 
-  <property name="launcher.home" location="c:/launcher"/>
+  <property name="launcher.home" location="d:/launcher"/>
   <property name="launcher.version" value="2.2.2"/>
   <property name="classworlds.version" value="1.1"/>
-  <property name="repository.home" value="c:/maven-repository"/>
+  <property name="repository.home" value="d:/maven-repository"/>
 
   <target name="install">
     <mkdir dir="${launcher.home}"/>
