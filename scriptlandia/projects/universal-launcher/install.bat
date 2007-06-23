@@ -1,0 +1,1 @@
+ant -Dlauncher.home=d:/launcher
