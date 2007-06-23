@@ -45,17 +45,20 @@ call "%~p0"processArgs.bat %*
 set SECTION=
 set RESULT=
 
-FOR /F "usebackq delims=" %%i in ("%APP%.conf") DO call :processline "%%i"
+FOR /F "usebackq delims=" %%i in ("%APP%.conf") DO call :processline  ^"%%i^"
 
 if "%APP%.conf" == "%CD%\%APP_NAME%.conf" goto step1
 
-IF EXIST %CD%\%APP_NAME%.conf FOR /F "usebackq delims=" %%i in ("%CD%\%APP_NAME%.conf") DO call :processline "%%i"
+IF EXIST %CD%\%APP_NAME%.conf FOR /F "usebackq delims=" %%i in ("%CD%\%APP_NAME%.conf") DO call :processline  ^"%%i^"
 
 :step1
 
 rem append result to command
 if DEFINED RESULT call :processresult
 
+call "%~p0"customizeExecution.bat %*
+
+if not defined PROCEED goto end
 
 if "%JAVA_CLASSPATH%" == "" goto execute
 
@@ -94,7 +97,7 @@ IF "%FIRST_CHAR%" == "#" goto end
 
 rem join the line to result
 if defined RESULT set RESULT=%RESULT%%SEPARATOR%
-set RESULT=%RESULT%%PREFIX%%~1
+if "%PREFIX%" == "-D" (set RESULT=%RESULT%%PREFIX%"%~1") else set RESULT=%RESULT%%PREFIX%%~1
 goto end
 
 :option
