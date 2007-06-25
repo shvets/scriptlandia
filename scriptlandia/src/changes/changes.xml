@@ -260,6 +260,10 @@
       <action dev="Alexander Shvets" type="fix">
         Upgrade JRuby up to version 1.0.
       </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Using maven 2.0.7.
+      </action>
     </release>
   </body>
 </document>

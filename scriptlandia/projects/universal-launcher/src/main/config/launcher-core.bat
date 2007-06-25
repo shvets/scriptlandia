@@ -89,6 +89,7 @@ if %1 == "<java.bootclasspath.append>" goto option
 if %1 == "<java.bootclasspath.prepend>" goto option
 if %1 == "<jvm.args>" goto option
 if %1 == "<launcher.class>" goto option
+if %1 == "<set.variables>" goto option
 
 rem ignore if line is comment
 SET LINE=%1
@@ -98,12 +99,22 @@ IF "%FIRST_CHAR%" == "#" goto end
 rem join the line to result
 if defined RESULT set RESULT=%RESULT%%SEPARATOR%
 
-if "%PREFIX%" == "-D" goto setupSystemVars
+echo prefix2: "%PREFIX%"
+
+if "%PREFIX%" == "-D" goto setupJavaSystemProperty
+if "%PREFIX%" == "SET" goto setupScriptVar
+
   set RESULT=%RESULT%%PREFIX%%~1
-goto enSetupSystemVars
-:setupSystemVars
+goto endSetupVar
+
+:setupJavaSystemProperty
   set RESULT=%RESULT%%PREFIX%"%~1"
-:enSetupSystemVars
+goto endSetupVar
+
+:setupScriptVar
+set %~1
+
+:endSetupVar
 
 goto end
 
@@ -211,9 +222,25 @@ set PREFIX=
 set SEPARATOR= 
 goto end
 
+:set.variables
+set VARIABLE_NAME=SET_VARIABLES
+set VARIABLE_VALUE=%SET_VARIABLES%
+set RESULT=
+set SECTION_PREFIX=
+set PREFIX=SET
+set SEPARATOR= 
+goto end
+
 
 :processresult
 
-if not defined %VARIABLE_NAME% (set %VARIABLE_NAME%=%SECTION_PREFIX%%RESULT%) else set %VARIABLE_NAME%=%VARIABLE_VALUE%%SEPARATOR%%RESULT%
+rem if not defined %VARIABLE_NAME% (set %VARIABLE_NAME%=%SECTION_PREFIX%%RESULT%) else set %VARIABLE_NAME%=%VARIABLE_VALUE%%SEPARATOR%%RESULT%
+
+if not defined %VARIABLE_NAME% goto setupVariable
+  set %VARIABLE_NAME%=%VARIABLE_VALUE%%SEPARATOR%%RESULT%
+goto endSetupVariable
+:setupVariable
+  set %VARIABLE_NAME%=%SECTION_PREFIX%%RESULT%
+:endSetupVariable
 
 :end

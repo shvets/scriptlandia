@@ -4,10 +4,8 @@
 
 <project name="test" default="install" basedir=".">
 
-  <property name="launcher.home" location="d:/launcher"/>
   <property name="launcher.version" value="2.2.2"/>
   <property name="classworlds.version" value="1.1"/>
-  <property name="repository.home" value="d:/maven-repository"/>
 
   <target name="install">
     <mkdir dir="${launcher.home}"/>
@@ -30,9 +28,15 @@
       </fileset>
     </copy>
 
+    <copy tofile="${launcher.home}/lib/universal-launcher-with-dependencies-${launcher.version}.jar" overwrite="true">
+      <fileset dir="target">
+        <include name="universal-launcher-with-dependencies.jar"/>
+      </fileset>
+    </copy>
+
     <copy todir="${launcher.home}/lib" overwrite="true">
-      <fileset dir="lib">
-       <include name="*.jar"/>
+      <fileset dir="${repository.home}/classworlds/classworlds/1.1">
+        <include name="**/*.jar"/>
       </fileset>
     </copy>
   </target>

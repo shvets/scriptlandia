@@ -145,6 +145,7 @@
         <include name="*.ant"/>
         <include name="*.conf"/>
         <include name="*.ini"/>
+        <exclude name="launcher.*"/>
       </fileset>
     </copy>
 

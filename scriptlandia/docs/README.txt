@@ -178,7 +178,7 @@ JDIC           0.9.1        https://jdic.dev.java.net
 Nailgun Server 0.7.1        http://www.martiansoftware.com/nailgun
 log4j          1.2.13       http://logging.apache.org/log4j
 
-Maven          2.0.6        http://maven.apache.org
+Maven          2.0.7        http://maven.apache.org
 Ant            1.7.0        http://ant.apache.org
 
 BSF            2.4.0        http://jakarta.apache.org/bsf

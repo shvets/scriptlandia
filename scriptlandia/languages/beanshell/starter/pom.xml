@@ -11,27 +11,28 @@
   <description>Scriptlandia Beanshell Starter Module</description>
 
   <properties>
-    <maven.version>2.0.6</maven.version>
+    <maven.version>2.0.7</maven.version>
+    <scriptlandia.version>2.2.2</scriptlandia.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>beanshell</artifactId>
-      <version>2.2.2</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>scriptlandia-helper</artifactId>
-      <version>2.2.2</version>
+      <version>${scriptlandia.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>ant</artifactId>
-      <version>2.2.2</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
 
@@ -52,14 +53,14 @@
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>javascript</artifactId>
-      <version>2.2.2</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>maven</artifactId>
-      <version>2.2.2</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
 
@@ -69,32 +70,24 @@
       <version>2.4.0</version>
     </dependency>
 
-<!--
-    <dependency>
-      <groupId>org.sf.scriptlandia</groupId>
-      <artifactId>scripting-engines</artifactId>
-      <version>2.2.2</version>
-      <type>pom</type>
-    </dependency>
--->
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>jruby</artifactId>
-      <version>2.2.2</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>groovy</artifactId>
-      <version>2.2.2</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>javascript</artifactId>
-      <version>2.2.2</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
 
