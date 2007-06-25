@@ -145,10 +145,6 @@
         <include name="*.ant"/>
         <include name="*.conf"/>
         <include name="*.ini"/>
-        <!--include name="launcher/*.*"/-->
-
-        <exclude name="*-exe.bat"/>
-        <exclude name="*.l4j.ini"/>
       </fileset>
     </copy>
 
@@ -157,9 +153,8 @@
        <include name="ant.bat"/>
        <include name="mvn.bat"/>
        <include name="configure.bat"/>
-       <include name="launcher*.bat"/>
+       <include name="scriptlandia*.bat"/>
        <include name="nailgun*.bat"/>
-       <exclude name="launcher-core.bat"/>
       </fileset>
     </copy>
 

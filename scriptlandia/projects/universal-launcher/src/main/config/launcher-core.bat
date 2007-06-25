@@ -49,7 +49,7 @@ FOR /F "usebackq delims=" %%i in ("%APP%.conf") DO call :processline  ^"%%i^"
 
 if "%APP%.conf" == "%CD%\%APP_NAME%.conf" goto step1
 
-IF EXIST %CD%\%APP_NAME%.conf FOR /F "usebackq delims=" %%i in ("%CD%\%APP_NAME%.conf") DO call :processline  ^"%%i^"
+IF EXIST %CD%\%APP_NAME%.conf FOR /F "usebackq delims=" %%i in ("%CD%\%APP_NAME%.conf") DO call :processline ^"%%i^"
 
 :step1
 
@@ -97,7 +97,14 @@ IF "%FIRST_CHAR%" == "#" goto end
 
 rem join the line to result
 if defined RESULT set RESULT=%RESULT%%SEPARATOR%
-if "%PREFIX%" == "-D" (set RESULT=%RESULT%%PREFIX%"%~1") else set RESULT=%RESULT%%PREFIX%%~1
+
+if "%PREFIX%" == "-D" goto setupSystemVars
+  set RESULT=%RESULT%%PREFIX%%~1
+goto enSetupSystemVars
+:setupSystemVars
+  set RESULT=%RESULT%%PREFIX%"%~1"
+:enSetupSystemVars
+
 goto end
 
 :option

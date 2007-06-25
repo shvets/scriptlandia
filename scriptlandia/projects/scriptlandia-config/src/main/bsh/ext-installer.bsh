@@ -17,6 +17,8 @@ public class ExtInstaller {
   private final String repositoryHome = System.getProperty("repository.home");
   private final String scriptlandiaHome = System.getProperty("scriptlandia.home");
 
+  public static final String LAUNCHER_SCRIPT_NAME = "scriptlandia";
+
   private AssociationService associationService = new AssociationService();
 
   /**
@@ -81,7 +83,7 @@ public class ExtInstaller {
     StringBuffer openAction = new StringBuffer();
     openAction.append(scriptlandiaHome.replace('/', File.separatorChar));
     openAction.append(File.separatorChar);
-    openAction.append("launcher.");
+    openAction.append(LAUNCHER_SCRIPT_NAME + ".");
     openAction.append(getScriptExt());
     openAction.append(" \"");
     openAction.append("-deps.file.name=");
@@ -149,7 +151,7 @@ public class ExtInstaller {
     StringBuffer openAction = new StringBuffer();
     openAction.append(scriptlandiaHome.replace('/', File.separatorChar));
     openAction.append(File.separatorChar);
-    openAction.append("launcher.");
+    openAction.append(LAUNCHER_SCRIPT_NAME + ".");
     openAction.append(getScriptExt());
     openAction.append(" \"");
     openAction.append("-deps.file.name=");

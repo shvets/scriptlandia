@@ -2,4 +2,4 @@
 
 SET SCRIPTLANDIA_HOME=@scriptlandia.home@
 
-%SCRIPTLANDIA_HOME%\launcher.bat -config %*
+%SCRIPTLANDIA_HOME%\scriptlandia.bat -config %*

@@ -2,4 +2,4 @@
 
 SCRIPTLANDIA_HOME=@scriptlandia.home@
 
-$SCRIPTLANDIA_HOME/launcher.sh -ngtray $*
+$SCRIPTLANDIA_HOME/scriptlandia.sh -ngtray $*
