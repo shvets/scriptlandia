@@ -13,7 +13,7 @@
 //========================================================================
 
 //package org.mortbay.jetty.example;
-org.sf.scriptlandia.ScriptlandiaHelper.addMavenDependencies("deps.maven");
+org.sf.scriptlandia.MavenHelper.addMavenDependencies("deps.maven");
 
 import java.io.IOException;
 

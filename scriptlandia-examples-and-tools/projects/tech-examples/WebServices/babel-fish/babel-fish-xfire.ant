@@ -10,11 +10,11 @@
 
   <target name="init">
     <script language="beanshell">
-      import org.sf.scriptlandia.ScriptlandiaHelper;
+      import org.sf.scriptlandia.MavenHelper;
       import org.apache.tools.ant.Project;
 
-      //ScriptlandiaHelper.resolveMavenDependencies("babel-fish-xfire.maven", "compile");
-      Project localProject = ScriptlandiaHelper.resolveMavenDependencies("babel-fish.maven", "compile");
+      //MavenHelper.resolveMavenDependencies("babel-fish-xfire.maven", "compile");
+      Project localProject = MavenHelper.resolveMavenDependencies("babel-fish.maven", "compile");
       project.addReference("maven.compile.classpath", localProject.getReference("maven.compile.classpath"));
     </script>
   </target>

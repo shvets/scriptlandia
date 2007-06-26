@@ -7,9 +7,9 @@
 
   <target name="resolve.dependencies">
     <script language="beanshell">
-      import org.sf.scriptlandia.ScriptlandiaHelper;
+      import org.sf.scriptlandia.MavenHelper;
 
-      ScriptlandiaHelper.resolveMavenDependencies("ibatis-test.maven", "compile");
+      MavenHelper.resolveMavenDependencies("ibatis-test.maven", "compile");
 
       import org.sf.scriptlandia.launcher.ScriptlandiaLauncherndiaLauncher;
       import org.sf.scriptlandia.launchermanager.LauncherManager;

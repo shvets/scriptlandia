@@ -6,12 +6,12 @@
     <attribute name="name"/>
 
     <![CDATA[
-      import org.sf.scriptlandia.ScriptlandiaHelper;
+      import org.sf.scriptlandia.MavenHelper;
 
       String name = attributes.get("name");
       String manager = attributes.get("manager");
 
-      ScriptlandiaHelper.resolveLanguageDependencies(name, manager);
+      MavenHelper.resolveLanguageDependencies(name, manager);
     ]]>
   </scriptdef>
 

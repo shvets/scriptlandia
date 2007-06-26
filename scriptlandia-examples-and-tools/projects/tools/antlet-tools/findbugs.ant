@@ -4,9 +4,9 @@
 
   <target name="init">
     <script language="beanshell">
-      import org.sf.scriptlandia.ScriptlandiaHelper;
+      import org.sf.scriptlandia.MavenHelper;
 
-      ScriptlandiaHelper.resolveMavenDependencies(project, "c:/scriptlandia-tools/findbugs-deps.maven", "compile");
+      MavenHelper.resolveMavenDependencies(project, "c:/scriptlandia-tools/findbugs-deps.maven", "compile");
     </script>
 
     <taskdef resource="edu/umd/cs/findbugs/anttask/tasks.properties">

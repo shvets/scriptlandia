@@ -3,9 +3,9 @@
 <project name="derby-test.antlet" default="run" basedir=".">
 
   <script language="beanshell">
-    import org.sf.scriptlandia.ScriptlandiaHelper;
+    import org.sf.scriptlandia.MavenHelper;
 
-    ScriptlandiaHelper.resolveMavenDependencies(project, "derby-deps.maven", "compile");
+    MavenHelper.resolveMavenDependencies(project, "derby-deps.maven", "compile");
   </script>
 
   <target name="sysinfo">
@@ -35,9 +35,9 @@
 
   <target name="compile">
     <script language="beanshell">
-      import org.sf.scriptlandia.ScriptlandiaHelper;
+      import org.sf.scriptlandia.MavenHelper;
 
-      ScriptlandiaHelper.executeMaven("derby-deps.maven", new String[] {"compile"});
+      MavenHelper.executeMaven("derby-deps.maven", new String[] {"compile"});
     </script>
   </target>
 

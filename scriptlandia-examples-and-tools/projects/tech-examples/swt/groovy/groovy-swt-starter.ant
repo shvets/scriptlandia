@@ -6,19 +6,19 @@
     <attribute name="name"/>
 
     <![CDATA[
-      import org.sf.scriptlandia.ScriptlandiaHelper;
+      import org.sf.scriptlandia.MavenHelper;
 
       String name = attributes.get("name");
       String manager = attributes.get("manager");
 
-      ScriptlandiaHelper.resolveLanguageDependencies(name, manager);
+      MavenHelper.resolveLanguageDependencies(name, manager);
     ]]>
   </scriptdef>
 
   <script language="beanshell">
-    import org.sf.scriptlandia.ScriptlandiaHelper;
+    import org.sf.scriptlandia.MavenHelper;
 
-    ScriptlandiaHelper.resolveDependencies("groovy", "groovy-swt", "1.0", "");
+    MavenHelper.resolveDependencies("groovy", "groovy-swt", "1.0", "");
 
     List parameters = (List)project.getReference("parameters");
 

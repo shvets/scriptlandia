@@ -6,11 +6,11 @@
     <script language="beanshell">
       String repositoryHome = System.getProperty("repository.home");
 
-/*      import org.sf.scriptlandia.ScriptlandiaHelper;
+/*      import org.sf.scriptlandia.MavenHelper;
 
 //      print(repositoryHome);
 
-      ScriptlandiaHelper.resolveMavenDependencies(repositoryHome + 
+      MavenHelper.resolveMavenDependencies(repositoryHome + 
           "/jogl/jogl/1.0.0/jogl-1.0.0.pom", "compile");
           /jogl/jogl/1.0.0/jogl-1.0.0.pom 
 */

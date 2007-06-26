@@ -4,9 +4,9 @@
 
   <target name="start">
     <script language="beanshell">
-       import org.sf.scriptlandia.ScriptlandiaHelper;
+       import org.sf.scriptlandia.MavenHelper;
 
-       ScriptlandiaHelper.resolveMavenDependencies(project, "spring-test.maven", "compile");
+       MavenHelper.resolveMavenDependencies(project, "spring-test.maven", "compile");
     </script>
 
     <java classname="HelloWorldWithSpring" fork="yes">

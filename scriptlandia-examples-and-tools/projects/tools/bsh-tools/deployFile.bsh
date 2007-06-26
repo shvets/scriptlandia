@@ -2,7 +2,7 @@
 
 sourceRelative("ChecksumScript.bsh");
 
-import org.sf.scriptlandia.ScriptlandiaHelper;
+import org.sf.scriptlandia.MavenHelper;
 
 void deployFile(String[] args) {
   String groupId = args[0].replace('.', '/');
@@ -22,7 +22,7 @@ void deployFile(String[] args) {
     "-DgeneratePom=true"
   };
 
-  ScriptlandiaHelper.executeMaven(args);
+  MavenHelper.executeMaven(args);
 
   // 2. Generating checksums
 

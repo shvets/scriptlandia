@@ -1,6 +1,6 @@
 // create-archetype.bsh
 
-import org.sf.scriptlandia.ScriptlandiaHelper;
+import org.sf.scriptlandia.MavenHelper;
 
 
 public class CreateArchetype extends JFrame {
@@ -112,7 +112,7 @@ public class CreateArchetype extends JFrame {
 
     String[] args = new String[] { "archetype:create" };
 
-    ScriptlandiaHelper.executeMaven(args);
+    MavenHelper.executeMaven(args);
   }
 
   private String getGroupId() {

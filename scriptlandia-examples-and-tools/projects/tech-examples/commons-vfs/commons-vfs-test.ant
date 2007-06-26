@@ -4,9 +4,9 @@
 
   <target name="init">
     <script language="beanshell">
-      import org.sf.scriptlandia.ScriptlandiaHelper;
+      import org.sf.scriptlandia.MavenHelper;
 
-      ScriptlandiaHelper.resolveMavenDependencies(project, "deps.maven", "compile");
+      MavenHelper.resolveMavenDependencies(project, "deps.maven", "compile");
     </script>
   </target>
 

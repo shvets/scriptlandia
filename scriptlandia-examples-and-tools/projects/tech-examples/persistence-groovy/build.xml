@@ -4,9 +4,9 @@
 
   <target name="init">
     <script language="groovy">
-      import org.sf.scriptlandia.ScriptlandiaHelper;
+      import org.sf.scriptlandia.MavenHelper;
 
-      ScriptlandiaHelper.addMavenDependencies("pom.xml");
+      MavenHelper.addMavenDependencies("pom.xml");
 
       import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 

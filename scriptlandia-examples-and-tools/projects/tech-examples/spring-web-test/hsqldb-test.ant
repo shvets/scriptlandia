@@ -3,9 +3,9 @@
 <project name="hsqldb-test.antlet" default="run" basedir=".">
 
   <script language="beanshell">
-     import org.sf.scriptlandia.ScriptlandiaHelper;
+     import org.sf.scriptlandia.MavenHelper;
 
-     ScriptlandiaHelper.resolveMavenDependencies(project, "hsqldb-deps.maven", "compile");
+     MavenHelper.resolveMavenDependencies(project, "hsqldb-deps.maven", "compile");
   </script>
 
   <target name="compile">

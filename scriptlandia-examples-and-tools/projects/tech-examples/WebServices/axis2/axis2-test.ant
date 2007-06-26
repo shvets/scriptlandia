@@ -10,9 +10,9 @@
 
   <target name="init">
     <script language="beanshell">
-      import org.sf.scriptlandia.ScriptlandiaHelper;
+      import org.sf.scriptlandia.MavenHelper;
 
-      ScriptlandiaHelper.resolveMavenDependencies(project, "axis2-test.maven", "compile", false);
+      MavenHelper.resolveMavenDependencies(project, "axis2-test.maven", "compile", false);
     </script>
   </target>
 

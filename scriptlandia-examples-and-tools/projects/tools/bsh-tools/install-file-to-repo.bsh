@@ -1,6 +1,6 @@
 //
 
-import org.sf.scriptlandia.ScriptlandiaHelper;
+import org.sf.scriptlandia.MavenHelper;
 
 sourceRelative("ChecksumScript.bsh");
 
@@ -159,7 +159,7 @@ class InstallFrame extends JFrame {
       "-DgeneratePom=true"
     };
 
-    ScriptlandiaHelper.executeMaven(args);
+    MavenHelper.executeMaven(args);
 
     String repositoryHome = System.getProperty("repository.home");
 

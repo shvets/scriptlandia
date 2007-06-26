@@ -2,7 +2,7 @@
 
 import javax.script.*;
 
-import org.sf.scriptlandia.ScriptlandiaHelper;
+import org.sf.scriptlandia.MavenHelper;
 
 String[] args = bsh.args;
 

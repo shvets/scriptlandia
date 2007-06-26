@@ -7,10 +7,10 @@ import org.apache.log4j.PatternLayout;
 
 import org.sf.scriptlandia.launcher.Launcher;
 import org.sf.scriptlandia.launchermanager.LauncherManager;
-import org.sf.scriptlandia.ScriptlandiaHelper;
+import org.sf.scriptlandia.MavenHelper;
 
 void resolveDependencies() {
-  ScriptlandiaHelper.resolveMavenDependencies("ibatis-test.maven", "compile");
+  MavenHelper.resolveMavenDependencies("ibatis-test.maven", "compile");
 
   Launcher launcher = (Launcher)LauncherManager.getLauncher();
 

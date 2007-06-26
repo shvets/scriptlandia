@@ -67,6 +67,8 @@
                     <include name="**/*.log"/>
                     <include name="**/target/**"/>
                     <include name="**/classes/**"/>
+                    <include name="**/build/**"/>
+                    <include name="**/lib/**"/>
                   </fileset>
                 </delete>
 
@@ -77,6 +79,8 @@
                     <include name="**/*.log"/>
                     <include name="**/target/**"/>
                     <include name="**/classes/**"/>
+                    <include name="**/build/**"/>
+                    <include name="**/lib/**"/>
                   </fileset>
                 </delete>
 
@@ -87,6 +91,8 @@
                     <include name="**/*.log"/>
                     <include name="**/target/**"/>
                     <include name="**/classes/**"/>
+                    <include name="**/build/**"/>
+                    <include name="**/lib/**"/>
                   </fileset>
                 </delete>
               </tasks>

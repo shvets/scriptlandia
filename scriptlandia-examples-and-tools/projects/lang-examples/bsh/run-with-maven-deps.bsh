@@ -1,9 +1,9 @@
 // run-with-maven-deps.bsh
 
-import org.sf.scriptlandia.ScriptlandiaHelper;
+import org.sf.scriptlandia.MavenHelper;
 
 //ScriptlandiaHelper.addMavenDependencies("run-maven.maven");
-ScriptlandiaHelper.resolveMavenDependencies("deps.maven", "compile");
+MavenHelper.resolveMavenDependencies("deps.maven", "compile");
 
 
 import org.jdom.Document;
