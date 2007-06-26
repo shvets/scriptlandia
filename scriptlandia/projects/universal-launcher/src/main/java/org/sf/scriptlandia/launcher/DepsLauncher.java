@@ -75,7 +75,6 @@ public class DepsLauncher extends ClassworldLauncher {
 
         while(!done1) {
           String line = reader.readLine();
-          System.out.println("line " + line);
 
           if(line == null) {
             done1 = true;
@@ -99,14 +98,10 @@ public class DepsLauncher extends ClassworldLauncher {
                   String propertyName = line.substring(index1+2, index2+1);
                   String property = System.getProperty(propertyName);
 
-                  System.out.println("propertyName " + propertyName);
-                  System.out.println("property " + property);
-                  System.out.println("idea.home " + System.getProperty("idea.home"));
-
                   if(property == null) {
                     line = line.substring(0, index1) + "?" + propertyName + "?" + line.substring(index2+2);
 
-                    System.out.println("This property is not specified: " + propertyName);
+                    System.out.println("This property is not specified: " + propertyName + ".");
                   }
                   else {
                     line = line.substring(0, index1) + property + line.substring(index2+2);                    
@@ -115,7 +110,6 @@ public class DepsLauncher extends ClassworldLauncher {
               }
             }
 
-            System.out.println("line2 " + line);
             classRealm.addConstituent(new File(line).toURI().toURL());
           }
         }
