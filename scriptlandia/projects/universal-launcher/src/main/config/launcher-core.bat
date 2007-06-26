@@ -229,10 +229,7 @@ set PREFIX=SET
 set SEPARATOR= 
 goto end
 
-
 :processresult
-
-rem if not defined %VARIABLE_NAME% (set %VARIABLE_NAME%=%SECTION_PREFIX%%RESULT%) else set %VARIABLE_NAME%=%VARIABLE_VALUE%%SEPARATOR%%RESULT%
 
 if not defined %VARIABLE_NAME% goto setupVariable
   set %VARIABLE_NAME%=%VARIABLE_VALUE%%SEPARATOR%%RESULT%

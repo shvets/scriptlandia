@@ -4,9 +4,6 @@
 
 <project name="test" default="install" basedir=".">
 
-  <property name="launcher.version" value="2.2.2"/>
-  <property name="classworlds.version" value="1.1"/>
-
   <target name="install">
     <mkdir dir="${launcher.home}"/>
 
