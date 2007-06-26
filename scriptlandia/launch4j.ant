@@ -9,17 +9,17 @@
 
   <target name="prepare">
     <script language="beanshell">
-      import org.sf.scriptlandia.ScriptlandiaHelper;
+      import org.sf.scriptlandia.MavenHelper;
 
       System.setProperty("java.specification.version", "1.5");
 
-      ScriptlandiaHelper.executeMaven("projects/bootstrap-mini/pom.xml", new String[] {"compile", "jar:jar"});
-      ScriptlandiaHelper.executeMaven("projects/pomreader/pom.xml", new String[] {"compile", "jar:jar"});
-      ScriptlandiaHelper.executeMaven("projects/antrun/pom.xml", new String[] {"compile", "jar:jar"});
+      MavenHelper.executeMaven("projects/bootstrap-mini/pom.xml", new String[] {"compile", "jar:jar"});
+      MavenHelper.executeMaven("projects/pomreader/pom.xml", new String[] {"compile", "jar:jar"});
+      MavenHelper.executeMaven("projects/antrun/pom.xml", new String[] {"compile", "jar:jar"});
 
-      ScriptlandiaHelper.executeMaven("projects/scriptlandia-installer/pom.xml", new String[] {"compile", "jar:jar"});
-      ScriptlandiaHelper.executeMaven("projects/scriptlandia/pom.xml", new String[] {"compile", "jar:jar"});
-      ScriptlandiaHelper.executeMaven("projects/universal-launcher/pom.xml", new String[] {"compile", "jar:jar"});
+      MavenHelper.executeMaven("projects/scriptlandia-installer/pom.xml", new String[] {"compile", "jar:jar"});
+      MavenHelper.executeMaven("projects/scriptlandia/pom.xml", new String[] {"compile", "jar:jar"});
+      MavenHelper.executeMaven("projects/universal-launcher/pom.xml", new String[] {"compile", "jar:jar"});
     </script>
   </target>
 
@@ -52,11 +52,11 @@
 
   <target name="installer.exe" depends="launch4j">
     <script language="beanshell">
-      import org.sf.scriptlandia.ScriptlandiaHelper;
+      import org.sf.scriptlandia.MavenHelper;
 
       System.setProperty("java.specification.version", "1.5");
 
-      ScriptlandiaHelper.executeMaven("projects/scriptlandia-installer/pom.xml", new String[] {"compile", "jar:jar"});
+      MavenHelper.executeMaven("projects/scriptlandia-installer/pom.xml", new String[] {"compile", "jar:jar"});
     </script>
 
     <launch4j>

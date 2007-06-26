@@ -99,8 +99,6 @@ IF "%FIRST_CHAR%" == "#" goto end
 rem join the line to result
 if defined RESULT set RESULT=%RESULT%%SEPARATOR%
 
-echo prefix2: "%PREFIX%"
-
 if "%PREFIX%" == "-D" goto setupJavaSystemProperty
 if "%PREFIX%" == "SET" goto setupScriptVar
 

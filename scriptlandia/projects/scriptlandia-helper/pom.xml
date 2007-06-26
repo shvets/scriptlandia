@@ -58,10 +58,6 @@
     </license>
   </licenses>
 
-  <properties>
-    <maven.version>2.0.7</maven.version>
-  </properties>
-
   <dependencies>
     <dependency>
       <groupId>log4j</groupId>
@@ -97,6 +93,12 @@
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-ant-tasks</artifactId>
       <version>${maven.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>fr.jayasoft</groupId>
+      <artifactId>ivy</artifactId>
+      <version>1.4.1</version>
     </dependency>
   </dependencies>
 
