@@ -1,5 +1,7 @@
-rem SET IDEA_HOME="C:\Editors\IntelliJ IDEA 7020"
-rem SET IDEA_PROPERTIES=%IDEA_HOME%\bin\idea.properties
-rem SET PATH="%IDEA_HOME%\bin";%PATH%
+SET LAUNCHER_HOME=..
 
-..\launcher.bat "-deps.file.name=%CD%\deps.xml" "-main.class.name=org.jruby.Main" %*
+SET MAIN_CLASS=org.jruby.Main
+
+SET SYSTEM_PROPERTIES="-deps.file.name=%CD%\deps.xml" "-main.class.name=%MAIN_CLASS%"
+
+%LAUNCHER_HOME%\launcher.bat %SYSTEM_PROPERTIES% %*
