@@ -261,19 +261,11 @@
         <plugin-list />
       </pom>
       <pom>
-        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-common/pom.xml" />
-        <plugin-list />
-      </pom>
-      <pom>
         <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-config/pom.xml" />
         <plugin-list />
       </pom>
       <pom>
         <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-installer/pom.xml" />
-        <plugin-list />
-      </pom>
-      <pom>
-        <option name="path" value="$PROJECT_DIR$/projects/scriptlandia-launcher/pom.xml" />
         <plugin-list />
       </pom>
       <pom>
@@ -739,6 +731,11 @@
     <Documents>
       <dir name="Project" root="true" />
     </Documents>
+  </component>
+  <component name="uidesigner-configuration">
+    <option name="INSTRUMENT_CLASSES" value="true" />
+    <option name="COPY_FORMS_RUNTIME_TO_OUTPUT" value="true" />
+    <option name="DEFAULT_LAYOUT_MANAGER" value="GridLayoutManager" />
   </component>
   <UsedPathMacros>
     <macro name="maven-repository" />

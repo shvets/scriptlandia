@@ -160,7 +160,11 @@ public class PomReader {
     writer.write("      <groupId>" + groupId + "</groupId>\n");
     writer.write("      <artifactId>" + artifactId + "</artifactId>\n");
     writer.write("      <version>" + version + "</version>\n");
-    writer.write("      <classifier>" + classifier + "</classifier>\n");
+
+    if(classifier != null && classifier.trim().length() > 0) {
+      writer.write("      <classifier>" + classifier + "</classifier>\n");
+    }
+
     writer.write("    </dependency>\n");
     writer.write("  </dependencies>\n");
     writer.write("\n");

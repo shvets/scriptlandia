@@ -86,4 +86,19 @@ public class ScriptlandiaHelper {
     launcher.resolveDependencies(groupId, artifactId, version, classifier);
   }
 
+  /**
+   * Resolves dependencies for specified pom maven2 dependencies file.
+   *
+   * @throws Exception the exception
+   * @param groupId group ID
+   * @param artifactId artifact ID
+   * @param version version
+   */
+  public static void resolveDependencies(String groupId, String artifactId, String version)
+         throws Exception {
+    UniversalLauncher launcher = ScriptlandiaLauncher.getInstance();
+
+    launcher.resolveDependencies(groupId, artifactId, version, null);
+  }
+  
 }
