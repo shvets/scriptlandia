@@ -1,0 +1,10 @@
+client:
+ log: /tmp/client/log
+ debug: on
+
+servers:
+ - host: zeus
+   port: 9510
+
+ - host: apollo
+   port: 9511

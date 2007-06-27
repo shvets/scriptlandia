@@ -1,0 +1,19 @@
+// test-jvyaml1.bsh
+
+org.sf.scriptlandia.ScriptlandiaHelper.resolveDependencies("jvyaml", "jvyaml", "0.2.1");
+
+import org.jvyaml.YAML;
+
+Map config = (Map) YAML.load(new FileReader("config.yml"));
+
+Map client = (Map) config.get("client");
+System.out.println("Client: " + client);
+   
+List servers = (ArrayList) config.get("servers");
+System.out.println("Servers: " + servers);
+
+System.out.println(client.get("log"));
+
+Map firstServer = (Map)servers.get(0);
+
+System.out.println(firstServer.get("host"));
