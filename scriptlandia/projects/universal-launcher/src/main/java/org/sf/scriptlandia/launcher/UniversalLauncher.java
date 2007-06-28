@@ -56,6 +56,17 @@ public class UniversalLauncher extends DepsLauncher {
       }
     }
 
+    String classpathFileName = commandLine.get("classpath.file.name");
+
+    if(classpathFileName != null) {
+      if(new File(classpathFileName).exists()) {
+        setClasspathFileName(classpathFileName);
+      }
+      else {
+        System.out.println("File " + classpathFileName + " does not exist.");
+      }
+    }
+
     super.configure(parentClassLoader);
 
     File compilerJar = CommonUtil.getCompilerJar();

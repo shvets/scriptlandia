@@ -85,6 +85,12 @@
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <option name="DEPLOY_AFTER_MAKE" value="0" />
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/languages/apt-jelly/starter/src/main/java/org/sf/scriptlandia/AptStarter.java" />
+      <file url="file://$PROJECT_DIR$/languages/xgql/starter/src/main/java/org/sf/scriptlandia/XgqlStarter.java" />
+      <file url="file://$PROJECT_DIR$/languages/groovy/starter/src/main/java/org/sf/scriptlandia/GroovyStarter.java" />
+      <file url="file://$PROJECT_DIR$/languages/jar/starter/src/main/java/org/sf/scriptlandia/JarStarter.java" />
+    </excludeFromCompile>
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html|dtd|tld)" />
       <entry name=".+\.(gif|png|jpeg|jpg)" />
@@ -731,11 +737,6 @@
     <Documents>
       <dir name="Project" root="true" />
     </Documents>
-  </component>
-  <component name="uidesigner-configuration">
-    <option name="INSTRUMENT_CLASSES" value="true" />
-    <option name="COPY_FORMS_RUNTIME_TO_OUTPUT" value="true" />
-    <option name="DEFAULT_LAYOUT_MANAGER" value="GridLayoutManager" />
   </component>
   <UsedPathMacros>
     <macro name="maven-repository" />

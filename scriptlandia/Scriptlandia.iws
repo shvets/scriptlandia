@@ -29,10 +29,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.ipr" afterPath="$PROJECT_DIR$/Scriptlandia.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/scriptlandia/launcher/ScriptlandiaLauncherCommandLineParser.java" afterPath="$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/scriptlandia/launcher/ScriptlandiaLauncherCommandLineParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.iws" afterPath="$PROJECT_DIR$/Scriptlandia.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/pomreader/src/main/java/org/sf/scriptlandia/pomreader/PomReader.java" afterPath="$PROJECT_DIR$/projects/pomreader/src/main/java/org/sf/scriptlandia/pomreader/PomReader.java" />
+      <change type="MOVED" beforePath="C:\Work\scriptlandia\trunk\scriptlandia\projects\universal-launcher\samples\intellij-idea\idea-deps.classpath" afterPath="$PROJECT_DIR$/projects/universal-launcher/samples/intellij-idea/idea.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/scriptlandia/starter/src/main/java/org/sf/scriptlandia/ScriptlandiaStarter.java" afterPath="$PROJECT_DIR$/languages/scriptlandia/starter/src/main/java/org/sf/scriptlandia/ScriptlandiaStarter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher-common/src/main/java/org/sf/scriptlandia/launcher/LauncherCommandLineParser.java" afterPath="$PROJECT_DIR$/projects/universal-launcher-common/src/main/java/org/sf/scriptlandia/launcher/LauncherCommandLineParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/scriptlandia/launcher/DepsLauncher.java" afterPath="$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/scriptlandia/launcher/DepsLauncher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/scriptlandia/launcher/ClassworldLauncher.java" afterPath="$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/scriptlandia/launcher/ClassworldLauncher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.ipr" afterPath="$PROJECT_DIR$/Scriptlandia.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/scriptlandia/launcher/UniversalLauncher.java" afterPath="$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/scriptlandia/launcher/UniversalLauncher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher/samples/jruby/jruby.bat" afterPath="$PROJECT_DIR$/projects/universal-launcher/samples/jruby/jruby.bat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/ScriptlandiaHelper.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/ScriptlandiaHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/DeveloperGuide.txt" afterPath="$PROJECT_DIR$/docs/DeveloperGuide.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher/samples/jboss/jboss.bat" afterPath="$PROJECT_DIR$/projects/universal-launcher/samples/jboss/jboss.bat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher/samples/intellij-idea/idea.bat" afterPath="$PROJECT_DIR$/projects/universal-launcher/samples/intellij-idea/idea.bat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.iml" afterPath="$PROJECT_DIR$/Scriptlandia.iml" />
     </list>
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
@@ -61,14 +72,6 @@
       <value len="0" />
     </option>
     <option name="exportFileName" value="CompareDirectories.txt" />
-  </component>
-  <component name="CompilerWorkspaceConfiguration">
-    <option name="COMPILE_IN_BACKGROUND" value="false" />
-    <option name="AUTO_SHOW_ERRORS_IN_EDITOR" value="true" />
-    <option name="CLOSE_MESSAGE_VIEW_IF_SUCCESS" value="true" />
-    <option name="COMPILE_DEPENDENT_FILES" value="false" />
-    <option name="CLEAR_OUTPUT_DIRECTORY" value="false" />
-    <option name="ASSERT_NOT_NULL" value="true" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -125,6 +128,34 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/scriptlandia/launcher/DepsLauncher.java" line="202" class="org.sf.scriptlandia.launcher.DepsLauncher" package="org.sf.scriptlandia.launcher">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/scriptlandia/launcher/UniversalLauncher.java" line="58" class="org.sf.scriptlandia.launcher.UniversalLauncher" package="org.sf.scriptlandia.launcher">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -180,19 +211,17 @@
       <file leaf-file-name="clean.sh" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clean.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="561" selection-end="561" vertical-scroll-proportion="0.08635578">
+            <state line="18" column="0" selection-start="561" selection-end="561" vertical-scroll-proportion="0.5343915">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScriptlandiaHelper.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ScriptlandiaHelper.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/ScriptlandiaHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="0" selection-start="3002" selection-end="3002" vertical-scroll-proportion="0.75886524">
-              <folding>
-                <element signature="docComment;method#resolveDependencies#1;class#ScriptlandiaHelper#0" expanded="true" />
-              </folding>
+            <state line="49" column="27" selection-start="1449" selection-end="1449" vertical-scroll-proportion="0.8532609">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -200,8 +229,44 @@
       <file leaf-file-name="DepsLauncher.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/scriptlandia/launcher/DepsLauncher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="152" column="47" selection-start="4342" selection-end="4342" vertical-scroll-proportion="0.4539007">
+            <state line="105" column="44" selection-start="2698" selection-end="2698" vertical-scroll-proportion="0.442029">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;method#setClasspathFileName#0;class#DepsLauncher#0" expanded="true" />
+                <element signature="method#setClasspathFileName#0;class#DepsLauncher#0" expanded="true" />
+                <element signature="docComment;method#loadDependencies#0;class#DepsLauncher#0" expanded="true" />
+                <element signature="docComment;method#resolveDependencies#2;class#DepsLauncher#0" expanded="true" />
+                <element signature="docComment;method#launch#0;class#DepsLauncher#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UniversalLauncher.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/scriptlandia/launcher/UniversalLauncher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="69" column="0" selection-start="1996" selection-end="1996" vertical-scroll-proportion="0.16485508">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LauncherCommandLineParser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/universal-launcher-common/src/main/java/org/sf/scriptlandia/launcher/LauncherCommandLineParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="36" selection-start="1161" selection-end="1161" vertical-scroll-proportion="0.53968257">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScriptlandiaStarter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/languages/scriptlandia/starter/src/main/java/org/sf/scriptlandia/ScriptlandiaStarter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="54" column="30" selection-start="1604" selection-end="1604" vertical-scroll-proportion="0.2192029">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -209,16 +274,8 @@
       <file leaf-file-name="PomReader.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/pomreader/src/main/java/org/sf/scriptlandia/pomreader/PomReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="167" column="0" selection-start="5468" selection-end="5468" vertical-scroll-proportion="0.8758865">
-              <folding>
-                <element signature="docComment;method#calculateDependencies#1;class#PomReader#0" expanded="true" />
-                <element signature="docComment;method#setupRepositories#0;class#PomReader#0" expanded="true" />
-                <element signature="docComment;method#getResolver#0;class#PomReader#0" expanded="true" />
-                <element signature="method#getResolver#0;class#PomReader#0" expanded="true" />
-                <element signature="docComment;method#getArtifactFile#0;class#PomReader#0" expanded="true" />
-                <element signature="docComment;method#getCachedModel#0;class#PomReader#0" expanded="true" />
-                <element signature="docComment;method#getCachedModelFile#0;class#PomReader#0" expanded="true" />
-              </folding>
+            <state line="167" column="0" selection-start="5468" selection-end="5468" vertical-scroll-proportion="0.030797102">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -226,59 +283,8 @@
       <file leaf-file-name="config.ant" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.ant">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="322" column="0" selection-start="11412" selection-end="11412" vertical-scroll-proportion="1.3948811">
-              <folding>
-                <element signature="tag#project#0" expanded="true" />
-                <element signature="tag#condition#0;tag#project#0" expanded="true" />
-                <element signature="tag#condition#1;tag#project#0" expanded="true" />
-                <element signature="tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#filterset#0;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#condition#0;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#and#0;tag#condition#0;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#condition#1;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#and#0;tag#condition#1;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#condition#2;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#and#0;tag#condition#2;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#condition#3;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#and#0;tag#condition#3;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#script#0;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#copy#0;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#fileset#0;tag#copy#0;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#copy#1;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#fileset#0;tag#copy#1;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#copy#2;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#fileset#0;tag#copy#2;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#move#0;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#fileset#0;tag#move#0;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#filterchain#0;tag#move#0;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#script#1;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#condition#4;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#condition#5;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#script#2;tag#target#1;tag#project#0" expanded="true" />
-                <element signature="tag#target#2;tag#project#0" expanded="true" />
-                <element signature="tag#copy#0;tag#target#2;tag#project#0" expanded="true" />
-                <element signature="tag#filterset#0;tag#copy#0;tag#target#2;tag#project#0" expanded="true" />
-                <element signature="tag#fileset#0;tag#copy#0;tag#target#2;tag#project#0" expanded="true" />
-                <element signature="tag#target#3;tag#project#0" expanded="true" />
-                <element signature="tag#unzip#0;tag#target#3;tag#project#0" expanded="true" />
-                <element signature="tag#target#4;tag#project#0" expanded="true" />
-                <element signature="tag#unzip#0;tag#target#4;tag#project#0" expanded="true" />
-                <element signature="tag#target#5;tag#project#0" expanded="true" />
-                <element signature="tag#script#0;tag#target#5;tag#project#0" expanded="true" />
-                <element signature="tag#unzip#0;tag#target#5;tag#project#0" expanded="true" />
-                <element signature="tag#target#6;tag#project#0" expanded="true" />
-                <element signature="tag#unzip#0;tag#target#6;tag#project#0" expanded="true" />
-                <element signature="tag#target#7;tag#project#0" expanded="true" />
-                <element signature="tag#unzip#0;tag#target#7;tag#project#0" expanded="true" />
-                <element signature="tag#patternset#0;tag#unzip#0;tag#target#7;tag#project#0" expanded="true" />
-                <element signature="tag#target#8;tag#project#0" expanded="true" />
-                <element signature="tag#unzip#0;tag#target#8;tag#project#0" expanded="true" />
-                <element signature="tag#patternset#0;tag#unzip#0;tag#target#8;tag#project#0" expanded="true" />
-                <element signature="tag#target#9;tag#project#0" expanded="true" />
-                <element signature="tag#target#10;tag#project#0" expanded="true" />
-                <element signature="tag#chmod#0;tag#target#10;tag#project#0" expanded="true" />
-                <element signature="tag#fileset#0;tag#chmod#0;tag#target#10;tag#project#0" expanded="true" />
-              </folding>
+            <state line="322" column="0" selection-start="11412" selection-end="11412" vertical-scroll-proportion="0.09272727">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -400,6 +406,108 @@
           <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\universal-launcher-common" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\universal-launcher-common" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\universal-launcher-common\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\universal-launcher-common\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\universal-launcher-common\src\main\java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\universal-launcher-common\src\main\java\org\sf\scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\universal-launcher-common" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\universal-launcher-common\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\universal-launcher-common\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\universal-launcher-common\src\main\java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\universal-launcher-common\src\main\java\org\sf\scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\universal-launcher-common\src\main\java\org\sf\scriptlandia\launcher" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
       </PATH>
       <PATH>
         <PATH_ELEMENT>
@@ -456,10 +564,6 @@
           <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\scriptlandia-helper\src\main\java" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\scriptlandia-helper\src\main\java\org\sf\scriptlandia" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
       </PATH>
     </subPane>
   </component>
@@ -498,8 +602,10 @@
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="RunManagerConfig.compileBeforeRunning" value="true" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="RunManagerConfig.showSettingsBeforeRunnig" value="true" />
   </component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="true" />
@@ -520,7 +626,7 @@
     <option name="referencePos" value="0" />
     <option name="showLabels" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.launcher">
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -553,6 +659,52 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
     </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="buildParameters">
+          <MavenBuildParameters>
+            <option name="goals">
+              <collection />
+            </option>
+            <option name="pomPath" value="" />
+          </MavenBuildParameters>
+        </option>
+        <option name="coreState">
+          <MavenCoreState>
+            <option name="checksumPolicy" value="fail" />
+            <option name="failureBehavior" value="fail-fast" />
+            <option name="localRepository" value="" />
+            <option name="mavenHome" value="" />
+            <option name="mavenSettingsFile" value="" />
+            <option name="nonRecursive" value="false" />
+            <option name="outputLevelString" value="1" />
+            <option name="pluginUpdatePolicy" value="false" />
+            <option name="produceExceptionErrorMessages" value="false" />
+            <option name="usePluginRegistry" value="false" />
+            <option name="workOffline" value="false" />
+          </MavenCoreState>
+        </option>
+        <option name="builderState">
+          <MavenBuilderState>
+            <option name="jreName" value="" />
+            <option name="mavenProperties">
+              <map />
+            </option>
+            <option name="runMavenInBackground" value="false" />
+            <option name="skipTests" value="false" />
+            <option name="useMavenEmbedder" value="false" />
+            <option name="vmOptions" value="" />
+          </MavenBuilderState>
+        </option>
+      </MavenSettings>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
@@ -563,13 +715,31 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <module name="" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
+    <configuration default="false" name="launcher" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" value="org.codehaus.classworlds.Launcher" />
+      <option name="VM_PARAMETERS" value="-Xbootclasspath/p:&quot;$APPLICATION_HOME_DIR$&quot; -D&quot;idea.properties.file=$APPLICATION_HOME_DIR$/bin/idea.properties&quot; -Xms256m -Xmx512m -XX:MaxPermSize=99m -ea " />
+      <option name="PROGRAM_PARAMETERS" value="&quot;-classpath.file.name=C:\Work\scriptlandia\trunk\scriptlandia\projects\universal-launcher\samples\intellij-idea\idea.classpath&quot; &quot;-main.class.name=com.intellij.idea.Main&quot; -wait" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <module name="Scriptlandia" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="1393" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
     </configuration>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -656,15 +826,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="6" y="0" width="1004" height="728" extended-state="0" />
+    <frame x="6" y="0" width="1004" height="734" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19957983" order="1" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24264705" order="1" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="1" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="7" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" order="8" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
@@ -672,9 +842,9 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="8" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983193" order="3" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="2" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45818815" order="2" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="9" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="4" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4860627" order="4" />
       <window_info id="FileBrowser" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3340336" order="2" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
@@ -688,8 +858,8 @@
       <window_info id="Minimized stickies" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
-      <window_info id="Compare Directories" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="4" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="Compare Directories" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="4" />
       <window_info id="CVS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
       <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="3" />
@@ -782,49 +952,6 @@
     <option name="myLastEditedConfigurable" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$maven-repository$/fr/jayasoft/ivy/1.4.1/ivy-1.4.1.jar!/fr/jayasoft/ivy/Ivy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="217" column="46" selection-start="11157" selection-end="11157" vertical-scroll-proportion="-0.028368793">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/MavenHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="26" selection-start="1065" selection-end="1091" vertical-scroll-proportion="0.030141843">
-          <folding>
-            <marker date="1182876345319" expanded="true" signature="2589:2741" placeholder="/**...*/" />
-            <marker date="1182876345319" expanded="true" signature="2820:3567" placeholder="{...}" />
-            <marker date="1182876345319" expanded="false" signature="3571:3670" placeholder="/**...*/" />
-            <marker date="1182876345319" expanded="true" signature="3732:3774" placeholder="{...}" />
-            <marker date="1182876345319" expanded="false" signature="3778:3918" placeholder="/**...*/" />
-            <marker date="1182876345319" expanded="true" signature="3994:4169" placeholder="{...}" />
-            <marker date="1182876345319" expanded="true" signature="4173:4352" placeholder="/**...*/" />
-            <marker date="1182876345319" expanded="true" signature="4451:4707" placeholder="{...}" />
-            <marker date="1182876345319" expanded="false" signature="4711:4901" placeholder="/**...*/" />
-            <marker date="1182876345319" expanded="true" signature="4970:5040" placeholder="{...}" />
-            <marker date="1182876345319" expanded="false" signature="5044:5273" placeholder="/**...*/" />
-            <marker date="1182876345319" expanded="true" signature="5357:5426" placeholder="{...}" />
-            <marker date="1182876345319" expanded="false" signature="5430:5707" placeholder="/**...*/" />
-            <marker date="1182876345319" expanded="true" signature="5823:5890" placeholder="{...}" />
-            <marker date="1182876345319" expanded="false" signature="5894:6212" placeholder="/**...*/" />
-            <marker date="1182876345319" expanded="true" signature="6344:6479" placeholder="{...}" />
-            <marker date="1182876345319" expanded="false" signature="6483:6771" placeholder="/**...*/" />
-            <marker date="1182876345319" expanded="true" signature="6885:6954" placeholder="{...}" />
-            <marker date="1182876345319" expanded="false" signature="6958:7287" placeholder="/**...*/" />
-            <marker date="1182876345319" expanded="true" signature="7433:8939" placeholder="{...}" />
-            <marker date="1182876345319" expanded="false" signature="8943:9141" placeholder="/**...*/" />
-            <marker date="1182876345319" expanded="true" signature="9239:9388" placeholder="{...}" />
-            <marker date="1182876345319" expanded="false" signature="9392:9461" placeholder="/**...*/" />
-            <marker date="1182876345319" expanded="true" signature="9508:9657" placeholder="{...}" />
-            <marker date="1182876345319" expanded="false" signature="9661:9816" placeholder="/**...*/" />
-            <marker date="1182876345319" expanded="true" signature="9875:9977" placeholder="{...}" />
-            <marker date="1182876345319" expanded="false" signature="9981:10254" placeholder="/**...*/" />
-            <marker date="1182876345319" expanded="true" signature="10407:11052" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/IvyHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="58" column="58" selection-start="1772" selection-end="1772" vertical-scroll-proportion="1.3799654">
@@ -859,99 +986,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.ant">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="322" column="0" selection-start="11412" selection-end="11412" vertical-scroll-proportion="1.3948811">
-          <folding>
-            <element signature="tag#project#0" expanded="true" />
-            <element signature="tag#condition#0;tag#project#0" expanded="true" />
-            <element signature="tag#condition#1;tag#project#0" expanded="true" />
-            <element signature="tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#filterset#0;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#condition#0;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#and#0;tag#condition#0;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#condition#1;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#and#0;tag#condition#1;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#condition#2;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#and#0;tag#condition#2;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#condition#3;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#and#0;tag#condition#3;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#script#0;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#copy#0;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#fileset#0;tag#copy#0;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#copy#1;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#fileset#0;tag#copy#1;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#copy#2;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#fileset#0;tag#copy#2;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#move#0;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#fileset#0;tag#move#0;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#filterchain#0;tag#move#0;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#script#1;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#condition#4;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#condition#5;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#script#2;tag#target#1;tag#project#0" expanded="true" />
-            <element signature="tag#target#2;tag#project#0" expanded="true" />
-            <element signature="tag#copy#0;tag#target#2;tag#project#0" expanded="true" />
-            <element signature="tag#filterset#0;tag#copy#0;tag#target#2;tag#project#0" expanded="true" />
-            <element signature="tag#fileset#0;tag#copy#0;tag#target#2;tag#project#0" expanded="true" />
-            <element signature="tag#target#3;tag#project#0" expanded="true" />
-            <element signature="tag#unzip#0;tag#target#3;tag#project#0" expanded="true" />
-            <element signature="tag#target#4;tag#project#0" expanded="true" />
-            <element signature="tag#unzip#0;tag#target#4;tag#project#0" expanded="true" />
-            <element signature="tag#target#5;tag#project#0" expanded="true" />
-            <element signature="tag#script#0;tag#target#5;tag#project#0" expanded="true" />
-            <element signature="tag#unzip#0;tag#target#5;tag#project#0" expanded="true" />
-            <element signature="tag#target#6;tag#project#0" expanded="true" />
-            <element signature="tag#unzip#0;tag#target#6;tag#project#0" expanded="true" />
-            <element signature="tag#target#7;tag#project#0" expanded="true" />
-            <element signature="tag#unzip#0;tag#target#7;tag#project#0" expanded="true" />
-            <element signature="tag#patternset#0;tag#unzip#0;tag#target#7;tag#project#0" expanded="true" />
-            <element signature="tag#target#8;tag#project#0" expanded="true" />
-            <element signature="tag#unzip#0;tag#target#8;tag#project#0" expanded="true" />
-            <element signature="tag#patternset#0;tag#unzip#0;tag#target#8;tag#project#0" expanded="true" />
-            <element signature="tag#target#9;tag#project#0" expanded="true" />
-            <element signature="tag#target#10;tag#project#0" expanded="true" />
-            <element signature="tag#chmod#0;tag#target#10;tag#project#0" expanded="true" />
-            <element signature="tag#fileset#0;tag#chmod#0;tag#target#10;tag#project#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clean.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="561" selection-end="561" vertical-scroll-proportion="0.08635578">
+        <state line="18" column="0" selection-start="561" selection-end="561" vertical-scroll-proportion="0.5343915">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/pomreader/src/main/java/org/sf/scriptlandia/pomreader/PomReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="167" column="0" selection-start="5468" selection-end="5468" vertical-scroll-proportion="0.8758865">
-          <folding>
-            <element signature="docComment;method#calculateDependencies#1;class#PomReader#0" expanded="true" />
-            <element signature="docComment;method#setupRepositories#0;class#PomReader#0" expanded="true" />
-            <element signature="docComment;method#getResolver#0;class#PomReader#0" expanded="true" />
-            <element signature="method#getResolver#0;class#PomReader#0" expanded="true" />
-            <element signature="docComment;method#getArtifactFile#0;class#PomReader#0" expanded="true" />
-            <element signature="docComment;method#getCachedModel#0;class#PomReader#0" expanded="true" />
-            <element signature="docComment;method#getCachedModelFile#0;class#PomReader#0" expanded="true" />
-          </folding>
+        <state line="167" column="0" selection-start="5468" selection-end="5468" vertical-scroll-proportion="0.030797102">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/scriptlandia/launcher/DepsLauncher.java">
+    <entry file="file://$PROJECT_DIR$/config.ant">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="47" selection-start="4342" selection-end="4342" vertical-scroll-proportion="0.4539007">
+        <state line="322" column="0" selection-start="11412" selection-end="11412" vertical-scroll-proportion="0.09272727">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/ScriptlandiaHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="0" selection-start="3002" selection-end="3002" vertical-scroll-proportion="0.75886524">
+        <state line="49" column="27" selection-start="1449" selection-end="1449" vertical-scroll-proportion="0.8532609">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/languages/scriptlandia/starter/src/main/java/org/sf/scriptlandia/ScriptlandiaStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="30" selection-start="1604" selection-end="1604" vertical-scroll-proportion="0.2192029">
           <folding>
-            <element signature="docComment;method#resolveDependencies#1;class#ScriptlandiaHelper#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/languages/velocity/starter/src/main/java/org/sf/scriptlandia/VelocityStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="34" selection-start="437" selection-end="437" vertical-scroll-proportion="0.58966565">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/languages/jar/starter/src/main/java/org/sf/scriptlandia/JarStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="154" column="4" selection-start="4708" selection-end="4708" vertical-scroll-proportion="0.3312102">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/languages/apt-jelly/starter/src/main/java/org/sf/scriptlandia/AptStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="13" selection-start="605" selection-end="605" vertical-scroll-proportion="0.3100304">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/universal-launcher-common/src/main/java/org/sf/scriptlandia/launcher/LauncherCommandLineParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="36" selection-start="1161" selection-end="1161" vertical-scroll-proportion="0.53968257">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/scriptlandia/launcher/DepsLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="44" selection-start="2698" selection-end="2698" vertical-scroll-proportion="0.442029">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#setClasspathFileName#0;class#DepsLauncher#0" expanded="true" />
+            <element signature="method#setClasspathFileName#0;class#DepsLauncher#0" expanded="true" />
+            <element signature="docComment;method#loadDependencies#0;class#DepsLauncher#0" expanded="true" />
+            <element signature="docComment;method#resolveDependencies#2;class#DepsLauncher#0" expanded="true" />
+            <element signature="docComment;method#launch#0;class#DepsLauncher#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/scriptlandia/launcher/UniversalLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="0" selection-start="1996" selection-end="1996" vertical-scroll-proportion="0.16485508">
+          <folding />
         </state>
       </provider>
     </entry>

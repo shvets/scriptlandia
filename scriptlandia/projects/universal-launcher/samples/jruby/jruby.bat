@@ -1,7 +1,8 @@
-SET LAUNCHER_HOME=..
+SET LAUNCHER_HOME=c:\launcher
 
 SET MAIN_CLASS=org.jruby.Main
 
-SET SYSTEM_PROPERTIES="-deps.file.name=%CD%\deps.xml" "-main.class.name=%MAIN_CLASS%"
 
-%LAUNCHER_HOME%\launcher.bat %SYSTEM_PROPERTIES% %*
+SET PROPERTIES="-deps.file.name=%CD%\deps.xml" "-main.class.name=%MAIN_CLASS%"
+
+%LAUNCHER_HOME%\launcher.bat %PROPERTIES% %*

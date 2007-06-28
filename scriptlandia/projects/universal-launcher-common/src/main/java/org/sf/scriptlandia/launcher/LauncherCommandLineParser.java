@@ -32,13 +32,18 @@ public class LauncherCommandLineParser {
 
           commandLine.put("deps.file.name", arg.substring(index + 1));
         }
+          else if (arg.toLowerCase().startsWith("-classpath.file.name=")) {
+          int index = arg.indexOf("=");
+
+          commandLine.put("classpath.file.name", arg.substring(index + 1));
+        }
         else if (arg.toLowerCase().startsWith("-main.class.name=")) {
           int index = arg.indexOf("=");
 
           commandLine.put("main.class.name", arg.substring(index + 1));
         }
-        else if(arg.equalsIgnoreCase("-gui")) {
-          commandLine.put("gui.mode", "true");
+        else if(arg.equalsIgnoreCase("-wait")) {
+          commandLine.put("wait.mode", "true");
         }
         else {
           newArgsList.add(arg);
@@ -84,8 +89,8 @@ public class LauncherCommandLineParser {
   }
 
 
-  public boolean isGuiMode() {
-    String s = (String)commandLine.get("gui.mode");
+  public boolean isWaitMode() {
+    String s = (String)commandLine.get("wait.mode");
     return s != null && s.equalsIgnoreCase("true");
   }
 

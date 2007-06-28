@@ -138,9 +138,9 @@ public class ScriptlandiaLauncherCommandLineParser extends LauncherCommandLinePa
   }
 
   /**
-   * Checks for GUI mode.
+   * Checks for nailgun client mode.
    *
-   * @return true if GUI mode; false otherwise
+   * @return true if nailgun client mode; false otherwise
    */
   public boolean isNailgunClientMode() {
     String ngClientMode = commandLine.get("nailgun.client.mode");

@@ -39,7 +39,7 @@ public class ScriptlandiaHelper {
     if(manager.equalsIgnoreCase("bsf")) {
       pom = repositoryHome + "/org/sf/scriptlandia/" + name + "/" + scriptlandiaVersion +
             "/" + name + "-" + scriptlandiaVersion + ".pom";
-      launcher.resolveDependencies(pom);
+      launcher.resolveDependencies(new File(pom));
     }
     else {
       pom = repositoryHome + "/javax/script/" + name + "-engine/1.0/" + name + "-engine-1.0.pom";
@@ -47,7 +47,7 @@ public class ScriptlandiaHelper {
       File pomFile = new File(pom);
 
       if(pomFile.exists()) {
-        launcher.resolveDependencies(pom);
+        launcher.resolveDependencies(new File(pom));
       }
       else {
         String groupId = "javax.script";

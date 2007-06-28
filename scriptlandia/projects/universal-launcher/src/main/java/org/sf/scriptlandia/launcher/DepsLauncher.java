@@ -3,7 +3,6 @@ package org.sf.scriptlandia.launcher;
 import org.codehaus.classworlds.ClassRealm;
 import org.codehaus.classworlds.ClassWorld;
 import org.sf.scriptlandia.pomreader.PomReader;
-import org.sf.scriptlandia.util.FileUtil;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -22,6 +21,9 @@ import java.util.List;
 public class DepsLauncher extends ClassworldLauncher {
   /** Pom file name. */
   private String depsFileName;
+
+  /** Classpath file name. */
+  private String classpathFileName;
 
   /** The Pom reader. */
   protected PomReader pomReader = new PomReader();
@@ -55,71 +57,80 @@ public class DepsLauncher extends ClassworldLauncher {
   }
 
   /**
+   * Sets the classpath file name.
+   * @param classpathFileName the classpath file name
+   */
+  public void setClasspathFileName(String classpathFileName) {
+    this.classpathFileName = classpathFileName;
+  }
+
+  /**
    * Resolves dependencies for specified pom maven2 dependencies file.
    *
-   * @param depsFileName the pom file name
+   * @param depsFile the pom file
    * @throws Exception the exception
    */
-  public void resolveDependencies(String depsFileName) throws Exception {
-    File depsFile = new File(depsFileName);
+  public void resolveDependencies(File depsFile) throws Exception {
+    ClassRealm classRealm = getMainRealm();
 
-    if(depsFile.exists()) {
-      ClassRealm classRealm = getMainRealm();
+    List<URL> deps = pomReader.calculateDependencies(depsFile);
 
-      String extension = FileUtil.getExtension(depsFileName);
+    for (URL dep : deps) {
+      classRealm.addConstituent(dep);
+    }
+  }
 
-      if(extension.equalsIgnoreCase("classpath")) {
-        BufferedReader reader = new BufferedReader(new FileReader(depsFile));
+  /**
+   * Resolves dependencies for specified pom maven2 dependencies file.
+   *
+   * @param classpathFile the classpath file name
+   * @throws Exception the exception
+   */
+  public void loadDependencies(File classpathFile) throws Exception {
+    ClassRealm classRealm = getMainRealm();
 
-        boolean done1 = false;
+    BufferedReader reader = new BufferedReader(new FileReader(classpathFile));
 
-        while(!done1) {
-          String line = reader.readLine();
+    boolean done1 = false;
 
-          if(line == null) {
-            done1 = true;
-          }
-          else {
-            boolean done2 = false;
+    while(!done1) {
+      String line = reader.readLine();
 
-            while(!done2) {
-              int index1 = line.indexOf("${");
-
-              if(index1 == -1) {
-                done2 = true;
-              }
-              else {
-                int index2 = line.substring(index1+1).indexOf("}");
-
-                if(index2 == -1) {
-                  done2 = true;
-                }
-                else {
-                  String propertyName = line.substring(index1+2, index2+1);
-                  String property = System.getProperty(propertyName);
-
-                  if(property == null) {
-                    line = line.substring(0, index1) + "?" + propertyName + "?" + line.substring(index2+2);
-
-                    System.out.println("This property is not specified: " + propertyName + ".");
-                  }
-                  else {
-                    line = line.substring(0, index1) + property + line.substring(index2+2);                    
-                  }
-                }
-              }
-            }
-
-            classRealm.addConstituent(new File(line).toURI().toURL());
-          }
-        }
+      if(line == null) {
+        done1 = true;
       }
       else {
-        List<URL> deps = pomReader.calculateDependencies(new File(depsFileName));
+        boolean done2 = false;
 
-        for (URL dep : deps) {
-          classRealm.addConstituent(dep);
+        while(!done2) {
+          int index1 = line.indexOf("${");
+
+          if(index1 == -1) {
+            done2 = true;
+          }
+          else {
+            int index2 = line.substring(index1+1).indexOf("}");
+
+            if(index2 == -1) {
+              done2 = true;
+            }
+            else {
+              String propertyName = line.substring(index1+2, index2+1);
+              String property = System.getProperty(propertyName);
+
+              if(property == null) {
+                line = line.substring(0, index1) + "?" + propertyName + "?" + line.substring(index2+2);
+
+                System.out.println("This property is not specified: " + propertyName + ".");
+              }
+              else {
+                line = line.substring(0, index1) + property + line.substring(index2+2);                    
+              }
+            }
+          }
         }
+
+        classRealm.addConstituent(new File(line).toURI().toURL());
       }
     }
   }
@@ -181,7 +192,21 @@ public class DepsLauncher extends ClassworldLauncher {
    */
   public void launch() throws LauncherException {
     try {
-      resolveDependencies(depsFileName);
+      if(depsFileName != null) {
+        File depsFile = new File(depsFileName);
+
+        if(depsFile.exists()) {
+          resolveDependencies(depsFile);
+        }
+      }
+
+      if(classpathFileName != null) {
+        File classpathFile = new File(classpathFileName);
+
+        if(classpathFile.exists()) {
+          loadDependencies(classpathFile);
+        }
+      }
     }
     catch (Exception e) {
       throw new LauncherException(e);

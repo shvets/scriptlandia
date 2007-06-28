@@ -1,14 +1,15 @@
 package org.sf.scriptlandia;
 
-import java.util.List;
+import org.codehaus.classworlds.ClassRealm;
+import org.codehaus.classworlds.ClassWorld;
+import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+import org.sf.scriptlandia.launcher.UniversalLauncher;
+import org.sf.scriptlandia.util.ReflectionUtil;
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
-
-import org.sf.scriptlandia.util.ReflectionUtil;
-import org.sf.scriptlandia.launcher.UniversalLauncher;
-import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
-import org.codehaus.classworlds.ClassWorld;
-import org.codehaus.classworlds.ClassRealm;
+import java.util.List;
 
 /**
  * This class is used for starting dependency file as executable.
@@ -29,7 +30,7 @@ public final class ScriptlandiaStarter {
 
     String scriptName = args[0];
 
-    launcher.resolveDependencies(scriptName);
+    launcher.resolveDependencies(new File(scriptName));
 
     List<String> mainClassNames = launcher.findMainClassNames(scriptName);
 

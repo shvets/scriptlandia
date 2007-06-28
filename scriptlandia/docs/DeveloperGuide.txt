@@ -319,9 +319,9 @@ Forcing GUI mode
 
 
 If your script is based on AWT or swing, we need to make sure not to close
-awt-thread from execution. You have to use -gui command line parameter:
+awt-thread from execution. You have to use -wait command line parameter:
 
->testWithGui.bsh -gui
+>testWithGui.bsh -wait
 
 
 Jelly Scripts
