@@ -1,4 +1,4 @@
-SET LAUNCHER_HOME=c:\launcher
+SET LAUNCHER_HOME=c:\scriptlandia\launcher
 
 SET MAIN_CLASS=org.jruby.Main
 
