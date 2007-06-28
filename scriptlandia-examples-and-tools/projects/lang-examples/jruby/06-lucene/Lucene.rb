@@ -1,8 +1,8 @@
 //
 
 require "java"
-require "c:/maven-repository//org/apache/lucene/lucene-core/2.2.0/lucene-core-2.2.0.jar"
 
+require "c:/maven-repository/org/apache/lucene/lucene-core/2.2.0/lucene-core-2.2.0.jar"
 
 class Lucene
   @index_path = nil
