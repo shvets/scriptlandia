@@ -141,6 +141,11 @@
       <filterset refid="copy.filterset"/>
     </copy>
 
+    <copy file="projects/universal-launcher/src/main/config/launcher-repo.conf" 
+          tofile="${launcher.home}/launcher.conf" overwrite="true">
+      <filterset refid="copy.filterset"/>
+    </copy>
+
     <copy todir="${scriptlandia.home}" overwrite="true">
       <filterset refid="copy.filterset"/>
 
