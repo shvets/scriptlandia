@@ -20,6 +20,9 @@ pause
 goto end
 
 :conf
+SET CMD_LINE_ARGS=%*
+IF NOT CMDEXTVERSION 2 SET CMD_LINE_ARGS=%CMD_LINE_ARGS:~1%
+
 rem set CMD=java.exe
 if not defined CMD set CMD=java.exe
 if defined JAVA_HOME set CMD="%JAVA_HOME%\bin\%CMD%"
@@ -40,7 +43,7 @@ SET LAUNCHER_CLASS=
 SET PARAMETERS=
 
 
-call "%~p0"processArgs.bat %*
+call "%~p0"processArgs.bat %CMD_LINE_ARGS%
 
 set SECTION=
 set RESULT=
@@ -55,10 +58,6 @@ IF EXIST %CD%\%APP_NAME%.conf FOR /F "usebackq delims=" %%i in ("%CD%\%APP_NAME%
 
 rem append result to command
 if DEFINED RESULT call :processresult
-
-call "%~p0"customizeExecution.bat %*
-
-if not defined PROCEED goto end
 
 if "%JAVA_CLASSPATH%" == "" goto execute
 

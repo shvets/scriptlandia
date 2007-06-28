@@ -253,7 +253,7 @@ public class MavenHelper {
 
     DependenciesTask dependenciesTask = createDependenciesTask(project, id, useScope, online);
 
-   String launcherHome = System.getProperty("launcher.home");
+    String launcherHome = System.getProperty("launcher.home");
     List<org.apache.maven.bootstrap.model.Repository> repositories;
 
     RepositoriesReader reader = new RepositoriesReader();

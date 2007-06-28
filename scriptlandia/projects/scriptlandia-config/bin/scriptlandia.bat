@@ -11,4 +11,30 @@ set APP=%~nx0
 set APP_NAME=%APP:~0,-4%
 set APP=%SCRIPTLANDIA_HOME%\%APP:~0,-4%
 
+FOR %%i IN (%*) DO call :processParam ^"%%i^"
+
+goto startLauncher
+
+:processParam
+
+SET LINE=%1
+SET CHARS=%LINE:~1,4%
+
+if ^"%CHARS%^" == ^"-ng"^" SET NAILGUN_MODE=true
+
+goto end
+
+:startLauncher
+
+if "%NAILGUN_MODE%"=="true" goto nailgun
+goto runJava
+
+:nailgun
+SET LAUNCHER_CLASS=org.sf.scriptlandia.classworlds.launcher.Launcher
+%NAILGUN% %LAUNCHER_CLASS% %CMD_LINE_ARGS% -ng %*
+goto end
+
+:runJava
 call %LAUNCHER_HOME%\launcher-core.bat %*
+
+:end
