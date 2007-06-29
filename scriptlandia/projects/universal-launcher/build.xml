@@ -2,23 +2,29 @@
 
 <!-- build.xml -->
 
-<project name="test" default="install" basedir=".">
+<project name="test" default="install2" basedir=".">
 
-  <target name="install">
+  <target name="init">
+<!--
+    <filterset id="copy.filterset">
+      <filter token="java.home" value="${java.home}"/>
+      <filter token="repository.home" value="${repository.home}"/>
+      <filter token="launcher.home" value="${launcher.home}"/>
+      <filter token="launcher.version" value="${launcher.version}"/>
+      <filter token="classworlds.version" value="${classworlds.version}"/>
+      <filter token="proxyHost" value="${proxyHost}"/>
+      <filter token="proxyPort" value="${proxyPort}"/>
+      <filter token="http.proxyHost" value="${proxyHost}"/>
+      <filter token="http.proxyPort" value="${proxyPort}"/>
+    </filterset>
+-->
+  </target>
+
+  <target name="install" depends="init">
     <mkdir dir="${launcher.home}"/>
-
+<!--
     <copy todir="${launcher.home}" overwrite="true">
-      <filterset>
-        <filter token="java.home" value="${java.home}"/>
-        <filter token="repository.home" value="${repository.home}"/>
-        <filter token="launcher.home" value="${launcher.home}"/>
-        <filter token="launcher.version" value="${launcher.version}"/>
-        <filter token="classworlds.version" value="${classworlds.version}"/>
-        <filter token="proxyHost" value="${proxyHost}"/>
-        <filter token="proxyPort" value="${proxyPort}"/>
-        <filter token="http.proxyHost" value="${proxyHost}"/>
-        <filter token="http.proxyPort" value="${proxyPort}"/>
-      </filterset>
+      <filterset refid="copy.filterset"/>
 
       <fileset dir="src/main/config">
        <include name="*.*"/>
@@ -36,6 +42,31 @@
         <include name="**/*.jar"/>
       </fileset>
     </copy>
+-->
+  </target>
+
+  <target name="install2" depends="init">
+    <mkdir dir="${launcher.home}"/>
+<!--
+    <copy todir="${launcher.home}" overwrite="true">
+      <filterset refid="copy.filterset"/>
+
+      <fileset dir="src/main/config">
+       <include name="*.*"/>
+      </fileset>
+    </copy>
+
+
+    <copy file="src/main/config/classworlds-repo.conf" 
+          tofile="${launcher.home}/classworlds.conf" overwrite="true">
+      <filterset refid="copy.filterset"/>
+    </copy>
+
+    <copy file="src/main/config/launcher-repo.conf" 
+          tofile="${launcher.home}/launcher.conf" overwrite="true">
+      <filterset refid="copy.filterset"/>
+    </copy>
+-->
   </target>
 
 </project>

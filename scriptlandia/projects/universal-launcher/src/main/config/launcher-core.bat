@@ -20,8 +20,8 @@ pause
 goto end
 
 :conf
-SET CMD_LINE_ARGS=%*
-IF NOT CMDEXTVERSION 2 SET CMD_LINE_ARGS=%CMD_LINE_ARGS:~1%
+rem SET CMD_LINE_ARGS=%*
+rem IF NOT CMDEXTVERSION 2 SET CMD_LINE_ARGS=%CMD_LINE_ARGS:~1%
 
 rem set CMD=java.exe
 if not defined CMD set CMD=java.exe
@@ -41,10 +41,7 @@ SET JVM_ARGS=
 SET LAUNCHER_CLASS=
 SET COMMAND_LINE_ARGS=
 
-SET PARAMETERS=
-
-
-call "%~p0"processArgs.bat %CMD_LINE_ARGS%
+FOR %%i in (%*) DO call :processarg ^%%i^
 
 set SECTION=
 set RESULT=
@@ -74,7 +71,14 @@ SET JAVA_BOOTCLASSPATH_APPPEND=-Xbootclasspath/a:"%JAVA_BOOTCLASSPATH_APPPEND%"
 
 
 :execute
-%CMD% %JAVA_BOOTCLASSPATH_APPEND% %JAVA_BOOTCLASSPATH_PREPEND% %JAVA_BOOTCLASSPATH% %JAVA_LIBRARY_PATH% %JAVA_EXT_DIRS% %JAVA_ENDORSED_DIRS% %JAVA_SYSTEM_PROPS% %JVM_ARGS% %JAVA_CLASSPATH% %LAUNCHER_CLASS% %COMMAND_LINE_ARGS% %CMD_LINE_ARGS% 
+%CMD% ^
+  %JAVA_BOOTCLASSPATH_APPEND% %JAVA_BOOTCLASSPATH_PREPEND% %JAVA_BOOTCLASSPATH% ^
+  %JAVA_LIBRARY_PATH% %JAVA_EXT_DIRS% %JAVA_ENDORSED_DIRS% ^
+  %JVM_ARGS% ^
+  %JAVA_SYSTEM_PROPS% ^
+  %JAVA_CLASSPATH% ^
+  %LAUNCHER_CLASS% ^
+  %COMMAND_LINE_ARGS%
 
 goto end
 
@@ -247,5 +251,45 @@ goto endSetupVariable
 :setupVariable
   set %VARIABLE_NAME%=%SECTION_PREFIX%%RESULT%
 :endSetupVariable
+
+goto end
+
+:processarg
+echo 1. %1
+
+if "%~1"=="" goto end
+
+set TEMP=%~1
+set PARAM=%TEMP:~0,2%
+
+if "%PARAM%"=="-D" goto prepareSystemProps
+
+if "%PARAM%"=="-X" goto prepareBootClasspath
+
+if "%TEMP%"=="-debug" goto prepareDebugProps
+
+if "%PARAM%"=="-Djava.library.path" goto prepareJavaLibraryPath
+
+set COMMAND_LINE_ARGS=%COMMAND_LINE_ARGS% "%~1%"
+
+goto endProcessarg
+
+:prepareSystemProps
+SET JAVA_SYSTEM_PROPS=%JAVA_SYSTEM_PROPS% "%~1%"
+goto endProcessarg
+
+:prepareBootClasspath
+SET JAVA_BOOTCLASSPATH_APPEND=%JAVA_BOOTCLASSPATH_APPEND% "%~1%"
+goto endProcessarg
+
+:prepareDebugProps
+SET JAVA_SYSTEM_PROPS=%JAVA_SYSTEM_PROPS% -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=6006
+goto endProcessarg
+
+:prepareJavaLibraryPath
+SET JAVA_LIBRARY_PATH=%JAVA_LIBRARY_PATH% "%~1%"
+goto endProcessarg
+
+:endProcessarg
 
 :end
