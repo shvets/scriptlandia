@@ -31,7 +31,7 @@ goto runJava
 
 :nailgun
 SET LAUNCHER_CLASS=org.sf.scriptlandia.classworlds.launcher.Launcher
-%NAILGUN% %LAUNCHER_CLASS% %CMD_LINE_ARGS% -ng %*
+%NAILGUN% %LAUNCHER_CLASS% -ng %*
 goto end
 
 :runJava
