@@ -9,14 +9,6 @@
 
   <name>Test</name>
 
-  <dependencies>
-    <dependency>
-      <groupId>groovy</groupId>
-      <artifactId>groovy</artifactId>
-      <version>1.0</version>
-    </dependency>
-  </dependencies>
-
   <build>
     <defaultGoal>verify</defaultGoal>
 
@@ -34,18 +26,16 @@
       <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>groovy-maven-plugin</artifactId>
-          <version>0.1-SNAPSHOT</version>
-
           <executions>
               <execution>
-                  <id>test</id>
-                  <phase>package</phase>
+                  <phase>generate-resources</phase>
                   <goals>
-                      <goal>groovy</goal>
+                      <goal>execute</goal>
                   </goals>
                   <configuration>
-                      <fileName>Hello.groovy</fileName>
-                      <passProjectAsProperty>true</passProjectAsProperty>
+                      <source>
+                          <file>${pom.basedir}/Hello.groovy</file>
+                      </source>
                   </configuration>
               </execution>
           </executions>

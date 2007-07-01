@@ -3,21 +3,15 @@
 
 1. With Ant (scala is preinstalled)
 
->ant -f scala-test1.ant compile
-
 >ant -f scala-test1.ant run
 
 
 2. With Ant (scala will be installed by maven 2)
 
->ant -f scala-test2.ant compile
-
 >ant -f scala-test2.ant run
 
 
 3. With Maven 2 through plexus-compiler-scalac ()
-
->mvn -f scala-test3.maven compile
 
 >mvn -f scala-test3.maven exec:java
 

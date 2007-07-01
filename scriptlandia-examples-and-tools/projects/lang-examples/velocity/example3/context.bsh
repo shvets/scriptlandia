@@ -2,7 +2,7 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.Template;
 import org.apache.velocity.app.Velocity;
 
-import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+//import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 
 import org.jdom.Document;
 import org.jdom.input.SAXBuilder;
@@ -10,11 +10,14 @@ import org.jdom.input.SAXBuilder;
 
 String repositoryHome = System.getProperty("repository.home");
 
-ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+//ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
 
 //launcher.addURL(new File(repositoryHome + "/xerces/xercesImpl/2.7.1/xercesImpl-2.7.1.jar").toURL());
-launcher.addClasspathEntry(repositoryHome + "/jdom/jdom/1.0/jdom-1.0.jar");
+//launcher.addClasspathEntry(repositoryHome + "/jdom/jdom/1.0/jdom-1.0.jar");
 
+import org.sf.scriptlandia.ScriptlandiaHelper;
+
+ScriptlandiaHelper.resolveDependencies("jdom", "jdom", "1.0");
 
 SAXBuilder builder = new SAXBuilder(/*"org.apache.xerces.parsers.SAXParser"*/);
 

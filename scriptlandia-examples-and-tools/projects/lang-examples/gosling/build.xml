@@ -2,7 +2,10 @@
 
 <project name="gosling-test" default="compile" basedir=".">
 
-  <property name="repository.home" value="c:/maven-repository"/>
+
+  <script language="beanshell">
+    org.sf.scriptlandia.ScriptlandiaHelper.resolveDependencies("com.antwerkz", "gosling", "0.1");
+  </script>
 
   <target name="init">
     <property name="src.dir" value="src/main/java"/>
@@ -13,6 +16,7 @@
     <property name="deprecation" value="false"/>
 
     <property name="gosling.lib" value="${repository.home}/com/antwerkz/gosling/0.1/gosling-0.1.jar"/>
+    <property name="log4j.lib" value="${repository.home}/log4j/log4j/1.2.13/log4j-1.2.13.jar"/>
   </target>
 
   <target name="compile" depends="init">
@@ -28,6 +32,7 @@
 
       <classpath>
         <pathelement location="${gosling.lib}" />
+        <pathelement location="${log4j.lib}" />
       </classpath>
     </javac>
   </target>
@@ -38,6 +43,7 @@
         <pathelement path="${target.dir}/classes"/>
 
         <pathelement location="${gosling.lib}" />
+        <pathelement location="${log4j.lib}" />
       </classpath>
     </java>
   </target>
