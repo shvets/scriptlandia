@@ -13,7 +13,7 @@ After the installation, the following languages will be available out-of-the-box
 - Pnuts;
 - TCL;
 - AWK;
-- f3;
+- F3;
 - Java FX;
 - Fortress;
 - Scala;
