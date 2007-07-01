@@ -1,0 +1,30 @@
+1. bsh\run-maven-embedder.bsh 
+
+
+D:\Work\scriptlandia\trunk\scriptlandia-examples-and-tools\projects\lang-examples\bsh>run-with-maven
+-deps.bsh
+Script threw exception: Sourced file: D:\Work\scriptlandia\trunk\scriptlandia-examples-and-tools\pro
+jects\lang-examples\bsh\run-with-maven-deps.bsh : Method Invocation MavenHelper.resolveMavenDependen
+cies : at Line: 6 : in file: D:\Work\scriptlandia\trunk\scriptlandia-examples-and-tools\projects\lan
+g-examples\bsh\run-with-maven-deps.bsh : MavenHelper .resolveMavenDependencies ( "deps.maven" , "com
+pile" )
+
+Target exception: java.lang.NoSuchMethodException: org.apache.maven.artifact.ant.AbstractArtifactTas
+k.getEmbedder()
+
+java.lang.NoSuchMethodException: org.apache.maven.artifact.ant.AbstractArtifactTask.getEmbedder()
+        at java.lang.Class.getDeclaredMethod(Class.java:1909)
+        at org.sf.scriptlandia.util.ReflectionUtil.invokePrivateMethod(ReflectionUtil.java:207)
+        at org.sf.scriptlandia.MavenHelper.createDependenciesTask(MavenHelper.java:356)
+        at org.sf.scriptlandia.MavenHelper.resolveMavenDependencies(MavenHelper.java:254)
+        at org.sf.scriptlandia.MavenHelper.resolveMavenDependencies(MavenHelper.java:216)
+        at org.sf.scriptlandia.MavenHelper.resolveMavenDependencies(MavenHelper.java:199)
+
+2. how to removecommandLine parameter in language.xml file
+
+
+3. How to process -Da=b (now it works only for -D"a=b")
+
+example:
+
+mvn -f scala-test4.maven scala:run -DmainClass=HelloWorld
