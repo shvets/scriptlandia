@@ -297,7 +297,6 @@ goto endProcessarg
 
 :prepareJavaLibraryPath
 SET JAVA_LIBRARY_PATH=%JAVA_LIBRARY_PATH% "%~1%"
-goto endProcessarg
 
 :endProcessarg
 

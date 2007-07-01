@@ -69,6 +69,13 @@
       </fileset>
     </copy>
 
+    <copy todir="${scriptlandia.home}/projects/universal-launcher" overwrite="true">
+      <fileset dir="projects/universal-launcher">
+        <include name="src/**"/>
+        <include name="*.*"/>
+      </fileset>
+    </copy>
+
     <copy todir="${scriptlandia.home}">
       <fileset dir="projects/scriptlandia-config/bin">
        <include name="*.exe"/>
