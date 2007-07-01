@@ -1,0 +1,41 @@
+import f3.ui.canvas.*;
+
+import f3.ui.*;
+import java.lang.System;
+
+Frame {
+
+    title: "Hello World F3"
+
+    width: 200
+    height: 200
+
+    content: Canvas {
+
+    content: Rect {
+
+        x: 20
+
+        y: 20
+
+        height: 80
+
+        width: 300
+
+        arcHeight: 20
+
+        arcWidth: 20
+
+        fill: cyan
+
+        stroke: purple
+
+        strokeWidth: 2
+
+    }
+
+}
+
+
+    visible: true
+}
