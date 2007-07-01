@@ -25,12 +25,14 @@ public class ScriptlandiaLauncherCommandLineParser extends LauncherCommandLinePa
       String arg = args[i];
 
       if (arg.startsWith("-")) {
-        if (arg.toLowerCase().startsWith("-script.name=")) {
-          int index = arg.indexOf("=");
+        if (arg.toLowerCase().startsWith("-script.name")) {
+//          int index = arg.indexOf("=");
+//          commandLine.put("script.name", arg.substring(index+1));
+//          newArgsList.add(arg.substring(index+1));
 
-          commandLine.put("script.name", arg.substring(index+1));
+          newArgsList.add(args[i+1]);
+          ++i;
 
-          newArgsList.add(arg.substring(index+1));
         }
         else if (arg.toLowerCase().startsWith("-launcher")) {
           commandLine.put("is.launcher.mode", "");

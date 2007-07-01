@@ -8,7 +8,7 @@
 
     <starter groupId="org.sf.scriptlandia" artifactId="classworld-starter" version="2.2.2">
       <mainClass>org.sf.scriptlandia.ClassworldStarter</mainClass>
-      <commandLine>-script.name=</commandLine>
+      <commandLine>-script.name</commandLine>
     </starter>
   </registration>
 </language>

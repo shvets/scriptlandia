@@ -8,7 +8,7 @@
 
     <starter groupId="org.sf.scriptlandia" artifactId="scriptlandia-starter" version="2.2.2">
       <mainClass>org.sf.scriptlandia.ScriptlandiaStarter</mainClass>
-      <commandLine>-script.name=</commandLine>
+      <commandLine>-script.name</commandLine>
     </starter>
   </registration>
 </language>

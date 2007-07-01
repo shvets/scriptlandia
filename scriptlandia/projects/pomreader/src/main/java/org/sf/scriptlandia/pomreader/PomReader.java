@@ -227,7 +227,11 @@ public class PomReader {
     }
 
     if(!file.exists()) {
-      System.out.println("File " + file.getName() + " cannot be found.");
+      file = new File(System.getProperty("user.dir") + "/projects/universal-launcher/src/main/config/repositories.xml");
+    }
+
+    if(!file.exists()) {
+      System.out.println("File " + file.getPath() + " cannot be found.");
       repositories = new ArrayList<Repository>();
     }
     else {

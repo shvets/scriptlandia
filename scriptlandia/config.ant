@@ -129,10 +129,7 @@
       <filterset refid="copy.filterset"/>
 
       <fileset dir="projects/universal-launcher/src/main/config">
-        <include name="*.bat"/>
-        <include name="*.sh"/>
-        <exclude name="*.conf"/>
-        <include name="*.ini"/>
+        <include name="*.*"/>
       </fileset>
     </copy>
 

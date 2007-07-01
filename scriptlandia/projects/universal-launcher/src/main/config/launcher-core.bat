@@ -255,7 +255,6 @@ goto endSetupVariable
 goto end
 
 :processarg
-echo 1. %1
 
 if "%~1"=="" goto end
 
@@ -264,9 +263,15 @@ set PARAM=%TEMP:~0,2%
 
 if "%PARAM%"=="-D" goto prepareSystemProps
 
-if "%PARAM%"=="-X" goto prepareBootClasspath
+set PARAM=%TEMP:~0,18%
+
+if "%PARAM%"=="-Xbootclasspath/p:" goto prepareBootClasspathPrepend
+
+if "%PARAM%"=="-Xbootclasspath/a:" goto prepareBootClasspathAppend
 
 if "%TEMP%"=="-debug" goto prepareDebugProps
+
+set PARAM=%TEMP:~0,19%
 
 if "%PARAM%"=="-Djava.library.path" goto prepareJavaLibraryPath
 
@@ -278,7 +283,11 @@ goto endProcessarg
 SET JAVA_SYSTEM_PROPS=%JAVA_SYSTEM_PROPS% "%~1%"
 goto endProcessarg
 
-:prepareBootClasspath
+:prepareBootClasspathPrepend
+SET JAVA_BOOTCLASSPATH_PREPEND=%JAVA_BOOTCLASSPATH_PREPEND% "%~1%"
+goto endProcessarg
+
+:prepareBootClasspathAppend
 SET JAVA_BOOTCLASSPATH_APPEND=%JAVA_BOOTCLASSPATH_APPEND% "%~1%"
 goto endProcessarg
 

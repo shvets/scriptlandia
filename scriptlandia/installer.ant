@@ -6,7 +6,7 @@
 
   <import file="config.ant" />
 
-  <target name="install" depends="install.projects, install.libraries, copy.config.files"/>
+  <target name="install" depends="copy.config.files, install.projects, install.libraries"/>
 
   <target name="install.projects">
     <script language="beanshell">
@@ -53,7 +53,7 @@
   <target name="install.libraries">
     <copy todir="${scriptlandia.home}">
       <fileset dir=".">
-       <include name="repositories.xml"/>
+       <!--include name="repositories.xml"/-->
        <include name="config.ant"/>
        <include name="scriptlandia.properties"/>
        <include name="config-macrodefs.xml"/>
@@ -64,6 +64,7 @@
       <fileset dir="languages">
        <include name="**/*.xml"/>
        <include name="**/src/**/*.java"/>
+       <include name="**/target/**"/>
        <include name="**/*.ico"/>
       </fileset>
     </copy>
@@ -71,8 +72,10 @@
     <copy todir="${scriptlandia.home}">
       <fileset dir="projects/scriptlandia-config/bin">
        <include name="*.exe"/>
+<!--
        <include name="launcher/*.bat"/>
        <include name="launcher/*.sh"/>
+-->
       </fileset>
     </copy>
 

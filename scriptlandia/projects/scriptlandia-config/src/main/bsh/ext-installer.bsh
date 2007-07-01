@@ -109,9 +109,11 @@ public class ExtInstaller {
 
     if(commandLine != null && commandLine.trim().length() > 0) {
       openAction.append(language.get("commandLine"));
-      if(commandLine.equals("-f")) {
+/*      if(commandLine.equals("-f")) {
         openAction.append(" ");
       }
+*/
+      openAction.append(" ");
     }
 
     openAction.append(getCommandLineExpression());

@@ -252,7 +252,7 @@ public class ClassworldLauncher extends CoreLauncher {
     finally {
       if (!isExceptionThrown) {
 
-        if (parser.isWaitMode()/*isGuiMode(args)*/ /*|| isContinuousMode()*/ && exitCode == 0) {
+        if (parser.isWaitMode() || isGuiMode(args) /*|| isContinuousMode()*/ && exitCode == 0) {
           try {
             Thread.currentThread().join();
           }
@@ -271,7 +271,7 @@ public class ClassworldLauncher extends CoreLauncher {
    * @param args the list of raguments
    * @return true if "gui" mode; false otherwise
    */
-/*  public static boolean isGuiMode(String[] args) {
+  public static boolean isGuiMode(String[] args) {
     boolean isGuiMode = false;
     boolean isNGMode = false;
 
@@ -297,7 +297,7 @@ public class ClassworldLauncher extends CoreLauncher {
 
     return isGuiMode;
   }
-*/
+
 
   /**
    * Checks the scriptlandia.continuous.mode" system property.
