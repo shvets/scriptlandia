@@ -86,7 +86,8 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
       launcher = instances.get(currentExtension);
     }
     else {
-      launcher = new UniversalLauncher(parser, args, classWorld);
+//      launcher = new UniversalLauncher(parser, args, classWorld);
+      launcher = new ScriptlandiaLauncher(parser, args, classWorld);
 
       launcher.configure(Thread.currentThread().getContextClassLoader());
 
