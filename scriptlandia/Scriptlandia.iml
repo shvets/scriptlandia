@@ -363,15 +363,6 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/maven/maven-ant-tasks/2.0.7/maven-ant-tasks-2.0.7.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
           <root url="jar://$maven-repository$/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -514,6 +505,15 @@
       <library>
         <CLASSES>
           <root url="jar://$maven-repository$/velocity/velocity/1.5/velocity-1.5.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$maven-repository$/org/apache/maven/maven-ant-tasks/2.0.7/maven-ant-tasks-2.0.7.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
