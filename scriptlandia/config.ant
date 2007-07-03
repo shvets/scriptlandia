@@ -21,7 +21,19 @@
     <os family="unix"/>
   </condition>
 
-  <target name="config" depends="copy.config.files"/>
+  <target name="config">
+    <antcall target="copy.config.files"/>
+
+    <antcall target="configure.proxy"/>
+
+    <antcall target="configure.jdic.and.naligun"/>
+
+    <antcall target="install.languages"/>
+
+    <antcall target="update.for.windows"/>
+
+    <antcall target="update.for.unix"/>    
+  </target>
 
   <target name="copy.config.files">
     <!-- Variable ${java.home.internal} is set up inside install program. -->
@@ -59,6 +71,7 @@
       <filter token="jdic.version" value="${jdic.version}"/>
       <filter token="nailgun.version" value="${nailgun.version}"/>
 
+<!--
       <filter token="scriptlandia.base" value="${scriptlandia.base}"/>
       <filter token="classworlds.base" value="${classworlds.base}"/>
       <filter token="maven.base" value="${maven.base}"/>
@@ -66,35 +79,16 @@
       <filter token="beanshell.base" value="${beanshell.base}"/>
       <filter token="groovy.base" value="${groovy.base}"/>
       <filter token="javascript.base" value="${javascript.base}"/>
-      <filter token="jruby.base" value="${jruby.base}"/>
       <filter token="pnuts.base" value="${pnuts.base}"/>
-      <filter token="jython.base" value="${jython.base}"/>
-      <filter token="jython.lib.base" value="${jython.lib.base}"/>
       <filter token="jelly.base" value="${jelly.base}"/>
       <filter token="velocity.base" value="${velocity.base}"/>
       <filter token="jaskell.base" value="${jaskell.base}"/>
+
+      <filter token="jruby.base" value="${jruby.base}"/>
+      <filter token="jython.base" value="${jython.base}"/>
+      <filter token="jython.lib.base" value="${jython.lib.base}"/>
+-->
     </filterset>
-
-    <condition property="jython.lib.is.present">
-      <and>
-        <available file="${repository.home}/jython/jython-lib/${jython.version}/jython-lib-${jython.version}.jar"/>
-        <istrue value="${jython.install}"/>
-      </and>
-    </condition>
-
-    <condition property="jruby.lib.is.present">
-      <and>
-        <available file="${repository.home}/jruby/jruby-lib/${jruby.version}/jruby-lib-${jruby.version}.jar"/>
-        <istrue value="${jruby.install}"/>
-      </and>
-    </condition>
-
-    <condition property="fortress.lib.is.present">
-      <and>
-        <available file="${repository.home}/com/sun/fortress/fortress-lib/${fortress.version}/fortress-lib-${fortress.version}.jar"/>
-        <istrue value="${fortress.install}"/>
-      </and>
-    </condition>
 
     <condition property="jacob.lib.is.present">
       <and>
@@ -104,12 +98,6 @@
     </condition>
 
     <antcall target="copy.settings.xml"/>
-
-    <antcall target="unzip.jython.lib"/>
-
-    <antcall target="unzip.jruby.lib"/>
-
-    <antcall target="unzip.fortress.lib"/>
 
     <antcall target="unzip.jacob.lib"/>
 
@@ -130,6 +118,7 @@
 
       <fileset dir="projects/universal-launcher/src/main/config">
         <include name="*.*"/>
+        <exinclude name="*-repo.*"/>
       </fileset>
     </copy>
 
@@ -179,7 +168,9 @@
         <replacestring from="/" to="\"/>
       </filterchain>
     </move>
+  </target>
 
+  <target name="configure.proxy">
     <script language="beanshell">
       String repositoryHome = System.getProperty("repository.home");
 
@@ -189,7 +180,9 @@
 
       ProxiesXmlHelper.main(new String[] {});
     </script>
+  </target>
 
+  <target name="configure.jdic.and.naligun">
     <condition property="jdic.native.libs.present">
       <available file="${repository.home}/org/jdesktop/jdic-native-libs/${jdic.version}/jdic-native-libs-${jdic.version}.jar"/>
     </condition>
@@ -200,11 +193,9 @@
 
     <antcall target="unzip.jdic.native.libs"/>
     <antcall target="unzip.nailgun.binaries"/>
+  </target>
 
-    <antcall target="update.for.windows"/>
-
-    <antcall target="update.for.unix"/>    
-
+  <target name="install.languages">
     <property name="jdic.lib" value="${repository.home}/org/jdesktop/jdic/${jdic.version}/jdic-${jdic.version}.jar"/>
     <property name="jdom.lib" value="${repository.home}/jdom/jdom/1.0/jdom-1.0.jar"/>
 
@@ -231,16 +222,6 @@
        <include name="settings.xml"/>
       </fileset>
     </copy>
-  </target>
-
-  <target name="unzip.jython.lib" if="jython.lib.is.present">
-    <unzip src="${repository.home}/jython/jython-lib/${jython.version}/jython-lib-${jython.version}.jar"
-           dest="${jython.base}/Lib" overwrite="false"/>
-  </target>
-
-  <target name="unzip.jruby.lib" if="jruby.lib.is.present">
-    <unzip src="${repository.home}/jruby/jruby-lib/${jruby.version}/jruby-lib-${jruby.version}.jar"
-           dest="${repository.home}/jruby/jruby/${jruby.version}/lib" overwrite="false"/>
   </target>
 
   <target name="unzip.jdic.native.libs" if="jdic.native.libs.present">
@@ -291,15 +272,6 @@
            dest="${repository.home}/com/martiansoftware/nailgun-bin/${nailgun.version}" overwrite="false"/>
   </target>
 
-  <target name="unzip.fortress.lib" if="fortress.lib.is.present">
-    <unzip src="${repository.home}/com/sun/fortress/fortress-lib/${fortress.version}/fortress-lib-${fortress.version}.jar"
-           dest="${fortress.base}" overwrite="false">
-      <patternset>
-        <include name="FortressLibrary.fss"/>
-      </patternset>
-    </unzip>
-  </target>
-
   <target name="unzip.jacob.lib" if="jacob.lib.is.present">
     <unzip src="${repository.home}/jacob/jacob-dll/1.10.1/jacob-dll-1.10.1.jar"
            dest="${repository.home}/jacob/jacob-dll/1.10.1" overwrite="false">
@@ -310,7 +282,6 @@
   </target>
 
   <target name="update.for.windows" if="os.is.windows">
-
   </target>
 
   <target name="update.for.unix" if="os.is.unix">

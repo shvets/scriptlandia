@@ -38,7 +38,7 @@
     <mkdir dir="target"/>
 
     <jar destfile="target/scriptlandia.jar">
-      <zipfileset src="${classworlds.base}/classworlds-${classworlds.version}.jar"/>
+      <zipfileset src="${repository.home}/classworlds/classworlds/${classworlds.version}/classworlds-${classworlds.version}.jar"/>
 
       <fileset dir="projects/scriptlandia-config/bin">
         <include name="scriptlandia.conf"/>

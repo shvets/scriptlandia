@@ -6,7 +6,7 @@
 
   <import file="config.ant" />
 
-  <target name="install" depends="copy.config.files, install.projects, install.libraries"/>
+  <target name="install" depends="config, install.projects, install.libraries"/>
 
   <target name="install.projects">
     <script language="beanshell">
