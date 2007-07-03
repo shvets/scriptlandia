@@ -13,6 +13,8 @@
 
 3. With Maven 2 through plexus-compiler-scalac ()
 
+>mvn -f scala-test3.maven compile
+
 >mvn -f scala-test3.maven exec:java
 
 
@@ -20,5 +22,5 @@
 
 >mvn -f scala-test4.maven scala:compile
 
->mvn -f scala-test4.maven scala:run -DmainClass=HelloWorld
+>mvn -f scala-test4.maven scala:run "-DmainClass=HelloWorld"
 
