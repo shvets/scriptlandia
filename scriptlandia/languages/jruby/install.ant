@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<project name="install.ant" default="install" basedir=".">
+
+  <property name="jruby.base" 
+            value="${repository.home}/jruby/jruby/${jruby.version}"/>
+
+  <property name="jruby.lib" 
+            value="${repository.home}/jruby/jruby-lib/${jruby.version}/jruby-lib-${jruby.version}.jar"/>
+
+  <target name="install">
+    <condition property="jruby.lib.is.present">
+      <and>
+        <available file="${jruby.lib}"/>
+        <istrue value="${jruby.install}"/>
+      </and>
+    </condition>
+
+    <antcall target="unzip.jruby.lib"/>
+  </target>
+
+  <target name="unzip.jruby.lib" if="jruby.lib.is.present">
+    <unzip src="${jruby.lib}" dest="${jruby.base}/lib" overwrite="false"/>
+  </target>
+
+</project>
