@@ -29,10 +29,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.iws" afterPath="$PROJECT_DIR$/Scriptlandia.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher/src/main/config/classworlds-repo.conf" afterPath="$PROJECT_DIR$/projects/universal-launcher/src/main/config/classworlds-repo.conf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-config/bin/scriptlandia.conf" afterPath="$PROJECT_DIR$/projects/scriptlandia-config/bin/scriptlandia.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scriptlandia.iml" afterPath="$PROJECT_DIR$/Scriptlandia.iml" />
     </list>
     <list name="Failed commit: Default" comment="wrong instantiation of the launcher" />
   </component>
