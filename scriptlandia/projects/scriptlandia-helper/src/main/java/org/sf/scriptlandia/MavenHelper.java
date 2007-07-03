@@ -9,19 +9,23 @@ import org.apache.maven.embedder.MavenEmbedderConsoleLogger;
 import org.apache.maven.project.MavenProject;
 import org.apache.tools.ant.BuildLogger;
 import org.apache.tools.ant.DefaultLogger;
+import org.apache.tools.ant.Location;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.types.Path;
 import org.codehaus.classworlds.ClassRealm;
 import org.codehaus.classworlds.ClassWorld;
 import org.codehaus.plexus.embed.Embedder;
-import org.sf.scriptlandia.util.ReflectionUtil;
-import org.sf.scriptlandia.launcher.UniversalLauncher;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+import org.sf.scriptlandia.launcher.UniversalLauncher;
 import org.sf.scriptlandia.pomreader.RepositoriesReader;
+import org.sf.scriptlandia.util.ReflectionUtil;
 
 import java.io.File;
 import java.net.MalformedURLException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
 
 /**
  * This is the class for holding convenient methods when working with Maven.
@@ -314,7 +318,7 @@ public class MavenHelper {
   private static void createLocalRepository() {
     LocalRepository localRepository = new LocalRepository();
 
-    localRepository.setLocation(new File(System.getProperty("repository.home")));
+    localRepository.setLocation(new Location(System.getProperty("repository.home")));
   }
 
   /**
