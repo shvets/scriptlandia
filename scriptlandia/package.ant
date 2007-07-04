@@ -15,7 +15,7 @@
   <target name="clean">
     <delete dir="projects/universal-launcher-common/target"/>
     <delete dir="projects/bootstrap-mini/target"/>
-    <delete dir="projects/pomreader/target"/>
+    <delete dir="projects/pom-reader/target"/>
     <delete dir="projects/scriptlandia-installer/target"/>
   </target>
 
@@ -26,7 +26,7 @@
 
     <compileProject basedir="projects/bootstrap-mini"/>
 
-    <compileProject basedir="projects/pomreader">
+    <compileProject basedir="projects/pom-reader">
       <classpath-entries>
        <path location="projects/bootstrap-mini/target/classes"/>
        <path location="projects/universal-launcher-common/target/classes"/>
@@ -36,7 +36,7 @@
     <compileProject basedir="projects/scriptlandia-installer">
       <classpath-entries>
        <path location="projects/bootstrap-mini/target/classes"/>
-       <path location="projects/pomreader/target/classes"/>
+       <path location="projects/pom-reader/target/classes"/>
        <path location="projects/universal-launcher-common/target/classes"/>
       </classpath-entries>
     </compileProject>
@@ -50,14 +50,14 @@
   </target>
 
   <target name="package" depends="jar">
-    <java fork="yes" classname="org.sf.scriptlandia.install.ProjectInstaller">
+    <java fork="yes" classname="org.sf.scriptlandia.pomreader.ProjectInstaller">
       <sysproperty key="maven.repo.local" value="${repository.home}"/>
       <sysproperty key="basedir" value="projects/scriptlandia-startup"/>
 
       <classpath>
         <path location="projects/universal-launcher-common/target/universal-launcher-common.jar"/>
         <path location="projects/bootstrap-mini/target/bootstrap-mini.jar"/>
-        <path location="projects/pomreader/target/pomreader.jar"/>
+        <path location="projects/pom-reader/target/pom-reader.jar"/>
         <path location="projects/scriptlandia-installer/target/scriptlandia-installer.jar"/>
       </classpath>
     </java>
@@ -84,16 +84,19 @@
     <installProject basedir="projects/universal-launcher-common" build="false"/>
     <installProject basedir="projects/classworlds-launcher"/>
 
-    <installProject basedir="projects/pomreader" build="false"/>
+    <installProject basedir="projects/pom-reader" build="false"/>
 
     <installProject basedir="projects/antrun"/>
     <installProject basedir="projects/classworlds-launcher"/>
 
     <installLanguages section="core"/>
 
+    <installProject basedir="projects/scriptlandia-installer"/>
+
     <installProject basedir="projects/scriptlandia-nailgun"/>
 
     <installProject basedir="projects/universal-launcher"/>
+    <installProject basedir="projects/scriptlandia-launcher"/>
 
     <installLanguages section="starter"/>
 

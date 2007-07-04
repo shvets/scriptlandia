@@ -153,8 +153,8 @@ public class LauncherHelper {
     String jdicVersion = (String)scriptlandiaProps2.get("jdic.version");
 
     launcher.addClasspathEntry(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/pomreader/" + scriptlandiaVersion +
-      "/pomreader-" + scriptlandiaVersion + ".jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/pom-reader/" + scriptlandiaVersion +
+      "/pom-reader-" + scriptlandiaVersion + ".jar");
     launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/universal-launcher/" + scriptlandiaVersion +
       "/universal-launcher-" + scriptlandiaVersion + ".jar");
     launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/scriptlandia-nailgun/" + scriptlandiaVersion +

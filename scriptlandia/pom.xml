@@ -52,7 +52,7 @@
     <module>projects/antrun</module>
     <module>projects/bootstrap-mini</module>
     <module>projects/classworlds-launcher</module>
-    <module>projects/pomreader</module>
+    <module>projects/pom-reader</module>
     <module>projects/universal-launcher-common</module>
     <module>projects/scriptlandia-installer</module>
     <module>projects/universal-launcher</module>

@@ -7,19 +7,12 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="universal-launcher" />
+    <orderEntry type="module" module-name="universal-launcher-common" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../../maven-repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../../maven-repository/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../../maven-repository/classworlds/classworlds/1.1/classworlds-1.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

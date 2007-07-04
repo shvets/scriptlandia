@@ -1,4 +1,4 @@
-package org.sf.scriptlandia.install;
+package org.sf.scriptlandia.pomreader;
 
 import org.apache.maven.bootstrap.compile.CompilerConfiguration;
 import org.apache.maven.bootstrap.download.ArtifactResolver;
@@ -10,6 +10,8 @@ import org.apache.maven.bootstrap.util.FileUtils;
 import org.apache.maven.bootstrap.util.JarMojo;
 import org.xml.sax.SAXException;
 import org.sf.scriptlandia.pomreader.PomReader;
+import org.sf.scriptlandia.util.ChecksumCalculator;
+import org.sf.scriptlandia.pomreader.JavacCompiler;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;

@@ -1,12 +1,13 @@
 #!/bin/sh
 
 rm -d -r -f -v projects/bootstrap-mini/target
-rm -d -r -f projects/pomreader/target
+rm -d -r -f projects/pom-reader/target
 rm -d -r -f projects/universal-launcher-common/target
 rm -d -r -f projects/antrun\target
 rm -d -r -f Cprojects/classworlds-launcher/target
 rm -d -r -f projects/universal-launcher/target
 
+rm -d -r -f projects/scriptlandia-launcher/target
 rm -d -r -f projects/scriptlandia-nailgun/target
 rm -d -r -f projects/scriptlandia-installer/target
 rm -d -r -f projects/scriptlandia-config/target

@@ -1,8 +1,9 @@
-package org.sf.scriptlandia.install;
+package org.sf.scriptlandia.util;
 
 //import org.apache.tools.ant.Project;
 //import org.apache.tools.ant.taskdefs.Checksum;
 import org.sf.scriptlandia.util.FileUtil;
+import org.sf.scriptlandia.util.Checksum;
 
 import java.io.File;
 

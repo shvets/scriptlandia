@@ -271,7 +271,9 @@
       <module fileurl="file://$PROJECT_DIR$/projects/bootstrap-mini/bootstrap-mini.iml" filepath="$PROJECT_DIR$/projects/bootstrap-mini/bootstrap-mini.iml" />
       <module fileurl="file://$PROJECT_DIR$/languages/languages.iml" filepath="$PROJECT_DIR$/languages/languages.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/pom-reader/pom-reader.iml" filepath="$PROJECT_DIR$/projects/pom-reader/pom-reader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/projects/scriptlandia-helper/scriptlandia-helper.iml" filepath="$PROJECT_DIR$/projects/scriptlandia-helper/scriptlandia-helper.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/scriptlandia-installer/scriptlandia-installer.iml" filepath="$PROJECT_DIR$/projects/scriptlandia-installer/scriptlandia-installer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/projects/scriptlandia-launcher/scriptlandia-launcher.iml" filepath="$PROJECT_DIR$/projects/scriptlandia-launcher/scriptlandia-launcher.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/universal-launcher/universal-launcher.iml" filepath="$PROJECT_DIR$/projects/universal-launcher/universal-launcher.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/universal-launcher-common/universal-launcher-common.iml" filepath="$PROJECT_DIR$/projects/universal-launcher-common/universal-launcher-common.iml" />
     </modules>
@@ -304,7 +306,7 @@
     <mapping directory="$PROJECT_DIR$/projects/antrun" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/projects/bootstrap-mini" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/projects/pom-reader" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/pomreader" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/projects/scriptlandia-helper" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/projects/scriptlandia-installer" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/projects/universal-launcher" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/projects/universal-launcher-common" vcs="svn" />

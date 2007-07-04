@@ -1,4 +1,4 @@
-package org.sf.scriptlandia.install;
+package org.sf.scriptlandia.util;
 
 import java.util.HashMap;
 import java.text.MessageFormat;

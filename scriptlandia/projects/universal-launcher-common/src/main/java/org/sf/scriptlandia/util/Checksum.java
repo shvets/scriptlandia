@@ -1,4 +1,6 @@
-package org.sf.scriptlandia.install;
+package org.sf.scriptlandia.util;
+
+import org.sf.scriptlandia.util.FormatElement;
 
 import java.security.DigestInputStream;
 import java.security.MessageDigest;

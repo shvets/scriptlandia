@@ -6,11 +6,11 @@ if exist "%USERPROFILE%\scriptlandia\config.bat" @call "%USERPROFILE%\scriptland
 
 SET BOOTSTRAP_MINI_PROJECT=projects\bootstrap-mini
 SET UNIVERSAL_LAUNCHER_COMMON_PROJECT=projects\universal-launcher-common
-SET POM_READER_PROJECT=projects\pomreader
+SET POM_READER_PROJECT=projects\pom-reader
 SET SCRIPTLANDIA_INSTALLER_PROJECT=projects\scriptlandia-installer
 
 SET CLASSPATH=%BOOTSTRAP_MINI_PROJECT%\target\bootstrap-mini.jar
-SET CLASSPATH=%CLASSPATH%;%POM_READER_PROJECT%\target\pomreader.jar
+SET CLASSPATH=%CLASSPATH%;%POM_READER_PROJECT%\target\pom-reader.jar
 SET CLASSPATH=%CLASSPATH%;%UNIVERSAL_LAUNCHER_COMMON_PROJECT%\target\universal-launcher-common.jar
 SET CLASSPATH=%CLASSPATH%;%SCRIPTLANDIA_INSTALLER_PROJECT%\target\scriptlandia-installer.jar
 

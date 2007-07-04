@@ -15,7 +15,7 @@
 
   <classPath>projects/universal-launcher-common/target/universal-launcher-common.jar</classPath>
   <classPath>projects/bootstrap-mini/target/bootstrap-mini.jar</classPath>
-  <classPath>projects/pomreader/target/pomreader.jar</classPath>
+  <classPath>projects/pom-reader/target/pom-reader.jar</classPath>
   <classPath>projects/scriptlandia-installer/target/scriptlandia-installer.jar</classPath>
 
   <mainClassName>org.sf.scriptlandia.install.GuiInstaller</mainClassName>

@@ -1,4 +1,4 @@
-package org.sf.scriptlandia.install;
+package org.sf.scriptlandia.pomreader;
 
 import org.apache.maven.bootstrap.compile.AbstractCompiler;
 import org.apache.maven.bootstrap.compile.CompilerConfiguration;

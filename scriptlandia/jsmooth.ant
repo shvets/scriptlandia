@@ -14,7 +14,7 @@
       System.setProperty("java.specification.version", "1.5");
 
       MavenHelper.executeMaven("projects/bootstrap-mini/pom.xml", new String[] {"compile", "jar:jar"});
-      MavenHelper.executeMaven("projects/pomreader/pom.xml", new String[] {"compile", "jar:jar"});
+      MavenHelper.executeMaven("projects/pom-reader/pom.xml", new String[] {"compile", "jar:jar"});
       MavenHelper.executeMaven("projects/antrun/pom.xml", new String[] {"compile", "jar:jar"});
 
       MavenHelper.executeMaven("projects/scriptlandia-installer/pom.xml", new String[] {"compile", "jar:jar"});

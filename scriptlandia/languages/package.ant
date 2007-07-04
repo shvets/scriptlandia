@@ -13,10 +13,10 @@
       addClassPath(basedir + "/projects/classworlds-launcher/target/classworlds-launcher.jar");
       addClassPath(basedir + "/projects/universal-launcher-common/target/universal-launcher-common.jar");
       addClassPath(basedir + "/projects/bootstrap-mini/target/bootstrap-mini.jar");
-      addClassPath(basedir + "/projects/pomreader/target/pomreader.jar");
+      addClassPath(basedir + "/projects/pom-reader/target/pom-reader.jar");
       addClassPath(basedir + "/projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
-      import org.sf.scriptlandia.install.ProjectInstaller;
+      import org.sf.scriptlandia.pomreader.ProjectInstaller;
 
       ProjectInstaller installer = new ProjectInstaller();
 
@@ -45,10 +45,10 @@
         addClassPath(basedir + "/projects/classworlds-launcher/target/classworlds-launcher.jar");
         addClassPath(basedir + "/projects/universal-launcher-common/target/universal-launcher-common.jar");
         addClassPath(basedir + "/projects/bootstrap-mini/target/bootstrap-mini.jar");
-        addClassPath(basedir + "/projects/pomreader/target/pomreader.jar");
+        addClassPath(basedir + "/projects/pom-reader/target/pom-reader.jar");
         addClassPath(basedir + "/projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
-        import org.sf.scriptlandia.install.ProjectInstaller;
+        import org.sf.scriptlandia.pomreader.ProjectInstaller;
 
         ProjectInstaller installer = new ProjectInstaller();
 

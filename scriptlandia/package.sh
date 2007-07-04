@@ -8,7 +8,7 @@ fi
 
 SCRIPTLANDIA_COMMON_PROJECT=$PWD/projects/universal-launcher-common
 BOOTSTRAP_MINI_PROJECT=$PWD/projects/bootstrap-mini
-POM_READER_PROJECT=$PWD/projects/pomreader
+POM_READER_PROJECT=$PWD/projects/pom-reader
 SCRIPTLANDIA_INSTALLER_PROJECT=$PWD/projects/scriptlandia-installer
 
 echo ---### Java Specification Version: $JAVA_SPECIFICATION_VERSION
@@ -48,7 +48,7 @@ $JAVA_HOME/bin/jar cf $BOOTSTRAP_MINI_PROJECT/target/bootstrap-mini.jar \
   -C $BOOTSTRAP_MINI_PROJECT/target/classes .
 
 
-echo ---### Builds pomreader project
+echo ---### Builds pom-reader project
 
 if [ ! -f $POM_READER_PROJECT/target/classes ]; then
   mkdir -p $POM_READER_PROJECT/target/classes
@@ -63,7 +63,7 @@ $JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_S
   -d $POM_READER_PROJECT/target/classes \
   $POM_READER_PROJECT/src/main/java/org/sf/scriptlandia/pomreader/PomReader.java
 
-$JAVA_HOME/bin/jar cf $POM_READER_PROJECT/target/pomreader.jar \
+$JAVA_HOME/bin/jar cf $POM_READER_PROJECT/target/pom-reader.jar \
   -C $POM_READER_PROJECT/target/classes .
 
 echo ---### Builds installer project
@@ -89,7 +89,7 @@ echo ---### Installing basic dependencies...
 
 BASIC_CLASSPATH=$SCRIPTLANDIA_COMMON_PROJECT/target/universal-launcher-common.jar
 BASIC_CLASSPATH=$BASIC_CLASSPATH:$BOOTSTRAP_MINI_PROJECT/target/bootstrap-mini.jar
-BASIC_CLASSPATH=$BASIC_CLASSPATH:$POM_READER_PROJECT/target/pomreader.jar
+BASIC_CLASSPATH=$BASIC_CLASSPATH:$POM_READER_PROJECT/target/pom-reader.jar
 BASIC_CLASSPATH=$BASIC_CLASSPATH:$SCRIPTLANDIA_INSTALLER_PROJECT/target/scriptlandia-installer.jar
 
 $JAVA_HOME/bin/java \

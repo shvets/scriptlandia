@@ -13,10 +13,10 @@
       addClassPath("projects/classworlds-launcher/target/classworlds-launcher.jar");
       addClassPath("projects/universal-launcher-common/target/universal-launcher-common.jar");
       addClassPath("projects/bootstrap-mini/target/bootstrap-mini.jar");
-      addClassPath("projects/pomreader/target/pomreader.jar");
+      addClassPath("projects/pom-reader/target/pom-reader.jar");
       addClassPath("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
-      import org.sf.scriptlandia.install.ProjectInstaller;
+      import org.sf.scriptlandia.pomreader.ProjectInstaller;
 
       ProjectInstaller installer = new ProjectInstaller();
 
@@ -24,14 +24,14 @@
       installer.install("projects/universal-launcher-common", false);
       installer.install("projects/classworlds-launcher", false);
 
-      installer.install("projects/pomreader", false);
+      installer.install("projects/pom-reader", false);
       installer.install("projects/scriptlandia-installer", false);
     </script>
 
     <installLanguages section="core"/>
 
     <script language="beanshell">
-      import org.sf.scriptlandia.install.ProjectInstaller;
+      import org.sf.scriptlandia.pomreader.ProjectInstaller;
 
       ProjectInstaller installer = new ProjectInstaller();
 
@@ -40,7 +40,7 @@
     </script>
 
     <script language="beanshell">
-      import org.sf.scriptlandia.install.ProjectInstaller;
+      import org.sf.scriptlandia.pomreader.ProjectInstaller;
 
       ProjectInstaller installer = new ProjectInstaller();
 

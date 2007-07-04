@@ -8,11 +8,11 @@ fi
 
 BOOTSTRAP_MINI_PROJECT=projects/bootstrap-mini
 SCRIPTLANDIA_COMMON_PROJECT=projects/universal-launcher-common
-POM_READER_PROJECT=projects/pomreader
+POM_READER_PROJECT=projects/pom-reader
 SCRIPTLANDIA_INSTALLER_PROJECT=projects/scriptlandia-installer
 
 CLASSPATH=$BOOTSTRAP_MINI_PROJECT/target/bootstrap-mini.jar
-CLASSPATH=$CLASSPATH:$POM_READER_PROJECT/target/pomreader.jar
+CLASSPATH=$CLASSPATH:$POM_READER_PROJECT/target/pom-reader.jar
 CLASSPATH=$CLASSPATH:$SCRIPTLANDIA_COMMON_PROJECT/target/universal-launcher-common.jar
 CLASSPATH=$CLASSPATH:$SCRIPTLANDIA_INSTALLER_PROJECT/target/scriptlandia-installer.jar
 

@@ -56,11 +56,11 @@ public class CoreInstaller {
   private void installBasicDependencies() throws LauncherException {
     SimpleLauncher launcher = new SimpleLauncher(getBasicDependenciesArgsList());
 
-    launcher.setMainClassName("org.sf.scriptlandia.install.ProjectInstaller");
+    launcher.setMainClassName("org.sf.scriptlandia.pomreader.ProjectInstaller");
 
     launcher.addClasspathEntry("projects/universal-launcher-common/target/universal-launcher-common.jar");
     launcher.addClasspathEntry("projects/bootstrap-mini/target/bootstrap-mini.jar");
-    launcher.addClasspathEntry("projects/pomreader/target/pomreader.jar");
+    launcher.addClasspathEntry("projects/pom-reader/target/pom-reader.jar");
     launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
     launcher.configure(Thread.currentThread().getContextClassLoader());
@@ -98,11 +98,11 @@ public class CoreInstaller {
 
     SimpleLauncher launcher = new SimpleLauncher(getAntRunArgsList());
 
-    launcher.setMainClassName("org.sf.scriptlandia.install.ProjectInstaller");
+    launcher.setMainClassName("org.sf.scriptlandia.pomreader.ProjectInstaller");
 
     launcher.addClasspathEntry("projects/universal-launcher-common/target/universal-launcher-common.jar");
     launcher.addClasspathEntry("projects/bootstrap-mini/target/bootstrap-mini.jar");
-    launcher.addClasspathEntry("projects/pomreader/target/pomreader.jar");
+    launcher.addClasspathEntry("projects/pom-reader/target/pom-reader.jar");
     launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
     launcher.addClasspathEntry(repositoryHome + "/org/apache/ant/ant-launcher/" + antVersion +
