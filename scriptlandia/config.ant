@@ -118,7 +118,7 @@
 
       <fileset dir="projects/universal-launcher/src/main/config">
         <include name="*.*"/>
-        <exinclude name="*-repo.*"/>
+        <exclude name="*-repo.*"/>
       </fileset>
     </copy>
 
