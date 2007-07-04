@@ -45,7 +45,7 @@
 
     <menu name="SubProjects">
       <item name="Bootstrap-Mini" href="bootstrap-mini/index.html"/>
-      <item name="PomReader" href="pomreader/index.html"/>
+      <item name="Pom-Reader" href="pom-reader/index.html"/>
       <item name="Installer" href="scriptlandia-installer/index.html"/>
       <item name="AntRun" href="antrun/index.html"/>
       <item name="Classworlds-Launcher" href="classworlds-launcher/index.html"/>

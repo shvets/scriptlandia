@@ -44,7 +44,7 @@
 
   <target name="jar" depends="compile">
     <jarProject basedir="projects/bootstrap-mini" name="bootstrap-mini"/>
-    <jarProject basedir="projects/pomreader" name="pomreader"/>
+    <jarProject basedir="projects/pom-reader" name="pom-reader"/>
     <jarProject basedir="projects/universal-launcher-common" name="universal-launcher-common"/>
     <jarProject basedir="projects/scriptlandia-installer" name="scriptlandia-installer"/>
   </target>

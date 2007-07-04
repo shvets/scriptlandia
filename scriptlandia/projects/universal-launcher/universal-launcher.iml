@@ -17,7 +17,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="pomreader" />
+    <orderEntry type="module" module-name="pom-reader" />
     <orderEntry type="module" module-name="bootstrap-mini" />
     <orderEntryProperties />
   </component>
