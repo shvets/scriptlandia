@@ -7,6 +7,7 @@ if exist "%USERPROFILE%\scriptlandia\config.bat" @call "%USERPROFILE%\scriptland
 SET UNIVERSAL_LAUNCHER_COMMON_PROJECT=projects\universal-launcher-common
 SET BOOTSTRAP_MINI_PROJECT=projects\bootstrap-mini
 SET POM_READER_PROJECT=projects\pomreader
+SET POM_INSTALLER_PROJECT=projects\pomreader
 SET SCRIPTLANDIA_INSTALLER_PROJECT=projects\scriptlandia-installer
 
 echo ---### Java Specification Version: %JAVA_SPECIFICATION_VERSION%
@@ -21,7 +22,8 @@ SET SL_COMMON_CLASSPATH=%UNIVERSAL_LAUNCHER_COMMON_PROJECT%\src\main\java
   -classpath %SL_COMMON_CLASSPATH% ^
   -d %UNIVERSAL_LAUNCHER_COMMON_PROJECT%\target\classes ^
   %UNIVERSAL_LAUNCHER_COMMON_PROJECT%\src\main\java\org\sf\scriptlandia\util\*.java ^
-  %UNIVERSAL_LAUNCHER_COMMON_PROJECT%\src\main\java\org\sf\scriptlandia\launcher\*.java
+  %UNIVERSAL_LAUNCHER_COMMON_PROJECT%\src\main\java\org\sf\scriptlandia\launcher\*.java ^
+  %UNIVERSAL_LAUNCHER_COMMON_PROJECT%\src\main\java\org\sf\scriptlandia\install\*.java
 
 %JAVA_HOME%\bin\jar cf %UNIVERSAL_LAUNCHER_COMMON_PROJECT%\target\universal-launcher-common.jar ^
   -C %UNIVERSAL_LAUNCHER_COMMON_PROJECT%\target\classes .
@@ -52,7 +54,8 @@ SET PR_CLASSPATH=%PR_CLASSPATH%;%POM_READER_PROJECT%\src\main\java
 %JAVA_HOME%\bin\javac -nowarn -source %JAVA_SPECIFICATION_VERSION% -target %JAVA_SPECIFICATION_VERSION% ^
   -classpath %PR_CLASSPATH% ^
   -d %POM_READER_PROJECT%\target\classes ^
-  %POM_READER_PROJECT%\src\main\java\org\sf\scriptlandia\pomreader\PomReader.java
+  %POM_READER_PROJECT%\src\main\java\org\sf\scriptlandia\pomreader\PomReader.java ^
+  %POM_READER_PROJECT%\src\main\java\org\sf\scriptlandia\install\ProjectInstaller.java
 
 %JAVA_HOME%\bin\jar cf %POM_READER_PROJECT%\target\pomreader.jar ^
   -C %POM_READER_PROJECT%\target\classes .
