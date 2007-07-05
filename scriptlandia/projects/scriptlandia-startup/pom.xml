@@ -110,8 +110,6 @@
       <version>0.6</version>
     </dependency>
 
-<!--
-
     <dependency>
       <groupId>jruby</groupId>
       <artifactId>jruby-lib</artifactId>
@@ -135,7 +133,6 @@
       <artifactId>jacob-dll</artifactId>
       <version>1.10.1</version>
     </dependency>
--->
   </dependencies>
 
   <build>
