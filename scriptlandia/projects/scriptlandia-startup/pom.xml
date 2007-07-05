@@ -63,6 +63,24 @@
     </dependency>
 
     <dependency>
+      <groupId>jdom</groupId>
+      <artifactId>jdom</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.sun.tools</groupId>
+      <artifactId>javac</artifactId>
+      <version>7.0-b13</version>
+    </dependency>
+
+    <dependency>
+      <groupId>classworlds</groupId>
+      <artifactId>classworlds</artifactId>
+      <version>1.1</version>
+    </dependency>
+
+    <dependency>
       <groupId>org.jdesktop</groupId>
       <artifactId>jdic</artifactId>
       <version>0.9.1</version>
@@ -87,16 +105,12 @@
     </dependency>
 
     <dependency>
-      <groupId>classworlds</groupId>
-      <artifactId>classworlds</artifactId>
-      <version>1.1</version>
+      <groupId>org.sf</groupId>
+      <artifactId>image4j</artifactId>
+      <version>0.6</version>
     </dependency>
 
-    <dependency>
-      <groupId>jdom</groupId>
-      <artifactId>jdom</artifactId>
-      <version>1.0</version>
-    </dependency>
+<!--
 
     <dependency>
       <groupId>jruby</groupId>
@@ -121,18 +135,7 @@
       <artifactId>jacob-dll</artifactId>
       <version>1.10.1</version>
     </dependency>
-
-    <dependency>
-      <groupId>org.sf</groupId>
-      <artifactId>image4j</artifactId>
-      <version>0.6</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.sun.tools</groupId>
-      <artifactId>javac</artifactId>
-      <version>7.0-b13</version>
-    </dependency>
+-->
   </dependencies>
 
   <build>
