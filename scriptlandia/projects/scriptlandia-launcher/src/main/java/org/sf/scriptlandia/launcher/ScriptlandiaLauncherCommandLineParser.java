@@ -1,5 +1,7 @@
 package org.sf.scriptlandia.launcher;
 
+import org.sf.launcher.core.LauncherCommandLineParser;
+
 import java.util.*;
 
 /**

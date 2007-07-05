@@ -8,9 +8,9 @@ import org.apache.tools.ant.Task;
 import org.apache.tools.ant.types.Path;
 import org.apache.tools.ant.types.Reference;
 
-import org.sf.scriptlandia.launcher.UniversalLauncher;
+import org.sf.launcher.UniversalLauncher;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
-import org.sf.scriptlandia.launcher.LauncherException;
+import org.sf.launcher.core.LauncherException;
 
 /**
  * Adds new libraries to the current class realm.

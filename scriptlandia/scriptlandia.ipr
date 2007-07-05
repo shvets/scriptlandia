@@ -78,15 +78,15 @@
         <used_levels>
           <error>
             <option name="myName" value="ERROR" />
-            <option name="myVal" value="400" />
+            <option name="myVal" value="200" />
           </error>
           <warning>
             <option name="myName" value="WARNING" />
-            <option name="myVal" value="300" />
+            <option name="myVal" value="100" />
           </warning>
           <information>
             <option name="myName" value="INFO" />
-            <option name="myVal" value="200" />
+            <option name="myVal" value="100" />
           </information>
           <server>
             <option name="myName" value="SERVER PROBLEM" />
@@ -274,6 +274,7 @@
       <module fileurl="file://$PROJECT_DIR$/projects/scriptlandia-helper/scriptlandia-helper.iml" filepath="$PROJECT_DIR$/projects/scriptlandia-helper/scriptlandia-helper.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/scriptlandia-installer/scriptlandia-installer.iml" filepath="$PROJECT_DIR$/projects/scriptlandia-installer/scriptlandia-installer.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/scriptlandia-launcher/scriptlandia-launcher.iml" filepath="$PROJECT_DIR$/projects/scriptlandia-launcher/scriptlandia-launcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/projects/scriptlandia-nailgun/scriptlandia-nailgun.iml" filepath="$PROJECT_DIR$/projects/scriptlandia-nailgun/scriptlandia-nailgun.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/universal-launcher/universal-launcher.iml" filepath="$PROJECT_DIR$/projects/universal-launcher/universal-launcher.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/universal-launcher-common/universal-launcher-common.iml" filepath="$PROJECT_DIR$/projects/universal-launcher-common/universal-launcher-common.iml" />
     </modules>
@@ -308,6 +309,7 @@
     <mapping directory="$PROJECT_DIR$/projects/pom-reader" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/projects/scriptlandia-helper" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/projects/scriptlandia-installer" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/projects/scriptlandia-nailgun" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/projects/universal-launcher" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/projects/universal-launcher-common" vcs="svn" />
   </component>
@@ -332,5 +334,8 @@
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
   </component>
+  <UsedPathMacros>
+    <macro name="maven-repository" />
+  </UsedPathMacros>
 </project>
 

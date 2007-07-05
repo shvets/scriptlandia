@@ -16,7 +16,7 @@
       addClassPath("projects/pom-reader/target/pom-reader.jar");
       addClassPath("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
-      import org.sf.scriptlandia.pomreader.ProjectInstaller;
+      import org.sf.pomreader.ProjectInstaller;
 
       ProjectInstaller installer = new ProjectInstaller();
 
@@ -31,7 +31,7 @@
     <installLanguages section="core"/>
 
     <script language="beanshell">
-      import org.sf.scriptlandia.pomreader.ProjectInstaller;
+      import org.sf.pomreader.ProjectInstaller;
 
       ProjectInstaller installer = new ProjectInstaller();
 
@@ -40,7 +40,7 @@
     </script>
 
     <script language="beanshell">
-      import org.sf.scriptlandia.pomreader.ProjectInstaller;
+      import org.sf.pomreader.ProjectInstaller;
 
       ProjectInstaller installer = new ProjectInstaller();
 

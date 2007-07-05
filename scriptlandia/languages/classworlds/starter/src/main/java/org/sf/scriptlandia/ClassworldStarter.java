@@ -1,8 +1,8 @@
 package org.sf.scriptlandia;
 
 import org.codehaus.classworlds.*;
-import org.sf.scriptlandia.util.ReflectionUtil;
-import org.sf.scriptlandia.pomreader.PomReader;
+import org.sf.launcher.util.ReflectionUtil;
+import org.sf.pomreader.PomReader;
 import org.apache.maven.bootstrap.model.Dependency;
 import org.apache.maven.bootstrap.download.ArtifactResolver;
 

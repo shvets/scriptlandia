@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 import java.io.*;
 
-import org.sf.scriptlandia.util.ReflectionUtil;
-import org.sf.scriptlandia.launcher.UniversalLauncher;
+import org.sf.launcher.util.ReflectionUtil;
+import org.sf.launcher.UniversalLauncher;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 import org.codehaus.classworlds.ClassRealm;
 

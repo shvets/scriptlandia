@@ -16,7 +16,7 @@
       addClassPath(basedir + "/projects/pom-reader/target/pom-reader.jar");
       addClassPath(basedir + "/projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
-      import org.sf.scriptlandia.pomreader.ProjectInstaller;
+      import org.sf.pomreader.ProjectInstaller;
 
       ProjectInstaller installer = new ProjectInstaller();
 
@@ -48,7 +48,7 @@
         addClassPath(basedir + "/projects/pom-reader/target/pom-reader.jar");
         addClassPath(basedir + "/projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
-        import org.sf.scriptlandia.pomreader.ProjectInstaller;
+        import org.sf.pomreader.ProjectInstaller;
 
         ProjectInstaller installer = new ProjectInstaller();
 

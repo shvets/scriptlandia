@@ -1,8 +1,8 @@
 package org.sf.scriptlandia.install;
 
 
-import org.sf.scriptlandia.launcher.SimpleLauncher;
-import org.sf.scriptlandia.launcher.LauncherException;
+import org.sf.launcher.core.SimpleLauncher;
+import org.sf.launcher.core.LauncherException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +56,7 @@ public class CoreInstaller {
   private void installBasicDependencies() throws LauncherException {
     SimpleLauncher launcher = new SimpleLauncher(getBasicDependenciesArgsList());
 
-    launcher.setMainClassName("org.sf.scriptlandia.pomreader.ProjectInstaller");
+    launcher.setMainClassName("org.sf.pomreader.ProjectInstaller");
 
     launcher.addClasspathEntry("projects/universal-launcher-common/target/universal-launcher-common.jar");
     launcher.addClasspathEntry("projects/bootstrap-mini/target/bootstrap-mini.jar");
@@ -98,7 +98,7 @@ public class CoreInstaller {
 
     SimpleLauncher launcher = new SimpleLauncher(getAntRunArgsList());
 
-    launcher.setMainClassName("org.sf.scriptlandia.pomreader.ProjectInstaller");
+    launcher.setMainClassName("org.sf.pomreader.ProjectInstaller");
 
     launcher.addClasspathEntry("projects/universal-launcher-common/target/universal-launcher-common.jar");
     launcher.addClasspathEntry("projects/bootstrap-mini/target/bootstrap-mini.jar");
@@ -176,7 +176,7 @@ public class CoreInstaller {
    * @param args the command line arguments
    * @throws LauncherException the exception
    */
-  public void config(String[] args) throws LauncherException  {
+  public void config(String[] args) throws LauncherException {
     SimpleLauncher launcher = new SimpleLauncher(getConfigArgsList(args));
 
     prepare(launcher, true);

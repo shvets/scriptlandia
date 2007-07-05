@@ -5,10 +5,8 @@ import org.apache.tools.ant.types.Path;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.DefaultLogger;
 import org.apache.tools.ant.BuildLogger;
-import org.sf.scriptlandia.util.FileUtil;
 
 import java.io.File;
-import java.util.Random;
 
 /**
  * This class is used for compiling scala source file and then

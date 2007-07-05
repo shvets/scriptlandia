@@ -1,8 +1,8 @@
 package org.sf.scriptlandia.install;
 
-import org.sf.scriptlandia.launcher.LauncherException;
-import org.sf.scriptlandia.launcher.SimpleLauncher;
-import org.sf.scriptlandia.util.ReflectionUtil;
+import org.sf.launcher.core.LauncherException;
+import org.sf.launcher.core.SimpleLauncher;
+import org.sf.launcher.util.ReflectionUtil;
 
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
@@ -118,7 +118,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
         "xmlHelper.readLanguages(\"languages\");" +
         "languages = xmlHelper.getLanguages();";
 
-      languages = (java.util.List)ReflectionUtil.invokePrivateMethod(
+      languages = (java.util.List) ReflectionUtil.invokePrivateMethod(
         object, new Object[] { command }, clazz, "eval", new Class[] { String.class });
     }
     catch (Exception e) {

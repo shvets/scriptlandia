@@ -1,7 +1,10 @@
 package org.sf.scriptlandia.launcher;
 
 import org.codehaus.classworlds.ClassWorld;
-import org.sf.scriptlandia.util.FileUtil;
+import org.sf.launcher.util.FileUtil;
+import org.sf.launcher.core.LauncherCommandLineParser;
+import org.sf.launcher.CoreLauncher;
+import org.sf.launcher.LauncherHelper;
 
 import java.util.*;
 
@@ -37,7 +40,7 @@ public class LauncherManager {
    * @param args command line arguments
    * @throws Exception the exception
    */
-  protected CoreLauncher createLauncher(LauncherCommandLineParser parser, String[] args, 
+  protected CoreLauncher createLauncher(LauncherCommandLineParser parser, String[] args,
                                         String launcherClassName, ClassWorld classWorld) throws Exception {
     boolean instanceExists = currentExtension != null && instances.get(currentExtension) != null;
 

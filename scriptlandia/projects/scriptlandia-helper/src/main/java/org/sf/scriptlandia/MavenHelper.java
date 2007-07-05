@@ -16,9 +16,9 @@ import org.codehaus.classworlds.ClassRealm;
 import org.codehaus.classworlds.ClassWorld;
 import org.codehaus.plexus.embed.Embedder;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
-import org.sf.scriptlandia.launcher.UniversalLauncher;
-import org.sf.scriptlandia.pomreader.RepositoriesReader;
-import org.sf.scriptlandia.util.ReflectionUtil;
+import org.sf.launcher.UniversalLauncher;
+import org.sf.pomreader.RepositoriesReader;
+import org.sf.launcher.util.ReflectionUtil;
 
 import java.io.File;
 import java.net.MalformedURLException;

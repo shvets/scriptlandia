@@ -1,12 +1,8 @@
 package org.sf.scriptlandia;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.util.*;
 
-import org.sf.scriptlandia.util.ReflectionUtil;
 import org.codehaus.classworlds.ClassWorld;
-import org.codehaus.classworlds.ClassRealm;
 import org.apache.maven.cli.MavenCli;
 
 /**

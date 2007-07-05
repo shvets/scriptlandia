@@ -46,7 +46,7 @@
     <attribute name="build" default="true"/>
 
     <sequential>
-      <java classname="org.sf.scriptlandia.pomreader.ProjectInstaller">
+      <java classname="org.sf.pomreader.ProjectInstaller">
         <classpath>
           <pathelement path="projects/universal-launcher-common/target/universal-launcher-common.jar"/>
           <pathelement path="projects/bootstrap-mini/target/bootstrap-mini.jar"/>
@@ -77,7 +77,7 @@
         addClassPath("projects/pom-reader/target/pom-reader.jar");
         addClassPath("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
-        import org.sf.scriptlandia.pomreader.ProjectInstaller;
+        import org.sf.pomreader.ProjectInstaller;
 
         ProjectInstaller installer = new ProjectInstaller();
 

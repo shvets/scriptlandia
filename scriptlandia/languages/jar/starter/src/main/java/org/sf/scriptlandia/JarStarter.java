@@ -7,10 +7,10 @@ import java.util.jar.JarFile;
 import java.util.*;
 import java.util.zip.ZipEntry;
 
-import org.sf.scriptlandia.util.FileUtil;
-import org.sf.scriptlandia.util.ReflectionUtil;
-import org.sf.scriptlandia.launcher.LauncherException;
-import org.sf.scriptlandia.launcher.UniversalLauncher;
+import org.sf.launcher.util.FileUtil;
+import org.sf.launcher.util.ReflectionUtil;
+import org.sf.launcher.core.LauncherException;
+import org.sf.launcher.UniversalLauncher;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 import org.codehaus.classworlds.ClassRealm;
 

@@ -1,6 +1,6 @@
 package org.sf.scriptlandia;
 
-import org.sf.scriptlandia.launcher.UniversalLauncher;
+import org.sf.launcher.UniversalLauncher;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 
 import java.io.File;

@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../../maven-repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant/1.7.0/ant-1.7.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -19,7 +19,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../../maven-repository/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

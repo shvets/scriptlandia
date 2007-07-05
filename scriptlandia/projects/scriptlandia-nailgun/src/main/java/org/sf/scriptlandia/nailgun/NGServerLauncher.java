@@ -6,7 +6,7 @@ import org.apache.commons.cli.GnuParser;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
-import org.sf.scriptlandia.util.ReflectionUtil;
+import org.sf.launcher.util.ReflectionUtil;
 
 /**
  * This class is used for starting NG Server.

@@ -3,8 +3,8 @@ package org.sf.scriptlandia;
 import org.codehaus.classworlds.ClassRealm;
 import org.codehaus.classworlds.ClassWorld;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
-import org.sf.scriptlandia.launcher.UniversalLauncher;
-import org.sf.scriptlandia.util.ReflectionUtil;
+import org.sf.launcher.UniversalLauncher;
+import org.sf.launcher.util.ReflectionUtil;
 
 import java.io.File;
 import java.util.ArrayList;
