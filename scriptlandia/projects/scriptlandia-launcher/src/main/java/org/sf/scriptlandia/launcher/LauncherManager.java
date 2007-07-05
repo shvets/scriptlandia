@@ -4,7 +4,7 @@ import org.codehaus.classworlds.ClassWorld;
 import org.sf.launcher.util.FileUtil;
 import org.sf.launcher.core.LauncherCommandLineParser;
 import org.sf.launcher.CoreLauncher;
-import org.sf.launcher.LauncherHelper;
+import org.sf.scriptlandia.launcher.LauncherHelper;
 
 import java.util.*;
 

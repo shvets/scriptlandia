@@ -1,7 +1,8 @@
-package org.sf.launcher;
+package org.sf.scriptlandia.launcher;
 
 import org.sf.launcher.util.FileUtil;
 import org.sf.launcher.core.LauncherException;
+import org.sf.launcher.CoreLauncher;
 
 import java.util.Properties;
 import java.util.jar.Manifest;
@@ -65,15 +66,13 @@ public class LauncherHelper {
   public void setupProperties() {
     String repositoryHome = (String) scriptlandiaProps1.get("repository.home");
     String scriptlandiaHome = (String) scriptlandiaProps1.get("scriptlandia.home");
-    //String rubyHome = System.getProperty("ruby.home");
-    String rubyHome = (String) scriptlandiaProps1.get("native.ruby.home");
 
     String scalaVersion = (String)scriptlandiaProps1.get("scala.version");
     String scriptlandiaVersion = (String)scriptlandiaProps1.get("scriptlandia.version");
+    String launcherVersion = (String)scriptlandiaProps1.get("launcher.version");
     String jaskellVersion = (String)scriptlandiaProps1.get("jaskell.version");
     String jrubyVersion = (String)scriptlandiaProps1.get("jruby.version");
     String jythonVersion = (String)scriptlandiaProps1.get("jython.version");
-//    String javacInternalVersion = (String)scriptlandiaProps2.get("java.compiler.version");
 
     String javaCompilerVersion = (String) scriptlandiaProps2.get("java.compiler.version");
     
@@ -82,34 +81,21 @@ public class LauncherHelper {
     System.setProperty("scriptlandia.home", scriptlandiaHome);
     System.setProperty("launcher.home", scriptlandiaHome + "/launcher");
 
-//    System.setProperty("javac.internal.base", javacInternalBase);    
-//    System.setProperty("javac.internal.version", javacInternalVersion);
     System.setProperty("java.compiler.version", javaCompilerVersion);
 
     System.setProperty("python.home", repositoryHome + "/jython/jython/" + jythonVersion);
     System.setProperty("python.cachedir", repositoryHome + "/jython/jython/" + jythonVersion + "/cachedir");
 
-//    String jrubyHome = repositoryHome + "/jruby/jruby-lib/" + jrubyVersion;
-
-/*    if(rubyHome != null && new File(rubyHome).exists()) {
-      System.setProperty("jruby.home", rubyHome);
-    }
-    else {
-
-      System.setProperty("jruby.home", jrubyHome);
-    }
-*/
     String jRubyHome = repositoryHome + "/jruby/jruby/" + jrubyVersion;
 
     System.setProperty("jruby.shell", "cmd.exe");
     System.setProperty("jruby.script", "jruby.bat");
-//    System.setProperty("jruby.lib", jRubyHome + "/lib");
     System.setProperty("jruby.home", jRubyHome);
-//    System.setProperty("jruby.base", jRubyHome);
 
     System.setProperty("jaskell.home", repositoryHome + "/jaskell/jaskell/" + jaskellVersion);
     System.setProperty("scala.version", scalaVersion);
     System.setProperty("scriptlandia.version", scriptlandiaVersion);
+    System.setProperty("launcher.version", launcherVersion);
 
     System.setProperty("proxyHost", (String) scriptlandiaProps1.get("proxyHost"));
     System.setProperty("proxyPort", (String) scriptlandiaProps1.get("proxyPort"));
@@ -150,14 +136,15 @@ public class LauncherHelper {
     String repositoryHome = (String) scriptlandiaProps1.get("repository.home");
 
     String scriptlandiaVersion = (String)scriptlandiaProps1.get("scriptlandia.version");
+    String launcherVersion = (String)scriptlandiaProps1.get("launcher.version");
     String nailgunVersion = (String)scriptlandiaProps2.get("nailgun.version");
     String jdicVersion = (String)scriptlandiaProps2.get("jdic.version");
 
     launcher.addClasspathEntry(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/pom-reader/" + scriptlandiaVersion +
-      "/pom-reader-" + scriptlandiaVersion + ".jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/universal-launcher/" + scriptlandiaVersion +
-      "/universal-launcher-" + scriptlandiaVersion + ".jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/pom-reader/" + launcherVersion +
+      "/pom-reader-" + launcherVersion + ".jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/universal-launcher/" + launcherVersion +
+      "/universal-launcher-" + launcherVersion + ".jar");
     launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/scriptlandia-nailgun/" + scriptlandiaVersion +
       "/scriptlandia-nailgun-" + scriptlandiaVersion + ".jar");
     launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/scriptlandia-installer/" + scriptlandiaVersion +

@@ -68,7 +68,7 @@
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>universal-launcher</artifactId>
-      <version>2.2.2</version>
+      <version>1.0</version>
     </dependency>
 
     <dependency>

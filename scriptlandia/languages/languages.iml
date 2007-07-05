@@ -57,6 +57,7 @@
     </orderEntry>
     <orderEntry type="module" module-name="pom-reader" />
     <orderEntry type="module" module-name="bootstrap-mini" />
+    <orderEntry type="module" module-name="scriptlandia-launcher" />
     <orderEntryProperties />
   </component>
 </module>

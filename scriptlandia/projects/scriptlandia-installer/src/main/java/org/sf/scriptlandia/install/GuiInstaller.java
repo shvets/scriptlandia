@@ -686,6 +686,8 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
     scriptlandiaProps.saveProperty(proxyHostField, "proxyHost");
     scriptlandiaProps.saveProperty(proxyPortField, "proxyPort");
 
+    scriptlandiaProps.put("launcher.version", "1.0");      
+
     for(int i=0; i < languages.size(); i++) {
       Map language = (Map)languages.get(i);
       String name = (String)language.get("name");

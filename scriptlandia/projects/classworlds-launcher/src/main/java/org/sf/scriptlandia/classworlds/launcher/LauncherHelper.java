@@ -1,9 +1,6 @@
 package org.sf.scriptlandia.classworlds.launcher;
 
-import java.util.Iterator;
 import java.util.Properties;
-import java.util.jar.Manifest;
-import java.util.jar.Attributes;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -47,7 +44,7 @@ public class LauncherHelper {
     System.setProperty("maven.repo.local", repositoryHome);
 
     System.setProperty("python.home", (String)scriptlandiaProps.get("jython.base"));
-    System.setProperty("python.cachedir", (String)scriptlandiaProps.get("jython.base") + "/cachedir");
+    System.setProperty("python.cachedir", scriptlandiaProps.get("jython.base") + "/cachedir");
 
     System.setProperty("jruby.shell", "cmd.exe");
     System.setProperty("jruby.script", "jruby.bat");
@@ -55,13 +52,11 @@ public class LauncherHelper {
 
     System.setProperty("jaskell.home", (String)scriptlandiaProps.get("jaskell.base"));
 
-    Iterator iterator = scriptlandiaProps.keySet().iterator();
+    for (Object o : scriptlandiaProps.keySet()) {
+      String key = (String) o;
 
-    while(iterator.hasNext()) {
-      String key = (String)iterator.next();
-
-      if(!key.equals("java.home")) {
-        System.setProperty(key, (String)scriptlandiaProps.get(key));
+      if (!key.equals("java.home")) {
+        System.setProperty(key, (String) scriptlandiaProps.get(key));
       }
     }
   }
