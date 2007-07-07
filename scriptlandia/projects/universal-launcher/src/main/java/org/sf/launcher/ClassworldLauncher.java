@@ -300,18 +300,6 @@ public class ClassworldLauncher extends CoreLauncher {
     return isGuiMode;
   }
 
-
-  /**
-   * Checks the scriptlandia.continuous.mode" system property.
-   *
-   * @return true if it is contionuous mode; false otherwise
-   */
-/*  private static boolean isContinuousMode() {
-    String isContinuousModeProperty = System.getProperty("scriptlandia.continuous.mode");
-
-    return isContinuousModeProperty != null && isContinuousModeProperty.equalsIgnoreCase("true");
-  }
-*/
   /**
    * Prints current classpath content.
    */
