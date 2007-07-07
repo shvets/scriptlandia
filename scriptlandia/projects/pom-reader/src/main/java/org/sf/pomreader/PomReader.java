@@ -184,6 +184,17 @@ public class PomReader {
    * @throws Exception the exception
    * @return the list of dependent URLs
    */
+
+  /**
+   * Resolves dependencies for specified pom maven2 dependencies file.
+   *
+   * @param groupId the group ID
+   * @param artifactId the artifact ID
+   * @param version the version
+   * @param classifier the classifier
+   * @return the list witn dependencied
+   * @throws Exception the exception
+   */
   public List<URL> calculateDependencies(String groupId, String artifactId, String version, String classifier)
          throws Exception {
     List<URL> dependencies = new ArrayList<URL>();
