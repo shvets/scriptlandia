@@ -7,29 +7,29 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$maven-repository$/org/jdesktop/jdic/0.9.1/jdic-0.9.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$maven-repository$/com/martiansoftware/nailgun/0.7.1/nailgun-0.7.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="module" module-name="universal-launcher-common" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$maven-repository$/commons-cli/commons-cli/1.0/commons-cli-1.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../../maven-repository/commons-cli/commons-cli/1.0/commons-cli-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../../../../maven-repository/org/jdesktop/jdic/0.9.1/jdic-0.9.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../../../../maven-repository/com/martiansoftware/nailgun/0.7.1/nailgun-0.7.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -8,17 +8,17 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="universal-launcher-common" />
+    <orderEntry type="module" module-name="pom-reader" />
+    <orderEntry type="module" module-name="bootstrap-mini" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$maven-repository$/classworlds/classworlds/1.1/classworlds-1.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../../maven-repository/classworlds/classworlds/1.1/classworlds-1.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="pom-reader" />
-    <orderEntry type="module" module-name="bootstrap-mini" />
     <orderEntryProperties />
   </component>
 </module>
