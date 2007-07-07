@@ -11,8 +11,10 @@ public abstract class AbstractLauncher implements Launcher {
   /** The main class name. */
   protected String mainClassName;
 
+  /** The parser. */
   protected LauncherCommandLineParser parser;
 
+  /** The array of arguments. */
   protected String[] args;
 
   /** The exit code. */
@@ -71,10 +73,20 @@ public abstract class AbstractLauncher implements Launcher {
     return exitCode;
   }
 
+  /**
+   * Cets arguments.
+   *
+   * @return array of arguments
+   */
   public String[] getArgs() {
     return args;
   }
 
+  /**
+   * Sets arguments.
+   *
+   * @param args array of arguments
+   */
   public void setArgs(String[] args) {
     this.args = args;
   }

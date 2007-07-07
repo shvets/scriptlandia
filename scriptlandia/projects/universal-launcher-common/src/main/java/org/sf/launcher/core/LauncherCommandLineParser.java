@@ -90,7 +90,7 @@ public class LauncherCommandLineParser {
 
 
   public boolean isWaitMode() {
-    String s = (String)commandLine.get("wait.mode");
+    String s = commandLine.get("wait.mode");
     return s != null && s.equalsIgnoreCase("true");
   }
 

@@ -72,8 +72,6 @@ public class SimpleLauncher extends AbstractLauncher {
     return classLoader;
   }
 
-  //protected void releaseResources() throws LauncherException {}
-
   /**
    * Adds classpath entry.
    *

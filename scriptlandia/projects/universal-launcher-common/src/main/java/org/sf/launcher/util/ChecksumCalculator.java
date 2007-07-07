@@ -1,10 +1,5 @@
 package org.sf.launcher.util;
 
-//import org.apache.tools.ant.Project;
-//import org.apache.tools.ant.taskdefs.Checksum;
-import org.sf.launcher.util.FileUtil;
-import org.sf.launcher.util.Checksum;
-
 import java.io.File;
 
 public class ChecksumCalculator {

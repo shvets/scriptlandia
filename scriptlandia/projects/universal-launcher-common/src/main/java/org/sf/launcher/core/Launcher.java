@@ -62,4 +62,18 @@ public interface Launcher {
    */
   void launch() throws LauncherException;
 
+  /**
+   * Cets arguments.
+   *
+   * @return array of arguments
+   */
+  String[] getArgs();
+
+  /**
+   * Sets arguments.
+   *
+   * @param args array of arguments
+   */
+  void setArgs(String[] args);
+
 }

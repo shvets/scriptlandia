@@ -138,6 +138,8 @@ public class CommonUtil {
 
   /**
    * Sets up the java specification version.
+   * @return java specification version
+   * @throws IOException I/O Exception
    */
   public static String getJavaSpecificationVersion() throws IOException {
     String specificationVersion = null;
@@ -170,7 +172,10 @@ public class CommonUtil {
    *  1.3: 00 2F (= 47)
    *  1.4: 00 30 (= 48)
    *  1.5: 00 31 (= 49)
-   *  1.6: 00 32 (= 50) 
+   *  1.6: 00 32 (= 50)
+   *
+   * @param majorVersion the major version
+   * @return java specification version
    */
   public String calculateJavaSpecificationVersion(int majorVersion) {
     String javaSpecificationVersion = "1.1";
