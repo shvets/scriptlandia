@@ -245,12 +245,18 @@ goto end
 
 :processresult
 
-if not defined %VARIABLE_NAME% goto setupVariable
-  set %VARIABLE_NAME%=%VARIABLE_VALUE%%SEPARATOR%%RESULT%
-goto endSetupVariable
-:setupVariable
+rem if not defined %VARIABLE_NAME% goto setupVariable
+rem   set %VARIABLE_NAME%=%VARIABLE_VALUE%%SEPARATOR%%RESULT%
+rem goto endSetupVariable
+rem :setupVariable
+rem   set %VARIABLE_NAME%=%SECTION_PREFIX%%RESULT%
+rem :endSetupVariable
+
+if not defined %VARIABLE_NAME% (
   set %VARIABLE_NAME%=%SECTION_PREFIX%%RESULT%
-:endSetupVariable
+) ELSE (
+  set %VARIABLE_NAME%=%VARIABLE_VALUE%%SEPARATOR%%RESULT%
+)
 
 goto end
 
