@@ -10,8 +10,6 @@
 
   <load-properties/>
 
-  <property file="scriptlandia.properties"/>
-
   <target name="clean">
     <delete dir="projects/universal-launcher-common/target"/>
     <delete dir="projects/bootstrap-mini/target"/>

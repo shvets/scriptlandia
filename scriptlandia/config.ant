@@ -4,7 +4,6 @@
 
   <property file="${user.home}/scriptlandia/config.properties"/>
   <property file="config.properties"/>
-  <property file="scriptlandia.properties"/>
 
   <import file="config-macrodefs.xml"/>
   <load-properties/>
@@ -70,24 +69,6 @@
 
       <filter token="jdic.version" value="${jdic.version}"/>
       <filter token="nailgun.version" value="${nailgun.version}"/>
-
-<!--
-      <filter token="scriptlandia.base" value="${scriptlandia.base}"/>
-      <filter token="classworlds.base" value="${classworlds.base}"/>
-      <filter token="maven.base" value="${maven.base}"/>
-      <filter token="ant.base" value="${ant.base}"/>
-      <filter token="beanshell.base" value="${beanshell.base}"/>
-      <filter token="groovy.base" value="${groovy.base}"/>
-      <filter token="javascript.base" value="${javascript.base}"/>
-      <filter token="pnuts.base" value="${pnuts.base}"/>
-      <filter token="jelly.base" value="${jelly.base}"/>
-      <filter token="velocity.base" value="${velocity.base}"/>
-      <filter token="jaskell.base" value="${jaskell.base}"/>
-
-      <filter token="jruby.base" value="${jruby.base}"/>
-      <filter token="jython.base" value="${jython.base}"/>
-      <filter token="jython.lib.base" value="${jython.lib.base}"/>
--->
     </filterset>
 
     <condition property="jacob.lib.is.present">
@@ -249,7 +230,6 @@
       project.setNewProperty("os.arch.temp", osArch);
     </script>
 
-<!--    
     <unzip src="${repository.home}/org/jdesktop/jdic-native-libs/${jdic.version}/jdic-native-libs-${jdic.version}.jar"
            dest="${repository.home}/org/jdesktop/jdic/${jdic.version}" overwrite="false">
       <mapper type="flatten"/>
@@ -259,12 +239,11 @@
         <include name="${os.name.temp}/${os.arch.temp}/*.*"/>
       </patternset>
     </unzip>
--->
-
+<!--    
     <unzip src="${repository.home}/org/jdesktop/jdic-native-libs/${jdic.version}/jdic-native-libs-${jdic.version}.jar"
            dest="${repository.home}/org/jdesktop/jdic/${jdic.version}" overwrite="false">
     </unzip>
-
+-->
   </target>
 
   <target name="unzip.nailgun.binaries" if="nailgun.binaries.present">

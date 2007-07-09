@@ -5,7 +5,7 @@
   <import file="config-macrodefs.xml"/>
   <load-properties/>
 
-  <property file="scriptlandia.properties"/>
+  <property file="config.properties"/>
 
   <target name="prepare">
     <script language="beanshell">

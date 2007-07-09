@@ -9,8 +9,6 @@
       <includes>
         <include>config.*</include>
         <include>install.*</include>
-        <include>scriptlandia.properties</include>
-        <include>repositories.xml</include>
         <include>installer.exe</include>
         <include>installer.bat</include>
         <include>installer.ant</include>

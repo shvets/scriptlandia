@@ -53,9 +53,7 @@
   <target name="install.libraries">
     <copy todir="${scriptlandia.home}">
       <fileset dir=".">
-       <!--include name="repositories.xml"/-->
        <include name="config.ant"/>
-       <include name="scriptlandia.properties"/>
        <include name="config-macrodefs.xml"/>
       </fileset>
     </copy>
@@ -79,10 +77,6 @@
     <copy todir="${scriptlandia.home}">
       <fileset dir="projects/scriptlandia-config/bin">
        <include name="*.exe"/>
-<!--
-       <include name="launcher/*.bat"/>
-       <include name="launcher/*.sh"/>
--->
       </fileset>
     </copy>
 
