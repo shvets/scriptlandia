@@ -19,6 +19,12 @@
       <artifactId>displaytag</artifactId>
       <version>1.1</version>
     </dependency>
+
+    <dependency>
+      <groupId>groovy</groupId>
+      <artifactId>groovy-all</artifactId>
+      <version>1.0</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -76,5 +82,17 @@
       </plugin>
     </plugins>
   </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <configuration>
+          <configLocation>checkstyle.xml</configLocation>
+          <enableRulesSummary>false</enableRulesSummary>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
 
 </project>
