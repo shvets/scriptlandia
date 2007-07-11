@@ -100,5 +100,18 @@ public class ScriptlandiaHelper {
 
     launcher.resolveDependencies(groupId, artifactId, version, null);
   }
-  
+
+  public static void resolveDependencies(String depsFileName) throws Exception {
+    File depsFile = new File(depsFileName);
+
+    if(!depsFile.exists()) {
+      System.out.println("File " + depsFile + " does not exist.");
+    }
+    else {
+      UniversalLauncher launcher = ScriptlandiaLauncher.getInstance();
+
+      launcher.resolveDependencies(depsFile);
+    }
+  }
+    
 }
