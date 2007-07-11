@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href='weather.css' type='text/css'?>
+
+<weather>
+    <station>
+        <location>Springfield, NT</location>
+        <description>Sunny</description>
+        <tempf>85</tempf>
+    </station>
+    <station>
+        <location>Arlen, TX</location>
+        <description>Super Sunny</description>
+        <tempf>99</tempf>
+    </station>
+    <station>
+        <location>South Park, CO</location>
+        <description>Snowing</description>
+        <tempf>18</tempf>
+    </station>
+</weather>
