@@ -1,0 +1,74 @@
+	body{
+		text-align:center;
+		font-family: verdana;
+		font-size:12px;
+	}
+	
+			
+	fieldset{
+		width:750px;
+		margin:auto;
+		border: 1px solid #CAE8EA;
+		color: #CAE8EA;
+		padding:3px;
+	}
+	
+
+	legend {
+		font-weight:bold;
+		color:#000000;
+		background-color:#CAE8EA;
+		border: 1px solid #000000;
+	}
+	
+	
+	table{
+		width:100%;
+		border-collapse: collapse;
+	}
+	
+	table tr.odd{
+		background-color:white;
+	}
+	table tr.even{
+		background-color:#FFFFE0;
+	}
+	
+	
+	table td{
+		border: 1px solid #C1DAD7;
+		color: #000000;	
+	}
+	
+	table td.head{
+		font-weight:bold;
+		background-color:#CAE8EA; 
+	}
+	
+	table td.middle{
+		width:10px;
+		border-top:0;
+		border-bottom:0;
+	}
+	
+	form{
+		margin:0px;
+	}
+	input{
+		font-size:11px;
+		font-family: verdana;
+	}		
+	
+	.indicator-cell-active{
+		background-color:red;
+	}
+	.indicator-cell-inactive{
+		backkground-color:green;
+	}
+	
+	
+	
+	
+	
+	
+	

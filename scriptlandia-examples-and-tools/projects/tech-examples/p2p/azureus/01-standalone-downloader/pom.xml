@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Resolving azureus dependencies. -->
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>azureus-test</groupId>
+  <artifactId>azureus-test</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <name>Test</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>azureus</groupId>
+      <artifactId>azureus</artifactId>
+      <!--version>2.5.0.0</version-->
+      <version>3.0.1.6</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>scriptlandia-repo</id>
+      <name>Scriptlandia Maven2 repository</name>
+      <url>http://scriptlandia-repository.googlecode.com/svn/trunk/tools</url>
+    </repository>
+  </repositories>
+
+  <build>
+    <defaultGoal>exec:java</defaultGoal>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>${java.specification.version}</source>
+          <target>${java.specification.version}</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>java</goal>
+            </goals>
+          </execution>
+        </executions>
+
+        <configuration>
+          <mainClass>client.SimpleStandaloneDownloader</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

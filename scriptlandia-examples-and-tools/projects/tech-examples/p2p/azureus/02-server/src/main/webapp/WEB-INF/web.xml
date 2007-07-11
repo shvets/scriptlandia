@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+
+  <display-name>Server Application - Peer-to-Peer BitTorrent downloads with Azureus article</display-name>
+
+	<listener>
+		<listener-class>server.ServerInitialiser</listener-class>
+	</listener>
+
+    <servlet>
+        <servlet-name>NewTorrentFileUploadServlet</servlet-name>
+        <servlet-class>server.NewTorrentFileUploadServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>TorrentDownloadServlet</servlet-name>
+        <servlet-class>server.TorrentDownloadServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>NewTorrentFileUploadServlet</servlet-name>
+        <url-pattern>/uploadNewTorrentFile</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>TorrentDownloadServlet</servlet-name>
+        <url-pattern>/download.torrent</url-pattern>
+    </servlet-mapping>
+ 
+</web-app>
+
