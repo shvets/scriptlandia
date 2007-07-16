@@ -1,0 +1,34 @@
+<assembly>
+  <id>install</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+
+  <fileSets>
+    <fileSet>
+      <includes>
+        <include>docs/**</include>
+      </includes>
+    </fileSet>
+
+    <fileSet>
+      <directory>projects</directory>
+      <outputDirectory>projects</outputDirectory>
+    
+      <includes>
+        <include>bootstrap-mini/pom.xml</include>
+        <include>bootstrap-mini/target/bootstrap-mini.jar</include>
+
+        <include>pom-reader/pom.xml</include>
+        <include>pom-reader/target/pom-reader.jar</include>
+
+        <include>universal-launcher-common/pom.xml</include>
+        <include>universal-launcher-common/target/universal-launcher-common.jar</include>
+
+        <include>universal-launcher/pom.xml</include>
+        <include>universal-launcher/target/universal-launcher.jar</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+
+</assembly>
