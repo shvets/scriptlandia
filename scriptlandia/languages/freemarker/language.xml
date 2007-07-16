@@ -7,7 +7,7 @@
       <extension>freemarker</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="freemarker-starter" version="2.2.2">
+    <starter groupId="org.sf.scriptlandia" artifactId="freemarker-starter" version="1.0">
       <mainClass>org.sf.scriptlandia.FreeMarkerStarter</mainClass>
     </starter>
   </registration>

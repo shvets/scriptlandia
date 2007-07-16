@@ -7,8 +7,8 @@ import org.apache.tools.ant.taskdefs.Java;
 import org.apache.tools.ant.types.Path;
 import org.codehaus.classworlds.ClassRealm;
 import org.codehaus.classworlds.ClassWorld;
-import org.sf.launcher.util.FileUtil;
-import org.sf.launcher.util.CommonUtil;
+import org.sf.jlaunchpad.util.FileUtil;
+import org.sf.jlaunchpad.util.CommonUtil;
 
 import java.io.File;
 import java.net.URL;

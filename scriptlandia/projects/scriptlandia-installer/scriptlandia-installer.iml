@@ -7,9 +7,33 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="universal-launcher-common" />
-    <orderEntry type="module" module-name="pom-reader" />
-    <orderEntry type="module" module-name="bootstrap-mini" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$maven-repository$/org/sf/jlaunchpad/universal-launcher/1.0/universal-launcher-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$maven-repository$/org/sf/jlaunchpad/universal-launcher-common/1.0/universal-launcher-common-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$maven-repository$/org/sf/jlaunchpad/pom-reader/1.0/pom-reader-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntryProperties />
   </component>
 </module>

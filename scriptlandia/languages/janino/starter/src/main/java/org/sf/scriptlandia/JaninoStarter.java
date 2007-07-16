@@ -4,7 +4,7 @@ import org.codehaus.classworlds.ClassRealm;
 import org.codehaus.classworlds.ClassWorld;
 import org.codehaus.janino.JavaSourceClassLoader;
 import org.codehaus.janino.DebuggingInformation;
-import org.sf.launcher.util.ReflectionUtil;
+import org.sf.jlaunchpad.util.ReflectionUtil;
 
 import java.io.File;
 import java.util.Iterator;

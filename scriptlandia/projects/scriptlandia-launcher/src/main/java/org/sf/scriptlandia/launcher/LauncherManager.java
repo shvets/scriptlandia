@@ -1,10 +1,9 @@
 package org.sf.scriptlandia.launcher;
 
 import org.codehaus.classworlds.ClassWorld;
-import org.sf.launcher.util.FileUtil;
-import org.sf.launcher.core.LauncherCommandLineParser;
-import org.sf.launcher.CoreLauncher;
-import org.sf.scriptlandia.launcher.LauncherHelper;
+import org.sf.jlaunchpad.util.FileUtil;
+import org.sf.jlaunchpad.core.LauncherCommandLineParser;
+import org.sf.jlaunchpad.CoreLauncher;
 
 import java.util.*;
 

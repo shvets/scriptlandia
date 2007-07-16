@@ -6,7 +6,7 @@
       <extension>judo</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="judo-starter" version="2.2.2">
+    <starter groupId="org.sf.scriptlandia" artifactId="judo-starter" version="1.0">
       <mainClass>judo</mainClass>
     </starter>
   </registration>

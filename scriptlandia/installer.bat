@@ -4,14 +4,13 @@ if exist "%USERPROFILE%\scriptlandia\config.bat" @call "%USERPROFILE%\scriptland
 
 @call config.bat
 
-SET BOOTSTRAP_MINI_PROJECT=projects\bootstrap-mini
-SET UNIVERSAL_LAUNCHER_COMMON_PROJECT=projects\universal-launcher-common
-SET POM_READER_PROJECT=projects\pom-reader
 SET SCRIPTLANDIA_INSTALLER_PROJECT=projects\scriptlandia-installer
 
-SET CLASSPATH=%BOOTSTRAP_MINI_PROJECT%\target\bootstrap-mini.jar
-SET CLASSPATH=%CLASSPATH%;%POM_READER_PROJECT%\target\pom-reader.jar
-SET CLASSPATH=%CLASSPATH%;%UNIVERSAL_LAUNCHER_COMMON_PROJECT%\target\universal-launcher-common.jar
+SET CLASSPATH=%REPOSITORY_HOME%\org\sf\jlaunchpad\universal-launcher-common\%LAUNCHER_VERSION%\universal-launcher-common-%LAUNCHER_VERSION%.jar
+SET CLASSPATH=%CLASSPATH%;%REPOSITORY_HOME%\org\apache\maven\bootstrap\bootstrap-mini\2.0.7\bootstrap-mini-2.0.7.jar
+SET CLASSPATH=%CLASSPATH%;%REPOSITORY_HOME%\org\sf\jlaunchpad\pom-reader\%LAUNCHER_VERSION%\pom-reader-%LAUNCHER_VERSION%.jar
+SET CLASSPATH=%CLASSPATH%;%REPOSITORY_HOME%\org\sf\jlaunchpad\universal-launcher\%LAUNCHER_VERSION%\universal-launcher-%LAUNCHER_VERSION%.jar
+
 SET CLASSPATH=%CLASSPATH%;%SCRIPTLANDIA_INSTALLER_PROJECT%\target\scriptlandia-installer.jar
 
 rem SET MAIN_CLASS=org.sf.scriptlandia.install.CoreInstaller

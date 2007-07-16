@@ -5,7 +5,7 @@
 
   <groupId>org.sf.scriptlandia</groupId>
   <artifactId>scriptlandia-installer</artifactId>
-  <version>2.2.2</version>
+  <version>2.2.3</version>
 
   <name>Scriptlandia Installer Module</name>
   <description>
@@ -48,7 +48,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.sf.scriptlandia</groupId>
+      <groupId>org.sf.jlaunchpad</groupId>
       <artifactId>universal-launcher-common</artifactId>
       <version>1.0</version>
     </dependency>
@@ -60,8 +60,14 @@
     </dependency>
 
     <dependency>
-      <groupId>org.sf.scriptlandia</groupId>
+      <groupId>org.sf.jlaunchpad</groupId>
       <artifactId>pom-reader</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sf.jlaunchpad</groupId>
+      <artifactId>universal-launcher</artifactId>
       <version>1.0</version>
     </dependency>
   </dependencies>

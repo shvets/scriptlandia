@@ -6,7 +6,7 @@
       <extension>scala</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="scala-starter" version="2.2.2">
+    <starter groupId="org.sf.scriptlandia" artifactId="scala-starter" version="1.0">
       <mainClass>org.sf.scriptlandia.ScalaStarter</mainClass>
     </starter>
   </registration>

@@ -6,7 +6,7 @@
       <extension>f3</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="f3-starter" version="2.2.2">
+    <starter groupId="org.sf.scriptlandia" artifactId="f3-starter" version="1.0">
       <mainClass>org.sf.scriptlandia.F3Starter</mainClass>
     </starter>
   </registration>

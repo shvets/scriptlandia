@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sf.scriptlandia</groupId>
   <artifactId>javascript</artifactId>
-  <version>2.2.2</version>
+  <version>1.0</version>
   <packaging>pom</packaging>
 
   <name>Scriptlandia Javascript Core Module</name>

@@ -7,7 +7,7 @@
       <extension>scheme</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="jscheme-starter" version="2.2.2">
+    <starter groupId="org.sf.scriptlandia" artifactId="jscheme-starter" version="1.0">
       <mainClass>org.sf.scriptlandia.JSchemeStarter</mainClass>
     </starter>
   </registration>

@@ -46,7 +46,7 @@
 
 package org.sf.scriptlandia;
 
-import org.sf.launcher.UniversalLauncher;
+import org.sf.jlaunchpad.UniversalLauncher;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 import org.codehaus.classworlds.ClassRealm;
 

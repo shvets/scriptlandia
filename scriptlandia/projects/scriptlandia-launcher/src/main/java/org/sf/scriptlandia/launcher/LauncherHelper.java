@@ -1,8 +1,8 @@
 package org.sf.scriptlandia.launcher;
 
-import org.sf.launcher.util.FileUtil;
-import org.sf.launcher.core.LauncherException;
-import org.sf.launcher.CoreLauncher;
+import org.sf.jlaunchpad.util.FileUtil;
+import org.sf.jlaunchpad.core.LauncherException;
+import org.sf.jlaunchpad.CoreLauncher;
 
 import java.util.Properties;
 import java.util.jar.Manifest;
@@ -47,6 +47,7 @@ public class LauncherHelper {
   public void setupProperties() {
     String repositoryHome = (String) scriptlandiaProps.get("repository.home");
     String scriptlandiaHome = (String) scriptlandiaProps.get("scriptlandia.home");
+    String launcherHome = (String) scriptlandiaProps.get("launcher.home");
 
     String scalaVersion = (String)scriptlandiaProps.get("scala.version");
     String scriptlandiaVersion = (String)scriptlandiaProps.get("scriptlandia.version");
@@ -60,7 +61,7 @@ public class LauncherHelper {
     System.setProperty("maven.repo.local", repositoryHome);
     System.setProperty("repository.home", repositoryHome);
     System.setProperty("scriptlandia.home", scriptlandiaHome);
-    System.setProperty("launcher.home", scriptlandiaHome + "/launcher");
+    System.setProperty("launcher.home", launcherHome);
 
     System.setProperty("java.compiler.version", javaCompilerVersion);
 
@@ -122,10 +123,13 @@ public class LauncherHelper {
     String jdicVersion = (String)scriptlandiaProps.get("jdic.version");
 
     launcher.addClasspathEntry(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/pom-reader/" + launcherVersion +
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/pom-reader/" + launcherVersion +
       "/pom-reader-" + launcherVersion + ".jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/universal-launcher/" + launcherVersion +
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher-common/" + launcherVersion +
+      "/universal-launcher-common-" + launcherVersion + ".jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher/" + launcherVersion +
       "/universal-launcher-" + launcherVersion + ".jar");
+
     launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/scriptlandia-nailgun/" + scriptlandiaVersion +
       "/scriptlandia-nailgun-" + scriptlandiaVersion + ".jar");
     launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/scriptlandia-installer/" + scriptlandiaVersion +

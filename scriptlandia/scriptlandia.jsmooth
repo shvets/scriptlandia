@@ -13,9 +13,11 @@
   <!--iconLocation>projects/scriptlandia-config/bin\images/scriptlandia.ico</iconLocation-->
   <jarLocation>projects/scriptlandia-installer/target/scriptlandia-installer.jar</jarLocation>
 
-  <classPath>projects/universal-launcher-common/target/universal-launcher-common.jar</classPath>
-  <classPath>projects/bootstrap-mini/target/bootstrap-mini.jar</classPath>
-  <classPath>projects/pom-reader/target/pom-reader.jar</classPath>
+  <classPath>${repository.home}/org/sf/jlaunchpad/universal-launcher-common/1.0/universal-launcher-common-1.0.jar</classPath>
+  <classPath>${repository.home}/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar</classPath>
+  <classPath>${repository.home}/org/sf/jlaunchpad/pom-reader/1.0/pom-reader-1.0.jar</classPath>
+  <classPath>${repository.home}/org/sf/jlaunchpad/universal-launcher/1.0/universal-launcher-1.0.jar</classPath>
+
   <classPath>projects/scriptlandia-installer/target/scriptlandia-installer.jar</classPath>
 
   <mainClassName>org.sf.scriptlandia.install.GuiInstaller</mainClassName>
@@ -67,7 +69,7 @@
 
   <javaProperties>
     <name>scriptlandia.version</name>
-    <value>2.2.2</value>
+    <value>2.2.3</value>
   </javaProperties>
 
   <skeletonProperties>

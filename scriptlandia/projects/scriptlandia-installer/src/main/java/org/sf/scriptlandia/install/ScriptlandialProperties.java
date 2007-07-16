@@ -1,6 +1,6 @@
 package org.sf.scriptlandia.install;
 
-import org.sf.launcher.util.FileUtil;
+import org.sf.jlaunchpad.util.FileUtil;
 
 import javax.swing.*;
 import java.io.*;

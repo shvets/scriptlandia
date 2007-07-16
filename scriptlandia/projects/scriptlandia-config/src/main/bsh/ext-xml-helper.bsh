@@ -3,6 +3,7 @@
 package org.sf.scriptlandia.install;
 
 String repositoryHome = System.getProperty("repository.home");
+
 addClassPath(repositoryHome + "/jdom/jdom/1.0/jdom-1.0.jar");
 addClassPath(repositoryHome + "/org/sf/image4j/0.6/image4j-0.6.jar");
 
@@ -129,7 +130,7 @@ public class ExtXmlHelper extends XmlHelper {
 
     map.put("starter.groupId", "org.sf.scriptlandia");
     map.put("starter.artifactId", name + "-starter");
-    map.put("starter.version", "2.2.2");
+    map.put("starter.version", "1.0");
 
     map.put("mainClass", getElementByName(starter, "mainClass").getValue());
 

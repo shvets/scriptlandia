@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project relativePaths="false" version="4">
+<project relativePaths="true" version="4">
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
   </component>
@@ -11,8 +11,31 @@
     <option name="USE_PROJECT_LEVEL_SETTINGS" value="false" />
   </component>
   <component name="CodeStyleSettingsManager">
-    <option name="PER_PROJECT_SETTINGS" />
-    <option name="USE_PER_PROJECT_SETTINGS" value="false" />
+    <option name="PER_PROJECT_SETTINGS">
+      <value>
+        <option name="JAVA_INDENT_OPTIONS">
+          <value>
+            <option name="INDENT_SIZE" value="2" />
+            <option name="CONTINUATION_INDENT_SIZE" value="8" />
+            <option name="TAB_SIZE" value="2" />
+            <option name="USE_TAB_CHARACTER" value="false" />
+            <option name="SMART_TABS" value="false" />
+            <option name="LABEL_INDENT_SIZE" value="0" />
+            <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+          </value>
+        </option>
+        <ADDITIONAL_INDENT_OPTIONS fileType="js">
+          <option name="INDENT_SIZE" value="4" />
+          <option name="CONTINUATION_INDENT_SIZE" value="8" />
+          <option name="TAB_SIZE" value="4" />
+          <option name="USE_TAB_CHARACTER" value="false" />
+          <option name="SMART_TABS" value="false" />
+          <option name="LABEL_INDENT_SIZE" value="0" />
+          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+        </ADDITIONAL_INDENT_OPTIONS>
+      </value>
+    </option>
+    <option name="USE_PER_PROJECT_SETTINGS" value="true" />
   </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
@@ -268,16 +291,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/projects/antrun/antrun.iml" filepath="$PROJECT_DIR$/projects/antrun/antrun.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/bootstrap-mini/bootstrap-mini.iml" filepath="$PROJECT_DIR$/projects/bootstrap-mini/bootstrap-mini.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/classworlds-launcher/classworlds-launcher.iml" filepath="$PROJECT_DIR$/projects/classworlds-launcher/classworlds-launcher.iml" />
       <module fileurl="file://$PROJECT_DIR$/languages/languages.iml" filepath="$PROJECT_DIR$/languages/languages.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/pom-reader/pom-reader.iml" filepath="$PROJECT_DIR$/projects/pom-reader/pom-reader.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/scriptlandia-helper/scriptlandia-helper.iml" filepath="$PROJECT_DIR$/projects/scriptlandia-helper/scriptlandia-helper.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/scriptlandia-installer/scriptlandia-installer.iml" filepath="$PROJECT_DIR$/projects/scriptlandia-installer/scriptlandia-installer.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/scriptlandia-launcher/scriptlandia-launcher.iml" filepath="$PROJECT_DIR$/projects/scriptlandia-launcher/scriptlandia-launcher.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/scriptlandia-nailgun/scriptlandia-nailgun.iml" filepath="$PROJECT_DIR$/projects/scriptlandia-nailgun/scriptlandia-nailgun.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/universal-launcher/universal-launcher.iml" filepath="$PROJECT_DIR$/projects/universal-launcher/universal-launcher.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/universal-launcher-common/universal-launcher-common.iml" filepath="$PROJECT_DIR$/projects/universal-launcher-common/universal-launcher-common.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK">

@@ -4,65 +4,14 @@ if exist "%USERPROFILE%\scriptlandia\config.bat" @call "%USERPROFILE%\scriptland
 
 @call config.bat
 
-SET UNIVERSAL_LAUNCHER_COMMON_PROJECT=projects\universal-launcher-common
-SET BOOTSTRAP_MINI_PROJECT=projects\bootstrap-mini
-SET POM_READER_PROJECT=projects\pom-reader
-SET SCRIPTLANDIA_INSTALLER_PROJECT=projects\scriptlandia-installer
-
 echo ---### Java Specification Version: %JAVA_SPECIFICATION_VERSION%
-
-echo ---### Builds universal-launcher-common project
-
-if not exist %UNIVERSAL_LAUNCHER_COMMON_PROJECT%\target\classes mkdir %UNIVERSAL_LAUNCHER_COMMON_PROJECT%\target\classes
-
-SET SL_COMMON_CLASSPATH=%UNIVERSAL_LAUNCHER_COMMON_PROJECT%\src\main\java
-
-%JAVA_HOME%\bin\javac -nowarn -source %JAVA_SPECIFICATION_VERSION% -target %JAVA_SPECIFICATION_VERSION% ^
-  -classpath %SL_COMMON_CLASSPATH% ^
-  -d %UNIVERSAL_LAUNCHER_COMMON_PROJECT%\target\classes ^
-  %UNIVERSAL_LAUNCHER_COMMON_PROJECT%\src\main\java\org\sf\launcher\util\*.java ^
-  %UNIVERSAL_LAUNCHER_COMMON_PROJECT%\src\main\java\org\sf\launcher\core\*.java
-
-%JAVA_HOME%\bin\jar cf %UNIVERSAL_LAUNCHER_COMMON_PROJECT%\target\universal-launcher-common.jar ^
-  -C %UNIVERSAL_LAUNCHER_COMMON_PROJECT%\target\classes .
-
-echo ---### Builds bootstrap-mini project
-
-if not exist %BOOTSTRAP_MINI_PROJECT%\target\classes mkdir %BOOTSTRAP_MINI_PROJECT%\target\classes
-
-SET BM_CLASSPATH=%UNIVERSAL_LAUNCHER_COMMON_PROJECT%\target\classes
-SET BM_CLASSPATH=%BM_CLASSPATH%;%BOOTSTRAP_MINI_PROJECT%\src\main\java
-
-%JAVA_HOME%\bin\javac -nowarn -source %JAVA_SPECIFICATION_VERSION% -target %JAVA_SPECIFICATION_VERSION% ^
-  -classpath %BM_CLASSPATH% ^
-  -d %BOOTSTRAP_MINI_PROJECT%\target\classes ^
-  %BOOTSTRAP_MINI_PROJECT%\src\main\java\org\apache\maven\bootstrap\Bootstrap.java
-
-%JAVA_HOME%\bin\jar cf %BOOTSTRAP_MINI_PROJECT%\target\bootstrap-mini.jar ^
-  -C %BOOTSTRAP_MINI_PROJECT%\target\classes .
-
-echo ---### Builds pom-reader project
-
-if not exist %POM_READER_PROJECT%\target\classes mkdir %POM_READER_PROJECT%\target\classes
-
-SET PR_CLASSPATH=%BOOTSTRAP_MINI_PROJECT%\target\classes
-SET PR_CLASSPATH=%PR_CLASSPATH%;%UNIVERSAL_LAUNCHER_COMMON_PROJECT%\target\classes
-SET PR_CLASSPATH=%PR_CLASSPATH%;%POM_READER_PROJECT%\src\main\java
-
-%JAVA_HOME%\bin\javac -nowarn -source %JAVA_SPECIFICATION_VERSION% -target %JAVA_SPECIFICATION_VERSION% ^
-  -classpath %PR_CLASSPATH% ^
-  -d %POM_READER_PROJECT%\target\classes ^
-  %POM_READER_PROJECT%\src\main\java\org\sf\pomreader\PomReader.java ^
-  %POM_READER_PROJECT%\src\main\java\org\sf\pomreader\ProjectInstaller.java
-
-%JAVA_HOME%\bin\jar cf %POM_READER_PROJECT%\target\pom-reader.jar ^
-  -C %POM_READER_PROJECT%\target\classes .
 
 echo ---### Installing basic dependencies...
 
-SET BASIC_CLASSPATH=%UNIVERSAL_LAUNCHER_COMMON_PROJECT%\target\universal-launcher-common.jar
-SET BASIC_CLASSPATH=%BASIC_CLASSPATH%;%BOOTSTRAP_MINI_PROJECT%\target\bootstrap-mini.jar
-SET BASIC_CLASSPATH=%BASIC_CLASSPATH%;%POM_READER_PROJECT%\target\pom-reader.jar
+SET BASIC_CLASSPATH=%REPOSITORY_HOME%\org\sf\jlaunchpad\universal-launcher-common\%LAUNCHER_VERSION%\universal-launcher-common-%LAUNCHER_VERSION%.jar
+SET BASIC_CLASSPATH=%BASIC_CLASSPATH%;%REPOSITORY_HOME%\org\apache\maven\bootstrap\bootstrap-mini\2.0.7\bootstrap-mini-2.0.7.jar
+SET BASIC_CLASSPATH=%BASIC_CLASSPATH%;%REPOSITORY_HOME%\org\sf\jlaunchpad\pom-reader\%LAUNCHER_VERSION%\pom-reader-%LAUNCHER_VERSION%.jar
+
 
 %JAVA_HOME%\bin\java ^
   -Dmaven.repo.local=%REPOSITORY_HOME% %PROXY_PARAMS% -Dbasedir=projects\scriptlandia-startup ^

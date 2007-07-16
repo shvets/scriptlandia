@@ -6,7 +6,7 @@
       <extension>tcl</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="tcl-starter" version="2.2.2">
+    <starter groupId="org.sf.scriptlandia" artifactId="tcl-starter" version="1.0">
       <mainClass>tcl.lang.Shell</mainClass>
     </starter>
   </registration>

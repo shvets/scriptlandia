@@ -1,10 +1,10 @@
 package org.sf.scriptlandia.launcher;
 
 import org.codehaus.classworlds.ClassWorld;
-import org.sf.launcher.util.FileUtil;
-import org.sf.launcher.core.LauncherException;
-import org.sf.launcher.core.LauncherCommandLineParser;
-import org.sf.launcher.UniversalLauncher;
+import org.sf.jlaunchpad.util.FileUtil;
+import org.sf.jlaunchpad.core.LauncherException;
+import org.sf.jlaunchpad.core.LauncherCommandLineParser;
+import org.sf.jlaunchpad.UniversalLauncher;
 
 import java.util.*;
 
@@ -116,7 +116,7 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
    *
    * @param args The application command-line arguments.
    * @param classWorld class world
-   * @throws org.sf.launcher.core.LauncherException exception
+   * @throws LauncherException exception
    */
   public static void main(String[] args, ClassWorld classWorld) throws LauncherException {
     ScriptlandiaLauncherCommandLineParser parser = new ScriptlandiaLauncherCommandLineParser();

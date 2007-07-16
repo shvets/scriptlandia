@@ -1,8 +1,8 @@
 package org.sf.scriptlandia.install;
 
 
-import org.sf.launcher.core.SimpleLauncher;
-import org.sf.launcher.core.LauncherException;
+import org.sf.jlaunchpad.core.SimpleLauncher;
+import org.sf.jlaunchpad.core.LauncherException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,9 +58,13 @@ public class CoreInstaller {
 
     launcher.setMainClassName("org.sf.pomreader.ProjectInstaller");
 
-    launcher.addClasspathEntry("projects/universal-launcher-common/target/universal-launcher-common.jar");
-    launcher.addClasspathEntry("projects/bootstrap-mini/target/bootstrap-mini.jar");
-    launcher.addClasspathEntry("projects/pom-reader/target/pom-reader.jar");
+    String repositoryHome = System.getProperty("repository.home");
+    
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher-common/1.0/universal-launcher-common-1.0.jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0/pom-reader-1.0.jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher/1.0/universal-launcher-1.0.jar");    
+
     launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
     launcher.configure(Thread.currentThread().getContextClassLoader());
@@ -100,9 +104,11 @@ public class CoreInstaller {
 
     launcher.setMainClassName("org.sf.pomreader.ProjectInstaller");
 
-    launcher.addClasspathEntry("projects/universal-launcher-common/target/universal-launcher-common.jar");
-    launcher.addClasspathEntry("projects/bootstrap-mini/target/bootstrap-mini.jar");
-    launcher.addClasspathEntry("projects/pom-reader/target/pom-reader.jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher-common/1.0/universal-launcher-common-1.0.jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0/pom-reader-1.0.jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher/1.0/universal-launcher-1.0.jar");
+
     launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
     launcher.addClasspathEntry(repositoryHome + "/org/apache/ant/ant-launcher/" + antVersion +

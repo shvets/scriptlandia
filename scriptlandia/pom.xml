@@ -5,7 +5,7 @@
 
   <groupId>org.sf.scriptlandia</groupId>
   <artifactId>scriptlandia-main</artifactId>
-  <version>2.2.2</version>
+  <version>2.2.3</version>
   <packaging>pom</packaging>
 
   <name>Scriptlandia Main Module</name>
@@ -50,11 +50,6 @@
 
   <modules>
     <module>projects/antrun</module>
-    <module>projects/bootstrap-mini</module>
-    <module>projects/pom-reader</module>
-    <module>projects/universal-launcher-common</module>
-    <module>projects/universal-launcher</module>
-
     <module>projects/classworlds-launcher</module>
     <module>projects/scriptlandia-launcher</module>
     <module>projects/scriptlandia-installer</module>

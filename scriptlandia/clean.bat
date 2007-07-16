@@ -1,11 +1,7 @@
 @echo off 
 
 if exist projects\antrun\target rmdir /S /Q projects\antrun\target
-if exist projects\bootstrap-mini\target  rmdir /S /Q projects\bootstrap-mini\target
 if exist projects\classworlds-launcher\target rmdir /S /Q projects\classworlds-launcher\target
-if exist projects\pom-reader\target rmdir /S /Q projects\pom-reader\target
-if exist projects\universal-launcher-common\target rmdir /S /Q projects\universal-launcher-common\target
-if exist projects\universal-launcher\target rmdir /S /Q projects\universal-launcher\target
 
 if exist projects\scriptlandia-launcher\target rmdir /S /Q projects\scriptlandia-launcher\target
 if exist projects\scriptlandia-config\target rmdir /S /Q projects\scriptlandia-config\target

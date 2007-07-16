@@ -4,7 +4,7 @@ import org.apache.tools.ant.*;
 import org.apache.tools.ant.util.ProxySetup;
 import org.apache.bsf.BSFManager;
 import org.sf.scriptlandia.ant.taskdefs.AddToClassLoaderTask;
-import org.sf.launcher.util.ReflectionUtil;
+import org.sf.jlaunchpad.util.ReflectionUtil;
 
 import java.io.File;
 import java.io.InputStream;

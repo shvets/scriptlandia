@@ -224,7 +224,7 @@
       </action>
     </release>
 
-    <release version="2.2.2" date="1-July-2007" description="Bug Fix Release">    
+    <release version="2.2.2" date="15-July-2007" description="Bug Fix Release">    
       <action dev="Alexander Shvets" type="add">
         Refactoting languages as plugins.
       </action>
@@ -268,7 +268,9 @@
       <action dev="Alexander Shvets" type="fix">
         Upgrade jdic library up to 0.9.2.
       </action>
+    </release>
 
+    <release version="2.2.3" date="15-August-2007" description="Bug Fix Release">    
       <action dev="Alexander Shvets" type="fix">
         Separating launcher code from scriptlandia code.
       </action>

@@ -1,6 +1,6 @@
 package org.sf.scriptlandia;
 
-import org.sf.launcher.UniversalLauncher;
+import org.sf.jlaunchpad.UniversalLauncher;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 
 import java.io.File;
@@ -37,8 +37,7 @@ public class ScriptlandiaHelper {
     String pom;
 
     if(manager.equalsIgnoreCase("bsf")) {
-      pom = repositoryHome + "/org/sf/scriptlandia/" + name + "/" + scriptlandiaVersion +
-            "/" + name + "-" + scriptlandiaVersion + ".pom";
+      pom = repositoryHome + "/org/sf/scriptlandia/" + name + "/1.0/" + name + "-1.0" + ".pom";
       launcher.resolveDependencies(new File(pom));
     }
     else {

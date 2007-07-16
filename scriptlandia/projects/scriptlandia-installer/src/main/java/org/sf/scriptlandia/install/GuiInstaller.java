@@ -1,8 +1,8 @@
 package org.sf.scriptlandia.install;
 
-import org.sf.launcher.core.LauncherException;
-import org.sf.launcher.core.SimpleLauncher;
-import org.sf.launcher.util.ReflectionUtil;
+import org.sf.jlaunchpad.core.LauncherException;
+import org.sf.jlaunchpad.core.SimpleLauncher;
+import org.sf.jlaunchpad.util.ReflectionUtil;
 
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
@@ -26,6 +26,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
   private JTextField javaHomeField = new JTextField(35);
   private JTextField mobileJavaHomeField = new JTextField(35);
   private JTextField scriptlandiaHomeField = new JTextField(35);
+  private JTextField launcherHomeField = new JTextField(35);
   private JTextField repositoryHomeField = new JTextField(35);
   private JTextField rubyHomeField = new JTextField(35);
   private JComboBox javaSpecVersionComboBox = new JComboBox(new String[] { "1.5", "1.6", "1.7"});
@@ -45,8 +46,8 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
 
   private boolean languagesPanelUpdated = false;
 
-  private final PrintStream oldOut = System.out;
-  private final PrintStream oldErr = System.err;
+  //private final PrintStream oldOut = System.out;
+  //private final PrintStream oldErr = System.err;
 
   private final FilterOutputStream filterOutputStream = new FilterOutputStream(new ByteArrayOutputStream()) {
     public void write(byte b[], int off, int len) throws IOException {
@@ -85,6 +86,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
 
     javaHomeField.addCaretListener(this);
     scriptlandiaHomeField.addCaretListener(this);
+    launcherHomeField.addCaretListener(this);
     repositoryHomeField.addCaretListener(this);
     rubyHomeField.addCaretListener(this);
 
@@ -138,30 +140,33 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
 
   private void tryEnableInstallButton() {
     String javaHome = javaHomeField.getText().trim();
+    String launcherHome = launcherHomeField.getText().trim();
     String scriptlandiaHome = scriptlandiaHomeField.getText().trim();
     String repositoryHome = repositoryHomeField.getText().trim();
 
     boolean enabled = false;
 
     if (javaHome != null && javaHome.length() > 0 && new File(javaHome).exists()) {
-      if (scriptlandiaHome != null && scriptlandiaHome.length() > 0) {
-        if (repositoryHome != null && repositoryHome.length() > 0) {
-          if (!useProxyCheckbox.isSelected()) {
-            enabled = true;
-          } else {
-            String proxyHost = proxyHostField.getText().trim();
-            String proxyPort = proxyPortField.getText().trim();
+      if (launcherHome != null && launcherHome.length() > 0) {
+        if (scriptlandiaHome != null && scriptlandiaHome.length() > 0) {
+          if (repositoryHome != null && repositoryHome.length() > 0) {
+            if (!useProxyCheckbox.isSelected()) {
+              enabled = true;
+            } else {
+              String proxyHost = proxyHostField.getText().trim();
+              String proxyPort = proxyPortField.getText().trim();
 
-            if (proxyHost != null && proxyHost.length() > 0) {
-              if (proxyPort != null && proxyPort.length() > 0) {
-                try {
-                  Integer.parseInt(proxyPort);
+              if (proxyHost != null && proxyHost.length() > 0) {
+                if (proxyPort != null && proxyPort.length() > 0) {
+                  try {
+                    Integer.parseInt(proxyPort);
 
-                  enabled = true;
-                }
-                catch (NumberFormatException e) {
-                  //noinspection UnnecessarySemicolon
-                  ;
+                    enabled = true;
+                  }
+                  catch (NumberFormatException e) {
+                    //noinspection UnnecessarySemicolon
+                    ;
+                  }
                 }
               }
             }
@@ -268,6 +273,24 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
       }
     });
 
+    JLabel launcherHomeLabel = new JLabel("Launcher Home:     ");
+
+    JButton launcherHomeSearchButton = new JButton("Search...");
+
+    launcherHomeSearchButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setCurrentDirectory(new File(launcherHomeField.getText().trim()));
+        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+
+        int returnVal = fileChooser.showDialog(frame, "Select Launcher Home...");
+
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+          launcherHomeField.setText(fileChooser.getSelectedFile().getPath());
+        }
+      }
+    });
+
     JLabel scriptlandiaHomeLabel = new JLabel("Scriptlandia Home:     ");
 
     JButton scriptlandiaHomeSearchButton = new JButton("Search...");
@@ -362,19 +385,19 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
 
     panel13.setLayout(new GridBagLayout());
 
-    constraints.gridx = 0; panel13.add(scriptlandiaHomeLabel, constraints);
-    constraints.gridx = 1; panel13.add(scriptlandiaHomeField, constraints);
-    constraints.gridx = 2; panel13.add(scriptlandiaHomeSearchButton, constraints);
+    constraints.gridx = 0; panel13.add(launcherHomeLabel, constraints);
+    constraints.gridx = 1; panel13.add(launcherHomeField, constraints);
+    constraints.gridx = 2; panel13.add(launcherHomeSearchButton, constraints);
 
-    constraints.gridy = 4;
+    constraints.gridy = 3;
 
     JPanel panel14 = new JPanel();
 
     panel14.setLayout(new GridBagLayout());
 
-    constraints.gridx = 0; panel14.add(repositoryHomeLabel, constraints);
-    constraints.gridx = 1; panel14.add(repositoryHomeField, constraints);
-    constraints.gridx = 2; panel14.add(repositoryHomeSearchButton, constraints);
+    constraints.gridx = 0; panel14.add(scriptlandiaHomeLabel, constraints);
+    constraints.gridx = 1; panel14.add(scriptlandiaHomeField, constraints);
+    constraints.gridx = 2; panel14.add(scriptlandiaHomeSearchButton, constraints);
 
     constraints.gridy = 5;
 
@@ -382,16 +405,27 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
 
     panel15.setLayout(new GridBagLayout());
 
-    constraints.gridx = 0; panel15.add(rubyHomeLabel, constraints);
-    constraints.gridx = 1; panel15.add(rubyHomeField, constraints);
-    constraints.gridx = 2; panel15.add(rubyHomeSearchButton, constraints);
+    constraints.gridx = 0; panel15.add(repositoryHomeLabel, constraints);
+    constraints.gridx = 1; panel15.add(repositoryHomeField, constraints);
+    constraints.gridx = 2; panel15.add(repositoryHomeSearchButton, constraints);
+
+    constraints.gridy = 6;
+
+    JPanel panel16 = new JPanel();
+
+    panel16.setLayout(new GridBagLayout());
+
+    constraints.gridx = 0; panel16.add(rubyHomeLabel, constraints);
+    constraints.gridx = 1; panel16.add(rubyHomeField, constraints);
+    constraints.gridx = 2; panel16.add(rubyHomeSearchButton, constraints);
 
     panel.add(panel10);
     panel.add(panel11);
     panel.add(panel12);
     panel.add(panel13);
-    panel.add(panel14);
+    panel.add(panel14);    
     panel.add(panel15);
+    panel.add(panel16);
 
     return panel;
   }
@@ -498,6 +532,10 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
 
   protected JComponent makeLanguagesPanel(final JPanel panel) {
     if(!languagesPanelUpdated) {
+      if(System.getProperty("launcher.home") == null) {
+        System.setProperty("launcher.home", launcherHomeField.getText().trim());
+      }
+
       if(System.getProperty("scriptlandia.home") == null) {
         System.setProperty("scriptlandia.home", scriptlandiaHomeField.getText().trim());
       }
@@ -575,11 +613,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
   public boolean isConfigMode() {
     String config = System.getProperty("config");
 
-    if(config == null || config.equalsIgnoreCase(("false"))) {
-      return false;
-    }
-
-    return true;
+    return !(config == null || config.equalsIgnoreCase(("false")));
   }
 
   private void update() throws LauncherException {
@@ -619,6 +653,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
     System.setProperty("mobile.java.home", mobileJavaHomeField.getText().trim());
 
     System.setProperty("scriptlandia.home", scriptlandiaHomeField.getText().trim());
+    System.setProperty("launcher.home", launcherHomeField.getText().trim());
     System.setProperty("repository.home", repositoryHomeField.getText().trim());
     System.setProperty("maven.repo.local", repositoryHomeField.getText().trim());    
     System.setProperty("native.ruby.home", rubyHomeField.getText().trim());
@@ -661,6 +696,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
     scriptlandiaProps.updateProperty(javaHomeField, "java.home");
 
     scriptlandiaProps.updateProperty(mobileJavaHomeField, "mobile.java.home");
+    scriptlandiaProps.updateProperty(launcherHomeField, "launcher.home");
     scriptlandiaProps.updateProperty(scriptlandiaHomeField, "scriptlandia.home");
     scriptlandiaProps.updateProperty(repositoryHomeField, "repository.home");
     scriptlandiaProps.updateProperty(rubyHomeField, "native.ruby.home");
@@ -678,6 +714,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
     scriptlandiaProps.saveProperty(javaHomeField, "java.home");
     scriptlandiaProps.saveProperty(mobileJavaHomeField, "mobile.java.home");
 
+    scriptlandiaProps.saveProperty(launcherHomeField, "launcher.home");
     scriptlandiaProps.saveProperty(scriptlandiaHomeField, "scriptlandia.home");
     scriptlandiaProps.saveProperty(repositoryHomeField, "repository.home");
     scriptlandiaProps.saveProperty(rubyHomeField, "native.ruby.home");    
@@ -685,12 +722,6 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
     scriptlandiaProps.saveProperty(useProxyCheckbox, "use.proxy");
     scriptlandiaProps.saveProperty(proxyHostField, "proxyHost");
     scriptlandiaProps.saveProperty(proxyPortField, "proxyPort");
-
-/*    scriptlandiaProps.put("launcher.version", "1.0");
-    scriptlandiaProps.put("jdic.version", "0.9.2");
-    scriptlandiaProps.put("nailgun.version", "0.7.1");
-    scriptlandiaProps.put("java.compiler.version", "7.0-b13");
-*/
 
     scriptlandiaProps.put("launcher.version", System.getProperty("launcher.version"));
     scriptlandiaProps.put("jdic.version", System.getProperty("jdic.version"));

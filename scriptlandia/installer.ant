@@ -10,22 +10,21 @@
 
   <target name="install.projects">
     <script language="beanshell">
+      String repositoryHome = System.getProperty("repository.home");
+
+      addClassPath(repositoryHome + "/org/sf/jlaunchpad/universal-launcher-common/1.0/universal-launcher-common-1.0.jar");
+      addClassPath(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar");
+      addClassPath(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0/pom-reader-1.0.jar");
+      addClassPath(repositoryHome + "/org/sf/jlaunchpad/universal-launcher/1.0/universal-launcher-1.0.jar");
+
       addClassPath("projects/classworlds-launcher/target/classworlds-launcher.jar");
-      addClassPath("projects/universal-launcher-common/target/universal-launcher-common.jar");
-      addClassPath("projects/bootstrap-mini/target/bootstrap-mini.jar");
-      addClassPath("projects/pom-reader/target/pom-reader.jar");
       addClassPath("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
       import org.sf.pomreader.ProjectInstaller;
 
       ProjectInstaller installer = new ProjectInstaller();
 
-      installer.install("projects/bootstrap-mini", false);
-      installer.install("projects/universal-launcher-common", false);
       installer.install("projects/classworlds-launcher", false);
-
-      installer.install("projects/pom-reader", false);
-      installer.install("projects/scriptlandia-installer", false);
     </script>
 
     <installLanguages section="core"/>
@@ -35,15 +34,9 @@
 
       ProjectInstaller installer = new ProjectInstaller();
 
-      installer.install("projects/universal-launcher", false);
+      installer.install("projects/scriptlandia-installer", false);
       installer.install("projects/scriptlandia-nailgun", false);
-    </script>
-
-    <script language="beanshell">
-      import org.sf.pomreader.ProjectInstaller;
-
-      ProjectInstaller installer = new ProjectInstaller();
-
+      installer.install("projects/scriptlandia-launcher", false);
       installer.install("projects/scriptlandia-helper", false);
     </script>
 
@@ -64,13 +57,6 @@
        <include name="**/src/**/*.java"/>
        <include name="**/target/**"/>
        <include name="**/*.ico"/>
-      </fileset>
-    </copy>
-
-    <copy todir="${scriptlandia.home}/projects/universal-launcher" overwrite="true">
-      <fileset dir="projects/universal-launcher">
-        <include name="src/**"/>
-        <include name="*.*"/>
       </fileset>
     </copy>
 

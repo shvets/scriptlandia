@@ -8,7 +8,7 @@ import java.util.Iterator;
 import org.sf.classfile.ClassFile;
 import org.sf.classfile.ConstPool;
 import org.sf.classfile.PoolEntry;
-import org.sf.launcher.util.ReflectionUtil;
+import org.sf.jlaunchpad.util.ReflectionUtil;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 import org.codehaus.classworlds.ClassWorld;
 import org.codehaus.classworlds.ClassRealm;

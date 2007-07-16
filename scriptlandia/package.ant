@@ -2,7 +2,7 @@
 
 <project name="package.ant" default="package" basedir=".">
 
-  <property file="${user.home}/config.properties"/>
+  <property file="${user.home}/launcher/config.properties"/>
   <property file="config.properties"/>
 
   <import file="config-macrodefs.xml"/>
@@ -11,39 +11,23 @@
   <load-properties/>
 
   <target name="clean">
-    <delete dir="projects/universal-launcher-common/target"/>
-    <delete dir="projects/bootstrap-mini/target"/>
-    <delete dir="projects/pom-reader/target"/>
     <delete dir="projects/scriptlandia-installer/target"/>
   </target>
 
   <target name="compile">
     <echo>Java Specification Version: ${java.specification.version}</echo>
 
-    <compileProject basedir="projects/universal-launcher-common"/>
-
-    <compileProject basedir="projects/bootstrap-mini"/>
-
-    <compileProject basedir="projects/pom-reader">
-      <classpath-entries>
-       <path location="projects/bootstrap-mini/target/classes"/>
-       <path location="projects/universal-launcher-common/target/classes"/>
-      </classpath-entries>
-    </compileProject>
-
     <compileProject basedir="projects/scriptlandia-installer">
       <classpath-entries>
-       <path location="projects/bootstrap-mini/target/classes"/>
-       <path location="projects/pom-reader/target/classes"/>
-       <path location="projects/universal-launcher-common/target/classes"/>
+        <path location="${repository.home}/org/sf/jlaunchpad/universal-launcher-common/1.0/universal-launcher-common-1.0.jar"/>
+        <path location="${repository.home}/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar"/>
+        <path location="${repository.home}/org/sf/jlaunchpad/pom-reader/1.0/pom-reader-1.0.jar"/>
+        <path location="${repository.home}/org/sf/jlaunchpad/universal-launcher/1.0/universal-launcher-1.0.jar"/>
       </classpath-entries>
     </compileProject>
   </target>
 
   <target name="jar" depends="compile">
-    <jarProject basedir="projects/bootstrap-mini" name="bootstrap-mini"/>
-    <jarProject basedir="projects/pom-reader" name="pom-reader"/>
-    <jarProject basedir="projects/universal-launcher-common" name="universal-launcher-common"/>
     <jarProject basedir="projects/scriptlandia-installer" name="scriptlandia-installer"/>
   </target>
 
@@ -53,9 +37,11 @@
       <sysproperty key="basedir" value="projects/scriptlandia-startup"/>
 
       <classpath>
-        <path location="projects/universal-launcher-common/target/universal-launcher-common.jar"/>
-        <path location="projects/bootstrap-mini/target/bootstrap-mini.jar"/>
-        <path location="projects/pom-reader/target/pom-reader.jar"/>
+        <path location="${repository.home}/org/sf/jlaunchpad/universal-launcher-common/1.0/universal-launcher-common-1.0.jar"/>
+        <path location="${repository.home}/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar"/>
+        <path location="${repository.home}/org/sf/jlaunchpad/pom-reader/1.0/pom-reader-1.0.jar"/>
+        <path location="${repository.home}/org/sf/jlaunchpad/universal-launcher/1.0/universal-launcher-1.0.jar"/>
+
         <path location="projects/scriptlandia-installer/target/scriptlandia-installer.jar"/>
       </classpath>
     </java>
@@ -78,27 +64,19 @@
   </target>
 
   <target name="package.projects">
-    <installProject basedir="projects/bootstrap-mini" build="false"/>
-    <installProject basedir="projects/universal-launcher-common" build="false"/>
     <installProject basedir="projects/classworlds-launcher"/>
-
-    <installProject basedir="projects/pom-reader" build="false"/>
-
     <installProject basedir="projects/antrun"/>
-    <installProject basedir="projects/classworlds-launcher"/>
 
     <installLanguages section="core"/>
 
     <installProject basedir="projects/scriptlandia-installer"/>
-
     <installProject basedir="projects/scriptlandia-nailgun"/>
-
-    <installProject basedir="projects/universal-launcher"/>
-    <installProject basedir="projects/scriptlandia-launcher"/>
 
     <installLanguages section="starter"/>
 
+    <installProject basedir="projects/scriptlandia-launcher"/>
     <installProject basedir="projects/scriptlandia-helper"/>
+
   </target>
 
 </project>
