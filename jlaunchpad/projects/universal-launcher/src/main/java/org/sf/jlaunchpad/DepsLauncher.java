@@ -13,7 +13,7 @@ import java.net.URL;
 import java.util.List;
 
 /**
- * This is the dependencies jlaunchpad class. It extends classworlds' classloader functionality
+ * This is the dependencies launcherclass. It extends classworlds' classloader functionality
  * with the dependencies resolution, specified in pom.xml instead of classworlds'
  *  configuration file.
  *
@@ -31,7 +31,7 @@ public class DepsLauncher extends ClassworldLauncher {
   protected PomReader pomReader = new PomReader();
 
   /**
-   * Creates new dependencies jlaunchpad.
+   * Creates new dependencies launcher.
    *
    * @param parser the parser
    * @param args command line arguments
@@ -47,7 +47,7 @@ public class DepsLauncher extends ClassworldLauncher {
    * @return the realm name
    */
   protected String getRealmName() {
-    return "pom-jlaunchpad";
+    return "pom-launcher";
   }
 
   /**
@@ -171,7 +171,7 @@ public class DepsLauncher extends ClassworldLauncher {
   }
 
   /**
-   * Configures the jlaunchpad.
+   * Configures the launcher.
    *
    * @param parentClassLoader parent class loader
    * @throws LauncherException the exception
@@ -188,7 +188,7 @@ public class DepsLauncher extends ClassworldLauncher {
   }
 
   /**
-   * Main jlaunchpad method.
+   * Main launcher method.
    *
    * @throws LauncherException the exception
    */

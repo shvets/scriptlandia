@@ -10,7 +10,7 @@ import java.awt.event.*;
 import java.io.*;
 
 /**
- * The class perform initial (gui) installation of universal jlaunchpad.
+ * The class perform initial (gui) installation of universal launcher.
  *
  * @author Alexander Shvets
  * @version 1.0 01/14/2007
@@ -429,7 +429,7 @@ public class GuiInstaller extends CoreInstaller
 
     GuiInstaller.super.install(args);
 
-    System.out.println("Installed jlaunchpad.");
+    System.out.println("Installed JLaunchPad.");
   }
 
   @SuppressWarnings({"MismatchedQueryAndUpdateOfCollection"})

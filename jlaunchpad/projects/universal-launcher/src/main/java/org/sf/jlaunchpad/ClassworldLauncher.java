@@ -23,11 +23,11 @@ public class ClassworldLauncher extends CoreLauncher {
   /** The list of configured realms. */
   protected Map<String, ClassRealm> configuredRealms = new HashMap<String, ClassRealm>();
 
-  /** The original classworld jlaunchpad. */
+  /** The original classworld launcher. */
   private org.codehaus.classworlds.Launcher classworldLauncher = new org.codehaus.classworlds.Launcher();
 
   /**
-   * Creates new classworld jlaunchpad.
+   * Creates new classworld launcher.
    *
    * @param classWorld the classworld
    * @param parser the parser
@@ -163,11 +163,11 @@ public class ClassworldLauncher extends CoreLauncher {
    * @return the realm name
    */
   protected String getRealmName() {
-    return "classworlds-jlaunchpad";
+    return "classworlds-launcher";
   }
 
   /**
-   * Configures the jlaunchpad.
+   * Configures the launcher.
    *
    * @param parentClassLoader parent class loader
    * @throws LauncherException the exception
@@ -195,7 +195,7 @@ public class ClassworldLauncher extends CoreLauncher {
   }
 
   /**
-   * Main jlaunchpad method.
+   * Main launcher method.
    *
    * @throws LauncherException the exception
    */

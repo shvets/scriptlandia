@@ -3,7 +3,7 @@ package org.sf.jlaunchpad.core;
 import java.util.*;
 
 /**
- * The command line parser for the jlaunchpad.
+ * The command line parser for the launcher.
  *
  * @author Alexander Shvets
  * @version 1.0 12/16/2006

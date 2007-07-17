@@ -48,36 +48,38 @@ public class CoreInstaller {
       }
 
       for(File fromFile : files) {
-        File toFile = new File(launcherHomeFile.toString(), fromFile.getName());
+        if(fromFile.exists() && !fromFile.isHidden() && !fromFile.isDirectory()) {
+          File toFile = new File(launcherHomeFile.toString(), fromFile.getName());
 
-        BufferedReader reader = null;
-        BufferedWriter writer = null;
+          BufferedReader reader = null;
+          BufferedWriter writer = null;
 
-        try {
-          reader = new BufferedReader(new FileReader(fromFile));
-          writer = new BufferedWriter (new FileWriter(toFile));
+          try {
+            reader = new BufferedReader(new FileReader(fromFile));
+            writer = new BufferedWriter (new FileWriter(toFile));
 
-          boolean done = false;
+            boolean done = false;
 
-          while(!done) {
-            String line = reader.readLine();
+            while(!done) {
+              String line = reader.readLine();
 
-            if(line == null) {
-              done = true;
-            }
-            else {
-              writer.write(StringUtil.substituteProperties(line, "@", "@"));
-              writer.newLine();
+              if(line == null) {
+                done = true;
+              }
+              else {
+                writer.write(StringUtil.substituteProperties(line, "@", "@"));
+                writer.newLine();
+              }
             }
           }
-        }
-        finally {
-          if(reader != null) {
-            reader.close();
-          }
+          finally {
+            if(reader != null) {
+              reader.close();
+            }
 
-          if(writer != null) {
-            writer.close();
+            if(writer != null) {
+              writer.close();
+            }
           }
         }
       }

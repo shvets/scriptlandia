@@ -4,7 +4,7 @@ package org.sf.jlaunchpad.util;
  * This is the class for holding file utilities.
  *
  * @author Alexander Shvets
- * @version 1.0 07/14/2004
+ * @version 1.0 07/14/2007
  */
 public final class StringUtil {
 

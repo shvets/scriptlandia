@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- * The class represents simle implementation of the jlaunchpad behavior.
+ * The class represents simle implementation of the launcherbehavior.
  *
  * @author Alexander Shvets
  * @version 1.0 01/14/2007
@@ -27,7 +27,7 @@ public class SimpleLauncher extends AbstractLauncher {
   protected List<URL> classpath = new ArrayList<URL>();
 
   /**
-   * Creates new jlaunchpad.
+   * Creates new launcher.
    *
    * @param args command line arguments
    */
@@ -36,7 +36,7 @@ public class SimpleLauncher extends AbstractLauncher {
   }
   
   /**
-   * Creates new jlaunchpad.
+   * Creates new launcher.
    *
    * @param parser the parser
    * @param args command line arguments
@@ -76,7 +76,7 @@ public class SimpleLauncher extends AbstractLauncher {
    * Adds classpath entry.
    *
    * @param url the URL
-   * @throws LauncherException the jlaunchpad exception
+   * @throws LauncherException the launcher exception
    */
   public void addClasspathEntry(URL url) throws LauncherException {
     classpath.add(url);
@@ -86,7 +86,7 @@ public class SimpleLauncher extends AbstractLauncher {
    * Adds classpath entry.
    *
    * @param fileName the file name
-   * @throws LauncherException the jlaunchpad exception
+   * @throws LauncherException the launcher exception
    */
   public void addClasspathEntry(String fileName) throws LauncherException {
     File file = new File(fileName);
@@ -104,7 +104,7 @@ public class SimpleLauncher extends AbstractLauncher {
   }
 
   /**
-   * Configures the jlaunchpad.
+   * Configures the launcher.
    *
    * @param parentClassLoader classLoader
    * @throws LauncherException the exception
@@ -118,7 +118,7 @@ public class SimpleLauncher extends AbstractLauncher {
   }
 
   /**
-   * Main jlaunchpad method.
+   * Main launcher method.
    *
    * @throws LauncherException the exception
    */

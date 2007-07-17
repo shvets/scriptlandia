@@ -14,7 +14,7 @@ import java.io.File;
 import java.lang.reflect.Method;
 
 /**
- * The class represents core implementation of the jlaunchpad behavior
+ * The class represents core implementation of the launcher behavior
  *  with the support of classworlds.
  *
  * @author Alexander Shvets
@@ -31,7 +31,7 @@ public class CoreLauncher extends AbstractLauncher {
   protected ClassWorld classWorld;
 
   /**
-   * Creates new core jlaunchpad.
+   * Creates new core launcher.
    *
    * @param parser the parser
    * @param args command line arguments
@@ -44,7 +44,7 @@ public class CoreLauncher extends AbstractLauncher {
   }
 
   /**
-   * Creates new core jlaunchpad.
+   * Creates new core launcher.
    *
    * @param classWorld the classworld
    * @param args command line arguments
@@ -69,7 +69,7 @@ public class CoreLauncher extends AbstractLauncher {
    * Adds classpath entry.
    *
    * @param url the URL
-   * @throws org.sf.jlaunchpad.core.LauncherException the jlaunchpad exception
+   * @throws LauncherException the launcher exception
    */
   public void addClasspathEntry(URL url) throws LauncherException {
     try {
@@ -84,7 +84,7 @@ public class CoreLauncher extends AbstractLauncher {
    * Adds classpath entry.
    *
    * @param fileName the file name
-   * @throws LauncherException the jlaunchpad exception
+   * @throws LauncherException the launcher exception
    */
   public void addClasspathEntry(String fileName) throws LauncherException {
     File file = new File(fileName);
@@ -102,7 +102,7 @@ public class CoreLauncher extends AbstractLauncher {
   }
 
   /**
-   * Configures the jlaunchpad.
+   * Configures the launcher.
    *
    * @param parentClassLoader parent class loader
    * @throws LauncherException the exception
@@ -110,7 +110,7 @@ public class CoreLauncher extends AbstractLauncher {
   public void configure(ClassLoader parentClassLoader) throws LauncherException {}
 
   /**
-   * Main jlaunchpad method.
+   * Main launcher method.
    *
    * @throws LauncherException the exception
    */

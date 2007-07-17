@@ -1,7 +1,7 @@
 package org.sf.jlaunchpad.core;
 
 /**
- * The class represents abstract implementation of the jlaunchpad behavior.
+ * The class represents abstract implementation of the launcher behavior.
  *
  * @author Alexander Shvets
  * @version 1.0 01/14/2007
@@ -21,7 +21,7 @@ public abstract class AbstractLauncher implements Launcher {
   protected int exitCode = 0;
 
   /**
-   * Creates new jlaunchpad.
+   * Creates new launcher.
    *
    * @param parser the parser
    * @param args command line arguments
@@ -38,7 +38,7 @@ public abstract class AbstractLauncher implements Launcher {
   }
 
   /**
-   * Creates new jlaunchpad.
+   * Creates new launcher.
    *
    * @param args command line arguments
    */

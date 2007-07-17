@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.Properties;
 
 /**
- * The class represent jlaunchpad properties located in "user.home".
+ * The class represent launcher properties located in "user.home".
  *
  * @author Alexander Shvets
  * @version 1.0 01/14/2007

@@ -35,7 +35,7 @@ public interface Launcher {
    * Adds classpath entry.
    *
    * @param url the URL
-   * @throws LauncherException the jlaunchpad exception
+   * @throws LauncherException the launcher exception
    */
   void addClasspathEntry(URL url) throws LauncherException;
 
@@ -43,12 +43,12 @@ public interface Launcher {
    * Adds classpath entry.
    *
    * @param fileName the file name
-   * @throws LauncherException the jlaunchpad exception
+   * @throws LauncherException the launcher exception
    */
   void addClasspathEntry(String fileName) throws LauncherException;
 
   /**
-   * Configures the jlaunchpad.
+   * Configures the launcher.
    *
    * @param parentClassLoader parent class loader
    * @throws LauncherException the exception
@@ -56,7 +56,7 @@ public interface Launcher {
   void configure(ClassLoader parentClassLoader) throws LauncherException;
 
   /**
-   * Main jlaunchpad method.
+   * Main launcher method.
    *
    * @throws LauncherException the exception
    */

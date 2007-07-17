@@ -16,7 +16,7 @@ import java.util.jar.Attributes;
 import java.io.File;
 
 /**
- * This is the main jlaunchpad class. It should be able to launch any Java program.
+ * This is the main launcher class. It should be able to launch any Java program.
  *
  * @author Alexander Shvets
  * @version 2.0 02/19/2006
@@ -24,12 +24,12 @@ import java.io.File;
 public class UniversalLauncher extends DepsLauncher {
 
   /**
-   * Creates new jlaunchpad.
+   * Creates new launcher.
    *
    * @param parser the parser
    * @param args command line arguments
    * @param classWorld class world
-   * @throws LauncherException the jlaunchpad exception
+   * @throws LauncherException the launcher exception
    */
   public UniversalLauncher(LauncherCommandLineParser parser, String[] args, ClassWorld classWorld)
          throws LauncherException {
@@ -37,7 +37,7 @@ public class UniversalLauncher extends DepsLauncher {
   }
 
   /**
-   * Configures the jlaunchpad.
+   * Configures the launcher.
    *
    * @param parentClassLoader parent class loader
    * @throws LauncherException the exception
@@ -150,7 +150,7 @@ public class UniversalLauncher extends DepsLauncher {
   }
 
   /**
-   * Launches the jlaunchpad from the command line.
+   * Launches the launcher from the command line.
    *
    * @param args The application command-line arguments.
    * @param classWorld class world
