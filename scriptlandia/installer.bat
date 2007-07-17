@@ -1,6 +1,6 @@
 @ECHO OFF
 
-if exist "%USERPROFILE%\scriptlandia\config.bat" @call "%USERPROFILE%\scriptlandia\config.bat"
+if exist "%USERPROFILE%\jlaunchpad\config.bat" @call "%USERPROFILE%\jlaunchpad\config.bat"
 
 @call config.bat
 

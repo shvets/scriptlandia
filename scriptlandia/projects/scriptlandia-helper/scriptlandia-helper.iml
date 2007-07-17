@@ -11,7 +11,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../../maven-repository/classworlds/classworlds/1.1/classworlds-1.1.jar!/" />
+          <root url="jar://$maven-repository$/classworlds/classworlds/1.1/classworlds-1.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -20,7 +20,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../../maven-repository/fr/jayasoft/ivy/1.4.1/ivy-1.4.1.jar!/" />
+          <root url="jar://$maven-repository$/fr/jayasoft/ivy/1.4.1/ivy-1.4.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -29,7 +29,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../../maven-repository/org/apache/maven/maven-core/2.0.7/maven-core-2.0.7.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/maven/maven-core/2.0.7/maven-core-2.0.7.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -38,7 +38,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../../maven-repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant/1.7.0/ant-1.7.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -47,7 +47,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../../maven-repository/org/apache/maven/maven-embedder/2.0.7/maven-embedder-2.0.7.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/maven/maven-embedder/2.0.7/maven-embedder-2.0.7.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -56,7 +56,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../../maven-repository/org/apache/maven/maven-artifact/2.0.7/maven-artifact-2.0.7.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/maven/maven-artifact/2.0.7/maven-artifact-2.0.7.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -65,7 +65,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../../maven-repository/org/apache/maven/maven-ant-tasks/2.0.7/maven-ant-tasks-2.0.7.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/maven/maven-ant-tasks/2.0.7/maven-ant-tasks-2.0.7.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -74,7 +74,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../../maven-repository/org/apache/maven/maven-project/2.0.7/maven-project-2.0.7.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/maven/maven-project/2.0.7/maven-project-2.0.7.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -138,7 +138,7 @@ public class LauncherHelper {
     launcher.addClasspathEntry(repositoryHome + "/com/martiansoftware/nailgun/" + nailgunVersion + "/nailgun-" +
       nailgunVersion + ".jar");
     launcher.addClasspathEntry(repositoryHome + "/org/jdesktop/jdic/" + jdicVersion + "/jdic-" + jdicVersion + ".jar");
-    launcher.addClasspathEntry(repositoryHome + "/commons-cli/commons-cli/1.0/commons-cli-1.0.jar");
+    launcher.addClasspathEntry(repositoryHome + "/commons-cli/commons-cli/1.1/commons-cli-1.1.jar");
   }
 
 }
