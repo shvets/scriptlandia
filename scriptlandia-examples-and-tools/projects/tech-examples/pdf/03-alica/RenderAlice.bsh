@@ -9,7 +9,7 @@
 
 //package flyingsaucerpdf;
 org.sf.scriptlandia.ScriptlandiaHelper.resolveDependencies("com.lowagie", "itext", "2.0.4");
-org.sf.scriptlandia.ScriptlandiaHelper.resolveDependencies("org.xhtmlrenderer", "core-renderer", "7.0RC1");
+org.sf.scriptlandia.ScriptlandiaHelper.resolveDependencies("org.xhtmlrenderer", "core-renderer", "7.0");
 
 
 import java.io.*;
