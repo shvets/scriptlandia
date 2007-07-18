@@ -50,7 +50,6 @@
 
   <modules>
     <module>projects/antrun</module>
-    <module>projects/classworlds-launcher</module>
     <module>projects/scriptlandia-launcher</module>
     <module>projects/scriptlandia-installer</module>
     <module>projects/scriptlandia-nailgun</module>

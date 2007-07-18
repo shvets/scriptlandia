@@ -13,8 +13,12 @@ SET BASIC_CLASSPATH=%BASIC_CLASSPATH%;%REPOSITORY_HOME%\org\apache\maven\bootstr
 SET BASIC_CLASSPATH=%BASIC_CLASSPATH%;%REPOSITORY_HOME%\org\sf\jlaunchpad\pom-reader\%LAUNCHER_VERSION%\pom-reader-%LAUNCHER_VERSION%.jar
 
 
+rem   -Dmaven.repo.local=%REPOSITORY_HOME% %PROXY_PARAMS% -Dbasedir=projects\scriptlandia-startup
+
 %JAVA_HOME%\bin\java ^
-  -Dmaven.repo.local=%REPOSITORY_HOME% %PROXY_PARAMS% -Dbasedir=projects\scriptlandia-startup ^
+  -Drepository.home=%REPOSITORY_HOME% ^
+  %PROXY_PARAMS% ^
+  -Dbasedir=projects\scriptlandia-startup ^
   -classpath %BASIC_CLASSPATH% ^
   %SYSTEM_PROPERTIES% ^
   org.sf.pomreader.ProjectInstaller

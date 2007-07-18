@@ -655,7 +655,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
     System.setProperty("scriptlandia.home", scriptlandiaHomeField.getText().trim());
     System.setProperty("launcher.home", launcherHomeField.getText().trim());
     System.setProperty("repository.home", repositoryHomeField.getText().trim());
-    System.setProperty("maven.repo.local", repositoryHomeField.getText().trim());    
+//    System.setProperty("maven.repo.local", repositoryHomeField.getText().trim());    
     System.setProperty("native.ruby.home", rubyHomeField.getText().trim());
   }
 

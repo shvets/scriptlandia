@@ -30,7 +30,7 @@ if "%NAILGUN_MODE%"=="true" goto nailgun
 goto runJava
 
 :nailgun
-SET LAUNCHER_CLASS=org.sf.scriptlandia.classworlds.launcher.Launcher
+SET LAUNCHER_CLASS=org.codehaus.classworlds.Launcher
 %NAILGUN% %LAUNCHER_CLASS% -ng %*
 goto end
 

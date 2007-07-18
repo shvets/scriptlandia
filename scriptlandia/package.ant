@@ -33,7 +33,7 @@
 
   <target name="package" depends="jar">
     <java fork="yes" classname="org.sf.pomreader.ProjectInstaller">
-      <sysproperty key="maven.repo.local" value="${repository.home}"/>
+      <!--sysproperty key="maven.repo.local" value="${repository.home}"/-->
       <sysproperty key="basedir" value="projects/scriptlandia-startup"/>
 
       <classpath>
@@ -64,7 +64,6 @@
   </target>
 
   <target name="package.projects">
-    <installProject basedir="projects/classworlds-launcher"/>
     <installProject basedir="projects/antrun"/>
 
     <installLanguages section="core"/>

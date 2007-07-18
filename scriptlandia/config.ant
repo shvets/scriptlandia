@@ -45,7 +45,7 @@
       <filter token="proxyPort" value="${proxyPort}"/>
 
       <filter token="repository.home" value="${repository.home}"/>
-      <filter token="maven.repo.local" value="${repository.home}"/>
+      <!--filter token="maven.repo.local" value="${repository.home}"/-->
       <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
       <filter token="native.ruby.home" value="${native.ruby.home}"/>
 

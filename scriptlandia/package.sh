@@ -17,7 +17,9 @@ BASIC_CLASSPATH=$BASIC_CLASSPATH:$REPOSITORY_HOME/org/sf/jlaunchpad/pom-reader/$
 BASIC_CLASSPATH=$BASIC_CLASSPATH:$SCRIPTLANDIA_INSTALLER_PROJECT/target/scriptlandia-installer.jar
 
 $JAVA_HOME/bin/java \
-  -Dmaven.repo.local=$REPOSITORY_HOME $PROXY_PARAMS -Dbasedir=projects/scriptlandia-startup \
+  -Drepository.home=$REPOSITORY_HOME \
+  $PROXY_PARAMS \
+  -Dbasedir=projects/scriptlandia-startup \
   -classpath $BASIC_CLASSPATH \
   $SYSTEM_PROPERTIES \
   org.sf.scriptlandia.install.ProjectInstaller

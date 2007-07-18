@@ -58,7 +58,7 @@ public class LauncherHelper {
 
     String javaCompilerVersion = (String) scriptlandiaProps.get("java.compiler.version");
     
-    System.setProperty("maven.repo.local", repositoryHome);
+//    System.setProperty("maven.repo.local", repositoryHome);
     System.setProperty("repository.home", repositoryHome);
     System.setProperty("scriptlandia.home", scriptlandiaHome);
     System.setProperty("launcher.home", launcherHome);

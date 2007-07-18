@@ -10,7 +10,7 @@
       String basedir = project.getProperty("basedir");
 
       print(basedir);
-      addClassPath(basedir + "/projects/classworlds-launcher/target/classworlds-launcher.jar");
+      //addClassPath(basedir + "/projects/classworlds-launcher/target/classworlds-launcher.jar");
       addClassPath(basedir + "/projects/universal-launcher-common/target/universal-launcher-common.jar");
       addClassPath(basedir + "/projects/bootstrap-mini/target/bootstrap-mini.jar");
       addClassPath(basedir + "/projects/pom-reader/target/pom-reader.jar");
@@ -42,7 +42,7 @@
         print("Pleaze run prepare.bat/prepare.sh for scriptlandia main project");
       }
       else {
-        addClassPath(basedir + "/projects/classworlds-launcher/target/classworlds-launcher.jar");
+        //addClassPath(basedir + "/projects/classworlds-launcher/target/classworlds-launcher.jar");
         addClassPath(basedir + "/projects/universal-launcher-common/target/universal-launcher-common.jar");
         addClassPath(basedir + "/projects/bootstrap-mini/target/bootstrap-mini.jar");
         addClassPath(basedir + "/projects/pom-reader/target/pom-reader.jar");

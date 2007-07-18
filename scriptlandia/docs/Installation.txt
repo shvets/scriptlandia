@@ -56,7 +56,7 @@ In "repositories.xml" file there is a description for this directory:
   <repository>
     <id>accelerator</id>
     <name>Accelerator</name>
-    <url>file://${maven.repo.local}-accelerator</url>
+    <url>file://${repository.home}-accelerator</url>
   </repository>
 
 Replace "url" tag with the location of unzipped files.

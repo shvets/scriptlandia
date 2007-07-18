@@ -1,7 +1,6 @@
 #!/bin/sh
 
 rm -d -r -f projects/antrun\target
-rm -d -r -f Cprojects/classworlds-launcher/target
 rm -d -r -f projects/scriptlandia-helper/target
 rm -d -r -f projects/scriptlandia-installer/target
 rm -d -r -f projects/scriptlandia-launcher/target

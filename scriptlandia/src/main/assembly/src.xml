@@ -31,9 +31,6 @@
       <outputDirectory>projects</outputDirectory>
     
       <includes>
-        <include>classworlds-launcher/pom.xml</include>
-        <include>classworlds-launcher/src/**</include>
-
         <include>antrun/pom.xml</include>
         <include>antrun/src/**</include>
 

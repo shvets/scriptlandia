@@ -17,14 +17,14 @@
       addClassPath(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0/pom-reader-1.0.jar");
       addClassPath(repositoryHome + "/org/sf/jlaunchpad/universal-launcher/1.0/universal-launcher-1.0.jar");
 
-      addClassPath("projects/classworlds-launcher/target/classworlds-launcher.jar");
+      //addClassPath("projects/classworlds-launcher/target/classworlds-launcher.jar");
       addClassPath("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
       import org.sf.pomreader.ProjectInstaller;
 
       ProjectInstaller installer = new ProjectInstaller();
 
-      installer.install("projects/classworlds-launcher", false);
+      //installer.install("projects/classworlds-launcher", false);
     </script>
 
     <installLanguages section="core"/>
