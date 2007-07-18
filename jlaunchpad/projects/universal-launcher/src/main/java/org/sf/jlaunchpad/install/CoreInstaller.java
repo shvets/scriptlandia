@@ -14,13 +14,27 @@ import java.io.*;
  * @version 1.0 07/14/2007
  */
 public class CoreInstaller {
+  private final static String LAUNCHER_PROPERTIES =
+          System.getProperty("user.home") + File.separatorChar + ".jlaunchpad";
+
+  protected LauncherProperties launcherProps;
 
   /**
    * Creates installer.
    *
    * @throws LauncherException the exception
    */
-  public CoreInstaller() throws LauncherException {}
+  public CoreInstaller() throws LauncherException {
+    launcherProps = new LauncherProperties(LAUNCHER_PROPERTIES);
+  }
+
+  protected void load() throws IOException {
+    launcherProps.load();
+  }
+
+  protected void save() throws IOException {
+    launcherProps.save();
+  }
 
   /**
    * Performs installation of initial components/projects.
@@ -36,9 +50,9 @@ public class CoreInstaller {
 
       installer.install("projects/bootstrap-mini", false);
       installer.install("projects/universal-launcher-common", false);
+      installer.install("projects/classworlds", false);
       installer.install("projects/pom-reader", false);      
       installer.install("projects/universal-launcher", false);
-      installer.install("projects/classworlds", false);
 
       File[] files = new File("projects/universal-launcher/src/main/config").listFiles();
 
@@ -101,6 +115,13 @@ public class CoreInstaller {
    */
   public static void main(String[] args) throws LauncherException {
     CoreInstaller installer = new CoreInstaller();
+
+    try {
+      installer.load();
+    }
+    catch (IOException e) {
+      throw new LauncherException(e);
+    }
 
     installer.install(args);
   }

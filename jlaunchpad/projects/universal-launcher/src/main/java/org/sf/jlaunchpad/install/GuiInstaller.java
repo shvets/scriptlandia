@@ -17,8 +17,6 @@ import java.io.*;
  */
 public class GuiInstaller extends CoreInstaller
        implements CaretListener, ActionListener {
-  private LauncherProperties launcherProps = new LauncherProperties();
-
   private JTextField javaHomeField = new JTextField(35);
   private JTextField launcherHomeField = new JTextField(35);
   private JTextField repositoryHomeField = new JTextField(35);
@@ -393,8 +391,6 @@ public class GuiInstaller extends CoreInstaller
   }
 
   public void install(final String[] args) throws LauncherException {
-//    System.out.println("Installing JLaunchPad...");
-
     try {
       updateProperties();
 
@@ -410,8 +406,6 @@ public class GuiInstaller extends CoreInstaller
     }
 
     GuiInstaller.super.install(args);
-
-//    System.out.println("Installed JLaunchPad.");
   }
 
   private void updateProperties() {
@@ -433,14 +427,14 @@ public class GuiInstaller extends CoreInstaller
   }
 
   @SuppressWarnings({"MismatchedQueryAndUpdateOfCollection"})
-  private void load() throws IOException {
-    launcherProps.load();
-
+  protected void load() throws IOException {
+    super.load();
     launcherProps.updateProperty(javaSpecVersionComboBox, "java.specification.version");
     launcherProps.updateProperty(javaHomeField, "java.home");
 
 //    launcherProps.updateProperty(mobileJavaHomeField, "mobile.java.home");
     launcherProps.updateProperty(launcherHomeField, "launcher.home");
+
     launcherProps.updateProperty(repositoryHomeField, "repository.home");
 //    launcherProps.updateProperty(rubyHomeField, "native.ruby.home");
 
@@ -450,7 +444,7 @@ public class GuiInstaller extends CoreInstaller
   }
 
   @SuppressWarnings({"MismatchedQueryAndUpdateOfCollection"})
-  private void save() throws IOException {
+  protected void save() throws IOException {
     launcherProps.load();
 
     launcherProps.saveProperty(javaSpecVersionComboBox, "java.specification.version");
@@ -463,9 +457,9 @@ public class GuiInstaller extends CoreInstaller
     launcherProps.saveProperty(proxyHostField, "proxyHost");
     launcherProps.saveProperty(proxyPortField, "proxyPort");
 
-    launcherProps.put("launcher.version", System.getProperty("launcher.version"));
+//    launcherProps.put("launcher.version", System.getProperty("launcher.version"));
 
-    launcherProps.save();
+    super.save();
   }
 
   /**

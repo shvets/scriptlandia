@@ -13,13 +13,16 @@ import java.util.Properties;
  * @version 1.0 01/14/2007
  */
 public class LauncherProperties extends Properties {
-  /** Launcher properties file file location. */
-  private final static String LAUNCHER_PROPERTIES =
-          System.getProperty("user.home") + File.separatorChar + ".jlaunchpad";
 
   /** Maven2 settings.xml file location. */
   public static final String SETTINGS_XML =
           System.getProperty("user.home") + File.separatorChar + ".m2" + File.separatorChar + "settings.xml";
+
+  protected String fileName;
+
+  public LauncherProperties(String fileName) {
+    this.fileName = fileName;
+  }
 
   /**
    * Updates GUI component from the property.
@@ -95,7 +98,7 @@ public class LauncherProperties extends Properties {
       root = System.getProperty("user.dir").substring(0, 1) + ":\\";
     }
 
-    File launcherPropsFile = new File(LAUNCHER_PROPERTIES);
+    File launcherPropsFile = new File(fileName);
 
     if(launcherPropsFile.exists()) {
       super.load(new FileInputStream(launcherPropsFile));
@@ -113,25 +116,31 @@ public class LauncherProperties extends Properties {
       //put("native.ruby.home", "");
     }
 
-    String repositoryHome;
+    if(get("repository.home") == null) {
+      String repositoryHome;
 
-    String settingsXml =
-      System.getProperty("user.home") + File.separatorChar + ".m2" + File.separatorChar + "settings.xml";
+      String settingsXml =
+        System.getProperty("user.home") + File.separatorChar + ".m2" + File.separatorChar + "settings.xml";
 
-    File outSettings =  new File(settingsXml);
+      File outSettings =  new File(settingsXml);
 
-    if(!outSettings.exists()) {
-      repositoryHome = root + "maven-repository";
+      if(!outSettings.exists()) {
+        repositoryHome = root + "maven-repository";
+      }
+      else {
+        String settings = new String(FileUtil.getStreamAsBytes(new FileInputStream(SETTINGS_XML)));
+        int index1 = settings.indexOf("<localRepository>");
+        int index2 = settings.indexOf("</localRepository>");
+
+        repositoryHome = settings.substring(index1 + "<localRepository>".length(), index2);
+      }
+
+      put("repository.home", repositoryHome);
     }
-    else {
-      String settings = new String(FileUtil.getStreamAsBytes(new FileInputStream(SETTINGS_XML)));
-      int index1 = settings.indexOf("<localRepository>");
-      int index2 = settings.indexOf("</localRepository>");
 
-      repositoryHome = settings.substring(index1 + "<localRepository>".length(), index2);
+    if(get("launcher.home") == null) {
+      put("launcher.home", root + "launcher");
     }
-
-    put("repository.home", repositoryHome);
   }
 
   /**
@@ -140,7 +149,7 @@ public class LauncherProperties extends Properties {
    * @throws IOException I/O exception
    */
   public void save() throws IOException {
-    File launcherPropsFile = new File(LAUNCHER_PROPERTIES);
+    File launcherPropsFile = new File(fileName);
 
     store(new FileOutputStream(launcherPropsFile), "Launcher properties");
   }
