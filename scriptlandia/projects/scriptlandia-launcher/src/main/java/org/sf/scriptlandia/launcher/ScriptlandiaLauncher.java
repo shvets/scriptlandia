@@ -112,6 +112,21 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
   }
 
   /**
+   * Checks for "wait" mode.
+   *
+   * @return true if "wait" mode; false otherwise
+   */
+  public boolean isWaitMode() {
+    ScriptlandiaLauncherCommandLineParser _parser =
+            (ScriptlandiaLauncherCommandLineParser)parser;
+     if(_parser.isNailgunClientMode()) {
+       return true;
+     }
+
+     return super.isWaitMode();
+  }
+
+  /**
    * Launches the launcher from the command line.
    *
    * @param args The application command-line arguments.

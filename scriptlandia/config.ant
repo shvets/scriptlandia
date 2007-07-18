@@ -123,7 +123,7 @@
         <include name="*.ant"/>
         <include name="*.conf"/>
         <include name="*.ini"/>
-        <exclude name="launcher.*"/>
+        <exclude name="*-exe.*"/>
       </fileset>
     </copy>
 

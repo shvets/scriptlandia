@@ -21,7 +21,10 @@ import java.util.Map;
  * @version 1.0 01/14/2007
  */
 public class GuiInstaller extends CoreInstaller implements CaretListener, ActionListener {
-  private ScriptlandialProperties scriptlandiaProps = new ScriptlandialProperties();
+  private final static String SCRIPTLANDIA_PROPERTIES =
+          System.getProperty("user.home") + File.separatorChar + ".scriptlandia";
+
+  private ScriptlandialProperties scriptlandiaProps/* = new ScriptlandialProperties()*/;
 
   private JTextField javaHomeField = new JTextField(35);
   private JTextField mobileJavaHomeField = new JTextField(35);
@@ -70,6 +73,8 @@ public class GuiInstaller extends CoreInstaller implements CaretListener, Action
   public GuiInstaller(String[] args) throws LauncherException {
     this.args = args;
 
+    scriptlandiaProps = new ScriptlandialProperties(SCRIPTLANDIA_PROPERTIES);
+    
     System.setOut(new PrintStream(filterOutputStream));
     System.setErr(new PrintStream(filterOutputStream));
 

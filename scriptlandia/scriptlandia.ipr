@@ -291,7 +291,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/projects/antrun/antrun.iml" filepath="$PROJECT_DIR$/projects/antrun/antrun.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/classworlds-launcher/classworlds-launcher.iml" filepath="$PROJECT_DIR$/projects/classworlds-launcher/classworlds-launcher.iml" />
       <module fileurl="file://$PROJECT_DIR$/languages/languages.iml" filepath="$PROJECT_DIR$/languages/languages.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/scriptlandia-helper/scriptlandia-helper.iml" filepath="$PROJECT_DIR$/projects/scriptlandia-helper/scriptlandia-helper.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/scriptlandia-installer/scriptlandia-installer.iml" filepath="$PROJECT_DIR$/projects/scriptlandia-installer/scriptlandia-installer.iml" />

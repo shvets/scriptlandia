@@ -75,7 +75,6 @@
 
     <installProject basedir="projects/scriptlandia-launcher"/>
     <installProject basedir="projects/scriptlandia-helper"/>
-
   </target>
 
 </project>
