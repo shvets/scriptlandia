@@ -15,7 +15,7 @@ SET CLASSPATH=%CLASSPATH%;%POM_READER_PROJECT%\target\pom-reader.jar
 SET CLASSPATH=%CLASSPATH%;%UNIVERSAL_LAUNCHER_PROJECT%\target\universal-launcher.jar
 
 
-rem SET MAIN_CLASS=org.sf.scriptlandia.install.CoreInstaller
-SET MAIN_CLASS=org.sf.jlaunchpad.install.GuiInstaller
+SET MAIN_CLASS=org.sf.jlaunchpad.install.CoreInstaller
+REM SET MAIN_CLASS=org.sf.jlaunchpad.install.GuiInstaller
 
 %JAVA_HOME%\bin\java -classpath %CLASSPATH% %SYSTEM_PROPERTIES% %MAIN_CLASS%

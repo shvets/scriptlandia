@@ -42,6 +42,9 @@ public class PomReader {
   public void init() throws Exception {
     Settings settings = new Settings();
 
+    System.setProperty("maven.repo.local", System.getProperty("repository.home"));
+
+
     if(settings.getLocalRepository() == null) {
       settings.setLocalRepository(System.getProperty("repository.home"));
     }

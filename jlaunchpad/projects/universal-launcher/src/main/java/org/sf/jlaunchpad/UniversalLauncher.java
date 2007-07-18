@@ -14,6 +14,7 @@ import java.util.jar.Manifest;
 import java.util.jar.JarFile;
 import java.util.jar.Attributes;
 import java.io.File;
+import java.io.IOException;
 
 /**
  * This is the main launcher class. It should be able to launch any Java program.
@@ -22,6 +23,7 @@ import java.io.File;
  * @version 2.0 02/19/2006
  */
 public class UniversalLauncher extends DepsLauncher {
+  private LauncherProperties launcherProperties;
 
   /**
    * Creates new launcher.
@@ -73,6 +75,26 @@ public class UniversalLauncher extends DepsLauncher {
       else {
         System.out.println("File " + classpathFileName + " does not exist.");
       }
+    }
+
+    String launcherPropertiesFileName = commandLine.get("launcher.properties");
+
+    if(launcherPropertiesFileName == null) {
+      launcherPropertiesFileName = System.getProperty("user.home") + "/.jlaunchpad";
+    }
+
+    if(new File(launcherPropertiesFileName).exists()) {
+      try {
+        launcherProperties = new LauncherProperties(launcherPropertiesFileName);
+
+        launcherProperties.setupProperties();
+      }
+      catch (IOException e) {
+        throw new LauncherException(e);
+      }
+    }
+    else {
+      System.out.println("File " + launcherPropertiesFileName + " does not exist.");
     }
 
     super.configure(parentClassLoader);

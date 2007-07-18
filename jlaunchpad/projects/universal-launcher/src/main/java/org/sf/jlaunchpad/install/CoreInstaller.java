@@ -29,6 +29,8 @@ public class CoreInstaller {
    * @throws LauncherException the exception
    */
   public void install(String[] args) throws LauncherException {
+    System.out.println("Installing JLaunchPad...");
+
     try {
       ProjectInstaller installer = new ProjectInstaller();
 
@@ -87,6 +89,8 @@ public class CoreInstaller {
     catch (Exception e) {
       throw new LauncherException(e);
     }
+
+    System.out.println("Installed JLaunchPad.");
   }
 
   /**

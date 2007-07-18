@@ -28,7 +28,7 @@ SET BM_CLASSPATH=%BOOTSTRAP_MINI_PROJECT%\src\main\java
 %JAVA_HOME%\bin\jar cf %BOOTSTRAP_MINI_PROJECT%\target\bootstrap-mini.jar ^
   -C %BOOTSTRAP_MINI_PROJECT%\target\classes .
 
-echo ---### Builds classworlds-mini project
+echo ---### Builds classworlds project
 
 if not exist %CLASSWORLDS_PROJECT%\target\classes (
   mkdir %CLASSWORLDS_PROJECT%\target\classes

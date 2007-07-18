@@ -392,26 +392,8 @@ public class GuiInstaller extends CoreInstaller
     return panel;
   }
 
-  private void updateProperties() {
-   System.setProperty("java.specification.version", (String)javaSpecVersionComboBox.getSelectedItem());
-
-   System.setProperty("java.home.internal", javaHomeField.getText().trim());
-
-    if (useProxyCheckbox.isSelected()) {
-      System.setProperty("proxyHost", proxyHostField.getText().trim());
-      System.setProperty("proxyPort", proxyPortField.getText().trim());
-    } else {
-      System.setProperty("proxyHost", "");
-      System.setProperty("proxyPort", "");
-    }
-
-    System.setProperty("launcher.home", launcherHomeField.getText().trim());
-    System.setProperty("repository.home", repositoryHomeField.getText().trim());
-    System.setProperty("maven.repo.local", repositoryHomeField.getText().trim());    
-  }
-
   public void install(final String[] args) throws LauncherException {
-    System.out.println("Installing JLaunchPad...");
+//    System.out.println("Installing JLaunchPad...");
 
     try {
       updateProperties();
@@ -429,7 +411,25 @@ public class GuiInstaller extends CoreInstaller
 
     GuiInstaller.super.install(args);
 
-    System.out.println("Installed JLaunchPad.");
+//    System.out.println("Installed JLaunchPad.");
+  }
+
+  private void updateProperties() {
+    System.setProperty("java.specification.version", (String)javaSpecVersionComboBox.getSelectedItem());
+
+    System.setProperty("java.home.internal", javaHomeField.getText().trim());
+
+    if (useProxyCheckbox.isSelected()) {
+      System.setProperty("proxyHost", proxyHostField.getText().trim());
+      System.setProperty("proxyPort", proxyPortField.getText().trim());
+    } else {
+      System.setProperty("proxyHost", "");
+      System.setProperty("proxyPort", "");
+    }
+
+    System.setProperty("launcher.home", launcherHomeField.getText().trim());
+    System.setProperty("repository.home", repositoryHomeField.getText().trim());
+//    System.setProperty("maven.repo.local", repositoryHomeField.getText().trim());    
   }
 
   @SuppressWarnings({"MismatchedQueryAndUpdateOfCollection"})

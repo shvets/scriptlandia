@@ -1,34 +1,18 @@
 #!/bin/sh
 
-if [ -f ~/scriptlandia/config.sh ]; then
-  . ~/scriptlandia/config.sh
+if [ -f ~/jlaunchpad/config.sh ]; then
+  . ~/jlaunchpad/config.sh
 fi
 
 . ./config.sh
 
-SCRIPTLANDIA_COMMON_PROJECT=$PWD/projects/universal-launcher-common
-BOOTSTRAP_MINI_PROJECT=$PWD/projects/bootstrap-mini
-POM_READER_PROJECT=$PWD/projects/pom-reader
-SCRIPTLANDIA_INSTALLER_PROJECT=$PWD/projects/scriptlandia-installer
+BOOTSTRAP_MINI_PROJECT=projects\bootstrap-mini
+CLASSWORLDS_PROJECT=projects\classworlds
+POM_READER_PROJECT=projects\pom-reader
+UNIVERSAL_LAUNCHER_COMMON_PROJECT=projects\universal-launcher-common
+UNIVERSAL_LAUNCHER_PROJECT=projects\universal-launcher
 
 echo ---### Java Specification Version: $JAVA_SPECIFICATION_VERSION
-
-echo ---### Builds universal-launcher-common project
-
-if [ ! -f $SCRIPTLANDIA_COMMON_PROJECT/target/classes ]; then
-  mkdir -p $SCRIPTLANDIA_COMMON_PROJECT/target/classes
-fi
-
-SL_COMMON_CLASSPATH=$SCRIPTLANDIA_COMMON_PROJECT/src/main/java
-
-$JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_SPECIFICATION_VERSION \
-  -classpath $SL_COMMON_CLASSPATH \
-  -d $SCRIPTLANDIA_COMMON_PROJECT/target/classes \
-  $SCRIPTLANDIA_COMMON_PROJECT/src/main/java/org/sf/scriptlandia/util/*.java \
-  $SCRIPTLANDIA_COMMON_PROJECT/src/main/java/org/sf/scriptlandia/launcher/*.java
-
-$JAVA_HOME/bin/jar cf $SCRIPTLANDIA_COMMON_PROJECT/target/universal-launcher-common.jar \
-  -C $SCRIPTLANDIA_COMMON_PROJECT/target/classes .
 
 echo ---### Builds bootstrap-mini project
 
@@ -48,6 +32,40 @@ $JAVA_HOME/bin/jar cf $BOOTSTRAP_MINI_PROJECT/target/bootstrap-mini.jar \
   -C $BOOTSTRAP_MINI_PROJECT/target/classes .
 
 
+echo ---### Builds classworlds project
+
+
+if [ ! -f $CLASSWORLDS_PROJECT/target/classes ]; then
+  mkdir -p $CLASSWORLDS_PROJECT/target/classes
+fi
+
+CW_CLASSPATH=$CW_CLASSPATH:$CLASSWORLDS_PROJECT/src/main/java
+
+$JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_SPECIFICATION_VERSION \
+  -classpath $CW_CLASSPATH \
+  -d $CLASSWORLDS_PROJECT/target/classes \
+  $CLASSWORLDS_PROJECT/src/main/java/org/codehaus/classworlds/*.java
+
+$JAVA_HOME/bin/jar cf $CLASSWORLDS_PROJECT/target/classworlds.jar \
+  -C $CLASSWORLDS_PROJECT/target/classes .
+
+
+echo ---### Builds universal-launcher-common project
+
+if [ ! -f $UNIVERSAL_LAUNCHER_COMMON_PROJECT/target/classes ]; then
+  mkdir -p $UNIVERSAL_LAUNCHER_COMMON_PROJECT/target/classes
+fi
+
+UL_COMMON_CLASSPATH=$UNIVERSAL_LAUNCHER_COMMON_PROJECT/src/main/java
+
+$JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_SPECIFICATION_VERSION \
+  -classpath $UL_COMMON_CLASSPATH \
+  -d $UNIVERSAL_LAUNCHER_COMMON_PROJECT/target/classes \
+  $UNIVERSAL_LAUNCHER_COMMON_PROJECT/src/main/java/org/sf/jlaunchpad/util/*.java
+
+$JAVA_HOME/bin/jar cf $UNIVERSAL_LAUNCHER_COMMON_PROJECT/target/universal-launcher-common.jar \
+  -C $UNIVERSAL_LAUNCHER_COMMON_PROJECT/target/classes .
+
 echo ---### Builds pom-reader project
 
 if [ ! -f $POM_READER_PROJECT/target/classes ]; then
@@ -61,54 +79,30 @@ PR_CLASSPATH=$PR_CLASSPATH:$POM_READER_PROJECT/src/main/java
 $JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_SPECIFICATION_VERSION \
   -classpath $PR_CLASSPATH \
   -d $POM_READER_PROJECT/target/classes \
-  $POM_READER_PROJECT/src/main/java/org/sf/scriptlandia/pomreader/PomReader.java
+  $POM_READER_PROJECT/src/main/java/org/sf/pomreader/PomReader.java
 
 $JAVA_HOME/bin/jar cf $POM_READER_PROJECT/target/pom-reader.jar \
   -C $POM_READER_PROJECT/target/classes .
 
-echo ---### Builds installer project
+echo ---### Builds universal-launcher project
 
-if [ ! -f $SCRIPTLANDIA_INSTALLER_PROJECT/target/classes ]; then
-  mkdir -p $SCRIPTLANDIA_INSTALLER_PROJECT/target/classes
+
+if [ ! -f $UNIVERSAL_LAUNCHER_PROJECT/target/classes ]; then
+  mkdir -p $UNIVERSAL_LAUNCHER_PROJECT/target/classes
 fi
 
-INST_CLASSPATH=$BOOTSTRAP_MINI_PROJECT/target/classes
-INST_CLASSPATH=$INST_CLASSPATH:$POM_READER_PROJECT/target/classes
-INST_CLASSPATH=$INST_CLASSPATH:$SCRIPTLANDIA_COMMON_PROJECT/target/classes
-INST_CLASSPATH=$INST_CLASSPATH:$SCRIPTLANDIA_INSTALLER_PROJECT/src/main/java
+UL_CLASSPATH=$UNIVERSAL_LAUNCHER_PROJECT/src/main/java
+UL_CLASSPATH=$UL_CLASSPATH:$UNIVERSAL_LAUNCHER_COMMON_PROJECT/target/classes
+UL_CLASSPATH=$UL_CLASSPATH:$BOOTSTRAP_MINI_PROJECT/target/classes
+UL_CLASSPATH=$UL_CLASSPATH:$POM_READER_PROJECT/target/classes
+UL_CLASSPATH=$UL_CLASSPATH:$CLASSWORLDS_PROJECT/target/classes
 
 $JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_SPECIFICATION_VERSION \
-  -classpath $INST_CLASSPATH \
-  -d $SCRIPTLANDIA_INSTALLER_PROJECT/target/classes \
-  $SCRIPTLANDIA_INSTALLER_PROJECT/src/main/java/org/sf/scriptlandia/install/*.java
+  -classpath $UL_CLASSPATH \
+  -d $UNIVERSAL_LAUNCHER_PROJECT/target/classes \
+  $UNIVERSAL_LAUNCHER_PROJECT/src/main/java/org/sf/jlaunchpad/core/*.java \
+  $UNIVERSAL_LAUNCHER_PROJECT/src/main/java/org/sf/jlaunchpad/install/*.java \
+  $UNIVERSAL_LAUNCHER_PROJECT/src/main/java/org/sf/jlaunchpad/*.java
 
-$JAVA_HOME/bin/jar cf $SCRIPTLANDIA_INSTALLER_PROJECT/target/scriptlandia-installer.jar \
-  -C $SCRIPTLANDIA_INSTALLER_PROJECT/target/classes .
-
-echo ---### Installing basic dependencies...
-
-BASIC_CLASSPATH=$SCRIPTLANDIA_COMMON_PROJECT/target/universal-launcher-common.jar
-BASIC_CLASSPATH=$BASIC_CLASSPATH:$BOOTSTRAP_MINI_PROJECT/target/bootstrap-mini.jar
-BASIC_CLASSPATH=$BASIC_CLASSPATH:$POM_READER_PROJECT/target/pom-reader.jar
-BASIC_CLASSPATH=$BASIC_CLASSPATH:$SCRIPTLANDIA_INSTALLER_PROJECT/target/scriptlandia-installer.jar
-
-$JAVA_HOME/bin/java \
-  -Dmaven.repo.local=$REPOSITORY_HOME $PROXY_PARAMS -Dbasedir=projects/scriptlandia-startup \
-  -classpath $BASIC_CLASSPATH \
-  $SYSTEM_PROPERTIES \
-  org.sf.scriptlandia.install.ProjectInstaller
-
-echo ---### Installing required projects and configuration files...
-
-CLASSPATH=$REPOSITORY_HOME/org/apache/ant/ant-launcher/$ANT_VERSION/ant-launcher-$ANT_VERSION.jar
-CLASSPATH=$CLASSPATH:$REPOSITORY_HOME/org/apache/ant/ant/$ANT_VERSION/ant-$ANT_VERSION.jar
-CLASSPATH=$CLASSPATH:$REPOSITORY_HOME/org/apache/ant/ant-apache-bsf/$ANT_VERSION/ant-apache-bsf-$ANT_VERSION.jar
-CLASSPATH=$CLASSPATH:$REPOSITORY_HOME/org/apache/ant/ant-nodeps/$ANT_VERSION/ant-nodeps-$ANT_VERSION.jar
-CLASSPATH=$CLASSPATH:$REPOSITORY_HOME/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar
-CLASSPATH=$CLASSPATH:$REPOSITORY_HOME/bsf/bsf/2.4.0/bsf-2.4.0.jar
-CLASSPATH=$CLASSPATH:$REPOSITORY_HOME/bsh/bsh/$BEANSHELL_VERSION/bsh-$BEANSHELL_VERSION.jar
-
-$JAVA_HOME/bin/java \
-  -classpath $CLASSPATH \
-  $SYSTEM_PROPERTIES \
-  org.apache.tools.ant.launch.Launcher -f package.ant package.projects
+$JAVA_HOME/bin/jar cf $UNIVERSAL_LAUNCHER_PROJECT/target/universal-launcher.jar \
+  -C $UNIVERSAL_LAUNCHER_PROJECT/target/classes .

@@ -84,38 +84,12 @@
           <!--testFailureIgnore>true</testFailureIgnore-->
         </configuration>
       </plugin>
-
-      <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-
-        <executions>
-          <execution>
-            <id>site</id>
-            <phase>site</phase>
-            <configuration>
-              <tasks>
-                <mkdir dir="docs"/>
-
-                <copy todir="target/site/docs">
-                  <fileset dir="docs"/>
-                </copy>
-
-                <copy file="projects/scriptlandia-config/bin/images/scriptlandia.ico" 
-                      tofile="target/site/favicon.ico"/>
-              </tasks>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
   </build>
 
   <distributionManagement>
     <site>
-      <id>Scriptlandia Web site</id>
+      <id>JLaunchPad Web site</id>
       <url>scp://shell.sourceforge.net/home/groups/s/sc/scriptlandia/htdocs/</url>
     </site>
   </distributionManagement>

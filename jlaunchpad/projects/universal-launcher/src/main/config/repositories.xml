@@ -4,7 +4,7 @@
   <repository>
     <id>accelerator</id>
     <name>Accelerator</name>
-    <url>file://${maven.repo.local}-accelerator</url>
+    <url>file://${repository.home}-accelerator</url>
   </repository>
 
   <repository>
