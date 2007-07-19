@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns:wicket="http://wicket.sourceforge.net/">
+
+<head>
+  <!-- The 'pageTitle' label.
+     We have designated a wicket 'Label' object with the ID 'pageTitle'.
+     Wicket labels will replace the contents of the markup they represent
+     (in this case the <title> tag) with their dynamic model data as a
+     String (in this case the result of '"Aloha - The Time is: " + new Date()'.
+  -->
+    <title wicket:id="pageTitle">[Page Title]</title>
+</head>
+<body>
+  <!-- A Common Data Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- The 'example' list item.
+         List items (which are components roughly representing a 'for loop') are
+         given example markup. In this case, for each list item we want to have a
+         <tr> with three <td> tags in it - each one a sub component of the list item.
+      -->
+      <tr wicket:id="people">
+        <!-- For a given list item, render the firstName label. -->
+        <td wicket:id="firstName">[First Name]</td>
+        <!-- For a given list item, render the lastName label. -->
+        <td wicket:id="lastName">[Last Name]</td>
+        <!-- For a given list item, render the email label. -->
+        <td wicket:id="email">[Email]</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
