@@ -357,12 +357,12 @@ public class MavenHelper {
     dependenciesTask.setUseScope(useScope);
     dependenciesTask.setPomRefId(id);
 
-    Embedder embedder = (Embedder)ReflectionUtil.invokePrivateMethod(
-       dependenciesTask, new Object[] {}, AbstractArtifactTask.class, "getEmbedder", new Class[] {});
+//    Embedder embedder = (Embedder)ReflectionUtil.invokePrivateMethod(
+//       dependenciesTask, new Object[] {}, AbstractArtifactTask.class, "getEmbedder", new Class[] {});
 
-    WagonManager wagonManager = (WagonManager) embedder.lookup(WagonManager.ROLE);
+//    WagonManager wagonManager = (WagonManager) embedder.lookup(WagonManager.ROLE);
 
-    wagonManager.setOnline(online);
+//    wagonManager.setOnline(online);
 
     return dependenciesTask;
   }
