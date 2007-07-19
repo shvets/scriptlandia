@@ -4,8 +4,8 @@
         PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"
         "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
 <sqlMapConfig>
-    <!--properties resource="derby-db.properties"/-->
-    <properties resource="hsqldb-db.properties"/>
+    <properties resource="derby-db.properties"/>
+    <!--properties resource="hsqldb-db.properties"/-->
 
     <settings
             cacheModelsEnabled="true"
