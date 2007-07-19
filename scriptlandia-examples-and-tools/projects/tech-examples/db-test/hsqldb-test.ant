@@ -24,6 +24,15 @@
     </java>
   </target>
 
+  <target name="server">
+    <java classname="org.hsqldb.Server" fork="yes">
+      <classpath>
+        <path refid="maven.compile.classpath"/>
+      </classpath>
+      <arg line="-database.0 test -dbname.0 test"/>
+    </java>
+  </target>
+
   <target name="run" depends="compile">
 
     <java classname="DbTest" fork="true">
