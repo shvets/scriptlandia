@@ -36,7 +36,10 @@ public class TestMain {
     EntityManager manager = new EntityManager(dbProperties.getProperty("db.uri"), dbProperties.getProperty("db.username"), 
       dbProperties.getProperty("db.password"));
 
-//    Generator.migrate(manager.getProvider(), PersonToPerson.class, Person.class);
+    try {
+      Generator.migrate(manager.getProvider(), PersonToPerson.class, Person.class);
+    }
+    catch(Throwable t) {}
 
     Family family = manager.create(Family.class);
     family.setName("Spiewak");
