@@ -1,6 +1,6 @@
 @echo off
 
-set JAVA_HOME=@java.home@
+rem set JAVA_HOME=@java.home@
 set MOBILE_JAVA_HOME=@mobile.java.home@
 set SCRIPTLANDIA_HOME=@scriptlandia.home@
 set LAUNCHER_HOME=@launcher.home@
