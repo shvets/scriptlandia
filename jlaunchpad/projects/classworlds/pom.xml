@@ -75,6 +75,10 @@
     <url>http://codehaus.org/</url>
   </organization>
 
+  <build>
+    <finalName>${artifactId}</finalName>
+  </build>
+
   <distributionManagement>
     <site>
       <id>default</id>

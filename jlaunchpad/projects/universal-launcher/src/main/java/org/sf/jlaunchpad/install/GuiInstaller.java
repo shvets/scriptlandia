@@ -20,7 +20,7 @@ public class GuiInstaller extends CoreInstaller
   private JTextField javaHomeField = new JTextField(35);
   private JTextField launcherHomeField = new JTextField(35);
   private JTextField repositoryHomeField = new JTextField(35);
-  private JComboBox javaSpecVersionComboBox = new JComboBox(new String[] { "1.5", "1.6", "1.7"});
+//  private JComboBox javaSpecVersionComboBox = new JComboBox(new String[] { "1.5", "1.6", "1.7"});
 
   private JCheckBox useProxyCheckbox = new JCheckBox();
   private JTextField proxyHostField = new JTextField(35);
@@ -164,7 +164,7 @@ public class GuiInstaller extends CoreInstaller
     JPanel panel = new JPanel();
     panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-    JLabel javaSpecVersionLabel = new JLabel("Java Specification Version:");
+    //JLabel javaSpecVersionLabel = new JLabel("Java Specification Version:");
 
     JLabel javaHomeLabel = new JLabel("Java Home:              ");
 
@@ -224,7 +224,7 @@ public class GuiInstaller extends CoreInstaller
     constraints.fill = GridBagConstraints.HORIZONTAL;
     constraints.weightx = 0.5;
 
-    JPanel panel10 = new JPanel();
+/*    JPanel panel10 = new JPanel();
 
     constraints.gridy = 0;
 
@@ -233,10 +233,10 @@ public class GuiInstaller extends CoreInstaller
     constraints.gridx = 0; panel10.add(javaSpecVersionLabel, constraints);
     constraints.gridx = 1; 
     panel10.add(javaSpecVersionComboBox, constraints);
-
+*/
     JPanel panel11 = new JPanel();
 
-    constraints.gridy = 1;
+    constraints.gridy = 0;
 
     panel11.setLayout(new GridBagLayout());
 
@@ -244,48 +244,48 @@ public class GuiInstaller extends CoreInstaller
     constraints.gridx = 1; panel11.add(javaHomeField, constraints);
     constraints.gridx = 2; panel11.add(javaHomeSearchButton, constraints);
 
-    JPanel panel12 = new JPanel();
+//    JPanel panel12 = new JPanel();
 
-    constraints.gridy = 2;
+//    constraints.gridy = 1;
+
+//    panel12.setLayout(new GridBagLayout());
+
+    constraints.gridy = 1;
+
+    JPanel panel12 = new JPanel();
 
     panel12.setLayout(new GridBagLayout());
 
-    constraints.gridy = 3;
+    constraints.gridx = 0; panel12.add(launcherHomeLabel, constraints);
+    constraints.gridx = 1; panel12.add(launcherHomeField, constraints);
+    constraints.gridx = 2; panel12.add(launcherHomeSearchButton, constraints);
+
+    constraints.gridy = 2;
 
     JPanel panel13 = new JPanel();
 
     panel13.setLayout(new GridBagLayout());
 
-    constraints.gridx = 0; panel13.add(launcherHomeLabel, constraints);
-    constraints.gridx = 1; panel13.add(launcherHomeField, constraints);
-    constraints.gridx = 2; panel13.add(launcherHomeSearchButton, constraints);
+    constraints.gridx = 0; panel13.add(repositoryHomeLabel, constraints);
+    constraints.gridx = 1; panel13.add(repositoryHomeField, constraints);
+    constraints.gridx = 2; panel13.add(repositoryHomeSearchButton, constraints);
 
-    constraints.gridy = 4;
+//    constraints.gridy = 3;
 
-    JPanel panel14 = new JPanel();
+//    JPanel panel14 = new JPanel();
 
-    panel14.setLayout(new GridBagLayout());
-
-    constraints.gridx = 0; panel14.add(repositoryHomeLabel, constraints);
-    constraints.gridx = 1; panel14.add(repositoryHomeField, constraints);
-    constraints.gridx = 2; panel14.add(repositoryHomeSearchButton, constraints);
-
-    constraints.gridy = 5;
-
-    JPanel panel15 = new JPanel();
-
-    panel15.setLayout(new GridBagLayout());
+//    panel15.setLayout(new GridBagLayout());
 
     //constraints.gridx = 0; panel15.add(rubyHomeLabel, constraints);
     //constraints.gridx = 1; panel15.add(rubyHomeField, constraints);
     //constraints.gridx = 2; panel15.add(rubyHomeSearchButton, constraints);
 
-    panel.add(panel10);
+//    panel.add(panel10);
     panel.add(panel11);
     panel.add(panel12);
     panel.add(panel13);
-    panel.add(panel14);
-    panel.add(panel15);
+//    panel.add(panel14);
+//    panel.add(panel15);
 
     return panel;
   }
@@ -409,7 +409,7 @@ public class GuiInstaller extends CoreInstaller
   }
 
   private void updateProperties() {
-    System.setProperty("java.specification.version", (String)javaSpecVersionComboBox.getSelectedItem());
+//    System.setProperty("java.specification.version", (String)javaSpecVersionComboBox.getSelectedItem());
 
     System.setProperty("java.home.internal", javaHomeField.getText().trim());
 
@@ -429,7 +429,7 @@ public class GuiInstaller extends CoreInstaller
   @SuppressWarnings({"MismatchedQueryAndUpdateOfCollection"})
   protected void load() throws IOException {
     super.load();
-    launcherProps.updateProperty(javaSpecVersionComboBox, "java.specification.version");
+//    launcherProps.updateProperty(javaSpecVersionComboBox, "java.specification.version");
     launcherProps.updateProperty(javaHomeField, "java.home");
 
 //    launcherProps.updateProperty(mobileJavaHomeField, "mobile.java.home");
@@ -447,7 +447,7 @@ public class GuiInstaller extends CoreInstaller
   protected void save() throws IOException {
     launcherProps.load();
 
-    launcherProps.saveProperty(javaSpecVersionComboBox, "java.specification.version");
+//    launcherProps.saveProperty(javaSpecVersionComboBox, "java.specification.version");
     launcherProps.saveProperty(javaHomeField, "java.home");
 
     launcherProps.saveProperty(launcherHomeField, "launcher.home");

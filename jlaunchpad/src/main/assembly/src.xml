@@ -11,7 +11,10 @@
         <include>*.ipr</include>
         <include>*.iws</include>
         <include>*.iml</include>
+        <include>*.bat</include>
+        <include>*.sh</include>
 
+        <include>samples/**</include>
         <include>docs/**</include>
         <include>src/**</include>
         <include>user/**</include>
@@ -25,6 +28,9 @@
       <includes>
         <include>bootstrap-mini/pom.xml</include>
         <include>bootstrap-mini/src/**</include>
+
+        <include>classworlds/pom.xml</include>
+        <include>classworlds/src/**</include>
 
         <include>pom-reader/pom.xml</include>
         <include>pom-reader/src/**</include>

@@ -6,8 +6,5 @@ rm -d -r -f projects/pom-reader/target
 rm -d -r -f projects/universal-launcher-common/target
 rm -d -r -f projects/universal-launcher/target
 
-
 rm -d -r -f target
 rm -d -r -f classes
-
-/media/hda5/JLaunchPad/mvn.sh -f pom.xml clean
