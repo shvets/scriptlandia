@@ -23,6 +23,8 @@ goto end
 rem SET CMD_LINE_ARGS=%*
 rem IF NOT CMDEXTVERSION 2 SET CMD_LINE_ARGS=%CMD_LINE_ARGS:~1%
 
+set JAVA_HOME=@java.home.internal@
+
 rem set CMD=java.exe
 if not defined CMD set CMD=java.exe
 if defined JAVA_HOME set CMD="%JAVA_HOME%\bin\%CMD%"

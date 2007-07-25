@@ -1,6 +1,5 @@
 @echo off
 
-set JAVA_HOME=@java.home.internal@
 set LAUNCHER_HOME=@launcher.home@
 
 set APP=%~nx0
