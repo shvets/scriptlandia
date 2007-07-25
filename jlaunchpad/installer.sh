@@ -6,10 +6,12 @@ fi
 
 . ./config.sh
 
-BOOTSTRAP_MINI_PROJECT=projects/bootstrap-mini
-UNIVERSAL_LAUNCHER_COMMON_PROJECT=projects/universal-launcher-common
-POM_READER_PROJECT=projects/pom-reader
-UNIVERSAL_LAUNCHER_PROJECT=projects/universal-launcher
+JLAUNCHPAD_PROJECT=.
+
+BOOTSTRAP_MINI_PROJECT=$JLAUNCHPAD_PROJECT/projects/bootstrap-mini
+UNIVERSAL_LAUNCHER_COMMON_PROJECT=$JLAUNCHPAD_PROJECT/projects/universal-launcher-common
+POM_READER_PROJECT=$JLAUNCHPAD_PROJECT/projects/pom-reader
+UNIVERSAL_LAUNCHER_PROJECT=$JLAUNCHPAD_PROJECT/projects/universal-launcher
 
 CLASSPATH=$BOOTSTRAP_MINI_PROJECT/target/bootstrap-mini.jar
 CLASSPATH=$CLASSPATH:$UNIVERSAL_LAUNCHER_COMMON_PROJECT/target/universal-launcher-common.jar
