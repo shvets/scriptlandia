@@ -291,6 +291,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/projects/bootstrap-mini/bootstrap-mini.iml" filepath="$PROJECT_DIR$/projects/bootstrap-mini/bootstrap-mini.iml" />
+      <module fileurl="file://$PROJECT_DIR$/projects/classworlds/classworlds.iml" filepath="$PROJECT_DIR$/projects/classworlds/classworlds.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/pom-reader/pom-reader.iml" filepath="$PROJECT_DIR$/projects/pom-reader/pom-reader.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/universal-launcher/universal-launcher.iml" filepath="$PROJECT_DIR$/projects/universal-launcher/universal-launcher.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/universal-launcher-common/universal-launcher-common.iml" filepath="$PROJECT_DIR$/projects/universal-launcher-common/universal-launcher-common.iml" />
@@ -323,6 +324,7 @@
     <mapping directory="$PROJECT_DIR$/languages" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/projects/antrun" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/projects/bootstrap-mini" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/projects/classworlds" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/projects/classworlds-launcher" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/projects/pom-reader" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/projects/scriptlandia-helper" vcs="svn" />
