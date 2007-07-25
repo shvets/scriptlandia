@@ -105,7 +105,7 @@ public class LauncherProperties extends Properties {
     }
     else {
       put("java.specification.version", "1.5");
-      put("java.home", root + "Java" + File.separatorChar + "jdk1.6.0");
+      put("java.home.internal", root + "Java" + File.separatorChar + "jdk1.6.0");
 //      put("mobile.java.home", "");
       //put("scriptlandia.home", root + "scriptlandia");
 

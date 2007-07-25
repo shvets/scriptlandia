@@ -133,7 +133,7 @@ public class GuiInstaller extends CoreInstaller
 
     installButton.setEnabled(enabled);
 
-    tabbedPane.setEnabledAt(1, enabled);
+    //tabbedPane.setEnabledAt(1, enabled);
   }
 
   public JPanel createContent() {
@@ -430,7 +430,7 @@ public class GuiInstaller extends CoreInstaller
   protected void load() throws IOException {
     super.load();
 //    launcherProps.updateProperty(javaSpecVersionComboBox, "java.specification.version");
-    launcherProps.updateProperty(javaHomeField, "java.home");
+    launcherProps.updateProperty(javaHomeField, "java.home.internal");
 
 //    launcherProps.updateProperty(mobileJavaHomeField, "mobile.java.home");
     launcherProps.updateProperty(launcherHomeField, "launcher.home");
@@ -448,7 +448,7 @@ public class GuiInstaller extends CoreInstaller
     launcherProps.load();
 
 //    launcherProps.saveProperty(javaSpecVersionComboBox, "java.specification.version");
-    launcherProps.saveProperty(javaHomeField, "java.home");
+    launcherProps.saveProperty(javaHomeField, "java.home.internal");
 
     launcherProps.saveProperty(launcherHomeField, "launcher.home");
     launcherProps.saveProperty(repositoryHomeField, "repository.home");

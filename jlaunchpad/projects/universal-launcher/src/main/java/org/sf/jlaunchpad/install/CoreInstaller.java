@@ -14,19 +14,10 @@ import java.io.*;
  * @version 1.0 07/14/2007
  */
 public class CoreInstaller {
-  private final static String LAUNCHER_PROPERTIES =
+  public final static String LAUNCHER_PROPERTIES =
           System.getProperty("user.home") + File.separatorChar + ".jlaunchpad";
 
-  protected LauncherProperties launcherProps;
-
-  /**
-   * Creates installer.
-   *
-   * @throws LauncherException the exception
-   */
-  public CoreInstaller() throws LauncherException {
-    launcherProps = new LauncherProperties(LAUNCHER_PROPERTIES);
-  }
+  protected LauncherProperties launcherProps = new LauncherProperties(LAUNCHER_PROPERTIES);
 
   protected void load() throws IOException {
     launcherProps.load();

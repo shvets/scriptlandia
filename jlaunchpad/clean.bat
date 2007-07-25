@@ -8,5 +8,3 @@ if exist projects\universal-launcher\target rmdir /S /Q projects\universal-launc
 
 if exist target rmdir /S /Q target
 if exist classes rmdir /S /Q classes
-
-@call mvn -f pom.xml clean
