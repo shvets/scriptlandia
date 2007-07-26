@@ -14,6 +14,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import java.util.Map;
+import java.util.Properties;
 
 /**
  * The class perform initial (gui) installation of scriprlandia.
@@ -22,12 +23,12 @@ import java.util.Map;
  * @version 1.0 01/14/2007
  */
 public class GuiInstaller extends CoreInstaller implements CaretListener/*, ActionListener*/ {
-//  public final static String LAUNCHER_PROPERTIES =
-//          System.getProperty("user.home") + File.separatorChar + ".jlaunchpad";
+  public final static String LAUNCHER_PROPERTIES =
+          System.getProperty("user.home") + File.separatorChar + ".jlaunchpad";
   private final static String SCRIPTLANDIA_PROPERTIES =
           System.getProperty("user.home") + File.separatorChar + ".scriptlandia";
 
-//  protected LauncherProperties launcherProps = new LauncherProperties(LAUNCHER_PROPERTIES);
+  protected LauncherProperties launcherProps = new LauncherProperties(LAUNCHER_PROPERTIES);
   private ScriptlandialProperties scriptlandiaProps = new ScriptlandialProperties(SCRIPTLANDIA_PROPERTIES);
 
   //private JTextField javaHomeField = new JTextField(35);
@@ -641,7 +642,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener/*, Acti
       Map language = (Map)languages.get(i);
       String name = (String)language.get("name");
 
-      scriptlandiaProps.updateProperty(checkBoxes[i], name + ".install");
+      updateProperty(scriptlandiaProps, checkBoxes[i], name + ".install");
     }
   }
 
@@ -698,14 +699,21 @@ public class GuiInstaller extends CoreInstaller implements CaretListener/*, Acti
 
   @SuppressWarnings({"MismatchedQueryAndUpdateOfCollection"})
   private void load() throws IOException {
-    //launcherProps.load();
+    launcherProps.load();
+
+/*    System.setProperty("use.proxy", launcherProps.getProperty("use.proxy"));
+    System.setProperty("proxyHost", launcherProps.getProperty("proxyHost"));
+    System.setProperty("proxyPort", launcherProps.getProperty("proxyPort"));
+    System.setProperty("java.home.internal", launcherProps.getProperty("java.home.internal"));
+    System.setProperty("repository.home", launcherProps.getProperty("repository.home"));
+*/
     scriptlandiaProps.load();
 
-    scriptlandiaProps.updateProperty(javaSpecVersionComboBox, "java.specification.version");
-    scriptlandiaProps.updateProperty(mobileJavaHomeField, "mobile.java.home");
-    scriptlandiaProps.updateProperty(scriptlandiaHomeField, "scriptlandia.home");
-    scriptlandiaProps.updateProperty(rubyHomeField, "native.ruby.home");
-    scriptlandiaProps.updateProperty(launcherHomeField, "launcher.home");
+    updateProperty(scriptlandiaProps, javaSpecVersionComboBox, "java.specification.version");
+    updateProperty(scriptlandiaProps, mobileJavaHomeField, "mobile.java.home");
+    updateProperty(scriptlandiaProps, scriptlandiaHomeField, "scriptlandia.home");
+    updateProperty(scriptlandiaProps, rubyHomeField, "native.ruby.home");
+    updateProperty(scriptlandiaProps, launcherHomeField, "launcher.home");
 
 /*    scriptlandiaProps.updateProperty(javaHomeField, "java.home");
     scriptlandiaProps.updateProperty(repositoryHomeField, "repository.home");
@@ -719,11 +727,11 @@ public class GuiInstaller extends CoreInstaller implements CaretListener/*, Acti
   private void save() throws IOException {
     scriptlandiaProps.load();
 
-    scriptlandiaProps.saveProperty(javaSpecVersionComboBox, "java.specification.version");
-    scriptlandiaProps.saveProperty(mobileJavaHomeField, "mobile.java.home");
-    scriptlandiaProps.saveProperty(scriptlandiaHomeField, "scriptlandia.home");
-    scriptlandiaProps.saveProperty(rubyHomeField, "native.ruby.home");
-    scriptlandiaProps.saveProperty(launcherHomeField, "launcher.home");
+    saveProperty(scriptlandiaProps, javaSpecVersionComboBox, "java.specification.version");
+    saveProperty(scriptlandiaProps, mobileJavaHomeField, "mobile.java.home");
+    saveProperty(scriptlandiaProps, scriptlandiaHomeField, "scriptlandia.home");
+    saveProperty(scriptlandiaProps, rubyHomeField, "native.ruby.home");
+    saveProperty(scriptlandiaProps, launcherHomeField, "launcher.home");
 
 /*    scriptlandiaProps.saveProperty(javaHomeField, "java.home");
     scriptlandiaProps.saveProperty(repositoryHomeField, "repository.home");
@@ -740,11 +748,76 @@ public class GuiInstaller extends CoreInstaller implements CaretListener/*, Acti
       Map language = (Map)languages.get(i);
       String name = (String)language.get("name");
 
-      scriptlandiaProps.saveProperty(checkBoxes[i], name + ".install");
+      saveProperty(scriptlandiaProps, checkBoxes[i], name + ".install");
     }
 
     scriptlandiaProps.save();
   }
+
+  /**
+   * Updates GUI component from the property.
+   *
+   * @param properties properties
+   * @param component GUI component
+   * @param property the property to be propagated
+   */
+  public void updateProperty(Properties properties, JComponent component, String property) {
+    if(component instanceof JTextField) {
+      JTextField textField = (JTextField)component;
+
+      String value = (String)properties.get(property);
+
+      if(value != null) {
+        textField.setText(value.replace('/', File.separatorChar));
+      }
+    }
+    else if(component instanceof JCheckBox) {
+      JCheckBox checkBox = (JCheckBox)component;
+
+      String value = (String)properties.get(property);
+
+      if(value != null) {
+        checkBox.setSelected(Boolean.parseBoolean(value));
+      }
+    }
+    else if(component instanceof JComboBox) {
+      JComboBox comboBox = (JComboBox)component;
+
+      String value = (String)properties.get(property);
+
+      if(value != null) {
+        comboBox.setSelectedItem(value);
+      }
+    }
+  }
+
+  /**
+   * Updates the property from GUI component.
+   *
+   * @param properties properties
+   * @param component GUI component
+   * @param property the property to be updated
+   */
+  public void saveProperty(Properties properties, JComponent component, String property) {
+    if(component instanceof JTextField) {
+      JTextField textField = (JTextField)component;
+
+      String value = textField.getText().trim();
+
+      properties.put(property, value.replace(File.separatorChar, '/'));
+    }
+    else if(component instanceof JCheckBox) {
+      JCheckBox checkBox = (JCheckBox)component;
+
+      properties.put(property, String.valueOf(checkBox.isSelected()));
+    }
+    else if(component instanceof JComboBox) {
+      JComboBox comboBox = (JComboBox)component;
+
+      properties.put(property, comboBox.getSelectedItem());
+    }
+  }
+
 
   /**
    * Launches the GUI installer.

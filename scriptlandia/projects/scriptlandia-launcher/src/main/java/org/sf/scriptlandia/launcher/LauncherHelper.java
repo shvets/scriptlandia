@@ -18,9 +18,14 @@ import java.io.IOException;
  * @version 1.0 01/14/2007
  */
 public class LauncherHelper {
+  public final static String LAUNCHER_PROPERTIES =
+          System.getProperty("user.home") + File.separatorChar + ".jlaunchpad";
+
   /** First properties file name, located in "user.home". */
   private final static String SCRIPTLANDIA_PROPERTIES =
           System.getProperty("user.home") + File.separatorChar + ".scriptlandia";
+
+  private Properties launcherProps = new Properties();
 
   /** First properties file, located in "user.home". */
   private Properties scriptlandiaProps = new Properties();
@@ -29,6 +34,17 @@ public class LauncherHelper {
    * Creates new launcher helper.
    */
   public LauncherHelper() {
+    File launcherPropsFile = new File(LAUNCHER_PROPERTIES);
+
+    if(launcherPropsFile.exists()) {
+      try {
+        launcherProps.load(new FileInputStream(LAUNCHER_PROPERTIES));
+      }
+      catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
     File scriptlandiaPropsFile = new File(SCRIPTLANDIA_PROPERTIES);
 
     if(scriptlandiaPropsFile.exists()) {
@@ -45,7 +61,15 @@ public class LauncherHelper {
    * Sets up system properties, required for running scriptlandia.
    */
   public void setupProperties() {
-    String repositoryHome = (String) scriptlandiaProps.get("repository.home");
+    String repositoryHome = (String) launcherProps.get("repository.home");
+
+    System.setProperty("use.proxy", (String) launcherProps.get("use.proxy"));
+    System.setProperty("proxyHost", (String) launcherProps.get("proxyHost"));
+    System.setProperty("proxyPort", (String) launcherProps.get("proxyPort"));
+
+    System.setProperty("http.proxyHost", (String) launcherProps.get("proxyHost"));
+    System.setProperty("http.proxyPort", (String) launcherProps.get("proxyPort"));
+
     String scriptlandiaHome = (String) scriptlandiaProps.get("scriptlandia.home");
     String launcherHome = (String) scriptlandiaProps.get("launcher.home");
 
@@ -79,11 +103,6 @@ public class LauncherHelper {
     System.setProperty("scriptlandia.version", scriptlandiaVersion);
     System.setProperty("launcher.version", launcherVersion);
 
-    System.setProperty("proxyHost", (String) scriptlandiaProps.get("proxyHost"));
-    System.setProperty("proxyPort", (String) scriptlandiaProps.get("proxyPort"));
-    System.setProperty("http.proxyHost", (String) scriptlandiaProps.get("proxyHost"));
-    System.setProperty("http.proxyPort", (String) scriptlandiaProps.get("proxyPort"));
-
     setupJavaSpecificationVersion();
   }
   
@@ -115,7 +134,7 @@ public class LauncherHelper {
    * @throws LauncherException the exception
    */
   public void setupRequiredLibraries(CoreLauncher launcher) throws LauncherException {
-    String repositoryHome = (String) scriptlandiaProps.get("repository.home");
+    String repositoryHome = (String) launcherProps.get("repository.home");
 
     String scriptlandiaVersion = (String)scriptlandiaProps.get("scriptlandia.version");
     String launcherVersion = (String)scriptlandiaProps.get("launcher.version");

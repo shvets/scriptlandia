@@ -8,12 +8,15 @@
   <target name="package.core">
     <script language="beanshell">
       String basedir = project.getProperty("basedir");
+      String repositoryHome = System.getProperty("repository.home");
 
       print(basedir);
-      //addClassPath(basedir + "/projects/classworlds-launcher/target/classworlds-launcher.jar");
-      addClassPath(basedir + "/projects/universal-launcher-common/target/universal-launcher-common.jar");
-      addClassPath(basedir + "/projects/bootstrap-mini/target/bootstrap-mini.jar");
-      addClassPath(basedir + "/projects/pom-reader/target/pom-reader.jar");
+
+      addClassPath(repositoryHome + "/org/sf/jlaunchpad/universal-launcher-common/1.0/universal-launcher-common-1.0.jar");
+      addClassPath(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar");
+      addClassPath(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0/pom-reader-1.0.jar");
+      addClassPath(repositoryHome + "/org/sf/jlaunchpad/universal-launcher/1.0/universal-launcher-1.0.jar");
+
       addClassPath(basedir + "/projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
       import org.sf.pomreader.ProjectInstaller;
@@ -35,17 +38,19 @@
   <target name="package.launcher">
     <script language="beanshell">
       String basedir = project.getProperty("basedir");
+      String repositoryHome = System.getProperty("repository.home");
 
       File installJarFile = new File(basedir + "/projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
       if(!installJarFile.exists()) {
-        print("Pleaze run prepare.bat/prepare.sh for scriptlandia main project");
+        print("Please run prepare.bat/prepare.sh for scriptlandia main project");
       }
       else {
-        //addClassPath(basedir + "/projects/classworlds-launcher/target/classworlds-launcher.jar");
-        addClassPath(basedir + "/projects/universal-launcher-common/target/universal-launcher-common.jar");
-        addClassPath(basedir + "/projects/bootstrap-mini/target/bootstrap-mini.jar");
-        addClassPath(basedir + "/projects/pom-reader/target/pom-reader.jar");
+        addClassPath(repositoryHome + "/org/sf/jlaunchpad/universal-launcher-common/1.0/universal-launcher-common-1.0.jar");
+        addClassPath(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar");
+        addClassPath(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0/pom-reader-1.0.jar");
+        addClassPath(repositoryHome + "/org/sf/jlaunchpad/universal-launcher/1.0/universal-launcher-1.0.jar");
+
         addClassPath(basedir + "/projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
         import org.sf.pomreader.ProjectInstaller;
