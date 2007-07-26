@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [ -f ~/scriptlandia/config.sh ]; then
-  . ~/scriptlandia/config.sh
+if [ -f ~/jlaunchpad/config.sh ]; then
+  . ~/jlaunchpad/config.sh
 fi
 
 . ./config.sh

@@ -11,7 +11,10 @@
         <include>install.*</include>
         <include>installer.exe</include>
         <include>installer.bat</include>
+        <include>installer.sh</include>
         <include>installer.ant</include>
+        <include>jlaunchpad-installer.sh</include>
+        <include>jlaunchpad-installer.ant</include>
         <include>config-macrodefs.xml</include>
         <include>install-macrodefs.xml</include>
         <include>docs/**</include>
@@ -45,8 +48,6 @@
         <include>scriptlandia-config/bin/images/*.*</include>
         <include>scriptlandia-config/src/main/bsh/**</include>
         <include>scriptlandia-config/src/main/config/**</include>
-        <include>scriptlandia-config/components/**</include>
-        <include>scriptlandia-config/starters/**</include>
       </includes>
     </fileSet>
 
