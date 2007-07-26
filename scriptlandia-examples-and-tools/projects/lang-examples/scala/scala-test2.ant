@@ -16,7 +16,7 @@
 
   <!--property name="repository.home" value="c:/maven-repository"/-->
 
-  <artifact:localRepository id="local.repository" location="${repository.home}" layout="default"/>
+  <artifact:localRepository id="local.repository" path="${repository.home}" layout="default"/>
 
   <artifact:pom file="scala-test2.maven" id="maven.project" />
 

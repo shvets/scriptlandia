@@ -17,7 +17,7 @@
 <!--
 
 
-  <artifact:localRepository id="local.repository" location="${repository.home}" layout="default"/>
+  <artifact:localRepository id="local.repository" path="${repository.home}" layout="default"/>
 
   <artifact:pom file="grail-starter.maven" id="maven.project"/>
 

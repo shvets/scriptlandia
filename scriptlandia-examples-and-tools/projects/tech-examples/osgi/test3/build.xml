@@ -8,7 +8,7 @@
   <property name="archive1.name" value="MoviesInterface.jar"/>
   <property name="archive2.name" value="BasicMovieFinder.jar"/>
 
-  <artifact:localRepository id="local.repository" location="${repository.home}" layout="default"/>
+  <artifact:localRepository id="local.repository" path="${repository.home}" layout="default"/>
 
   <artifact:pom file="pom.xml" id="maven.project"/>
 

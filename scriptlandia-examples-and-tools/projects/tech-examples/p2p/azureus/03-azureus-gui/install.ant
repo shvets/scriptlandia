@@ -9,7 +9,7 @@
       System.getProperties().put("proxyHost", "proxyHost");
     </script>
 
-    <artifact:localRepository id="local.repository" location="${repository.home}" layout="default"/>
+    <artifact:localRepository id="local.repository" path="${repository.home}" layout="default"/>
 
     <artifact:pom file="azureus.sl" id="maven.project" />
 

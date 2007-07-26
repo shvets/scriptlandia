@@ -7,7 +7,7 @@
 
   <property name="archive.name" value="HelloWorld.jar"/>
 
-  <artifact:localRepository id="local.repository" location="${repository.home}" layout="default"/>
+  <artifact:localRepository id="local.repository" path="${repository.home}" layout="default"/>
 
   <artifact:pom file="pom.xml" id="maven.project"/>
 
