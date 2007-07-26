@@ -426,21 +426,22 @@ public class GuiInstaller extends CoreInstaller
 //    System.setProperty("maven.repo.local", repositoryHomeField.getText().trim());    
   }
 
+
   @SuppressWarnings({"MismatchedQueryAndUpdateOfCollection"})
   protected void load() throws IOException {
     super.load();
 //    launcherProps.updateProperty(javaSpecVersionComboBox, "java.specification.version");
-    launcherProps.updateProperty(javaHomeField, "java.home.internal");
+    updateProperty(javaHomeField, "java.home.internal");
 
 //    launcherProps.updateProperty(mobileJavaHomeField, "mobile.java.home");
-    launcherProps.updateProperty(launcherHomeField, "launcher.home");
+    updateProperty(launcherHomeField, "launcher.home");
 
-    launcherProps.updateProperty(repositoryHomeField, "repository.home");
+    updateProperty(repositoryHomeField, "repository.home");
 //    launcherProps.updateProperty(rubyHomeField, "native.ruby.home");
 
-    launcherProps.updateProperty(useProxyCheckbox, "use.proxy");
-    launcherProps.updateProperty(proxyHostField, "proxyHost");
-    launcherProps.updateProperty(proxyPortField, "proxyPort");
+    updateProperty(useProxyCheckbox, "use.proxy");
+    updateProperty(proxyHostField, "proxyHost");
+    updateProperty(proxyPortField, "proxyPort");
   }
 
   @SuppressWarnings({"MismatchedQueryAndUpdateOfCollection"})
@@ -448,18 +449,80 @@ public class GuiInstaller extends CoreInstaller
     launcherProps.load();
 
 //    launcherProps.saveProperty(javaSpecVersionComboBox, "java.specification.version");
-    launcherProps.saveProperty(javaHomeField, "java.home.internal");
+    saveProperty(javaHomeField, "java.home.internal");
 
-    launcherProps.saveProperty(launcherHomeField, "launcher.home");
-    launcherProps.saveProperty(repositoryHomeField, "repository.home");
+    saveProperty(launcherHomeField, "launcher.home");
+    saveProperty(repositoryHomeField, "repository.home");
 
-    launcherProps.saveProperty(useProxyCheckbox, "use.proxy");
-    launcherProps.saveProperty(proxyHostField, "proxyHost");
-    launcherProps.saveProperty(proxyPortField, "proxyPort");
+    saveProperty(useProxyCheckbox, "use.proxy");
+    saveProperty(proxyHostField, "proxyHost");
+    saveProperty(proxyPortField, "proxyPort");
 
 //    launcherProps.put("launcher.version", System.getProperty("launcher.version"));
 
     super.save();
+  }
+
+  /**
+   * Updates GUI component from the property.
+   *
+   * @param component GUI component
+   * @param property the property to be propagated
+   */
+  public void updateProperty(JComponent component, String property) {
+    if(component instanceof JTextField) {
+      JTextField textField = (JTextField)component;
+
+      String value = (String)launcherProps.get(property);
+
+      if(value != null) {
+        textField.setText(value.replace('/', File.separatorChar));
+      }
+    }
+    else if(component instanceof JCheckBox) {
+      JCheckBox checkBox = (JCheckBox)component;
+
+      String value = (String)launcherProps.get(property);
+
+      if(value != null) {
+        checkBox.setSelected(Boolean.parseBoolean(value));
+      }
+    }
+    else if(component instanceof JComboBox) {
+      JComboBox comboBox = (JComboBox)component;
+
+      String value = (String)launcherProps.get(property);
+
+      if(value != null) {
+        comboBox.setSelectedItem(value);
+      }
+    }
+  }
+
+  /**
+   * Updates the property from GUI component.
+   *
+   * @param component GUI component
+   * @param property the property to be updated
+   */
+  public void saveProperty(JComponent component, String property) {
+    if(component instanceof JTextField) {
+      JTextField textField = (JTextField)component;
+
+      String value = textField.getText().trim();
+
+      launcherProps.put(property, value.replace(File.separatorChar, '/'));
+    }
+    else if(component instanceof JCheckBox) {
+      JCheckBox checkBox = (JCheckBox)component;
+
+      launcherProps.put(property, String.valueOf(checkBox.isSelected()));
+    }
+    else if(component instanceof JComboBox) {
+      JComboBox comboBox = (JComboBox)component;
+
+      launcherProps.put(property, comboBox.getSelectedItem());
+    }
   }
 
   /**

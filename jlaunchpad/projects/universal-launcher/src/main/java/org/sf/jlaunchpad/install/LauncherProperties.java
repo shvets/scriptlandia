@@ -2,7 +2,6 @@ package org.sf.jlaunchpad.install;
 
 import org.sf.jlaunchpad.util.FileUtil;
 
-import javax.swing.*;
 import java.io.*;
 import java.util.Properties;
 
@@ -25,68 +24,6 @@ public class LauncherProperties extends Properties {
   }
 
   /**
-   * Updates GUI component from the property.
-   *
-   * @param component GUI component
-   * @param property the property to be propagated
-   */
-  public void updateProperty(JComponent component, String property) {
-    if(component instanceof JTextField) {
-      JTextField textField = (JTextField)component;
-
-      String value = (String)get(property);
-
-      if(value != null) {
-        textField.setText(value.replace('/', File.separatorChar));
-      }
-    }
-    else if(component instanceof JCheckBox) {
-      JCheckBox checkBox = (JCheckBox)component;
-
-      String value = (String)get(property);
-
-      if(value != null) {
-        checkBox.setSelected(Boolean.parseBoolean(value));
-      }
-    }
-    else if(component instanceof JComboBox) {
-      JComboBox comboBox = (JComboBox)component;
-
-      String value = (String)get(property);
-
-      if(value != null) {
-        comboBox.setSelectedItem(value);
-      }
-    }
-  }
-
-  /**
-   * Updates the property from GUI component.
-   *
-   * @param component GUI component
-   * @param property the property to be updated
-   */
-  public void saveProperty(JComponent component, String property) {
-    if(component instanceof JTextField) {
-      JTextField textField = (JTextField)component;
-
-      String value = textField.getText().trim();
-
-      put(property, value.replace(File.separatorChar, '/'));
-    }
-    else if(component instanceof JCheckBox) {
-      JCheckBox checkBox = (JCheckBox)component;
-
-      put(property, String.valueOf(checkBox.isSelected()));
-    }
-    else if(component instanceof JComboBox) {
-      JComboBox comboBox = (JComboBox)component;
-
-      put(property, comboBox.getSelectedItem());
-    }
-  }
-
-  /**
    * Loads the properties file.
    *
    * @throws IOException I/O exception
@@ -104,7 +41,7 @@ public class LauncherProperties extends Properties {
       super.load(new FileInputStream(launcherPropsFile));
     }
     else {
-      put("java.specification.version", "1.5");
+      //put("java.specification.version", "1.5");
       put("java.home.internal", root + "Java" + File.separatorChar + "jdk1.6.0");
 //      put("mobile.java.home", "");
       //put("scriptlandia.home", root + "scriptlandia");
