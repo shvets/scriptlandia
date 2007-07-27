@@ -1,59 +1,35 @@
 <!--
- @(#)build.xml	1.5 07/03/01
- 
- Copyright (c) 2007 Sun Microsystems, Inc.  All Rights Reserved.
+ Copyright 2006 Sun Microsystems, Inc.  All Rights Reserved.
  DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-   
+
  This code is free software; you can redistribute it and/or modify it
  under the terms of the GNU General Public License version 2 only, as
- published by the Free Software Foundation.
-   
+ published by the Free Software Foundation.  Sun designates this
+ particular file as subject to the "Classpath" exception as provided
+ by Sun in the LICENSE file that accompanied this code.
+
  This code is distributed in the hope that it will be useful, but WITHOUT
  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
  FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
  version 2 for more details (a copy is included in the LICENSE file that
  accompanied this code).
-  
+
  You should have received a copy of the GNU General Public License version
  2 along with this work; if not, write to the Free Software Foundation,
  Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
-   
+
  Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
  CA 95054 USA or visit www.sun.com if you need additional information or
  have any questions.
-  
 -->
 
 <project name="os-javac" default="build" basedir=".">
-
-  <property name="original.project.home" value="C:/Java/source/openjdk/j2se/src"/>
-
-  <target name="prepare">
-    <copy todir="src/main/java" overwrite="true">
-      <fileset dir="${original.project.home}/share/classes">
-        <include name="com/sun/source/**/*.java"/>
-        <include name="com/sun/tools/javac/**/*.java"/>
-        <include name="javax/annotation/processing/**/*.java"/>
-        <include name="javax/lang/**/*.java"/>
-        <include name="javax/tools/**/*.java"/>
-        <include name="com/sun/tools/javac/resources/**/*.*"/>
-      </fileset>
-    </copy>
-  </target>
-
-  <target name="clean-sources">
-    <delete includeEmptyDirs="true" failonerror="false">
-      <fileset dir="src"/>
-    </delete>
-  </target>
-
-    <property name="src" value="src/main/java"/>
+    <property name="src" value="src"/>
     <property name="src.bin" value="${src}/bin"/>
-    <property name="src.classes" value="${src}"/>
+    <property name="src.classes" value="${src}/share/classes"/>
     <property name="build" value ="build"/>
     <property name="build.bootclasses" value="${build}/bootclasses"/>
     <property name="build.classes" value="${build}/classes"/>
-    <property name="build.gensrc" value="${build}/gensrc"/>
     <property name="build.jtreg" value="${build}/jtreg"/>
     <property name="dist" value="dist"/>
     <property name="dist.javac" value="${dist}"/>
@@ -64,9 +40,12 @@
         <include name="javax/tools/**/*.java"/>
         <include name="com/sun/source/**/*.java"/>
         <include name="com/sun/tools/javac/**/*.java"/>
-        <include name="com/sun/tools/javadoc/DocCommentScanner.java"/>
-        <exclude name="**/*-template.java"/>
     </patternset>
+
+    <fileset id="javac.resources" dir="${src.classes}">
+        <include name="com/sun/tools/javac/resources/*.properties"/>
+        <exclude name="**/*-template.*"/>
+    </fileset>
     
     <target name="prep">
         <mkdir dir="${build.bootclasses}"/>
@@ -84,7 +63,6 @@
         <uptodate targetfile="${dist.javac}/lib/javac.jar" property="javac.is.uptodate">
             <srcfiles dir="${src.classes}">
                 <patternset refid="src.javac"/>
-                <include name="${src.classes}/com/sun/tools/javac/resources/version-template.java"/>
                 <include name="${src.classes}/com/sun/tools/javac/resources/*.properties"/>
             </srcfiles>
         </uptodate>
@@ -95,48 +73,46 @@
     <target name="build-lib.javac.jar" depends="check-javac.isuptodate" unless="javac.is.uptodate">
         <!-- to compile javac, set includeAntRuntime=no to prevent javac's 
         own tools.jar incorrectly appearing on the classpath -->
-        <mkdir dir="${build.gensrc}/com/sun/tools/javac"/>
-        <copy file="${src.classes}/com/sun/tools/javac/resources/version-template.java"
-            tofile="${build.gensrc}/com/sun/tools/javac/resources/version.java">
-            <filterset begintoken="$(" endtoken=")">
-                <filter token="JDK_VERSION"  value="${build.jdk.version}"/>
-                <filter token="RELEASE"      value="${build.release}"/>
-                <filter token="FULL_VERSION" value="${build.full.version}"/>
-            </filterset>
-        </copy>
-        <javac srcdir="${src.classes}:${build.gensrc}" destdir="${build.bootclasses}"
-            source="${compiler.source.level}" target="${compiler.source.level}" debug="true" debuglevel="source,lines"
+        <javac srcdir="${src.classes}" destdir="${build.bootclasses}"
+            source="${compiler.source.level}"  debug="true" debuglevel="source,lines"
             includeAntRuntime="no">
             <patternset refid="src.javac"/>
-            <include name="com/sun/tools/javac/resources/version.java"/>
         </javac>
+        <copy todir="${build.bootclasses}">
+            <fileset refid="javac.resources"/>
+        </copy>
         <echo message="recompiling compiler with itself"/>
         <pathconvert pathsep=" " property="src.javac.files">
             <path>
                 <fileset dir="${src.classes}">
                     <patternset refid="src.javac"/>
                 </fileset>
-                <fileset dir="${build.gensrc}">
-                    <include name="com/sun/tools/javac/resources/version.java"/>
-                </fileset>
             </path>
         </pathconvert>
-        <java fork="true" 
-            classpath="${build.bootclasses};${src.classes}" 
-            classname="com.sun.tools.javac.Main">
+        <java fork="true" classpath="${build.bootclasses}" classname="com.sun.tools.javac.Main">
             <arg value="-sourcepath"/>
             <arg path="${src.classes}:${build.gensrc}"/>
+
             <arg value="-d"/>
             <arg file="${build.classes}"/>
+
             <arg line="-source ${compiler.source.level}"/>
             <arg line="-target ${compiler.source.level}"/>
+
             <arg value="-g:source,lines"/>
             <arg line="${src.javac.files}"/>
         </java>
+
         <copy todir="${build.classes}">
-            <fileset dir="${src.classes}">
-                <include name="com/sun/tools/javac/resources/*.properties"/>
-            </fileset>
+            <fileset refid="javac.resources"/>
+        </copy>
+        <copy file="${src.classes}/com/sun/tools/javac/resources/version-template.properties"
+            tofile="${build.classes}/com/sun/tools/javac/resources/version.properties">
+            <filterset begintoken="$(" endtoken=")">
+                <filter token="JDK_VERSION"  value="${build.jdk.version}"/>
+                <filter token="RELEASE"      value="${build.release}"/>
+                <filter token="FULL_VERSION" value="${build.full.version}"/>
+            </filterset>
         </copy>
         <jar destfile="${dist.javac}/lib/javac.jar" basedir="${build.classes}">
             <manifest>
@@ -148,10 +124,8 @@
     </target>
     
     <target name="build-bin.javac">
-<!--
         <copy tofile="${dist.javac}/bin/javac" file="${src.bin}/javac.sh"/>
         <chmod file="${dist.javac}/bin/javac" perm="+x"/>
--->
     </target>
     
     <property name="javadoc.jls3.url" value="http://java.sun.com/docs/books/jls/"/>
