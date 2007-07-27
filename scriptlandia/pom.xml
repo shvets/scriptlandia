@@ -136,40 +136,6 @@
             </goals>
           </execution>
 
-<!--
-          <execution>
-            <id>assembly</id>
-            <phase>validate</phase>
-            <configuration>
-              <tasks>
-                <mkdir dir="target"/>
-
-                <zip destfile="target/examples.zip">
-                  <zipfileset dir="examples">
-                    <exclude name="**/*.class"/>
-                    <exclude name="**/*.jar"/>
-                    <exclude name="**/*.log"/>
-                    <exclude name="**/target/**"/>
-                  </zipfileset>
-                </zip>
-
-                <zip destfile="target/tools.zip">
-                  <zipfileset dir="tools">
-                    <exclude name="**/*.class"/>
-                    <exclude name="**/*.jar"/>
-                    <exclude name="**/*.log"/>
-                    <exclude name="**/target/**"/>
-                  </zipfileset>
-                </zip>
-
-              </tasks>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
--->
-
           <execution>
             <id>clean</id>
             <phase>clean</phase>

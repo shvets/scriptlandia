@@ -26,12 +26,13 @@
       <version>${ant.version}</version>
     </dependency>
 
+<!--
     <dependency>
       <groupId>org.apache.ant</groupId>
       <artifactId>ant-launcher</artifactId>
       <version>${ant.version}</version>
     </dependency>
-
+-->
     <dependency>
       <groupId>org.apache.ant</groupId>
       <artifactId>ant-apache-bsf</artifactId>
@@ -57,6 +58,12 @@
     </dependency>
 
     <dependency>
+      <groupId>jdom</groupId>
+      <artifactId>jdom</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
       <version>1.0.4</version>
@@ -69,17 +76,18 @@
     </dependency>
 
     <dependency>
-      <groupId>jdom</groupId>
-      <artifactId>jdom</artifactId>
-      <version>1.0</version>
+      <groupId>com.sun.tools</groupId>
+      <artifactId>javac</artifactId>
+      <version>7.0-b16</version>
     </dependency>
 
     <dependency>
-      <groupId>com.sun.tools</groupId>
-      <artifactId>javac</artifactId>
-      <version>7.0-b13</version>
+      <groupId>org.sf</groupId>
+      <artifactId>image4j</artifactId>
+      <version>0.6</version>
     </dependency>
 
+<!--
     <dependency>
       <groupId>classworlds</groupId>
       <artifactId>classworlds</artifactId>
@@ -111,12 +119,6 @@
     </dependency>
 
     <dependency>
-      <groupId>org.sf</groupId>
-      <artifactId>image4j</artifactId>
-      <version>0.6</version>
-    </dependency>
-
-    <dependency>
       <groupId>jruby</groupId>
       <artifactId>jruby-lib</artifactId>
       <version>${jruby.version}</version>
@@ -139,6 +141,7 @@
       <artifactId>jacob-dll</artifactId>
       <version>1.10.1</version>
     </dependency>
+-->
   </dependencies>
 
   <build>
