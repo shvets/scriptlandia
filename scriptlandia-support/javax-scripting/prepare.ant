@@ -4,7 +4,7 @@
 
 <project name="prepare" default="prepare" basedir=".">
 
-  <property name="original.project.home" value="C:/Work/scripting/engines"/>
+  <property name="original.project.home" value="d:/Work/scripting/engines"/>
 
   <import file="${basedir}/prepare-macrodefs.xml"/>
 
@@ -98,15 +98,14 @@
 
       MavenHelper.executeMaven("pom.xml", new String[] { "clean" });
 
-      String[] args = new String[] { "package", "-Djava.specification.version=1.5", "-Dclassifier=jdk1.5" };
+      System.setProperty("java.specification.version", "1.5");
+      System.setProperty("classifier", "jdk1.5");
+
+      String[] args = new String[] { "package" };
 
       MavenHelper.executeMaven("pom.xml", args);
-    </script>
 
-    <script language="beanshell">
-      import org.sf.scriptlandia.MavenHelper;
-
-      String[] args = new String[] { "package", "-Djava.specification.version=1.5", "-Dclassifier=" };
+      System.setProperty("classifier", "");
 
       MavenHelper.executeMaven("pom.xml", args);
     </script>
@@ -120,7 +119,10 @@
     <script language="beanshell">
       import org.sf.scriptlandia.MavenHelper;
 
-      args = new String[] { "package", "-Dclassifier=jdk1.6", "-Djava.specification.version=1.6" };
+      System.setProperty("java.specification.version", "1.6");
+      System.setProperty("classifier", "jdk1.6");
+
+      String[] args = new String[] { "package" };
 
       MavenHelper.executeMaven("pom.xml", args);
     </script>

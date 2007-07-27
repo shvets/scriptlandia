@@ -30,8 +30,8 @@
     <dependency>
       <groupId>com.sun.tools</groupId>
       <artifactId>javac</artifactId>
-      <version>7.0-b09</version>
-      <classifier>jdk1.5</classifier>
+      <version>7.0-b13</version>
+      <!--classifier>jdk1.5</classifier-->
     </dependency>
   </dependencies>
 
