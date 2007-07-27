@@ -1,6 +1,6 @@
 #! /bin/sh
 
-JAVA_HOME=@java.home@
+#JAVA_HOME=@java.home@
 MOBILE_JAVA_HOME=@mobile.java.home@
 SCRIPTLANDIA_HOME=@scriptlandia.home@
 LAUNCHER_HOME=@launcher.home@

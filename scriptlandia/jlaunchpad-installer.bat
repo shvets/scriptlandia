@@ -20,4 +20,4 @@ SET CLASSPATH=%CLASSPATH%;%UNIVERSAL_LAUNCHER_PROJECT%\target\universal-launcher
 REM SET MAIN_CLASS=org.sf.jlaunchpad.install.CoreInstaller
 SET MAIN_CLASS=org.sf.jlaunchpad.install.GuiInstaller
 
-%JAVA_HOME%\bin\java -classpath %CLASSPATH% %SYSTEM_PROPERTIES% %MAIN_CLASS%
+%JAVA_HOME%\bin\java -classpath %CLASSPATH% %SYSTEM_PROPERTIES% -Dclassworlds.version=1.1 %MAIN_CLASS%

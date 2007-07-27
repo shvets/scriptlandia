@@ -14,7 +14,7 @@
         <include>installer.sh</include>
         <include>installer.ant</include>
         <include>jlaunchpad-installer.sh</include>
-        <include>jlaunchpad-installer.ant</include>
+        <include>jlaunchpad-installer.bat</include>
         <include>config-macrodefs.xml</include>
         <include>install-macrodefs.xml</include>
         <include>docs/**</include>
@@ -29,9 +29,6 @@
         <include>antrun/pom.xml</include>
         <include>antrun/target/antrun.jar</include>
 
-        <include>scriptlandia/pom.xml</include>
-        <include>scriptlandia/target/scriptlandia.jar</include>
-
         <include>scriptlandia-helper/pom.xml</include>
         <include>scriptlandia-helper/target/scriptlandia-helper.jar</include>
 
@@ -39,6 +36,9 @@
         <include>scriptlandia-nailgun/target/scriptlandia-nailgun.jar</include>
 
         <include>scriptlandia-startup/pom.xml</include>
+
+        <include>scriptlandia-launcher/pom.xml</include>
+        <include>scriptlandia-launcher/target/scriptlandia-launcher.jar</include>
 
         <include>scriptlandia-installer/pom.xml</include>
         <include>scriptlandia-installer/target/scriptlandia-installer.jar</include>

@@ -701,12 +701,12 @@ public class GuiInstaller extends CoreInstaller implements CaretListener/*, Acti
   private void load() throws IOException {
     launcherProps.load();
 
-/*    System.setProperty("use.proxy", launcherProps.getProperty("use.proxy"));
+    System.setProperty("use.proxy", launcherProps.getProperty("use.proxy"));
     System.setProperty("proxyHost", launcherProps.getProperty("proxyHost"));
     System.setProperty("proxyPort", launcherProps.getProperty("proxyPort"));
     System.setProperty("java.home.internal", launcherProps.getProperty("java.home.internal"));
     System.setProperty("repository.home", launcherProps.getProperty("repository.home"));
-*/
+
     scriptlandiaProps.load();
 
     updateProperty(scriptlandiaProps, javaSpecVersionComboBox, "java.specification.version");

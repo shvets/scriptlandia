@@ -38,7 +38,7 @@
     <!-- Variable ${java.home.internal} is set up inside install program. -->
 
     <filterset id="copy.filterset">
-      <filter token="java.home" value="${java.home.internal}"/>
+      <filter token="java.home.internal" value="${java.home.internal}"/>
       <filter token="mobile.java.home" value="${mobile.java.home}"/>
 
       <filter token="proxyHost" value="${proxyHost}"/>
