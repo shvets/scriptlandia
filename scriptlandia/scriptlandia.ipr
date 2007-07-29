@@ -354,8 +354,5 @@
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
   </component>
-  <UsedPathMacros>
-    <macro name="maven-repository" />
-  </UsedPathMacros>
 </project>
 

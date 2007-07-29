@@ -1,5 +1,11 @@
 <?xml version="1.0"?>
 
+<!--
+Before executing this script, execute this in scriptlandia-examples-and-tools\projects\tools\launch4j
+
+>get-launch4j.maven
+-->
+
 <project name="launch4j.ant" default="installer.exe" basedir=".">
 
   <import file="config-macrodefs.xml"/>

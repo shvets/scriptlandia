@@ -1,65 +1,49 @@
 Installation
 
 
-Installation script helps to install automatically all required files. It depends only on 
-Java Standard Edition (version 1.5 or higher). Java should be installed before the installation.
+1. Install Java Virtual Machine
 
-Before running the installation, modify "JAVA_HOME" variable inside "config.bat" ("config.sh")
-file to point to the correct location of pre-installed Java.
+Installation script helps depends on Java Standard Edition (version 1.5 or higher). 
+Java should be installed before the installation.
 
-You also may need to modify "REPOSITORY_HOME" and "SCRIPTLANDIA_HOME" variables. 
-"REPOSITORY_HOME" variable points to the location of repository folder, where all additional jars 
-will be stored (maven 2 uses ${user.home}/.m2 folder as the default). "SCRIPTLANDIA_HOME" variable 
-keeps the location of the folder with batch/shell script files.
+2. Install JLauchPad
 
-For example:
+JLaunchPad should also be installed. If it's not installed yet, you can do it by running the
+following command:
 
-SET DRIVE_LETTER=c:
+>jlaunchpad-installer.bat
 
-SET JAVA_HOME=%DRIVE_LETTER%\Java\jdk1.5.0
-SET SCRIPTLANDIA_HOME=%DRIVE_LETTER%\scriptlandia
-SET REPOSITORY_HOME=%DRIVE_LETTER%\maven-repository
+But before running this command, modify the following variables inside "config.bat" ("config.sh")
+file:
 
-You can also setup additional optional variable: "JAVA_MOBILE_HOME" - if you have Java Micro Edition 
-installed and want to support it. For example:
+- "JAVA_HOME" - to point to the correct location of pre-installed Java.
+- "REPOSITORY_HOME" - to point to the location of repository folder, where all additional jars 
+will be stored.
+- "LAUNCHER_HOME" - to point to the location where JLaunchPad will be installed.
 
-SET JAVA_MOBILE_HOME=%DRIVE_LETTER%\Java\j2me-2.5
+3. Install Scriptlandia installer
 
-If you plan to use "Ruby on Rails" library, setup this optional variable:
-
-SET RUBY_HOME=%DRIVE_LETTER%\Ruby-1.8.4-20
-
-If you work behind the proxy server, you have to define these proxy server parameters:
-
-SET PROXY_SERVER_HOST_NAME=<proxy-server-name>
-SET PROXY_SERVER_PORT=<proxy-server-port>
-
-
-Now you can run the installation script:
+Run the installation script:
 
 >installer.bat
 
 or
 
->installer.exe
+>installer.sh
+
+Installation will as for the location of:
+
+- Launcher Home - the location of already preinstalled JLaunchPad;
+
+- Scriptlandia Home - the location where Scriptlandia scripts will be installed.
+
+It also will ask for languages to be installed and proxy settings, if you are behind firewall.
+
 
 The installation is completed. During the installation we associate extensions like ".ant", ".maven",
 ".bsh" etc. with appropriate dynamic language interpreter (thanks to JDIC library).
 
 During installation, a lot of files will be downloaded and installed into local repository. 
-To accelerate this process, you can download most of required files as one big archive
-(scriptlandia-accelerator-2.x.x.zip) and unzip it into some folder. All files will be located in
-some folder, e.g. in c:\maven-repository-accelerator.
-
-In "repositories.xml" file there is a description for this directory:
-
-  <repository>
-    <id>accelerator</id>
-    <name>Accelerator</name>
-    <url>file://${repository.home}-accelerator</url>
-  </repository>
-
-Replace "url" tag with the location of unzipped files.
 
 After completing the installation, scripts can be launched from the command line, for example:
 
@@ -67,7 +51,7 @@ After completing the installation, scripts can be launched from the command line
 
 >test.ant
 
-Scripts are located in separate "examples" directory.
+Scripts are located in separate "scriptlandia-examples-and-tools" archive.
 
 If you don't want to type the extension, do the following (Windows only):
 

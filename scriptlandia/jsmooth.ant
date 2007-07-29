@@ -1,5 +1,11 @@
 <?xml version="1.0"?>
 
+<!--
+Before executing this script, execute this in scriptlandia-examples-and-tools\projects\tools\jsmooth
+
+>get-jsmooth.maven
+-->
+
 <project name="jsmooth.ant" default="installer.exe" basedir=".">
 
   <import file="config-macrodefs.xml"/>
