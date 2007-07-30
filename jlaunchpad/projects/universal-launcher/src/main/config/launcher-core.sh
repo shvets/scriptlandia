@@ -12,8 +12,38 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 # Lesser General Public License for more details.
- 
-readFile() {
+
+readCommandLine() {
+  for arg in $*; do
+    processArg $arg
+  done
+}
+
+processArg() {
+  if [ '$arg" = "" ]; then
+    return
+  fi
+
+  PARAM1=${$arg:0:2}
+  PARAM2=${$arg:0:18}
+  PARAM3=${$arg:0:19}
+
+  if [ "$PARAM1" = "-D" ]; then
+    JAVA_SYSTEM_PROPS=$JAVA_SYSTEM_PROPS "$arg"
+  elif [ "$PARAM2" = "-Xbootclasspath/p:" ]; then
+    JAVA_BOOTCLASSPATH_PREPEND=$JAVA_BOOTCLASSPATH_PREPEND "$arg"
+  elif [ "$PARAM2" = "-Xbootclasspath/a:" ]; then
+    JAVA_BOOTCLASSPATH_APPEND=$JAVA_BOOTCLASSPATH_APPEND "$arg"
+  elif [ "$arg" = "-debug" ]; then
+    JAVA_SYSTEM_PROPS=$JAVA_SYSTEM_PROPS -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=6006
+  elif [ "$PARAM3" == "-Djava.library.path" ]; then
+    JAVA_LIBRARY_PATH=$JAVA_LIBRARY_PATH "$arg"
+  else
+    COMMAND_LINE_ARGS=$COMMAND_LINE_ARGS "$arg"
+  fi
+}
+
+readFile0() {
     SECTION=""
     RESULT=""
     line=""
@@ -31,7 +61,7 @@ readFile() {
     while read line
     do
         processline
-	echo "$RESULT">$temp_dir/RESULT
+        echo "$RESULT">$temp_dir/RESULT
         echo "$SEPARATOR">$temp_dir/SEPARATOR
         echo "$line">$temp_dir/line
         echo "$SECTION">$temp_dir/SECTION
@@ -39,6 +69,7 @@ readFile() {
         echo "$PREFIX">$temp_dir/PREFIX
         echo "$CMD">$temp_dir/CMD
     done < $FILE
+
     RESULT=`cat $temp_dir/RESULT`
     SEPARATOR=`cat $temp_dir/SEPARATOR`
     line=`cat $temp_dir/line`
@@ -49,13 +80,6 @@ readFile() {
     rm -rf $temp_dir
     #processline
     processresult
-}
-
-readCommandLine() {
-#FOR /F "usebackq delims=" %%i in ("%CD%\%APP_NAME%.conf") DO call :processline ^"%%i^"
-  for i in $*; do
-    echo $i
-  done
 }
 
 processline() {
@@ -212,6 +236,10 @@ join() {
     fi
 }
 
+
+#APP=`dirname "$0"`
+
+#export APP=`cd "$APP" && pwd`
 
 APP=`dirname $0`/`basename $0 .sh` # compute app name from this file name without prefix
 APP_NAME=`basename $0 .sh`

@@ -1,6 +1,7 @@
 @echo off
 
 REM see https://java-app-launcher.dev.java.net
+
 REM JavaAppLauncher: Generic Java Application Launcher
 REM Copyright (C) 2007  Santhosh Kumar T
 REM 
@@ -14,22 +15,23 @@ REM but WITHOUT ANY WARRANTY; without even the implied warranty of
 REM MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 REM Lesser General Public License for more details.
 
-if defined APP goto conf
-echo APP variable is not defined
-pause
-goto end
+rem if defined APP_NAME goto init
+rem echo APP_NAME variable is not defined
+rem pause
+rem goto end
 
-:conf
-rem SET CMD_LINE_ARGS=%*
-rem IF NOT CMDEXTVERSION 2 SET CMD_LINE_ARGS=%CMD_LINE_ARGS:~1%
+rem :init
 
 set JAVA_HOME=@java.home.internal@
 
-rem set CMD=java.exe
 if not defined CMD set CMD=java.exe
 if defined JAVA_HOME set CMD="%JAVA_HOME%\bin\%CMD%"
 if defined JAVA_CMD set CMD="%JAVA_CMD%"
 set JAVA_CMD=
+
+set LAUNCHER_APP=%LAUNCHER_HOME%\launcher
+set APP=%CD%\%APP_NAME%
+
 
 SET JAVA_CLASSPATH=
 SET JAVA_ENDORSED_DIRS=
@@ -43,36 +45,38 @@ SET JVM_ARGS=
 SET LAUNCHER_CLASS=
 SET COMMAND_LINE_ARGS=
 
+rem process command line
+
 FOR %%i in (%*) DO call :processarg ^%%i^
 
 set SECTION=
 set RESULT=
 
-FOR /F "usebackq delims=" %%i in ("%APP%.conf") DO call :processline  ^"%%i^"
+rem process config file located in $launcher.home
 
-if "%APP%.conf" == "%CD%\%APP_NAME%.conf" goto step1
+FOR /F "usebackq delims=" %%i in ("%LAUNCHER_APP%.conf") DO call :processline  ^"%%i^"
 
-IF EXIST %CD%\%APP_NAME%.conf FOR /F "usebackq delims=" %%i in ("%CD%\%APP_NAME%.conf") DO call :processline ^"%%i^"
+rem process config file located in $current.dir
 
-:step1
+if not "%LAUNCHER_APP%.conf" == "%APP%.conf" (
+  if exist %APP%.conf FOR /F "usebackq delims=" %%i in ("%APP%.conf") DO call :processline ^"%%i^"
+)
 
 rem append result to command
 if DEFINED RESULT call :processresult
 
-if "%JAVA_CLASSPATH%" == "" goto execute
+if not "%JAVA_CLASSPATH%" == "" (
+  SET JAVA_CLASSPATH=-classpath "%JAVA_CLASSPATH%"
+)
 
-SET JAVA_CLASSPATH=-classpath "%JAVA_CLASSPATH%"
+if not "%JAVA_BOOTCLASSPATH_PREPEND%" == "" (
+  SET JAVA_BOOTCLASSPATH_PREPEND=-Xbootclasspath/p:"%JAVA_BOOTCLASSPATH_PREPEND%"
+)
 
-if "%JAVA_BOOTCLASSPATH_PREPEND%" == "" goto execute
+if not "%JAVA_BOOTCLASSPATH_APPPEND%" == "" (
+  SET JAVA_BOOTCLASSPATH_APPPEND=-Xbootclasspath/a:"%JAVA_BOOTCLASSPATH_APPPEND%"
+)
 
-SET JAVA_BOOTCLASSPATH_PREPEND=-Xbootclasspath/p:"%JAVA_BOOTCLASSPATH_PREPEND%"
-
-if "%JAVA_BOOTCLASSPATH_APPPEND%" == "" goto execute
-
-SET JAVA_BOOTCLASSPATH_APPPEND=-Xbootclasspath/a:"%JAVA_BOOTCLASSPATH_APPPEND%"
-
-
-:execute
 %CMD% ^
   %JAVA_BOOTCLASSPATH_APPEND% %JAVA_BOOTCLASSPATH_PREPEND% %JAVA_BOOTCLASSPATH% ^
   %JAVA_LIBRARY_PATH% %JAVA_EXT_DIRS% %JAVA_ENDORSED_DIRS% ^
@@ -106,23 +110,17 @@ IF "%FIRST_CHAR%" == "#" goto end
 rem join the line to result
 if defined RESULT set RESULT=%RESULT%%SEPARATOR%
 
-if "%PREFIX%" == "-D" goto setupJavaSystemProperty
-if "%PREFIX%" == "SET" (
-  set %~1
+if "%PREFIX%" == "-D" (
+  set RESULT=%RESULT%%PREFIX%"%~1"
+  goto end
 )
 
-  set RESULT=%RESULT%%PREFIX%%~1
-goto end
+if "%PREFIX%" == "SET" (
+  set %~1
+  goto end
+)
 
-:setupJavaSystemProperty
-  set RESULT=%RESULT%%PREFIX%"%~1"
-goto end
-
-rem :setupScriptVar
-rem set %~1
-
-rem :endSetupVar
-
+set RESULT=%RESULT%%PREFIX%%~1
 goto end
 
 :option
@@ -259,48 +257,38 @@ goto end
 
 :processarg
 
-if "%~1"=="" goto end
+if "%~1" == "" goto end
 
 set TEMP=%~1
-set PARAM=%TEMP:~0,2%
+set PARAM1=%TEMP:~0,2%
+set PARAM2=%TEMP:~0,18%
+set PARAM3=%TEMP:~0,19%
 
-if "%PARAM%"=="-D" goto prepareSystemProps
+if "%PARAM1%" == "-D" (
+  SET JAVA_SYSTEM_PROPS=%JAVA_SYSTEM_PROPS% "%~1%"
+  goto end
+)
 
-set PARAM=%TEMP:~0,18%
+if "%PARAM2%"=="-Xbootclasspath/p:" (
+  SET JAVA_BOOTCLASSPATH_PREPEND=%JAVA_BOOTCLASSPATH_PREPEND% "%~1%"
+  goto end
+)
 
-if "%PARAM%"=="-Xbootclasspath/p:" goto prepareBootClasspathPrepend
+if "%PARAM2%"=="-Xbootclasspath/a:" (
+  SET JAVA_BOOTCLASSPATH_APPEND=%JAVA_BOOTCLASSPATH_APPEND% "%~1%"
+  goto end
+)
 
-if "%PARAM%"=="-Xbootclasspath/a:" goto prepareBootClasspathAppend
+if "%TEMP%"=="-debug" (
+  SET JAVA_SYSTEM_PROPS=%JAVA_SYSTEM_PROPS% -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=6006
+  goto end
+)
 
-if "%TEMP%"=="-debug" goto prepareDebugProps
-
-set PARAM=%TEMP:~0,19%
-
-if "%PARAM%"=="-Djava.library.path" goto prepareJavaLibraryPath
+if "%PARAM3%"=="-Djava.library.path" (
+  SET JAVA_LIBRARY_PATH=%JAVA_LIBRARY_PATH% "%~1%"
+  goto end
+)
 
 set COMMAND_LINE_ARGS=%COMMAND_LINE_ARGS% "%~1%"
-
-goto endProcessarg
-
-:prepareSystemProps
-SET JAVA_SYSTEM_PROPS=%JAVA_SYSTEM_PROPS% "%~1%"
-goto endProcessarg
-
-:prepareBootClasspathPrepend
-SET JAVA_BOOTCLASSPATH_PREPEND=%JAVA_BOOTCLASSPATH_PREPEND% "%~1%"
-goto endProcessarg
-
-:prepareBootClasspathAppend
-SET JAVA_BOOTCLASSPATH_APPEND=%JAVA_BOOTCLASSPATH_APPEND% "%~1%"
-goto endProcessarg
-
-:prepareDebugProps
-SET JAVA_SYSTEM_PROPS=%JAVA_SYSTEM_PROPS% -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=6006
-goto endProcessarg
-
-:prepareJavaLibraryPath
-SET JAVA_LIBRARY_PATH=%JAVA_LIBRARY_PATH% "%~1%"
-
-:endProcessarg
 
 :end
