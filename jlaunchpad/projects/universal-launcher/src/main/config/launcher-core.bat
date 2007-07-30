@@ -25,7 +25,7 @@ rem IF NOT CMDEXTVERSION 2 SET CMD_LINE_ARGS=%CMD_LINE_ARGS:~1%
 
 set JAVA_HOME=@java.home.internal@
 
-# set CMD=java.exe
+rem set CMD=java.exe
 if not defined CMD set CMD=java.exe
 if defined JAVA_HOME set CMD="%JAVA_HOME%\bin\%CMD%"
 if defined JAVA_CMD set CMD="%JAVA_CMD%"
@@ -116,12 +116,12 @@ goto end
 
 :setupJavaSystemProperty
   set RESULT=%RESULT%%PREFIX%"%~1"
-goto endSetupVar
+goto end
 
 rem :setupScriptVar
-remset %~1
+rem set %~1
 
-rem:endSetupVar
+rem :endSetupVar
 
 goto end
 

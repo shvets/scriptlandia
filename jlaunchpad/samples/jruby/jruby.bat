@@ -1,4 +1,4 @@
-SET LAUNCHER_HOME=c:\launcher
+SET LAUNCHER_HOME=d:\launcher
 
 SET MAIN_CLASS=org.jruby.Main
 
