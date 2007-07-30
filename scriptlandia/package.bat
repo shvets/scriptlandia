@@ -1,9 +1,5 @@
 @ECHO OFF
 
-if exist "%USERPROFILE%\jlaunchpad\config.bat" (
-  @call "%USERPROFILE%\jlaunchpad\config.bat"
-)
-
 @call config.bat
 
 echo ---### Java Specification Version: %JAVA_SPECIFICATION_VERSION%

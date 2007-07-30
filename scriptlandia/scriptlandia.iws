@@ -15,7 +15,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/languages.iml" afterPath="$PROJECT_DIR$/languages/languages.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstaller.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstaller.java" />
     </list>
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
@@ -87,7 +88,48 @@
       <file leaf-file-name="GuiInstaller.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstaller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="754" column="0" selection-start="25949" selection-end="25949" vertical-scroll-proportion="0.031539887">
+            <state line="699" column="29" selection-start="23284" selection-end="23284" vertical-scroll-proportion="0.69503546">
+              <folding>
+                <marker date="1185826831602" expanded="true" signature="4835:4870" placeholder="{...}" />
+                <marker date="1185826831602" expanded="true" signature="4999:6655" placeholder="{...}" />
+                <marker date="1185826831602" expanded="true" signature="6689:8198" placeholder="{...}" />
+                <marker date="1185826831602" expanded="false" signature="7451:7813" placeholder="{...}" />
+                <marker date="1185826831602" expanded="true" signature="7568:7807" placeholder="{...}" />
+                <marker date="1185826831602" expanded="true" signature="8248:15382" placeholder="{...}" />
+                <marker date="1185826831602" expanded="false" signature="9344:9864" placeholder="{...}" />
+                <marker date="1185826831602" expanded="true" signature="9399:9858" placeholder="{...}" />
+                <marker date="1185826831602" expanded="false" signature="10069:10582" placeholder="{...}" />
+                <marker date="1185826831602" expanded="true" signature="10124:10576" placeholder="{...}" />
+                <marker date="1185826831602" expanded="false" signature="10803:11328" placeholder="{...}" />
+                <marker date="1185826831602" expanded="true" signature="10858:11322" placeholder="{...}" />
+                <marker date="1185826831602" expanded="false" signature="12270:12771" placeholder="{...}" />
+                <marker date="1185826831602" expanded="true" signature="12325:12765" placeholder="{...}" />
+                <marker date="1185826831602" expanded="true" signature="16762:18556" placeholder="{...}" />
+                <marker date="1185826831602" expanded="false" signature="16916:17677" placeholder="{...}" />
+                <marker date="1185826831602" expanded="true" signature="16971:17671" placeholder="{...}" />
+                <marker date="1185826831602" expanded="false" signature="17010:17637" placeholder="{...}" />
+                <marker date="1185826831602" expanded="true" signature="17040:17627" placeholder="{...}" />
+                <marker date="1185826831602" expanded="false" signature="17198:17371" placeholder="{...}" />
+                <marker date="1185826831602" expanded="true" signature="17311:17357" placeholder="{...}" />
+                <marker date="1185826831602" expanded="false" signature="17785:17879" placeholder="{...}" />
+                <marker date="1185826831602" expanded="true" signature="17840:17873" placeholder="{...}" />
+                <marker date="1185826831602" expanded="true" signature="18620:20898" placeholder="{...}" />
+                <marker date="1185826831602" expanded="false" signature="19298:20845" placeholder="{...}" />
+                <marker date="1185826831602" expanded="true" signature="19326:20837" placeholder="{...}" />
+                <marker date="1185826831602" expanded="false" signature="19478:19641" placeholder="{...}" />
+                <marker date="1185826831602" expanded="true" signature="19587:19629" placeholder="{...}" />
+                <marker date="1185826831602" expanded="true" signature="20932:21056" placeholder="{...}" />
+                <marker date="1185826831602" expanded="true" signature="21107:21566" placeholder="{...}" />
+                <marker date="1185826831602" expanded="true" signature="21602:22577" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoreInstaller.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="33" selection-start="1567" selection-end="1567" vertical-scroll-proportion="0.8758865">
               <folding />
             </state>
           </provider>
@@ -96,7 +138,7 @@
       <file leaf-file-name="LauncherProperties.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../jlaunchpad/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/install/LauncherProperties.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="0" selection-start="2285" selection-end="2544" vertical-scroll-proportion="0.47309834">
+            <state line="82" column="0" selection-start="2285" selection-end="2544" vertical-scroll-proportion="0.030141843">
               <folding />
             </state>
           </provider>
@@ -105,7 +147,7 @@
       <file leaf-file-name="ScriptlandiaLauncher.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/ScriptlandiaLauncher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="36" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.031539887">
+            <state line="53" column="36" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.030141843">
               <folding />
             </state>
           </provider>
@@ -114,16 +156,16 @@
       <file leaf-file-name="ScriptlandialProperties.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ScriptlandialProperties.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="44" selection-start="1669" selection-end="1669" vertical-scroll-proportion="0.2523191">
+            <state line="54" column="44" selection-start="1669" selection-end="1669" vertical-scroll-proportion="0.030141843">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LauncherHelper.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="LauncherHelper.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="14" selection-start="53" selection-end="53" vertical-scroll-proportion="-2.8701298">
+            <state line="2" column="14" selection-start="53" selection-end="53" vertical-scroll-proportion="0.030141843">
               <folding />
             </state>
           </provider>
@@ -266,6 +308,60 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
       </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-installer" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-installer" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-installer" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer\src\main\java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer\src\main\java\org\sf\scriptlandia\install" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
     </subPane>
   </component>
   <component name="ProjectReloadState">
@@ -310,6 +406,20 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.installer">
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <module name="" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -330,6 +440,13 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -341,27 +458,6 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <module name="" />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
     </configuration>
     <configuration default="false" name="installer" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.sf.scriptlandia.install.GuiInstaller" />
@@ -450,7 +546,7 @@
     <option name="UPDATE_RUN_STATUS" value="false" />
     <option name="UPDATE_RECURSIVELY" value="true" />
     <option name="MERGE_DRY_RUN" value="false" />
-    <configuration useDefault="true">C:\Documents and Settings\alex\Application Data\Subversion</configuration>
+    <configuration useDefault="true">C:\Documents and Settings\shvetsa\Application Data\Subversion</configuration>
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -467,15 +563,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="6" width="1004" height="728" extended-state="0" />
+    <frame x="-4" y="-4" width="1032" height="746" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2528978" order="0" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25154004" order="0" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49522293" order="1" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24948665" order="1" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3262987" order="8" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
@@ -486,17 +580,19 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" order="8" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32643312" order="2" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39936775" order="0" />
+      <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3598726" order="4" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="FileBrowser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980973" order="3" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
-      <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
-      <window_info id="FileBrowser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980973" order="3" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
       <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="3" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39936775" order="0" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
@@ -617,13 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="365" selection-end="365" vertical-scroll-proportion="0.17525773">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../../../../Java/jdk1.5.0/src.zip!/java/util/Properties.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="587" column="29" selection-start="22189" selection-end="22189" vertical-scroll-proportion="0.33333334">
@@ -631,37 +720,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstaller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="754" column="0" selection-start="25949" selection-end="25949" vertical-scroll-proportion="0.031539887">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../jlaunchpad/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/install/LauncherProperties.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="0" selection-start="2285" selection-end="2544" vertical-scroll-proportion="0.47309834">
+        <state line="82" column="0" selection-start="2285" selection-end="2544" vertical-scroll-proportion="0.030141843">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/ScriptlandiaLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="36" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.031539887">
+        <state line="53" column="36" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.030141843">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ScriptlandialProperties.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="44" selection-start="1669" selection-end="1669" vertical-scroll-proportion="0.2523191">
+        <state line="54" column="44" selection-start="1669" selection-end="1669" vertical-scroll-proportion="0.030141843">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="14" selection-start="53" selection-end="53" vertical-scroll-proportion="-2.8701298">
+        <state line="2" column="14" selection-start="53" selection-end="53" vertical-scroll-proportion="0.030141843">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="699" column="29" selection-start="23284" selection-end="23284" vertical-scroll-proportion="0.69503546">
+          <folding>
+            <marker date="1185826831602" expanded="true" signature="4835:4870" placeholder="{...}" />
+            <marker date="1185826831602" expanded="true" signature="4999:6655" placeholder="{...}" />
+            <marker date="1185826831602" expanded="true" signature="6689:8198" placeholder="{...}" />
+            <marker date="1185826831602" expanded="false" signature="7451:7813" placeholder="{...}" />
+            <marker date="1185826831602" expanded="true" signature="7568:7807" placeholder="{...}" />
+            <marker date="1185826831602" expanded="true" signature="8248:15382" placeholder="{...}" />
+            <marker date="1185826831602" expanded="false" signature="9344:9864" placeholder="{...}" />
+            <marker date="1185826831602" expanded="true" signature="9399:9858" placeholder="{...}" />
+            <marker date="1185826831602" expanded="false" signature="10069:10582" placeholder="{...}" />
+            <marker date="1185826831602" expanded="true" signature="10124:10576" placeholder="{...}" />
+            <marker date="1185826831602" expanded="false" signature="10803:11328" placeholder="{...}" />
+            <marker date="1185826831602" expanded="true" signature="10858:11322" placeholder="{...}" />
+            <marker date="1185826831602" expanded="false" signature="12270:12771" placeholder="{...}" />
+            <marker date="1185826831602" expanded="true" signature="12325:12765" placeholder="{...}" />
+            <marker date="1185826831602" expanded="true" signature="16762:18556" placeholder="{...}" />
+            <marker date="1185826831602" expanded="false" signature="16916:17677" placeholder="{...}" />
+            <marker date="1185826831602" expanded="true" signature="16971:17671" placeholder="{...}" />
+            <marker date="1185826831602" expanded="false" signature="17010:17637" placeholder="{...}" />
+            <marker date="1185826831602" expanded="true" signature="17040:17627" placeholder="{...}" />
+            <marker date="1185826831602" expanded="false" signature="17198:17371" placeholder="{...}" />
+            <marker date="1185826831602" expanded="true" signature="17311:17357" placeholder="{...}" />
+            <marker date="1185826831602" expanded="false" signature="17785:17879" placeholder="{...}" />
+            <marker date="1185826831602" expanded="true" signature="17840:17873" placeholder="{...}" />
+            <marker date="1185826831602" expanded="true" signature="18620:20898" placeholder="{...}" />
+            <marker date="1185826831602" expanded="false" signature="19298:20845" placeholder="{...}" />
+            <marker date="1185826831602" expanded="true" signature="19326:20837" placeholder="{...}" />
+            <marker date="1185826831602" expanded="false" signature="19478:19641" placeholder="{...}" />
+            <marker date="1185826831602" expanded="true" signature="19587:19629" placeholder="{...}" />
+            <marker date="1185826831602" expanded="true" signature="20932:21056" placeholder="{...}" />
+            <marker date="1185826831602" expanded="true" signature="21107:21566" placeholder="{...}" />
+            <marker date="1185826831602" expanded="true" signature="21602:22577" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="33" selection-start="1567" selection-end="1567" vertical-scroll-proportion="0.8758865">
           <folding />
         </state>
       </provider>
