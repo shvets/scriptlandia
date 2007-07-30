@@ -8,3 +8,5 @@ rm -d -r -f projects/universal-launcher/target
 
 rm -d -r -f target
 rm -d -r -f classes
+
+

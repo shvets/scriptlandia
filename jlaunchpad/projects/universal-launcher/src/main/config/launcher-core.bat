@@ -25,7 +25,7 @@ rem IF NOT CMDEXTVERSION 2 SET CMD_LINE_ARGS=%CMD_LINE_ARGS:~1%
 
 set JAVA_HOME=@java.home.internal@
 
-rem set CMD=java.exe
+# set CMD=java.exe
 if not defined CMD set CMD=java.exe
 if defined JAVA_HOME set CMD="%JAVA_HOME%\bin\%CMD%"
 if defined JAVA_CMD set CMD="%JAVA_CMD%"
@@ -107,19 +107,21 @@ rem join the line to result
 if defined RESULT set RESULT=%RESULT%%SEPARATOR%
 
 if "%PREFIX%" == "-D" goto setupJavaSystemProperty
-if "%PREFIX%" == "SET" goto setupScriptVar
+if "%PREFIX%" == "SET" (
+  set %~1
+)
 
   set RESULT=%RESULT%%PREFIX%%~1
-goto endSetupVar
+goto end
 
 :setupJavaSystemProperty
   set RESULT=%RESULT%%PREFIX%"%~1"
 goto endSetupVar
 
-:setupScriptVar
-set %~1
+rem :setupScriptVar
+remset %~1
 
-:endSetupVar
+rem:endSetupVar
 
 goto end
 
@@ -247,16 +249,9 @@ goto end
 
 :processresult
 
-rem if not defined %VARIABLE_NAME% goto setupVariable
-rem   set %VARIABLE_NAME%=%VARIABLE_VALUE%%SEPARATOR%%RESULT%
-rem goto endSetupVariable
-rem :setupVariable
-rem   set %VARIABLE_NAME%=%SECTION_PREFIX%%RESULT%
-rem :endSetupVariable
-
 if not defined %VARIABLE_NAME% (
   set %VARIABLE_NAME%=%SECTION_PREFIX%%RESULT%
-) ELSE (
+) else (
   set %VARIABLE_NAME%=%VARIABLE_VALUE%%SEPARATOR%%RESULT%
 )
 

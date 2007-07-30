@@ -73,8 +73,7 @@ SET PR_CLASSPATH=%PR_CLASSPATH%;%POM_READER_PROJECT%\src\main\java
 %JAVA_HOME%\bin\javac -nowarn -source %JAVA_SPECIFICATION_VERSION% -target %JAVA_SPECIFICATION_VERSION% ^
   -classpath %PR_CLASSPATH% ^
   -d %POM_READER_PROJECT%\target\classes ^
-  %POM_READER_PROJECT%\src\main\java\org\sf\pomreader\PomReader.java ^
-  %POM_READER_PROJECT%\src\main\java\org\sf\pomreader\ProjectInstaller.java
+  %POM_READER_PROJECT%\src\main\java\org\sf\pomreader\*.java 
 
 %JAVA_HOME%\bin\jar cf %POM_READER_PROJECT%\target\pom-reader.jar ^
   -C %POM_READER_PROJECT%\target\classes .

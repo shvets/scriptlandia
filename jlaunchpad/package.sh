@@ -6,11 +6,11 @@ fi
 
 . ./config.sh
 
-BOOTSTRAP_MINI_PROJECT=projects\bootstrap-mini
-CLASSWORLDS_PROJECT=projects\classworlds
-POM_READER_PROJECT=projects\pom-reader
-UNIVERSAL_LAUNCHER_COMMON_PROJECT=projects\universal-launcher-common
-UNIVERSAL_LAUNCHER_PROJECT=projects\universal-launcher
+BOOTSTRAP_MINI_PROJECT=projects/bootstrap-mini
+CLASSWORLDS_PROJECT=projects/classworlds
+POM_READER_PROJECT=projects/pom-reader
+UNIVERSAL_LAUNCHER_COMMON_PROJECT=projects/universal-launcher-common
+UNIVERSAL_LAUNCHER_PROJECT=projects/universal-launcher
 
 echo ---### Java Specification Version: $JAVA_SPECIFICATION_VERSION
 
@@ -20,7 +20,7 @@ if [ ! -f $BOOTSTRAP_MINI_PROJECT/target/classes ]; then
   mkdir -p $BOOTSTRAP_MINI_PROJECT/target/classes
 fi
 
-BM_CLASSPATH=$SCRIPTLANDIA_COMMON_PROJECT/target/classes
+BM_CLASSPATH=$UNIVERSAL_LAUNCHER_COMMON_PROJECT/target/classes
 BM_CLASSPATH=$BM_CLASSPATH:$BOOTSTRAP_MINI_PROJECT/src/main/java
 
 $JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_SPECIFICATION_VERSION \
@@ -73,19 +73,18 @@ if [ ! -f $POM_READER_PROJECT/target/classes ]; then
 fi
 
 PR_CLASSPATH=$BOOTSTRAP_MINI_PROJECT/target/classes
-PR_CLASSPATH=$PR_CLASSPATH:$SCRIPTLANDIA_COMMON_PROJECT/target/classes
+PR_CLASSPATH=$PR_CLASSPATH:$UNIVERSAL_LAUNCHER_COMMON_PROJECT/target/classes
 PR_CLASSPATH=$PR_CLASSPATH:$POM_READER_PROJECT/src/main/java
 
 $JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_SPECIFICATION_VERSION \
   -classpath $PR_CLASSPATH \
   -d $POM_READER_PROJECT/target/classes \
-  $POM_READER_PROJECT/src/main/java/org/sf/pomreader/PomReader.java
+  $POM_READER_PROJECT/src/main/java/org/sf/pomreader/*.java
 
 $JAVA_HOME/bin/jar cf $POM_READER_PROJECT/target/pom-reader.jar \
   -C $POM_READER_PROJECT/target/classes .
 
 echo ---### Builds universal-launcher project
-
 
 if [ ! -f $UNIVERSAL_LAUNCHER_PROJECT/target/classes ]; then
   mkdir -p $UNIVERSAL_LAUNCHER_PROJECT/target/classes
@@ -106,3 +105,4 @@ $JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_S
 
 $JAVA_HOME/bin/jar cf $UNIVERSAL_LAUNCHER_PROJECT/target/universal-launcher.jar \
   -C $UNIVERSAL_LAUNCHER_PROJECT/target/classes .
+

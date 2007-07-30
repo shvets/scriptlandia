@@ -292,12 +292,13 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/projects/bootstrap-mini/bootstrap-mini.iml" filepath="$PROJECT_DIR$/projects/bootstrap-mini/bootstrap-mini.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/classworlds/classworlds.iml" filepath="$PROJECT_DIR$/projects/classworlds/classworlds.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jlaunchpad.iml" filepath="$PROJECT_DIR$/jlaunchpad.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/pom-reader/pom-reader.iml" filepath="$PROJECT_DIR$/projects/pom-reader/pom-reader.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/universal-launcher/universal-launcher.iml" filepath="$PROJECT_DIR$/projects/universal-launcher/universal-launcher.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/universal-launcher-common/universal-launcher-common.iml" filepath="$PROJECT_DIR$/projects/universal-launcher-common/universal-launcher-common.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/target/classes" />
   </component>
   <component name="ResourceManagerContainer">
@@ -321,17 +322,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="$PROJECT_DIR$/languages" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/antrun" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/bootstrap-mini" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/classworlds" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/classworlds-launcher" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/pom-reader" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/scriptlandia-helper" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/scriptlandia-installer" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/scriptlandia-nailgun" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/universal-launcher" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/universal-launcher-common" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />

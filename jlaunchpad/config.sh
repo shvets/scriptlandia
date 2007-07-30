@@ -13,11 +13,11 @@ JAVA_HOME=~/jdk1.6.0_01
 LAUNCHER_HOME=~/launcher
 REPOSITORY_HOME=/media/hda5/maven-repository
 
-LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$REPOSITORY_HOME/org/jdesktop/jdic/0.9.2
+#LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$REPOSITORY_HOME/org/jdesktop/jdic/0.9.2
 
 JAVA_SPECIFICATION_VERSION=1.5
 LAUNCHER_VERSION=1.0
-SET CLASSWORLDS_VERSION=1.1
+CLASSWORLDS_VERSION=1.1
 
 if [ "x$PROXY_SERVER_HOST_NAME" = "x" ]; then
   PROXY_PARAMS="$SYSTEM_PROPERTIES -DproxyHost=$PROXY_SERVER_HOST_NAME -DproxyPort=$PROXY_SERVER_PORT"
@@ -29,12 +29,11 @@ if [ "x$JAVA_HOME" = "x" ]; then
   exit 1
 fi
 
-
-SYSTEM_PROPERTIES=-Dlauncher.home=$LAUNCHER_HOME \
--Drepository.home=$REPOSITORY_HOME" \
+SYSTEM_PROPERTIES="-Dlauncher.home=$LAUNCHER_HOME \
+-Drepository.home=$REPOSITORY_HOME \
 -Dlauncher.version=$LAUNCHER_VERSION \
 -Dclassworlds.version=$CLASSWORLDS_VERSION \
--Djava.specification.version=$JAVA_SPECIFICATION_VERSION
+-Djava.specification.version=$JAVA_SPECIFICATION_VERSION"
 
 
 if [ "x$PROXY_PARAMS" = "x" ]; then
