@@ -39,10 +39,19 @@ public class CoreInstaller {
     try {
       ProjectInstaller installer = new ProjectInstaller();
 
+      System.out.println("Installing bootstrap-mini project...");
       installer.install("projects/bootstrap-mini", false);
+
+      System.out.println("Installing \"universal-launcher-common\" project...");
       installer.install("projects/universal-launcher-common", false);
+
+      System.out.println("Installing \"classworlds\" project...");
       installer.install("projects/classworlds", false);
+
+      System.out.println("Installing \"pom-reader\" project...");
       installer.install("projects/pom-reader", false);      
+
+      System.out.println("Installing \"universal-launcher\" project...");
       installer.install("projects/universal-launcher", false);
 
       File[] files = new File("projects/universal-launcher/src/main/config").listFiles();
@@ -57,6 +66,8 @@ public class CoreInstaller {
       for(File fromFile : files) {
         if(fromFile.exists() && !fromFile.isHidden() && !fromFile.isDirectory()) {
           File toFile = new File(launcherHomeFile.toString(), fromFile.getName());
+
+          System.out.println("Copying \"" + fromFile.getName() + "\" file to \"" + toFile.getParent() +  "\" directory...");
 
           BufferedReader reader = null;
           BufferedWriter writer = null;
