@@ -16,6 +16,8 @@ public class LauncherProperties extends Properties {
 
   /**
    * Creates new launcher helper.
+   * @param fileName file name
+   * @throws IOException I/O Exception 
    */
   public LauncherProperties(String fileName) throws IOException {
     File propertiesFile = new File(fileName);
@@ -23,12 +25,14 @@ public class LauncherProperties extends Properties {
     if(propertiesFile.exists()) {
       load(new FileInputStream(propertiesFile));
     }
+
+    setupProperties();
   }
 
   /**
    * Sets up system properties, required for running launcher.
    */
-  public void setupProperties() {
+  protected void setupProperties() {
     for (Object o : keySet()) {
       String key = (String) o;
 

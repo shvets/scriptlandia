@@ -298,7 +298,7 @@
       <module fileurl="file://$PROJECT_DIR$/projects/universal-launcher-common/universal-launcher-common.iml" filepath="$PROJECT_DIR$/projects/universal-launcher-common/universal-launcher-common.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/target/classes" />
   </component>
   <component name="ResourceManagerContainer">

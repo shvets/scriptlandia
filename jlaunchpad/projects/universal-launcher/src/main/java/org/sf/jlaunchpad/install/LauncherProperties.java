@@ -17,7 +17,14 @@ public class LauncherProperties extends Properties {
   public static final String SETTINGS_XML =
           System.getProperty("user.home") + File.separatorChar + ".m2" + File.separatorChar + "settings.xml";
 
+  public final static String LAUNCHER_PROPERTIES =
+          System.getProperty("user.home") + File.separatorChar + ".jlaunchpad";
+
   protected String fileName;
+
+  public LauncherProperties() {
+    this(LAUNCHER_PROPERTIES);
+  }
 
   public LauncherProperties(String fileName) {
     this.fileName = fileName;

@@ -37,6 +37,8 @@ public class CoreInstaller {
     System.out.println("Installing JLaunchPad...");
 
     try {
+      load();
+
       ProjectInstaller installer = new ProjectInstaller();
 
       System.out.println("Installing bootstrap-mini project...");
@@ -117,13 +119,6 @@ public class CoreInstaller {
    */
   public static void main(String[] args) throws LauncherException {
     CoreInstaller installer = new CoreInstaller();
-
-    try {
-      installer.load();
-    }
-    catch (IOException e) {
-      throw new LauncherException(e);
-    }
 
     installer.install(args);
   }

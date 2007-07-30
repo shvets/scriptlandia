@@ -86,8 +86,6 @@ public class UniversalLauncher extends DepsLauncher {
     if(new File(launcherPropertiesFileName).exists()) {
       try {
         launcherProperties = new LauncherProperties(launcherPropertiesFileName);
-
-        launcherProperties.setupProperties();
       }
       catch (IOException e) {
         throw new LauncherException(e);

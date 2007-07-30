@@ -15,28 +15,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher-core.sh" afterPath="$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher-core.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jlaunchpad.iml" afterPath="$PROJECT_DIR$/jlaunchpad.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/pom-reader/pom-reader.iml" afterPath="$PROJECT_DIR$/projects/pom-reader/pom-reader.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher.sh" afterPath="$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jlaunchpad.ipr" afterPath="$PROJECT_DIR$/jlaunchpad.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/samples/tomcat/startup.bat" afterPath="$PROJECT_DIR$/samples/tomcat/startup.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/bootstrap-mini/bootstrap-mini.iml" afterPath="$PROJECT_DIR$/projects/bootstrap-mini/bootstrap-mini.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jlaunchpad.iws" afterPath="$PROJECT_DIR$/jlaunchpad.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher.bat" afterPath="$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher.bat" />
-      <change type="MOVED" beforePath="C:\Work\scriptlandia\trunk\jlaunchpad\samples\intellij-idea\launcher.conf" afterPath="$PROJECT_DIR$/samples/intellij-idea/idea.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/samples/intellij-idea/run.bat" afterPath="$PROJECT_DIR$/samples/intellij-idea/run.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/classworlds/classworlds.iml" afterPath="$PROJECT_DIR$/projects/classworlds/classworlds.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher/src/main/config/classworlds.conf" afterPath="$PROJECT_DIR$/projects/universal-launcher/src/main/config/classworlds.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher-core.bat" afterPath="$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher-core.bat" />
-      <change type="MOVED" beforePath="C:\Work\scriptlandia\trunk\jlaunchpad\samples\tomcat\launcher.conf" afterPath="$PROJECT_DIR$/samples/tomcat/tomcat.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/samples/jboss/run.bat" afterPath="$PROJECT_DIR$/samples/jboss/run.bat" />
-      <change type="MOVED" beforePath="C:\Work\scriptlandia\trunk\jlaunchpad\samples\jboss\launcher.conf" afterPath="$PROJECT_DIR$/samples/jboss/jboss.conf" />
-      <change type="DELETED" beforePath="C:\Work\scriptlandia\trunk\jlaunchpad\samples\tomcat\run.sh" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher-common/universal-launcher-common.iml" afterPath="$PROJECT_DIR$/projects/universal-launcher-common/universal-launcher-common.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher/universal-launcher.iml" afterPath="$PROJECT_DIR$/projects/universal-launcher/universal-launcher.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/samples/intellij-idea/run.sh" afterPath="$PROJECT_DIR$/samples/intellij-idea/run.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/samples/jboss/run.sh" afterPath="$PROJECT_DIR$/samples/jboss/run.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/LauncherProperties.java" afterPath="$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/LauncherProperties.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/install/LauncherProperties.java" afterPath="$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/install/LauncherProperties.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/install/CoreInstaller.java" afterPath="$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/install/CoreInstaller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jlaunchpad.ipr" afterPath="$PROJECT_DIR$/jlaunchpad.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/UniversalLauncher.java" afterPath="$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/UniversalLauncher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/bootstrap-mini/bootstrap-mini.iml" afterPath="$PROJECT_DIR$/projects/bootstrap-mini/bootstrap-mini.iml" />
     </list>
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
@@ -105,20 +90,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="launcher-core.bat" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher-core.bat">
+      <file leaf-file-name="CoreInstaller.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/install/CoreInstaller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="147" column="11" selection-start="3719" selection-end="3719" vertical-scroll-proportion="1.6065292">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="launcher-core.sh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher-core.sh">
+      <file leaf-file-name="GuiInstaller.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/install/GuiInstaller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="11" selection-start="2509" selection-end="2509" vertical-scroll-proportion="0.029209621">
+            <state line="431" column="10" selection-start="13853" selection-end="13853" vertical-scroll-proportion="0.030141843">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UniversalLauncher.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/UniversalLauncher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="155" column="0" selection-start="4623" selection-end="4623" vertical-scroll-proportion="0.030141843">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LauncherProperties.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/LauncherProperties.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="27" selection-start="467" selection-end="467" vertical-scroll-proportion="0.029360967">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LauncherProperties.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/install/LauncherProperties.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="28" selection-start="733" selection-end="733" vertical-scroll-proportion="0.030141843">
+              <folding>
+                <marker date="1185831684647" expanded="true" signature="703:739" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -134,9 +148,9 @@
     <option name="proportions">
       <SplitterProportionsDataImpl>
         <option name="proportions">
-          <collection>
+          <list>
             <option value="0.2" />
-          </collection>
+          </list>
         </option>
       </SplitterProportionsDataImpl>
     </option>
@@ -150,9 +164,9 @@
     <option name="proportions">
       <SplitterProportionsDataImpl>
         <option name="proportions">
-          <collection>
+          <list>
             <option value="0.2" />
-          </collection>
+          </list>
         </option>
       </SplitterProportionsDataImpl>
     </option>
@@ -169,10 +183,10 @@
     <option name="proportions">
       <SplitterProportionsDataImpl>
         <option name="proportions">
-          <collection>
+          <list>
             <option value="0.2" />
             <option value="0.5" />
-          </collection>
+          </list>
         </option>
       </SplitterProportionsDataImpl>
     </option>
@@ -203,9 +217,9 @@
     <option name="proportions">
       <SplitterProportionsDataImpl>
         <option name="proportions">
-          <collection>
+          <list>
             <option value="0.2" />
-          </collection>
+          </list>
         </option>
       </SplitterProportionsDataImpl>
     </option>
@@ -234,7 +248,21 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
+          <option name="myItemId" value="universal-launcher" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\jlaunchpad\projects\universal-launcher" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
           <option name="myItemId" value="jlaunchpad" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="pom-reader" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -244,11 +272,41 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="jlaunchpad" />
+          <option name="myItemId" value="pom-reader" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\jlaunchpad" />
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\jlaunchpad\projects\pom-reader" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="jlaunchpad" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="pom-reader" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\jlaunchpad\projects\pom-reader" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\jlaunchpad\projects\pom-reader\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\jlaunchpad\projects\pom-reader\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\jlaunchpad\projects\pom-reader\src\main\java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\jlaunchpad\projects\pom-reader\src\main\java\org\sf\pomreader" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -270,7 +328,7 @@
   <component name="ProjectStructureConfigurable.UI">
     <option name="proportion" value="0.15" />
     <option name="sideProportion" value="0.2" />
-    <option name="lastEditedConfigurable" value="Modules" />
+    <option name="lastEditedConfigurable" value="General" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="0.5" version="1" splitterProportion="0.5">
@@ -298,6 +356,9 @@
     <property name="RunManagerConfig.showSettingsBeforeRunnig" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.sf.jlaunchpad" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.sf.scriptlandia.launcher" />
       <recent name="org.sf.pomreader" />
@@ -307,18 +368,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.runner">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
@@ -339,6 +388,18 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
@@ -459,7 +520,7 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2466735" order="0" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32669982" order="1" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32643312" order="1" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24947146" order="1" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32669982" order="8" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
@@ -547,55 +608,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/samples/intellij-idea/log4j.dtd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/samples/jruby/jruby.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="37" selection-start="46" selection-end="46" vertical-scroll-proportion="0.083333336">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/samples/intellij-idea/run.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="77" selection-end="77" vertical-scroll-proportion="0.1388889">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="126" selection-end="126" vertical-scroll-proportion="0.028475711">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="4" selection-start="64" selection-end="64" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assembly.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assembly.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -631,6 +643,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher-core.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="168" column="55" selection-start="4140" selection-end="4140" vertical-scroll-proportion="0.6426117">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher-core.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state line="80" column="11" selection-start="2509" selection-end="2509" vertical-scroll-proportion="0.029209621">
@@ -638,9 +657,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher-core.bat">
+    <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/config/classworlds.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="11" selection-start="3719" selection-end="3719" vertical-scroll-proportion="1.6065292">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/install/GuiInstallerFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="13" selection-start="241" selection-end="241" vertical-scroll-proportion="0.028475711">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/install/CoreInstaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/UniversalLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="155" column="0" selection-start="4623" selection-end="4623" vertical-scroll-proportion="0.030141843">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/LauncherProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="27" selection-start="467" selection-end="467" vertical-scroll-proportion="0.029360967">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/install/LauncherProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="28" selection-start="733" selection-end="733" vertical-scroll-proportion="0.030141843">
+          <folding>
+            <marker date="1185831684647" expanded="true" signature="703:739" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/install/GuiInstaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="431" column="10" selection-start="13853" selection-end="13853" vertical-scroll-proportion="0.030141843">
           <folding />
         </state>
       </provider>
