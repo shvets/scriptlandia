@@ -1,9 +1,5 @@
 #!/bin/sh
 
-if [ -f ~/jlaunchpad/config.sh ]; then
-  . ~/jlaunchpad/config.sh
-fi
-
 . ./config.sh
 
 JLAUNCHPAD_PROJECT=.

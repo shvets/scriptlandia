@@ -20,13 +20,20 @@ readCommandLine() {
 }
 
 processArg() {
-  if [ '$arg" = "" ]; then
+  if [ "$1" = "" ]; then
     return
   fi
 
-  PARAM1=${$arg:0:2}
-  PARAM2=${$arg:0:18}
-  PARAM3=${$arg:0:19}
+  if [ ${#1} -lt 2 ]; then
+    return
+  fi
+
+  PARAM1=
+  #${1:0:2}
+  PARAM2=
+  #${$1:0:18}
+  PARAM3=
+  #${$1:0:19}
 
   if [ "$PARAM1" = "-D" ]; then
     JAVA_SYSTEM_PROPS=$JAVA_SYSTEM_PROPS "$arg"
@@ -43,7 +50,7 @@ processArg() {
   fi
 }
 
-readFile0() {
+readFile() {
     SECTION=""
     RESULT=""
     line=""
@@ -207,10 +214,13 @@ processresult() {
 #         CMD=$CMD' '$SECTION_PREFIX$RESULT
 #    fi
 
-  if [ -n `$VARIABLE_NAME` ]; then
-    `eval echo $VARIABLE_NAME=$SECTION_PREFIX$RESULT`
+  if [ "$VARIABLE_NAME" != "" ]; then
+
+ if [ "$VARIABLE_NAME" ]; then
+    eval "$VARIABLE_NAME=\"$SECTION_PREFIX$RESULT\""
   else
-    `eval echo $VARIABLE_NAME=$VARIABLE_VALUE$SEPARATOR$RESULT`
+    eval "$VARIABLE_NAME=\"$VARIABLE_VALUE$SEPARATOR$RESULT\""
+  fi
   fi
 
   SECTION=$line

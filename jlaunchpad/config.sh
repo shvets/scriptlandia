@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [ -f ~/jlaunchpad/config.sh ]; then
+  . ~/jlaunchpad/config.sh
+fi
+
 if [ "x$PROXY_SERVER_HOST_NAME" = "x" ]; then
   PROXY_SERVER_HOST_NAME=
 fi
