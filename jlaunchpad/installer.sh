@@ -14,6 +14,10 @@ CLASSPATH=$CLASSPATH:$UNIVERSAL_LAUNCHER_COMMON_PROJECT/target/universal-launche
 CLASSPATH=$CLASSPATH:$POM_READER_PROJECT/target/pom-reader.jar
 CLASSPATH=$CLASSPATH:$UNIVERSAL_LAUNCHER_PROJECT/target/universal-launcher.jar
 
+if [ "$CYGWIN" = "true" ]; then
+  CLASSPATH=`cygpath -wp $CLASSPATH`
+fi
+
 # MAIN_CLASS=org.sf.jlaunchpad.install.CoreInstaller
 MAIN_CLASS=org.sf.jlaunchpad.install.GuiInstaller
 

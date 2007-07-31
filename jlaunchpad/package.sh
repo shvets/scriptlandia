@@ -1,9 +1,5 @@
 #!/bin/sh
 
-if [ -f ~/jlaunchpad/config.sh ]; then
-  . ~/jlaunchpad/config.sh
-fi
-
 . ./config.sh
 
 BOOTSTRAP_MINI_PROJECT=projects/bootstrap-mini
@@ -20,8 +16,7 @@ if [ ! -f $BOOTSTRAP_MINI_PROJECT/target/classes ]; then
   mkdir -p $BOOTSTRAP_MINI_PROJECT/target/classes
 fi
 
-BM_CLASSPATH=$UNIVERSAL_LAUNCHER_COMMON_PROJECT/target/classes
-BM_CLASSPATH=$BM_CLASSPATH:$BOOTSTRAP_MINI_PROJECT/src/main/java
+BM_CLASSPATH=$BOOTSTRAP_MINI_PROJECT/src/main/java
 
 $JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_SPECIFICATION_VERSION \
   -classpath $BM_CLASSPATH \
@@ -31,15 +26,13 @@ $JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_S
 $JAVA_HOME/bin/jar cf $BOOTSTRAP_MINI_PROJECT/target/bootstrap-mini.jar \
   -C $BOOTSTRAP_MINI_PROJECT/target/classes .
 
-
 echo ---### Builds classworlds project
-
 
 if [ ! -f $CLASSWORLDS_PROJECT/target/classes ]; then
   mkdir -p $CLASSWORLDS_PROJECT/target/classes
 fi
 
-CW_CLASSPATH=$CW_CLASSPATH:$CLASSWORLDS_PROJECT/src/main/java
+CW_CLASSPATH=$CLASSWORLDS_PROJECT/src/main/java
 
 $JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_SPECIFICATION_VERSION \
   -classpath $CW_CLASSPATH \
@@ -48,7 +41,6 @@ $JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_S
 
 $JAVA_HOME/bin/jar cf $CLASSWORLDS_PROJECT/target/classworlds.jar \
   -C $CLASSWORLDS_PROJECT/target/classes .
-
 
 echo ---### Builds universal-launcher-common project
 
@@ -76,8 +68,13 @@ PR_CLASSPATH=$BOOTSTRAP_MINI_PROJECT/target/classes
 PR_CLASSPATH=$PR_CLASSPATH:$UNIVERSAL_LAUNCHER_COMMON_PROJECT/target/classes
 PR_CLASSPATH=$PR_CLASSPATH:$POM_READER_PROJECT/src/main/java
 
+if [ "$CYGWIN" = "true" ]; then
+  PR_CLASSPATH=`cygpath -wp $PR_CLASSPATH`
+fi
+
 $JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_SPECIFICATION_VERSION \
   -classpath $PR_CLASSPATH \
+  -sourcepath $POM_READER_PROJECT/src/main/java \
   -d $POM_READER_PROJECT/target/classes \
   $POM_READER_PROJECT/src/main/java/org/sf/pomreader/*.java
 
@@ -96,6 +93,10 @@ UL_CLASSPATH=$UL_CLASSPATH:$BOOTSTRAP_MINI_PROJECT/target/classes
 UL_CLASSPATH=$UL_CLASSPATH:$POM_READER_PROJECT/target/classes
 UL_CLASSPATH=$UL_CLASSPATH:$CLASSWORLDS_PROJECT/target/classes
 
+if [ "$CYGWIN" = "true" ]; then
+  UL_CLASSPATH=`cygpath -wp $UL_CLASSPATH`
+fi
+
 $JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_SPECIFICATION_VERSION \
   -classpath $UL_CLASSPATH \
   -d $UNIVERSAL_LAUNCHER_PROJECT/target/classes \
@@ -105,4 +106,3 @@ $JAVA_HOME/bin/javac -nowarn -source $JAVA_SPECIFICATION_VERSION -target $JAVA_S
 
 $JAVA_HOME/bin/jar cf $UNIVERSAL_LAUNCHER_PROJECT/target/universal-launcher.jar \
   -C $UNIVERSAL_LAUNCHER_PROJECT/target/classes .
-
