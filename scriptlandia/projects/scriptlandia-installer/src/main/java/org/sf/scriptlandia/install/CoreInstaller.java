@@ -36,21 +36,16 @@ public class CoreInstaller {
    * @throws LauncherException the exception
    */
   public void install(String[] args) throws LauncherException {
-    System.out.println("install 1");
 //    System.setProperty("maven.repo.local", System.getProperty("repository.home"));
 
     String config = System.getProperty("config");
 
-    System.out.println("install 2");
     if(config == null || !Boolean.parseBoolean(config)) {
-    System.out.println("install 3");
       instalRequiredlProjects(args);
-    System.out.println("install 32");
     }
     else if(Boolean.parseBoolean(config)) {
       config(args);
     }
-    System.out.println("install 4");    
   }
 
   /**
