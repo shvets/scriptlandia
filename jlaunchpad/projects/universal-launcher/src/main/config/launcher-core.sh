@@ -43,7 +43,7 @@ processArg() {
     JAVA_BOOTCLASSPATH_APPEND=$JAVA_BOOTCLASSPATH_APPEND "$arg"
   elif [ "$arg" = "-debug" ]; then
     JAVA_SYSTEM_PROPS=$JAVA_SYSTEM_PROPS -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=6006
-  elif [ "$PARAM3" == "-Djava.library.path" ]; then
+  elif [ "$PARAM3" = "-Djava.library.path" ]; then
     JAVA_LIBRARY_PATH=$JAVA_LIBRARY_PATH "$arg"
   else
     COMMAND_LINE_ARGS=$COMMAND_LINE_ARGS "$arg"
