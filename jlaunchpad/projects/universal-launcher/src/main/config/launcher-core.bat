@@ -55,8 +55,6 @@ if not "%LAUNCHER_APP%.conf" == "%APP%.conf" (
   if exist %APP%.conf FOR /F "usebackq delims=" %%i in ("%APP%.conf") DO call :processline ^"%%i^"
 )
 
-rem append result to command
-if DEFINED RESULT call :processresult
 
 if not "%JAVA_CLASSPATH%" == "" (
   SET JAVA_CLASSPATH=-classpath "%JAVA_CLASSPATH%"
@@ -68,6 +66,18 @@ if not "%JAVA_BOOTCLASSPATH_PREPEND%" == "" (
 
 if not "%JAVA_BOOTCLASSPATH_APPPEND%" == "" (
   SET JAVA_BOOTCLASSPATH_APPPEND=-Xbootclasspath/a:"%JAVA_BOOTCLASSPATH_APPPEND%"
+)
+
+if not "%JAVA_ENDORSED_DIRS%" == "" (
+  SET JAVA_ENDORSED_DIRS=-Djava.endorsed.dirs="%JAVA_ENDORSED_DIRS%"
+)
+
+if not "%JAVA_EXT_DIRS" == "" (
+  SET JAVA_EXT_DIRS=-Djava.ext.dirs="%JAVA_EXT_DIRS%"
+)
+
+if not "%JAVA_LIBRARY_PATH" == "" (
+  SET JAVA_LIBRARY_PATH=-Djava.library.path="%JAVA_LIBRARY_PATH%"
 )
 
 %CMD% ^
@@ -103,17 +113,17 @@ IF "%FIRST_CHAR%" == "#" goto end
 rem join the line to result
 if defined RESULT set RESULT=%RESULT%%SEPARATOR%
 
-if "%PREFIX%" == "-D" (
-  set RESULT=%RESULT%%PREFIX%"%~1"
+if "%VARIABLE_NAME%" == "JAVA_SYSTEM_PROPS" (
+  set RESULT=%RESULT%-D"%~1%~2"
   goto end
 )
 
-if "%PREFIX%" == "SET" (
+if "%VARIABLE_NAME%" == "SET_VARIABLES" (
   set %~1
   goto end
 )
 
-set RESULT=%RESULT%%PREFIX%%~1
+set RESULT=%RESULT%%~1
 goto end
 
 :option
@@ -130,7 +140,7 @@ set VARIABLE_NAME=JAVA_CLASSPATH
 set VARIABLE_VALUE=%JAVA_CLASSPATH%
 set RESULT=
 rem set SECTION_PREFIX=-classpath
-set SECTION_PREFIX=
+rem set SECTION_PREFIX=
 set PREFIX=
 set SEPARATOR=;
 goto end
@@ -139,8 +149,8 @@ goto end
 set VARIABLE_NAME=JAVA_ENDORSED_DIRS
 set VARIABLE_VALUE=%JAVA_ENDORSED_DIRS%
 set RESULT=
-set SECTION_PREFIX=-Djava.endorsed.dirs=
-set PREFIX=
+rem set SECTION_PREFIX=-Djava.endorsed.dirs=
+rem set PREFIX=
 set SEPARATOR=;
 goto end
 
@@ -148,8 +158,8 @@ goto end
 set VARIABLE_NAME=JAVA_EXT_DIRS
 set VARIABLE_VALUE=%JAVA_EXT_DIRS%
 set RESULT=
-set SECTION_PREFIX=-Djava.ext.dirs=
-set PREFIX=
+rem set SECTION_PREFIX=-Djava.ext.dirs=
+rem set PREFIX=
 set SEPARATOR=;
 goto end
 
@@ -157,8 +167,8 @@ goto end
 set VARIABLE_NAME=JAVA_LIBRARY_PATH
 set VARIABLE_VALUE=%JAVA_LIBRARY_PATH%
 set RESULT=
-set SECTION_PREFIX=-Djava.library.path=
-set PREFIX=
+rem set SECTION_PREFIX=-Djava.library.path=
+rem set PREFIX=
 set SEPARATOR=;
 goto end
 
@@ -166,8 +176,8 @@ goto end
 set VARIABLE_NAME=JAVA_SYSTEM_PROPS
 set VARIABLE_VALUE=%JAVA_SYSTEM_PROPS%
 set RESULT=
-set SECTION_PREFIX=
-set PREFIX=-D
+rem set SECTION_PREFIX=
+rem set PREFIX=-D
 set SEPARATOR= 
 goto end
 
@@ -175,8 +185,8 @@ goto end
 set VARIABLE_NAME=JAVA_BOOTCLASSPATH
 set VARIABLE_VALUE=%JAVA_BOOTCLASSPATH%
 set RESULT=
-set SECTION_PREFIX=-Xbootclasspath:
-set PREFIX=
+rem set SECTION_PREFIX=-Xbootclasspath:
+rem set PREFIX=
 set SEPARATOR=;
 goto end
 
@@ -186,7 +196,7 @@ set VARIABLE_VALUE=%JAVA_BOOTCLASSPATH_PREPEND%
 set RESULT=
 rem set SECTION_PREFIX=-Xbootclasspath/p:
 set SECTION_PREFIX=
-set PREFIX=
+rem set PREFIX=
 set SEPARATOR=;
 goto end
 
@@ -195,8 +205,8 @@ set VARIABLE_NAME=JAVA_BOOTCLASSPATH_APPEND
 set VARIABLE_VALUE=%JAVA_BOOTCLASSPATH_APPEND%
 set RESULT=
 rem set SECTION_PREFIX=-Xbootclasspath/a:
-set SECTION_PREFIX=
-set PREFIX=
+rem set SECTION_PREFIX=
+rem set PREFIX=
 set SEPARATOR=;
 goto end
 
@@ -205,8 +215,8 @@ set VARIABLE_NAME=JVM_ARGS
 set VARIABLE_VALUE=%JVM_ARGS%
 SET JVM_ARGS=
 set RESULT=
-set SECTION_PREFIX=
-set PREFIX=
+rem set SECTION_PREFIX=
+rem set PREFIX=
 set SEPARATOR= 
 goto end
 
@@ -215,8 +225,8 @@ set VARIABLE_NAME=LAUNCHER_CLASS
 set VARIABLE_VALUE=%LAUNCHER_CLASS%
 SET LAUNCHER_CLASS=
 set RESULT=
-set SECTION_PREFIX=
-set PREFIX=
+rem set SECTION_PREFIX=
+rem set PREFIX=
 set SEPARATOR= 
 goto end
 
@@ -224,8 +234,8 @@ goto end
 set VARIABLE_NAME=SET_VARIABLES
 set VARIABLE_VALUE=%SET_VARIABLES%
 set RESULT=
-set SECTION_PREFIX=
-set PREFIX=SET
+rem set SECTION_PREFIX=
+rem set PREFIX=SET
 set SEPARATOR= 
 goto end
 
@@ -233,8 +243,8 @@ goto end
 set VARIABLE_NAME=COMMAND_LINE_ARGS
 set VARIABLE_VALUE=%COMMAND_LINE_ARGS%
 set RESULT=
-set SECTION_PREFIX=
-set PREFIX=
+rem set SECTION_PREFIX=
+rem set PREFIX=
 set SEPARATOR= 
 goto end
 
