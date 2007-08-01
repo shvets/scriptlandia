@@ -30,9 +30,9 @@ processArg() {
     return
   fi
 
-  PARAM1=${arg:0:2}
-  PARAM2=${arg:0:18}
-  PARAM3=${arg:0:19}
+  PARAM1=`expr substr $arg 1 2`
+  PARAM2=`expr substr $arg 1 19`
+  PARAM3=`expr substr $arg 1 20`
 
   if [ "$PARAM1" = "-D" ]; then
     JAVA_SYSTEM_PROPS="$JAVA_SYSTEM_PROPS $arg"
@@ -214,12 +214,11 @@ processresult() {
 #    fi
 
   if [ "$VARIABLE_NAME" != "" ]; then
-
- if [ "$VARIABLE_NAME" ]; then
-    eval "$VARIABLE_NAME=\"$SECTION_PREFIX$RESULT\""
-  else
-    eval "$VARIABLE_NAME=\"$VARIABLE_VALUE$SEPARATOR$RESULT\""
-  fi
+    if [ "$VARIABLE_NAME" ]; then
+      eval "$VARIABLE_NAME=\"$SECTION_PREFIX$RESULT\""
+    else
+      eval "$VARIABLE_NAME=\"$VARIABLE_VALUE$SEPARATOR$RESULT\""
+    fi
   fi
 
   SECTION=$line
@@ -265,6 +264,9 @@ else
     CMD=java
 fi
 
+LAUNCHER_APP=$LAUNCHER_HOME/launcher
+APP=`pwd`/$APP_NAME
+
 JAVA_CLASSPATH=
 JAVA_ENDORSED_DIRS=
 JAVA_EXT_DIRS=
@@ -277,25 +279,31 @@ JVM_ARGS=
 LAUNCHER_CLASS=
 COMMAND_LINE_ARGS=
 
+# process command line
+
 readCommandLine $*
 
-FILE="`pwd`/$APP_NAME.conf"
+# process config file located in $launcher.home
 
-if [ "$APP.conf -ne $FILE" ]; then
-  if [ -r "$FILE" ]; then
-    readFile
-  fi
-fi
-
-FILE=$APP'.conf'
+FILE=$LAUNCHER_APP'.conf'
 
 if [ -r "$FILE" ]; then
   readFile
 else
-    echo $FILE not found
+  echo $FILE not found
 fi
 
-echo $CMD \
+# process config file located in $current.dir
+
+FILE=$APP.conf
+
+if [ -r "$FILE" ]; then
+  if [ "$LAUNCHER_APP.conf" != "$APP.conf" ]; then
+    readFile
+  fi
+fi
+
+$CMD \
   $JAVA_BOOTCLASSPATH_APPEND $JAVA_BOOTCLASSPATH_PREPEND $JAVA_BOOTCLASSPATH \
   $JAVA_LIBRARY_PATH $JAVA_EXT_DIRS $JAVA_ENDORSED_DIRS \
   $JVM_ARGS \

@@ -108,7 +108,7 @@ public class CoreInstaller {
       throw new LauncherException(e);
     }
 
-    System.out.println("Installed JLaunchPad.");
+    System.out.println("JLaunchPad is installed.");
   }
 
   /**

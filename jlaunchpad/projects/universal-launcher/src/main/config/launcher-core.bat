@@ -15,13 +15,6 @@ REM but WITHOUT ANY WARRANTY; without even the implied warranty of
 REM MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 REM Lesser General Public License for more details.
 
-rem if defined APP_NAME goto init
-rem echo APP_NAME variable is not defined
-rem pause
-rem goto end
-
-rem :init
-
 set JAVA_HOME=@java.home.internal@
 
 if not defined CMD set CMD=java.exe

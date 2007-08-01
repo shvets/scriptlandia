@@ -1,6 +1,6 @@
 #!/bin/sh
 
-LAUNCHER_HOME=~/launcher
+LAUNCHER_HOME=/media/hda5/launcher
 
 MAIN_CLASS=org.jruby.Main
 
