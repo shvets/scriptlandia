@@ -1,10 +1,13 @@
 #!/bin/sh
 
-if [ -f ~/jlaunchpad/config.sh ]; then
-  . ~/jlaunchpad/config.sh
-fi
-
 . ./config.sh
+
+if { $LAUNCHER_HOME/launcher.sh ]; then
+  echo Please run jlaunchpad-installer.bat first.
+
+  pause
+  exit
+fi
 
 SCRIPTLANDIA_INSTALLER_PROJECT=projects/scriptlandia-installer
 

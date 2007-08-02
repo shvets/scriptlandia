@@ -2,6 +2,13 @@
 
 @call config.bat
 
+if not exist %LAUNCHER_HOME%\launcher.bat (
+  echo Please run jlaunchpad-installer.bat first.
+
+  pause
+  exit
+)
+
 rem SET MAIN_CLASS=org.sf.scriptlandia.install.CoreInstaller
 SET MAIN_CLASS=org.sf.scriptlandia.install.GuiInstaller
 

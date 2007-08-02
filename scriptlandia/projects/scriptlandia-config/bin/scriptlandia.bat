@@ -12,6 +12,7 @@ rem set APP_NAME=%APP:~0,-4%
 rem set APP=%SCRIPTLANDIA_HOME%\%APP:~0,-4%
 
 SET APP_NAME=scriptlandia
+SET MAIN_APP_CONF=%SCRIPTLANDIA_HOME%\%APP_NAME%.conf
 
 FOR %%i IN (%*) DO call :processParam ^"%%i^"
 
