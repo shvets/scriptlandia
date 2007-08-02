@@ -22,9 +22,13 @@ if defined JAVA_HOME set CMD="%JAVA_HOME%\bin\%CMD%"
 if defined JAVA_CMD set CMD="%JAVA_CMD%"
 set JAVA_CMD=
 
-set LAUNCHER_APP=%LAUNCHER_HOME%\launcher
-set APP=%CD%\%APP_NAME%
+set LAUNCHER_APP_CONF=%LAUNCHER_HOME%\launcher.conf
 
+if not defined MAIN_APP_CONF (
+ SET MAIN_APP_CONF=%LAUNCHER_APP_CONF%
+)
+
+set CURRENT_APP_CONF=%CD%\%APP_NAME%.conf
 
 SET JAVA_CLASSPATH=
 SET JAVA_ENDORSED_DIRS=
@@ -47,14 +51,22 @@ set RESULT=
 
 rem process config file located in $launcher.home
 
-FOR /F "usebackq delims=" %%i in ("%LAUNCHER_APP%.conf") DO call :processline  ^"%%i^"
+FOR /F "usebackq delims=" %%i in ("%LAUNCHER_APP_CONF%") DO call :processline  ^"%%i^"
+
+rem process config file located in $main.app.dir
+
+if not "%MAIN_APP_CONF%" == "%LAUNCHER_APP_CONF%" (
+  if exist %MAIN_APP_CONF% FOR /F "usebackq delims=" %%i in ("%MAIN_APP_CONF%") DO call :processline ^"%%i^"
+)
 
 rem process config file located in $current.dir
 
-if not "%LAUNCHER_APP%.conf" == "%APP%.conf" (
-  if exist %APP%.conf FOR /F "usebackq delims=" %%i in ("%APP%.conf") DO call :processline ^"%%i^"
+if not "%CURRENT_APP_CONF%" == "%LAUNCHER_APP_CONF%" (
+  if exist %CURRENT_APP_CONF% FOR /F "usebackq delims=" %%i in ("%CURRENT_APP_CONF%") DO call :processline ^"%%i^"
 )
 
+
+if DEFINED RESULT call :processresult
 
 if not "%JAVA_CLASSPATH%" == "" (
   SET JAVA_CLASSPATH=-classpath "%JAVA_CLASSPATH%"
@@ -114,13 +126,20 @@ rem join the line to result
 if defined RESULT set RESULT=%RESULT%%SEPARATOR%
 
 if "%VARIABLE_NAME%" == "JAVA_SYSTEM_PROPS" (
-  set RESULT=%RESULT%-D"%~1%~2"
+  set RESULT=%RESULT%"-D%~1"
   goto end
 )
 
 if "%VARIABLE_NAME%" == "SET_VARIABLES" (
   set %~1
   goto end
+)
+
+if "%VARIABLE_NAME%" == "LAUNCHER_CLASS" (
+  if not defined LAUNCHER_CLASS (
+    SET LAUNCHER_CLASS=%~1
+    goto end
+  )
 )
 
 set RESULT=%RESULT%%~1

@@ -1,6 +1,5 @@
     JLaunchPad tutorial
 
-
     Description 
 
 JLaunchPad is the program for simplifying installation/starting of Java applications. Once the 
@@ -65,11 +64,11 @@ Instead, you provide dependencies for the project and they will be downloaded au
 
     Implementation
 
-For the implementation 2 projects are reused:
+For the implementation the following projects were reused:
 
-- classworlds project - 
+- classworlds project  
 - bootstrap-mini project
-
+- Java App Launcher 		https://java-app-launcher.dev.java.net
 
 
     Examples
