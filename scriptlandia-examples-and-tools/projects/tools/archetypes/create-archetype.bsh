@@ -1,113 +1,265 @@
-// create-archetype.bsh
+// create-archetype.bsh 
+// Author: Alexander Shvets
 
-import org.sf.scriptlandia.MavenHelper;
+org.sf.scriptlandia.ScriptlandiaHelper.resolveDependencies("jdom", "jdom", "1.0");
 
+sourceRelative("Group.bsh");
+sourceRelative("Archetype.bsh");
+sourceRelative("create-archetype-gui.bsh");
+sourceRelative("XmlHelper.bsh");
 
-public class CreateArchetype extends JFrame {
-  private JComboBox typeField = new JComboBox(archetypes);
+import org.jdom.Document;
+import org.jdom.Attribute;
+import org.jdom.input.SAXBuilder;
 
-  private JTextField groupIdField = new JTextField(15);
-  private JTextField artifactIdField = new JTextField(15);
-  private JTextField versionField = new JTextField(15);
+public class ArchetypeCreator extends XmlHelper {
+  private BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
-  JButton createButton = new JButton("Create archetype...");
+  private boolean isConsoleMode = false;
 
-  private String[] archetypes;
-  private String archetypeGroupId;
-  private String archetypeArtifactIdPrefix;
-  private String archetypeVersion;
-  private String remoteRepositories;
+  private List groups = new ArrayList();
 
-  public CreateArchetype(String type) {
-    setTitle("Create new (" + type + ") archetype");
-
-    setSize(600, 200);
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-    groupIdField.setText("org.test");
-    artifactIdField.setText("test");
-    versionField.setText("1.0");
-
-    createButton.addActionListener(new ActionListener() {
-      void actionPerformed(ActionEvent event) {
-        submit();
+  public ArchetypeCreator(String[] args) {
+    if(args.length > 0) {
+      if(args[0].equalsIgnoreCase("-console")) {
+        isConsoleMode = true;
       }
-    });
-
-    JPanel topPanel = createPanel();
-
-    setContentPane(topPanel);
+    }
   }
 
-  JPanel createPanel() {
-    // panel 2
-
-    JPanel panel2 = new JPanel();
-    panel2.setLayout(new BoxLayout(panel2, BoxLayout.X_AXIS));
-
-    panel2.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel2.add(new JLabel("Group ID:"));
-    panel2.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel2.add(groupIdField);
-    panel2.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel2.add(new JLabel("Artifact ID:"));
-    panel2.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel2.add(artifactIdField);
-    panel2.add(Box.createRigidArea(new Dimension(10, 0)));
-
-    // panel 3
-
-    JPanel panel3 = new JPanel();
-    panel3.setLayout(new BoxLayout(panel3, BoxLayout.X_AXIS));
-
-    panel3.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel3.add(new JLabel("Version:"));
-    panel3.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel3.add(versionField);
-    panel3.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel3.add(new JLabel("type:"));
-    panel3.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel3.add(typeField);
-    panel3.add(Box.createRigidArea(new Dimension(10, 0)));
-
-    // panel 4
-
-    JPanel panel4 = new JPanel();
-    panel4.setLayout(new BoxLayout(panel4, BoxLayout.X_AXIS));
-
-    panel4.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel4.add(createButton);
-    panel4.add(Box.createRigidArea(new Dimension(10, 0)));
-
-    // top panel
-    JPanel topPanel = new JPanel();
-
-    topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
-    topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
-    topPanel.add(panel2);
-    topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
-    topPanel.add(panel3);
-    topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
-    topPanel.add(panel4);
-    topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
-
-    return topPanel;
+  public boolean isConsoleMode() {
+    return isConsoleMode;
   }
 
-  private void submit() {
-    String repositoryHome = System.getProperty("repository.home");
-    String scriptlandiaVersion = System.getProperty("scriptlandia.version");
+  public void setConsoleMode(boolean isConsoleMode) {
+    this.isConsoleMode = isConsoleMode;
+  }
 
-    System.setProperty("archetypeGroupId", archetypeGroupId);
-    System.setProperty("archetypeArtifactId", archetypeArtifactIdPrefix + getType());
-    System.setProperty("archetypeVersion", archetypeVersion);
+  public List getGroups() {
+    return groups;
+  }
 
-    System.setProperty("groupId", getGroupId());
-    System.setProperty("artifactId", getArtifactId());
-    System.setProperty("version", getVersion());
+  public void readConfigFile(String fileName) {
+    groups.clear();
 
-    if(remoteRepositories != null) {
-      System.setProperty("remoteRepositories", remoteRepositories);
+    read(new File(fileName));
+
+    Element root = document.getRootElement();
+
+    List children = root.getChildren();
+
+    for (int i=0; i < children.size(); i++) {
+      Object o = children.get(i);
+
+      if (o instanceof Element) {
+        groups.add(readGroup((Element) o));
+      }
+    }
+  }
+
+  private Group readGroup(Element element) {
+    String name = element.getAttribute("name").getValue();
+    String groupId = element.getAttribute("groupId").getValue();
+    String version = element.getAttribute("version").getValue();
+
+    Attribute prefixAttribute = element.getAttribute("prefix");
+
+    String prefix;
+
+    if(prefixAttribute != null) {
+      prefix = prefixAttribute.getValue();
+    }
+    else {
+      prefixn = "";
+    }
+
+    Group group = new Group();
+
+    group.setName(name);
+    group.setGroupId(groupId);
+    group.setPrefix(prefix);
+    group.setVersion(version);
+
+    List archetypes = group.getArchetypes();
+    archetypes.clear();
+
+    List children1 = getElementByName(element, "archetypes").getChildren();
+
+    for (int i=0; i < children1.size(); i++) {
+      Object o = children1.get(i);
+
+      if (o instanceof Element) {
+        archetypes.add(readArchetype(o, group));
+      }
+    }
+
+    List repositories = group.getRepositories();
+    repositories.clear();
+
+    Element repositoriesElement = getElementByName(element, "repositories");
+
+    if(repositoriesElement != null) {
+      List children2 = repositoriesElement.getChildren();
+
+      for (int i=0; i < children2.size(); i++) {
+        Object o = children2.get(i);
+
+        if (o instanceof Element) {
+          repositories.add(o.getText());
+        }
+      }
+    }
+
+    Element notesElement = getElementByName(element, "notes");
+
+    if(notesElement != null) {
+      group.setNotes(notesElement.getText());
+    }
+
+    return group;
+  }
+
+  private Archetype readArchetype(Element element, Group group) {
+    String name = element.getAttribute("name").getValue();
+
+    Attribute descriptionAttribute = element.getAttribute("description");
+
+    String description;
+
+    if(descriptionAttribute != null) {
+      description = descriptionAttribute.getValue();
+    }
+    else {
+      description = "";
+    }
+
+    Attribute versionAttribute = element.getAttribute("version");
+
+    String version;
+
+    if(versionAttribute != null) {
+      version = versionAttribute.getValue();
+    }
+    else {
+      version = group.getVersion();
+    }
+
+    Archetype archetype = new Archetype();
+
+    archetype.setName(name);
+    archetype.setDescription(description);
+    archetype.setVersion(version);
+
+    return archetype;
+  }
+
+  private int readInteger() {
+    int choice = -1;
+
+    while(choice == -1) {
+      System.out.print(">");
+      String input = in.readLine();
+
+      try {
+        choice = new Integer(input);
+      }
+      catch(NumberFormatException e) {
+        ;
+      }
+    }
+
+    return choice;
+  }
+
+  private String readString() {
+    String choice = "";
+
+    while(choice.equals("")) {
+      System.out.print(">");
+
+      choice = in.readLine();
+    }
+
+    return choice;
+  }
+
+  public void interactConsole() {
+    System.out.println("Enter Archetype Group:");
+    System.out.println("Available List:");
+
+    List groups = getGroups();
+
+    for(int i=0; i < groups.size(); i++) {
+      Group group = (Group)groups.get(i);
+
+      System.out.println("" + (i+1) + ": " + group.getName());
+    }
+
+    int choice1 = readInteger();
+
+    Group group = (Group)groups.get(choice1-1);
+
+    System.out.println("You selected group: " + group.getName());
+
+    System.out.println("Enter Archetype:");
+    System.out.println("Available List:");
+
+    List archetypes = group.getArchetypes();
+
+    for(int i=0; i < archetypes.size(); i++) {
+      Archetype archetype = (Archetype)archetypes.get(i);
+
+      System.out.println("" + (i+1) + ": " + archetype.getName() + " -> " + archetype.getDescription());
+    }
+
+    int choice2 = readInteger();
+
+    Archetype archetype = (Archetype)archetypes.get(choice2-1);
+
+    System.out.println("You selected archetype: " + archetype.getName());
+
+    System.out.println("Group ID:");
+    String groupId = readString();
+
+    System.out.println("Artifact ID:");
+    String artifactId = readString();
+
+    System.out.println("Version:");
+    String version = readString();
+
+    print(groupId);
+    print(artifactId);
+    print(version);
+
+    System.out.println("Creating archetype...");
+    createArchetype(group, archetype, groupId, artifactId, version);
+    System.out.println("Archetype created.");
+  }
+
+  public void createArchetype(Group group, Archetype archetype, 
+                              String groupId, String artifactId, String version) {
+    System.setProperty("archetypeGroupId", group.getGroupId());
+    System.setProperty("archetypeArtifactId", group.getPrefix() + archetype.getName());
+    System.setProperty("archetypeVersion", archetype.getVersion());
+
+    System.setProperty("groupId", groupId);
+    System.setProperty("artifactId", artifactId);
+    System.setProperty("version", version);
+
+    List repositories = group.getRepositories();
+
+    if(repositories.size() > 0) {
+      StringBuffer sb = new StringBuffer();
+
+      for(int i=0; i < repositories.size(); i++) {
+        sb.append(repositories.get(i));
+
+        if(i < repositories.size()-1) {
+          sb.append(" ");
+        }
+      }
+
+      System.setProperty("remoteRepositories", sb.toString());
     }
 
     String[] args = new String[] { "archetype:create" };
@@ -115,40 +267,20 @@ public class CreateArchetype extends JFrame {
     MavenHelper.executeMaven(args);
   }
 
-  private String getGroupId() {
-    return groupIdField.getText();
-  }
+  public static void main(String[] args) {
+    ArchetypeCreator archetypeCreator = new ArchetypeCreator(bsh.args);
 
-  private String getArtifactId() {
-    return artifactIdField.getText();
-  }
+    archetypeCreator.readConfigFile("archetypes.xml");
 
-  private String getVersion() {
-    return versionField.getText();
-  }
+    if(archetypeCreator.isConsoleMode()) {
+      archetypeCreator.interactConsole();
+    }
+    else {
+      CreateArchetypeFrame frame = new CreateArchetypeFrame(archetypeCreator);
 
-  private String getType() {
-    return typeField.getSelectedItem();
-  }
-
-  public void setArchetypes(String[] archetypes) {
-    this.archetypes = archetypes; 
-  }
-
-  public void setArchetypeGroupId(String archetypeGroupId) {
-    this.archetypeGroupId = archetypeGroupId;
-  }
-
-  public void setArchetypeArtifactIdPrefix(String archetypeArtifactIdPrefix) {
-    this.archetypeArtifactIdPrefix = archetypeArtifactIdPrefix;
-  }
-
-  public void setArchetypeVersion(String archetypeVersion) {
-    this.archetypeVersion = archetypeVersion;
-  }
-
-  public void setRemoteRepositories(String remoteRepositories) {
-    this.remoteRepositories = remoteRepositories;
+      frame.setVisible(true);
+    }
   }
 
 }
+
