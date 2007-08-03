@@ -2,11 +2,8 @@
 
 <project name="fixcrlf" default="run" basedir=".">
 
-  <input message="Input folder name:"
-         addproperty="dir"/>
-
   <target name="run">
-    <fixcrlf eol="unix" srcdir="${dir}" includes="*.sh"/>
+    <fixcrlf eol="unix" srcdir="${user.dir}" includes="*.sh"/>
   </target>
 
 </project>

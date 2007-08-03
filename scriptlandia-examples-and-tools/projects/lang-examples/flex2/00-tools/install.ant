@@ -2,9 +2,11 @@
 
 <project name="install.ant" default="install" basedir=".">
 
+  <property file="tool.properties"/>
+
   <target name="install">
-    <copy todir="${scriptlandia.home}/tools" file="flex2-compiler.ant" overwrite="true"/>
-    <copy todir="${scriptlandia.home}/tools" file="flex2-player.bat" overwrite="true"/>
+    <copy todir="${scriptlandia.tools.home}" file="flex2-compiler.ant" overwrite="true"/>
+    <copy todir="${scriptlandia.tools.home}" file="flex2-player.bat" overwrite="true"/>
   </target>
 
 </project>

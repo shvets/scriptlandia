@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" creationComplete="listService.send()">
+ 
+   <mx:HTTPService id="listService" url="http://localhost:8080/flexongrails/book/list" useProxy="false" method="GET"/>
+   <mx:HTTPService id="saveService" url="http://localhost:8080/flexongrails/book/save" useProxy="false" method="POST" result="listService.send()">
+      <mx:request xmlns="">
+         <id>{book_id.text}</id>
+         <isbn>{isbn.text}</isbn>
+         <title>{title.text}</title>
+         <author>{author.text}</author>
+         <price>{price.text}</price>
+         <format>{format.text}</format>
+      </mx:request>
+   </mx:HTTPService>
+   <mx:HTTPService id="deleteService" url="http://localhost:8080/flexongrails/book/delete" useProxy="false" method="POST" result="listService.send()">
+      <mx:request xmlns="">
+         <id>{dg.selectedItem.id}</id>
+      </mx:request>
+   </mx:HTTPService>
+ 
+   <mx:NumberFormatter id="priceFormatter" precision="2"/>
+
+   <mx:Script>
+      <![CDATA[
+         [Bindable]
+         private var formatArray:Array = ["Hardcover", "Paperback", "e-Book"];
+ 
+         private function clearForm():void {
+            book_id.text = "";
+            isbn.text = "";
+            title.text = "";
+            author.text = "";
+            price.text = "";
+            format.selectedIndex = 0;
+         }
+   
+         private function formatPrice(item:Object, column:DataGridColumn):String {
+            return priceFormatter.format(item.price);
+         }
+      ]]>
+   </mx:Script>
+ 
+   <mx:VDividedBox x="0" y="0" height="100%" width="100%" paddingLeft="10" paddingRight="10" paddingTop="10" paddingBottom="10">
+      <mx:Panel width="100%" height="300" layout="absolute" title="Create/Update Book">
+         <mx:Form x="10" y="10" width="930" height="200">
+            <mx:FormItem label="ID">
+               <mx:TextInput width="120" id="book_id" text="{dg.selectedItem.id}" enabled="false"/>
+            </mx:FormItem>
+            <mx:FormItem label="ISBN">
+               <mx:TextInput width="220" id="isbn" text="{dg.selectedItem.isbn}" maxChars="20"/>
+            </mx:FormItem>
+            <mx:FormItem label="Title">
+               <mx:TextInput width="320" id="title" text="{dg.selectedItem.title}" maxChars="50"/>
+            </mx:FormItem>
+            <mx:FormItem label="Author">
+               <mx:TextInput width="320" id="author" text="{dg.selectedItem.author}" maxChars="50"/>
+            </mx:FormItem>
+            <mx:FormItem label="Price">
+               <mx:TextInput width="120" id="price" text="{priceFormatter.format(dg.selectedItem.price)}"/>
+            </mx:FormItem>
+            <mx:FormItem label="Format" width="220">
+               <mx:ComboBox id="format" selectedIndex="{formatArray.indexOf(dg.selectedItem.format)}">
+                  <mx:dataProvider>{formatArray}</mx:dataProvider>    
+               </mx:ComboBox>
+            </mx:FormItem>
+         </mx:Form>
+         <mx:ControlBar horizontalAlign="right">
+            <mx:Button label="New" click="clearForm()"/>
+            <mx:Button label="Save" click="saveService.send(); clearForm()"/>
+         </mx:ControlBar>
+      </mx:Panel>
+      <mx:Panel width="100%" height="444" layout="absolute" title="Book List">
+         <mx:DataGrid x="0" y="0" width="100%" height="100%" id="dg" dataProvider="{listService.lastResult.data.book}">
+         <mx:columns>
+            <mx:DataGridColumn width="120" headerText="ID" dataField="id"/>
+            <mx:DataGridColumn width="220" headerText="ISBN" dataField="isbn"/>
+            <mx:DataGridColumn width="320" headerText="Title" dataField="title"/>
+            <mx:DataGridColumn width="320" headerText="Author" dataField="author"/>
+            <mx:DataGridColumn width="120" headerText="Price" dataField="price" labelFunction="formatPrice"/>
+            <mx:DataGridColumn width="220" headerText="Format" dataField="format"/>
+         </mx:columns>
+         </mx:DataGrid>
+         <mx:ControlBar horizontalAlign="right">
+            <mx:Button label="Delete" click="deleteService.send()" enabled="{dg.selectedItem != null}"/>
+         </mx:ControlBar>
+      </mx:Panel>
+   </mx:VDividedBox>
+ 
+</mx:Application>
