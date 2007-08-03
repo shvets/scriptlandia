@@ -72,35 +72,35 @@ public class ExtXmlHelper extends XmlHelper {
 
     read(new File(fileName));
 
-    Element child = document.getRootElement();
+    Element root = document.getRootElement();
 
-    Element registration = getElementByName(child, "registration");
+    Element registration = getElementByName(root, "registration");
 
     List extensions = getElementByName(registration, "extensions").getChildren();
 
-    Attribute disabled = child.getAttribute("disabled");
+    Attribute disabled = root.getAttribute("disabled");
 
     if(disabled != null && disabled.getValue().equalsIgnoreCase("true")) {
       return null;
     }
 
-    String name = child.getAttribute("name").getValue();
+    String name = root.getAttribute("name").getValue();
 
     map.put("name", name);
 
-    Attribute groupId = child.getAttribute("groupId");
+    Attribute groupId = root.getAttribute("groupId");
 
     if(groupId != null) {
       map.put("groupId", groupId.getValue());
     }
   
-    Attribute artifactId = child.getAttribute("artifactId");
+    Attribute artifactId = root.getAttribute("artifactId");
 
     if(artifactId != null) {
       map.put("artifactId", artifactId.getValue());
     }
 
-    Attribute version = child.getAttribute("version");
+    Attribute version = root.getAttribute("version");
 
     if(version != null) {
       map.put("version", version.getValue());
