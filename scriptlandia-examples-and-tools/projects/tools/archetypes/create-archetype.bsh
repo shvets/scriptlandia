@@ -120,7 +120,16 @@ public class ArchetypeCreator extends XmlHelper {
   }
 
   private Archetype readArchetype(Element element, Group group) {
-    String name = element.getAttribute("name").getValue();
+    String prefix = group.getPrefix();
+
+    String name;
+
+    if(prefix != null) {
+      name = prefix + element.getAttribute("name").getValue();
+    }
+    else {
+      name = element.getAttribute("name").getValue();
+    }
 
     Attribute descriptionAttribute = element.getAttribute("description");
 
@@ -239,7 +248,7 @@ public class ArchetypeCreator extends XmlHelper {
   public void createArchetype(Group group, Archetype archetype, 
                               String groupId, String artifactId, String version) {
     System.setProperty("archetypeGroupId", group.getGroupId());
-    System.setProperty("archetypeArtifactId", group.getPrefix() + archetype.getName());
+    System.setProperty("archetypeArtifactId", archetype.getName());
     System.setProperty("archetypeVersion", archetype.getVersion());
 
     System.setProperty("groupId", groupId);
