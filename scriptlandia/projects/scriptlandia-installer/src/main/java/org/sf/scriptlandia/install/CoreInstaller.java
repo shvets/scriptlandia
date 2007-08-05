@@ -36,8 +36,6 @@ public class CoreInstaller {
    * @throws LauncherException the exception
    */
   public void install(String[] args) throws LauncherException {
-//    System.setProperty("maven.repo.local", System.getProperty("repository.home"));
-
     String config = System.getProperty("config");
 
     if(config == null || !Boolean.parseBoolean(config)) {

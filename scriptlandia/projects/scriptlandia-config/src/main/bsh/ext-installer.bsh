@@ -5,6 +5,11 @@ import org.apache.tools.ant.*;
 
 sourceRelative("ext-xml-helper.bsh");
 
+String repositoryHome = System.getProperty("repository.home");
+
+addClassPath(repositoryHome + "/jdom/jdom/1.0/jdom-1.0.jar");
+addClassPath(repositoryHome + "/org/jdesktop/jdic/0.9.2/jdic-0.9.2.jar");
+
 import java.util.Arrays;
 
 /**
@@ -16,6 +21,7 @@ import java.util.Arrays;
 public class ExtInstaller {
   private final String OS_NAME = System.getProperty("os.name");
   private final String repositoryHome = System.getProperty("repository.home");
+  String launcherHome = System.getProperty("launcher.home");
   private final String scriptlandiaHome = System.getProperty("scriptlandia.home");
 
   public static final String LAUNCHER_SCRIPT_NAME = "scriptlandia";
@@ -70,7 +76,7 @@ public class ExtInstaller {
 
     Boolean[] registrations = new Boolean[extensions.size()];
 
-    String groupId = language.get("starter.groupId");
+/*    String groupId = language.get("starter.groupId");
     String artifactId = language.get("starter.artifactId");
     String version = language.get("starter.version");
 
@@ -84,7 +90,7 @@ public class ExtInstaller {
     StringBuffer openAction = new StringBuffer();
     openAction.append(scriptlandiaHome.replace('/', File.separatorChar));
     openAction.append(File.separatorChar);
-    openAction.append(LAUNCHER_SCRIPT_NAME + ".");
+    openAction.append(LAUNCHER_SCRIPT_NAME + ".bat");
     openAction.append(getScriptExt());
     openAction.append(" \"");
     openAction.append("-deps.file.name=");
@@ -92,11 +98,11 @@ public class ExtInstaller {
     openAction.append(File.separatorChar);
     openAction.append(groupId.replace('.', File.separatorChar));
     openAction.append(File.separatorChar);
-    openAction.append(/*language.get("starter")*/artifactId);
+    openAction.append(artifactId);
     openAction.append(File.separatorChar);
     openAction.append(version);
     openAction.append(File.separatorChar);
-    openAction.append(/*language.get("starter")*/artifactId);
+    openAction.append(artifactId);
     openAction.append("-");
     openAction.append(version);
     openAction.append(".pom");
@@ -104,28 +110,27 @@ public class ExtInstaller {
 
     openAction.append(" \"");
     openAction.append("-main.class.name=");
-    openAction.append(/*language.get("mainClass")*/mainClass);
+    openAction.append(mainClass);
     openAction.append("\"");
     openAction.append(" ");
 
     if(commandLine != null && commandLine.trim().length() > 0) {
       openAction.append(language.get("commandLine"));
-/*      if(commandLine.equals("-f")) {
-        openAction.append(" ");
-      }
-*/
       openAction.append(" ");
     }
 
     openAction.append(getCommandLineExpression());
+*/
+    String openAction = getAction(language, getScriptExt(), repositoryHome, scriptlandiaHome) + 
+                                   " " + getCommandLineExpression();
 
     System.out.print("Registering extension(s): " + extensions + "... ");
 
     for(int i=0; i < extensions.size(); i++) {
       registrations[i] = registerExtension(extensions.get(i), language.get("name"), language.get("mimeType"),
-                                           language.get("icon"), openAction.toString());
+                                           language.get("icon"), openAction);
 
-      print(openAction.toString());
+      print(openAction);
     }
 
     executeAntInstall(language);
@@ -139,8 +144,6 @@ public class ExtInstaller {
     String antInstallName = "languages/" + name + "/install.ant";
 
     if(new File(antInstallName).exists()) {
-      //org.apache.tools.ant.launch.Launcher.main(new String[] { "-f",  "languages/" + name + "/install.ant" });
-
       File buildFile = new File("languages/" + name + "/install.ant");
 
       Project project = createAntProject();
@@ -449,6 +452,233 @@ public class ExtInstaller {
     }
 
     return scriptExt;
+  }
+
+  private String getScriptName(String path, String name, String ext) {
+    StringBuffer scriptName = new StringBuffer();
+
+    scriptName.append(path.replace('/', File.separatorChar));
+    scriptName.append(File.separatorChar);
+    scriptName.append(name);
+    scriptName.append(".");
+    scriptName.append(ext);
+
+    return scriptName.toString();
+  }
+
+  private String getDepsProperty(Map language, String repositoryHome, char separatorChar) {
+    String groupId = language.get("starter.groupId");
+    String artifactId = language.get("starter.artifactId");
+    String version = language.get("starter.version");
+
+    StringBuffer depsProperty = new StringBuffer();
+
+    depsProperty.append("\"");
+    depsProperty.append("-deps.file.name=");
+    depsProperty.append(repositoryHome.replace('/', separatorChar).replace('\\', separatorChar));
+    depsProperty.append(separatorChar);
+    depsProperty.append(groupId.replace('.', separatorChar));
+    depsProperty.append(separatorChar);
+    depsProperty.append(artifactId);
+    depsProperty.append(separatorChar);
+    depsProperty.append(version);
+    depsProperty.append(separatorChar);
+    depsProperty.append(artifactId);
+    depsProperty.append("-");
+    depsProperty.append(version);
+    depsProperty.append(".pom");
+    depsProperty.append("\"");
+
+    return depsProperty.toString();
+  }
+
+  private String getMainClassProperty(Map language) {
+    String mainClass = language.get("mainClass");
+
+    StringBuffer mainClassProperty = new StringBuffer();
+
+    mainClassProperty.append("\"");
+    mainClassProperty.append("-main.class.name=");
+    mainClassProperty.append(mainClass);
+    mainClassProperty.append("\"");
+    mainClassProperty.append(" ");
+
+    return mainClassProperty.toString();
+  }
+
+  private String getCommandLine(Map language) {
+    String commandLine = language.get("commandLine");
+
+    if(commandLine == null) {
+      commandLine = "";
+    }
+
+    return commandLine.trim();
+  }
+
+  private String getAction(Map language, String extension, String repositoryHome, String scriptlandiaHome) {
+    String scriptName = getScriptName(scriptlandiaHome, LAUNCHER_SCRIPT_NAME, extension);
+    String depsProperty = getDepsProperty(language, repositoryHome, File.separatorChar);
+    String mainClassProperty = getMainClassProperty(language);
+    String commandLine = getCommandLine(language);
+
+    StringBuffer action = new StringBuffer();
+
+    action.append(scriptName);
+    action.append(" ");
+    action.append(depsProperty);
+    action.append(" ");
+
+    action.append(mainClassProperty);
+    action.append(" ");
+    action.append(commandLine);
+
+    if(commandLine.length() > 0) {
+      action.append(" ");
+    }
+
+    return action.toString();
+  }
+
+  public void generateBatchFile(List languages, String dir) {
+    BufferedWriter writer = new BufferedWriter(new FileWriter(dir + "/sl.bat"));
+
+    writer.write("@echo off"); writer.newLine(); writer.newLine();
+    writer.write("rem sl.bat"); writer.newLine(); writer.newLine();
+
+    writer.write("SET REPOSITORY_HOME=" + repositoryHome); writer.newLine();
+    writer.write("SET LAUNCHER_HOME=" + launcherHome); writer.newLine();
+    writer.write("SET SCRIPTLANDIA_HOME=" + scriptlandiaHome); writer.newLine(); writer.newLine();
+
+    String scriptName = getScriptName("%SCRIPTLANDIA_HOME%", LAUNCHER_SCRIPT_NAME, "bat");
+
+    writer.write("SET SCRIPT_NAME=" + scriptName);
+    writer.newLine();
+
+    writer.write("SET NAME=%~n1"); writer.newLine();
+    writer.write("SET EXT=%~x1"); writer.newLine(); 
+
+    for(int i=0; i < languages.size(); i++) {
+      Map language = (Map)languages.get(i);
+
+      String name = (String)language.get("name");
+
+      List extensions = language.get("extensions");
+
+      for(int i=0; i < extensions.size(); i++) {
+        String extension = (String)extensions.get(i);
+
+        writer.newLine();
+        writer.write("if \"%EXT%\" == \"." + extension + "\" goto " + name + "Setup");
+        writer.newLine();
+      }
+    }
+
+    writer.newLine();
+    writer.write("if \"%NAME%.%EXT%\" == \"build.xml\" goto antSetup");
+    writer.newLine();
+
+    writer.newLine();
+    writer.write("if \"%NAME%.%EXT%\" == \"pom.xml\" goto mavenSetup");
+    writer.newLine();
+
+    for(int i=0; i < languages.size(); i++) {
+      Map language = (Map)languages.get(i);
+
+      String name = (String)language.get("name");
+
+      String depsProperty = getDepsProperty(language, "%REPOSITORY_HOME%", '\\');
+      String mainClassProperty = getMainClassProperty(language);
+      String commandLine = getCommandLine(language);
+
+      writer.newLine();
+      writer.write(":" + name + "Setup");
+      writer.newLine();
+      writer.write("SET DEPS_PROPERTY=" + depsProperty);
+      writer.newLine();
+      writer.write("SET MAIN_CLASS_PROPERTY=" + mainClassProperty);
+      writer.newLine();
+      writer.write("SET CMD_LINE=" + commandLine);
+      writer.newLine();
+      writer.write("goto execute "); 
+      writer.newLine();
+    }
+
+    writer.newLine();
+    writer.write(":execute"); writer.newLine();
+    writer.write("%SCRIPT_NAME% %DEPS_PROPERTY% %MAIN_CLASS_PROPERTY% %CMD_LINE% %*"); 
+    writer.newLine();
+
+    writer.close();
+  }
+
+  public void generateShellFile(List languages, String dir) {
+    BufferedWriter writer = new BufferedWriter(new FileWriter(dir + "/sl.sh"));
+
+    writer.write("#!/bin/sh"); writer.newLine(); writer.newLine();
+
+    writer.write("REPOSITORY_HOME=" + repositoryHome); writer.newLine();
+    writer.write("LAUNCHER_HOME=" + launcherHome); writer.newLine();
+    writer.write("SCRIPTLANDIA_HOME=" + scriptlandiaHome); writer.newLine(); writer.newLine();
+
+    String scriptName = getScriptName("$SCRIPTLANDIA_HOME", LAUNCHER_SCRIPT_NAME, "sh");
+
+    writer.write("SET SCRIPT_NAME=" + scriptName);
+    writer.newLine();
+
+    writer.write("SET EXT=`echo $1 | awk -F. '{print $NF}'`"); writer.newLine();
+
+    for(int i=0; i < languages.size(); i++) {
+      Map language = (Map)languages.get(i);
+
+      String name = (String)language.get("name");
+
+      String action = getAction(language, "sh", "$REPOSITORY_HOME", "$SCRIPTLANDIA_HOME");
+
+      String depsProperty = getDepsProperty(language, "$REPOSITORY_HOME", '/');
+      String mainClassProperty = getMainClassProperty(language);
+      String commandLine = getCommandLine(language);
+
+      List extensions = language.get("extensions");
+
+      for(int i=0; i < extensions.size(); i++) {
+        String extension = (String)extensions.get(i);
+
+        writer.newLine();
+        writer.write("case \"$EXT\" in");
+        writer.newLine();
+        writer.write("  '." + extension + "')");
+        writer.newLine();
+        writer.write("    DEPS_PROPERTY=" + depsProperty);
+        writer.newLine();
+        writer.write("    MAIN_CLASS_PROPERTY=" + mainClassProperty);
+        writer.newLine();
+        writer.write("    CMD_LINE=" + commandLine);
+        writer.newLine();
+        writer.write("    ;;");
+        writer.newLine();
+      }
+    }
+
+    writer.write("*)");
+    writer.newLine();
+    writer.write("esac");
+    writer.newLine(); writer.newLine();
+
+    writer.write("$SCRIPT_NAME $DEPS_PROPERTY $MAIN_CLASS_PROPERTY $CMD_LINE $*"); 
+    writer.newLine();
+
+
+    writer.close();
+  }
+
+  public void generateScripts() {
+    ExtXmlHelper xmlHelper = new ExtXmlHelper();
+    xmlHelper.readLanguages("languages");
+    List languages = xmlHelper.getLanguages();
+
+    generateBatchFile(languages, scriptlandiaHome);
+    generateShellFile(languages, scriptlandiaHome);
   }
 
   public static void main(String[] args) throws Exception {

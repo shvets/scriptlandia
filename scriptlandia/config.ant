@@ -157,12 +157,13 @@
   </target>
 
   <target name="install.languages">
+<!--
     <property name="jdic.lib" value="${repository.home}/org/jdesktop/jdic/${jdic.version}/jdic-${jdic.version}.jar"/>
     <property name="jdom.lib" value="${repository.home}/jdom/jdom/1.0/jdom-1.0.jar"/>
-
+-->
     <script language="beanshell">
-      addClassPath(project.getProperty("jdic.lib"));
-      addClassPath(project.getProperty("jdom.lib"));
+//      addClassPath(project.getProperty("jdic.lib"));
+//      addClassPath(project.getProperty("jdom.lib"));
 
       source("projects/scriptlandia-config/src/main/bsh/ext-installer.bsh");
 

@@ -6,7 +6,7 @@
 
   <import file="config.ant" />
 
-  <target name="install" depends="config, install.projects, install.libraries"/>
+  <target name="install" depends="config, install.projects, generate.scripts, install.libraries"/>
 
   <target name="install.projects">
     <script language="beanshell">
@@ -34,6 +34,15 @@
     </script>
 
     <installLanguages section="starter"/>
+  </target>
+
+  <target name="generate.scripts">
+    <script language="beanshell">
+      source("projects/scriptlandia-config/src/main/bsh/ext-installer.bsh");
+
+      ExtInstaller installer = new ExtInstaller();
+      installer.generateScripts();
+    </script>
   </target>
 
   <target name="install.libraries">
@@ -72,4 +81,3 @@
   </target>
 
 </project>
-
