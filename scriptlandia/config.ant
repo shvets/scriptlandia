@@ -29,9 +29,13 @@
 
     <antcall target="install.languages"/>
 
-    <antcall target="update.for.windows"/>
+    <fixcrlf eol="unix" srcdir="${scriptlandia.home}" includes="*.sh"/>
 
-    <antcall target="update.for.unix"/>    
+    <chmod perm="ugo+x">
+      <fileset dir="${scriptlandia.home}">
+        <include name="*.sh"/>
+      </fileset>
+    </chmod>
   </target>
 
   <target name="copy.config.files">
@@ -239,22 +243,6 @@
         <include name="*.dll"/>
       </patternset>
     </unzip>
-  </target>
-
-  <target name="update.for.windows" if="os.is.windows">
-  </target>
-
-  <target name="update.for.unix" if="os.is.unix">
-    <!-- todo -->
-
-    <!-- for UNIX -->
-    <fixcrlf eol="unix" srcdir="${scriptlandia.home}" includes="*.sh"/>
-
-    <chmod perm="ugo+x">
-      <fileset dir="${scriptlandia.home}">
-        <include name="*.sh"/>
-      </fileset>
-    </chmod>
   </target>
 
 </project>

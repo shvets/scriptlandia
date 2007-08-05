@@ -623,10 +623,14 @@ public class ExtInstaller {
 
     String scriptName = getScriptName("$SCRIPTLANDIA_HOME", LAUNCHER_SCRIPT_NAME, "sh");
 
-    writer.write("SET SCRIPT_NAME=" + scriptName);
+    writer.write("SCRIPT_NAME=" + scriptName);
     writer.newLine();
 
-    writer.write("SET EXT=`echo $1 | awk -F. '{print $NF}'`"); writer.newLine();
+    writer.write("EXT=`echo $1 | awk -F. '{print $NF}'`"); writer.newLine();
+
+    writer.newLine();
+    writer.write("case \"$EXT\" in");
+    writer.newLine();
 
     for(int i=0; i < languages.size(); i++) {
       Map language = (Map)languages.get(i);
@@ -644,9 +648,6 @@ public class ExtInstaller {
       for(int i=0; i < extensions.size(); i++) {
         String extension = (String)extensions.get(i);
 
-        writer.newLine();
-        writer.write("case \"$EXT\" in");
-        writer.newLine();
         writer.write("  '." + extension + "')");
         writer.newLine();
         writer.write("    DEPS_PROPERTY=" + depsProperty);

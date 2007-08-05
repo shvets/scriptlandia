@@ -6,7 +6,7 @@
 
   <import file="config.ant" />
 
-  <target name="install" depends="config, install.projects, generate.scripts, install.libraries"/>
+  <target name="install" depends="config, install.projects, generate.scripts, install.libraries, prepare.unix.files"/>
 
   <target name="install.projects">
     <script language="beanshell">
@@ -80,4 +80,13 @@
     <copy-properties/>
   </target>
 
+  <target name="prepare.unix.files">
+    <fixcrlf eol="unix" srcdir="${scriptlandia.home}" includes="*.sh"/>
+
+    <chmod perm="ugo+x">
+      <fileset dir="${scriptlandia.home}">
+        <include name="*.sh"/>
+      </fileset>
+    </chmod>
+  </target>
 </project>

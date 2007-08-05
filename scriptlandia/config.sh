@@ -1,5 +1,7 @@
 #!/bin/sh
 
+CYGWIN=true
+
 if [ -f ~/jlaunchpad/config.sh ]; then
   . ~/jlaunchpad/config.sh
 fi
@@ -12,13 +14,22 @@ fi
 #  PROXY_SERVER_PORT=
 #fi
 
-JAVA_HOME=~/jdk1.6.0_01
-MOBILE_JAVA_HOME=/opt/j2me-2.5
-RUBY_HOME=~/Ruby/ruby-1.8.4-20
+if [ "$JAVA_HOME" = "" ]; then
+  JAVA_HOME=$DRIVE_LETTER/jdk1.6.0
+fi
+
+if [ "$LAUNCHER_HOME" = "" ]; then
+  LAUNCHER_HOME=$DRIVE_LETTER/launcher
+fi
+
+if [ "%REPOSITORY_HOME%" == "" ]; then
+  REPOSITORY_HOME=$DRIVE_LETTER/maven-repository
+fi
+
 
 SCRIPTLANDIA_HOME=~/scriptlandia
-LAUNCHER_HOME=$SCRIPTLANDIA_HOME/launcher
-REPOSITORY_HOME=/media/hda5/maven-repository
+MOBILE_JAVA_HOME=/opt/j2me-2.5
+RUBY_HOME=~/Ruby/ruby-1.8.4-20
 
 #LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$REPOSITORY_HOME/org/jdesktop/jdic/0.9.2
 
@@ -57,6 +68,8 @@ SYSTEM_PROPERTIES="-Dmobile.java.home=$MOBILE_JAVA_HOME \
 if [ ! -f $RUBY_HOME ]; then
   SYSTEM_PROPERTIES="$SYSTEM_PROPERTIES -Dnative.ruby.home=$RUBY_HOME"
 fi
+
+export CYGWIN
 
 export PROXY_SERVER_HOST_NAME PROXY_SERVER_PORT
 export JAVA_HOME MOBILE_JAVA_HOME RUBY_HOME SCRIPTLANDIA_HOME REPOSITORY_HOME
