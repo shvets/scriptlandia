@@ -12,10 +12,11 @@ JAVA_HOME=~/jdk1.6.0_01
 LAUNCHER_HOME=~/launcher
 REPOSITORY_HOME=/media/hda5/maven-repository
 
-CYGWIN=false
+CYGWIN=true
 
 # Overwrites default values, if exists
 if [ -f ~/jlaunchpad/config.sh ]; then
+echo ? ~/jlaunchpad/config.sh
   . ~/jlaunchpad/config.sh
 fi
 

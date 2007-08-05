@@ -1,5 +1,4 @@
-SET LAUNCHER_HOME=d:\launcher
-
+SET LAUNCHER_HOME=d:\launcher-cygnus
 SET MAIN_CLASS=groovy.ui.GroovyMain
 
 SET PROPERTIES="-deps.file.name=%CD%\deps.xml" "-main.class.name=%MAIN_CLASS%"

@@ -249,8 +249,8 @@ join() {
 
 #export APP=`cd "$APP" && pwd`
 
-APP=`dirname $0`/`basename $0 .sh` # compute app name from this file name without prefix
-APP_NAME=`basename $0 .sh`
+#APP=`dirname $0`/`basename $0 .sh` # compute app name from this file name without prefix
+#APP_NAME=`basename $0 .sh`
 
 JAVA_HOME="@java.home.internal@"
 
@@ -264,8 +264,13 @@ else
     CMD=java
 fi
 
-LAUNCHER_APP=$LAUNCHER_HOME/launcher
-APP=`pwd`/$APP_NAME
+LAUNCHER_APP_CONF=$LAUNCHER_HOME/launcher.conf
+
+if [ "$MAIN_APP_CONF" = "" ]; then
+  MAIN_APP_CONF=$LAUNCHER_APP_CONF
+fi
+
+CURRENT_APP_CONF=`pwd`/$APP_NAME.conf
 
 JAVA_CLASSPATH=
 JAVA_ENDORSED_DIRS=
@@ -279,13 +284,14 @@ JVM_ARGS=
 LAUNCHER_CLASS=
 COMMAND_LINE_ARGS=
 
+
 # process command line
 
 readCommandLine $*
 
 # process config file located in $launcher.home
 
-FILE=$LAUNCHER_APP'.conf'
+FILE=$LAUNCHER_APP_CONF
 
 if [ -r "$FILE" ]; then
   readFile
@@ -293,12 +299,22 @@ else
   echo $FILE not found
 fi
 
-# process config file located in $current.dir
+# process config file located in $main.app.dir
 
-FILE=$APP.conf
+FILE=$MAIN_APP_CONF
 
 if [ -r "$FILE" ]; then
-  if [ "$LAUNCHER_APP.conf" != "$APP.conf" ]; then
+  if [ "$MAIN_APP_CONF" != "$LAUNCHER_APP_CONF" ]; then
+    readFile
+  fi
+fi
+
+# process config file located in $current.dir
+
+FILE=$CURRENT_APP_CONF
+
+if [ -r "$FILE" ]; then
+  if [ "$$CURRENT_APP_CONF" != "$LAUNCHER_APP_CONF" ]; then
     readFile
   fi
 fi

@@ -1,6 +1,8 @@
 #!/bin/sh
 
-LAUNCHER_HOME=/media/hda5/launcher
+CYGWIN=true
+
+LAUNCHER_HOME=/cygdrive/d/launcher-cygnus
 
 APP_NAME=tomcat
 
