@@ -1,9 +1,11 @@
 class BookController {
+
+  def scaffold = Book
+/*
+  def index = { redirect(action:list, params:params) }
  
-    def index = { redirect(action:list, params:params) }
- 
-    // the delete, save and update actions only accept POST requests
-    // def allowedMethods = [delete:'POST', save:'POST', update:'POST']
+  // the delete, save and update actions only accept POST requests
+  // def allowedMethods = [delete:'POST', save:'POST', update:'POST']
  
     def list = {
         response.setHeader("Cache-Control", "no-store")
@@ -12,7 +14,7 @@ class BookController {
             data {
                 for(i in bookList) {
                     book {
-                        id(i.id)
+//                        id(i.id)
                         isbn(i.isbn)
                         title(i.title)
                         author(i.author)
@@ -22,6 +24,7 @@ class BookController {
                 }
             }
         }
+
     }
  
     def save = {
@@ -44,6 +47,6 @@ class BookController {
         }
         render ""
     }
-    
+*/
 }
 
