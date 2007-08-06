@@ -495,12 +495,6 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     return panel;
   }
 
-  public boolean isConfigMode() {
-    String config = System.getProperty("config");
-
-    return !(config == null || config.equalsIgnoreCase(("false")));
-  }
-
   private void update() throws LauncherException {
     if(!isConfigMode() ) {
       coreInstall();

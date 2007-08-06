@@ -29,6 +29,12 @@ public class CoreInstaller {
     installAntRun();
   }
 
+  public boolean isConfigMode() {
+    String config = System.getProperty("config");
+
+    return !(config == null || config.equalsIgnoreCase(("false")));
+  }
+
   /**
    * Performs installation of initial components/projects.
    *
@@ -147,35 +153,13 @@ public class CoreInstaller {
   private void instalRequiredlProjects(String[] args) throws LauncherException {
     SimpleLauncher launcher = new SimpleLauncher(args);
 
-    launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
+    launcher.addClasspathEntry(getScriptlandiaInstallerJarName());
 
     prepare(launcher, false);
 
     launcher.configure(Thread.currentThread().getContextClassLoader());
     launcher.launch();
   }
-
-  /**
-   * Gets the required projects arguments list.
-   *
-   * @param args command line argumemts
-   * @return the required  arguments list
-   */
-//  private static String[] getRequiredProjectsArgsList(String[] args) {
-//    List<String> newArgsList = new ArrayList<String>();
-
-//    newArgsList.add("-f");
-//    newArgsList.add("installer.ant");
-
-//    newArgsList.addAll(Arrays.asList(args));
-
-//    String[] newArgs = new String[newArgsList.size()];
-
-//    newArgsList.toArray(newArgs);
-//    newArgsList.toArray(args);
-
-//    return newArgs;
-//  }
 
   /**
    * Performs the configuration of scriptlandia.
@@ -203,6 +187,7 @@ public class CoreInstaller {
 
 //    newArgsList.add("-f");
 //    newArgsList.add("config.ant");
+    newArgsList.add("config");
 
     newArgsList.addAll(Arrays.asList(args));
 
@@ -252,12 +237,30 @@ public class CoreInstaller {
   protected void instalLanguageProjects(String[] args) throws LauncherException {
     SimpleLauncher launcher = new SimpleLauncher(getLanguageProjectsArgsList(args));
 
-    launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
-
-    prepare(launcher, false);
+    prepare(launcher, isConfigMode());
   
+    launcher.addClasspathEntry(getScriptlandiaInstallerJarName());
+
     launcher.configure(Thread.currentThread().getContextClassLoader());
     launcher.launch();
+  }
+
+  private String getScriptlandiaInstallerJarName() {
+    String sriptlandiaInstallerJarName;
+
+    if(isConfigMode()) {
+      String repositoryHome = System.getProperty("repository.home");
+      String scriptlandiaVersion = System.getProperty("scriptlandia.version");
+
+      sriptlandiaInstallerJarName = 
+        repositoryHome + "/org/sf/scriptlandia/scriptlandia-installer/" +
+        scriptlandiaVersion + "/scriptlandia-installer-" + scriptlandiaVersion + ".jar";
+    }
+    else {
+      sriptlandiaInstallerJarName = "projects/scriptlandia-installer/target/scriptlandia-installer.jar";
+    }
+
+    return sriptlandiaInstallerJarName;
   }
 
   /**

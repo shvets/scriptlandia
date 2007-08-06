@@ -109,6 +109,9 @@ public class LauncherManager {
     
     LauncherManager launcherManager = new LauncherManager();
 
+    System.setProperty("jdic.version", "0.9.2");
+    System.setProperty("nailgun.version", "0.7.1");
+
     CoreLauncher launcher = launcherManager.createLauncher(parser, args, launcherClassName, classWorld);
 
     if(parser.isLauncherMode()) {

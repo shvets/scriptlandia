@@ -98,7 +98,6 @@
       <fileset dir="projects/scriptlandia-config/bin">
         <include name="*.bat"/>
         <include name="*.sh"/>
-        <include name="*.ant"/>
         <include name="*.conf"/>
         <include name="*.ini"/>
         <exclude name="*-exe.*"/>
@@ -228,10 +227,9 @@
   <target name="install" depends="config, install.projects, generate.scripts, install.libraries, prepare.unix.files"/>
 
   <target name="install.projects">
-    <installProject basedir="projects/antrun"/>
+    <!--installProject basedir="projects/antrun"/-->
 
     <installProject basedir="projects/scriptlandia-installer"/>
-
     <installProject basedir="projects/scriptlandia-nailgun"/>
     <installProject basedir="projects/scriptlandia-launcher"/>
     <installProject basedir="projects/scriptlandia-helper"/>
@@ -260,8 +258,8 @@
   <target name="install.libraries">
     <copy todir="${scriptlandia.home}">
       <fileset dir=".">
-       <include name="config.ant"/>
-       <include name="config-macrodefs.xml"/>
+       <include name="build.xml"/>
+       <include name="scriptlandia-macrodefs.xml"/>
       </fileset>
     </copy>
 
