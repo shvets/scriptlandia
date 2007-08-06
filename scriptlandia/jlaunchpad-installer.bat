@@ -4,6 +4,10 @@
 
 SET JLAUNCHPAD_PROJECT=.
 
+if exist "..\jlaunchpad\projects\universal-launcher\target\universal-launcher.jar" (
+  cd ..\jlaunchpad
+)
+
 SET BOOTSTRAP_MINI_PROJECT=%JLAUNCHPAD_PROJECT%\projects\bootstrap-mini
 SET UNIVERSAL_LAUNCHER_COMMON_PROJECT=%JLAUNCHPAD_PROJECT%\projects\universal-launcher-common
 SET POM_READER_PROJECT=%JLAUNCHPAD_PROJECT%\projects\pom-reader

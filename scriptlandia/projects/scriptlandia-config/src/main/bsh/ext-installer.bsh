@@ -53,6 +53,23 @@ public class ExtInstaller {
     //registerRubyGemExtensions(new String[] { "gem" });
   }
 
+  /**
+   * Install the extensions.
+   *
+   */
+  public void uninstallAll() {
+    ExtXmlHelper xmlHelper = new ExtXmlHelper();
+    xmlHelper.readLanguages("languages");
+
+    List languages = xmlHelper.getLanguages();
+
+    for(int i=0; i < languages.size(); i++) {
+      Map language = (Map)languages.get(i);
+
+      unregisterLanguage(language);
+    }
+  }
+
   public void installLanguage() {
     ExtXmlHelper xmlHelper = new ExtXmlHelper();
     Map language =  xmlHelper.readLanguage();
@@ -136,6 +153,51 @@ public class ExtInstaller {
     executeAntInstall(language);
 
     System.out.println("Registered: " + Arrays.asList(registrations) + ".");
+  }
+
+  private void executeAntInstall(Map language) {
+    String name = (String)language.get("name");
+
+    String antInstallName = "languages/" + name + "/install.ant";
+
+    if(new File(antInstallName).exists()) {
+      File buildFile = new File("languages/" + name + "/install.ant");
+
+      Project project = createAntProject();
+
+      project.setUserProperty("ant.file", buildFile.getAbsolutePath());	
+
+      ProjectHelper.getProjectHelper().parse(project, buildFile);
+
+      project.executeTarget(project.getDefaultTarget());
+    }
+  }
+
+
+  private void unregisterLanguage(Map language) {
+    List extensions = language.get("extensions");
+
+    Boolean[] registrations = new Boolean[extensions.size()];
+
+    String openAction = getAction(language, getScriptExt(), repositoryHome, scriptlandiaHome) + 
+                                   " " + getCommandLineExpression();
+
+    System.out.print("Unregistering extension(s): " + extensions + "... ");
+
+    for(int i=0; i < extensions.size(); i++) {
+      print("1 " + extensions.get(i));
+      print("2 " + language.get("mimeType"));
+      print("3 " + language.get("name"));
+      try {
+        unregisterExtension(extensions.get(i), language.get("mimeType"), language.get("name"));
+      }
+      catch(Throwable t) {
+        print(t.getMessage());
+
+      }
+    }
+
+    System.out.println("Unregistered.");
   }
 
   private void executeAntInstall(Map language) {

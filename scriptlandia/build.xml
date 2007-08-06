@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
 
-<project name="config.ant" default="config" basedir=".">
+<project name="installer.ant" default="install" basedir=".">
+
+  <import file="scriptlandia-macrodefs.xml"/>
 
   <property file="${user.home}/launcher/config.properties"/>
   <property file="config.properties"/>
 
-  <import file="config-macrodefs.xml"/>
   <load-properties/>
 
   <property name="debug" value="on"/>
@@ -27,15 +28,9 @@
 
     <antcall target="configure.jdic.and.naligun"/>
 
-    <antcall target="install.languages"/>
+    <!--antcall target="install.languages"/-->
 
-    <fixcrlf eol="unix" srcdir="${scriptlandia.home}" includes="*.sh"/>
-
-    <chmod perm="ugo+x">
-      <fileset dir="${scriptlandia.home}">
-        <include name="*.sh"/>
-      </fileset>
-    </chmod>
+    <antcall target="prepare.unix.files"/>
   </target>
 
   <target name="copy.config.files">
@@ -160,21 +155,6 @@
     <antcall target="unzip.nailgun.binaries"/>
   </target>
 
-  <target name="install.languages">
-<!--
-    <property name="jdic.lib" value="${repository.home}/org/jdesktop/jdic/${jdic.version}/jdic-${jdic.version}.jar"/>
-    <property name="jdom.lib" value="${repository.home}/jdom/jdom/1.0/jdom-1.0.jar"/>
--->
-    <script language="beanshell">
-//      addClassPath(project.getProperty("jdic.lib"));
-//      addClassPath(project.getProperty("jdom.lib"));
-
-      source("projects/scriptlandia-config/src/main/bsh/ext-installer.bsh");
-
-      new ExtInstaller().install();
-    </script>
-  </target>
-
   <target name="copy.settings.xml">
     <copy todir="${user.home}/.m2" overwrite="false">
       <filterset>
@@ -245,4 +225,99 @@
     </unzip>
   </target>
 
+  <target name="install" depends="config, install.projects, generate.scripts, install.libraries, prepare.unix.files"/>
+
+  <target name="install.projects">
+    <installProject basedir="projects/antrun"/>
+
+    <installProject basedir="projects/scriptlandia-installer"/>
+
+    <installProject basedir="projects/scriptlandia-nailgun"/>
+    <installProject basedir="projects/scriptlandia-launcher"/>
+    <installProject basedir="projects/scriptlandia-helper"/>
+  </target>
+
+  <target name="install.languages">
+    <installLanguages section="core"/>
+    <installLanguages section="starter"/>
+
+    <script language="beanshell">
+      source("projects/scriptlandia-config/src/main/bsh/ext-installer.bsh");
+
+      new ExtInstaller().install();
+    </script>
+  </target>
+
+  <target name="generate.scripts">
+    <script language="beanshell">
+      source("projects/scriptlandia-config/src/main/bsh/ext-installer.bsh");
+
+      ExtInstaller installer = new ExtInstaller();
+      installer.generateScripts();
+    </script>
+  </target>
+
+  <target name="install.libraries">
+    <copy todir="${scriptlandia.home}">
+      <fileset dir=".">
+       <include name="config.ant"/>
+       <include name="config-macrodefs.xml"/>
+      </fileset>
+    </copy>
+
+    <copy todir="${scriptlandia.home}/languages">
+      <fileset dir="languages">
+       <include name="**/*.xml"/>
+       <include name="**/src/**/*.java"/>
+       <include name="**/target/**"/>
+       <include name="**/*.ico"/>
+      </fileset>
+    </copy>
+
+    <copy todir="${scriptlandia.home}">
+      <fileset dir="projects/scriptlandia-config/bin">
+       <include name="*.exe"/>
+      </fileset>
+    </copy>
+
+    <copy todir="${scriptlandia.home}">
+      <fileset dir=".">
+        <include name="projects/scriptlandia-config/bin/*.*"/>
+        <exclude name="projects/scriptlandia-config/bin/*.exe"/>
+        <include name="projects/scriptlandia-config/src/main/bsh/**"/>
+        <include name="projects/scriptlandia-config/src/main/config/**"/>
+      </fileset>
+    </copy>
+
+    <copy-properties/>
+  </target>
+
+  <target name="prepare.unix.files">
+    <fixcrlf eol="unix" srcdir="${scriptlandia.home}" includes="*.sh"/>
+
+    <chmod perm="ugo+x">
+      <fileset dir="${scriptlandia.home}">
+        <include name="*.sh"/>
+      </fileset>
+    </chmod>
+  </target>
+
+  <target name="assembly">
+    <zip destfile="target/scriptlandia-${scriptlandia.version}-install.zip" update="true">
+      <zipfileset dir="../jlaunchpad/projects" prefix="scriptlandia-${scriptlandia.version}/projects">
+        <include name="**/target/*.jar"/>
+        <include name="**/*.xml"/>
+        <include name="**/universal-launcher/src/main/config/*.*"/>
+      </zipfileset>
+    </zip>
+  </target>
+
+  <target name="uninstall.all.languages">
+    <script language="beanshell">
+      source("projects/scriptlandia-config/src/main/bsh/ext-installer.bsh");
+
+      ExtInstaller installer = new ExtInstaller();
+      installer.uninstallAll();
+    </script>
+  </target>
 </project>

@@ -38,6 +38,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
   private JComboBox javaSpecVersionComboBox = new JComboBox(new String[] { "1.5", "1.6", "1.7"});
 
   private JButton installButton = new JButton("Install");
+  private JButton installLanguagesButton = new JButton("Install languages");
   private JTextArea console = new JTextArea();
 
   private JTabbedPane tabbedPane = new JTabbedPane();
@@ -139,6 +140,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     }
 
     installButton.setEnabled(enabled);
+    installLanguagesButton.setEnabled(enabled);
 
     tabbedPane.setEnabledAt(1, enabled);
   }
@@ -264,7 +266,6 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     constraints.weightx = 0.5;
 
     JPanel panel1 = new JPanel();
-
     constraints.gridy = 0;
 
     panel1.setLayout(new GridBagLayout());
@@ -274,50 +275,46 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     panel1.add(javaSpecVersionComboBox, constraints);
 
     JPanel panel2 = new JPanel();
-
     constraints.gridy = 1;
 
     panel2.setLayout(new GridBagLayout());
 
-    constraints.gridx = 0; panel2.add(mobileJavaHomeLabel, constraints);
-    constraints.gridx = 1; panel2.add(mobileJavaHomeField, constraints);
-    constraints.gridx = 2; panel2.add(mobileJavaHomeSearchButton, constraints);
-
-    constraints.gridy = 2;
+    constraints.gridx = 0; panel2.add(launcherHomeLabel, constraints);
+    constraints.gridx = 1; panel2.add(launcherHomeField, constraints);
+    constraints.gridx = 2; panel2.add(launcherHomeSearchButton, constraints);
 
     JPanel panel3 = new JPanel();
+    constraints.gridy = 2;
 
     panel3.setLayout(new GridBagLayout());
 
-    constraints.gridx = 0; panel3.add(launcherHomeLabel, constraints);
-    constraints.gridx = 1; panel3.add(launcherHomeField, constraints);
-    constraints.gridx = 2; panel3.add(launcherHomeSearchButton, constraints);
-
-    constraints.gridy = 3;
+    constraints.gridx = 0; panel3.add(scriptlandiaHomeLabel, constraints);
+    constraints.gridx = 1; panel3.add(scriptlandiaHomeField, constraints);
+    constraints.gridx = 2; panel3.add(scriptlandiaHomeSearchButton, constraints);
 
     JPanel panel4 = new JPanel();
+    constraints.gridy = 3;
 
     panel4.setLayout(new GridBagLayout());
 
-    constraints.gridx = 0; panel4.add(scriptlandiaHomeLabel, constraints);
-    constraints.gridx = 1; panel4.add(scriptlandiaHomeField, constraints);
-    constraints.gridx = 2; panel4.add(scriptlandiaHomeSearchButton, constraints);
+    constraints.gridx = 0; panel4.add(mobileJavaHomeLabel, constraints);
+    constraints.gridx = 1; panel4.add(mobileJavaHomeField, constraints);
+    constraints.gridx = 2; panel4.add(mobileJavaHomeSearchButton, constraints);
 
+/*    JPanel panel5 = new JPanel();
     constraints.gridy = 4;
-
-    JPanel panel5 = new JPanel();
 
     panel5.setLayout(new GridBagLayout());
 
     constraints.gridx = 0; panel5.add(rubyHomeLabel, constraints);
     constraints.gridx = 1; panel5.add(rubyHomeField, constraints);
     constraints.gridx = 2; panel5.add(rubyHomeSearchButton, constraints);
-
+*/
     panel.add(panel1);
     panel.add(panel2);
     panel.add(panel3);
     panel.add(panel4);
-    panel.add(panel5);
+//    panel.add(panel5);
 
     return panel;
   }
@@ -357,6 +354,38 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
       }
     });
 
+    installLanguagesButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+        Thread thread = new Thread() {
+          public void run() {
+            Component glassPane = frame.getGlassPane();
+
+            glassPane.setVisible(true);
+
+            glassPane.addMouseListener(new MouseAdapter() {
+              @SuppressWarnings({"UnnecessarySemicolon"})
+              public void mousePressed(MouseEvent e) {
+                ; // supress
+              }
+            });
+
+            try {
+              GuiInstaller.this.installLanguages(args);
+            }
+            catch (Exception e) {
+              e.printStackTrace();
+            }
+            finally {
+              glassPane.setVisible(false);
+            }
+          }
+        };
+
+        thread.start();
+      }
+    });
+
+
     JButton closeButton = new JButton("Close");
 
     closeButton.addActionListener(new ActionListener() {
@@ -370,6 +399,8 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
 
     panel11.add(Box.createRigidArea(new Dimension(200, 0)));
     panel11.add(installButton);
+    panel11.add(Box.createRigidArea(new Dimension(50, 0)));
+    panel11.add(installLanguagesButton);
     panel11.add(Box.createRigidArea(new Dimension(50, 0)));
     panel11.add(closeButton);
     panel11.add(Box.createRigidArea(new Dimension(200, 0)));
@@ -492,7 +523,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
   }
 
   private void updateProperties() {
-   System.setProperty("java.specification.version", (String)javaSpecVersionComboBox.getSelectedItem());
+    System.setProperty("java.specification.version", (String)javaSpecVersionComboBox.getSelectedItem());
 
     System.setProperty("mobile.java.home", mobileJavaHomeField.getText().trim());
 
@@ -502,6 +533,40 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
   }
 
   public void install(final String[] args) throws LauncherException {
+    try {
+      updateProperties();
+
+      if(!isConfigMode() ) {
+        coreInstall();
+      }
+
+      /*if(!languagesPanelUpdated) {
+        update();
+      }
+
+      for(int i=0; i < languages.size(); i++) {
+        Map language = (Map)languages.get(i);
+        String name = (String)language.get("name");
+
+        System.setProperty(name + ".install", String.valueOf(checkBoxes[i].isSelected()));
+      }
+      */
+
+      try {
+        save();
+      }
+      catch (IOException e) {
+        throw new LauncherException(e);
+      }
+
+      super.install(args);
+    }
+    catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  public void installLanguages(final String[] args) throws LauncherException {
     try {
       updateProperties();
 
@@ -523,7 +588,8 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
         throw new LauncherException(e);
       }
 
-      GuiInstaller.super.install(args);
+      //GuiInstaller.super.install(args);
+      super.instalLanguageProjects(args);
     }
     catch (Exception e) {
       e.printStackTrace();

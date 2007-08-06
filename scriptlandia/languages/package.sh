@@ -1,9 +1,5 @@
 #!/bin/sh
 
-if [ -f ~/scriptlandia/config.sh ]; then
-  . ~/scriptlandia/config.sh
-fi
-
 . ../config.sh
 
 echo ---### Java Specification Version: $JAVA_SPECIFICATION_VERSION

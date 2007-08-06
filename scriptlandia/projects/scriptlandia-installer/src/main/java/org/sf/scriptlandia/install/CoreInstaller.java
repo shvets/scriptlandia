@@ -145,7 +145,9 @@ public class CoreInstaller {
    * @throws LauncherException the exception
    */
   private void instalRequiredlProjects(String[] args) throws LauncherException {
-    SimpleLauncher launcher = new SimpleLauncher(getRequiredProjectsArgsList(args));
+    SimpleLauncher launcher = new SimpleLauncher(args);
+
+    launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
     prepare(launcher, false);
 
@@ -159,20 +161,21 @@ public class CoreInstaller {
    * @param args command line argumemts
    * @return the required  arguments list
    */
-  private static String[] getRequiredProjectsArgsList(String[] args) {
-    List<String> newArgsList = new ArrayList<String>();
+//  private static String[] getRequiredProjectsArgsList(String[] args) {
+//    List<String> newArgsList = new ArrayList<String>();
 
-    newArgsList.add("-f");
-    newArgsList.add("installer.ant");
+//    newArgsList.add("-f");
+//    newArgsList.add("installer.ant");
 
-    newArgsList.addAll(Arrays.asList(args));
+//    newArgsList.addAll(Arrays.asList(args));
 
-    String[] newArgs = new String[newArgsList.size()];
+//    String[] newArgs = new String[newArgsList.size()];
 
-    newArgsList.toArray(newArgs);
+//    newArgsList.toArray(newArgs);
+//    newArgsList.toArray(args);
 
-    return newArgs;
-  }
+//    return newArgs;
+//  }
 
   /**
    * Performs the configuration of scriptlandia.
@@ -198,8 +201,8 @@ public class CoreInstaller {
   private static String[] getConfigArgsList(String[] args) {
     List<String> newArgsList = new ArrayList<String>();
 
-    newArgsList.add("-f");
-    newArgsList.add("config.ant");
+//    newArgsList.add("-f");
+//    newArgsList.add("config.ant");
 
     newArgsList.addAll(Arrays.asList(args));
 
@@ -238,6 +241,45 @@ public class CoreInstaller {
     else {
       launcher.addClasspathEntry("projects/antrun/target/antrun.jar");
     }
+  }
+
+  /**
+   * Installs languages projects.
+   *
+   * @param args the command line arguments
+   * @throws LauncherException the exception
+   */
+  protected void instalLanguageProjects(String[] args) throws LauncherException {
+    SimpleLauncher launcher = new SimpleLauncher(getLanguageProjectsArgsList(args));
+
+    launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
+
+    prepare(launcher, false);
+  
+    launcher.configure(Thread.currentThread().getContextClassLoader());
+    launcher.launch();
+  }
+
+  /**
+   * Gets the required projects arguments list.
+   *
+   * @param args command line argumemts
+   * @return the required  arguments list
+   */
+  private static String[] getLanguageProjectsArgsList(String[] args) {
+    List<String> newArgsList = new ArrayList<String>();
+
+//    newArgsList.add("-f");
+//    newArgsList.add("installer.ant");
+    newArgsList.add("install.languages");
+
+    newArgsList.addAll(Arrays.asList(args));
+
+    String[] newArgs = new String[newArgsList.size()];
+
+    newArgsList.toArray(newArgs);
+
+    return newArgs;
   }
 
   /**
