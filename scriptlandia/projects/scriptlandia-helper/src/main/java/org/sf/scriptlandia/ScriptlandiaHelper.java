@@ -38,7 +38,7 @@ public class ScriptlandiaHelper {
 
     if(manager.equalsIgnoreCase("bsf")) {
       pom = repositoryHome + "/org/sf/scriptlandia/" + name + "/1.0/" + name + "-1.0" + ".pom";
-      launcher.resolveDependencies(new File(pom));
+      launcher.resolveDependencies(pom);
     }
     else {
       pom = repositoryHome + "/javax/script/" + name + "-engine/1.0/" + name + "-engine-1.0.pom";
@@ -46,7 +46,7 @@ public class ScriptlandiaHelper {
       File pomFile = new File(pom);
 
       if(pomFile.exists()) {
-        launcher.resolveDependencies(new File(pom));
+        launcher.resolveDependencies(pom);
       }
       else {
         String groupId = "javax.script";
@@ -97,20 +97,13 @@ public class ScriptlandiaHelper {
          throws Exception {
     UniversalLauncher launcher = ScriptlandiaLauncher.getInstance();
 
-    launcher.resolveDependencies(groupId, artifactId, version, null);
+    launcher.resolveDependencies(groupId, artifactId, version);
   }
 
   public static void resolveDependencies(String depsFileName) throws Exception {
-    File depsFile = new File(depsFileName);
+    UniversalLauncher launcher = ScriptlandiaLauncher.getInstance();
 
-    if(!depsFile.exists()) {
-      System.out.println("File " + depsFile + " does not exist.");
-    }
-    else {
-      UniversalLauncher launcher = ScriptlandiaLauncher.getInstance();
-
-      launcher.resolveDependencies(depsFile);
-    }
+    launcher.resolveDependencies(depsFileName);
   }
     
 }

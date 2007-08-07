@@ -30,7 +30,7 @@ public final class ScriptlandiaStarter {
 
     String scriptName = args[0];
 
-    launcher.resolveDependencies(new File(scriptName));
+    launcher.resolveDependencies(scriptName);
 
     List<String> mainClassNames = launcher.findMainClassNames(scriptName);
 
