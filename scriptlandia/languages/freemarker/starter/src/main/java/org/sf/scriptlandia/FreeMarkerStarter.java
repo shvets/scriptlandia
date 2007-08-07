@@ -30,7 +30,7 @@ public final class FreeMarkerStarter {
     String contextName;
 
     String templateName = new File(fullTemplateName).getName();
-    String templateDir = new File(fullTemplateName).getParent();
+    String templateDir = new File(new File(fullTemplateName).getAbsolutePath()).getParent();
 
     if (args.length < 2) {
       contextName = /*templateDir + */"context.bsh";

@@ -637,11 +637,16 @@ public class ExtInstaller {
     }
 
     writer.newLine();
-    writer.write("if \"%NAME%.%EXT%\" == \"build.xml\" goto antSetup");
+    writer.write("if \"%NAME%%EXT%\" == \"build.xml\" goto antSetup");
     writer.newLine();
 
     writer.newLine();
-    writer.write("if \"%NAME%.%EXT%\" == \"pom.xml\" goto mavenSetup");
+    writer.write("if \"%NAME%%EXT%\" == \"pom.xml\" goto mavenSetup");
+    writer.newLine(); writer.newLine();
+
+    writer.write("echo \"Unsupported extension: %EXT%\" ");
+    writer.newLine();
+    writer.write("goto end");
     writer.newLine();
 
     for(int i=0; i < languages.size(); i++) {
@@ -669,6 +674,9 @@ public class ExtInstaller {
     writer.newLine();
     writer.write(":execute"); writer.newLine();
     writer.write("%SCRIPT_NAME% %DEPS_PROPERTY% %MAIN_CLASS_PROPERTY% %CMD_LINE% %*"); 
+    writer.newLine(); writer.newLine();
+
+    writer.write(":end");
     writer.newLine();
 
     writer.close();

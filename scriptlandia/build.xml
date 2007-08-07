@@ -69,16 +69,16 @@
       <filter token="nailgun.version" value="${nailgun.version}"/>
     </filterset>
 
-    <condition property="jacob.lib.is.present">
+    <!--condition property="jacob.lib.is.present">
       <and>
         <available file="${repository.home}/jacob/jacob-dll/1.10.1/jacob-dll-1.10.1.jar"/>
         <istrue value="true"/>
       </and>
-    </condition>
+    </condition-->
 
     <antcall target="copy.settings.xml"/>
 
-    <antcall target="unzip.jacob.lib"/>
+    <!--antcall target="unzip.jacob.lib"/-->
 
     <script language="beanshell">
       source("projects/scriptlandia-config/src/main/bsh/ChecksumScript.bsh");
@@ -215,14 +215,14 @@
            dest="${repository.home}/com/martiansoftware/nailgun-bin/${nailgun.version}" overwrite="false"/>
   </target>
 
-  <target name="unzip.jacob.lib" if="jacob.lib.is.present">
+  <!--target name="unzip.jacob.lib" if="jacob.lib.is.present">
     <unzip src="${repository.home}/jacob/jacob-dll/1.10.1/jacob-dll-1.10.1.jar"
            dest="${repository.home}/jacob/jacob-dll/1.10.1" overwrite="false">
       <patternset>
         <include name="*.dll"/>
       </patternset>
     </unzip>
-  </target>
+  </target-->
 
   <target name="install" depends="config, install.projects, generate.scripts, install.libraries, prepare.unix.files"/>
 

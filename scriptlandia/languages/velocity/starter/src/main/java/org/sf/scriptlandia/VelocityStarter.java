@@ -29,7 +29,7 @@ public final class VelocityStarter {
     String contextName;
 
     String templateName = new File(fullTemplateName).getName();
-    String templateDir = new File(fullTemplateName).getParent();
+    String templateDir = new File(new File(fullTemplateName).getAbsolutePath()).getParent();
 
     System.setProperty("user.dir", templateDir);
     System.setProperty("file.resource.loader.path", templateDir);

@@ -20,6 +20,12 @@
       <artifactId>fortress</artifactId>
       <version>${fortress.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>com.sun.fortress</groupId>
+      <artifactId>fortress-lib</artifactId>
+      <version>${fortress.version}</version>
+    </dependency>
   </dependencies>
 
 </project>
