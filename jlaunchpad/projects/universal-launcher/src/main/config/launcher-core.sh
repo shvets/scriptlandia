@@ -1,18 +1,5 @@
 #!/bin/sh
 
-# JavaAppLauncher: Generic Java Application Launcher
-# Copyright (C) 2007  Santhosh Kumar T
-# 
-# This library is free software; you can redistribute it and/or
-# modify it under the terms of the GNU Lesser General Public
-# License as published by the Free Software Foundation; either
-# version 2.1 of the License, or (at your option) any later version.
-# 
-# This library is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-# Lesser General Public License for more details.
-
 readCommandLine() {
   for arg in $*; do
     processArg $arg
@@ -55,37 +42,40 @@ readFile() {
     line=""
 
     if [ -n "`tail -1 $FILE`" ]; then
-        echo>>$FILE
+      echo>>$FILE
     fi
 
-    temp_dir=`date "+%d%m%y%H%M%S%N"`
-    mkdir $temp_dir
+#    temp_dir=`date "+%d%m%y%H%M%S%N"`
+#    mkdir $temp_dir
     # in solaris bash shell, while loop spawns a new subshell
     # http://www.kilala.nl/Sysadmin/script-variablescope.php
     # so using temporary file read/write to gain access to
     # changes in variables from while loop
     while read line
     do
-        processline
-        echo "$RESULT">$temp_dir/RESULT
-        echo "$SEPARATOR">$temp_dir/SEPARATOR
-        echo "$line">$temp_dir/line
-        echo "$SECTION">$temp_dir/SECTION
-        echo "$SECTION_PREFIX">$temp_dir/SECTION_PREFIX
-        echo "$PREFIX">$temp_dir/PREFIX
-        echo "$CMD">$temp_dir/CMD
+       processline
+
+#        echo "$RESULT">$temp_dir/RESULT
+#        echo "$SEPARATOR">$temp_dir/SEPARATOR
+#        echo "$line">$temp_dir/line
+#        echo "$SECTION">$temp_dir/SECTION
+#        echo "$SECTION_PREFIX">$temp_dir/SECTION_PREFIX
+#        echo "$PREFIX">$temp_dir/PREFIX
+#        echo "$CMD">$temp_dir/CMD
+
     done < $FILE
 
-    RESULT=`cat $temp_dir/RESULT`
-    SEPARATOR=`cat $temp_dir/SEPARATOR`
-    line=`cat $temp_dir/line`
-    SECTION=`cat $temp_dir/SECTION`
-    PREFIX=`cat $temp_dir/PREFIX`
-    SECTION_PREFIX=`cat $temp_dir/SECTION_PREFIX`
-    CMD=`cat $temp_dir/CMD`
-    rm -rf $temp_dir
-    #processline
-    processresult
+#    RESULT=`cat $temp_dir/RESULT`
+#    SEPARATOR=`cat $temp_dir/SEPARATOR`
+#    line=`cat $temp_dir/line`
+#    SECTION=`cat $temp_dir/SECTION`
+#    PREFIX=`cat $temp_dir/PREFIX`
+#    SECTION_PREFIX=`cat $temp_dir/SECTION_PREFIX`
+#    CMD=`cat $temp_dir/CMD`
+#    rm -rf $temp_dir
+#    processline
+
+   processresult
 }
 
 processline() {
@@ -95,8 +85,8 @@ processline() {
             VARIABLE_NAME="JAVA_CLASSPATH"
             VARIABLE_VALUE="$JAVA_CLASSPATH"
             RESULT="";
-            SECTION_PREFIX="-classpath "
-            PREFIX=""
+#            SECTION_PREFIX="-classpath "
+#            PREFIX=""
             SEPARATOR=":"
             ;;
         '<java.endorsed.dirs>')
@@ -104,8 +94,8 @@ processline() {
             VARIABLE_NAME="JAVA_ENDORSED_DIRS"
             VARIABLE_VALUE="$JAVA_ENDORSED_DIRS"
             RESULT="";
-            SECTION_PREFIX="-Djava.endorsed.dirs="
-            PREFIX=""
+#            SECTION_PREFIX="-Djava.endorsed.dirs="
+#            PREFIX=""
             SEPARATOR=":"
             ;;
         '<java.ext.dirs>')
@@ -113,8 +103,8 @@ processline() {
             VARIABLE_NAME="JAVA_EXT_DIRS"
             VARIABLE_VALUE="$JAVA_EXT_DIRS"
             RESULT="";
-            SECTION_PREFIX="-Djava.ext.dirs="
-            PREFIX=""
+#            SECTION_PREFIX="-Djava.ext.dirs="
+#            PREFIX=""
             SEPARATOR=":"
             ;;
         '<java.library.path>')
@@ -122,8 +112,8 @@ processline() {
             VARIABLE_NAME="JAVA_LIBRARY_PATH"
             VARIABLE_VALUE="$JAVA_LIBRARY_PATH"
             RESULT="";
-            SECTION_PREFIX="-Djava.library.path="
-            PREFIX=""
+#            SECTION_PREFIX="-Djava.library.path="
+#            PREFIX=""
             SEPARATOR=":"
             ;;
         '<java.system.props>')
@@ -131,8 +121,8 @@ processline() {
             VARIABLE_NAME="JAVA_SYSTEM_PROPS"
             VARIABLE_VALUE="$JAVA_SYSTEM_PROPS"
             RESULT="";
-            SECTION_PREFIX=""
-            PREFIX="-D"
+#            SECTION_PREFIX=""
+#            PREFIX="-D"
             SEPARATOR=" "
             ;;
         '<java.bootclasspath>')
@@ -140,8 +130,8 @@ processline() {
             VARIABLE_NAME="$JAVA_BOOTCLASSPATH"
             VARIABLE_VALUE="$JAVA_BOOTCLASSPATH"
             RESULT="";
-            SECTION_PREFIX="-Xbootclasspath:"
-            PREFIX=""
+#            SECTION_PREFIX="-Xbootclasspath:"
+#            PREFIX=""
             SEPARATOR=":"
             ;;
         '<java.bootclasspath.prepend>')
@@ -149,8 +139,8 @@ processline() {
             VARIABLE_NAME="JAVA_BOOTCLASSPATH_PREPEND"
             VARIABLE_VALUE="$JAVA_BOOTCLASSPATH_PREPEND"
             RESULT="";
-            SECTION_PREFIX="-Xbootclasspath/p:"
-            PREFIX=""
+#            SECTION_PREFIX="-Xbootclasspath/p:"
+#            PREFIX=""
             SEPARATOR=":"
             ;;
         '<java.bootclasspath.append>')
@@ -158,18 +148,18 @@ processline() {
             VARIABLE_NAME="JAVA_BOOTCLASSPATH_APPEND"
             VARIABLE_VALUE="$JAVA_BOOTCLASSPATH_APPEND"
             RESULT="";
-            SECTION_PREFIX="-Xbootclasspath/a:"
-            PREFIX=""
+#            SECTION_PREFIX="-Xbootclasspath/a:"
+#            PREFIX=""
             SEPARATOR=":"
             ;;
         '<jvm.args>')
             processresult
             VARIABLE_NAME="JVM_ARGS"
             VARIABLE_VALUE="$JVM_ARGS"
-            CMD=$CMD' '-DSCRIPT_FILE=`basename $0`
+#            CMD=$CMD' '-DSCRIPT_FILE=`basename $0`
             RESULT="";
-            SECTION_PREFIX=""
-            PREFIX=""
+#            SECTION_PREFIX=""
+#            PREFIX=""
             SEPARATOR=" "
             ;;
 
@@ -179,8 +169,8 @@ processline() {
             VARIABLE_VALUE="$LAUNCHER_CLASS"
             LAUNCHER_CLASS=
             RESULT="";
-            SECTION_PREFIX=""
-            PREFIX=""
+#            SECTION_PREFIX=""
+#            PREFIX=""
             SEPARATOR=" "
             ;;
 
@@ -189,8 +179,8 @@ processline() {
             VARIABLE_NAME="SET_VARIABLES"
             VARIABLE_VALUE="$SET_VARIABLES"
             RESULT="";
-            SECTION_PREFIX=""
-            PREFIX="SET"
+#            SECTION_PREFIX=""
+#            PREFIX="SET"
             SEPARATOR=" "
             ;;
 
@@ -199,8 +189,8 @@ processline() {
             VARIABLE_NAME="COMMAND_LINE_ARGS"
             VARIABLE_VALUE="$COMMAND_LINE_ARGS"
             RESULT="";
-            SECTION_PREFIX=""
-            PREFIX=""
+#            SECTION_PREFIX=""
+#            PREFIX=""
             SEPARATOR=" "
             ;;
         *)
@@ -208,40 +198,62 @@ processline() {
     esac
 }
 
-processresult() {
-#    if [ -n "$RESULT" ]; then
-#         CMD=$CMD' '$SECTION_PREFIX$RESULT
-#    fi
-
-  if [ "$VARIABLE_NAME" != "" ]; then
-    if [ "$VARIABLE_NAME" ]; then
-      eval "$VARIABLE_NAME=\"$SECTION_PREFIX$RESULT\""
-    else
-      eval "$VARIABLE_NAME=\"$VARIABLE_VALUE$SEPARATOR$RESULT\""
-    fi
-  fi
-
-  SECTION=$line
-}
-
 join() {
-    if [ -n "$line" ] # skip lines of zero length
-    then
+    if [ -n "$line" ]; then
+      # skip lines of zero length
+ 
       if [ `echo $line | cut -c 1` = '#' ]; then
         return # ignore lines starting with '#'
       fi
 
-       if [ "$PREFIX" = "SET" ]; then
-          `eval echo "$line"`
-        else
-          line=`echo $line | sed 's/\(%\)\([a-zA-Z0-9_]*\)\(\%\)/\$\2/g'`
-          line=`eval echo "$line"` # evaluate environment variables used, if any
-          if [ -n "$RESULT" ]; then
-            RESULT=$RESULT$SEPARATOR
-          fi
-          RESULT=$RESULT$PREFIX$line
+      if [ -n "$RESULT" ]; then
+        RESULT="$RESULT$SEPARATOR"
+      fi
+
+      if [ "$VARIABLE_NAME" = "JAVA_SYSTEM_PROPS" ]; then
+        RESULT="$RESULT-D$line"
+      elif [ "$VARIABLE_NAME" = "SET_VARIABLES" ]; then
+        `eval "$line"`
+      elif [ "$VARIABLE_NAME" = "LAUNCHER_CLASS" ]; then
+        if [ "$LAUNCHER_CLASS" = "" ]; then
+          LAUNCHER_CLASS="$line"
         fi
+      else
+        line=`echo $line | sed 's/\(%\)\([a-zA-Z0-9_]*\)\(\%\)/\$\2/g'`
+        line=`eval echo "$line"` # evaluate environment variables used, if any
+
+        RESULT="$RESULT$line"
+      fi
+
+#       if [ "$PREFIX" = "SET" ]; then
+#          `eval echo "$line"`
+#        else
+#          line=`echo $line | sed 's/\(%\)\([a-zA-Z0-9_]*\)\(\%\)/\$\2/g'`
+#          line=`eval echo "$line"` # evaluate environment variables used, if any
+#          if [ -n "$RESULT" ]; then
+#            RESULT=$RESULT$SEPARATOR
+#          fi
+#          RESULT=$RESULT$PREFIX$line
+#        fi
     fi
+}
+
+processresult() {
+  if [ "$VARIABLE_NAME" != "" ]; then
+    if [ -n "$VARIABLE_NAME" ]; then
+      if [ "$VARIABLE_NAME" = "LAUNCHER_CLASS" ]; then
+        if [ "$LAUNCHER_CLASS" = "" ]; then
+          eval "$VARIABLE_NAME=\"$VARIABLE_VALUE$SEPARATOR$RESULT\""
+        fi
+      else
+        eval "$VARIABLE_NAME=\"$RESULT\""
+      fi
+    else
+      eval "$VARIABLE_NAME=\"$RESULT\""
+    fi
+  fi
+
+#  SECTION=$line
 }
 
 
@@ -319,6 +331,30 @@ if [ -r "$FILE" ]; then
   fi
 fi
 
+if [ "$JAVA_CLASSPATH" != "" ]; then
+  JAVA_CLASSPATH="-classpath $JAVA_CLASSPATH"
+fi
+
+if [ "$JAVA_BOOTCLASSPATH_PREPEND" != "" ]; then
+  JAVA_BOOTCLASSPATH_PREPEND="-Xbootclasspath/p:$JAVA_BOOTCLASSPATH_PREPEND"
+fi
+
+if [ "$JAVA_BOOTCLASSPATH_APPPEND" != "" ]; then
+  JAVA_BOOTCLASSPATH_APPPEND="-Xbootclasspath/a:$JAVA_BOOTCLASSPATH_APPPEND"
+fi
+
+if [ "$JAVA_ENDORSED_DIRS" != "" ]; then
+  JAVA_ENDORSED_DIRS="-Djava.endorsed.dirs=$JAVA_ENDORSED_DIRS"
+fi
+
+if [ "$JAVA_EXT_DIRS" != "" ]; then
+  JAVA_EXT_DIRS="-Djava.ext.dirs=$JAVA_EXT_DIRS"
+fi
+
+if [ "$JAVA_LIBRARY_PATH" != "" ]; then
+  JAVA_LIBRARY_PATH="-Djava.library.path=`cygpath -wp $JAVA_LIBRARY_PATH`"
+fi
+ 
 $CMD \
   $JAVA_BOOTCLASSPATH_APPEND $JAVA_BOOTCLASSPATH_PREPEND $JAVA_BOOTCLASSPATH \
   $JAVA_LIBRARY_PATH $JAVA_EXT_DIRS $JAVA_ENDORSED_DIRS \

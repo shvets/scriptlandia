@@ -3,6 +3,11 @@
 CYGWIN=true
 
 LAUNCHER_HOME=/cygdrive/d/launcher-cygnus
+
+if [ -f ~/jlaunchpad/config.sh ]; then
+  . ~/jlaunchpad/config.sh
+fi
+
 MAIN_CLASS=groovy.ui.GroovyMain
 
 PWD=`pwd`

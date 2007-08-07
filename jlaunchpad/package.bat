@@ -1,7 +1,5 @@
 @ECHO OFF
 
-if exist "%USERPROFILE%\jlaunchpad\config.bat" @call "%USERPROFILE%\jlaunchpad\config.bat"
-
 @call config.bat
 
 SET BOOTSTRAP_MINI_PROJECT=projects\bootstrap-mini

@@ -16,7 +16,6 @@ CYGWIN=true
 
 # Overwrites default values, if exists
 if [ -f ~/jlaunchpad/config.sh ]; then
-echo ? ~/jlaunchpad/config.sh
   . ~/jlaunchpad/config.sh
 fi
 

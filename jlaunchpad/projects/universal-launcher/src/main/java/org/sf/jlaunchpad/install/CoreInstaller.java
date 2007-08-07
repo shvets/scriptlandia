@@ -3,6 +3,7 @@ package org.sf.jlaunchpad.install;
 
 import org.sf.jlaunchpad.core.LauncherException;
 import org.sf.jlaunchpad.util.StringUtil;
+import org.sf.jlaunchpad.util.FileUtil;
 import org.sf.pomreader.ProjectInstaller;
 
 import java.io.*;
@@ -66,6 +67,10 @@ public class CoreInstaller {
       }
 
       for(File fromFile : files) {
+        String extension = FileUtil.getExtension(fromFile);
+
+        boolean isUnixFile = (extension != null && extension.equals("sh"));
+
         if(fromFile.exists() && !fromFile.isHidden() && !fromFile.isDirectory()) {
           File toFile = new File(launcherHomeFile.toString(), fromFile.getName());
 
@@ -88,7 +93,13 @@ public class CoreInstaller {
               }
               else {
                 writer.write(StringUtil.substituteProperties(line, "@", "@"));
-                writer.newLine();
+
+                if(isUnixFile) {
+                  writer.write("\n");
+                }
+                else {
+                  writer.newLine();
+                }
               }
             }
           }
