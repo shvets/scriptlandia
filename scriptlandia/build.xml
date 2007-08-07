@@ -226,13 +226,18 @@
 
   <target name="install" depends="config, install.projects, generate.scripts, install.libraries, prepare.unix.files"/>
 
-  <target name="install.projects">
-    <!--installProject basedir="projects/antrun"/-->
-
+  <target name="package.projects">
+    <installProject basedir="projects/antrun"/>
     <installProject basedir="projects/scriptlandia-installer"/>
     <installProject basedir="projects/scriptlandia-nailgun"/>
     <installProject basedir="projects/scriptlandia-launcher"/>
     <installProject basedir="projects/scriptlandia-helper"/>
+  </target>
+
+  <target name="install.projects">
+    <installProject basedir="projects/scriptlandia-nailgun" build="false"/>
+    <installProject basedir="projects/scriptlandia-launcher" build="false"/>
+    <installProject basedir="projects/scriptlandia-helper" build="false"/>
   </target>
 
   <target name="install.languages">
