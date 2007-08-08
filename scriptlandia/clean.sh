@@ -10,4 +10,6 @@ rm -d -r -f projects/scriptlandia/target
 rm -d -r -f target
 rm -d -r -f classes
 
-/media/hda5/scriptlandia/mvn.sh -f pom.xml clean
+SCRIPTLANDIA_HOME=c:/scriptlandia
+
+$SCRIPTLANDIA_HOME/mvn.sh -f pom.xml clean

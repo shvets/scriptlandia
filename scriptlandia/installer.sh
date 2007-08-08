@@ -2,8 +2,6 @@
 
 . ./config.sh
 
-echo $LAUNCHER_HOME/launcher.sh
-
 #if [ -r "$LAUNCHER_HOME/launcher.sh" ]; then
 #  echo Please run jlaunchpad-installer.bat first.
 

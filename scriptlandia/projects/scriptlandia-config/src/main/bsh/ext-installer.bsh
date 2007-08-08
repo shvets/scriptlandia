@@ -515,8 +515,9 @@ public class ExtInstaller {
   private String getScriptName(String path, String name, String ext) {
     StringBuffer scriptName = new StringBuffer();
 
-    scriptName.append(path.replace('/', File.separatorChar));
-    scriptName.append(File.separatorChar);
+//    scriptName.append(path.replace('/', File.separatorChar));
+    scriptName.append(path);
+    scriptName.append(/*File.separatorChar*/"/");
     scriptName.append(name);
     scriptName.append(".");
     scriptName.append(ext);
@@ -582,7 +583,7 @@ public class ExtInstaller {
 
     StringBuffer action = new StringBuffer();
 
-    action.append(scriptName);
+    action.append(scriptName.replace('/', '\\'));
     action.append(" ");
     action.append(depsProperty);
     action.append(" ");
@@ -601,20 +602,32 @@ public class ExtInstaller {
   public void generateBatchFile(List languages, String dir) {
     BufferedWriter writer = new BufferedWriter(new FileWriter(dir + "/sl.bat"));
 
-    writer.write("@echo off"); writer.newLine(); writer.newLine();
-    writer.write("rem sl.bat"); writer.newLine(); writer.newLine();
+    writer.write("@echo off"); writer.newLine();
+    writer.newLine();
 
-    writer.write("SET REPOSITORY_HOME=" + repositoryHome); writer.newLine();
-    writer.write("SET LAUNCHER_HOME=" + launcherHome); writer.newLine();
-    writer.write("SET SCRIPTLANDIA_HOME=" + scriptlandiaHome); writer.newLine(); writer.newLine();
+    writer.write("rem sl.bat"); writer.newLine();
+    writer.newLine();
+
+    writer.write("SET REPOSITORY_HOME=" + repositoryHome.replace('/', '\\'));
+    writer.newLine();
+
+    writer.write("SET LAUNCHER_HOME=" + launcherHome.replace('/', '\\'));
+    writer.newLine();
+
+    writer.write("SET SCRIPTLANDIA_HOME=" + scriptlandiaHome.replace('/', '\\'));
+    writer.newLine();
+    writer.newLine();
 
     String scriptName = getScriptName("%SCRIPTLANDIA_HOME%", LAUNCHER_SCRIPT_NAME, "bat");
 
-    writer.write("SET SCRIPT_NAME=" + scriptName);
+    writer.write("SET SCRIPT_NAME=" + scriptName.replace('/', '\\'));
     writer.newLine();
 
-    writer.write("SET NAME=%~n1"); writer.newLine();
-    writer.write("SET EXT=%~x1"); writer.newLine(); 
+    writer.write("SET NAME=%~n1");
+    writer.newLine();
+
+    writer.write("SET EXT=%~x1");
+    writer.newLine(); 
 
     for(int i=0; i < languages.size(); i++) {
       Map language = (Map)languages.get(i);
@@ -638,7 +651,8 @@ public class ExtInstaller {
 
     writer.newLine();
     writer.write("if \"%NAME%%EXT%\" == \"pom.xml\" goto mavenSetup");
-    writer.newLine(); writer.newLine();
+    writer.newLine();
+    writer.newLine();
 
     writer.write("echo \"Unsupported extension: %EXT%\" ");
     writer.newLine();
@@ -670,7 +684,8 @@ public class ExtInstaller {
     writer.newLine();
     writer.write(":execute"); writer.newLine();
     writer.write("%SCRIPT_NAME% %DEPS_PROPERTY% %MAIN_CLASS_PROPERTY% %CMD_LINE% %*"); 
-    writer.newLine(); writer.newLine();
+    writer.newLine();
+    writer.newLine();
 
     writer.write(":end");
     writer.newLine();
@@ -681,18 +696,27 @@ public class ExtInstaller {
   public void generateShellFile(List languages, String dir) {
     BufferedWriter writer = new BufferedWriter(new FileWriter(dir + "/sl.sh"));
 
-    writer.write("#!/bin/sh"); writer.newLine(); writer.newLine();
+    writer.write("#!/bin/sh");
+    writer.newLine();
+    writer.newLine();
 
-    writer.write("REPOSITORY_HOME=" + repositoryHome); writer.newLine();
-    writer.write("LAUNCHER_HOME=" + launcherHome); writer.newLine();
-    writer.write("SCRIPTLANDIA_HOME=" + scriptlandiaHome); writer.newLine(); writer.newLine();
+    writer.write("REPOSITORY_HOME=" + repositoryHome.replace('\\', '/'));
+    writer.newLine();
+
+    writer.write("LAUNCHER_HOME=" + launcherHome.replace('\\', '/')); 
+    writer.newLine();
+
+    writer.write("SCRIPTLANDIA_HOME=" + scriptlandiaHome.replace('\\', '/'));
+    writer.newLine();
+    writer.newLine();
 
     String scriptName = getScriptName("$SCRIPTLANDIA_HOME", LAUNCHER_SCRIPT_NAME, "sh");
 
-    writer.write("SCRIPT_NAME=" + scriptName);
+    writer.write("SCRIPT_NAME=" + scriptName.replace('\\', '/'));
     writer.newLine();
 
-    writer.write("EXT=`echo $1 | awk -F. '{print $NF}'`"); writer.newLine();
+    writer.write("EXT=`echo $1 | awk -F. '{print $NF}'`");
+    writer.newLine();
 
     writer.newLine();
     writer.write("case \"$EXT\" in");
@@ -714,7 +738,7 @@ public class ExtInstaller {
       for(int i=0; i < extensions.size(); i++) {
         String extension = (String)extensions.get(i);
 
-        writer.write("  '." + extension + "')");
+        writer.write("  '" + extension + "')");
         writer.newLine();
         writer.write("    DEPS_PROPERTY=" + depsProperty);
         writer.newLine();
@@ -727,10 +751,15 @@ public class ExtInstaller {
       }
     }
 
-    writer.write("*)");
+    writer.write("  *)");
     writer.newLine();
+
+    writer.write("    ;;");
+    writer.newLine();
+
     writer.write("esac");
-    writer.newLine(); writer.newLine();
+    writer.newLine();
+    writer.newLine();
 
     writer.write("$SCRIPT_NAME $DEPS_PROPERTY $MAIN_CLASS_PROPERTY $CMD_LINE $*"); 
     writer.newLine();

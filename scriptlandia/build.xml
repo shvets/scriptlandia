@@ -36,6 +36,19 @@
   <target name="copy.config.files">
     <!-- Variable ${java.home.internal} is set up inside install program. -->
 
+    <script language="beanshell">
+      String scriptlandiaHome = System.getProperty("scriptlandia.home");
+      String launcherHome = System.getProperty("launcher.home");
+
+      project.setNewProperty("scriptlandia.home.internal", scriptlandiaHome.replace('\\', '/'));
+      project.setNewProperty("launcher.home.internal", launcherHome.replace('\\', '/'));
+    </script>
+
+      <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
+      <filter token="native.ruby.home" value="${native.ruby.home}"/>
+
+      <filter token="launcher.home" value="${launcher.home}"/>
+
     <filterset id="copy.filterset">
       <filter token="java.home.internal" value="${java.home.internal}"/>
       <filter token="mobile.java.home" value="${mobile.java.home}"/>
@@ -44,10 +57,10 @@
       <filter token="proxyPort" value="${proxyPort}"/>
 
       <filter token="repository.home" value="${repository.home}"/>
-      <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
+      <filter token="scriptlandia.home" value="${scriptlandia.home.internal}"/>
       <filter token="native.ruby.home" value="${native.ruby.home}"/>
 
-      <filter token="launcher.home" value="${launcher.home}"/>
+      <filter token="launcher.home" value="${launcher.home.internal}"/>
       <filter token="launcher.version" value="${launcher.version}"/>
 
       <filter token="scriptlandia.version" value="${scriptlandia.version}"/>

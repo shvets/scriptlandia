@@ -1,4 +1,4 @@
-Installation
+    Installation
 
 
 1. Install Java Virtual Machine
@@ -63,8 +63,19 @@ Now you can ivoke scripts without specifying the extension:
 
 It is also good idea to add SCRIPTLANDIA_HOME variable to your PATH variable.
 
+    Direct invocation of Scriptlandia script
 
-Integration with Nailgun server
+if your operating system is not supported by JDIC library, you still can use
+Scriptlandia to launch your language scripts. To do it you have to call "sl.bat/sl.sh" script:
+
+>sl.sh test.ant
+
+or
+
+>sl.sh hello.bsh
+
+
+    Integration with Nailgun server
 
 ***
 NailGun is a client, protocol, and server for running Java programs from the command line without 
@@ -94,7 +105,7 @@ If you don't want to have the server as the system tray, run this command instea
 >nailgun-server.bat
 
 
-Additional code to explore
+    Additional code to explore
 
 
 The Scriptlandia installation has additional distribution package: "examples and tools".

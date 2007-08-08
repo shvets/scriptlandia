@@ -10,4 +10,6 @@ if exist projects\scriptlandia\target rmdir /S /Q projects\scriptlandia\target
 if exist target rmdir /S /Q target
 if exist classes rmdir /S /Q classes
 
-@call mvn -f pom.xml clean
+SET SCRIPTLANDIA_HOME=c:\scriptlandia
+
+@call %SCRIPTLANDIA_HOME%\mvn -f pom.xml clean
