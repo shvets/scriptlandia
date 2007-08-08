@@ -2,7 +2,12 @@
 
 CYGWIN=true
 
-LAUNCHER_HOME=/cygdrive/d/launcher-cygnus
+LAUNCHER_HOME=d:/launcher
+
+if [ -f ~/jlaunchpad/config.sh ]; then
+  . ~/jlaunchpad/config.sh
+fi
+
 MAIN_CLASS=org.jruby.Main
 
 PWD=`pwd`

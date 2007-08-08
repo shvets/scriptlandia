@@ -2,8 +2,12 @@
 
 CYGWIN=true
 
-LAUNCHER_HOME=/cygdrive/d/launcher-cygnus
+LAUNCHER_HOME=d:/launcher
 
-APP_NAME=tomcat
+if [ -f ~/jlaunchpad/config.sh ]; then
+  . ~/jlaunchpad/config.sh
+fi
+
+export APP_NAME=tomcat
 
 $LAUNCHER_HOME/launcher.sh $*

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+JAVA_HOME="@java.home.internal@"
+
 readCommandLine() {
   for arg in $*; do
     processArg $arg
@@ -45,152 +47,87 @@ readFile() {
       echo>>$FILE
     fi
 
-#    temp_dir=`date "+%d%m%y%H%M%S%N"`
-#    mkdir $temp_dir
-    # in solaris bash shell, while loop spawns a new subshell
-    # http://www.kilala.nl/Sysadmin/script-variablescope.php
-    # so using temporary file read/write to gain access to
-    # changes in variables from while loop
     while read line
     do
        processline
-
-#        echo "$RESULT">$temp_dir/RESULT
-#        echo "$SEPARATOR">$temp_dir/SEPARATOR
-#        echo "$line">$temp_dir/line
-#        echo "$SECTION">$temp_dir/SECTION
-#        echo "$SECTION_PREFIX">$temp_dir/SECTION_PREFIX
-#        echo "$PREFIX">$temp_dir/PREFIX
-#        echo "$CMD">$temp_dir/CMD
-
+       processresult
     done < $FILE
 
-#    RESULT=`cat $temp_dir/RESULT`
-#    SEPARATOR=`cat $temp_dir/SEPARATOR`
-#    line=`cat $temp_dir/line`
-#    SECTION=`cat $temp_dir/SECTION`
-#    PREFIX=`cat $temp_dir/PREFIX`
-#    SECTION_PREFIX=`cat $temp_dir/SECTION_PREFIX`
-#    CMD=`cat $temp_dir/CMD`
-#    rm -rf $temp_dir
-#    processline
-
-   processresult
 }
 
 processline() {
     case "$line" in
         '<java.classpath>')
-            processresult
             VARIABLE_NAME="JAVA_CLASSPATH"
             VARIABLE_VALUE="$JAVA_CLASSPATH"
             RESULT="";
-#            SECTION_PREFIX="-classpath "
-#            PREFIX=""
             SEPARATOR=":"
             ;;
         '<java.endorsed.dirs>')
-            processresult
             VARIABLE_NAME="JAVA_ENDORSED_DIRS"
             VARIABLE_VALUE="$JAVA_ENDORSED_DIRS"
             RESULT="";
-#            SECTION_PREFIX="-Djava.endorsed.dirs="
-#            PREFIX=""
             SEPARATOR=":"
             ;;
         '<java.ext.dirs>')
-            processresult
             VARIABLE_NAME="JAVA_EXT_DIRS"
             VARIABLE_VALUE="$JAVA_EXT_DIRS"
             RESULT="";
-#            SECTION_PREFIX="-Djava.ext.dirs="
-#            PREFIX=""
             SEPARATOR=":"
             ;;
         '<java.library.path>')
-            processresult
             VARIABLE_NAME="JAVA_LIBRARY_PATH"
             VARIABLE_VALUE="$JAVA_LIBRARY_PATH"
             RESULT="";
-#            SECTION_PREFIX="-Djava.library.path="
-#            PREFIX=""
             SEPARATOR=":"
             ;;
         '<java.system.props>')
-            processresult
             VARIABLE_NAME="JAVA_SYSTEM_PROPS"
             VARIABLE_VALUE="$JAVA_SYSTEM_PROPS"
             RESULT="";
-#            SECTION_PREFIX=""
-#            PREFIX="-D"
             SEPARATOR=" "
             ;;
         '<java.bootclasspath>')
-            processresult
             VARIABLE_NAME="$JAVA_BOOTCLASSPATH"
             VARIABLE_VALUE="$JAVA_BOOTCLASSPATH"
             RESULT="";
-#            SECTION_PREFIX="-Xbootclasspath:"
-#            PREFIX=""
             SEPARATOR=":"
             ;;
         '<java.bootclasspath.prepend>')
-            processresult
             VARIABLE_NAME="JAVA_BOOTCLASSPATH_PREPEND"
             VARIABLE_VALUE="$JAVA_BOOTCLASSPATH_PREPEND"
             RESULT="";
-#            SECTION_PREFIX="-Xbootclasspath/p:"
-#            PREFIX=""
             SEPARATOR=":"
             ;;
         '<java.bootclasspath.append>')
-            processresult
             VARIABLE_NAME="JAVA_BOOTCLASSPATH_APPEND"
             VARIABLE_VALUE="$JAVA_BOOTCLASSPATH_APPEND"
             RESULT="";
-#            SECTION_PREFIX="-Xbootclasspath/a:"
-#            PREFIX=""
             SEPARATOR=":"
             ;;
         '<jvm.args>')
-            processresult
             VARIABLE_NAME="JVM_ARGS"
             VARIABLE_VALUE="$JVM_ARGS"
-#            CMD=$CMD' '-DSCRIPT_FILE=`basename $0`
             RESULT="";
-#            SECTION_PREFIX=""
-#            PREFIX=""
             SEPARATOR=" "
             ;;
-
        '<launcher.class>')
-            processresult
             VARIABLE_NAME="LAUNCHER_CLASS"
             VARIABLE_VALUE="$LAUNCHER_CLASS"
             LAUNCHER_CLASS=
             RESULT="";
-#            SECTION_PREFIX=""
-#            PREFIX=""
             SEPARATOR=" "
             ;;
-
        '<set.variables>')
-            processresult
             VARIABLE_NAME="SET_VARIABLES"
             VARIABLE_VALUE="$SET_VARIABLES"
             RESULT="";
-#            SECTION_PREFIX=""
-#            PREFIX="SET"
             SEPARATOR=" "
             ;;
-
       '<command.line.args>')
-            processresult
             VARIABLE_NAME="COMMAND_LINE_ARGS"
             VARIABLE_VALUE="$COMMAND_LINE_ARGS"
             RESULT="";
-#            SECTION_PREFIX=""
-#            PREFIX=""
             SEPARATOR=" "
             ;;
         *)
@@ -213,9 +150,11 @@ join() {
       if [ "$VARIABLE_NAME" = "JAVA_SYSTEM_PROPS" ]; then
         RESULT="$RESULT-D$line"
       elif [ "$VARIABLE_NAME" = "SET_VARIABLES" ]; then
-        `eval "$line"`
+        eval `echo "$line"`
       elif [ "$VARIABLE_NAME" = "LAUNCHER_CLASS" ]; then
-        if [ "$LAUNCHER_CLASS" = "" ]; then
+        if [ "$VARIABLE_VALUE" ]; then
+          a=b
+        else
           LAUNCHER_CLASS="$line"
         fi
       else
@@ -224,47 +163,24 @@ join() {
 
         RESULT="$RESULT$line"
       fi
-
-#       if [ "$PREFIX" = "SET" ]; then
-#          `eval echo "$line"`
-#        else
-#          line=`echo $line | sed 's/\(%\)\([a-zA-Z0-9_]*\)\(\%\)/\$\2/g'`
-#          line=`eval echo "$line"` # evaluate environment variables used, if any
-#          if [ -n "$RESULT" ]; then
-#            RESULT=$RESULT$SEPARATOR
-#          fi
-#          RESULT=$RESULT$PREFIX$line
-#        fi
     fi
 }
 
 processresult() {
-  if [ "$VARIABLE_NAME" != "" ]; then
-    if [ -n "$VARIABLE_NAME" ]; then
-      if [ "$VARIABLE_NAME" = "LAUNCHER_CLASS" ]; then
-        if [ "$LAUNCHER_CLASS" = "" ]; then
-          eval "$VARIABLE_NAME=\"$VARIABLE_VALUE$SEPARATOR$RESULT\""
-        fi
-      else
-        eval "$VARIABLE_NAME=\"$RESULT\""
-      fi
-    else
-      eval "$VARIABLE_NAME=\"$RESULT\""
-    fi
+  if [ "$VARIABLE_NAME" = "" ]; then
+    return;
   fi
 
-#  SECTION=$line
+  if [ "$VARIABLE_NAME" = "LAUNCHER_CLASS" ]; then
+    return;
+  fi
+
+  if [ "$VARIABLE_VALUE" ]; then
+    eval `echo $VARIABLE_NAME=\"$VARIABLE_VALUE$SEPARATOR$RESULT\"`
+  else
+    eval `echo $VARIABLE_NAME=\"$RESULT\"`
+  fi
 }
-
-
-#APP=`dirname "$0"`
-
-#export APP=`cd "$APP" && pwd`
-
-#APP=`dirname $0`/`basename $0 .sh` # compute app name from this file name without prefix
-#APP_NAME=`basename $0 .sh`
-
-JAVA_HOME="@java.home.internal@"
 
 if [ -n "$JAVA_CMD" ]
 then
@@ -352,7 +268,7 @@ if [ "$JAVA_EXT_DIRS" != "" ]; then
 fi
 
 if [ "$JAVA_LIBRARY_PATH" != "" ]; then
-  JAVA_LIBRARY_PATH="-Djava.library.path=`cygpath -wp $JAVA_LIBRARY_PATH`"
+  JAVA_LIBRARY_PATH="-Djava.library.path=$JAVA_LIBRARY_PATH"
 fi
  
 $CMD \
