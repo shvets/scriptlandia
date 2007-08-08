@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.blogspot.techpolesen</groupId>
+  <artifactId>flash-lesson1</artifactId>
+  <version>1.0</version>
+  <packaging>swf</packaging>
+  <name>flash-lesson1</name>
+
+  <properties>
+    <flex.home>c:/Java/flex/sdk</flex.home>
+  </properties>
+
+  <build>
+    <defaultGoal>install</defaultGoal>
+    <plugins>
+      <plugin>
+        <groupId>net.israfil.mojo</groupId>
+        <artifactId>maven-flex2-plugin</artifactId>
+        <version>1.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <flexHome>${flex.home}</flexHome>
+          <useNetwork>true</useNetwork>
+          <main>Main.mxml</main>
+          <debug>true</debug>
+        </configuration>
+    </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>ibiblio</id>
+      <name>ibiblio</name>
+      <url>http://mirrors.dotsrc.org/maven2/</url>
+      <layout>default</layout>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <!-- the swf/flex2 plugin -->
+    <pluginRepository>
+      <id>sateh</id>
+      <name>sateh</name>
+      <url>http://maven.sateh.com/repository/</url>
+      <layout>default</layout>
+    </pluginRepository>
+  </pluginRepositories>
+</project>
