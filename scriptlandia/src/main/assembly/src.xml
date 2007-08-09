@@ -13,6 +13,9 @@
         <include>*.sh</include>
         <include>*.xml</include>
         <include>*.properties</include>
+        <include>*.jsmooth</include>
+        <include>scriptlandia.jsmooth</include>
+        <include>scriptlandia.classpath</include>
         <include>*.txt</include>
         <include>*.exe</include>
 

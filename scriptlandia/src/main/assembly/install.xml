@@ -12,11 +12,11 @@
         <include>installer.exe</include>
         <include>installer.bat</include>
         <include>installer.sh</include>
-        <include>installer.ant</include>
+        <include>build.xml</include>
         <include>jlaunchpad-installer.sh</include>
         <include>jlaunchpad-installer.bat</include>
-        <include>config-macrodefs.xml</include>
-        <include>install-macrodefs.xml</include>
+        <include>scriptlandia-macrodefs.xml</include>
+        <include>scriptlandia.classpath</include>
         <include>docs/**</include>
       </includes>
     </fileSet>
