@@ -16,13 +16,6 @@
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jlaunchpad.iws" afterPath="$PROJECT_DIR$/jlaunchpad.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/pom-reader/pom-reader.iml" afterPath="$PROJECT_DIR$/projects/pom-reader/pom-reader.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jlaunchpad.iml" afterPath="$PROJECT_DIR$/jlaunchpad.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/classworlds/classworlds.iml" afterPath="$PROJECT_DIR$/projects/classworlds/classworlds.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jlaunchpad.ipr" afterPath="$PROJECT_DIR$/jlaunchpad.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher-common/universal-launcher-common.iml" afterPath="$PROJECT_DIR$/projects/universal-launcher-common/universal-launcher-common.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/universal-launcher/universal-launcher.iml" afterPath="$PROJECT_DIR$/projects/universal-launcher/universal-launcher.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/bootstrap-mini/bootstrap-mini.iml" afterPath="$PROJECT_DIR$/projects/bootstrap-mini/bootstrap-mini.iml" />
     </list>
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
@@ -91,19 +84,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="launcher-core.bat" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="launcher-core.bat" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher-core.bat">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="0" selection-start="1474" selection-end="1520" vertical-scroll-proportion="0.029209621">
+            <state line="57" column="4" selection-start="1219" selection-end="1219" vertical-scroll-proportion="0.14604811">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="launcher-core.sh" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="launcher-core.sh" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher-core.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="272" column="59" selection-start="7471" selection-end="7471" vertical-scroll-proportion="0.17525773">
+            <state line="272" column="59" selection-start="6362" selection-end="6362" vertical-scroll-proportion="0.029209621">
               <folding />
             </state>
           </provider>
@@ -282,6 +275,20 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.runner">
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <module name="" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -320,20 +327,6 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <module name="" />
-      <method>
-        <option name="Make" value="true" />
-      </method>
     </configuration>
     <configuration default="false" name="installer" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.sf.jlaunchpad.install.GuiInstaller" />
@@ -611,16 +604,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher-core.bat">
+    <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher-core.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="0" selection-start="1474" selection-end="1520" vertical-scroll-proportion="0.029209621">
+        <state line="272" column="59" selection-start="6362" selection-end="6362" vertical-scroll-proportion="0.029209621">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher-core.sh">
+    <entry file="file://$PROJECT_DIR$/projects/universal-launcher/src/main/config/launcher-core.bat">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="272" column="59" selection-start="7471" selection-end="7471" vertical-scroll-proportion="0.17525773">
+        <state line="57" column="4" selection-start="1219" selection-end="1219" vertical-scroll-proportion="0.14604811">
           <folding />
         </state>
       </provider>
