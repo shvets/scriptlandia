@@ -260,11 +260,11 @@ if not "%JAVA_ENDORSED_DIRS%" == "" (
   SET JAVA_ENDORSED_DIRS=-Djava.endorsed.dirs="%JAVA_ENDORSED_DIRS%"
 )
 
-if not "%JAVA_EXT_DIRS" == "" (
+if not "%JAVA_EXT_DIRS%" == "" (
   SET JAVA_EXT_DIRS=-Djava.ext.dirs="%JAVA_EXT_DIRS%"
 )
 
-if not "%JAVA_LIBRARY_PATH" == "" (
+if not "%JAVA_LIBRARY_PATH%" == "" (
   SET JAVA_LIBRARY_PATH=-Djava.library.path="%JAVA_LIBRARY_PATH%"
 )
 
