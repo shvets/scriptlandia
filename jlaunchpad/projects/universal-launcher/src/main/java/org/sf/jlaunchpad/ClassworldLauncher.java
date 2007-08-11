@@ -4,7 +4,6 @@ import org.codehaus.classworlds.ClassRealm;
 import org.codehaus.classworlds.ClassWorld;
 import org.codehaus.classworlds.DuplicateRealmException;
 import org.codehaus.classworlds.NoSuchRealmException;
-import org.sf.jlaunchpad.util.CommonUtil;
 import org.sf.jlaunchpad.core.LauncherException;
 import org.sf.jlaunchpad.core.LauncherCommandLineParser;
 
@@ -109,7 +108,6 @@ public class ClassworldLauncher extends CoreLauncher {
       newArgsList.toArray(newArgs);
 
       try {
-        //classworldLauncher.launch(newArgs);
         this.args = newArgs;
         launch();
       }
@@ -120,14 +118,6 @@ public class ClassworldLauncher extends CoreLauncher {
     }
   }
 
-  /*  protected void releaseResources() throws LauncherException {
-      try {
-        classworldLauncher.getWorld().disposeRealm(classworldLauncher.getMainRealm().getId());
-      } catch (NoSuchRealmException e) {
-        throw new LauncherException(e);
-      }
-    }
-  */
   /**
    * Adds discovered libraries (folders or jar files) to the class realm.
    *
@@ -149,13 +139,6 @@ public class ClassworldLauncher extends CoreLauncher {
       }
     }
   }
-
-/*  public void addJarFileEntry(JarFile jarFile, File file) throws Exception {
-    super.addJarFileEntry(jarFile, file);
-
-    //addClasspathEntry(file.toURI().toURL());
-  }
-*/
 
   /**
    * Gets the realm name.
@@ -254,7 +237,7 @@ public class ClassworldLauncher extends CoreLauncher {
     finally {
       if (!isExceptionThrown) {
 
-        if (isWaitMode() /*|| isContinuousMode()*/ && exitCode == 0) {
+        if (isWaitMode() && exitCode == 0) {
           try {
             Thread.currentThread().join();
           }
@@ -273,44 +256,7 @@ public class ClassworldLauncher extends CoreLauncher {
    * @return true if "wait" mode; false otherwise
    */
   public boolean isWaitMode() {
-/*    boolean isGuiMode = false;
-//    boolean isNGMode = false;
-
-    for (int i = 0; i < args.length && !isNGMode; i++) {
-      if (args[i].equalsIgnoreCase("-ng")) {
-        isNGMode = true;
-      }
-    }
-
-//    System.out.println("isNGMode " + isNGMode);
-    System.out.println("CommonUtil.isGuiMode() " + CommonUtil.isGuiMode());
-
-    if (!isNGMode && CommonUtil.isGuiMode()) {
-      isGuiMode = true;
-    } else {
-    System.out.println("1");
-      for (int i = 0; i < args.length && !isGuiMode; i++) {
-        if (args[i].equalsIgnoreCase("-gui")) {
-          isGuiMode = true;
-        }
-      }
-
-    System.out.println("2 " + isGuiMode);
-    System.out.println("3 " + CommonUtil.isGuiMode());
-      if (isGuiMode && !CommonUtil.isGuiMode()) {
-        isGuiMode = false;
-      }
-    }
-
-    System.out.println("4 " + isGuiMode);
-    return isGuiMode;
-*/
-
-     if(parser.isWaitMode()) {
-       return true;
-     }
-
-     return false;
+    return parser.isWaitMode();
   }
 
   /**
