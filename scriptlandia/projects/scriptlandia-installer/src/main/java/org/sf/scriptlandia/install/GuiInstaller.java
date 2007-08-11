@@ -243,7 +243,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
       }
     });
 
-    JLabel rubyHomeLabel = new JLabel("Ruby Home:                  ");
+    /*JLabel rubyHomeLabel = new JLabel("Ruby Home:                  ");
 
     JButton rubyHomeSearchButton = new JButton("Search...");
 
@@ -260,7 +260,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
         }
       }
     });
-
+*/
     GridBagConstraints constraints = new GridBagConstraints();
     constraints.fill = GridBagConstraints.HORIZONTAL;
     constraints.weightx = 0.5;
@@ -534,18 +534,6 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
         coreInstall();
       }
 
-      /*if(!languagesPanelUpdated) {
-        update();
-      }
-
-      for(int i=0; i < languages.size(); i++) {
-        Map language = (Map)languages.get(i);
-        String name = (String)language.get("name");
-
-        System.setProperty(name + ".install", String.valueOf(checkBoxes[i].isSelected()));
-      }
-      */
-
       try {
         save();
       }
@@ -582,7 +570,6 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
         throw new LauncherException(e);
       }
 
-      //GuiInstaller.super.install(args);
       super.instalLanguageProjects(args);
     }
     catch (Exception e) {

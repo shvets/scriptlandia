@@ -105,19 +105,19 @@ public class LauncherManager {
       currentExtension = null;
     }
     
-    ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+    //ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
     
     LauncherManager launcherManager = new LauncherManager();
 
-    System.setProperty("jdic.version", "0.9.2");
-    System.setProperty("nailgun.version", "0.7.1");
+//    System.setProperty("jdic.version", "0.9.2");
+//    System.setProperty("nailgun.version", "0.7.1");
 
     CoreLauncher launcher = launcherManager.createLauncher(parser, args, launcherClassName, classWorld);
 
-    if(parser.isLauncherMode()) {
+    //if(parser.isLauncherMode()) {
       launcher.setArgs(args);
       launcher.launch();
-    }
+/*    }
     else {
       launcher.configure(classLoader);
 
@@ -125,11 +125,11 @@ public class LauncherManager {
         System.setProperty("config", "true");
       }
 
-      launcher.launch(/*newArgs*/);
+      launcher.launch();
 
       Thread.currentThread().join();
     }
-
+*/
     System.exit(launcher.getExitCode());
   }
 

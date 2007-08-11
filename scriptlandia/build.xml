@@ -113,9 +113,18 @@
         <include name="*.sh"/>
         <include name="*.conf"/>
         <include name="*.ini"/>
+        <include name="scriptlandia.classpath"/>
         <exclude name="*-exe.*"/>
       </fileset>
     </copy>
+
+    <!--copy todir="${scriptlandia.home}" overwrite="true">
+      <fileset dir=".">
+        <include name="projects/scriptlandia-installer/target/*.jar"/>
+
+        <include name="scriptlandia.classpath"/>
+      </fileset>
+    </copy-->
 
     <copy todir="${java.io.tmpdir}" overwrite="true">
       <fileset dir="${scriptlandia.home}">

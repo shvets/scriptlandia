@@ -153,7 +153,8 @@ public class CoreInstaller {
   private void instalRequiredlProjects(String[] args) throws LauncherException {
     SimpleLauncher launcher = new SimpleLauncher(args);
 
-    launcher.addClasspathEntry(getScriptlandiaInstallerJarName());
+//    launcher.addClasspathEntry(getScriptlandiaInstallerJarName());
+    launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
     prepare(launcher, false);
 
@@ -239,13 +240,14 @@ public class CoreInstaller {
 
     prepare(launcher, isConfigMode());
   
-    launcher.addClasspathEntry(getScriptlandiaInstallerJarName());
+//    launcher.addClasspathEntry(getScriptlandiaInstallerJarName());
+    launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
     launcher.configure(Thread.currentThread().getContextClassLoader());
     launcher.launch();
   }
 
-  private String getScriptlandiaInstallerJarName() {
+/*  private String getScriptlandiaInstallerJarName() {
     String sriptlandiaInstallerJarName;
 
     if(isConfigMode()) {
@@ -262,7 +264,7 @@ public class CoreInstaller {
 
     return sriptlandiaInstallerJarName;
   }
-
+*/
   /**
    * Gets the required projects arguments list.
    *

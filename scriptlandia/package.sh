@@ -3,8 +3,7 @@
 . ./config.sh
 
 echo ---### Java Specification Version: $JAVA_SPECIFICATION_VERSION
-
-# echo ---### Installing basic dependencies, required projects and configuration files...
+echo ---### Installing basic dependencies, required projects and configuration files...
 
 MAIN_CLASS=org.apache.tools.ant.Main
 

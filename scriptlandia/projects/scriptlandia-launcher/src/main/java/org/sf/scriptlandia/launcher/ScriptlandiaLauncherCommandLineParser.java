@@ -107,10 +107,11 @@ public class ScriptlandiaLauncherCommandLineParser extends LauncherCommandLinePa
   public String getLauncherClassName() {
     String launcherClassName;
 
-    if(isConfigMode()) {
+    /*if(isConfigMode()) {
       launcherClassName = "org.sf.scriptlandia.install.GuiInstaller";
     }
-    else if(isNailgunServerMode()) {
+    else */
+    if(isNailgunServerMode()) {
       launcherClassName = "org.sf.scriptlandia.nailgun.NGServerLauncher";
     }
     else if(isNailgunTrayMode()) {
