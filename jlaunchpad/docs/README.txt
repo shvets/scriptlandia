@@ -2,8 +2,15 @@
 
     Description 
 
-JLaunchPad is the program for simplifying installation/starting of Java applications. Once the 
-launcher is installed, it can be reused for starting other Java applications.
+JLaunchPad (launcher) is the set of Java classes and shell scripts for simplifying installation/launching of 
+Java applications. Once the launcher is installed, it can be reused for starting different
+Java applications.
+
+For your application you specify required dependencies on other java libraries and 
+they will be downloaded and installed automatically into your local repository when application is 
+getting executed first time. For all consequent executions of the application download process is 
+not required and the only one responsibility of the launcher is to build correct "classpath" and 
+launch the application.
 
 
     Installation
@@ -25,9 +32,10 @@ The program will ask to set up few values/locations:
 
 Java Home variable specify which version of Java will be used for launching Java application. 
 
-Launcher Homeis the location, where launcher will be installed.
+Launcher Home is the location, where launcher will be installed.
 
-Repository Home is used for storing all required by the launcher and launching program. 
+Repository Home is used for storing all required by the launcher and launching program java libraries
+(local repository). 
 
 
     Architecture
@@ -37,10 +45,11 @@ Repository Home is used for storing all required by the launcher and launching p
 in the community/ IT industry) of java components represented in binary format. It could 
 be a separate java library, some convenient tool or even GUI program.
 
-2. Each component is provided with the group name, artifact name and the version.
+2. Each component is provided with the group name, artifact name and the version. Classifier
+also could be used for specifying Java version of the component (e.g. jdk15, jdk16 etc).
 
-3. Each component has binary artifact and could also contain sources, javadocs or other
-optional artifacts.
+3. Each component has binary artifact and could also contain (optional) sources, javadocs or 
+other artifacts.
 
 4. Each component describes dependencies to other components in the form of Dependencies File.
 As the result, we have Dependencies Tree (or Transitive Dependencies).
@@ -66,10 +75,9 @@ Instead, you provide dependencies for the project and they will be downloaded au
 
 For the implementation the following projects were reused:
 
-- classworlds project  
-- bootstrap-mini project
-- Java App Launcher 		https://java-app-launcher.dev.java.net
-
+- classworlds project        http://dist.codehaus.org/classworlds
+- bootstrap-mini project     http://svn.apache.org/repos/asf/maven/components/tags/maven-2.0.7/bootstrap
+- Java App Launcher 	     https://java-app-launcher.dev.java.net
 
     Examples
 
