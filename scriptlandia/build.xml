@@ -2,6 +2,8 @@
 
 <project name="installer.ant" default="install" basedir=".">
 
+  <!--splash imageurl="file:${basedir}/languages/scriptlandia/scriptlandia.ico"/-->
+
   <import file="scriptlandia-macrodefs.xml"/>
 
   <property file="${user.home}/launcher/config.properties"/>
@@ -118,13 +120,13 @@
       </fileset>
     </copy>
 
-    <!--copy todir="${scriptlandia.home}" overwrite="true">
+    <copy todir="${scriptlandia.home}" overwrite="true">
       <fileset dir=".">
         <include name="projects/scriptlandia-installer/target/*.jar"/>
 
         <include name="scriptlandia.classpath"/>
       </fileset>
-    </copy-->
+    </copy>
 
     <copy todir="${java.io.tmpdir}" overwrite="true">
       <fileset dir="${scriptlandia.home}">
@@ -287,6 +289,7 @@
       <fileset dir=".">
        <include name="build.xml"/>
        <include name="scriptlandia-macrodefs.xml"/>
+       <include name="scriptlandia-classpath"/>
       </fileset>
     </copy>
 

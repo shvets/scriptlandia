@@ -11,7 +11,7 @@
   <description>Scriptlandia Groovy Core Module</description>
 
   <properties>
-    <groovy.version>1.1-BETA-1</groovy.version>
+    <groovy.version>1.1-beta-2</groovy.version>
   </properties>
 
   <dependencies>

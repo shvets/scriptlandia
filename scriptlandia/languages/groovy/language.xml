@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<language name="groovy" groupId="groovy" artifactId="groovy-all" version="1.1-BETA-1">
+<language name="groovy" groupId="groovy" artifactId="groovy-all" version="1.1-beta-2">
   <registration mimeType="text/groovy" icon="groovy.ico">
     <extensions>
       <extension>groovy</extension>

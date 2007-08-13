@@ -105,8 +105,6 @@ public class LauncherManager {
       currentExtension = null;
     }
     
-    //ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-    
     LauncherManager launcherManager = new LauncherManager();
 
 //    System.setProperty("jdic.version", "0.9.2");
@@ -114,22 +112,24 @@ public class LauncherManager {
 
     CoreLauncher launcher = launcherManager.createLauncher(parser, args, launcherClassName, classWorld);
 
-    //if(parser.isLauncherMode()) {
+    if(parser.isLauncherMode()) {
       launcher.setArgs(args);
       launcher.launch();
-/*    }
+    }
     else {
+      ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+
       launcher.configure(classLoader);
 
-      if(parser.isConfigMode()) {
+/*      if(parser.isConfigMode()) {
         System.setProperty("config", "true");
       }
-
+*/
       launcher.launch();
 
       Thread.currentThread().join();
     }
-*/
+
     System.exit(launcher.getExitCode());
   }
 
