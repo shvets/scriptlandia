@@ -1,5 +1,7 @@
 // GuessingGame.groovy
 
+// http://groovy.codehaus.org/WingSBuilder
+
 import org.sf.scriptlandia.ScriptlandiaHelper
 
 ScriptlandiaHelper.resolveDependencies("org.codehaus.groovy-contrib", "wingsbuilder", "1.0")
