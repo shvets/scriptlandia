@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd">
+
+  <!-- Creates cat. -->
+  <lang:groovy id="cat" script-source="classpath:Cat.groovy">
+    <lang:property name="name" value="cat-name"/>
+  </lang:groovy>
+
+  <!-- Creates dog. -->
+  <lang:jruby id="dog" script-interfaces="Animal" script-source="classpath:Dog.ruby"
+              refresh-check-delay="5000"> <!-- switches refreshing on with 5 seconds between checks -->
+
+    <lang:property name="name" value="dog-name"/>
+  </lang:jruby>
+
+  <!-- Creates cow. -->
+  <lang:bsh id="cow" script-interfaces="Animal" script-source="classpath:Cow.bsh">
+    <lang:property name="name" value="cow-name"/>
+  </lang:bsh>
+
+  <!-- Creates ant (inline script). -->
+  <lang:groovy id="ant">
+    <lang:inline-script>
+      class Ant implements Animal {
+        String name
+
+        void makeSound() {
+          println name + ": Shhh..."
+        }
+      }
+    </lang:inline-script>
+    <lang:property name="name" value="ant-name" />
+  </lang:groovy>
+
+  <!-- Creates animal farm. -->
+  <bean id="farm" class="AnimalFarm">
+    <property name="animals">
+      <list>
+        <ref bean="cat"/>
+        <ref bean="dog"/>
+        <ref bean="cow"/>
+        <ref bean="ant"/>
+      </list>
+    </property>
+  </bean>
+
+</beans>

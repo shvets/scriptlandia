@@ -1,0 +1,96 @@
+// dynamo-test.bsh
+
+org.sf.scriptlandia.MavenHelper.addMavenDependencies("pom.xml");
+
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+
+import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+import org.codehaus.janino.*;
+
+import org.codehaus.classworlds.ClassRealm;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+
+
+public class Dynamo {
+  private ClassRealm classRealm;
+  private ApplicationContext factory;
+
+  public Dynamo(String basedir, String[] classNames, String beansFile) {
+    ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+
+    classRealm = launcher.getMainRealm();
+
+    register(basedir, classNames);
+
+    factory = new FileSystemXmlApplicationContext(new String[] { basedir + "/" + beansFile });
+  }
+
+  private void register(String basedir, String[] classNames) {
+    ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+
+    ClassLoader sourceClassloader = new JavaSourceClassLoader(
+      launcher.getClass().getClassLoader(),  // parentClassLoader
+      new File[] { new File(basedir) }, // optionalSourcePath
+      (String) null,                     // optionalCharacterEncoding
+      DebuggingInformation.NONE          // debuggingInformation
+    );
+
+    for(int i=0; i < classNames.length; i++) {
+      loadClass(classNames[i], sourceClassloader);
+    }
+
+    launcher.addClasspathEntry(basedir);
+  }
+
+  /**
+   * Loads class specified by the name.
+   */
+  private void loadClass(String name, ClassLoader classLoader) {
+    String[] args = new String[] { name };
+
+    Map bytecodes = invokePrivateMethod(
+      classLoader, 
+      new Object[] { name }, 
+      JavaSourceClassLoader.class, 
+      "generateBytecodes", 
+      new Class[] { String.class });
+
+    classRealm.addConstituent(name, bytecodes.get(name));
+  }
+
+  public Object invokePrivateMethod(Object source, Object[] parameters, Class clazz,
+                                    String name, Class[] parameterTypes)
+          throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+    Method method = clazz.getDeclaredMethod(name, parameterTypes);
+
+    method.setAccessible(true);
+
+    Object methodResult = method.invoke(source, parameters);
+
+    method.setAccessible(false);
+
+    return methodResult;
+  }
+
+  public Object getBean(String beanName) {
+    return factory.getBean(beanName);
+  }
+
+  public static void main(String[] args) throws Exception {
+    // Java classes that needs to be registered.
+    String[] classNames = new String[] {"Animal", "AnimalFarm" };
+    String basedir = System.getProperty("user.dir");
+
+    Dynamo dynamo = new Dynamo(basedir, classNames, "dynamo-test2.xml");
+
+    AnimalFarm animalFarm = dynamo.getBean("farm");
+
+    animalFarm.wakeUp();
+  }
+
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+  <!-- URL Mappings -->
+
+  <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+    <property name="order"><value>1</value></property>
+
+    <property name="mappings">
+      <props>
+        <!--prop key="/test1.spring">test1Controller</prop-->
+        <prop key="/page1.spring">page1Controller</prop>
+        <prop key="/page2.spring">page2Controller</prop>
+        <prop key="/page3.spring">page3Controller</prop>
+
+        <prop key="/test.spring">testController</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- View Resolvers -->
+
+  <bean id="resourceBundleViewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+    <property name="order"><value>1</value></property>
+
+    <property name="basename">
+      <value>views</value>
+    </property>
+  </bean>
+
+  <!-- Controllers -->
+
+  <bean id="page1Controller" class="controller.Page1Controller"/>
+
+  <bean id="page2Controller" class="controller.Page2Controller"/>
+
+  <bean id="page3Controller" class="controller.Page3Controller"/>
+
+  <bean id="testController" class="controller.TestController"/>
+
+</beans>

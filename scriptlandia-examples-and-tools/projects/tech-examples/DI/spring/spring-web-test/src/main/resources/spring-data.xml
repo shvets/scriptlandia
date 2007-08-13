@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+ <!-- Test Data -->
+
+  <bean id="itemManager" class="data.ItemManagerDummy">
+    <property name="items">
+      <list>
+        <ref bean="item1"/>
+        <ref bean="item2"/>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="item1" class="data.Item">
+    <property name="id"><value>1</value></property>
+    <property name="name"><value>item1</value></property>
+    <property name="price"><value>2.0</value></property>
+  </bean>
+
+  <bean id="item2" class="data.Item">
+    <property name="id"><value>2</value></property>
+    <property name="name"><value>item2</value></property>
+    <property name="price"><value>5.5</value></property>
+  </bean>
+
+</beans>

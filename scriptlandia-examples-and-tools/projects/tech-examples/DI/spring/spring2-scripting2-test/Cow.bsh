@@ -1,0 +1,15 @@
+// Cow.bsh
+
+String name;
+
+String getName() {
+  return name;
+}
+
+void setName(String aName) {
+  name = aName;
+}
+
+void makeSound() {
+  System.out.println(name + ": Moo...");
+}

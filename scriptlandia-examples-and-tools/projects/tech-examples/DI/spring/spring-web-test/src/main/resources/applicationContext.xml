@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+    
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/tx
+      http://www.springframework.org/schema/tx/spring-tx.xsd
+	  http://www.springframework.org/schema/lang 
+	  http://www.springframework.org/schema/lang/spring-lang.xsd
+	  http://www.springframework.org/schema/aop 
+	  http://www.springframework.org/schema/aop/spring-aop.xsd"
+      
+	default-autowire="no">
+  <!-- System Beans -->
+
+  <bean id="exceptionResolver"
+        class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+    <property name="exceptionMappings">
+      <props>
+        <prop key="java.lang.RuntimeException">error</prop>
+      </props>
+    </property>
+
+    <property name="exceptionAttribute">
+      <value>exception</value>
+    </property>
+
+    <property name="defaultErrorView"><value>genericError</value></property>
+  </bean>
+
+  <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <property name="driverClassName"><value>org.hsqldb.jdbcDriver</value></property>
+    <property name="url">
+      <value>jdbc:hsqldb:db/test</value>
+    </property>
+    <property name="username"><value>sa</value></property>
+    <property name="password"><value></value></property>
+  </bean>
+
+  <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+    <property name="basename"><value>messages</value></property>
+  </bean>
+
+  <bean id="themeResolver" class="org.springframework.web.servlet.theme.FixedThemeResolver">
+    <property name="defaultThemeName"><value>cool</value></property>
+  </bean>
+
+  <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles.TilesConfigurer">
+    <property name="definitions">
+      <list>
+        <value>/WEB-INF/tiles-defs.xml</value>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="velocityConfigurer" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+    <property name="resourceLoaderPath"><value>/</value></property>
+  </bean>
+
+  <bean id="freeMarkerConfigurer" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+    <property name="templateLoaderPath">
+      <value>freeMarker/</value>
+    </property>
+  </bean>
+
+  <!--bean id="validatorFactory"
+        class="org.springmodules.validation.commons.DefaultValidatorFactory">
+    <property name="validationConfigLocations">
+      <list>
+        <value>/WEB-INF/validation.xml</value>
+        <value>/WEB-INF/validator-rules.xml</value>
+      </list>
+    </property>
+  </bean-->
+
+  <!-- Common Beans -->
+
+  <!--bean id="staticViewController" class="org.springframework.web.servlet.mvc.HtmlViewController"/-->
+  <bean id="staticViewController" class="controller.HtmlViewController"/>
+
+  <!-- Interceptors -->
+
+  <bean id="loggingInterceptor" class="interceptor.LoggingInterceptor"/>
+
+  <!-- URL Mappings -->
+
+  <bean id="urlMapping1" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+    <property name="order"><value>1</value></property>
+
+    <property name="interceptors">
+      <list>
+        <ref local="loggingInterceptor"/>
+      </list>
+    </property>
+
+    <property name="mappings">
+      <props>
+        <prop key="/test1.spring">test1Controller</prop>
+        <prop key="/test2.spring">test2Controller</prop>
+        <prop key="/test3.spring">test3Controller</prop>
+        <prop key="/testTiles.spring">testTilesController</prop>
+
+        <prop key="/test4.spring">test4Controller</prop>
+
+        <prop key="/test5.spring">test5Controller</prop>
+        <prop key="/edit.spring">userController</prop>
+        <!--prop key="/edit2.spring">userController2</prop-->
+
+        <prop key="/test6.spring">test6Controller</prop>
+        <prop key="/test7.spring">test7Controller</prop>
+        <prop key="/test8.spring">test8Controller</prop>
+        <prop key="/test9.spring">test9Controller</prop>
+        <prop key="/test10.spring">test10Controller</prop>
+        <prop key="/test11.spring">test11Controller</prop>
+        <prop key="/test12.spring">test12Controller</prop>
+        <prop key="/test-groovy.spring">testGroovyController</prop>
+        <prop key="/*.html">staticViewController</prop>
+        <!--prop key="/test13.spring">test13Controller</prop-->
+      </props>
+    </property>
+
+    <!--property name="urlMap">
+      <map>
+        <entry key="/*.html"><ref local="staticViewController"/></entry>
+      </map>
+    </property-->
+  </bean>
+
+  <bean id="urlMapping2" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+    <property name="order"><value>2</value></property>
+  </bean>
+
+  <!-- since 2.0
+  <bean id="urlMapping3" class="org.springframework.web.servlet.mvc.ControllerClassNameHandlerMapping">
+    <property name="order"><value>3</value></property>
+  </bean>
+  -->
+
+  <!-- View Resolvers -->
+
+  <bean id="resourceBundleViewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+    <property name="order"><value>1</value></property>
+
+    <property name="basename">
+      <value>views</value>
+    </property>
+  </bean>
+
+  <bean id="xmlViewResolver" class="org.springframework.web.servlet.view.XmlViewResolver">
+    <property name="order"><value>2</value></property>
+
+    <property name="location"><value>/WEB-INF/views.xml</value></property>
+  </bean>
+
+  <bean id="beanNameViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
+    <property name="order"><value>3</value></property>
+  </bean>
+
+<bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+  <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+  <property name="prefix" value="/"/>
+  <property name="suffix" value=".html"/>
+</bean>
+
+  <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <!-- This resover is automatically added to the end of the chain (no need to specify the order). -->
+    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+    <property name="prefix" value="/"/>
+    <property name="suffix" value=".html"/>
+  </bean>
+
+  <!-- Controllers -->
+
+  <bean id="test1Controller" class="controller.Test1Controller">
+    <property name="itemManager">
+      <ref bean="itemManager"/>
+    </property>
+  </bean>
+
+  <bean id="test2Controller" class="controller.Test2Controller">
+    <property name="itemManager">
+      <ref bean="itemManager"/>
+    </property>
+  </bean>
+
+  <bean id="test3Controller" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+    <property name="viewName"><value>test3</value></property>
+  </bean>
+
+  <bean id="testTilesController" class="controller.TestTilesController"/>
+
+  <bean id="test4Controller" class="controller.Test4Controller"/>
+
+  <bean id="test5Controller" class="controller.Test5Controller">
+    <property name="itemManager">
+      <ref bean="itemManager"/>
+    </property>
+  </bean>
+
+  <bean id="userController" class="controller.UserController">
+    <property name="itemManager">
+      <ref bean="itemManager"/>
+    </property>
+
+    <property name="validator">
+      <ref bean="itemValidator"/>
+    </property>
+
+    <property name="sessionForm"><value>true</value></property>
+    <property name="commandName"><value>newItem</value></property>
+    <property name="commandClass"><value>data.Item</value></property>
+
+    <property name="formView"><value>edit</value></property>
+    <property name="successView"><value>test5.spring</value></property>
+  </bean>
+
+  <!--bean id="userController2" class="controller.UserController">
+    <property name="itemManager">
+      <ref bean="itemManager"/>
+    </property>
+
+    <property name="validator">
+      <ref bean="itemValidator2"/>
+    </property>
+
+    <property name="sessionForm"><value>true</value></property>
+    <property name="commandName"><value>newItem</value></property>
+    <property name="commandClass"><value>data.Item</value></property>
+
+    <property name="formView"><value>edit</value></property>
+    <property name="successView"><value>test5.spring</value></property>
+  </bean-->
+
+  <bean id="test6Controller" class="controller.Test6Controller">
+    <property name="methodNameResolver">
+      <ref local="itemMethodName1Resolver"/>
+    </property>
+  </bean>
+
+  <bean id="itemMethodName1Resolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+    <property name="paramName"><value>method</value></property>
+    <property name="defaultMethodName"><value>init</value></property>
+  </bean>
+
+  <bean id="test7Controller" class="controller.Test7Controller">
+    <property name="validator">
+      <ref bean="itemValidator"/>
+    </property>
+
+    <property name="pages">
+      <list>
+        <value>test7-step1</value>
+        <value>test7-step2</value>
+        <value>test7-finish</value>
+      </list>
+    </property>
+
+    <property name="sessionForm"><value>true</value></property>
+    <property name="commandClass"><value>data.Item</value></property>
+
+  </bean>
+
+  <bean id="test8Controller" class="controller.Test8Controller">
+    <property name="itemManager">
+      <ref bean="itemManager"/>
+    </property>
+  </bean>
+
+  <bean id="test9Controller" class="controller.Test9Controller">
+    <property name="itemManager">
+      <ref bean="itemManager"/>
+    </property>
+  </bean>
+
+  <bean id="test10Controller" class="controller.Test10Controller"/>
+
+  <bean id="itemManagerDao" class="dao.ItemManagerDaoImpl">
+    <property name="dataSource">
+      <ref bean="dataSource"/>
+    </property>
+  </bean>
+
+  <bean id="itemManagerDB" class="data.ItemManagerDB">
+    <property name="itemManagerDao">
+      <ref bean="itemManagerDao"/>
+    </property>
+  </bean>
+
+  <bean id="test11Controller" class="controller.Test11Controller">
+    <property name="itemManager">
+      <ref bean="itemManagerDB"/>
+    </property>
+  </bean>
+
+  <bean id="test12Controller" class="controller.Test12Controller"/>
+
+  <bean name="/test13.spring" class="controller.Test13Controller"/>
+
+  <!-- Enables spring-scripting. -->
+
+  <bean class="org.springframework.scripting.support.ScriptFactoryPostProcessor"/>
+
+  <bean id="testGroovyController" class="org.springframework.scripting.groovy.GroovyScriptFactory">
+    <constructor-arg value="file:src/main/groovy/groovycontroller/GroovyController.groovy" />
+    <property name="message" value="Hello"/>
+  </bean>
+
+<!--
+  <lang:groovy id="testGroovyController"
+        refresh-check-delay="3000"
+        script-source="file:src/main/groovy/groovycontroller/GroovyController.groovy">
+    <lang:property name="message" value="Hello"/>
+  </lang:groovy>
+-->
+  <!-- Views -->
+
+  <bean id="plainTextView" class="view.PlainTextView"/>
+
+  <!-- Validators -->
+
+  <bean id="itemValidator" class="validator.ItemValidator"/>
+
+  <!--bean id="itemValidator2"
+        class="org.springmodules.validation.commons.DefaultBeanValidator">
+    <property name="validatorFactory" ref="validatorFactory"/>
+  </bean-->
+
+  <!-- AOP -->
+  <bean id="advice1" class="aspect.advice.BeforeAdvice1"/>
+  <bean id="advice2" class="aspect.advice.AfterReturningAdvice1"/>
+  <bean id="advice3" class="aspect.advice.MethodInterceptor1"/>
+  <bean id="advice4" class="aspect.advice.ThrowsAdvice1"/>
+
+  <bean id="proxyCreator" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+    <property name="beanNames">
+      <list>
+        <value>test1Controller</value>
+        <!--value>*Controller</value-->
+        <value>test12Controller</value>        
+      </list>
+    </property>
+
+    <property name="interceptorNames">
+      <list>
+        <value>advice1</value>
+        <value>advice2</value>
+        <value>advice3</value>
+        <value>advice4</value>
+      </list>
+    </property>
+  </bean>
+
+
+</beans>

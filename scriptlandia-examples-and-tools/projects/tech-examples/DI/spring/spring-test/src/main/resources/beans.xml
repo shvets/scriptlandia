@@ -1,0 +1,17 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+  <bean id="presentation" class="DefaultMessagePresentation">
+    <property name="messageModel">
+      <ref local="model"/>
+    </property>
+  </bean>
+    
+  <bean id="model" class="DefaultMessageModel">
+    <property name="message">
+      <value>Hello, World!</value>
+    </property>
+  </bean>
+
+</beans>

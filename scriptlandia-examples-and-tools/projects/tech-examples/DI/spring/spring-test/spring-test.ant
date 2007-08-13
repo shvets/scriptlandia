@@ -1,0 +1,20 @@
+<!-- spring-test.ant -->
+
+<project name="spring-test.antlet" default="start" basedir=".">
+
+  <target name="start">
+    <script language="beanshell">
+       import org.sf.scriptlandia.MavenHelper;
+
+       MavenHelper.resolveMavenDependencies(project, "spring-test.maven", "compile");
+    </script>
+
+    <java classname="HelloWorldWithSpring" fork="yes">
+      <classpath>
+        <path refid="maven.compile.classpath"/>
+        <path location="target/classes"/>
+      </classpath>
+    </java>
+  </target>
+
+</project>
