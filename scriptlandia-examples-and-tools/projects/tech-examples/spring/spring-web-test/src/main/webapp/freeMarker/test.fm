@@ -1,5 +1,0 @@
-<h1>Hi!</h1>
-
-<p>
-  FreeMarker test: ${model.greeting}.
-</p>

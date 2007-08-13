@@ -1,3 +1,0 @@
-void drink() {
-  System.out.println("Call the doctor, wake him up! Beanshell...");
-}
