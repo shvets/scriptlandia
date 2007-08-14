@@ -1,12 +1,18 @@
 #!/bin/sh
 
+. ./config.sh
+
+JLAUNCHPAD_PROJECT=.
+ORIGINAL_JLAUNCHPAD_PROJECT=../../../jlaunchpad/trunk
+
 if [ -f ~/jlaunchpad/config.sh ]; then
   . ~/jlaunchpad/config.sh
 fi
 
-. ./config.sh
+if [ -f $ORIGINAL_JLAUNCHPAD_PROJECT/projects/universal-launcher/target\universal-launcher.jar ]; then
+  cd $ORIGINAL_JLAUNCHPAD_PROJECT
+fi
 
-JLAUNCHPAD_PROJECT=.
 
 BOOTSTRAP_MINI_PROJECT=$JLAUNCHPAD_PROJECT/projects/bootstrap-mini
 UNIVERSAL_LAUNCHER_COMMON_PROJECT=$JLAUNCHPAD_PROJECT/projects/universal-launcher-common

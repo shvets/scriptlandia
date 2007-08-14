@@ -3,9 +3,10 @@
 @call config.bat
 
 SET JLAUNCHPAD_PROJECT=.
+SET ORIGINAL_JLAUNCHPAD_PROJECT=..\..\..\jlaunchpad\trunk
 
-if exist "..\jlaunchpad\projects\universal-launcher\target\universal-launcher.jar" (
-  cd ..\jlaunchpad
+if exist "%ORIGINAL_JLAUNCHPAD_PROJECT%\projects\universal-launcher\target\universal-launcher.jar" (
+  cd %ORIGINAL_JLAUNCHPAD_PROJECT%
 )
 
 SET BOOTSTRAP_MINI_PROJECT=%JLAUNCHPAD_PROJECT%\projects\bootstrap-mini
