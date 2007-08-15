@@ -84,16 +84,7 @@
       <filter token="nailgun.version" value="${nailgun.version}"/>
     </filterset>
 
-    <!--condition property="jacob.lib.is.present">
-      <and>
-        <available file="${repository.home}/jacob/jacob-dll/1.10.1/jacob-dll-1.10.1.jar"/>
-        <istrue value="true"/>
-      </and>
-    </condition-->
-
     <antcall target="copy.settings.xml"/>
-
-    <!--antcall target="unzip.jacob.lib"/-->
 
     <script language="beanshell">
       source("projects/scriptlandia-config/src/main/bsh/ChecksumScript.bsh");

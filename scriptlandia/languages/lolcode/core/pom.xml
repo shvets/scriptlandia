@@ -11,7 +11,7 @@
   <description>Scriptlandia LOLCODE Core Module</description>
 
   <properties>
-    <lolcode.version>0.1</lolcode.version>
+    <lolcode.version>0.11</lolcode.version>
   </properties>
 
   <dependencies>
