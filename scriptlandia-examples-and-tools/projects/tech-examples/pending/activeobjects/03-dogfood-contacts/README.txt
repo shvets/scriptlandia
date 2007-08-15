@@ -1,2 +1,0 @@
-
->mvn compile exec:java
