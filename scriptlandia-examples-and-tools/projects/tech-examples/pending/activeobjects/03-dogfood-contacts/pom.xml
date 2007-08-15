@@ -13,19 +13,19 @@
     <dependency>
       <groupId>activeobjects</groupId>
       <artifactId>activeobjects</artifactId>
-      <version>0.3</version>
+      <version>0.4</version>
     </dependency>
 
     <dependency>
       <groupId>org.apache.derby</groupId> 
       <artifactId>derby</artifactId> 
-      <version>10.1.2.1</version> 
+      <version>10.2.2.0</version> 
     </dependency>
 
     <dependency>
       <groupId>org.apache.derby</groupId> 
       <artifactId>derbytools</artifactId> 
-      <version>10.1.2.1</version> 
+      <version>10.2.2.0</version> 
     </dependency>
 
     <dependency>
