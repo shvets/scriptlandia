@@ -1,0 +1,58 @@
+// test-jyaml2.bsh
+
+org.sf.scriptlandia.ScriptlandiaHelper.resolveDependencies("jyaml", "jyaml", "1.0");
+
+import org.ho.yaml.Yaml;
+
+
+/* Top level bean for the whole config */
+public class TcConfig {
+  private List servers;
+  private Client client;
+  
+  public List getServers() {
+    return servers;
+  }
+  public void setServers(List servers) {
+    this.servers = servers;
+  }
+  public Client getClient() {
+    return client;
+  }
+  public void setClient(Client client) {
+    this.client = client;
+  }
+}
+
+/* Client */
+public class Client {
+  private String log;
+  private boolean debug;
+  
+  /* getters and setters */
+  
+  public String toString() {
+    return "log=" + log + ", debug=" + debug;
+  }
+}
+
+/* Server */
+public class Server {
+  private String host;
+  private int port;
+  private String log;
+  
+  /* getters and setters */
+  
+  public String toString() {
+    return "host=" + host + ", port=" + port + ", log=" + log;
+  }
+}
+
+
+System.out.println("? " + Yaml.loadType(new File("config.yml"), TcConfig.class).getClass().getName());
+
+//TcConfig config = (TcConfig)Yaml.loadType(new File("config.yml"), TcConfig.class);
+    
+//System.out.println("Servers : " + config.getServers());
+//System.out.println("Client : " + config.getClient());
