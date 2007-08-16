@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en-gb">
+<head>
+  <title>Mac-style Dock Demonstration</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+  <meta name="description" content="A demonstration of the Mac-style dock function">
+  <script type="text/javascript" src="MacStyleDock.js"></script>
+</head>
+<body>
+  <h1>
+
+    Mac-style Dock Demonstration
+  </h1>
+  <p>
+    This page is a demonstration of the code described in the <a href="http://www.safalra.com/programming/javascript/mac-style-dock">A Mac-style Dock In Javascript</a> article.
+  </p>
+  <div id="dock"></div>
+  <script type="text/javascript">
+    var dock = new MacStyleDock(
+        document.getElementById('dock'),
+        [
+          {
+            name:      'mac-icon-0-',
+            extension: '.jpg',
+            sizes:     [64,128],
+            onclick:   function(){
+                         alert('You clicked on the first icon');
+                       }
+          },
+          {
+            name:      'mac-icon-1-',
+            extension: '.jpg',
+            sizes:     [64,128],
+            onclick:   function(){
+                         alert('You clicked on the second icon');
+                       }
+          },
+          {
+            name:      'mac-icon-2-',
+            extension: '.jpg',
+            sizes:     [64,128],
+            onclick:   function(){
+                         alert('You clicked on the third icon');
+                       }
+          },
+          {
+            name:      'mac-icon-3-',
+            extension: '.jpg',
+            sizes:     [64,128],
+            onclick:   function(){
+                         alert('You clicked on the fourth icon');
+                       }
+          },
+          {
+            name:      'mac-icon-4-',
+            extension: '.jpg',
+            sizes:     [64,128],
+            onclick:   function(){
+                         alert('You clicked on the fifth icon');
+                       }
+          },
+          {
+            name:      'mac-icon-5-',
+            extension: '.jpg',
+            sizes:     [64,128],
+            onclick:   function(){
+                         alert('You clicked on the sixth icon');
+                       }
+          },
+          {
+            name:      'mac-icon-6-',
+            extension: '.jpg',
+            sizes:     [64,128],
+            onclick:   function(){
+                         alert('You clicked on the seventh icon');
+                       }
+          },
+          {
+            name:      'mac-icon-7-',
+            extension: '.jpg',
+            sizes:     [64,128],
+            onclick:   function(){
+                         alert('You clicked on the eighth icon');
+                       }
+          },
+          {
+            name:      'mac-icon-8-',
+            extension: '.jpg',
+            sizes:     [64,128],
+            onclick:   function(){
+                         alert('You clicked on the ninth icon');
+                       }
+          }
+        ],
+        64,
+        128,
+        2.5);
+  </script>
+</body>
+
+</html>
