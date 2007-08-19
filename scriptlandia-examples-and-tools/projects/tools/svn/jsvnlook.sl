@@ -11,13 +11,13 @@
     <dependency>
       <groupId>com.svnkit</groupId>
       <artifactId>svnkit-cli</artifactId>
-      <version>1.1.2</version>
+      <version>1.1.4</version>
     </dependency>
 
     <dependency>
       <groupId>com.svnkit</groupId>
       <artifactId>svnkit</artifactId>
-      <version>1.1.2</version>
+      <version>1.1.4</version>
     </dependency>
   </dependencies>
 
