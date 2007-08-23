@@ -1,54 +1,55 @@
 <!-- findbugs.ant -->
 
-<project name="findbugs" default="run" basedir=".">
+<project name="findbugs" default="run" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
 
   <target name="init">
-    <script language="beanshell">
-      import org.sf.scriptlandia.MavenHelper;
+    <property file="${user.dir}/${ant.project.name}.properties"/>
 
-      MavenHelper.resolveMavenDependencies(project, "c:/scriptlandia-tools/findbugs-deps.maven", "compile");
-    </script>
+    <artifact:localRepository id="local.repository" path="${repository.home}" layout="default"/>
+
+    <artifact:pom file="${basedir}/findbugs-deps.maven" id="maven.project" />
+
+    <artifact:dependencies pathId="findbugs.classpath" useScope="compile">
+      <pom refid="maven.project"/>
+    </artifact:dependencies>
 
     <taskdef resource="edu/umd/cs/findbugs/anttask/tasks.properties">
-      <classpath>
-        <path refid="maven.compile.classpath"/>
-      </classpath>
+      <classpath refid="findbugs.classpath"/>
     </taskdef>
   </target>
 
   <target name="run" depends="init">
-    <property name="xml.report.name" value="${user.dir}/findbugs-report.txt"/>
-    <property name="html.report.name" value="${user.dir}/findbugs-report.html"/>
+    <property name="src.dir" value="${user.dir}/src/main/java"/>
+    <property name="classes.dir" value="${user.dir}/target/classes"/>
+    <property name="report.format" value="text"/>
+    <property name="report.name" value="findbugs-report"/>
 
-    <findbugs output="text" outputFile="${xml.report.name}">
-      <class location="${user.dir}/target/classes"/>
+     <findbugs output="${findbugs.report.format}"  outputFile="${user.dir}/${report.name}.${report.format}">
+<!--includeFilter="findBugsFilter.xml"-->
+      <sourcePath path="${user.dir}/${src.dir}"/>
 
-      <sourcePath path="${user.dir}/src/main/java"/>
+      <class location="${user.dir}/${classes.dir}"/>
 
       <classpath>
-        <path refid="maven.compile.classpath"/>
+        <path refid="findbugs.classpath"/>
       </classpath>
 
       <pluginList>
-        <path location="${repository.home}/findbugs/coreplugin/1.2.0-rc2/coreplugin-1.2.0-rc2.jar"/>
+        <path>
+          <fileset dir="${repository.home}">
+            <include name="findbugs/**/coreplugin/**/*.jar"/>
+          </fileset>
+        </path>
       </pluginList>
 
+<!--
       <auxClasspath>
-        <path refid="maven.compile.classpath"/>
+        <path refid="project.classpath"/>
       </auxClasspath>
+ -->
     </findbugs>
 
-<!--
-    <unzip src="${repository.home}/findbugs/findbugs/1.2.0-rc2/findbugs-1.2.0-rc2.jar"
-           dest="${user.dir}">
-      <patternset>
-        <include name="plain.xsl"/>
-      </patternset>
-    </unzip>
-
-    <xslt in="${xml.report.name}" out="${html.report.name}"
-           style="${user.dir}/plain.xsl"/>
--->
   </target>
 
 </project>
+
