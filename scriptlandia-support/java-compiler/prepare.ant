@@ -4,11 +4,11 @@
 
 <project name="prepare.ant" default="prepare" basedir=".">
 
-  <property name="original.project.home" value="d:/Java/sources/openjdk/j2se/src"/>
+  <property name="original.project.home" value="c:/Java/source/openjdk"/>
 
   <target name="prepare">
     <copy todir="src/share/classes" overwrite="true">
-      <fileset dir="${original.project.home}/share/classes">
+      <fileset dir="${original.project.home}/j2se/src/share/classes">
         <include name="com/sun/source/**/*.java"/>
         <include name="com/sun/tools/javac/**/*.java"/>
         <include name="javax/annotation/processing/**/*.java"/>
@@ -19,7 +19,7 @@
     </copy>
 
     <copy todir="src/bin" overwrite="true">
-      <fileset dir="${original.project.home}/share/opensource/javac/src/bin">
+      <fileset dir="${original.project.home}/j2se/src/share/opensource/javac/src/bin">
       </fileset>
     </copy>
   </target>
