@@ -278,6 +278,10 @@
       <action dev="Alexander Shvets" type="fix">
         Upgrade Groovy up to version 1.1-beta-2.
       </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgrade for Jython version 2.2.
+      </action>
     </release>
   </body>
 </document>

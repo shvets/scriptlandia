@@ -4,6 +4,7 @@
 
   <!--splash imageurl="file:${basedir}/languages/scriptlandia/scriptlandia.ico"/-->
 
+
   <import file="scriptlandia-macrodefs.xml"/>
 
   <property file="${user.home}/launcher/config.properties"/>
@@ -229,15 +230,6 @@
     <unzip src="${repository.home}/com/martiansoftware/nailgun-bin/${nailgun.version}/nailgun-bin-${nailgun.version}.jar"
            dest="${repository.home}/com/martiansoftware/nailgun-bin/${nailgun.version}" overwrite="false"/>
   </target>
-
-  <!--target name="unzip.jacob.lib" if="jacob.lib.is.present">
-    <unzip src="${repository.home}/jacob/jacob-dll/1.10.1/jacob-dll-1.10.1.jar"
-           dest="${repository.home}/jacob/jacob-dll/1.10.1" overwrite="false">
-      <patternset>
-        <include name="*.dll"/>
-      </patternset>
-    </unzip>
-  </target-->
 
   <target name="install" depends="config, install.projects, generate.scripts, install.libraries, prepare.unix.files"/>
 

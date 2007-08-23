@@ -49,7 +49,7 @@ public class ExtXmlHelper extends XmlHelper {
           }
         }
         catch(Throwable t) {
-          print("Error reding file: " + fileName + ".");
+          print("Error reding file: " + name + ".");
         }
       }
     }

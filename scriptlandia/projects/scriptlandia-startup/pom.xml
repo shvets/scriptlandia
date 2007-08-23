@@ -78,7 +78,7 @@
     <dependency>
       <groupId>com.sun.tools</groupId>
       <artifactId>javac</artifactId>
-      <version>7.0-b16</version>
+      <version>7.0-b18</version>
     </dependency>
 
     <dependency>

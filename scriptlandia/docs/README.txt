@@ -198,7 +198,6 @@ Jscheme        7.2          http://jscheme.sourceforge.net
 Jaskell        1.0          http://jaskell.codehaus.org
 TCL            1.4.0        http://tcljava.sourceforge.net
 AWK            0.14         http://jawk.sourceforge.net
-F3             1.0          http://blogs.sun.com/chrisoliver/resource/tutorial.jnlp
 JavaFX         200706011412 https://openjfx.dev.java.net
 Fortress       163          http://fortress.sunsource.net
 Scala          2.5.1        http://scala-lang.org
