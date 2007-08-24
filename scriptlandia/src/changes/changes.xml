@@ -282,6 +282,10 @@
       <action dev="Alexander Shvets" type="fix">
         Upgrade for Jython version 2.2.
       </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgrade for JRuby version 1.0.1.
+      </action>
     </release>
   </body>
 </document>

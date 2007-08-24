@@ -6,14 +6,6 @@ if [ -f ~/jlaunchpad/config.sh ]; then
   . ~/jlaunchpad/config.sh
 fi
 
-#if [ "x$PROXY_SERVER_HOST_NAME" = "x" ]; then
-#  PROXY_SERVER_HOST_NAME=
-#fi
-
-#if [ "x$PROXY_SERVER_PORT" = "x" ]; then
-#  PROXY_SERVER_PORT=
-#fi
-
 if [ "$JAVA_HOME" = "" ]; then
   JAVA_HOME=$DRIVE_LETTER/jdk1.6.0
 fi
@@ -26,12 +18,9 @@ if [ "%REPOSITORY_HOME%" == "" ]; then
   REPOSITORY_HOME=$DRIVE_LETTER/maven-repository
 fi
 
-
 SCRIPTLANDIA_HOME=~/scriptlandia
 MOBILE_JAVA_HOME=/opt/j2me-2.5
 RUBY_HOME=~/Ruby/ruby-1.8.4-20
-
-#LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$REPOSITORY_HOME/org/jdesktop/jdic/0.9.2
 
 JAVA_SPECIFICATION_VERSION=1.5
 ANT_VERSION=1.7.0
