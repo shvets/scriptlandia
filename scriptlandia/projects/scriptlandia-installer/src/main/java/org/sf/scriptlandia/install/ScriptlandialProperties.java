@@ -51,10 +51,6 @@ public class ScriptlandialProperties extends Properties {
       put("scriptlandia.home", root + "scriptlandia");
       put("launcher.home", root + "launcher");
 
-      //put("use.proxy", "false");
-
-      //put("proxyHost", "");
-      //put("proxyPort", "");
       put("native.ruby.home", "");
     }
   }

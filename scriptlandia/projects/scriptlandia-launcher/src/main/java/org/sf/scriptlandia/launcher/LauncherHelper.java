@@ -63,7 +63,7 @@ public class LauncherHelper {
   public void setupProperties() {
     String repositoryHome = (String) launcherProps.get("repository.home");
 
-    System.setProperty("use.proxy", (String) launcherProps.get("use.proxy"));
+    System.setProperty("proxySet", (String) launcherProps.get("proxySet"));
     System.setProperty("proxyHost", (String) launcherProps.get("proxyHost"));
     System.setProperty("proxyPort", (String) launcherProps.get("proxyPort"));
 
