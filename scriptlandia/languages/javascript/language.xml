@@ -6,7 +6,7 @@
       <extension>js</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="javascript-starter" version="1.0">
+    <starter groupId="org.sf.scriptlandia" artifactId="javascript-starter" version="1.0.0">
       <mainClass>org.mozilla.javascript.tools.shell.Main</mainClass>
     </starter>
   </registration>

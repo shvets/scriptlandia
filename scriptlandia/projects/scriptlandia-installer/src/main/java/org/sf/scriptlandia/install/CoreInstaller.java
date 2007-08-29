@@ -64,10 +64,10 @@ public class CoreInstaller {
 
     String repositoryHome = System.getProperty("repository.home");
     
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher-common/1.0/universal-launcher-common-1.0.jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher-common/1.0.0/universal-launcher-common-1.0.0.jar");
     launcher.addClasspathEntry(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0/pom-reader-1.0.jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher/1.0/universal-launcher-1.0.jar");    
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0.0/pom-reader-1.0.0.jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher/1.0.0/universal-launcher-1.0.0.jar");    
 
     launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
@@ -108,10 +108,10 @@ public class CoreInstaller {
 
     launcher.setMainClassName("org.sf.pomreader.ProjectInstaller");
 
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher-common/1.0/universal-launcher-common-1.0.jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher-common/1.0.0/universal-launcher-common-1.0.0.jar");
     launcher.addClasspathEntry(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0/pom-reader-1.0.jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher/1.0/universal-launcher-1.0.jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0.0/pom-reader-1.0.0.jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher/1.0.0/universal-launcher-1.0.0.jar");
 
     launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 

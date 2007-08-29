@@ -130,7 +130,7 @@ public class ExtXmlHelper extends XmlHelper {
 
     map.put("starter.groupId", "org.sf.scriptlandia");
     map.put("starter.artifactId", name + "-starter");
-    map.put("starter.version", "1.0");
+    map.put("starter.version", "1.0.0");
 
     map.put("mainClass", getElementByName(starter, "mainClass").getValue());
 

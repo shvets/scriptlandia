@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sf.scriptlandia</groupId>
   <artifactId>groovy-starter</artifactId>
-  <version>1.0</version>
+  <version>1.0.0</version>
   <packaging>pom</packaging>
 
   <name>Scriptlandia Groovy Starter Module</name>
@@ -20,14 +20,14 @@
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>groovy</artifactId>
-      <version>1.0</version>
+      <version>1.0.0</version>
       <type>pom</type>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>ant</artifactId>
-      <version>1.0</version>
+      <version>1.0.0</version>
       <type>pom</type>
     </dependency>
 

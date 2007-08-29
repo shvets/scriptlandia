@@ -6,7 +6,7 @@
       <extension>cwd</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="classworld-starter" version="1.0">
+    <starter groupId="org.sf.scriptlandia" artifactId="classworld-starter" version="1.0.0">
       <mainClass>org.sf.scriptlandia.ClassworldStarter</mainClass>
       <commandLine>-script.name</commandLine>
     </starter>

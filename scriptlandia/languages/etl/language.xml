@@ -6,7 +6,7 @@
       <extension>etl</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="etl-starter" version="1.0">
+    <starter groupId="org.sf.scriptlandia" artifactId="etl-starter" version="1.0.0">
       <mainClass>scriptella.tools.launcher.EtlLauncher</mainClass>
     </starter>
   </registration>

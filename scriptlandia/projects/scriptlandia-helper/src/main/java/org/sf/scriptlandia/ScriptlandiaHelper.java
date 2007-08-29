@@ -37,7 +37,7 @@ public class ScriptlandiaHelper {
     String pom;
 
     if(manager.equalsIgnoreCase("bsf")) {
-      pom = repositoryHome + "/org/sf/scriptlandia/" + name + "/1.0/" + name + "-1.0" + ".pom";
+      pom = repositoryHome + "/org/sf/scriptlandia/" + name + "/1.0.0/" + name + "-1.0.0" + ".pom";
       launcher.resolveDependencies(pom);
     }
     else {

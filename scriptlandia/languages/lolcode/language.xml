@@ -8,7 +8,7 @@
       <extension>lcd</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="lolcode" version="1.0">
+    <starter groupId="org.sf.scriptlandia" artifactId="lolcode" version="1.0.0">
       <mainClass>com.lolcode.Run</mainClass>
     </starter>
   </registration>

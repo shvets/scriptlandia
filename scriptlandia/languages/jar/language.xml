@@ -6,7 +6,7 @@
       <extension>jar</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="jar" version="1.0">
+    <starter groupId="org.sf.scriptlandia" artifactId="jar" version="1.0.0">
       <mainClass>org.sf.scriptlandia.JarStarter</mainClass>
     </starter>
   </registration>

@@ -5,19 +5,6 @@
     <name>${project.name}</name>
   </bannerLeft>
 
-<!--
-  <skin>
-    <groupId>net.rrm.ehour</groupId>
-    <artifactId>maven-ehour-skin</artifactId>
-    <version>1.0</version>
-  </skin>
-
-
-  <head>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
-  </head>
--->
-
   <poweredBy>
     <logo name="Hosted on SourceForge.net" href="http://sourceforge.net"
           img="http://sflogo.sourceforge.net/sflogo.php?group_id=167867&amp;type=1" />

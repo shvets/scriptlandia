@@ -6,7 +6,7 @@
       <extension>apt-jelly</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="apt-starter" version="1.0">
+    <starter groupId="org.sf.scriptlandia" artifactId="apt-starter" version="1.0.0">
       <mainClass>org.sf.scriptlandia.AptStarter</mainClass>
     </starter>
   </registration>

@@ -6,7 +6,7 @@
       <extension>groovy</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="groovy-starter" version="1.0">
+    <starter groupId="org.sf.scriptlandia" artifactId="groovy-starter" version="1.0.0">
       <mainClass>groovy.ui.GroovyMain</mainClass>
     </starter>
   </registration>

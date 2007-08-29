@@ -6,7 +6,7 @@
       <extension>fx</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="javafx-starter" version="1.0">
+    <starter groupId="org.sf.scriptlandia" artifactId="javafx-starter" version="1.0.0">
       <mainClass>org.sf.scriptlandia.JavaFXStarter</mainClass>
     </starter>
   </registration>

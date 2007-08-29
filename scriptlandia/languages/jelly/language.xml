@@ -6,7 +6,7 @@
       <extension>jelly</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="jelly" version="1.0">
+    <starter groupId="org.sf.scriptlandia" artifactId="jelly" version="1.0.0">
       <mainClass>org.apache.commons.jelly.Jelly</mainClass>
     </starter>
   </registration>

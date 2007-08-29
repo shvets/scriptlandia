@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sf.scriptlandia</groupId>
   <artifactId>jar-starter</artifactId>
-  <version>1.0</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <name>Scriptlandia JAR Starter  Module</name>
@@ -14,14 +14,14 @@
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>jar</artifactId>
-      <version>1.0</version>
+      <version>1.0.0</version>
       <type>pom</type>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>jad-starter</artifactId>
-      <version>1.0</version>
+      <version>1.0.0</version>
     </dependency>
 
     <dependency>
@@ -33,27 +33,27 @@
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>ant</artifactId>
-      <version>1.0</version>
+      <version>1.0.0</version>
       <type>pom</type>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>ant-starter</artifactId>
-      <version>1.0</version>
+      <version>1.0.0</version>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>beanshell</artifactId>
-      <version>1.0</version>
+      <version>1.0.0</version>
       <type>pom</type>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>javascript</artifactId>
-      <version>1.0</version>
+      <version>1.0.0</version>
       <type>pom</type>
     </dependency>
   </dependencies>
