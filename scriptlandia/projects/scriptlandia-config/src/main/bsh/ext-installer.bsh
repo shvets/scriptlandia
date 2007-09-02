@@ -93,51 +93,6 @@ public class ExtInstaller {
 
     Boolean[] registrations = new Boolean[extensions.size()];
 
-/*    String groupId = language.get("starter.groupId");
-    String artifactId = language.get("starter.artifactId");
-    String version = language.get("starter.version");
-
-    String mainClass =  language.get("mainClass");
-    String commandLine = language.get("commandLine");
-
-    if(commandLine == null) {
-      commandLine = "";
-    }
-
-    StringBuffer openAction = new StringBuffer();
-    openAction.append(scriptlandiaHome.replace('/', File.separatorChar));
-    openAction.append(File.separatorChar);
-    openAction.append(LAUNCHER_SCRIPT_NAME + ".bat");
-    openAction.append(getScriptExt());
-    openAction.append(" \"");
-    openAction.append("-deps.file.name=");
-    openAction.append(repositoryHome.replace('/', File.separatorChar));
-    openAction.append(File.separatorChar);
-    openAction.append(groupId.replace('.', File.separatorChar));
-    openAction.append(File.separatorChar);
-    openAction.append(artifactId);
-    openAction.append(File.separatorChar);
-    openAction.append(version);
-    openAction.append(File.separatorChar);
-    openAction.append(artifactId);
-    openAction.append("-");
-    openAction.append(version);
-    openAction.append(".pom");
-    openAction.append("\"");
-
-    openAction.append(" \"");
-    openAction.append("-main.class.name=");
-    openAction.append(mainClass);
-    openAction.append("\"");
-    openAction.append(" ");
-
-    if(commandLine != null && commandLine.trim().length() > 0) {
-      openAction.append(language.get("commandLine"));
-      openAction.append(" ");
-    }
-
-    openAction.append(getCommandLineExpression());
-*/
     String openAction = getAction(language, getScriptExt(), repositoryHome, scriptlandiaHome) + 
                                    " " + getCommandLineExpression();
 
@@ -515,9 +470,8 @@ public class ExtInstaller {
   private String getScriptName(String path, String name, String ext) {
     StringBuffer scriptName = new StringBuffer();
 
-//    scriptName.append(path.replace('/', File.separatorChar));
     scriptName.append(path);
-    scriptName.append(/*File.separatorChar*/"/");
+    scriptName.append("/");
     scriptName.append(name);
     scriptName.append(".");
     scriptName.append(ext);
@@ -784,4 +738,3 @@ public class ExtInstaller {
   }
 
 }
-
