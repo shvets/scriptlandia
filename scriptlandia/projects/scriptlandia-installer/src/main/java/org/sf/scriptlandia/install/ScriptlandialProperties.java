@@ -13,9 +13,6 @@ import java.util.Properties;
  * @version 1.0 01/14/2007
  */
 public class ScriptlandialProperties extends Properties {
-  /** Scriptlandia properties file file location. */
-//  private final static String SCRIPTLANDIA_PROPERTIES =
-//          System.getProperty("user.home") + File.separatorChar + ".scriptlandia";
 
   /** Maven2 settings.xml file location. */
   public static final String SETTINGS_XML =
