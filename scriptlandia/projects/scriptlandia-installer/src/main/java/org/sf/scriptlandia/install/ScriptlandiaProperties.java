@@ -12,7 +12,7 @@ import java.util.Properties;
  * @author Alexander Shvets
  * @version 1.0 01/14/2007
  */
-public class ScriptlandialProperties extends Properties {
+public class ScriptlandiaProperties extends Properties {
 
   /** Maven2 settings.xml file location. */
   public static final String SETTINGS_XML =
@@ -20,7 +20,7 @@ public class ScriptlandialProperties extends Properties {
 
   protected String fileName;
 
-  public ScriptlandialProperties(String fileName) {
+  public ScriptlandiaProperties(String fileName) {
     this.fileName = fileName;
   }
 

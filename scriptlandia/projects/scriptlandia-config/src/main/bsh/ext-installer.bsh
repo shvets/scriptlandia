@@ -1,3 +1,5 @@
+// ext-installer.bsh
+
 //package org.sf.scriptlandia.install;
 
 import org.jdesktop.jdic.filetypes.*;

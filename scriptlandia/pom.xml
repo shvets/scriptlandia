@@ -50,6 +50,7 @@
 
   <modules>
     <module>projects/antrun</module>
+    <module>projects/scriptlandia-helper</module>
     <module>projects/scriptlandia-launcher</module>
     <module>projects/scriptlandia-installer</module>
     <module>projects/scriptlandia-nailgun</module>

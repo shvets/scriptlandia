@@ -1,3 +1,5 @@
+// ChecksumScript.bsh 
+
 import org.apache.tools.ant.taskdefs.Checksum;
 import org.apache.tools.ant.Project;
 

@@ -33,8 +33,7 @@ In the same way you can work with Beanshell scripts:
 
 System.out.println("Hello!!!");
 
-In the same way as we do it for Beanshell and JavaScript scripts, we can
-create and run scripts for Groovy language. It is very interesting new
+Similarly we can create and run scripts for Groovy language. It is very interesting new
 language with the set of advanced features such as closures, native support
 for various markup languages (html, xml, ant etc.). For example:
 
@@ -66,7 +65,6 @@ ant.delete(dir:"target")
 ant.echo("done")
 
 We also can run jelly script, that looks almost like Ant script (but not competely):
-
 
 <?xml version="1.0"?>
 <j:jelly xmlns:j="jelly:core" xmlns="jelly:ant" trim="false">
@@ -127,23 +125,40 @@ like build.xml. For example:
 You can use any other scripting language inside antlets. To work with the scripting
 engines, Ant uses Bean Scripting Framework (BSF). Jar files for this framework and 
 jars for the scripting engines should be present in CLASSPATH. Scriptlandia takes care
-about this details.
+about these details.
 
 For example:
 
-<!-- Hello2.ant -->
+<!-- integration-bsf-scripting.ant -->
 
-<project name="hello.ant" default="start" basedir=".">
+<project name="integration-bsf-scripting.ant" default="start" basedir=".">
+  <scriptdef name="configure-language" language="beanshell">
+    <attribute name="manager"/>
+    <attribute name="name"/>
+
+    <![CDATA[
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      String name = attributes.get("name");
+      String manager = attributes.get("manager");
+
+      ScriptlandiaHelper.resolveLanguageDependencies(name, manager);
+    ]]>
+  </scriptdef>
 
   <target name="start" depends"start.beanshell, start.javascript, start.groovy"/>
 
   <target name="start.beanshell">
+    <!-- beanshell is the default language -- no need to configure it. -->
+
     <script language="beanshell">
       System.out.println("Hello, World from beanshell!");
     </script>
   </target>
 
   <target name="start.javascript">
+    <configure-language name="javascript" manager="bsf"/>
+
     <script language="javascript">
       importPackage(Packages.java.lang);
 
@@ -152,12 +167,62 @@ For example:
   </target>
 
   <target name="start.groovy">
+    <configure-language name="groovy" manager="bsf"/>
+
     <script language="groovy">
       println("Hello, World from Groovy!")
     </script>
   </target>
 
 </project>
+
+In similar way you can use Java Scripting Framework:
+
+<!-- integration-bsf-scripting.ant -->
+
+<project name="integration-bsf-scripting.ant" default="start" basedir=".">
+  <scriptdef name="configure-language" language="beanshell">
+    <attribute name="manager"/>
+    <attribute name="name"/>
+
+    <![CDATA[
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      String name = attributes.get("name");
+      String manager = attributes.get("manager");
+
+      ScriptlandiaHelper.resolveLanguageDependencies(name, manager);
+    ]]>
+  </scriptdef>
+
+  <target name="start" depends"start.jaskell, start.judo, start.groovy"/>
+
+  <target name="start.jaskell">
+    <configure-language name="jaskell" manager="javax"/>
+
+    <script language="jaskell" manager="javax">
+      print "Hello World from Jaskell!"
+    </script>
+  </target>
+
+  <target name="start.judo">
+    <configure-language name="judo" manager="javax"/>
+
+    <script language="judo" manager="javax">
+      println 'Hello World';
+    </script>
+  </target>
+
+  <target name="start.groovy">
+    <configure-language name="groovy" manager="bsf"/>
+
+    <script language="groovy">
+      println("Hello, World from Groovy!")
+    </script>
+  </target>
+
+</project>
+
 
 Antlets can be used as the convenient way for building command-line tools.
 By mixing predefined Ant tasks with scripting languages code, we can build
@@ -222,9 +287,9 @@ properties to represent Java "jar" file as an executable:
 >java -jar jarfile.jar
 
 By using antlets we can build more powerful framework. Say, we want to assign set of
-commands with given jar file (not only starting the application). To do it, we prepare
-special file with the predefined name: "default.ant". This file resides inside "META-INF"
-directory, similar to "MANIFEST.MF" file.
+commands with given jar file (not only starting the application, but more powerful set of commands).
+To do it, we prepare special file with the predefined name: "default.ant". This file resides 
+inside "META-INF" directory, similar to "MANIFEST.MF" file.
 
 As an example, let's associate two commands: "start" and "stop" with our jar file.
 Antlet for this case looks like:
@@ -254,7 +319,7 @@ Antlet for this case looks like:
 </project>
 
 Now, we have to associate "jar" extension with special launcher program (it is the part
-of the framework), which will extracts this antlet from the archive, prepares 
+of the framework), which extracts this antlet from the archive, prepares 
 "project" object and then executes specified target. The variable "${jar.file}" 
 is prepared inside this launcher program.
 
@@ -317,7 +382,7 @@ This interactive mode is supported for all scripts withing Scriptlandia.
 Forcing GUI mode
 
 
-If your script is based on AWT or swing, we need to make sure not to close
+If your script is based on AWT or Swing, we need to make sure not to close
 awt-thread from execution. You have to use -wait command line parameter:
 
 >testWithGui.bsh -wait
@@ -337,7 +402,7 @@ For example:
 </j:jelly>
 
 
-It is possible to include ant script inside jelly script. You need to include ant tags library:
+It is possible to include "ant" script inside "jelly" script. You need to include ant tags library:
 
 <?xml version="1.0"?>
 <j:jelly xmlns:j="jelly:core" xmlns="jelly:ant" trim="false">
@@ -354,9 +419,13 @@ It is possible to include ant script inside jelly script. You need to include an
 </j:jelly>
 
 The jelly launcher is dependent on the following tag libraries:
-"commons-jelly-tags-ant", "commons-jelly-tags-beanshell", "commons-jelly-tags-sql",
-"commons-jelly-tags-swing", "commons-jelly-tags-swt", "commons-jelly-tags-define",
-"commons-jelly-tags-log".
+- "commons-jelly-tags-ant";
+- "commons-jelly-tags-beanshell";
+- "commons-jelly-tags-sql";
+- "commons-jelly-tags-swing";
+- "commons-jelly-tags-swt";
+- "commons-jelly-tags-define";
+- "commons-jelly-tags-log".
 
 New tag libraries could be easily added to the framework by including new dependencies.
 
@@ -364,13 +433,13 @@ New tag libraries could be easily added to the framework by including new depend
 Velocity and Freemarker templates
 
 
-Velocity templates can be treated as another example of scripting language. The situation
+Velocity templates can be treated as another type of scripting language. The situation
 here is more complex than usual, because Velocity is expecting some external parameters
 to be entered in order to generate actual source from the template.
 
 The solution used here is to use beanshell script as the object with actual parameters
-(context object). This beanshell script has predefined name: context.bsh. If you need to use other
-name, specify it on command line next to velocity script name:
+(context object). This "beanshell" script has predefined name: "context.bsh". If you need
+to use other name, specify it on command line next to velocity script name:
 
 >test1.vm
 
@@ -505,8 +574,17 @@ command line:
 
 These commands will pick up all libraries from "lib" folder and add them to "CLASSPATH" variable.
 
+In the latest version pofg the project there is the way how to dynamically download, install and add
+to classpath 3-rd party libraries (if they are present at remote repository). For example:
 
-Maven scripts as regular scriptlets (maven-lets) and dependencies files
+import org.sf.scriptlandia.ScriptlandiaHelper;
+
+ScriptlandiaHelper.resolveDependencies("freemarker", "freemarker", "2.3.9");
+
+In this example we reslove the dependency to frrmarker library, version 2.3.9.
+
+
+Maven scripts as regular scriptlets (mavenlets) and dependencies files
 
 
 Maven project files can also be used as scripts. Instead of having predefined "pom.xml" file
@@ -592,11 +670,13 @@ you have to create this file:
 In repositories section you have to specify the repository location (if dependent 
 libraries are not located in default repository).
 
+
 Classworld scripts
 
 The same application can be started in slightly different way by using classworld file.
 The ".cwd" extension is registered to launch such files. For example, in order to
 run JLGUI mp3 player you can use this file:
+
 
 # jlgui.cwd 
 
@@ -606,6 +686,7 @@ set jlgui.version default 3.0
 
 [jlgui.core]
 load ${repository.home}/javazoom/jlgui/jlgui/${jlgui.version}/jlgui-${jlgui.version}.jar
+
 
 Usually classworld file does not provide loading dependent files on-the fly. But there is
 small trick that can do it. If you try to load libraries from ${repository.home}, the program will try 
@@ -622,7 +703,11 @@ manifest file has specific attributes, unique to phone applications only.
 
 This is very convenient way to test mobile application before moving it to your cell phone.
 
+If there is no Java ME installed, default JME implementation will be used (see http://microemu.org
+for details).
+
 Starting scripts as batch files
+
 
 In Unix:
 

@@ -29,7 +29,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
           System.getProperty("user.home") + File.separatorChar + ".scriptlandia";
 
   protected LauncherProperties launcherProps = new LauncherProperties(LAUNCHER_PROPERTIES);
-  private ScriptlandialProperties scriptlandiaProps = new ScriptlandialProperties(SCRIPTLANDIA_PROPERTIES);
+  private ScriptlandiaProperties scriptlandiaProps = new ScriptlandiaProperties(SCRIPTLANDIA_PROPERTIES);
 
   private JTextField mobileJavaHomeField = new JTextField(35);
   private JTextField scriptlandiaHomeField = new JTextField(35);

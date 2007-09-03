@@ -169,20 +169,26 @@ public final class JadStarter {
       else if(profileVersion.equalsIgnoreCase("MIDP-2.0")) {
         sb.append(javaMobileHome).append("/lib/midpapi20.jar");
       }
+      else if(profileVersion.equalsIgnoreCase("MIDP-2.1")) {
+        sb.append(javaMobileHome).append("/lib/midpapi21.jar");
+      }
       else {
-        sb.append(javaMobileHome).append("/lib/midpapi20.jar");
+        sb.append(javaMobileHome).append("/lib/midpapi21.jar");
       }
 
       sb.append(File.pathSeparatorChar);
     }
 
+    sb.append(javaMobileHome).append("/lib/j2me-ws.jar");
+    sb.append(File.pathSeparatorChar);
+
+    sb.append(javaMobileHome).append("/lib/j2me-xmlrpc.jar");
+    sb.append(File.pathSeparatorChar);
+
     sb.append(javaMobileHome).append("/lib/wma20.jar");
     sb.append(File.pathSeparatorChar);
 
     sb.append(javaMobileHome).append("/lib/mmapi.jar");
-    sb.append(File.pathSeparatorChar);
-
-    sb.append(javaMobileHome).append("/lib/j2me-ws.jar");
     sb.append(File.pathSeparatorChar);
 
     sb.append(javaMobileHome).append("/lib/jsr75.jar");
@@ -191,16 +197,31 @@ public final class JadStarter {
     sb.append(javaMobileHome).append("/lib/jsr082.jar");
     sb.append(File.pathSeparatorChar);
 
-    sb.append(javaMobileHome).append("/lib/jsr177.jar");
+    sb.append(javaMobileHome).append("/lib/jsr179.jar");
     sb.append(File.pathSeparatorChar);
 
-    sb.append(javaMobileHome).append("/lib/jsr179.jar");
+    sb.append(javaMobileHome).append("/lib/jsr180.jar");
     sb.append(File.pathSeparatorChar);
 
     sb.append(javaMobileHome).append("/lib/jsr184.jar");
     sb.append(File.pathSeparatorChar);
 
     sb.append(javaMobileHome).append("/lib/jsr211.jar");
+    sb.append(File.pathSeparatorChar);
+
+    sb.append(javaMobileHome).append("/lib/jsr226.jar");
+    sb.append(File.pathSeparatorChar);
+
+    sb.append(javaMobileHome).append("/lib/jsr229.jar");
+    sb.append(File.pathSeparatorChar);
+
+    sb.append(javaMobileHome).append("/lib/jsr234.jar");
+    sb.append(File.pathSeparatorChar);
+
+    sb.append(javaMobileHome).append("/lib/jsr238.jar");
+    sb.append(File.pathSeparatorChar);
+
+    sb.append(javaMobileHome).append("/lib/jsr239.jar");
     sb.append(File.pathSeparatorChar);
 
     String jarName = (String)properties.get("MIDlet-Jar-URL");
