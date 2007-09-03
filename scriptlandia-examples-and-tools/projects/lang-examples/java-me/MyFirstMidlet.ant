@@ -10,17 +10,25 @@
 
   <path id="mobile.classpath">
     <pathelement location="${mobile.java.home}/lib/cldcapi11.jar"/>
-    <pathelement location="${mobile.java.home}/lib/midpapi20.jar"/>
-
+    <pathelement location="${mobile.java.home}/lib/midpapi21.jar"/>
     <pathelement location="${mobile.java.home}/lib/wma20.jar"/>
-    <pathelement location="${mobile.java.home}/lib/mmapi.jar"/>
+
     <pathelement location="${mobile.java.home}/lib/j2me-ws.jar"/>
+    <pathelement location="${mobile.java.home}/lib/j2me-xmlrpc.jar"/>
+
+    <pathelement location="${mobile.java.home}/lib/mmapi.jar"/>
+
     <pathelement location="${mobile.java.home}/lib/jsr75.jar"/>
     <pathelement location="${mobile.java.home}/lib/jsr082.jar"/>
-    <pathelement location="${mobile.java.home}/lib/jsr184.jar"/>
     <pathelement location="${mobile.java.home}/lib/jsr179.jar"/>
-    <pathelement location="${mobile.java.home}/lib/jsr177.jar"/>
+    <pathelement location="${mobile.java.home}/lib/jsr180.jar"/>
+    <pathelement location="${mobile.java.home}/lib/jsr184.jar"/>
     <pathelement location="${mobile.java.home}/lib/jsr211.jar"/>
+    <pathelement location="${mobile.java.home}/lib/jsr226.jar"/>
+    <pathelement location="${mobile.java.home}/lib/jsr229.jar"/>
+    <pathelement location="${mobile.java.home}/lib/jsr234.jar"/>
+    <pathelement location="${mobile.java.home}/lib/jsr238.jar"/>
+    <pathelement location="${mobile.java.home}/lib/jsr239.jar"/>
   </path>
 
   <property name="mobile.classpath" refid="mobile.classpath"/>
