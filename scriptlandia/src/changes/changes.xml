@@ -234,7 +234,7 @@
       </action>
 
       <action dev="Alexander Shvets" type="remove">
-        Removing image4j and nailgun projects. Used binaries freom repository instead.
+        Removing image4j and nailgun projects. Used binaries from repository instead.
       </action>
 
       <action dev="Alexander Shvets" type="fix">

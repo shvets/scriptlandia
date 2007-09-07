@@ -3,7 +3,7 @@
 @call config.bat
 
 SET JLAUNCHPAD_PROJECT=.
-SET ORIGINAL_JLAUNCHPAD_PROJECT=..\..\..\jlaunchpad\trunk
+SET ORIGINAL_JLAUNCHPAD_PROJECT=..\..\..\jlaunchpad\trunk\launcher
 
 if exist "%ORIGINAL_JLAUNCHPAD_PROJECT%\projects\universal-launcher\target\universal-launcher.jar" (
   cd %ORIGINAL_JLAUNCHPAD_PROJECT%

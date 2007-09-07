@@ -62,12 +62,7 @@ public class CoreInstaller {
 
     launcher.setMainClassName("org.sf.pomreader.ProjectInstaller");
 
-    String repositoryHome = System.getProperty("repository.home");
-    
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher-common/1.0.0/universal-launcher-common-1.0.0.jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0.0/pom-reader-1.0.0.jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher/1.0.0/universal-launcher-1.0.0.jar");    
+    addCoreJars(launcher);
 
     launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
@@ -108,10 +103,7 @@ public class CoreInstaller {
 
     launcher.setMainClassName("org.sf.pomreader.ProjectInstaller");
 
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher-common/1.0.0/universal-launcher-common-1.0.0.jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0.0/pom-reader-1.0.0.jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher/1.0.0/universal-launcher-1.0.0.jar");
+    addCoreJars(launcher);
 
     launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
@@ -122,6 +114,15 @@ public class CoreInstaller {
 
     launcher.configure(Thread.currentThread().getContextClassLoader());
     launcher.launch();
+  }
+
+  private void addCoreJars(SimpleLauncher launcher) throws LauncherException {
+    String repositoryHome = System.getProperty("repository.home");
+    
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher-common/1.0.1/universal-launcher-common-1.0.1.jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0.1/pom-reader-1.0.1.jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher/1.0.1/universal-launcher-1.0.1.jar");    
   }
 
   /**
@@ -247,24 +248,6 @@ public class CoreInstaller {
     launcher.launch();
   }
 
-/*  private String getScriptlandiaInstallerJarName() {
-    String sriptlandiaInstallerJarName;
-
-    if(isConfigMode()) {
-      String repositoryHome = System.getProperty("repository.home");
-      String scriptlandiaVersion = System.getProperty("scriptlandia.version");
-
-      sriptlandiaInstallerJarName = 
-        repositoryHome + "/org/sf/scriptlandia/scriptlandia-installer/" +
-        scriptlandiaVersion + "/scriptlandia-installer-" + scriptlandiaVersion + ".jar";
-    }
-    else {
-      sriptlandiaInstallerJarName = "projects/scriptlandia-installer/target/scriptlandia-installer.jar";
-    }
-
-    return sriptlandiaInstallerJarName;
-  }
-*/
   /**
    * Gets the required projects arguments list.
    *
@@ -274,8 +257,6 @@ public class CoreInstaller {
   private static String[] getLanguageProjectsArgsList(String[] args) {
     List<String> newArgsList = new ArrayList<String>();
 
-//    newArgsList.add("-f");
-//    newArgsList.add("installer.ant");
     newArgsList.add("install.languages");
 
     newArgsList.addAll(Arrays.asList(args));

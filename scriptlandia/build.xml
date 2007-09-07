@@ -315,7 +315,7 @@
 
   <target name="assembly">
     <zip destfile="target/scriptlandia-${scriptlandia.version}-install.zip" update="true">
-      <zipfileset dir="../jlaunchpad/projects" prefix="scriptlandia-${scriptlandia.version}/projects">
+      <zipfileset dir="../../../jlaunchpad/trunk/launcher/projects" prefix="scriptlandia-${scriptlandia.version}/projects">
         <include name="**/target/*.jar"/>
         <include name="**/*.xml"/>
         <include name="**/universal-launcher/src/main/config/*.*"/>
