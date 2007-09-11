@@ -70,7 +70,7 @@ public class ScriptlandiaHelper {
   }
 
   /**
-   * Resolves dependencies for specified pom maven2 dependencies file.
+   * Resolves dependencies for specified artifact.
    *
    * @throws Exception the exception
    * @param groupId group ID
@@ -80,13 +80,11 @@ public class ScriptlandiaHelper {
    */
   public static void resolveDependencies(String groupId, String artifactId, String version, String classifier)
          throws Exception {
-    UniversalLauncher launcher = ScriptlandiaLauncher.getInstance();
-
-    launcher.resolveDependencies(groupId, artifactId, version, classifier);
+    ScriptlandiaLauncher.getInstance().resolveDependencies(groupId, artifactId, version, classifier);
   }
 
   /**
-   * Resolves dependencies for specified pom maven2 dependencies file.
+   * Resolves dependencies for specified artifact.
    *
    * @throws Exception the exception
    * @param groupId group ID
@@ -95,15 +93,19 @@ public class ScriptlandiaHelper {
    */
   public static void resolveDependencies(String groupId, String artifactId, String version)
          throws Exception {
-    UniversalLauncher launcher = ScriptlandiaLauncher.getInstance();
-
-    launcher.resolveDependencies(groupId, artifactId, version);
+    ScriptlandiaLauncher.getInstance().resolveDependencies(groupId, artifactId, version);
   }
 
+  /**
+   * Resolves dependencies for specified dependencies file.
+   *
+   * @throws Exception the exception
+   * @param groupId group ID
+   * @param artifactId artifact ID
+   * @param version version
+   */
   public static void resolveDependencies(String depsFileName) throws Exception {
-    UniversalLauncher launcher = ScriptlandiaLauncher.getInstance();
-
-    launcher.resolveDependencies(depsFileName);
+    ScriptlandiaLauncher.getInstance().resolveDependencies(depsFileName);
   }
     
 }

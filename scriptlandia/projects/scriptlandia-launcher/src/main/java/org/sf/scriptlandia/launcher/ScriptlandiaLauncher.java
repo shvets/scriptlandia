@@ -19,7 +19,7 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
   /**
    * The singleton object.
    */
-  protected static Map<String, UniversalLauncher> instances = new HashMap<String, UniversalLauncher>();
+//  protected static Map<String, UniversalLauncher> instances = new HashMap<String, UniversalLauncher>();
 
   /** ScriptName. */
   private String scriptName;
@@ -89,7 +89,6 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
       launcher = instances.get(currentExtension);
     }
     else {
-//      launcher = new UniversalLauncher(parser, args, classWorld);
       launcher = new ScriptlandiaLauncher(parser, args, classWorld);
 
       launcher.configure(Thread.currentThread().getContextClassLoader());
@@ -117,13 +116,13 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
    * @return true if "wait" mode; false otherwise
    */
   public boolean isWaitMode() {
-    ScriptlandiaLauncherCommandLineParser _parser =
-            (ScriptlandiaLauncherCommandLineParser)parser;
-     if(_parser.isNailgunClientMode()) {
-       return true;
-     }
+    ScriptlandiaLauncherCommandLineParser _parser = (ScriptlandiaLauncherCommandLineParser)parser;
 
-     return super.isWaitMode();
+    if(_parser.isNailgunClientMode()) {
+      return true;
+    }
+
+    return super.isWaitMode();
   }
 
   /**
@@ -142,7 +141,8 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
 
     if (scriptName != null) {
       currentExtension = FileUtil.getExtension(scriptName);
-    } else {
+    }
+    else {
       currentExtension = null;
     }
 
