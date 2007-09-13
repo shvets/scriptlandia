@@ -5,7 +5,7 @@
 
   <groupId>org.sf.scriptlandia</groupId>
   <artifactId>scriptlandia-main</artifactId>
-  <version>2.2.3</version>
+  <version>2.2.4</version>
   <packaging>pom</packaging>
 
   <name>Scriptlandia Main Module</name>

@@ -80,7 +80,7 @@ Before executing this script, execute this in scriptlandia-examples-and-tools\pr
         <jre minVersion="1.5.0">
           <opt>-Dant.version.internal=1.7.0</opt>
           <opt>-Dbeanshell.version=2.0b5</opt>
-          <opt>-Dscriptlandia.version=2.2.3</opt>
+          <opt>-Dscriptlandia.version=2.2.4</opt>
         </jre>
       </config>
     </launch4j>
@@ -100,7 +100,7 @@ Before executing this script, execute this in scriptlandia-examples-and-tools\pr
         <jre minVersion="1.5.0">
           <opt>-Dant.version.internal=1.7.0</opt>
           <opt>-Dbeanshell.version=2.0b5</opt>
-          <opt>-Dscriptlandia.version=2.2.3</opt>
+          <opt>-Dscriptlandia.version=2.2.4</opt>
         </jre>
       </config>
     </launch4j>
@@ -119,7 +119,7 @@ Before executing this script, execute this in scriptlandia-examples-and-tools\pr
         <jre minVersion="1.5.0">
           <opt>-Dant.version.internal=1.7.0</opt>
           <opt>-Dbeanshell.version=2.0b5</opt>
-          <opt>-Dscriptlandia.version=2.2.3</opt>
+          <opt>-Dscriptlandia.version=2.2.4</opt>
         </jre>
       </config>
     </launch4j>

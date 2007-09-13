@@ -5,7 +5,7 @@
 
   <groupId>org.sf.scriptlandia</groupId>
   <artifactId>scriptlandia-installer</artifactId>
-  <version>2.2.3</version>
+  <version>2.2.4</version>
 
   <name>Scriptlandia Installer Module</name>
   <description>

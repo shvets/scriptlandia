@@ -27,7 +27,7 @@
       <item name="${project.name}" href="${project.url}"/>
     </links>
 
-    <menu name="Scriptlandia 2.2.3">
+    <menu name="Scriptlandia 2.2.4">
       <item name="Readme file" href="docs/README.txt"/>
       <item name="Installation" href="docs/Installation.txt"/>
       <item name="Developer Guide" href="docs/DeveloperGuide.txt"/>

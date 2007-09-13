@@ -5,7 +5,7 @@
 
   <groupId>org.sf.scriptlandia</groupId>
   <artifactId>scriptlandia-helper</artifactId>
-  <version>2.2.3</version>
+  <version>2.2.4</version>
 
   <name>Scriptlandia</name>
   <description>
@@ -72,7 +72,7 @@
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>scriptlandia-launcher</artifactId>
-      <version>2.2.3</version>
+      <version>2.2.4</version>
     </dependency>
 
     <dependency>

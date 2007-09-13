@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<language name="scriptlandia" groupId="org.sf.scriptlandia" artifactId="scriptlandia" version="2.2.3">
+<language name="scriptlandia" groupId="org.sf.scriptlandia" artifactId="scriptlandia" version="2.2.4">
   <registration mimeType="text/scriptlandia" icon="scriptlandia.ico">
     <extensions>
       <extension>sl</extension>

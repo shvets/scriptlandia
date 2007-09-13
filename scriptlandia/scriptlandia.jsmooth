@@ -69,7 +69,7 @@
 
   <javaProperties>
     <name>scriptlandia.version</name>
-    <value>2.2.3</value>
+    <value>2.2.4</value>
   </javaProperties>
 
   <skeletonProperties>
