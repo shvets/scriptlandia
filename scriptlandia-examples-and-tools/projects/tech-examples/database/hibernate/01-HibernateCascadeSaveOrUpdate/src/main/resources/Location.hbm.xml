@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping >
+    <class name="Location" table="locations">
+        <id name="id" column="uid" type="long">
+            <generator class="increment"/>
+        </id>
+        <property name="name" type="string"/>
+        <component name="address" class="Address" >
+            <property name="streetAddress" column="street_address" type="string"/>
+            <property name="city" type="string"/>
+            <property name="state" type="string"/>
+            <property name="zipCode" column="zip_code" type="string"/>
+        </component>
+    </class>
+</hibernate-mapping>
+

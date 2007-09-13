@@ -1,0 +1,37 @@
+<!-- hibernate-gen-java.ant -->
+
+<project name="hibernate-gen-java.ant" default="codegen" basedir=".">
+  <property name="source.root" value="resources"/>
+
+  <script language="beanshell">
+/*    import org.sf.jlaunchpad.core.*;
+    import org.sf.scriptlandia.ScriptlandiaHelper;
+
+    Launcher launcher = ScriptlandiaHelper.getLauncher();
+
+//    ScriptlandiaHelper.resolveDependencies("org.hibernate", "hibernate", "3.2.5.ga");
+    ScriptlandiaHelper.resolveDependencies("org.hibernate", "hibernate-tools", "3.2.0.beta8");
+*/
+
+    import org.sf.scriptlandia.MavenHelper;
+
+    MavenHelper.resolveMavenDependencies(project, "hibernate-tools-deps.xml", "compile");
+  </script>
+
+  <taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask"/>
+
+  <!-- Generate the java code for all mapping files in our source tree -->
+  <target name="codegen"
+          description="Generate Java source from the O/R mapping files">
+    <hibernatetool destdir="${source.root}">
+      <configuration>
+        <fileset dir="${source.root}">
+          <include name="**/*.hbm.xml"/>
+        </fileset>
+      </configuration>
+
+      <hbm2java/>
+    </hibernatetool>
+  </target>
+
+</project>
