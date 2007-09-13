@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<language name="scala" groupId="scala" artifactId="scala-library" version="2.5.1">
+<language name="scala" groupId="scala" artifactId="scala-library" version="2.6.0">
   <registration mimeType="text/scala" icon="scala.ico">
     <extensions>
       <extension>scala</extension>

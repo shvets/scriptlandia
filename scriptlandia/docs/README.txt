@@ -201,7 +201,7 @@ TCL            1.4.0        http://tcljava.sourceforge.net
 AWK            0.14         http://jawk.sourceforge.net
 JavaFX         200706011412 https://openjfx.dev.java.net
 Fortress       163          http://fortress.sunsource.net
-Scala          2.5.1        http://scala-lang.org
+Scala          2.6.0        http://scala-lang.org
 Judo           0.9          http://www.judoscript.com
 XGQL           2.0          https://sourceforge.net/projects/xgql
 LOLCODE        0.11         http://code.google.com/p/lolcode-java

@@ -287,5 +287,16 @@
         Upgrade for JRuby version 1.0.1.
       </action>
     </release>
+
+    <release version="2.2.4" date="30-September-2007" description="Bug Fix Release">    
+      <action dev="Alexander Shvets" type="add">
+        Added support for proxy with authenication.
+      </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgraded to Scala ver. 2.6.0.
+      </action>
+    </release>
   </body>
+
 </document>
