@@ -5,16 +5,13 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.PatternLayout;
 
-import org.sf.scriptlandia.launcher.Launcher;
-import org.sf.scriptlandia.launchermanager.LauncherManager;
-
-import org.sf.scriptlandia.MavenHelper;
+import org.sf.jlaunchpad.core.*;
+import org.sf.scriptlandia.*;
 
 void resolveDependencies() {
   MavenHelper.resolveMavenDependencies("db-diff.maven", "compile");
 
-  Launcher launcher = (Launcher)LauncherManager.getLauncher();
-
+  Launcher launcher = ScriptlandiaHelper.getLauncher();
   launcher.addClasspathEntry(new File("src/main/resources").toURL());
 }
 

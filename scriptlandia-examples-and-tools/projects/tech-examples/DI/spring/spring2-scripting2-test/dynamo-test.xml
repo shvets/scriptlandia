@@ -13,12 +13,13 @@
   </bean>
 
   <!-- Creates dog. -->
+<!--
   <bean id="dog" class="org.springframework.scripting.jruby.JRubyScriptFactory">
     <constructor-arg value="file:Dog.ruby" />
     <constructor-arg value="Animal" />
     <property name="name" value="dog_name"/>
   </bean>
-
+-->
   <!-- Creates cow. -->
   <bean id="cow" class="org.springframework.scripting.bsh.BshScriptFactory">
     <constructor-arg value="file:Cow.bsh" />
@@ -31,7 +32,7 @@
     <property name="animals">
       <list>
         <ref bean="cat"/>
-        <ref bean="dog"/>
+        <!--ref bean="dog"/-->
         <ref bean="cow"/>
       </list>
     </property>

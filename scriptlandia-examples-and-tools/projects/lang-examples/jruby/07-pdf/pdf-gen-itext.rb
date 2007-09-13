@@ -2,7 +2,7 @@
 
 require 'java'
 
-require "c:/maven-repository/com/lowagie/itext/1.3.1/itext-1.3.1.jar"
+require "c:/maven-repository/com/lowagie/itext/2.0.4/itext-2.0.4.jar"
 
 include_class "java.io.FileOutputStream"
 include_class "java.io.IOException"

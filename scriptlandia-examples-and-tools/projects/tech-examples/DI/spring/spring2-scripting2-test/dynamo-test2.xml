@@ -11,12 +11,14 @@ http://www.springframework.org/schema/lang http://www.springframework.org/schema
   </lang:groovy>
 
   <!-- Creates dog. -->
+  <!-- switches refreshing on with 5 seconds between checks -->
+<!--
   <lang:jruby id="dog" script-interfaces="Animal" script-source="classpath:Dog.ruby"
-              refresh-check-delay="5000"> <!-- switches refreshing on with 5 seconds between checks -->
+              refresh-check-delay="5000"> 
 
     <lang:property name="name" value="dog-name"/>
   </lang:jruby>
-
+-->
   <!-- Creates cow. -->
   <lang:bsh id="cow" script-interfaces="Animal" script-source="classpath:Cow.bsh">
     <lang:property name="name" value="cow-name"/>
@@ -41,7 +43,7 @@ http://www.springframework.org/schema/lang http://www.springframework.org/schema
     <property name="animals">
       <list>
         <ref bean="cat"/>
-        <ref bean="dog"/>
+        <!--ref bean="dog"/-->
         <ref bean="cow"/>
         <ref bean="ant"/>
       </list>

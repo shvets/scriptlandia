@@ -7,35 +7,33 @@
   <artifactId>spring-2-test</artifactId>
   <version>1.0</version>
 
+  <properties>
+    <spring.version>2.0.6</spring.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-scripting</artifactId>
-      <version>1.0</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>2.0.3</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
-      <version>2.0.3</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-support</artifactId>
-      <version>2.0.3</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>
-      <version>2.0.3</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <dependency>
@@ -47,7 +45,7 @@
     <dependency>
       <groupId>jruby</groupId>
       <artifactId>jruby</artifactId>
-      <version>0.9.9</version>
+      <version>1.0.1</version>
     </dependency>
 
     <dependency>

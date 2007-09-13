@@ -7,7 +7,9 @@ import java.lang.reflect.Modifier;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 
-import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+import org.sf.jlaunchpad.core.*;
+
+import org.sf.scriptlandia.*;
 import org.codehaus.janino.*;
 
 import org.codehaus.classworlds.ClassRealm;
@@ -21,7 +23,8 @@ public class Dynamo {
   private ApplicationContext factory;
 
   public Dynamo(String basedir, String[] classNames, String beansFile) {
-    ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+  //  CoreLauncher launcher = LauncherManager.getLauncher();
+    Launcher launcher = ScriptlandiaHelper.getLauncher();
 
     classRealm = launcher.getMainRealm();
 
@@ -31,7 +34,8 @@ public class Dynamo {
   }
 
   private void register(String basedir, String[] classNames) {
-    ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+//    CoreLauncher launcher = LauncherManager.getLauncher();
+    Launcher launcher = ScriptlandiaHelper.getLauncher();
 
     ClassLoader sourceClassloader = new JavaSourceClassLoader(
       launcher.getClass().getClassLoader(),  // parentClassLoader
@@ -86,7 +90,7 @@ public class Dynamo {
     String[] classNames = new String[] {"Animal", "AnimalFarm" };
     String basedir = System.getProperty("user.dir");
 
-    Dynamo dynamo = new Dynamo(basedir, classNames, "dynamo-test2.xml");
+    Dynamo dynamo = new Dynamo(basedir, classNames, "dynamo-test.xml");
 
     AnimalFarm animalFarm = dynamo.getBean("farm");
 
