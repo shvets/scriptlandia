@@ -46,13 +46,14 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
    * @param parentClassLoader parent class loader
    * @throws LauncherException the exception
    */
-  public void configure(ClassLoader parentClassLoader) throws LauncherException {
+/*  public void configure(ClassLoader parentClassLoader) throws LauncherException {
     Map<String, String> commandLine = parser.getCommandLine();
 
     setScriptName(commandLine.get("script.name"));
 
     super.configure(parentClassLoader);
   }
+*/
 
   /**
    * Sets the script name.
@@ -81,15 +82,23 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
 
   private static UniversalLauncher createLauncher(ClassWorld classWorld, LauncherCommandLineParser parser, String[] args)
           throws LauncherException {
-    UniversalLauncher launcher;
+    ScriptlandiaLauncher launcher;
+
+    Map<String, String> commandLine = parser.getCommandLine();
 
     boolean instanceExists = currentExtension != null && instances.get(currentExtension) != null;
 
     if (instanceExists) {
-      launcher = instances.get(currentExtension);
+      launcher = (ScriptlandiaLauncher)instances.get(currentExtension);
+
+      launcher.setScriptName(commandLine.get("script.name"));
+
+      launcher.setArgs(args);
     }
     else {
       launcher = new ScriptlandiaLauncher(parser, args, classWorld);
+
+      launcher.setScriptName(commandLine.get("script.name"));
 
       launcher.configure(Thread.currentThread().getContextClassLoader());
 
@@ -135,7 +144,7 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
   public static void main(String[] args, ClassWorld classWorld) throws LauncherException {
     ScriptlandiaLauncherCommandLineParser parser = new ScriptlandiaLauncherCommandLineParser();
 
-    parser.parse(args);
+    String[] newArgs = parser.parse(args);
 
     String scriptName = parser.getStarterScriptName();
 
@@ -146,7 +155,7 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
       currentExtension = null;
     }
 
-    UniversalLauncher launcher = createLauncher(classWorld, parser, args);
+    UniversalLauncher launcher = createLauncher(classWorld, parser, newArgs);
 
     launcher.launch();
   }

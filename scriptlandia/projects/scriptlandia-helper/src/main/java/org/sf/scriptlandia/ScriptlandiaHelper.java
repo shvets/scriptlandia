@@ -107,5 +107,9 @@ public class ScriptlandiaHelper {
   public static void resolveDependencies(String depsFileName) throws Exception {
     ScriptlandiaLauncher.getInstance().resolveDependencies(depsFileName);
   }
-    
+
+  public static UniversalLauncher getLauncher() {
+    return ScriptlandiaLauncher.getInstance();
+  }
+     
 }

@@ -3,7 +3,7 @@ package org.sf.scriptlandia.launcher;
 import org.codehaus.classworlds.ClassWorld;
 import org.sf.jlaunchpad.util.FileUtil;
 import org.sf.jlaunchpad.core.LauncherCommandLineParser;
-import org.sf.jlaunchpad.CoreLauncher;
+import org.sf.jlaunchpad.*;
 
 import java.util.*;
 
@@ -18,10 +18,12 @@ public class LauncherManager {
   /**
    * The singleton object.
    */
-  protected static Map<String, CoreLauncher> instances = new HashMap<String, CoreLauncher>();
+//  protected static Map<String, CoreLauncher> instances = new HashMap<String, CoreLauncher>();
+
+  protected static CoreLauncher instance;
 
   /** The current used extension within instances collection. */
-  protected static String currentExtension;
+//  protected static String currentExtension;
 
   /**
    * Creates new launcher manager.
@@ -29,6 +31,15 @@ public class LauncherManager {
   public LauncherManager() {
   }
 
+  /**
+   * Gets the singleton instance.
+   *
+   * @return the singleton instance
+   */
+/*  public static CoreLauncher getLauncher() {
+    return instances.get(currentExtension);
+  }
+*/
   /**
    * Creates new launcher (launcher factory method).
    *
@@ -41,7 +52,7 @@ public class LauncherManager {
    */
   protected CoreLauncher createLauncher(LauncherCommandLineParser parser, String[] args,
                                         String launcherClassName, ClassWorld classWorld) throws Exception {
-    boolean instanceExists = currentExtension != null && instances.get(currentExtension) != null;
+/*    boolean instanceExists = currentExtension != null && instances.get(currentExtension) != null;
 
     CoreLauncher launcher;
 
@@ -59,6 +70,23 @@ public class LauncherManager {
       launcherHelper.setupRequiredLibraries(launcher);
 
       instances.put(currentExtension, launcher);
+    }
+  */
+
+    CoreLauncher launcher;
+
+    if(instance == null) {
+      LauncherHelper launcherHelper = new LauncherHelper();
+      launcherHelper.setupProperties();
+
+      launcher = new CoreLauncher(parser, args, classWorld);
+      launcher.setMainClassName(launcherClassName);
+      launcher.configure(Thread.currentThread().getContextClassLoader());
+
+      launcherHelper.setupRequiredLibraries(launcher);
+    }
+    else {
+      launcher = instance;
     }
 
     return launcher;
@@ -99,32 +127,26 @@ public class LauncherManager {
 
     String scriptName = parser.getStarterScriptName();
 
-    if (scriptName != null) {
+/*    if (scriptName != null) {
       currentExtension = FileUtil.getExtension(scriptName);
-    } else {
+    }
+    else {
       currentExtension = null;
     }
-    
+*/
     LauncherManager launcherManager = new LauncherManager();
-
-//    System.setProperty("jdic.version", "0.9.2");
-//    System.setProperty("nailgun.version", "0.7.1");
 
     CoreLauncher launcher = launcherManager.createLauncher(parser, args, launcherClassName, classWorld);
 
     if(parser.isLauncherMode()) {
       launcher.setArgs(args);
+
       launcher.launch();
     }
     else {
       ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-
+ 
       launcher.configure(classLoader);
-
-/*      if(parser.isConfigMode()) {
-        System.setProperty("config", "true");
-      }
-*/
       launcher.launch();
 
       Thread.currentThread().join();
