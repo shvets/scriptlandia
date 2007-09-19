@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>                
+
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">                
+
+<hibernate-configuration>                
+  <session-factory>               
+
+    <!-- Scan for annotated classes and Hibernate mapping XML files -->
+    <property name="hibernate.archive.autodetection" value="class, hbm"/>
+
+    <!-- SQL stdout logging -->
+
+    <property name="hibernate.connection.driver_class"
+              value="${jdbc.driverClassName}" />
+    <property name="hibernate.connection.url"
+              value="${jdbc.url}" />
+    <property name="hibernate.connection.username"
+              value="${jdbc.username}" />
+    <property name="hibernate.connection.password"
+              value="${jdbc.password}" />
+    <property name="hibernate.dialect" 
+              value="${hibernate.dialect}" />
+
+    <!-- you may want to change this provider in production -->
+    <property name="hibernate.cache.provider_class"
+              value="org.hibernate.cache.HashtableCacheProvider" />
+          
+    <!-- Print SQL to stdout -->
+    <property name="hibernate.show_sql" value="${hibernate.show_sql}" />
+    <property name="hibernate.format_sql" value="true"/>
+    <property name="use_sql_comments" value="true"/>
+
+    <property name="hibernate.c3p0.min_size" value="5"/>
+    <property name="hibernate.c3p0.max_size" value="20"/>
+    <property name="hibernate.c3p0.timeout" value="300"/>
+    <property name="hibernate.c3p0.max_statements" value="50"/>
+    <property name="hibernate.c3p0.idle_test_period" value="3000"/>
+
+    <property name="hibernate.hbm2ddl.auto" value="${hibernate.hbm2ddl.auto}"/>
+
+  </session-factory>                
+</hibernate-configuration>

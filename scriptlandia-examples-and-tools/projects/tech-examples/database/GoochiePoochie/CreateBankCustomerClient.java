@@ -18,7 +18,7 @@ public class CreateBankCustomerClient {
    
     
     ClassPathXmlApplicationContext appContext = new ClassPathXmlApplicationContext(new String[] {
-        "beans.xml"
+        "springexample-hibernate.xml"
     });
     
 	System.out.println("Classpath loaded");
@@ -45,8 +45,8 @@ public class CreateBankCustomerClient {
 	customer.addAccount(acc);
 	
 
-	CustomerDAOImpl customerDAOImpl = 
-          (CustomerDAOImpl)appContext.getBean("customerDAOTarget");
+	CustomerDAOImpl customerDAOImpl = (CustomerDAOImpl)
+	appContext.getBean("customerDAOTarget");
 	
 	customerDAOImpl.addCustomer(customer);
 	
@@ -62,7 +62,7 @@ public class CreateBankCustomerClient {
 	}
 	}
 
-/*	
+	
 	 private static void createDatabaseSchema() throws Exception {
 	        LocalSessionFactoryBean sessionFactory = (LocalSessionFactoryBean) 
 	        	appContext.getBean("&frameworkSessionFactory");
@@ -70,5 +70,4 @@ public class CreateBankCustomerClient {
 	        sessionFactory.dropDatabaseSchema();
 	        sessionFactory.createDatabaseSchema();
 	    }
-*/
 }
