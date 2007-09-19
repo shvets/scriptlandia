@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+<!--
+  <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <property name="driverClassName"><value>org.hsqldb.jdbcDriver</value></property>
+    <property name="url">
+      <value>jdbc:hsqldb:db/test</value>
+    </property>
+    <property name="username"><value>sa</value></property>
+    <property name="password"><value></value></property>
+  </bean>
+-->
+  <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+    <property name="persistenceUnitName" value="test"/>
+<!--    <property name="dataSource" ref="dataSource"/>-->
+   </bean>
+
+  <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <property name="entityManagerFactory" ref="entityManagerFactory" />
+<!--    <property name="dataSource" ref="dataSource"/>-->
+  </bean>
+
+  <!-- Pass the entity manager factory to our UserDAO -->
+  <bean id="customerDAOTarget" class="springexample.hibernate.CustomerDAOImpl">
+    <property name="entityManagerFactory" ref="entityManagerFactory"/>
+  </bean>
+
+  <bean id="userDAO"
+        class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager"><ref local="transactionManager"/></property>
+    <property name="target"><ref local="customerDAOTarget"/></property>
+    <property name="transactionAttributes">
+    <props>
+    <prop key="addCustomer">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+</beans>
+
+
+
+
