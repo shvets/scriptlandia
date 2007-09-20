@@ -6,10 +6,9 @@ import javax.persistence.*;
 public class HelloWorld {
 
   public static void main(String[] args) {
-
     // Start EntityManagerFactory
     EntityManagerFactory emf =
-            Persistence.createEntityManagerFactory("helloworld");
+        Persistence.createEntityManagerFactory("helloworld");
 
     // First unit of work
     EntityManager em = emf.createEntityManager();
@@ -30,7 +29,7 @@ public class HelloWorld {
     List messages =
         newEm.createQuery("select m from Message m order by m.text asc").getResultList();
 
-    System.out.println( messages.size() + " message(s) found:" );
+    System.out.println(messages.size() + " message(s) found:");
 
     for (Object m : messages) {
       Message loadedMsg = (Message) m;

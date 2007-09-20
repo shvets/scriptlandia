@@ -27,7 +27,7 @@ public class Account implements Serializable {
   private Date updateDate;
 
   @ManyToOne
-  @JoinColumn(nullable=false)
+  @JoinColumn(nullable = false)
   private Customer customer;
 
   public String getAccountName() {
@@ -86,4 +86,7 @@ public class Account implements Serializable {
     this.balance = balance;
   }
 
+  public String toString() {
+    return accountName;
+  }
 }

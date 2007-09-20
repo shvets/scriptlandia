@@ -210,54 +210,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Customer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/springexample/hibernate/Customer.java">
+      <file leaf-file-name="beans.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/beans.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="53" column="82" selection-start="2136" selection-end="2136" vertical-scroll-proportion="0.83239174">
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#getEmail#0;class#Customer#0" expanded="true" />
-                <element signature="method#setEmail#0;class#Customer#0" expanded="true" />
-                <element signature="method#getPassword#0;class#Customer#0" expanded="true" />
-                <element signature="method#setPassword#0;class#Customer#0" expanded="true" />
-                <element signature="method#getId#0;class#Customer#0" expanded="true" />
-                <element signature="method#setId#0;class#Customer#0" expanded="true" />
-                <element signature="method#getAccounts#0;class#Customer#0" expanded="true" />
-                <element signature="method#setAccounts#0;class#Customer#0" expanded="true" />
-                <element signature="method#getBalance#0;class#Customer#0" expanded="true" />
-                <element signature="method#setBalance#0;class#Customer#0" expanded="true" />
-                <element signature="method#getFirstName#0;class#Customer#0" expanded="true" />
-                <element signature="method#setFirstName#0;class#Customer#0" expanded="true" />
-                <element signature="method#getLastName#0;class#Customer#0" expanded="true" />
-                <element signature="method#setLastName#0;class#Customer#0" expanded="true" />
-                <element signature="method#getUserId#0;class#Customer#0" expanded="true" />
-                <element signature="method#setUserId#0;class#Customer#0" expanded="true" />
+                <element signature="tag#bean#0;tag#beans#0" expanded="true" />
+                <element signature="tag#property#2;tag#bean#3;tag#beans#0" expanded="true" />
+                <element signature="tag#bean#4;tag#beans#0" expanded="true" />
+                <element signature="tag#bean#5;tag#beans#0" expanded="true" />
+                <element signature="tag#bean#6;tag#beans#0" expanded="true" />
+                <element signature="tag#property#2;tag#bean#6;tag#beans#0" expanded="true" />
+                <element signature="tag#props#0;tag#property#2;tag#bean#6;tag#beans#0" expanded="true" />
               </folding>
             </state>
           </provider>
+          <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+            <state />
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="Account.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/springexample/hibernate/Account.java">
+      <file leaf-file-name="MyTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/springexample/hibernate/MyTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="14" selection-start="573" selection-end="573" vertical-scroll-proportion="0.33333334">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#getAccountName#0;class#Account#0" expanded="true" />
-                <element signature="method#setAccountName#0;class#Account#0" expanded="true" />
-                <element signature="method#getCreateDate#0;class#Account#0" expanded="true" />
-                <element signature="method#setCreateDate#0;class#Account#0" expanded="true" />
-                <element signature="method#getId#0;class#Account#0" expanded="true" />
-                <element signature="method#setId#0;class#Account#0" expanded="true" />
-                <element signature="method#getType#0;class#Account#0" expanded="true" />
-                <element signature="method#setType#0;class#Account#0" expanded="true" />
-                <element signature="method#getUpdateDate#0;class#Account#0" expanded="true" />
-                <element signature="method#setUpdateDate#0;class#Account#0" expanded="true" />
-                <element signature="method#getCustomer#0;class#Account#0" expanded="true" />
-                <element signature="method#setCustomer#0;class#Account#0" expanded="true" />
-                <element signature="method#getBalance#0;class#Account#0" expanded="true" />
-                <element signature="method#setBalance#0;class#Account#0" expanded="true" />
-              </folding>
+            <state line="14" column="0" selection-start="390" selection-end="390" vertical-scroll-proportion="0.33277026">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -394,6 +371,40 @@
           <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia-examples-and-tools\projects\tech-examples\database\hibernate-spring-jpa\src\main" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia-examples-and-tools\projects\tech-examples\database\hibernate-spring-jpa\src\main\resources" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="hibernate-spring-jpa-test" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="hibernate-spring-jpa-test" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia-examples-and-tools\projects\tech-examples\database\hibernate-spring-jpa" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia-examples-and-tools\projects\tech-examples\database\hibernate-spring-jpa\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia-examples-and-tools\projects\tech-examples\database\hibernate-spring-jpa\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia-examples-and-tools\projects\tech-examples\database\hibernate-spring-jpa\src\main\resources" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\scriptlandia\trunk\scriptlandia-examples-and-tools\projects\tech-examples\database\hibernate-spring-jpa\src\main\resources\META-INF" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
       </PATH>
       <PATH>
         <PATH_ELEMENT>
@@ -461,27 +472,6 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <module name="" />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -510,6 +500,27 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <module name="" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
     </configuration>
     <list size="0" />
   </component>
@@ -563,32 +574,32 @@
     <frame x="-4" y="-4" width="1032" height="746" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
+      <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="1" />
-      <window_info id="Tasks" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905295" order="1" />
+      <window_info id="Tasks" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="4" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="FileBrowser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
-      <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
-      <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" order="1" />
+      <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
+      <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24974412" order="1" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
-      <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
+      <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="2" />
+      <window_info id="Aspects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
-      <window_info id="Aspects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="3" />
-      <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="3" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
+      <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="3" />
       <window_info id="CVS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
     </layout>
   </component>
@@ -665,85 +676,6 @@
     <webview flattenPackages="false" showMembers="false" autoscrollToSource="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$maven-repository$/org/springframework/spring-jpa/2.0.6/spring-jpa-2.0.6.jar!/org/springframework/orm/jpa/support/JpaDaoSupport.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="22" selection-start="182" selection-end="182" vertical-scroll-proportion="0.116838485">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/springexample/hibernate/AccountDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="34" selection-end="34" vertical-scroll-proportion="0.058721934">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/springexample/hibernate/CustomerDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="545" selection-end="545" vertical-scroll-proportion="0.11744387">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/springexample/hibernate/AccountDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$maven-repository$/org/springframework/spring-beans/2.0.6/spring-beans-2.0.6.jar!/org/springframework/beans/factory/FactoryBean.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="17" selection-start="175" selection-end="175" vertical-scroll-proportion="0.11744387">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/springexample/hibernate/CreateBankCustomerClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="20" selection-start="1022" selection-end="1022" vertical-scroll-proportion="0.33156028">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$maven-repository$/org/springframework/spring-jpa/2.0.6/spring-jpa-2.0.6.jar!/org/springframework/orm/jpa/LocalEntityManagerFactoryBean.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="105" selection-start="257" selection-end="257" vertical-scroll-proportion="0.120567374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$maven-repository$/org/springframework/spring-jpa/2.0.6/spring-jpa-2.0.6.jar!/org/springframework/orm/jpa/AbstractEntityManagerFactoryBean.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="107" selection-start="259" selection-end="259" vertical-scroll-proportion="0.120567374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$maven-repository$/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar!/javax/persistence/OneToMany.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="28" selection-start="399" selection-end="411" vertical-scroll-proportion="0.18085106">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/springexample/hibernate/CustomerDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="17" selection-start="51" selection-end="51" vertical-scroll-proportion="0.058721934">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$maven-repository$/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar!/javax/persistence/Id.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="371" selection-end="371" vertical-scroll-proportion="0.14604811">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$maven-repository$/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar!/javax/persistence/GeneratedValue.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="240" selection-start="382" selection-end="382" vertical-scroll-proportion="0.116838485">
@@ -751,34 +683,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/springexample/hibernate/Customer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getEmail#0;class#Customer#0" expanded="true" />
-            <element signature="method#setEmail#0;class#Customer#0" expanded="true" />
-            <element signature="method#getPassword#0;class#Customer#0" expanded="true" />
-            <element signature="method#setPassword#0;class#Customer#0" expanded="true" />
-            <element signature="method#getId#0;class#Customer#0" expanded="true" />
-            <element signature="method#setId#0;class#Customer#0" expanded="true" />
-            <element signature="method#getAccounts#0;class#Customer#0" expanded="true" />
-            <element signature="method#setAccounts#0;class#Customer#0" expanded="true" />
-            <element signature="method#getBalance#0;class#Customer#0" expanded="true" />
-            <element signature="method#setBalance#0;class#Customer#0" expanded="true" />
-            <element signature="method#getFirstName#0;class#Customer#0" expanded="true" />
-            <element signature="method#setFirstName#0;class#Customer#0" expanded="true" />
-            <element signature="method#getLastName#0;class#Customer#0" expanded="true" />
-            <element signature="method#setLastName#0;class#Customer#0" expanded="true" />
-            <element signature="method#getUserId#0;class#Customer#0" expanded="true" />
-            <element signature="method#setUserId#0;class#Customer#0" expanded="true" />
-          </folding>
+        <state line="19" column="55" selection-start="847" selection-end="847" vertical-scroll-proportion="0.5840868">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/springexample/hibernate/CustomerDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="17" selection-start="51" selection-end="51" vertical-scroll-proportion="0.05923345">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/springexample/hibernate/AccountDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="13" selection-start="106" selection-end="106" vertical-scroll-proportion="0.1184669">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/springexample/hibernate/AccountDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="17" selection-start="51" selection-end="51" vertical-scroll-proportion="0.05923345">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/springexample/hibernate/Account.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="14" selection-start="573" selection-end="573" vertical-scroll-proportion="0.33333334">
+        <state line="91" column="0" selection-start="1555" selection-end="1612" vertical-scroll-proportion="0.3031359">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getAccountName#0;class#Account#0" expanded="true" />
@@ -796,6 +731,82 @@
             <element signature="method#getBalance#0;class#Account#0" expanded="true" />
             <element signature="method#setBalance#0;class#Account#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/springexample/hibernate/CustomerDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="106" selection-end="106" vertical-scroll-proportion="0.08885018">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/springexample/hibernate/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="30" selection-start="933" selection-end="933" vertical-scroll-proportion="0.4738676">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$maven-repository$/org/springframework/spring-jpa/2.0.6/spring-jpa-2.0.6.jar!/org/springframework/orm/jpa/JpaVendorAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="17" selection-start="169" selection-end="169" vertical-scroll-proportion="0.12164579">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$maven-repository$/org/springframework/spring-jpa/2.0.6/spring-jpa-2.0.6.jar!/org/springframework/orm/jpa/vendor/AbstractJpaVendorAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="98" selection-start="257" selection-end="257" vertical-scroll-proportion="0.12164579">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$maven-repository$/org/springframework/spring-jpa/2.0.6/spring-jpa-2.0.6.jar!/org/springframework/orm/jpa/vendor/HibernateJpaVendorAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="172" selection-end="172" vertical-scroll-proportion="0.12164579">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$maven-repository$/org/springframework/spring-jpa/2.0.6/spring-jpa-2.0.6.jar!/org/springframework/orm/jpa/LocalEntityManagerFactoryBean.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="99" selection-start="251" selection-end="251" vertical-scroll-proportion="0.12164579">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$maven-repository$/org/springframework/spring-jpa/2.0.6/spring-jpa-2.0.6.jar!/org/springframework/orm/jpa/AbstractEntityManagerFactoryBean.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="22" selection-start="174" selection-end="174" vertical-scroll-proportion="0.12164579">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="82" selection-start="2136" selection-end="2136" vertical-scroll-proportion="0.83239174">
+          <folding>
+            <element signature="tag#bean#0;tag#beans#0" expanded="true" />
+            <element signature="tag#property#2;tag#bean#3;tag#beans#0" expanded="true" />
+            <element signature="tag#bean#4;tag#beans#0" expanded="true" />
+            <element signature="tag#bean#5;tag#beans#0" expanded="true" />
+            <element signature="tag#bean#6;tag#beans#0" expanded="true" />
+            <element signature="tag#property#2;tag#bean#6;tag#beans#0" expanded="true" />
+            <element signature="tag#props#0;tag#property#2;tag#bean#6;tag#beans#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/springexample/hibernate/MyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="390" selection-end="390" vertical-scroll-proportion="0.33277026">
+          <folding />
         </state>
       </provider>
     </entry>

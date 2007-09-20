@@ -107,7 +107,7 @@
         </executions>
 
         <configuration>
-          <mainClass>springexample.hibernate.CreateBankCustomerClient</mainClass>
+          <mainClass>springexample.hibernate.MyTest</mainClass>
         </configuration>
       </plugin>
     </plugins>

@@ -4,12 +4,10 @@
 <beans>
 
   <bean id="exampleDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-    <property name="driverClassName"><value>org.hsqldb.jdbcDriver</value></property>
-    <property name="url">
-      <value>jdbc:hsqldb:db/test</value>
-    </property>
-    <property name="username"><value>sa</value></property>
-    <property name="password"><value></value></property>
+    <property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
+    <property name="url" value="jdbc:hsqldb:db/test"/>
+    <property name="username" value="sa"/>
+    <property name="password" value=""/>
   </bean>
 
   <bean id="exampleHibernateProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
@@ -29,10 +27,10 @@
 
   <!-- Hibernate SessionFactory -->
   <bean id="exampleSessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
-    <property name="dataSource"><ref local="exampleDataSource"/></property>
-    <property name="hibernateProperties">
-      <ref bean="exampleHibernateProperties" />
+    <property name="dataSource">
+      <ref local="exampleDataSource"/>
     </property>
+    <property name="hibernateProperties" ref="exampleHibernateProperties"/>
     <!-- Must references all OR mapping files. -->
     <property name="mappingResources">
       <list>
@@ -44,22 +42,27 @@
 
   <!-- Pass the session factory to our UserDAO -->
   <bean id="customerDAOTarget" class="springexample.hibernate.CustomerDAOImpl">
-    <property name="sessionFactory"><ref local="exampleSessionFactory"/></property>
+    <property name="sessionFactory">
+      <ref local="exampleSessionFactory"/>
+    </property>
   </bean>
 
   <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-    <property name="sessionFactory"><ref bean="exampleSessionFactory"/></property>
+    <property name="sessionFactory" ref="exampleSessionFactory"/>
   </bean>
 
-  <bean id="userDAO"
+  <bean id="customerDAO"
         class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
-    <property name="transactionManager"><ref local="transactionManager"/></property>
-    <property name="target"><ref local="customerDAOTarget"/></property>
+    <property name="transactionManager">
+      <ref local="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="customerDAOTarget"/>
+    </property>
     <property name="transactionAttributes">
       <props>
         <prop key="addCustomer">PROPAGATION_REQUIRED</prop>
       </props>
     </property>
   </bean>
-	
 </beans>
