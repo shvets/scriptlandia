@@ -17,4 +17,13 @@
   <build>
     <defaultGoal>verify</defaultGoal>
   </build>
+
+  <repositories>
+    <repository>
+      <id>scriptlandia-languages-repo</id>
+      <name>Scriptlandia languages Maven2 repository</name>
+      <url>http://scriptlandia-repository.googlecode.com/svn/trunk/tools</url>
+    </repository>
+  </repositories>
+
 </project>
