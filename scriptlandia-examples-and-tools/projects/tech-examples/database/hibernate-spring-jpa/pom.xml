@@ -9,6 +9,13 @@
 
   <dependencies>
     <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+<!--      <scope>test</scope>-->
+    </dependency>
+
+    <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
       <version>1.0.4</version>
@@ -119,7 +126,12 @@
         </executions>
 
         <configuration>
-          <mainClass>springexample.hibernate.MyTest</mainClass>
+          <mainClass>MyUnitTest</mainClass>
+
+          <arguments>
+            <argument>testCreate1</argument>
+            <argument>testList1</argument>
+          </arguments>
         </configuration>
       </plugin>
     </plugins>

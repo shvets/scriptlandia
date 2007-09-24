@@ -11,6 +11,14 @@
     <property name="password" value=""/>
   </bean>
 
+  <!-- Alternative JNDI-based Data Source Declaration 
+  <bean id="myDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+    <property name="jndiName">
+      <value>jdbc/myds</value>
+    </property>
+  </bean>
+  -->
+
   <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
 
   <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
