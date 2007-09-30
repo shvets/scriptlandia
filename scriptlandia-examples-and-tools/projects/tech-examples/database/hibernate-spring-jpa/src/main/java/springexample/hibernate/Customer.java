@@ -26,7 +26,7 @@ public class Customer implements Serializable {
 
   private BigDecimal balance;
 
-  @OneToMany(fetch= FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "customer")
+  @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "customer")
   private Set<Account> accounts = new HashSet<Account>();
 
   public String getEmail() {

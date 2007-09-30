@@ -3,15 +3,6 @@
 
 <beans>
 
-  <bean id="myUnitTest" class="MyUnitTest" singleton="false">
-<!--
-    <property name="sessionFactory">
-      <ref bean="mySessionFactory"/>
-    </property>
-
-    <property name="transactionManager">
-      <ref bean="myTransactionManager"/>
-    </property>
--->
-  </bean>
+  <bean id="myUnitTest" class="MyUnitTest" singleton="false"/>
+  
 </beans>
