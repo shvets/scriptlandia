@@ -16,9 +16,13 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
  * USA.
- */ 
- 
-import java.awt.*;
+ */
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.Dimension;
+import java.awt.Container;
+import java.awt.Toolkit;
 import java.awt.event.*;
 import javax.swing.*;
 import java.beans.*;
@@ -66,27 +70,6 @@ public class FileChooser extends JPanel {
         }
     }
 
-    public static void main(String[] args) {
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception e) {}
-
-        JFrame frame = new JFrame("JDIC API Demo - FileChooser");
-
-        Container contentPane = frame.getContentPane();
-
-        contentPane.setLayout(new GridLayout(1, 1));
-        contentPane.add(new FileChooser());
-
-        frame.addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                System.exit(0);
-            }
-        });
-
-        frame.pack();
-        frame.setVisible(true);
-    }
 
     private void jbInit() throws Exception {
         jFileChooser.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 0));
@@ -363,4 +346,28 @@ class FileChooser_jUrlTextField_actionAdapter implements java.awt.event.ActionLi
     public void actionPerformed(ActionEvent e) {
         adaptee.jUrlTextField_actionPerformed(e);
     }
+
+
+    public static void main(String[] args) {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {}
+
+        JFrame frame = new JFrame("JDIC API Demo - FileChooser");
+
+        Container contentPane = frame.getContentPane();
+
+        contentPane.setLayout(new GridLayout(1, 1));
+        contentPane.add(new FileChooser());
+
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
+
+        frame.pack();
+        frame.setVisible(true);
+    }
+
 }
