@@ -105,7 +105,7 @@ public class LauncherHelper {
     System.setProperty("scriptlandia.version", scriptlandiaVersion);
     System.setProperty("launcher.version", launcherVersion);
 
-    System.setProperty("jdic.version", "0.9.2");
+    System.setProperty("jdic.version", "0.9.3");
     System.setProperty("nailgun.version", "0.7.1");
 
     setupJavaSpecificationVersion();

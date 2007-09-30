@@ -8,9 +8,10 @@ import org.apache.tools.ant.*;
 sourceRelative("ext-xml-helper.bsh");
 
 String repositoryHome = System.getProperty("repository.home");
+String jdicVersion = System.getProperty("jdic.version");
 
 addClassPath(repositoryHome + "/jdom/jdom/1.0/jdom-1.0.jar");
-addClassPath(repositoryHome + "/org/jdesktop/jdic/0.9.2/jdic-0.9.2.jar");
+addClassPath(repositoryHome + "/org/jdesktop/jdic/" + jdicVersion + "/jdic-" + jdicVersion + ".jar");
 
 import java.util.Arrays;
 

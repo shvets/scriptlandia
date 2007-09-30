@@ -296,6 +296,10 @@
       <action dev="Alexander Shvets" type="fix">
         Upgraded to Scala ver. 2.6.0.
       </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgrade jdic library up to 0.9.3.
+      </action>
     </release>
   </body>
 
