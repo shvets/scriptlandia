@@ -50,10 +50,9 @@
     <entry_points version="2.0" />
   </component>
   <component name="ExportToHTMLSettings">
-    <option name="PRINT_LINE_NUMBERS" value="false" />
-    <option name="OPEN_IN_BROWSER" value="false" />
-    <option name="OUTPUT_DIRECTORY" />
+    <option name="OUTPUT_DIRECTORY" value="D:\Work\scriptlandia\trunk\scriptlandia-examples-and-tools\projects\tech-examples\database\GoochiePoochie\exportToHTML" />
   </component>
+  <component name="IdProvider" IDEtalkID="D77E49803DC7E2A0C1895BC30CC6D4D6" />
   <component name="ImportConfiguration">
     <option name="VENDOR" />
     <option name="RELEASE_TAG" />

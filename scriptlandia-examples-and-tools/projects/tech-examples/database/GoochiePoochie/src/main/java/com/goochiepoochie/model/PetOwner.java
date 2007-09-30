@@ -1,13 +1,18 @@
 package com.goochiepoochie.model;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
+
 import javax.persistence.*;
-import java.util.Collection;
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-public class PetOwner {
+public class PetOwner implements Serializable {
   @Id
-  @GeneratedValue(strategy= GenerationType.AUTO)
-  private Long id;
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id = (long) -1;
 
   private String firstName;
   private String lastName;
@@ -18,15 +23,14 @@ public class PetOwner {
 
   private String salutation;
 
-  //@OneToMany
-//  private Collection pets;
+  @OneToMany(fetch= FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "petOwner")
+  private Set<Pet> pets = new HashSet<Pet>();
+
+  public PetOwner() {}
 
   public PetOwner(String firstName, String lastName) {
     this.firstName = firstName;
     this.lastName = lastName;
-  }
-
-  public PetOwner() {
   }
 
   public Long getId() {
@@ -80,13 +84,22 @@ public class PetOwner {
   public void setSalutation(String salutation) {
     this.salutation = salutation;
   }
-/*
-  public Collection getPets() {
+
+  public Set<Pet> getPets() {
     return pets;
   }
 
-  public void setPets(Collection pets) {
+  public void setPets(Set<Pet> pets) {
     this.pets = pets;
   }
-*/
+
+  public void addPet(Pet pet) {
+    pet.setPetOwner(this);
+    pets.add(pet);
+  }
+
+  public final String toString() {
+    return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+  }
+  
 }

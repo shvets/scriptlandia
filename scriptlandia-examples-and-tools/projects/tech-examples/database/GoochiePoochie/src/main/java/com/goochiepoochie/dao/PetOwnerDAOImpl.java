@@ -2,25 +2,31 @@
  *  This file was created by Rick Hightower of ArcMinds Inc. 
  *
  */
-package springexample.hibernate;
-
-import java.sql.SQLException;
-import java.util.Iterator;
-import java.util.List;
-
-import org.hibernate.HibernateException;
-import org.hibernate.Query;
-import org.hibernate.Session;
-
-import org.springframework.orm.hibernate3.HibernateCallback;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+package com.goochiepoochie.dao;
 
 import com.goochiepoochie.model.PetOwner;
+import org.springframework.orm.jpa.support.JpaDaoSupport;
 
-public class PetOwnerDAOImpl extends HibernateDaoSupport implements PetOwnerDAO {
+import java.util.List;
 
-  public abstract void addPetOwner(PetOwner petOwner) {
-    getHibernateTemplate().save(petOwner);
+public class PetOwnerDAOImpl extends JpaDaoSupport implements PetOwnerDAO {
+
+  public void addPetOwner(PetOwner petOwner) {
+    getJpaTemplate().merge(petOwner);
+  }
+
+  public PetOwner getPetOwnerInfo(PetOwner petOwner) {
+    PetOwner po = null;
+
+    List list = getJpaTemplate().
+        find("from PetOwner petOwner " + "where petOwner.lastName = ?",
+            petOwner.getLastName());
+
+    if (list.size() > 0) {
+      po = (PetOwner) list.get(0);
+    }
+
+    return po;
   }
 
 }

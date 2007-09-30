@@ -1,15 +1,16 @@
 package com.goochiepoochie.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
+
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class Pet {
+public class Pet implements Serializable {
   @Id
-  @GeneratedValue(strategy= GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   private String veterinar;
@@ -37,6 +38,20 @@ public class Pet {
   private String specialInstructions;
 
   private String behavior;
+
+  @ManyToOne
+  @JoinColumn(nullable = false)
+  private PetOwner petOwner;
+
+  public Pet() {}
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
 
   public String getVeterinar() {
     return veterinar;
@@ -149,4 +164,17 @@ public class Pet {
   public void setBehavior(String behavior) {
     this.behavior = behavior;
   }
+
+  public PetOwner getPetOwner() {
+    return petOwner;
+  }
+
+  public void setPetOwner(PetOwner petOwner) {
+    this.petOwner = petOwner;
+  }
+
+  public final String toString() {
+    return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+  }
+  
 }
