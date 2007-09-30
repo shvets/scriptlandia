@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="traydemo" default="dist" basedir=".">
+
+    <!-- You must edit this to point to the JDIC installation. -->
+    <property name="jdic.dir" location="C:/java/jdic-0.9-bin-cross-platform"/>
+
+    <property name="traydemo.version" value="1.0"/>
+
+    <!-- typically no need to modify these properties -->
+    <property name="build.dir" location="build"/>
+    <property name="classes.dir" location="${build.dir}/classes"/>
+    <property name="resources.dir" location="resources"/>
+    <property name="src.dir" location="src"/>
+
+    <!-- fully qualified path to the JDIC JAR file -->
+    <property name="pathto.jdic.jar" location="${jdic.dir}/jdic.jar"/>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="prepare">
+        <condition property="did_not_find_jdic">
+            <not>
+                <available file="${pathto.jdic.jar}"/>
+            </not>
+        </condition>
+        <fail if="did_not_find_jdic">
+            Did not find ${pathto.jdic.jar}. Please ensure
+            the 'jdic.dir' Ant property points to the JDIC installation.
+        </fail>
+    </target>
+
+    <target name="compile" depends="prepare">
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}">
+            <classpath>
+                <pathelement location="${pathto.jdic.jar}"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar jarfile="${build.dir}/traydemo.jar">
+            <fileset dir="${classes.dir}"/>
+            <fileset dir="${resources.dir}"/>
+        </jar>
+    </target>
+
+    <target name="dist" depends="jar"
+            description="Creates the ZIP file for distribution.">
+        <zip zipfile="${build.dir}/traydemo-${traydemo.version}.zip">
+            <zipfileset dir="." prefix="traydemo">
+                <include name="README.txt"/>
+                <include name="build.xml"/>
+                <include name="src/**"/>
+                <include name="resources/**"/>
+            </zipfileset>
+        </zip>
+    </target>
+
+    <target name="run" depends="jar"
+            description="Runs the demo program.">
+        <java fork="true" classname="com.ociweb.traydemo.WeatherTray">
+            <sysproperty key="java.library.path" value="${jdic.dir}"/>
+            <classpath>
+                <pathelement location="${build.dir}/traydemo.jar"/>
+                <pathelement location="${pathto.jdic.jar}"/>
+            </classpath>
+        </java>
+    </target>
+
+</project>
