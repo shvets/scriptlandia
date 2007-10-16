@@ -11,7 +11,7 @@
   <description>Scriptlandia Jython Core Module</description>
 
   <properties>
-    <jython.version>2.2b1</jython.version>
+    <jython.version>2.2.1</jython.version>
   </properties>
 
   <dependencies>

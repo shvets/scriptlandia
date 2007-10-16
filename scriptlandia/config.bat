@@ -9,7 +9,7 @@ if exist "%USERPROFILE%\jlaunchpad\config.bat" (
 )
 
 if "%DRIVE_LETTER%" == "" (
-  SET DRIVE_LETTER=d:
+  SET DRIVE_LETTER=c:
 )
 
 if "%JAVA_HOME%" == "" (

@@ -300,6 +300,10 @@
       <action dev="Alexander Shvets" type="fix">
         Upgrade jdic library up to 0.9.3.
       </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgrade Jython up to version 2.2.1.
+      </action>
     </release>
   </body>
 

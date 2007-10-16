@@ -2,7 +2,7 @@
 
 <project name="install.ant" default="install" basedir=".">
 
-  <property name="jython.version" value="2.2b1"/>
+  <property name="jython.version" value="2.2.1"/>
 
   <property name="jython.base" 
             value="${repository.home}/jython/jython/${jython.version}"/>
