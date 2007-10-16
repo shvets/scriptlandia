@@ -1,0 +1,13 @@
+import("org.pnuts.text.readLines")
+
+MAXLENGTH=70
+
+for(f : $args[1..]) {
+  line = 0
+  readLines(f, function (l) {
+    ::line = ::line + 1
+    ws = l.endsWith("\r\n") ? 2 : 1
+    if (l.length() > MAXLENGTH)
+      println(f + " line="+ line +" chars=" +( l.length() - ws ))
+  })
+}
