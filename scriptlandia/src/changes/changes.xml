@@ -304,6 +304,10 @@
       <action dev="Alexander Shvets" type="fix">
         Upgrade Jython up to version 2.2.1.
       </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgrade Pnuts up to version 1.2.
+      </action>
     </release>
   </body>
 

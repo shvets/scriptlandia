@@ -11,7 +11,7 @@
   <description>Scriptlandia Pnuts Core Module</description>
 
   <properties>
-    <pnuts.version>1.1</pnuts.version>
+    <pnuts.version>1.2</pnuts.version>
   </properties>
 
   <dependencies>

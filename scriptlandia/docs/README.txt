@@ -191,7 +191,7 @@ Velocity       1.5          http://velocity.apache.org
 Freemarker     2.3.9        http://freemarker.sourceforge.net
 Velocity Tools 1.1          http://jakarta.apache.org/velocity
 JRuby          1.0.1        http://jruby.codehaus.org
-Pnuts          1.1          https://pnuts.dev.java.net
+Pnuts          1.2          https://pnuts.dev.java.net
 Jython         2.2.1        http://www.jython.org
 Scriptlandia   2.2.4        http://sourceforge.net/projects/scriptlandia
 Scriptella     0.9          http://scriptella.javaforge.com
