@@ -3,6 +3,8 @@
 import java.util.jar.JarFile;
 import java.util.jar.JarEntry;
 
+org.sf.scriptlandia.ScriptlandiaHelper.resolveDependencies("org.sf.classfile", "classfile", "1.1");
+
 import org.sf.classfile.ClassFile;
 
 public class AnalyzeJar {
@@ -124,11 +126,6 @@ else if (fileName.endsWith(".jar")) {
   files.add(file);
 }
 
-
-import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
-ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
-
-launcher.resolveDependencies("org.sf.classfile", "classfile", "1.1");
 
 AnalyzeJar analyzer = new AnalyzeJar();
 
