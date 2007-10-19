@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>clojure</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia Clojure Core Module</name>
+  <description>Scriptlandia Clojure Core Module</description>
+
+  <properties>
+    <clojure.version>20071018</clojure.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>clojure</groupId>
+      <artifactId>clojure</artifactId>
+      <version>${clojure.version}</version>
+    </dependency>
+  </dependencies>
+
+</project>

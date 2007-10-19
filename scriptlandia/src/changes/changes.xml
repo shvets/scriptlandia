@@ -308,6 +308,10 @@
       <action dev="Alexander Shvets" type="fix">
         Upgrade Pnuts up to version 1.2.
       </action>
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for Clojure ver.20071018.
+      </action>
     </release>
   </body>
 

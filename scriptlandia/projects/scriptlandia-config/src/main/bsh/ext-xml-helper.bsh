@@ -104,6 +104,8 @@ public class ExtXmlHelper extends XmlHelper {
 
     if(version != null) {
       map.put("version", version.getValue());
+
+      System.setProperty(name + ".version", version.getValue());
     }
 
     map.put("mimeType", registration.getAttribute("mimeType").getValue());
@@ -137,7 +139,7 @@ public class ExtXmlHelper extends XmlHelper {
     Element commandLine = getElementByName(starter, "commandLine");
 
     if(commandLine != null) {
-      map.put("commandLine", commandLine.getValue());
+      map.put("commandLine", replaceNames(commandLine.getValue()));
     }
 
     List list = new ArrayList();
@@ -152,6 +154,47 @@ public class ExtXmlHelper extends XmlHelper {
 
     return map;
   }
+
+  private String replaceNames(String text) {
+    StringBuffer newText = new StringBuffer();
+
+    String s = text;
+
+    boolean ok = false;
+    while(!ok) {
+      int index1 = s.indexOf("${");
+
+      if(index1 == -1) {
+        newText.append(s);
+
+        ok = true;
+      }
+      else {
+        int index2 = s.indexOf("}");
+
+        if(index2 == -1) {
+          newText.append(s);
+
+          ok = true;
+        }
+        else {
+          String propertyName = s.substring(index1+2, index2);
+
+          String propertyValue = System.getProperty(propertyName);
+
+          if(propertyValue != null) {
+            newText.append(s.substring(0, index1));            
+            newText.append(propertyValue.replace('\\', '/'));
+          }
+
+          s = s.substring(index2+1);
+        }
+      }
+    }
+
+    return newText.toString();
+  }
+
 
   public void copyProperties(String propsFileName) throws IOException {
     Properties props = new Properties();

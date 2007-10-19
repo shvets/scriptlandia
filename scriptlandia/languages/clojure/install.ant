@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<project name="install.ant" default="install" basedir=".">
+
+  <property name="clojure.version" value="20071018"/>
+
+  <property name="clojure.base" 
+            value="${repository.home}/clojure/boot/${clojure.version}"/>
+
+  <property name="clojure.lib" 
+            value="${clojure.base}/boot-${clojure.version}.jar"/>
+
+  <target name="install">
+    <condition property="clojure.lib.is.present">
+      <and>
+        <available file="${clojure.lib}"/>
+        <istrue value="${clojure.install}"/>
+      </and>
+    </condition>
+
+    <antcall target="unzip.clojure.lib"/>
+  </target>
+
+  <target name="unzip.clojure.lib" if="clojure.lib.is.present">
+    <unzip src="${clojure.lib}" dest="${clojure.base}" overwrite="false"/>
+  </target>
+
+</project>

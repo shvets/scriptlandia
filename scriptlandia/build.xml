@@ -80,6 +80,7 @@
       <filter token="velocity.version" value="${velocity.version}"/>
       <filter token="scala.version" value="${scala.version}"/>
       <filter token="jaskell.version" value="${jaskell.version}"/>
+      <filter token="clojure.version" value="${clojure.version}"/>
 
       <filter token="jdic.version" value="${jdic.version}"/>
       <filter token="nailgun.version" value="${nailgun.version}"/>
