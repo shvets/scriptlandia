@@ -1,9 +1,4 @@
 SET JAVA_HOME=c:\Java\jdk1.5.0
 
-%JAVA_HOME%\bin\java -cp C:\Work\scriptlandia-repository\languages\clojure\clojure\20071016\clojure-20071016.jar clojure.lang.Compiler C:\Work\scriptlandia-repository\languages\clojure\boot\20071016\boot.clj
 
-pause
-
-
-
-
+%JAVA_HOME%\bin\java -cp C:\maven-repository\clojure\clojure\20071018\clojure-20071018.jar clojure.lang.Script C:\maven-repository\clojure\boot\20071018\boot.clj test-date.clj
