@@ -4,7 +4,7 @@ if exist "..\..\..\jlaunchpad\trunk\launcher\user\config.bat" (
   @call "..\..\..\jlaunchpad\trunk\launcher\user\config.bat"
 )
 
-if exist "%USERPROFILE%\jlaunchpad\config.bat" (
+if exist %USERPROFILE%\jlaunchpad\config.bat (
   @call "%USERPROFILE%\jlaunchpad\config.bat"
 )
 
