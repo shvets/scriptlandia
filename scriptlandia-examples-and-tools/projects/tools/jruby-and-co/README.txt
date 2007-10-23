@@ -69,3 +69,5 @@ Change the current directory:
 
 Now you should see your view.
 
+
+http://www.danielfischer.com/2007/10/22/static-websites-the-ruby-way/
