@@ -1,0 +1,116 @@
+<project name="persistence-groovy.antlet" default="run" basedir=".">
+
+  <property name="repository.home" value="c:/maven-repository"/>
+
+  <target name="init">
+    <path id="groovy-classpath">
+       <pathelement path="${repository.home}/org/codehaus/groovy/groovy-all/1.1-rc-2/groovy-all-1.1-rc-2.jar"/>
+       <pathelement path="${repository.home}/groovy/groovyws-standalone/0.1/groovyws-standalone-0.1.jar"/>
+       <pathelement path="${repository.home}/xerces/xerces/2.2.1/xerces-2.2.1.jar"/>
+       <pathelement path="${repository.home}/org/apache/ant/ant/1.7.0/ant-1.7.0.jar"/>
+       <pathelement path="${repository.home}/xalan/xalan/2.6.0/xalan-2.6.0.jar"/>
+    </path>
+
+    <taskdef name="groovyc" 
+             classpathref="groovy-classpath" 
+             classname="org.codehaus.groovy.ant.Groovyc"/>
+
+    <taskdef name="groovy"
+            classname="org.codehaus.groovy.ant.Groovy"
+            classpathref="groovy-classpath"/>
+  </target>
+
+  <target name="compile" depends="init">
+    <groovyc srcdir="." destdir="."/>
+  </target>
+
+  <target name="run" depends="init">
+    <groovy>
+      ant.echo "Hello World"
+    </groovy>
+  </target>
+
+  <target name="test1" depends="init">
+    <groovy>
+      println "Hello World"
+    </groovy>
+  </target>
+
+  <target name="test2" depends="init">
+    <groovy>
+      ant.echo "Hello World"
+    </groovy>
+  </target>
+
+  <target name="test3" depends="init">
+    <!-- List all xml files in the current directory. -->
+
+    <groovy>
+      xmlfiles = new File(".").listFiles().findAll{ it =~ "\.xml$" }
+      xmlfiles.sort().each { println it.toString() }
+    </groovy>
+  </target>
+
+  <target name="test4" depends="init">
+    <!-- List all xml files within a jar. -->
+    <zipfileset id="found" src="foobar.jar"
+                includes="**/*.xml"/>
+    <groovy>
+      project.references.found.each {
+        println it.name
+      }
+    </groovy>
+  </target>
+
+  <target name="test5" depends="init">
+    <!-- Runs script. -->
+
+    <groovy src="/some/directory/some/file.groovy">
+      <classpath>
+        <pathelement location="/my/groovy/classes/directory"/>
+      </classpath>
+    </groovy>
+  </target>
+
+  <target name="test6" depends="init">
+    <!-- To find all the 'Builder' classes having an 'org.*' package within a directory of jars. -->
+
+    <property name="local.target" value="C:/Projects/GroovyExamples"/>
+
+    <groovy>
+      import java.util.jar.JarFile
+      def classes = []
+      def resourceNamePattern = /org\/.*\/.*Builder.class/
+      def jarNamePattern = /.*(beta|commons).*jar$/
+
+      def libdir = new File("${properties['local.target']}/lib")
+      libdir.listFiles().grep(~jarNamePattern).each { candidate ->
+          new JarFile(candidate).entries().each { entry ->
+              if (entry.name ==~ resourceNamePattern) classes += entry.name
+          }
+      }
+      properties["builder-classes"] = classes.join(' ')
+    </groovy>
+
+    <echo message='${builder-classes}'/>
+  </target>
+
+  <target name="test7" depends="compile">
+    <java classname="MathServer">
+       <classpath>
+         <path refid="groovy-classpath"/>
+         <pathelement path="."/>
+       </classpath>
+     </java>
+  </target>
+
+  <target name="client" depends="compile">
+    <java classname="MathClient">
+       <classpath>
+         <path refid="groovy-classpath"/>
+         <pathelement path="."/>
+       </classpath>
+     </java>
+  </target>
+</project>
+

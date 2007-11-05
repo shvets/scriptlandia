@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>deps</groupId>
+  <artifactId>deps</artifactId>
+  <version>1.0</version>
+
+  <properties>
+    <groovy.version>1.1-rc-2</groovy.version>
+    <ant.version>1.7.0</ant.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.codehaus.groovy</groupId>
+      <artifactId>groovy-all</artifactId>
+      <version>${groovy.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>groovy</groupId>
+      <artifactId>groovyws-standalone</artifactId>
+      <version>0.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>xerces</groupId> 
+      <artifactId>xerces</artifactId> 
+      <version>2.2.1</version> 
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ant</groupId>
+      <artifactId>ant</artifactId>
+      <version>${ant.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>xalan</groupId>
+      <artifactId>xalan</artifactId>
+      <version>2.6.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>compile</defaultGoal>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>scriptlandia-repo</id>
+      <name>Scriptlandia Maven2 repository</name>
+      <url>http://scriptlandia-repository.googlecode.com/svn/trunk/languages</url>
+    </repository>
+  </repositories>
+
+</project>
