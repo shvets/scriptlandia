@@ -11,21 +11,23 @@
   <description>Scriptlandia Groovy Core Module</description>
 
   <properties>
-    <groovy.version>1.1-beta-2</groovy.version>
+    <groovy.version>1.1-rc-2</groovy.version>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>groovy</groupId>
+      <groupId>org.codehaus.groovy</groupId>
       <artifactId>groovy-all</artifactId>
       <version>${groovy.version}</version>
 
+<!--
       <exclusions>
         <exclusion>
           <groupId>com.thoughtworks.xstream</groupId>
           <artifactId>xstream</artifactId>
         </exclusion>
       </exclusions>
+-->
     </dependency>
 
     <dependency>

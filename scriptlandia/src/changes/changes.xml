@@ -312,6 +312,14 @@
       <action dev="Alexander Shvets" type="add">
         Added support for Clojure ver.20071018.
       </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgrade Groovy up to version 1.1-rc-2.
+      </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgrade for JRuby version 1.1b1.
+      </action>
     </release>
   </body>
 

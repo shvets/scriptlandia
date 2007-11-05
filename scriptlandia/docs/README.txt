@@ -185,12 +185,12 @@ Ant            1.7.0        http://ant.apache.org
 BSF            2.4.0        http://jakarta.apache.org/bsf
 Beanshell      2.0b5        http://www.beanshell.org/bsh-2.0b5.jar
 Javascript     1.6R4        http://www.mozilla.org/rhino
-Groovy         1.1-beta-2   http://groovy.codehaus.org
+Groovy         1.1-rc-2     http://groovy.codehaus.org
 Jelly          1.0          http://jakarta.apache.org/commons/jelly
 Velocity       1.5          http://velocity.apache.org
 Freemarker     2.3.9        http://freemarker.sourceforge.net
 Velocity Tools 1.1          http://jakarta.apache.org/velocity
-JRuby          1.0.1        http://jruby.codehaus.org
+JRuby          1.1b1        http://jruby.codehaus.org
 Pnuts          1.2          https://pnuts.dev.java.net
 Jython         2.2.1        http://www.jython.org
 Scriptlandia   2.2.4        http://sourceforge.net/projects/scriptlandia
