@@ -11,7 +11,7 @@
   <description>Scriptlandia Sleep Core Module</description>
 
   <properties>
-    <sleep.version>2.1-beta15</sleep.version>
+    <sleep.version>2.1-beta19</sleep.version>
   </properties>
 
   <dependencies>

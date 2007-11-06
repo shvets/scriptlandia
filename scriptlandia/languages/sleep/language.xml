@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<language name="sleep" groupId="sleep" artifactId="sleep" version="2.1-beta15">
+<language name="sleep" groupId="sleep" artifactId="sleep" version="2.1-beta19">
   <registration mimeType="text/sleep" icon="scriptlandia.ico">
     <extensions>
       <extension>sleep</extension>
