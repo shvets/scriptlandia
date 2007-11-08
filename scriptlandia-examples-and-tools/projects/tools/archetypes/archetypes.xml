@@ -29,7 +29,7 @@
     </archetypes>
   </group>
 
-  <group name="Appfuse" groupId="org.appfuse" prefix="appfuse-" version="2.0-m5" >
+  <group name="Appfuse" groupId="org.appfuse.archetypes" prefix="appfuse-" version="2.0" >
     <archetypes>
       <archetype name="basic-jsf" 
             description="Archetype for creating a web application with Hibernate, Spring and JSF"/>
@@ -43,9 +43,6 @@
       <archetype name="basic-tapestry" 
             description="Archetype for creating a web application with Hibernate, Spring and Tapestry 4"/>
 
-      <archetype name="core" 
-            description="Archetype for creating a jar application with Hibernate and Spring and XFire"/>
-
       <archetype name="modular-jsf" 
             description="Archetype for creating a modular application with Hibernate, Spring and JSF"/>
 
@@ -57,6 +54,9 @@
 
       <archetype name="modular-tapestry"
             description="Archetype for creating a modular application with Hibernate, Spring and Tapestry 4"/>
+
+      <archetype name="core" 
+            description="Archetype for creating a jar application with Hibernate and Spring and XFire"/>
     </archetypes>
 
     <repositories>

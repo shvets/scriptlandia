@@ -1,0 +1,89 @@
+Application Template generation with Archetypes program (Scriptlandia, Maven2, Beanshell)
+
+Maven 2 has notion of archetype. It is a <a href="http://cvs.peopleware.be/training/maven/maven2/archetypes.html">
+template of a project which is combined with some user input to produce a working Maven project that 
+has been tailored to the user's requirements</a>.
+
+Some other projects are trying to achieve same goal by using similar or slightly different approaches:
+
+- <a href="https://appfuse-light.dev.java.net">AppFuse 1.x</a> (light) - uses Ant scripts 
+to generate template;
+
+- <a href="http://appfuse.org">AppFuse 2.x</a> - uses Maven2 scripts to generate template;
+
+- <a href="http://blogs.opensymphony.com/plightbo/2006/08/project_able_a_complete_java_w.html">Able Project</a>
+(https://svn.opensymphony.com/svn/sandbox/able);
+
+- <a href="http://sourceforge.net/projects/hse">HSE</a> (Hibernate, Spring, Echo2) Project;
+
+- <a href="http://code.google.com/p/archy">Archy</a> project.
+
+Archetypes program is based on my previous scripts (see my  
+<a href="http://scriptlandia.blogspot.com/2007/03/building-gui-frontend-for-maven2.html">previous post<.a>)
+and also inspired by Archy project. 
+
+All definitions of archetypes and repository locations are decoupled from source code into
+external xml file (archetypes.xml).
+
+All archetypes are divided by groups. Group is the list or archetypes that have 
+same groupId, version (e.g. AppFuse, Maven2 or WebTidy groups). 
+
+Each archetype has name, descriotion and version (if different from group version). All archetypes
+from same group are located in same repository. For example AppFuse fragment looks like:
+
+<groups>
+  ...
+
+  <group name="Appfuse" groupId="org.appfuse" prefix="appfuse-" version="2.0" >
+    <archetypes>
+      <archetype name="basic-jsf" 
+            description="Archetype for creating a web application with Hibernate, Spring and JSF"/>
+
+      <archetype name="basic-spring" 
+            description="Archetype for creating a web application with Hibernate, Spring and Spring MVC"/>
+      ...
+    </archetypes>
+
+    <repositories>
+      <repository>http://static.appfuse.org/repository</repository>
+    </repositories>
+  </group>
+  ...
+</groups>
+
+In order to run the application you have ho have <a href="http://scriptlandia.sf.net">Scriptlandia</a>
+project installed on your computer. It will take care of downloading all required dependencies, 
+installing them locally on your computer and then executing Beanshell script. Otherwise, you have
+to be ready to do this manually.
+
+Program can function in 2 modes: console and gui. For console mode you have to execute
+the following command:
+
+>create-archetype.bsh -console
+
+Program will ask the user about archetype group name and archetype name. Then, for your
+application, you have to specify groupId, artifactId and version. For these parameters 
+Archetypes program will generate the resulting template in current directory.
+
+For "gui" mode you have to execute the following command:
+
+>create-archetype.bsh -wait
+
+"wait" parameter is used my Scriptlandia framework to indicate that our script should wait for
+completion of gui/swing thread execution. Otherwise, frame will appear for very short time and just
+after that script execution will be terminated.
+
+In "gui" mode you will see same input parameters, just layed out in more convenient for typical 
+Windows user. After selecting appropriate archetype and clicking on "Create archetype" button,
+new project will be created in the current directory.
+
+This program uses behind the scene 
+<a href="http://scriptlandia.sourceforge.net/scriptlandia/apidocs/org/sf/scriptlandia/ScriptlandiaHelper.html#executeMaven%28java.lang.String%5B%5D%29">Scriptlandia API</a> 
+to execute maven2 tool:
+
+ScriptlandiaHelper.executeMaven(args);
+
+The source for this script is located 
+<a href="http://home.comcast.net/%7Eshvets/blog/archetypes-2.zip">here</a>.
+
+Hope tis program will save you time for your family and friends!
