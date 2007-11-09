@@ -27,7 +27,7 @@
 
     <!--Set up a connection to janino compiler.-->
   <connection id="janino" driver="janino"
-              classpath="/${repository.home}/janino/janino/2.4.3/janino-2.4.3.jar"/>
+              classpath="/${repository.home}/janino/janino/2.5.10/janino-2.5.10.jar"/>
 
   <!--Set up a connection to velocity engine.
   url parameter specifies a path to file relative to a script file directory-->

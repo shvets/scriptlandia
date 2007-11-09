@@ -13,7 +13,7 @@
 
     <!--Set up a connection to janino compiler.-->
   <connection id="janino" driver="janino"
-              classpath="${repository.home}/janino/janino/2.4.3/janino-2.4.3.jar"/>
+              classpath="${repository.home}/janino/janino/2.5.10/janino-2.5.10.jar"/>
 
   <query connection-id="janino">
     /*import java.util.Properties;
