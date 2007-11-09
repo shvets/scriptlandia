@@ -16,7 +16,7 @@ build.number = b18
 
 4.
 
->ant prepare
+>ant -f prepare.ant
 
 5.
 

@@ -4,11 +4,11 @@
 
 <project name="prepare.ant" default="prepare" basedir=".">
 
-  <property name="original.project.home" value="c:/Java/source/openjdk"/>
+  <property name="original.project.home" value="c:/Work/Sources/openjdk-b23/langtools"/>
 
   <target name="prepare">
     <copy todir="src/share/classes" overwrite="true">
-      <fileset dir="${original.project.home}/j2se/src/share/classes">
+      <fileset dir="${original.project.home}/src/share/classes">
         <include name="com/sun/source/**/*.java"/>
         <include name="com/sun/tools/javac/**/*.java"/>
         <include name="javax/annotation/processing/**/*.java"/>
@@ -17,10 +17,16 @@
         <include name="com/sun/tools/javac/resources/**/*.*"/>
       </fileset>
     </copy>
-
+    
     <copy todir="src/bin" overwrite="true">
-      <fileset dir="${original.project.home}/j2se/src/share/opensource/javac/src/bin">
+      <fileset dir="${original.project.home}/src/share/opensource/javac/src/bin">
       </fileset>
     </copy>
+  </target>
+
+  <target name="run">
+    <ant dir="${original.project.home}" antfile="${original.project.home}/make/build.xml" target="build-javac">
+      <property name="boot.java.home" value="${java.home}"/>
+    </ant>
   </target>
 </project>
