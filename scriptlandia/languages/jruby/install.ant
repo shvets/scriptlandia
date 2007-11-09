@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <project name="install.ant" default="install" basedir=".">
-  <property name="jruby.version" value="1.1b1"/>
+  <property name="jruby.version" value="1.0.2"/>
 
   <property name="jruby.base" 
             value="${repository.home}/jruby/jruby/${jruby.version}"/>
