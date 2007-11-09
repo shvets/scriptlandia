@@ -324,6 +324,10 @@
       <action dev="Alexander Shvets" type="fix">
         Upgrade for Sleep version 2.1-beta19.
       </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgrade Scriptella up to version 1.0beta.
+      </action>        
     </release>
   </body>
 

@@ -194,7 +194,7 @@ JRuby          1.1b1        http://jruby.codehaus.org
 Pnuts          1.2          https://pnuts.dev.java.net
 Jython         2.2.1        http://www.jython.org
 Scriptlandia   2.2.4        http://sourceforge.net/projects/scriptlandia
-Scriptella     0.9          http://scriptella.javaforge.com
+Scriptella     1.0beta      http://scriptella.javaforge.com
 Jscheme        7.2          http://jscheme.sourceforge.net
 Jaskell        1.0          http://jaskell.codehaus.org
 Sleep          2.1-beta19   http://sleep.hick.org
