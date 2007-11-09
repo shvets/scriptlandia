@@ -310,7 +310,7 @@
       </action>
 
       <action dev="Alexander Shvets" type="add">
-        Added support for Clojure ver.20071018.
+        Added support for Clojure ver.20071029.
       </action>
 
       <action dev="Alexander Shvets" type="fix">
