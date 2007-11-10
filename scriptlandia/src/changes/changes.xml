@@ -318,7 +318,7 @@
       </action>
 
       <action dev="Alexander Shvets" type="fix">
-        Upgrade for JRuby version 1.0.2.
+        Upgrade for JRuby version 1.1b1.
       </action>
 
       <action dev="Alexander Shvets" type="fix">
