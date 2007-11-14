@@ -1,0 +1,19 @@
+require 'raven'
+require 'rake'
+require 'java'
+
+dependency 'deps' do | task |
+  task.libs = Dir.glob('lib/**/*.*')  
+end 
+
+javac 'compile' => 'deps' do |task|
+  task.build_path << "src/main/java"
+end
+
+war 'brewery.war' => ['clean', 'compile', 'java-doc'] do |task|
+  task.webapp_dir = 'src/web'
+end
+
+javadoc 'java-doc' => 'deps' do |task|
+  task.build_path << "src"
+end
