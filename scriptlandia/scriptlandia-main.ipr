@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project relativePaths="true" version="4">
+<project relativePaths="false" version="4">
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
+  </component>
+  <component name="Archetypes.ToolWindow">
+    <option name="projectRootPath" value="" />
   </component>
   <component name="BuildJarProjectSettings">
     <option name="BUILD_JARS_ON_MAKE" value="false" />
@@ -11,31 +14,8 @@
     <option name="USE_PROJECT_LEVEL_SETTINGS" value="false" />
   </component>
   <component name="CodeStyleSettingsManager">
-    <option name="PER_PROJECT_SETTINGS">
-      <value>
-        <option name="JAVA_INDENT_OPTIONS">
-          <value>
-            <option name="INDENT_SIZE" value="2" />
-            <option name="CONTINUATION_INDENT_SIZE" value="8" />
-            <option name="TAB_SIZE" value="2" />
-            <option name="USE_TAB_CHARACTER" value="false" />
-            <option name="SMART_TABS" value="false" />
-            <option name="LABEL_INDENT_SIZE" value="0" />
-            <option name="LABEL_INDENT_ABSOLUTE" value="false" />
-          </value>
-        </option>
-        <ADDITIONAL_INDENT_OPTIONS fileType="js">
-          <option name="INDENT_SIZE" value="4" />
-          <option name="CONTINUATION_INDENT_SIZE" value="8" />
-          <option name="TAB_SIZE" value="4" />
-          <option name="USE_TAB_CHARACTER" value="false" />
-          <option name="SMART_TABS" value="false" />
-          <option name="LABEL_INDENT_SIZE" value="0" />
-          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
-        </ADDITIONAL_INDENT_OPTIONS>
-      </value>
-    </option>
-    <option name="USE_PER_PROJECT_SETTINGS" value="true" />
+    <option name="PER_PROJECT_SETTINGS" />
+    <option name="USE_PER_PROJECT_SETTINGS" value="false" />
   </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
@@ -55,6 +35,103 @@
       <entry name="?*.dtd" />
       <entry name="?*.tld" />
     </wildcardResourcePatterns>
+  </component>
+  <component name="DBNavigator.Project.CodeCompletionManager">
+    <basic-setup>
+      <schemas type="SCHEMA" selected="true" />
+      <users type="USER" selected="true" />
+      <build-in-functions type="FUNCTION" selected="false" />
+      <user-schema>
+        <object type="TABLE" selected="true" />
+        <object type="INDEX" selected="true" />
+        <object type="VIEW" selected="true" />
+        <object type="SYNONYM" selected="true" />
+        <object type="SEQUENCE" selected="true" />
+        <object type="PROCEDURE" selected="true" />
+        <object type="FUNCTION" selected="true" />
+        <object type="PACKAGE" selected="true" />
+        <object type="TYPE" selected="true" />
+        <object type="DIMENSION" selected="true" />
+        <object type="CLUSTER" selected="true" />
+      </user-schema>
+      <public-schema>
+        <object type="TABLE" selected="false" />
+        <object type="INDEX" selected="false" />
+        <object type="VIEW" selected="false" />
+        <object type="SYNONYM" selected="false" />
+        <object type="SEQUENCE" selected="false" />
+        <object type="PROCEDURE" selected="false" />
+        <object type="FUNCTION" selected="false" />
+        <object type="PACKAGE" selected="false" />
+        <object type="TYPE" selected="false" />
+        <object type="DIMENSION" selected="false" />
+        <object type="CLUSTER" selected="false" />
+      </public-schema>
+      <any-schema>
+        <object type="TABLE" selected="true" />
+        <object type="INDEX" selected="true" />
+        <object type="VIEW" selected="true" />
+        <object type="SYNONYM" selected="true" />
+        <object type="SEQUENCE" selected="true" />
+        <object type="PROCEDURE" selected="true" />
+        <object type="FUNCTION" selected="true" />
+        <object type="PACKAGE" selected="true" />
+        <object type="TYPE" selected="true" />
+        <object type="DIMENSION" selected="true" />
+        <object type="CLUSTER" selected="true" />
+      </any-schema>
+    </basic-setup>
+    <smart-setup>
+      <schemas type="SCHEMA" selected="true" />
+      <users type="USER" selected="true" />
+      <build-in-functions type="FUNCTION" selected="true" />
+      <user-schema>
+        <object type="TABLE" selected="true" />
+        <object type="INDEX" selected="true" />
+        <object type="VIEW" selected="true" />
+        <object type="SYNONYM" selected="true" />
+        <object type="SEQUENCE" selected="true" />
+        <object type="PROCEDURE" selected="true" />
+        <object type="FUNCTION" selected="true" />
+        <object type="PACKAGE" selected="true" />
+        <object type="TYPE" selected="true" />
+        <object type="DIMENSION" selected="true" />
+        <object type="CLUSTER" selected="true" />
+      </user-schema>
+      <public-schema>
+        <object type="TABLE" selected="true" />
+        <object type="INDEX" selected="true" />
+        <object type="VIEW" selected="true" />
+        <object type="SYNONYM" selected="true" />
+        <object type="SEQUENCE" selected="true" />
+        <object type="PROCEDURE" selected="true" />
+        <object type="FUNCTION" selected="true" />
+        <object type="PACKAGE" selected="true" />
+        <object type="TYPE" selected="true" />
+        <object type="DIMENSION" selected="true" />
+        <object type="CLUSTER" selected="true" />
+      </public-schema>
+      <any-schema>
+        <object type="TABLE" selected="true" />
+        <object type="INDEX" selected="true" />
+        <object type="VIEW" selected="true" />
+        <object type="SYNONYM" selected="true" />
+        <object type="SEQUENCE" selected="true" />
+        <object type="PROCEDURE" selected="true" />
+        <object type="FUNCTION" selected="true" />
+        <object type="PACKAGE" selected="true" />
+        <object type="TYPE" selected="true" />
+        <object type="DIMENSION" selected="true" />
+        <object type="CLUSTER" selected="true" />
+      </any-schema>
+    </smart-setup>
+  </component>
+  <component name="DBNavigator.Project.ConnectionManager">
+    <connections />
+  </component>
+  <component name="DBNavigator.Project.DatabaseBrowserManager">
+    <autoscroll-to-editor value="false" />
+    <autoscroll-from-editor value="false" />
   </component>
   <component name="DependenciesAnalyzeManager">
     <option name="myForwardDirection" value="false" />
@@ -79,17 +156,7 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
-  <component name="ErrorOptionsConfigurable.UI">
-    <option name="proportions">
-      <SplitterProportionsDataImpl />
-    </option>
-  </component>
-  <component name="GlobalLibrariesConfigurable.UI">
-    <option name="proportions">
-      <SplitterProportionsDataImpl />
-    </option>
-  </component>
-  <component name="IdProvider" IDEtalkID="9081A7575C041930F80D690EBE16A4FB" />
+  <component name="IdProvider" IDEtalkID="53E06B611878531B6ACFFFD19600133C" />
   <component name="InspectionProjectProfileManager">
     <option name="PROJECT_PROFILE" value="Project Default" />
     <option name="USE_PROJECT_LEVEL_SETTINGS" value="false" />
@@ -101,6 +168,63 @@
       </profile>
     </profiles>
     <list size="0" />
+  </component>
+  <component name="IntelliJadProjectConfigComponent">
+    <config>
+      <a type="boolean">false</a>
+      <af type="boolean">false</af>
+      <always-exclude-recursively type="boolean">false</always-exclude-recursively>
+      <b type="boolean">false</b>
+      <clear type="boolean">false</clear>
+      <clear-and-close-console-on-success type="boolean">false</clear-and-close-console-on-success>
+      <create-output-directory type="boolean">false</create-output-directory>
+      <d type="string" />
+      <dead type="boolean">false</dead>
+      <decompile-on-navigation type="string">Always</decompile-on-navigation>
+      <decompile-to-memory type="boolean">true</decompile-to-memory>
+      <dis type="boolean">false</dis>
+      <exclusion-table-model type="table-model" model-class="net.stevechaloner.intellijad.config.ExclusionTableModel" content-types="string,boolean,boolean" />
+      <f type="boolean">false</f>
+      <ff type="boolean">false</ff>
+      <i type="boolean">false</i>
+      <indentation type="integer">4</indentation>
+      <jad-path type="string" />
+      <l type="integer">64</l>
+      <lnc type="boolean">false</lnc>
+      <lradix type="integer">10</lradix>
+      <nl type="boolean">false</nl>
+      <nocast type="boolean">false</nocast>
+      <noclass type="boolean">false</noclass>
+      <nocode type="boolean">false</nocode>
+      <noconv type="boolean">false</noconv>
+      <noctor type="boolean">false</noctor>
+      <nodos type="boolean">false</nodos>
+      <nofd type="boolean">false</nofd>
+      <noinner type="boolean">false</noinner>
+      <nolvt type="boolean">false</nolvt>
+      <nonlb type="boolean">false</nonlb>
+      <o type="boolean">false</o>
+      <pa type="string" />
+      <pc type="string">_cls</pc>
+      <pe type="string">_ex</pe>
+      <pf type="string">_fld</pf>
+      <pl type="string">_lcl</pl>
+      <pm type="string">_mth</pm>
+      <pp type="string">_prm</pp>
+      <pv type="integer">3</pv>
+      <r type="boolean">false</r>
+      <radix type="integer">10</radix>
+      <read-only type="boolean">false</read-only>
+      <reformat-style type="string">Preferred-Style</reformat-style>
+      <s type="string">java</s>
+      <safe type="boolean">false</safe>
+      <sort type="boolean">false</sort>
+      <space type="boolean">false</space>
+      <stat type="boolean">false</stat>
+      <t type="boolean">false</t>
+      <use-project-specific-settings type="boolean">false</use-project-specific-settings>
+      <v type="boolean">false</v>
+    </config>
   </component>
   <component name="JavacSettings">
     <option name="DEBUGGING_INFO" value="true" />
@@ -126,11 +250,6 @@
     <option name="LOCALE" />
     <option name="OPEN_IN_BROWSER" value="true" />
   </component>
-  <component name="JdkListConfigurable.UI">
-    <option name="proportions">
-      <SplitterProportionsDataImpl />
-    </option>
-  </component>
   <component name="JikesSettings">
     <option name="JIKES_PATH" value="" />
     <option name="DEBUGGING_INFO" value="true" />
@@ -139,9 +258,11 @@
     <option name="IS_EMACS_ERRORS_MODE" value="true" />
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
   </component>
-  <component name="ModuleStructureConfigurable.UI">
-    <option name="proportions">
-      <SplitterProportionsDataImpl />
+  <component name="MavenImporterState">
+    <option name="autoImport">
+      <set>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="Palette2">
@@ -266,23 +387,15 @@
     </group>
   </component>
   <component name="ProjectFileVersion" converted="true" />
-  <component name="ProjectLibrariesConfigurable.UI">
-    <option name="proportions">
-      <SplitterProportionsDataImpl />
-    </option>
-  </component>
   <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/projects/antrun/antrun.iml" filepath="$PROJECT_DIR$/projects/antrun/antrun.iml" />
-      <module fileurl="file://$PROJECT_DIR$/languages/languages.iml" filepath="$PROJECT_DIR$/languages/languages.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/scriptlandia-helper/scriptlandia-helper.iml" filepath="$PROJECT_DIR$/projects/scriptlandia-helper/scriptlandia-helper.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/scriptlandia-installer/scriptlandia-installer.iml" filepath="$PROJECT_DIR$/projects/scriptlandia-installer/scriptlandia-installer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/scriptlandia-launcher/scriptlandia-launcher.iml" filepath="$PROJECT_DIR$/projects/scriptlandia-launcher/scriptlandia-launcher.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/scriptlandia-nailgun/scriptlandia-nailgun.iml" filepath="$PROJECT_DIR$/projects/scriptlandia-nailgun/scriptlandia-nailgun.iml" />
-    </modules>
+    <modules />
   </component>
-  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/target/classes" />
+  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/classes" />
+  </component>
+  <component name="RUBY_DOC_SETTINGS">
+    <RUBY_DOC NAME="DEFAULTS" VALUE="TRUE" />
+    <RUBY_DOC NAME="NUMBER" VALUE="0" />
   </component>
   <component name="ResourceManagerContainer">
     <option name="myResourceBundles">
@@ -298,26 +411,12 @@
     <option name="GENERATE_IIOP_STUBS" value="false" />
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
   </component>
-  <component name="ScopeChooserConfigurable.UI">
-    <option name="proportions">
-      <SplitterProportionsDataImpl />
-    </option>
+  <component name="SQLPlugin.ProjectConfiguration">
+    <queries />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="" />
-    <mapping directory="$PROJECT_DIR$/languages" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/antrun" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/bootstrap-mini" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/classworlds-launcher" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/pom-reader" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/scriptlandia-helper" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/scriptlandia-installer" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/scriptlandia-nailgun" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/universal-launcher" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/projects/universal-launcher-common" vcs="svn" />
+    <mapping directory="" vcs="svn" />
   </component>
-  <UsedPathMacros>
-    <macro name="maven-repository" />
-  </UsedPathMacros>
+  <component name="WebServicesPlugin" addRequiredLibraries="true" />
 </project>
 

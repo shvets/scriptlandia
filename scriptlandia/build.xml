@@ -55,6 +55,7 @@
     <filterset id="copy.filterset">
       <filter token="java.home.internal" value="${java.home.internal}"/>
       <filter token="mobile.java.home" value="${mobile.java.home}"/>
+      <filter token="mobile.java.home" value="${mobile.java.home}"/>
 
       <filter token="proxyHost" value="${proxyHost}"/>
       <filter token="proxyPort" value="${proxyPort}"/>

@@ -1,7 +1,6 @@
 package org.sf.scriptlandia.launcher;
 
 import org.codehaus.classworlds.ClassWorld;
-import org.sf.jlaunchpad.util.FileUtil;
 import org.sf.jlaunchpad.core.LauncherCommandLineParser;
 import org.sf.jlaunchpad.*;
 
@@ -110,10 +109,10 @@ public class LauncherManager {
 
     if(parser.isLauncherMode()) {
       String starterClassName = parser.getStarterClassName();
-      String depsFileName = parser.getStarterDepsFileName();
+      List depsFileNames = parser.getStarterDepsFileNames();
 
       if(starterClassName == null || starterClassName.trim().length() == 0 ||
-         depsFileName == null || depsFileName.trim().length() == 0) {
+         depsFileNames == null || ((String)depsFileNames.get(0)).trim().length() == 0) {
 
         System.out.print("Usage: launcher ");
         System.out.print("-deps.file.name=<your-dependencies-file> ");

@@ -96,7 +96,7 @@ public class ScriptlandiaLauncherCommandLineParser extends LauncherCommandLinePa
    * @return starter script name
    */
   public String getStarterScriptName() {
-    return commandLine.get("script.name");
+    return (String)commandLine.get("script.name");
   }
 
   /**
@@ -148,7 +148,7 @@ public class ScriptlandiaLauncherCommandLineParser extends LauncherCommandLinePa
    * @return true if nailgun client mode; false otherwise
    */
   public boolean isNailgunClientMode() {
-    String ngClientMode = commandLine.get("nailgun.client.mode");
+    String ngClientMode = (String)commandLine.get("nailgun.client.mode");
 
     return ngClientMode != null && ngClientMode.equalsIgnoreCase("true");
   }

@@ -84,21 +84,21 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
           throws LauncherException {
     ScriptlandiaLauncher launcher;
 
-    Map<String, String> commandLine = parser.getCommandLine();
+    Map<String, Object> commandLine = parser.getCommandLine();
 
     boolean instanceExists = currentExtension != null && instances.get(currentExtension) != null;
 
     if (instanceExists) {
       launcher = (ScriptlandiaLauncher)instances.get(currentExtension);
 
-      launcher.setScriptName(commandLine.get("script.name"));
+      launcher.setScriptName((String)commandLine.get("script.name"));
 
       launcher.setArgs(args);
     }
     else {
       launcher = new ScriptlandiaLauncher(parser, args, classWorld);
 
-      launcher.setScriptName(commandLine.get("script.name"));
+      launcher.setScriptName((String)commandLine.get("script.name"));
 
       launcher.configure(Thread.currentThread().getContextClassLoader());
 
