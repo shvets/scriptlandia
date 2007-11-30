@@ -5,4 +5,6 @@ public class MathService {
     double square(double arg0) {
       return (arg0 * arg0)
     }
+   }
+
 }

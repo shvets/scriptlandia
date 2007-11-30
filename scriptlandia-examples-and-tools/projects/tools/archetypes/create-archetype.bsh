@@ -70,7 +70,7 @@ public class ArchetypeCreator extends XmlHelper {
       prefix = prefixAttribute.getValue();
     }
     else {
-      prefixn = "";
+      prefix = "";
     }
 
     Group group = new Group();
