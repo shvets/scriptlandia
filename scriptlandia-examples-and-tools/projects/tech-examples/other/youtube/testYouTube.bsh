@@ -1,0 +1,66 @@
+import org.sf.jlaunchpad.core.*;
+import org.sf.scriptlandia.*;
+
+Launcher launcher = ScriptlandiaHelper.getLauncher();
+
+print(launcher);
+
+launcher.addClasspathEntry("lib/gdata-youtube-1.0.jar");
+launcher.addClasspathEntry("lib/gdata-core-1.0.jar");
+launcher.addClasspathEntry("lib/gdata-client-1.0.jar");
+
+import com.google.gdata.client.Query;
+import com.google.gdata.client.Service;
+import com.google.gdata.client.youtube.YouTubeQuery;
+import com.google.gdata.client.youtube.YouTubeService;
+import com.google.gdata.data.Category;
+import com.google.gdata.data.Entry;
+import com.google.gdata.data.Feed;
+import com.google.gdata.data.TextContent;
+import com.google.gdata.data.extensions.Comments;
+import com.google.gdata.data.extensions.FeedLink;
+import com.google.gdata.data.media.mediarss.MediaKeywords;
+import com.google.gdata.data.media.mediarss.MediaPlayer;
+import com.google.gdata.data.media.mediarss.MediaThumbnail;
+import com.google.gdata.data.youtube.FeedLinkEntry;
+import com.google.gdata.data.youtube.PlaylistEntry;
+import com.google.gdata.data.youtube.PlaylistFeed;
+import com.google.gdata.data.youtube.PlaylistLinkEntry;
+import com.google.gdata.data.youtube.PlaylistLinkFeed;
+import com.google.gdata.data.youtube.SubscriptionEntry;
+import com.google.gdata.data.youtube.SubscriptionFeed;
+import com.google.gdata.data.youtube.UserProfileEntry;
+import com.google.gdata.data.youtube.VideoEntry;
+import com.google.gdata.data.youtube.VideoFeed;
+import com.google.gdata.data.youtube.YouTubeMediaContent;
+import com.google.gdata.data.youtube.YouTubeMediaGroup;
+import com.google.gdata.data.youtube.YouTubeNamespace;
+import com.google.gdata.util.ServiceException;
+import com.google.gdata.data.TextConstruct;
+import com.google.gdata.data.Person;  
+
+void printVideoFeed(YouTubeService service, String feedUrl) throws Exception {
+    VideoFeed videoFeed = service.getFeed(new URL(feedUrl), VideoFeed.class);
+    List allVideos = videoFeed.getEntries();
+    Iterator itAllVideos = allVideos.iterator();
+    while (itAllVideos.hasNext()){
+        VideoEntry oneVideo  = itAllVideos.next();
+        TextConstruct oneVideoTitle = oneVideo.getTitle();
+        String oneVideoTitleText = oneVideoTitle.getPlainText();
+        //Print titles of all videos:
+        System.out.print(oneVideoTitleText);
+        List allAuthors = oneVideo.getAuthors();
+        Iterator itAllAuthors = allAuthors.iterator();
+        while (itAllAuthors.hasNext()){
+            Person oneAuthor = itAllAuthors.next();
+            //Print authors of current title:
+            System.out.print(" (by " + oneAuthor.getName() +")\n");
+        }
+
+    }
+}
+
+
+YouTubeService myService = new YouTubeService("mycompany-myapp-1");
+String myFeed = "http://gdata.youtube.com/feeds/videos?start-index=1&max-results=25&vq=lizards&oi=spell";
+printVideoFeed(myService, myFeed);
