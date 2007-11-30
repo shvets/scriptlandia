@@ -1,13 +1,20 @@
 import groovyx.net.ws.WSClient
 import java.awt.BorderLayout
 
-class TryIt {
+//class ShakespeareClient {
     
-    groovy.swing.SwingBuilder swing = new groovy.swing.SwingBuilder()
+    def groovy.swing.SwingBuilder swing = new groovy.swing.SwingBuilder()
     
-    def proxy = new WSClient("http://www.xmlme.com/WSShakespeare.asmx?WSDL", TryIt.class.classLoader)
-        
-    void main() {
+    def proxy = new WSClient("http://www.xmlme.com/WSShakespeare.asmx?WSDL", ShakespeareClient.class.classLoader)
+
+    def refresh = swing.action(
+          name:'Refresh',
+          closure:this.&refreshText,
+          mnemonic:'R'
+    )
+
+       
+ // void main() {
 
         def frame = swing.frame(title:'Shakespeare',size:[300,300]) {
           panel(layout: new BorderLayout()) {
@@ -20,17 +27,11 @@ class TryIt {
         frame.pack()
         frame.show()
         
-    }
-    
-    def refresh = swing.action(
-          name:'Refresh',
-          closure:this.&refreshText,
-          mnemonic:'R'
-    )
-    
+  //  }
+        
+//}
+
     def refreshText(event) {
           def newQuote = proxy.GetSpeech(swing.quote.text)
           swing.area.text = newQuote.replaceAll("><",">\n   <")
     }
-        
-}

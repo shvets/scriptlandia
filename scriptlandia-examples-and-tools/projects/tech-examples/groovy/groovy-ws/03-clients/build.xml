@@ -1,0 +1,77 @@
+<project name="test" default="compile" basedir=".">
+
+  <property name="repository.home" value="c:/maven-repository"/>
+
+  <target name="init">
+
+    <echo>? ${repository.home}/xerces/xercesImpl/2.6.0/xercesImpl-2.6.0.jar</echo>
+
+    <path id="groovy-classpath">
+      <pathelement path="groovy-classes"/>
+      <pathelement path="${repository.home}/org/codehaus/groovy/groovy-all/1.1-rc-2/groovy-all-1.1-rc-2.jar"/>
+      <pathelement path="${repository.home}/groovy/groovyws-standalone/0.1.1/groovyws-standalone-0.1.1.jar"/>
+      <pathelement path="${repository.home}/org/apache/ant/ant/1.7.0/ant-1.7.0.jar"/>
+
+      <pathelement path="${repository.home}/org/apache/cxf/2.0.3-incubator/cxf-2.0.3-incubator.jar"/>
+      <pathelement path="${repository.home}/wsdl4j/wsdl4j/1.6.1/wsdl4j-1.6.1.jar"/>
+      <pathelement path="${repository.home}/xml-resolver/xml-resolver/1.2/xml-resolver-1.2.jar"/>
+      <pathelement path="${repository.home}/org/apache/ws/commons/schema/XmlSchema/1.3.2/XmlSchema-1.3.2.jar"/>
+      <pathelement path="${repository.home}/javax/xml/jaxb-impl/2.1.4/jaxb-impl-2.1.4.jar"/>
+      <pathelement path="${repository.home}/javax/xml/jaxb-xjc/2.1.4/jaxb-xjc-2.1.4.jar"/>
+ 
+      <pathelement path="${repository.home}/xalan/xalan/2.7.0/xalan-2.7.0.jar"/>
+      <pathelement path="${repository.home}/xerces/xercesImpl/2.6.0/xercesImpl-2.6.0.jar"/>
+
+<!--
+      <pathelement path="groovy-classes"/>
+      <pathelement path="${repository.home}/org/codehaus/groovy/groovy-all/1.1-rc-2/groovy-all-1.1-rc-2.jar"/>
+      <pathelement path="groovyws-standalone-0.1.1.jar"/>
+      <pathelement path="${repository.home}/org/apache/ant/ant/1.7.0/ant-1.7.0.jar"/>
+
+      <pathelement path="${repository.home}/xalan/xalan/2.7.0/xalan-2.7.0.jar"/>
+      <pathelement path="${repository.home}/xerces/xercesImpl/2.6.0/xercesImpl-2.6.0.jar"/>
+-->
+    </path>
+
+    <taskdef name="groovyc" 
+             classpathref="groovy-classpath" 
+             classname="org.codehaus.groovy.ant.Groovyc"/>
+
+    <taskdef name="groovy"
+            classname="org.codehaus.groovy.ant.Groovy"
+            classpathref="groovy-classpath"/>
+  </target>
+
+  <target name="compile" depends="init">
+    <mkdir dir="groovy-classes"/>
+    <groovyc srcdir="." destdir="groovy-classes"/>
+  </target>
+
+  <target name="client2" depends="init">
+    <groovy src="client.groovy">
+      <classpath>
+        <path refid="groovy-classpath"/>
+      </classpath>
+    </groovy>
+  </target>
+
+  <target name="client3" depends="compile">
+    <java classname="client" fork="true">
+      <classpath>
+        <path refid="groovy-classpath"/>
+      </classpath>
+
+     <sysproperty key="java.endorsed.dirs" value="C:/maven-repository/javax/xml/bind/jaxb-api/2.1"/>
+   </java>
+  </target>
+
+  <target name="client" depends="compile">
+    <java classname="client">
+      <classpath>
+        <path refid="groovy-classpath"/>
+      </classpath>
+   </java>
+  </target>
+
+</project>
+
