@@ -18,7 +18,7 @@
 
   <target name="all">
     <antcall target="javascript"/>
-    <antcall target="judo"/>
+    <!--antcall target="judo"/-->
     <antcall target="bsh"/>
     <antcall target="groovy"/>
     <antcall target="ruby"/>

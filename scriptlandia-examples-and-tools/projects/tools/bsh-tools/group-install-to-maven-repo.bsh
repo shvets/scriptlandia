@@ -1,0 +1,51 @@
+// group-install-to-maven-repo.bsh 
+
+import org.sf.scriptlandia.MavenHelper;
+
+sourceRelative("ChecksumScript.bsh");
+
+if(bsh.args.length == 0) {
+  print("Please specify group ID as parameter");
+  return;
+}
+
+String repositoryHome = System.getProperty("repository.home");
+
+String groupId = bsh.args[0];
+
+String currentDirName = System.getProperty("user.dir");
+String repositoryHome = System.getProperty("repository.home");
+
+File currentDir = new File(currentDirName);
+
+File[] files = currentDir.listFiles();
+
+for(int i=0; i < files.length; i++) {
+  File file = files[i];
+
+  String name = file.getName();
+
+  if(name.endsWith(".jar")) {
+    int index1 = name.lastIndexOf("-");
+    int index2 = name.lastIndexOf(".");
+
+    String artifactId = name.substring(0, index1);
+    String version = name.substring(index1+1, index2);
+
+    System.setProperty("file", name);
+    System.setProperty("groupId", groupId);
+    System.setProperty("artifactId", artifactId);
+    System.setProperty("version", version);
+    System.setProperty("packaging", "jar");
+    System.setProperty("generatePom", "true");
+
+    MavenHelper.executeMaven(null, new String[] { "install:install-file" });
+
+    String dir = repositoryHome + "/" + groupId.replace('.', '/') + "/" + artifactId + "/" + version;
+
+    ChecksumScript checksum = new ChecksumScript();
+
+    checksum.calculate(new File(dir));
+  }
+}
+

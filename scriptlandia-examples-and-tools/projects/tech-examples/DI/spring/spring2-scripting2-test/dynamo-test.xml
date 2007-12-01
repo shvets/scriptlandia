@@ -19,7 +19,7 @@
     <constructor-arg value="Animal" />
     <property name="name" value="dog_name"/>
   </bean>
--->
+-->  
   <!-- Creates cow. -->
   <bean id="cow" class="org.springframework.scripting.bsh.BshScriptFactory">
     <constructor-arg value="file:Cow.bsh" />

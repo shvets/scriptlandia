@@ -19,6 +19,22 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring</artifactId>
       <version>${spring.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>javax.ejb</groupId>
+          <artifactId>ejb</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>javax.faces</groupId>
+          <artifactId>jsf-api</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>javax.jms</groupId>
+          <artifactId>jms</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <dependency>
@@ -60,7 +76,7 @@
     <dependency>
       <groupId>jruby</groupId>
       <artifactId>jruby</artifactId>
-      <version>1.0.1</version>
+      <version>1.1b1</version>
     </dependency>
 
     <dependency>

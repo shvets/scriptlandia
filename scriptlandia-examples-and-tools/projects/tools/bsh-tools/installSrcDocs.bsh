@@ -1,0 +1,33 @@
+// installSrcDocs.bsh
+
+import org.sf.pomreader.PomReader;
+
+import org.apache.maven.bootstrap.model.Model;
+
+import org.sf.scriptlandia.MavenHelper;
+
+MavenHelper.executeMaven(null, new String[] { "source:jar" });
+
+MavenHelper.executeMaven(null, new String[] { "javadoc:jar" });
+
+PomReader pomReader = new PomReader();
+pomReader.init();
+
+Model model = pomReader.readModel(new File("pom.xml"));
+
+print(model);
+
+void installArtifact(Model model, String classifier) {
+  System.setProperty("file", "target/" + model.getArtifactId() + "-" + classifier + ".jar");
+  System.setProperty("groupId", model.getGroupId());
+  System.setProperty("artifactId", model.getArtifactId());
+  System.setProperty("version", model.getVersion());
+  System.setProperty("packaging", model.getPackaging());
+  System.setProperty("classifier", classifier);
+  System.setProperty("generatePom", "false");
+
+  MavenHelper.executeMaven(null, new String[] { "install:install-file" });
+}
+
+installArtifact(model, "sources");
+installArtifact(model, "javadoc");
