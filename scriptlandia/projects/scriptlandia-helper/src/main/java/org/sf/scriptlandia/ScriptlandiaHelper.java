@@ -30,7 +30,7 @@ public class ScriptlandiaHelper {
   public static void resolveLanguageDependencies(String name, String manager)
          throws Exception {
     String repositoryHome = System.getProperty("repository.home");
-    String scriptlandiaVersion = System.getProperty("scriptlandia.version");
+    //String scriptlandiaVersion = System.getProperty("scriptlandia.version");
 
     UniversalLauncher launcher = ScriptlandiaLauncher.getInstance();
 
