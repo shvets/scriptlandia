@@ -1,0 +1,41 @@
+def junit(test_class_dir, class_path)
+
+  # Append the test_class_dir to the class_path, if necessary
+  class_path += [test_class_dir] unless class_path.member?(test_class_dir)
+
+  # Make sure test_class_dir has trailing slash
+  unless test_class_dir[-1,1] == '/'
+    test_class_dir = test_class_dir + '/'
+  end
+
+  # Scan test_class_dir for test class files
+  class_names = []
+  FileList["#{test_class_dir}/**/*Test.class"].each do |class_file|
+    class_names << class_file[test_class_dir.length, 
+	class_file.length - test_class_dir.length - '.class'.length].gsub('/', '.')
+  end
+  fail "No test classes found" if class_names.empty?
+
+  # Load the test classes via a new classloader
+  classes = load_classes(class_path, class_names)
+
+  # Run the tests
+  runner = org.junit.runner.JUnitCore.new
+  runner.add_listener(org.junit.internal.runners.TextListener.new)
+  result = runner.run(to_java_array(java.lang.Class, classes))
+  fail("Unit tests failed") unless result.was_successful
+end
+
+def load_classes(class_path, class_names)
+
+  # Make sure directories have a trailing slash, otherwise URLClassLoader ignores them
+  class_path.each { |element| element << '/' if FileTest.directory?(element) && element[-1,1] != '/' }
+
+  # Convert classpath elements to URLs
+  urls = to_java_array(java.net.URL, class_path.map { |element| java.net.URL.new('file:' + element) })
+
+  # Create a class loader for the specified class path
+  loader = java.net.URLClassLoader.new(urls)  
+  return class_names.map { |class_name| loader.loadClass(class_name) }
+
+end
