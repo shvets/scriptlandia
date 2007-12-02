@@ -17,6 +17,7 @@
 package org.sf.scriptlandia;
 
 import org.sf.jlaunchpad.UniversalLauncher;
+import org.sf.jlaunchpad.util.ReflectionUtil;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 import org.codehaus.classworlds.ClassRealm;
 
@@ -88,10 +89,10 @@ public class GroovyStarter {
 //      ClassLoader loader = ClassLoader.getSystemClassLoader();
     ClassLoader loader = Thread.currentThread().getContextClassLoader();
 
-     Class mainClass = mainRealm.loadClass(lc.getMainClass();
+//     Class mainClass = mainRealm.loadClass(lc.getMainClass());
 
-     ReflectionUtil.launchClass(mainClass, newArgs,
-             "public static void main(String[] argv) main Method is missed.");
+//     ReflectionUtil.launchClass(mainClass, newArgs,
+  //           "public static void main(String[] argv) main Method is missed.");
 
 /*    Method m = null;
     try {

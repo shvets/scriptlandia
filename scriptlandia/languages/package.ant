@@ -1,4 +1,4 @@
-4<?xml version="1.0"?>
+<?xml version="1.0"?>
 
 <project name="package.ant" default="package" basedir="..">
 

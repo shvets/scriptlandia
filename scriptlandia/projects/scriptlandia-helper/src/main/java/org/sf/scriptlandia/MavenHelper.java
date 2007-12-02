@@ -64,7 +64,7 @@ public class MavenHelper {
       newArgsList.add("-f");
       newArgsList.add(pomName);
     }
-    
+
     newArgsList.addAll(Arrays.asList(args));
 
     String[] newArgs = new String[newArgsList.size()];
@@ -73,7 +73,7 @@ public class MavenHelper {
 
     ClassWorld classWorld = launcher.getMainRealm().getWorld();
 
-    System.out.println("Maven args: " + java.util.Arrays.asList(newArgs));
+    //System.out.println("Maven args: " + java.util.Arrays.asList(newArgs));
     MavenCli.main(newArgs, classWorld);
   }
 

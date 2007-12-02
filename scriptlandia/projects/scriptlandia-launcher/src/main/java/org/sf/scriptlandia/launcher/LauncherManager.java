@@ -124,7 +124,7 @@ public class LauncherManager {
       }
     }
 
-    String scriptName = parser.getStarterScriptName();
+    //String scriptName = parser.getStarterScriptName();
 
 /*    if (scriptName != null) {
       currentExtension = FileUtil.getExtension(scriptName);
