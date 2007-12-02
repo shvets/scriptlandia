@@ -129,7 +129,11 @@
             <phase>package</phase>
             <configuration>
               <tasks>
-                <exec executable="package.bat" dir="languages"/>
+                <condition property="extension" value="bat" else="sh">
+                  <os family="Windows"/>
+                </condition>
+
+                <exec executable="build.${extension}" dir="languages"/>
               </tasks>
             </configuration>
             <goals>

@@ -15,14 +15,7 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/groovy/starter/src/main/java/org/sf/scriptlandia/GroovyStarter.java" afterPath="$PROJECT_DIR$/languages/groovy/starter/src/main/java/org/sf/scriptlandia/GroovyStarter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/changes/changes.xml" afterPath="$PROJECT_DIR$/src/changes/changes.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/MavenHelper.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/MavenHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/package.ant" afterPath="$PROJECT_DIR$/languages/package.ant" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptlandia-main.iws" afterPath="$PROJECT_DIR$/scriptlandia-main.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherManager.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherManager.java" />
-    </list>
+    <list default="true" name="Default" comment="" />
     <ignored path="scriptlandia-main.iws" />
     <ignored path=".idea/workspace.xml" />
   </component>
@@ -477,7 +470,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="43" y="5" width="1877" height="1147" extended-state="1" />
+    <frame x="43" y="5" width="1877" height="1147" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
