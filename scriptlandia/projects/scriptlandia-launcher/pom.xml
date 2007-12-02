@@ -62,6 +62,13 @@
     </dependency>
 
     <dependency>
+      <groupId>org.sf.jlaunchpad</groupId>
+      <artifactId>universal-launcher-common</artifactId>
+      <version>1.0.1</version>
+    </dependency>
+
+<!--
+    <dependency>
       <groupId>org.apache.maven.bootstrap</groupId>
       <artifactId>bootstrap-mini</artifactId>
       <version>2.0.8</version>
@@ -72,6 +79,7 @@
       <artifactId>pom-reader</artifactId>
       <version>1.0.1</version>
     </dependency>
+-->
   </dependencies>
 
   <build>

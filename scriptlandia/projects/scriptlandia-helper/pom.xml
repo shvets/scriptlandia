@@ -18,7 +18,7 @@
   <inceptionYear>2006</inceptionYear>
 
   <properties>
-    <maven.version>2.0.7</maven.version>
+    <maven.version>2.0.8</maven.version>
     <ant.version>1.7.0</ant.version>
   </properties>
 
@@ -58,10 +58,19 @@
 
   <dependencies>
     <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+<!--
+    <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
       <version>1.2.13</version>
     </dependency>
+-->
 
     <dependency>
       <groupId>org.sf.jlaunchpad</groupId>
@@ -76,11 +85,30 @@
     </dependency>
 
     <dependency>
+      <groupId>classworlds</groupId>
+      <artifactId>classworlds</artifactId>
+      <version>1.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.bootstrap</groupId>
+      <artifactId>bootstrap-mini</artifactId>
+      <version>2.0.8</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sf.jlaunchpad</groupId>
+      <artifactId>pom-reader</artifactId>
+      <version>1.0.1</version>
+    </dependency>
+
+<!--
+    <dependency>
       <groupId>commons-lang</groupId>
       <artifactId>commons-lang</artifactId>
       <version>2.3</version>
     </dependency>
-
+-->
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-core</artifactId>
