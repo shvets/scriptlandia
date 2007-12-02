@@ -146,7 +146,7 @@ public class LauncherHelper {
     String nailgunVersion = (String)scriptlandiaProps.get("nailgun.version");
     String jdicVersion = (String)scriptlandiaProps.get("jdic.version");
 
-    launcher.addClasspathEntry(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8.jar");
     launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/pom-reader/" + launcherVersion +
       "/pom-reader-" + launcherVersion + ".jar");
     launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher-common/" + launcherVersion +

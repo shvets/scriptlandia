@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+4<?xml version="1.0"?>
 
 <project name="package.ant" default="package" basedir="..">
 
@@ -13,7 +13,7 @@
       print(basedir);
 
       addClassPath(repositoryHome + "/org/sf/jlaunchpad/universal-launcher-common/1.0.0/universal-launcher-common-1.0.0.jar");
-      addClassPath(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar");
+      addClassPath(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8.jar");
       addClassPath(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0.0/pom-reader-1.0.0.jar");
       addClassPath(repositoryHome + "/org/sf/jlaunchpad/universal-launcher/1.0.0/universal-launcher-1.0.0.jar");
 
@@ -47,7 +47,7 @@
       }
       else {
         addClassPath(repositoryHome + "/org/sf/jlaunchpad/universal-launcher-common/1.0.0/universal-launcher-common-1.0.0.jar");
-        addClassPath(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar");
+        addClassPath(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8.jar");
         addClassPath(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0.0/pom-reader-1.0.0.jar");
         addClassPath(repositoryHome + "/org/sf/jlaunchpad/universal-launcher/1.0.0/universal-launcher-1.0.0.jar");
 

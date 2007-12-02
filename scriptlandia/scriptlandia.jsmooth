@@ -14,7 +14,7 @@
   <jarLocation>projects/scriptlandia-installer/target/scriptlandia-installer.jar</jarLocation>
 
   <classPath>${repository.home}/org/sf/jlaunchpad/universal-launcher-common/1.0.1/universal-launcher-common-1.0.1.jar</classPath>
-  <classPath>${repository.home}/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar</classPath>
+  <classPath>${repository.home}/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8.jar</classPath>
   <classPath>${repository.home}/org/sf/jlaunchpad/pom-reader/1.0.1/pom-reader-1.0.1.jar</classPath>
   <classPath>${repository.home}/org/sf/jlaunchpad/universal-launcher/1.0.1/universal-launcher-1.0.1.jar</classPath>
 

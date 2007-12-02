@@ -70,7 +70,7 @@ Before executing this script, execute this in scriptlandia-examples-and-tools\pr
               icon="projects/scriptlandia-config/bin/images/scriptlandia.ico">
         <classPath mainClass="org.sf.scriptlandia.install.GuiInstaller">
           <cp>${repository.home}/org/sf/jlaunchpad/universal-launcher-common/1.0.1/universal-launcher-common-1.0.1.jar</cp>
-          <cp>${repository.home}/org/apache/maven/bootstrap/bootstrap-mini/2.0.7/bootstrap-mini-2.0.7.jar</cp>
+          <cp>${repository.home}/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8.jar</cp>
           <cp>${repository.home}/org/sf/jlaunchpad/pom-reader/1.0.1/pom-reader-1.0.1.jar</cp>
           <cp>${repository.home}/org/sf/jlaunchpad/universal-launcher/1.0.0/universal-launcher-1.0.1.jar</cp>
 
