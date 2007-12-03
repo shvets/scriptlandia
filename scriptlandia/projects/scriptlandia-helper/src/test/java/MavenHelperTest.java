@@ -1,9 +1,12 @@
 import junit.framework.TestCase;
+import junit.framework.TestSuite;
+import junit.textui.TestRunner;
 import org.codehaus.classworlds.ClassRealm;
 import org.codehaus.classworlds.ClassWorld;
 import org.codehaus.classworlds.Launcher;
 import org.sf.jlaunchpad.UniversalLauncher;
 import org.sf.scriptlandia.MavenHelper;
+import org.sf.scriptlandia.ScriptlandiaHelper;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncherCommandLineParser;
 
@@ -11,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MavenHelperTest extends TestCase {
-  private UniversalLauncher launcher;
 
   protected void setUp() throws Exception {
     super.setUp();
@@ -40,11 +42,11 @@ public class MavenHelperTest extends TestCase {
 
       ScriptlandiaLauncherCommandLineParser parser = new ScriptlandiaLauncherCommandLineParser();
 
-      List<String> depsFileName = new ArrayList<String>();
+      List<String> depsFileNames = new ArrayList<String>();
 
-      depsFileName.add("C:/maven-repository/org/sf/scriptlandia/beanshell-starter/1.0.0/beanshell-starter-1.0.0.pom ");
+      depsFileNames.add("C:/maven-repository/org/sf/scriptlandia/beanshell-starter/1.0.0/beanshell-starter-1.0.0.pom ");
       parser.getCommandLine().put("main.class.name", "bsh.Interpreter");
-      parser.getCommandLine().put("deps.file.name", depsFileName);
+      parser.getCommandLine().put("deps.file.name", depsFileNames);
 
       String[] newArgs = parser.parse(args);
 
@@ -87,7 +89,8 @@ public class MavenHelperTest extends TestCase {
     }
   }
 
-  public void testExecutLauncher() {
+
+ public void testExecutLauncher() {
     String[] args = new String[]{
         "-deps.file.name=C:\\maven-repository\\org\\sf\\scriptlandia\\maven-starter\\1.0.0\\maven-starter-1.0.0.pom",
         "-main.class.name=org.sf.scriptlandia.MavenStarter",
@@ -102,6 +105,14 @@ public class MavenHelperTest extends TestCase {
     } catch (Exception e) {
       fail(e.getMessage());
     }
+  }
+
+  public static void main(String[] args) {
+    TestSuite suite = new TestSuite();
+
+    suite.addTestSuite(MavenHelperTest.class);
+
+    TestRunner.run(suite);
   }
 
 }

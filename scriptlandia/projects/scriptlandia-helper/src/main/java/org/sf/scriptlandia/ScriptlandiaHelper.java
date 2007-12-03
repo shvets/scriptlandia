@@ -72,6 +72,21 @@ public class ScriptlandiaHelper {
   /**
    * Resolves dependencies for specified artifact.
    *
+   * @param groupId group ID
+   * @param artifactId artifact ID
+   * @param version version
+   * @param classifier classifier
+   * @param launcher the launcher
+   * @throws Exception the exception
+   */
+  public static void resolveDependencies(String groupId, String artifactId, String version, String classifier, UniversalLauncher launcher)
+         throws Exception {
+    launcher.resolveDependencies(groupId, artifactId, version, classifier);
+  }
+
+  /**
+   * Resolves dependencies for specified artifact.
+   *
    * @throws Exception the exception
    * @param groupId group ID
    * @param artifactId artifact ID
@@ -80,9 +95,22 @@ public class ScriptlandiaHelper {
    */
   public static void resolveDependencies(String groupId, String artifactId, String version, String classifier)
          throws Exception {
-    ScriptlandiaLauncher.getInstance().resolveDependencies(groupId, artifactId, version, classifier);
+    resolveDependencies(groupId, artifactId, version, classifier, ScriptlandiaLauncher.getInstance());
   }
 
+  /**
+   * Resolves dependencies for specified artifact.
+   *
+   * @param groupId group ID
+   * @param artifactId artifact ID
+   * @param version version
+   * @param launcher the launcher
+   * @throws Exception the exception
+   *  */
+  public static void resolveDependencies(String groupId, String artifactId, String version, UniversalLauncher launcher)
+         throws Exception {
+    launcher.resolveDependencies(groupId, artifactId, version);
+  }
   /**
    * Resolves dependencies for specified artifact.
    *
@@ -93,19 +121,28 @@ public class ScriptlandiaHelper {
    */
   public static void resolveDependencies(String groupId, String artifactId, String version)
          throws Exception {
-    ScriptlandiaLauncher.getInstance().resolveDependencies(groupId, artifactId, version);
+    resolveDependencies(groupId, artifactId, version, ScriptlandiaLauncher.getInstance());
   }
+
+    /**
+     * Resolves dependencies for specified dependencies file.
+     *
+     * @param depsFileName dependencies file name
+     * @param launcher the launcher
+     * @throws Exception the exception
+     */
+    public static void resolveDependencies(String depsFileName, UniversalLauncher launcher) throws Exception {
+     launcher.resolveDependencies(depsFileName);
+    }
 
   /**
    * Resolves dependencies for specified dependencies file.
    *
    * @throws Exception the exception
-   * @param groupId group ID
-   * @param artifactId artifact ID
-   * @param version version
+   * @param depsFileName dependencies file name
    */
   public static void resolveDependencies(String depsFileName) throws Exception {
-    ScriptlandiaLauncher.getInstance().resolveDependencies(depsFileName);
+    resolveDependencies(depsFileName, ScriptlandiaLauncher.getInstance());
   }
 
   public static UniversalLauncher getLauncher() {

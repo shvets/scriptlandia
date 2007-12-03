@@ -5,6 +5,7 @@ import org.apache.maven.artifact.ant.LocalRepository;
 import org.apache.maven.artifact.ant.Pom;
 import org.apache.maven.artifact.ant.RemoteRepository;
 import org.apache.maven.cli.MavenCli;
+import org.apache.maven.bootstrap.model.Repository;
 import org.apache.tools.ant.BuildLogger;
 import org.apache.tools.ant.DefaultLogger;
 import org.apache.tools.ant.Location;
@@ -306,16 +307,14 @@ public class MavenHelper {
       repositories = reader.getRepositories();
     }
 
-    for (int i = 0; i < repositories.size(); i++) {
-      org.apache.maven.bootstrap.model.Repository r = repositories.get(i);
+      for (Repository r : repositories) {
+          RemoteRepository repository = new RemoteRepository();
+          repository.setId(r.getId());
+          repository.setLayout(r.getLayout());
+          repository.setUrl(r.getBasedir());
 
-      RemoteRepository repository = new RemoteRepository();
-      repository.setId(r.getId());
-      repository.setLayout(r.getLayout());
-      repository.setUrl(r.getBasedir());
-
-      dependenciesTask.addRemoteRepository(repository);
-    }
+          dependenciesTask.addRemoteRepository(repository);
+      }
 
     dependenciesTask.execute();
 
