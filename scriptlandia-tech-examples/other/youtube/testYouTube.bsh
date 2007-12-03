@@ -1,13 +1,11 @@
-import org.sf.jlaunchpad.core.*;
-import org.sf.scriptlandia.*;
+// testYouTube.bsh
 
-Launcher launcher = ScriptlandiaHelper.getLauncher();
+import org.sf.scriptlandia.ScriptlandiaHelper;
 
-print(launcher);
-
-launcher.addClasspathEntry("lib/gdata-youtube-1.0.jar");
-launcher.addClasspathEntry("lib/gdata-core-1.0.jar");
-launcher.addClasspathEntry("lib/gdata-client-1.0.jar");
+ScriptlandiaHelper.resolveDependencies("com.google.gdata", "gdata-youtube", "1.0");
+ScriptlandiaHelper.resolveDependencies("com.google.gdata", "gdata-core", "1.0");
+ScriptlandiaHelper.resolveDependencies("com.google.gdata", "gdata-client", "1.0");
+ScriptlandiaHelper.resolveDependencies("com.google.gdata", "gdata-media", "1.0");
 
 import com.google.gdata.client.Query;
 import com.google.gdata.client.Service;
