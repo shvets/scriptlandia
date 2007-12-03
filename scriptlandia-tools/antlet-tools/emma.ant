@@ -1,0 +1,39 @@
+<project name="build" default="start" basedir=".">
+
+  <target name="init">
+    <script language="beanshell">
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      ScriptlandiaHelper.resolveDependencies("emma", "emma", "2.0.5312");
+      ScriptlandiaHelper.resolveDependencies("emma", "emma_ant", "2.0.5312");
+    </script>
+
+    <!-- directory that contains emma.jar and emma_ant.jar: -->
+    <property name="emma.dir" value="${basedir}/../lib" />
+
+    <path id="emma.classpath" >
+      <pathelement location="${repository.home}/emma/emma/2.0.5312/emma-2.0.5312.jar" />
+      <pathelement location="${repository.home}/emma/emma_ant/2.0.5312/emma_ant-2.0.5312.jar" />
+    </path>
+
+    <path id="run.classpath">
+      <pathelement location="${repository.home}/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8.jar" />
+      <pathelement location="${repository.home}/junit/junit/3.8.1/junit-3.8.1.jar" />
+      <pathelement location="${repository.home}/org/sf/jlaunchpad/pom-reader/1.0.1/pom-reader-1.0.1.jar" />
+      <pathelement location="${repository.home}/org/sf/jlaunchpad/universal-launcher-common/1.0.1/universal-launcher-common-1.0.1.jar" />
+      <pathelement location="target/test-classes" />
+    </path>
+
+    <taskdef resource="emma_ant.properties" classpathref="emma.classpath"/>
+  </target>
+
+  <target name="start" depends="init">
+    <property name="emma.enabled" value="true" />
+
+    <emmajava enabled="${emma.enabled}" libclasspathref="emma.classpath" 
+              classname="PomReaderTest"
+              classpathref="run.classpath"
+    >
+    </emmajava>
+  </target>
+</project>
