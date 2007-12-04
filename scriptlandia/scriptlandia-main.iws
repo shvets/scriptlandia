@@ -15,14 +15,7 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/MavenHelper.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/MavenHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projects/scriptlandia-helper/src/test/java/ScriptlandiaHelperTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/ScriptlandiaHelper.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/ScriptlandiaHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptlandia-main.iws" afterPath="$PROJECT_DIR$/scriptlandia-main.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-helper/src/test/java/MavenHelperTest.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-helper/src/test/java/MavenHelperTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptlandia-main.ipr" afterPath="$PROJECT_DIR$/scriptlandia-main.ipr" />
-    </list>
+    <list default="true" name="Default" comment="" />
     <ignored path="scriptlandia-main.iws" />
     <ignored path=".idea/workspace.xml" />
   </component>
@@ -123,7 +116,7 @@
       <file leaf-file-name="MavenHelperTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/test/java/MavenHelperTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="31" selection-start="594" selection-end="594" vertical-scroll-proportion="-1.1554621">
+            <state line="8" column="0" selection-start="313" selection-end="313" vertical-scroll-proportion="0.15966387">
               <folding />
             </state>
           </provider>
@@ -790,7 +783,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/test/java/MavenHelperTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="31" selection-start="594" selection-end="594" vertical-scroll-proportion="-1.1554621">
+        <state line="8" column="0" selection-start="313" selection-end="313" vertical-scroll-proportion="0.15966387">
           <folding />
         </state>
       </provider>

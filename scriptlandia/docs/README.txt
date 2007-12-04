@@ -206,7 +206,7 @@ Scala          2.6.0        http://scala-lang.org
 Judo           0.9          http://www.judoscript.com
 XGQL           2.0          https://sourceforge.net/projects/xgql
 LOLCODE        0.11         http://code.google.com/p/lolcode-java
-Clojure        20071029     http://clojure.sourceforge.net
+Clojure        20071203     http://clojure.sourceforge.net
 
 e-mail:        shvets_alexander@yahoo.com, shvets@comcast.net
 home-page:     http://home.comcast.net/~shvets
