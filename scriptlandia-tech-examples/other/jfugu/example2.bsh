@@ -1,0 +1,37 @@
+import org.sf.scriptlandia.ScriptlandiaHelper;
+
+ScriptlandiaHelper.resolveDependencies("org.jfugue", "jfugue", "3.2");
+
+
+import org.jfugue.Player;
+import org.jfugue.Pattern;
+
+public class FrereJacques
+{
+  public static void main(String[] args)
+  {
+    Player player = new Player();
+
+    // "Frere Jacques"
+    Pattern pattern1 = new Pattern("C5q D5q E5q C5q");
+
+    // "Dormez-vous?"
+    Pattern pattern2 = new Pattern("E5q F5q G5h");
+
+    // "Sonnez les matines"
+    Pattern pattern3 = new Pattern("G5i A5i G5i F5i E5q C5q");
+
+    // "Ding ding dong"
+    Pattern pattern4 = new Pattern("C5q G4q C5h");
+
+    // Put it all together
+    Pattern song = new Pattern();
+    song.add(pattern1, 2); // Adds 'pattern1' to 'song' twice
+    song.add(pattern2, 2); // Adds 'pattern2' to 'song' twice
+    song.add(pattern3, 2); // Adds 'pattern3' to 'song' twice
+    song.add(pattern4, 2); // Adds 'pattern4' to 'song' twice
+
+    // Play the song!
+    player.play(song);
+  }
+}

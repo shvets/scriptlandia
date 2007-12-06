@@ -1,0 +1,16 @@
+import org.sf.scriptlandia.ScriptlandiaHelper;
+
+ScriptlandiaHelper.resolveDependencies("org.jfugue", "jfugue", "3.2");
+
+import org.jfugue.Player;
+
+
+public class Example1
+{
+  public static void main(String[] args)
+  {
+    Player player = new Player();
+    player.play("T160 I[Cello] "+
+      "G3q G3q G3q Eb3q Bb3i G3q Eb3q Bb3i G3h");
+  }
+}
