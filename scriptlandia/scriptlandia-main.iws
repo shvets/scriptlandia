@@ -16,12 +16,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/fortress/language.xml" afterPath="$PROJECT_DIR$/languages/fortress/language.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/changes/changes.xml" afterPath="$PROJECT_DIR$/src/changes/changes.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-config/bin/ws-stack.xml" afterPath="$PROJECT_DIR$/projects/scriptlandia-config/bin/ws-stack.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/groovy/core/pom.xml" afterPath="$PROJECT_DIR$/languages/groovy/core/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/DeveloperGuide.txt" afterPath="$PROJECT_DIR$/docs/DeveloperGuide.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/fortress/core/pom.xml" afterPath="$PROJECT_DIR$/languages/fortress/core/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projects/scriptlandia-config/scriptlandia-config.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptlandia-main.iws" afterPath="$PROJECT_DIR$/scriptlandia-main.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-config/bin/scriptlandia.conf" afterPath="$PROJECT_DIR$/projects/scriptlandia-config/bin/scriptlandia.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-config/src/main/bsh/ext-installer.bsh" afterPath="$PROJECT_DIR$/projects/scriptlandia-config/src/main/bsh/ext-installer.bsh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptlandia-macrodefs.xml" afterPath="$PROJECT_DIR$/scriptlandia-macrodefs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-startup/pom.xml" afterPath="$PROJECT_DIR$/projects/scriptlandia-startup/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/javafx/core/pom.xml" afterPath="$PROJECT_DIR$/languages/javafx/core/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/README.txt" afterPath="$PROJECT_DIR$/docs/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/groovy/language.xml" afterPath="$PROJECT_DIR$/languages/groovy/language.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptlandia-main.ipr" afterPath="$PROJECT_DIR$/scriptlandia-main.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/fortress/install.ant" afterPath="$PROJECT_DIR$/languages/fortress/install.ant" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/javafx/language.xml" afterPath="$PROJECT_DIR$/languages/javafx/language.xml" />
     </list>
     <ignored path="scriptlandia-main.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -120,66 +130,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MavenHelperTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/test/java/MavenHelperTest.java">
+      <file leaf-file-name="CoreInstaller.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="134" selection-start="854" selection-end="854" vertical-scroll-proportion="0.3592437">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ScriptlandiaHelperTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/test/java/ScriptlandiaHelperTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="11" selection-start="1717" selection-end="1717" vertical-scroll-proportion="0.7058824">
+            <state line="3" column="57" selection-start="39" selection-end="84" vertical-scroll-proportion="0.05987395">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MavenHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/MavenHelper.java">
+      <file leaf-file-name="GuiInstaller.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstaller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="309" column="8" selection-start="9076" selection-end="9076" vertical-scroll-proportion="0.019957984">
+            <state line="533" column="12" selection-start="17185" selection-end="17185" vertical-scroll-proportion="0.53886557">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScriptlandiaHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/ScriptlandiaHelper.java">
+      <file leaf-file-name="ext-installer.bsh" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/scriptlandia-config/src/main/bsh/ext-installer.bsh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="0" selection-start="3357" selection-end="3357" vertical-scroll-proportion="0.10714286">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UniversalLauncher.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/maven-repository/org/sf/jlaunchpad/universal-launcher/1.0.1/universal-launcher-1.0.1-sources.jar!/org/sf/jlaunchpad/UniversalLauncher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="13" selection-start="701" selection-end="701" vertical-scroll-proportion="0.019957984">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DepsLauncher.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/maven-repository/org/sf/jlaunchpad/universal-launcher/1.0.1/universal-launcher-1.0.1-sources.jar!/org/sf/jlaunchpad/DepsLauncher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="147" column="0" selection-start="3855" selection-end="3855" vertical-scroll-proportion="0.019957984">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PomReader.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/maven-repository/org/sf/jlaunchpad/pom-reader/1.0.1/pom-reader-1.0.1-sources.jar!/org/sf/pomreader/PomReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="225" column="0" selection-start="7168" selection-end="7168" vertical-scroll-proportion="0.019957984">
+            <state line="105" column="76" selection-start="3200" selection-end="3200" vertical-scroll-proportion="2.1521037">
               <folding />
             </state>
           </provider>
@@ -274,7 +246,7 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="scriptlandia-launcher" />
+          <option name="myItemId" value="scriptlandia-installer" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -284,11 +256,11 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="scriptlandia-launcher" />
+          <option name="myItemId" value="scriptlandia-installer" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher" />
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -298,27 +270,27 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="scriptlandia-launcher" />
+          <option name="myItemId" value="scriptlandia-installer" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher" />
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher\src" />
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer\src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher\src\main" />
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer\src\main" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher\src\main\java" />
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer\src\main\java" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher\src\main\java\org\sf\scriptlandia\launcher" />
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer\src\main\java\org\sf\scriptlandia\install" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -328,7 +300,7 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="scriptlandia-helper" />
+          <option name="myItemId" value="scriptlandia-config" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -338,67 +310,11 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="scriptlandia-helper" />
+          <option name="myItemId" value="scriptlandia-config" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-helper" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="scriptlandia-main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="scriptlandia-helper" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-helper" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-helper\src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-helper\src\test" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-helper\src\test\java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="scriptlandia-main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="scriptlandia-helper" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-helper" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-helper\src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-helper\src\main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-helper\src\main\java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-helper\src\main\java\org\sf\scriptlandia" />
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-config" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -460,6 +376,9 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+      <method>
+        <option name="Make" value="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -613,7 +532,7 @@
       <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960325" order="8" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958768" order="1" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960325" order="1" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49643946" order="3" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
@@ -624,16 +543,16 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="4" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
-      <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" order="3" />
+      <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282023" order="3" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24945055" order="1" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24903794" order="1" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960325" order="2" />
-      <window_info id="Maven Build Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960325" order="8" />
+      <window_info id="Maven Build Output" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32960325" order="8" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
@@ -648,7 +567,7 @@
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating groovy version: 1.5.0" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -659,6 +578,7 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="updating groovy version: 1.5.0" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -699,27 +619,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="8" selection-start="1450" selection-end="1450" vertical-scroll-proportion="0.055882353">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="17" selection-start="4503" selection-end="4503" vertical-scroll-proportion="0.0523416">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/maven-repository/org/apache/maven/maven-core/2.0.7/maven-core-2.0.7.jar!/org/apache/maven/cli/MavenCli.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="20" selection-start="449" selection-end="449" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/maven-repository/org/sf/jlaunchpad/universal-launcher/1.0.1/universal-launcher-1.0.1-sources.jar!/org/sf/jlaunchpad/core/AbstractLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="107" column="0" selection-start="2072" selection-end="2072" vertical-scroll-proportion="0.0">
@@ -748,6 +647,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/test/java/MavenHelperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="21" selection-start="854" selection-end="854" vertical-scroll-proportion="0.032312926">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/languages/javafx/language.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="430" selection-end="430" vertical-scroll-proportion="0.43716815">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ScriptlandiaProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="13" selection-start="332" selection-end="332" vertical-scroll-proportion="0.19957983">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/test/java/ScriptlandiaHelperTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="50" column="11" selection-start="1717" selection-end="1717" vertical-scroll-proportion="0.7058824">
@@ -757,15 +677,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/MavenHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="309" column="8" selection-start="9076" selection-end="9076" vertical-scroll-proportion="0.019957984">
-          <folding />
+        <state line="316" column="2" selection-start="9368" selection-end="9368" vertical-scroll-proportion="0.019957984">
+          <folding>
+            <marker date="1197123121437" expanded="true" signature="9368:9651" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/ScriptlandiaHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="0" selection-start="3357" selection-end="3357" vertical-scroll-proportion="0.10714286">
-          <folding />
+        <state line="144" column="72" selection-start="4466" selection-end="4466" vertical-scroll-proportion="0.7457983">
+          <folding>
+            <marker date="1197123191578" expanded="true" signature="434:646" placeholder="/**...*/" />
+            <marker date="1197123191578" expanded="true" signature="751:824" placeholder="{...}" />
+            <marker date="1197123191578" expanded="true" signature="4466:4472" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -790,12 +716,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/test/java/MavenHelperTest.java">
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-config/src/main/bsh/ext-installer.bsh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="134" selection-start="854" selection-end="854" vertical-scroll-proportion="0.3592437">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="105" column="76" selection-start="3200" selection-end="3200" vertical-scroll-proportion="2.1521037">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="533" column="12" selection-start="17185" selection-end="17185" vertical-scroll-proportion="0.53886557">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="57" selection-start="39" selection-end="84" vertical-scroll-proportion="0.05987395">
+          <folding />
         </state>
       </provider>
     </entry>

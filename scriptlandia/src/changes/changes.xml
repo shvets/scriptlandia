@@ -332,6 +332,10 @@
       <action dev="Alexander Shvets" type="fix">
         Using maven 2.0.8.
       </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgraded to Fortress build 588.
+      </action>
     </release>
   </body>
 

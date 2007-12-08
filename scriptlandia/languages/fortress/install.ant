@@ -2,7 +2,7 @@
 
 <project name="install.ant" default="install" basedir=".">
 
-  <property name="fortress.version" value="163"/>
+  <property name="fortress.version" value="588"/>
 
   <property name="fortress.base" 
             value="${repository.home}/com/sun/fortress/fortress/${fortress.version}"/>

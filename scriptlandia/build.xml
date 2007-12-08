@@ -251,13 +251,10 @@
 
   <target name="install.languages">
     <installLanguages section="core"/>
+
     <installLanguages section="starter"/>
 
-    <script language="beanshell">
-      source("projects/scriptlandia-config/src/main/bsh/ext-installer.bsh");
-
-      new ExtInstaller().install();
-    </script>
+    <registerLanguages/>
   </target>
 
   <target name="generate.scripts">

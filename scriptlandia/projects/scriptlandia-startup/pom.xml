@@ -14,7 +14,7 @@
   </description>
 
   <properties>
-    <fortress.version>163</fortress.version>
+    <fortress.version>588</fortress.version>
     <ant.version>1.7.0</ant.version>
     <maven.version>2.0.8</maven.version>
     <jruby.version>1.1b1</jruby.version>
@@ -106,7 +106,7 @@
       <artifactId>nailgun-bin</artifactId>
       <version>0.7.1</version>
     </dependency>
-
+<!--
     <dependency>
       <groupId>jruby</groupId>
       <artifactId>jruby-lib</artifactId>
@@ -125,8 +125,6 @@
       <version>${clojure.version}</version>
     </dependency>
 
-
-<!--
     <dependency>
       <groupId>com.sun.fortress</groupId>
       <artifactId>fortress-lib</artifactId>

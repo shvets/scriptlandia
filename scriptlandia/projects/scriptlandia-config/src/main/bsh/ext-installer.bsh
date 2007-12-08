@@ -32,10 +32,10 @@ public class ExtInstaller {
   private AssociationService associationService = new AssociationService();
 
   /**
-   * Install the extensions.
+   * Registers the extensions for languages.
    *
    */
-  public void install() {
+  public void registerLanguages() { 
     ExtXmlHelper xmlHelper = new ExtXmlHelper();
     xmlHelper.readLanguages("languages");
 
@@ -60,7 +60,7 @@ public class ExtInstaller {
    * Install the extensions.
    *
    */
-  public void uninstallAll() {
+  public void unregisterAllLanguages() {
     ExtXmlHelper xmlHelper = new ExtXmlHelper();
     xmlHelper.readLanguages("languages");
 
@@ -73,14 +73,14 @@ public class ExtInstaller {
     }
   }
 
-  public void installLanguage() {
+  public void registerLanguage() {
     ExtXmlHelper xmlHelper = new ExtXmlHelper();
     Map language =  xmlHelper.readLanguage();
 
     registerLanguage(language);
   }
 
-  public void uninstallLanguage() {
+  public void unregisterLanguage() {
     ExtXmlHelper xmlHelper = new ExtXmlHelper();
     Map language = xmlHelper.readLanguage();
 
@@ -108,17 +108,19 @@ public class ExtInstaller {
       print(openAction);
     }
 
-    executeAntInstall(language);
+    executeAdditionalTasks(language);
 
     System.out.println("Registered: " + Arrays.asList(registrations) + ".");
   }
 
-  private void executeAntInstall(Map language) {
+  private void executeAdditionalTasks(Map language) {
     String name = (String)language.get("name");
 
     String antInstallName = "languages/" + name + "/install.ant";
 
     if(new File(antInstallName).exists()) {
+      downloadLanguageArtifacts(language);
+
       File buildFile = new File("languages/" + name + "/install.ant");
 
       Project project = createAntProject();
@@ -131,6 +133,27 @@ public class ExtInstaller {
     }
   }
 
+  private void downloadLanguageArtifacts(Map language) {
+    import org.sf.jlaunchpad.core.SimpleLauncher;
+
+    String[] args = new String[] { "-basedir", "languages/" + language.get("name") + "/core", "-build.required", "true"};
+
+    SimpleLauncher launcher = new SimpleLauncher(args);
+
+    launcher.setMainClassName("org.sf.pomreader.ProjectInstaller");
+
+    String repositoryHome = System.getProperty("repository.home");
+    
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher-common/1.0.1/universal-launcher-common-1.0.1.jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8.jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0.1/pom-reader-1.0.1.jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher/1.0.1/universal-launcher-1.0.1.jar");    
+
+    launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
+
+    launcher.configure(Thread.currentThread().getContextClassLoader());
+    launcher.launch();
+  }
 
   private void unregisterLanguage(Map language) {
     List extensions = language.get("extensions");

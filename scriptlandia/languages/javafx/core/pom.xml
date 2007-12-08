@@ -11,7 +11,7 @@
   <description>Scriptlandia JavaFX Core Module</description>
 
   <properties>
-    <javafx.version>200706011412</javafx.version>
+    <javafx.version>200710081507</javafx.version>
   </properties>
 
   <dependencies>

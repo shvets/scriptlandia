@@ -11,7 +11,7 @@
   <description>Scriptlandia Fortress Core Module</description>
 
   <properties>
-    <fortress.version>163</fortress.version>
+    <fortress.version>588</fortress.version>
   </properties>
 
   <dependencies>

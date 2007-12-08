@@ -497,7 +497,9 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectModuleManager">
-    <modules />
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/projects/scriptlandia-config/scriptlandia-config.iml" filepath="$PROJECT_DIR$/projects/scriptlandia-config/scriptlandia-config.iml" />
+    </modules>
   </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />

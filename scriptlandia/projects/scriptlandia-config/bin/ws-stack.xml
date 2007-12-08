@@ -3,12 +3,12 @@
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sf.scriptlandia</groupId>
-  <artifactId>groovy-starter</artifactId>
+  <artifactId>ws-stack</artifactId>
   <version>1.0</version>
   <packaging>pom</packaging>
 
-  <name>Groovy Starter</name>
-  <description>Groovy Starter</description>
+  <name>Web Services stack</name>
+  <description>Web Services stack</description>
 
   <properties>
     <groovy.version>1.5.0</groovy.version>

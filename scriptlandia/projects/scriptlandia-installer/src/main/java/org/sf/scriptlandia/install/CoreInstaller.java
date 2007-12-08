@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Arrays;
 
 /**
- * The class perform initial (command line) installation of scriprlandia.
+ * The class perform initial (command line) installation of scriptlandia.
  *
  * @author Alexander Shvets
  * @version 1.0 01/14/2007
