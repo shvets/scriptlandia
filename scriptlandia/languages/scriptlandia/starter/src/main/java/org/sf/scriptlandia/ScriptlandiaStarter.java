@@ -6,10 +6,10 @@ import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 import org.sf.jlaunchpad.UniversalLauncher;
 import org.sf.jlaunchpad.util.ReflectionUtil;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Arrays;
 
 /**
  * This class is used for starting dependency file as executable.
@@ -51,9 +51,7 @@ public final class ScriptlandiaStarter {
 
       List<String> newArgsList = new ArrayList<String>();
 
-      for (int i = 1; i < args.length; i++) {
-        newArgsList.add(args[i]);
-      }
+      newArgsList.addAll(Arrays.asList(args).subList(1, args.length));
 
       String[] newArgs = new String[newArgsList.size()];
       newArgsList.toArray(newArgs);
