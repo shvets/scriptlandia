@@ -15,7 +15,14 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" name="Default" comment="" />
+    <list default="true" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/changes/changes.xml" afterPath="$PROJECT_DIR$/src/changes/changes.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-config/bin/ws-stack.xml" afterPath="$PROJECT_DIR$/projects/scriptlandia-config/bin/ws-stack.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/groovy/core/pom.xml" afterPath="$PROJECT_DIR$/languages/groovy/core/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/DeveloperGuide.txt" afterPath="$PROJECT_DIR$/docs/DeveloperGuide.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/README.txt" afterPath="$PROJECT_DIR$/docs/README.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/groovy/language.xml" afterPath="$PROJECT_DIR$/languages/groovy/language.xml" />
+    </list>
     <ignored path="scriptlandia-main.iws" />
     <ignored path=".idea/workspace.xml" />
   </component>
@@ -116,8 +123,10 @@
       <file leaf-file-name="MavenHelperTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/test/java/MavenHelperTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="313" selection-end="313" vertical-scroll-proportion="0.15966387">
-              <folding />
+            <state line="25" column="134" selection-start="854" selection-end="854" vertical-scroll-proportion="0.3592437">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,7 +134,7 @@
       <file leaf-file-name="ScriptlandiaHelperTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/test/java/ScriptlandiaHelperTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="11" selection-start="1717" selection-end="1717" vertical-scroll-proportion="0.6806723">
+            <state line="50" column="11" selection-start="1717" selection-end="1717" vertical-scroll-proportion="0.7058824">
               <folding />
             </state>
           </provider>
@@ -439,6 +448,26 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
     </configuration>
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -460,26 +489,6 @@
       <method>
         <option name="Make" value="true" />
       </method>
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
     </configuration>
     <configuration default="false" name="maven-helper-test" type="JUnit" factoryName="JUnit" enabled="true" merge="false">
       <pattern value="org.sf.scriptlandia.*" />
@@ -597,7 +606,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="43" y="5" width="1877" height="1147" extended-state="0" />
+    <frame x="43" y="5" width="1876" height="1147" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
@@ -739,6 +748,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/test/java/ScriptlandiaHelperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="11" selection-start="1717" selection-end="1717" vertical-scroll-proportion="0.7058824">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/MavenHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="309" column="8" selection-start="9076" selection-end="9076" vertical-scroll-proportion="0.019957984">
@@ -774,17 +790,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/test/java/ScriptlandiaHelperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="11" selection-start="1717" selection-end="1717" vertical-scroll-proportion="0.6806723">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/test/java/MavenHelperTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="313" selection-end="313" vertical-scroll-proportion="0.15966387">
-          <folding />
+        <state line="25" column="134" selection-start="854" selection-end="854" vertical-scroll-proportion="0.3592437">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

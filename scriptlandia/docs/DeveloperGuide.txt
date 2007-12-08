@@ -558,11 +558,11 @@ project.executeTarget(project.getDefaultTarget());
 For scripting languages that do not have dynamic libraries loading feature, we can use hook
 into Scriplandia internals (to ClassWorlds guts):
 
-import org.codehaus.classworlds.ClassRealm;
 
-import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+import org.sf.jlaunchpad.core.Launcher;
+import org.sf.scriptlandia.ScriptlandiaHelper;
 
-ScriptlandiaLauncher launcher = ScriptlandiaLauncher.getInstance();
+Launcher launcher = ScriptlandiaHelper.getLauncher();
 
 launcher.addClasspathEntry("3rdparty.library.jar");
 
@@ -581,7 +581,7 @@ import org.sf.scriptlandia.ScriptlandiaHelper;
 
 ScriptlandiaHelper.resolveDependencies("freemarker", "freemarker", "2.3.9");
 
-In this example we reslove the dependency to frrmarker library, version 2.3.9.
+In this example we reslove the dependency to fremarker library, version 2.3.9.
 
 
 Maven scripts as regular scriptlets (mavenlets) and dependencies files
