@@ -4,11 +4,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.sf.scriptlandia</groupId>
-  <artifactId>scriptlandia-examples-and-tools</artifactId>
-  <version>2.2.3</version>
+  <artifactId>scriptlandia-lang-examples</artifactId>
+  <version>2.2.4</version>
 
-  <name>Scriptlandia Examples and Tools Project</name>
-  <description>Scriptlandia Examples and Tools Project</description>
+  <name>Scriptlandia Language Examples Project</name>
+  <description>Scriptlandia Language Examples Project</description>
 
   <packaging>jar</packaging>
 
@@ -61,31 +61,7 @@
             <configuration>
               <tasks>
                 <delete includeemptydirs="true">
-                  <fileset dir="projects/lang-examples">
-                    <include name="**/*.class"/>
-                    <include name="**/*.jar"/>
-                    <include name="**/*.log"/>
-                    <include name="**/target/**"/>
-                    <include name="**/classes/**"/>
-                    <include name="**/build/**"/>
-                    <include name="**/lib/**"/>
-                  </fileset>
-                </delete>
-
-                <delete includeemptydirs="true">
-                  <fileset dir="projects/tech-examples">
-                    <include name="**/*.class"/>
-                    <include name="**/*.jar"/>
-                    <include name="**/*.log"/>
-                    <include name="**/target/**"/>
-                    <include name="**/classes/**"/>
-                    <include name="**/build/**"/>
-                    <include name="**/lib/**"/>
-                  </fileset>
-                </delete>
-
-                <delete includeemptydirs="true">
-                  <fileset dir="projects/tools">
+                  <fileset dir=".">
                     <include name="**/*.class"/>
                     <include name="**/*.jar"/>
                     <include name="**/*.log"/>
