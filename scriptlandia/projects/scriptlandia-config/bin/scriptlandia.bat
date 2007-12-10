@@ -7,8 +7,7 @@ set LAUNCHER_HOME=@launcher.home@
 SET NAILGUN=@repository.home@\com\martiansoftware\nailgun-bin\@nailgun.version@\ng
 
 if "%APP_NAME%" == "" (
-  set APP=%~nx0
-  set APP_NAME=%APP:~0,-4%
+  set APP=scriptlandia
 )
 
 SET MAIN_APP_CONF=%SCRIPTLANDIA_HOME%\%APP_NAME%.conf
