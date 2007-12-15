@@ -21,7 +21,7 @@ rem %LAUNCHER_HOME%\launcher.bat %SYSTEM_PROPERTIES% %PROPERTIES% package.projec
 SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% "-deps.file.name=%REPOSITORY_HOME%/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1.pom" 
 SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% "-main.class.name=org.sf.pomreader.ProjectInstaller"
 
-@call %LAUNCHER_HOME%\launcher.bat %SYSTEM_PROPERTIES% "-Dbasedir=projects/antrun" "-Dbuild.required=true" "-Ddebug.mode=false"
+@call %LAUNCHER_HOME%\launcher.bat %SYSTEM_PROPERTIES% "-Dbasedir=projects/antrun" "-Dbuild.required=true"
 
 @call %LAUNCHER_HOME%\launcher.bat %SYSTEM_PROPERTIES% "-Dbasedir=projects/scriptlandia-installer" "-Dbuild.required=true"
 
