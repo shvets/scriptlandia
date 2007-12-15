@@ -1,6 +1,6 @@
 package org.sf.scriptlandia;
 
-import org.sf.jlaunchpad.UniversalLauncher;
+import org.sf.jlaunchpad.JLaunchPadLauncher;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 
 import java.io.File;
@@ -32,12 +32,12 @@ public class ScriptlandiaHelper {
     String repositoryHome = System.getProperty("repository.home");
     //String scriptlandiaVersion = System.getProperty("scriptlandia.version");
 
-    UniversalLauncher launcher = ScriptlandiaLauncher.getInstance();
+    JLaunchPadLauncher launcher = ScriptlandiaLauncher.getInstance();
 
     String pom;
 
     if(manager.equalsIgnoreCase("bsf")) {
-      pom = repositoryHome + "/org/sf/scriptlandia/" + name + "/1.0.0/" + name + "-1.0.0" + ".pom";
+      pom = repositoryHome + "/org/sf/scriptlandia/" + name + "/1.0.1/" + name + "-1.0.1" + ".pom";
       launcher.resolveDependencies(pom);
     }
     else {
@@ -79,7 +79,7 @@ public class ScriptlandiaHelper {
    * @param launcher the launcher
    * @throws Exception the exception
    */
-  public static void resolveDependencies(String groupId, String artifactId, String version, String classifier, UniversalLauncher launcher)
+  public static void resolveDependencies(String groupId, String artifactId, String version, String classifier, JLaunchPadLauncher launcher)
          throws Exception {
     launcher.resolveDependencies(groupId, artifactId, version, classifier);
   }
@@ -107,7 +107,7 @@ public class ScriptlandiaHelper {
    * @param launcher the launcher
    * @throws Exception the exception
    *  */
-  public static void resolveDependencies(String groupId, String artifactId, String version, UniversalLauncher launcher)
+  public static void resolveDependencies(String groupId, String artifactId, String version, JLaunchPadLauncher launcher)
          throws Exception {
     launcher.resolveDependencies(groupId, artifactId, version);
   }
@@ -131,7 +131,7 @@ public class ScriptlandiaHelper {
      * @param launcher the launcher
      * @throws Exception the exception
      */
-    public static void resolveDependencies(String depsFileName, UniversalLauncher launcher) throws Exception {
+    public static void resolveDependencies(String depsFileName, JLaunchPadLauncher launcher) throws Exception {
      launcher.resolveDependencies(depsFileName);
     }
 
@@ -145,7 +145,7 @@ public class ScriptlandiaHelper {
     resolveDependencies(depsFileName, ScriptlandiaLauncher.getInstance());
   }
 
-  public static UniversalLauncher getLauncher() {
+  public static JLaunchPadLauncher getLauncher() {
     return ScriptlandiaLauncher.getInstance();
   }
      

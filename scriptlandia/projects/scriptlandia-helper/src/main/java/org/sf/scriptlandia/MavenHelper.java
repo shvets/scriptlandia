@@ -13,7 +13,7 @@ import org.apache.tools.ant.Project;
 import org.apache.tools.ant.types.Path;
 import org.codehaus.classworlds.ClassRealm;
 import org.codehaus.classworlds.ClassWorld;
-import org.sf.jlaunchpad.UniversalLauncher;
+import org.sf.jlaunchpad.JLaunchPadLauncher;
 import org.sf.pomreader.RepositoriesReader;
 import org.sf.pomreader.PomReader;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
@@ -58,7 +58,7 @@ public class MavenHelper {
    * @param launcher launcher
    * @throws Exception the exception
    */
-  public static void executeMaven(String pomName, String[] args, UniversalLauncher launcher) throws Exception {
+  public static void executeMaven(String pomName, String[] args, JLaunchPadLauncher launcher) throws Exception {
     List<String> newArgsList = new ArrayList<String>();
 
     if (pomName != null) {
@@ -165,7 +165,7 @@ public class MavenHelper {
    * @throws Exception some exception
    */
   public static void addMavenDependencies(String pomName) throws Exception {
-    UniversalLauncher launcher = ScriptlandiaLauncher.getInstance();
+    JLaunchPadLauncher launcher = ScriptlandiaLauncher.getInstance();
     ClassRealm classRealm = launcher.getMainRealm();
 
     addMavenDependencies(pomName, classRealm);
@@ -318,7 +318,7 @@ public class MavenHelper {
 
     dependenciesTask.execute();
 
-    UniversalLauncher launcher = ScriptlandiaLauncher.getInstance();
+    JLaunchPadLauncher launcher = ScriptlandiaLauncher.getInstance();
     ClassRealm classRealm = launcher.getMainRealm();
 
     Path path = (Path) project.getReference("maven." + useScope + ".classpath");

@@ -6,7 +6,7 @@
       <extension>war</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="war-starter" version="1.0.0">
+    <starter>
       <mainClass>org.sf.scriptlandia.WarStarter</mainClass>
       <commandLine>-script.name</commandLine>
     </starter>

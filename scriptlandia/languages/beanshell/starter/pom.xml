@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sf.scriptlandia</groupId>
   <artifactId>beanshell-starter</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <packaging>pom</packaging>
 
   <name>Scriptlandia Beanshell Starter Module</name>
@@ -19,7 +19,7 @@
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>beanshell</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
       <type>pom</type>
     </dependency>
 
@@ -32,7 +32,7 @@
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>ant</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
       <type>pom</type>
     </dependency>
 
@@ -46,21 +46,21 @@
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>jelly</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
       <type>pom</type>
     </dependency>
 -->
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>javascript</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
       <type>pom</type>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>maven</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
       <type>pom</type>
     </dependency>
 
@@ -73,21 +73,21 @@
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>jruby</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
       <type>pom</type>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>groovy</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
       <type>pom</type>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>javascript</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
       <type>pom</type>
     </dependency>
 

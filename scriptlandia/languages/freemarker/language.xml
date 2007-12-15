@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 
-<language name="freemarker" groupId="freemarker" artifactId="freemarker" version="2.3.9">
+<language name="freemarker" groupId="org.freemarker" artifactId="freemarker" version="2.3.11">
   <registration mimeType="text/freemarker" icon="freemarker.ico">
     <extensions>
       <extension>ftl</extension>
       <extension>freemarker</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="freemarker-starter" version="1.0.0">
+    <starter>
       <mainClass>org.sf.scriptlandia.FreeMarkerStarter</mainClass>
     </starter>
   </registration>

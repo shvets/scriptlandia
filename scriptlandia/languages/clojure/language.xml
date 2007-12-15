@@ -6,7 +6,7 @@
       <extension>clj</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="lolcode" version="1.0.0">
+    <starter>
       <mainClass>clojure.lang.Script</mainClass>
       <commandLine>${repository.home}/clojure/boot/${clojure.version}/boot.clj</commandLine>
     </starter>

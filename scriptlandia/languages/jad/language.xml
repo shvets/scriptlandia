@@ -6,7 +6,7 @@
       <extension>jad</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="jad" version="1.0.0">
+    <starter>
       <mainClass>org.sf.scriptlandia.JadStarter</mainClass>
     </starter>
   </registration>

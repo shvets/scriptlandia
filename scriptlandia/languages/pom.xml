@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>languages</artifactId>
+  <version>2.2.4</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia Languages Module</name>
+  <description>Scriptlandia Languages Module</description>
+
+  <url>http://sf.net/projects/scriptlandia/</url>
+  <inceptionYear>2006</inceptionYear>
+
+  <issueManagement>
+    <system>Sourceforge bugtracker</system>
+    <url>http://sourceforge.net/tracker/?group_id=127753</url>
+  </issueManagement>
+
+  <licenses>
+    <license>
+      <name>GNU General Public License</name>
+      <url>http://www.gnu.org/copyleft/gpl.html</url>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:svn:http://scriptlandia.svn.sourceforge.net/svnroot/scriptlandia/trunk/scriptlandia</connection>
+    <url>http://svn.sourceforge.net/scriptlandia</url>
+  </scm>
+
+  <organization>
+    <name>Dream Programs Inc.</name>
+    <url>http://sf.net/projects/scriptlandia/</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>shvets</id>
+      <name>Alexander Shvets</name>
+      <email>shvets_alexander@yahoo.com</email>
+      <organization></organization>
+      <roles>
+        <role>Founder</role>
+      </roles>
+    </developer>
+  </developers>
+
+<!--
+
+  <modules>
+    <module>freemarker</module>
+
+    <module>ant</module>
+    <module>apt-fmt</module>
+    <module>apt-jelly</module>
+    <module>beanshell</module>
+ 
+   <module>class</module>
+    <module>classworlds</module>
+    <module>clojure</module>
+    <module>etl</module>
+    <module>fortress</module>
+    <module>groovy</module>
+    <module>jad</module>
+    <module>janino</module>
+    <module>jar</module>
+    <module>jaskell</module>
+    <module>javafx</module>
+    <module>javascript</module>
+    <module>jawk</module>
+    <module>jelly</module>
+    <module>jruby</module>
+    <module>jscheme</module>
+    <module>judo</module>
+    <module>jython</module>
+    <module>kawa</module>
+    <module>lolcode</module>
+    <module>maven</module>
+    <module>pnuts</module>
+    <module>scala</module>
+    <module>scriptlandia</module>
+    <module>sleep</module>
+    <module>tcl</module>
+    <module>velocity</module>
+    <module>war</module>
+    <module>xgql</module>
+    <module>xruby</module>
+  </modules>
+   -->
+
+  <distributionManagement>
+    <site>
+      <id>Scriptlandia Web site</id>
+      <url>scp://shell.sourceforge.net/home/groups/s/sc/scriptlandia/htdocs/</url>
+    </site>
+  </distributionManagement>
+</project>

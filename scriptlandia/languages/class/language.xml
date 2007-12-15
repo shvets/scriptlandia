@@ -6,7 +6,7 @@
       <extension>class</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="class" version="1.0.0">
+    <starter>
       <mainClass>org.sf.scriptlandia.ClassStarter</mainClass>
     </starter>
   </registration>

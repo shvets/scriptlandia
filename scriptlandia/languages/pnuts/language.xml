@@ -6,7 +6,7 @@
       <extension>pnut</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="pnuts" version="1.0.0">
+    <starter>
       <mainClass>pnuts.tools.Main</mainClass>
     </starter>
   </registration>

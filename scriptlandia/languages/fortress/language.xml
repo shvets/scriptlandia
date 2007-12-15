@@ -6,7 +6,7 @@
       <extension>fss</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="fortress-starter" version="1.0.0">
+    <starter>
       <mainClass>com.sun.fortress.interpreter.drivers.fs</mainClass>
     </starter>
   </registration>

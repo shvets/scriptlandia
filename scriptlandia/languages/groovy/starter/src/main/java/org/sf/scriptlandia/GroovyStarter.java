@@ -16,7 +16,7 @@
 
 package org.sf.scriptlandia;
 
-import org.sf.jlaunchpad.UniversalLauncher;
+import org.sf.jlaunchpad.JLaunchPadLauncher;
 import org.sf.jlaunchpad.util.ReflectionUtil;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 import org.codehaus.classworlds.ClassRealm;
@@ -135,7 +135,7 @@ public class GroovyStarter {
   }*/
 
   public static void main(String args[]) throws Exception {
-    UniversalLauncher launcher = ScriptlandiaLauncher.getInstance();
+    JLaunchPadLauncher launcher = ScriptlandiaLauncher.getInstance();
 
     ClassRealm mainRealm = launcher.getMainRealm();
 

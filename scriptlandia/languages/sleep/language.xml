@@ -6,7 +6,7 @@
       <extension>sleep</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="sleep" version="1.0.0">
+    <starter>
       <mainClass>sleep.console.TextConsole</mainClass>
     </starter>
   </registration>

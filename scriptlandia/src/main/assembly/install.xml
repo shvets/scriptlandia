@@ -47,7 +47,7 @@
         <include>scriptlandia-config/bin/**</include>
         <include>scriptlandia-config/bin/images/*.*</include>
         <include>scriptlandia-config/src/main/bsh/**</include>
-        <include>scriptlandia-config/src/main/config/**</include>
+        <!--include>scriptlandia-config/src/main/config/**</include-->
       </includes>
     </fileSet>
 

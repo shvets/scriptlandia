@@ -54,7 +54,9 @@
     <module>projects/scriptlandia-launcher</module>
     <module>projects/scriptlandia-installer</module>
     <module>projects/scriptlandia-nailgun</module>
-    <module>projects/scriptlandia-startup</module>
+    <!--module>projects/scriptlandia-startup</module-->
+    <module>projects/scriptlandia-config</module>
+    <module>languages</module>
   </modules>
 
   <build>

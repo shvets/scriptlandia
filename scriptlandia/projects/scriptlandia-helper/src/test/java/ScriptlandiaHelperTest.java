@@ -2,7 +2,7 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import junit.textui.TestRunner;
 import org.codehaus.classworlds.ClassWorld;
-import org.sf.jlaunchpad.UniversalLauncher;
+import org.sf.jlaunchpad.JLaunchPadLauncher;
 import org.sf.scriptlandia.ScriptlandiaHelper;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncherCommandLineParser;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ScriptlandiaHelperTest extends TestCase {
-  private UniversalLauncher launcher;
+  private JLaunchPadLauncher launcher;
 
   protected void setUp() throws Exception {
     super.setUp();
@@ -34,13 +34,13 @@ public class ScriptlandiaHelperTest extends TestCase {
 
       List<String> depsFileNames = new ArrayList<String>();
 
-      depsFileNames.add("C:/maven-repository/org/sf/scriptlandia/beanshell-starter/1.0.0/beanshell-starter-1.0.0.pom ");
+      depsFileNames.add("C:/maven-repository/org/sf/scriptlandia/beanshell-starter/1.0.1/beanshell-starter-1.0.1.pom ");
       parser.getCommandLine().put("main.class.name", "bsh.Interpreter");
       parser.getCommandLine().put("deps.file.name", depsFileNames);
 
       String[] newArgs = parser.parse(args);
 
-      UniversalLauncher launcher = new ScriptlandiaLauncher(parser, newArgs, classWorld);
+      JLaunchPadLauncher launcher = new ScriptlandiaLauncher(parser, newArgs, classWorld);
 
       launcher.configure(Thread.currentThread().getContextClassLoader());
 

@@ -80,18 +80,20 @@
     <sequential>
       <java classname="org.sf.pomreader.ProjectInstaller">
         <classpath>
-          <pathelement path="${repository.home}/org/sf/jlaunchpad/universal-launcher-common/1.0.1/universal-launcher-common-1.0.1.jar"/>
+          <pathelement path="${repository.home}/org/sf/jlaunchpad/jlaunchpad-common/1.0.1/jlaunchpad-common-1.0.1.jar"/>
           <pathelement path="${repository.home}/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8.jar"/>
           <pathelement path="${repository.home}/org/sf/jlaunchpad/pom-reader/1.0.1/pom-reader-1.0.1.jar"/>
-          <pathelement path="${repository.home}/org/sf/jlaunchpad/universal-launcher/1.0.1/universal-launcher-1.0.1.jar"/>
+          <pathelement path="${repository.home}/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1.jar"/>
 
-          <pathelement path="projects/scriptlandia-installer/target/scriptlandia-installer.jar"/>
+          <!--pathelement path="projects/scriptlandia-installer/target/scriptlandia-installer.jar"/-->
         </classpath>
 
         <sysproperty key="build.required" value="@{build}"/>
         <sysproperty key="basedir" value="@{basedir}"/>
+<!--
         <sysproperty key="proxyHost" value="${proxyHost}"/>
         <sysproperty key="proxyPort" value="${proxyPort}"/>
+-->
       </java>
     </sequential>
   </macrodef>
@@ -104,10 +106,10 @@
       <script language="beanshell">
         String repositoryHome = System.getProperty("repository.home");
 
-        addClassPath(repositoryHome + "/org/sf/jlaunchpad/universal-launcher-common/1.0.1/universal-launcher-common-1.0.1.jar");
+        addClassPath(repositoryHome + "/org/sf/jlaunchpad/jlaunchpad-common/1.0.1/jlaunchpad-common-1.0.1.jar");
         addClassPath(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8.jar");
         addClassPath(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0.1/pom-reader-1.0.1.jar");
-        addClassPath(repositoryHome + "/org/sf/jlaunchpad/universal-launcher/1.0.1/universal-launcher-1.0.1.jar");
+        addClassPath(repositoryHome + "/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1.jar");
 
         addClassPath("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 

@@ -4,7 +4,7 @@ import junit.textui.TestRunner;
 import org.codehaus.classworlds.ClassRealm;
 import org.codehaus.classworlds.ClassWorld;
 import org.codehaus.classworlds.Launcher;
-import org.sf.jlaunchpad.UniversalLauncher;
+import org.sf.jlaunchpad.JLaunchPadLauncher;
 import org.sf.scriptlandia.MavenHelper;
 import org.sf.scriptlandia.ScriptlandiaHelper;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
@@ -44,13 +44,13 @@ public class MavenHelperTest extends TestCase {
 
       List<String> depsFileNames = new ArrayList<String>();
 
-      depsFileNames.add("C:/maven-repository/org/sf/scriptlandia/beanshell-starter/1.0.0/beanshell-starter-1.0.0.pom ");
+      depsFileNames.add("C:/maven-repository/org/sf/scriptlandia/beanshell-starter/1.0.1/beanshell-starter-1.0.1.pom ");
       parser.getCommandLine().put("main.class.name", "bsh.Interpreter");
       parser.getCommandLine().put("deps.file.name", depsFileNames);
 
       String[] newArgs = parser.parse(args);
 
-      UniversalLauncher launcher = new ScriptlandiaLauncher(parser, newArgs, classWorld);
+      JLaunchPadLauncher launcher = new ScriptlandiaLauncher(parser, newArgs, classWorld);
 
       launcher.configure(Thread.currentThread().getContextClassLoader());
       MavenHelper.executeMaven(null, args, launcher);
@@ -69,13 +69,13 @@ public class MavenHelperTest extends TestCase {
 
       List<String> depsFileName = new ArrayList<String>();
 
-      depsFileName.add("C:/maven-repository/org/sf/scriptlandia/beanshell-starter/1.0.0/beanshell-starter-1.0.0.pom ");
+      depsFileName.add("C:/maven-repository/org/sf/scriptlandia/beanshell-starter/1.0.1/beanshell-starter-1.0.1.pom ");
       parser.getCommandLine().put("main.class.name", "bsh.Interpreter");
       parser.getCommandLine().put("deps.file.name", depsFileName);
 
       String[] newArgs = parser.parse(args);
 
-      UniversalLauncher launcher = new ScriptlandiaLauncher(parser, newArgs, classWorld);
+      JLaunchPadLauncher launcher = new ScriptlandiaLauncher(parser, newArgs, classWorld);
 
       launcher.configure(Thread.currentThread().getContextClassLoader());
 
@@ -92,7 +92,7 @@ public class MavenHelperTest extends TestCase {
 
  public void testExecutLauncher() {
     String[] args = new String[]{
-        "-deps.file.name=C:\\maven-repository\\org\\sf\\scriptlandia\\maven-starter\\1.0.0\\maven-starter-1.0.0.pom",
+        "-deps.file.name=C:\\maven-repository\\org\\sf\\scriptlandia\\maven-starter\\1.0.1\\maven-starter-1.0.1.pom",
         "-main.class.name=org.sf.scriptlandia.MavenStarter",
         "-f", "pom.xml", "clean"
     };

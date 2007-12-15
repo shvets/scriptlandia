@@ -7,7 +7,7 @@
       <extension>ruby</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="xruby-starter" version="1.0.0">
+    <starter>
       <mainClass>com.xruby.Main</mainClass>
     </starter>
   </registration>

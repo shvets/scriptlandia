@@ -6,7 +6,7 @@
       <extension>java</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="janino-starter" version="1.0.0">
+    <starter>
       <mainClass>org.sf.scriptlandia.JaninoStarter</mainClass>
     </starter>
   </registration>

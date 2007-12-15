@@ -1,5 +1,7 @@
 @echo off
 
+SET DEBUG_MODE=@debug.mode@
+
 set MOBILE_JAVA_HOME=@mobile.java.home@
 set SCRIPTLANDIA_HOME=@scriptlandia.home@
 set LAUNCHER_HOME=@launcher.home@
@@ -7,7 +9,7 @@ set LAUNCHER_HOME=@launcher.home@
 SET NAILGUN=@repository.home@\com\martiansoftware\nailgun-bin\@nailgun.version@\ng
 
 if "%APP_NAME%" == "" (
-  set APP=scriptlandia
+  set APP_NAME=scriptlandia
 )
 
 SET MAIN_APP_CONF=%SCRIPTLANDIA_HOME%\%APP_NAME%.conf

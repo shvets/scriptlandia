@@ -4,7 +4,7 @@ import org.codehaus.classworlds.ClassWorld;
 import org.sf.jlaunchpad.util.FileUtil;
 import org.sf.jlaunchpad.core.LauncherException;
 import org.sf.jlaunchpad.core.LauncherCommandLineParser;
-import org.sf.jlaunchpad.UniversalLauncher;
+import org.sf.jlaunchpad.JLaunchPadLauncher;
 
 import java.util.*;
 
@@ -14,7 +14,7 @@ import java.util.*;
  * @author Alexander Shvets
  * @version 2.0 02/19/2006
  */
-public class ScriptlandiaLauncher extends UniversalLauncher {
+public class ScriptlandiaLauncher extends JLaunchPadLauncher {
 
   /**
    * The singleton object.
@@ -80,7 +80,7 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
     return realmName;
   }
 
-  private static UniversalLauncher createLauncher(ClassWorld classWorld, LauncherCommandLineParser parser, String[] args)
+  private static JLaunchPadLauncher createLauncher(ClassWorld classWorld, LauncherCommandLineParser parser, String[] args)
           throws LauncherException {
     ScriptlandiaLauncher launcher;
 
@@ -115,7 +115,7 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
    *
    * @return the singleton instance
    */
-  public static UniversalLauncher getInstance() {
+  public static JLaunchPadLauncher getInstance() {
     return instances.get(currentExtension);
   }
 
@@ -155,7 +155,7 @@ public class ScriptlandiaLauncher extends UniversalLauncher {
       currentExtension = null;
     }
 
-    UniversalLauncher launcher = createLauncher(classWorld, parser, newArgs);
+    JLaunchPadLauncher launcher = createLauncher(classWorld, parser, newArgs);
 
     launcher.launch();
   }

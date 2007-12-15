@@ -310,7 +310,7 @@
       </action>
 
       <action dev="Alexander Shvets" type="add">
-        Added support for Clojure ver.20071203.
+        Added support for Clojure version 20071203.
       </action>
 
       <action dev="Alexander Shvets" type="fix">
@@ -335,6 +335,10 @@
 
       <action dev="Alexander Shvets" type="fix">
         Upgraded to Fortress build 588.
+      </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgraded to Freemarker version 2.3.11.
       </action>
     </release>
   </body>

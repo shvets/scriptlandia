@@ -21,7 +21,7 @@ import java.util.Iterator;
  * @author Alexander Shvets
  * @version 2.0 02/19/2006
  */
-public final class AptStarter {
+public final class AptStarter1 {
 
   /**
    * The main starter method.
@@ -119,7 +119,7 @@ public final class AptStarter {
     if(iterator.hasNext()) {
       ClassRealm mainRealm = ((ClassRealm)iterator.next());
 
-      new AptStarter().start(args, mainRealm);
+      new AptStarter1().start(args, mainRealm);
     }
   }
 

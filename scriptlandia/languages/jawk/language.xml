@@ -11,13 +11,13 @@
     <artifactId>jawk</artifactId>
     <version>0.14</version>
 
-    <starter groupId="org.jawk" artifactId="jawk" version="0.14">
+    <starter>
       <mainClass>org.jawk.Awk</mainClass>
       <commandLine>-f</commandLine>
     </starter>
 
 <!--
-    <starter groupId="org.sf.scriptlandia" artifactId="jawk-starter" version="1.0.0">
+    <starter groupId="org.sf.scriptlandia" artifactId="jawk-starter" version="1.0.1">
       <mainClass>org.jawk.Awkorg.sf.scriptlandia.JawkStarter</mainClass>
       <commandLine>-f</commandLine>
     </starter>

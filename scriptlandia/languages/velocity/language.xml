@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 
-<language name="velocity" groupId="velocity" artifactId="velocity" version="1.5">
+<language name="velocity" groupId="org.apache.velocity" artifactId="velocity" version="1.5">
   <registration mimeType="text/velocity" icon="velocity.ico">
     <extensions>
       <extension>vm</extension>
       <extension>velocity</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="velocity-starter" version="1.0.0">
+    <starter>
       <mainClass>org.sf.scriptlandia.VelocityStarter</mainClass>
     </starter>
   </registration>

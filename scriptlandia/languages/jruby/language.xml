@@ -7,7 +7,7 @@
       <extension>ruby</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="jruby-starter" version="1.0.0">
+    <starter>
       <mainClass>org.jruby.Main</mainClass>
     </starter>
   </registration>

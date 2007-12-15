@@ -10,7 +10,7 @@ import java.io.*;
 import java.util.List;
 
 public class XmlHelper {
-  protected SAXBuilder saxBuilder = new SAXBuilder();
+  protected static SAXBuilder saxBuilder = new SAXBuilder();
 
   protected Document document;
 
@@ -51,6 +51,10 @@ public class XmlHelper {
     }
 
     return current;
+  }
+
+  public Element getElementByName(String name) {
+    return getElementByName(document.getRootElement(), name);
   }
 
   public Element getElementByName(Element parent, String name) {

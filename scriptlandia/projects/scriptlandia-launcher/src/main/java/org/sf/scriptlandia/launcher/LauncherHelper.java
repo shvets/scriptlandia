@@ -149,10 +149,10 @@ public class LauncherHelper {
     launcher.addClasspathEntry(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8.jar");
     launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/pom-reader/" + launcherVersion +
       "/pom-reader-" + launcherVersion + ".jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher-common/" + launcherVersion +
-      "/universal-launcher-common-" + launcherVersion + ".jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/universal-launcher/" + launcherVersion +
-      "/universal-launcher-" + launcherVersion + ".jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/jlaunchpad-common/" + launcherVersion +
+      "/jlaunchpad-common-" + launcherVersion + ".jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/jlaunchpad-launcher/" + launcherVersion +
+      "/jlaunchpad-launcher-" + launcherVersion + ".jar");
 
     launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/scriptlandia-nailgun/" + scriptlandiaVersion +
       "/scriptlandia-nailgun-" + scriptlandiaVersion + ".jar");

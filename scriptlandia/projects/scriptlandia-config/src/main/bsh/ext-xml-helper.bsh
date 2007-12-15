@@ -42,14 +42,18 @@ public class ExtXmlHelper extends XmlHelper {
         String name = list[i].getName();
 
         try {
-          Map map = readLanguage(languageDir, name);
+          String fileName = languageDir + "/" + name + "/language.xml";
 
-          if(map != null) {
-            languages.add(map);
+          if(new File(fileName).exists()) {
+            Map map = readLanguage(languageDir, name);
+
+            if(map != null) {
+              languages.add(map);
+            }
           }
         }
         catch(Throwable t) {
-          print("Error reding file: " + name + ".");
+          print("Error reading \"language.xml\" file for language: " + name + ".");
         }
       }
     }
@@ -124,15 +128,20 @@ public class ExtXmlHelper extends XmlHelper {
 
     map.put("imageIcon", icon);
 
+    XmlHelper starterXml = new XmlHelper();
+    starterXml.read(new File(languageDir + "/" + name + "/starter/pom.xml"));
+
+    map.put("starter.groupId", starterXml.getElementByName("groupId").getValue());
+    map.put("starter.artifactId", starterXml.getElementByName("artifactId").getValue());
+    map.put("starter.version", starterXml.getElementByName("version").getValue());
+
+//print("? " + starterXml.getElementByName("groupId"));
+
+  //  map.put("starter.groupId", "org.sf.scriptlandia");
+ //   map.put("starter.artifactId", name + "-starter");
+//    map.put("starter.version", "1.0.1");
+
     Element starter = getElementByName(registration, "starter");
-
-//    map.put("starter.groupId", starter.getAttribute("groupId").getValue());
-//    map.put("starter.artifactId", starter.getAttribute("artifactId").getValue());
-//    map.put("starter.version", starter.getAttribute("version").getValue());
-
-    map.put("starter.groupId", "org.sf.scriptlandia");
-    map.put("starter.artifactId", name + "-starter");
-    map.put("starter.version", "1.0.0");
 
     map.put("mainClass", getElementByName(starter, "mainClass").getValue());
 

@@ -6,8 +6,8 @@
       <extension>apt-fmt</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="apt-starter" version="1.0.0">
-      <mainClass>org.sf.scriptlandia.AptStarter</mainClass>
+    <starter>
+      <mainClass>org.sf.scriptlandia.AptStarter1</mainClass>
     </starter>
   </registration>
 </language>

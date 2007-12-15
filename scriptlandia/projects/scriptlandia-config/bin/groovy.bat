@@ -3,7 +3,7 @@
 SET REPOSITORY_HOME=@repository.home@
 SET SCRIPTLANDIA_HOME=@scriptlandia.home@
 
-SET DEPS_FILE=%REPOSITORY_HOME%\org\sf\scriptlandia\groovy-starter\1.0.0\groovy-starter-1.0.0.pom
+SET DEPS_FILE=%REPOSITORY_HOME%\org\sf\scriptlandia\groovy-starter\1.0.1\groovy-starter-1.0.1.pom
 SET MAIN_CLASS_NAME=groovy.ui.GroovyMain
 
 set APP=%~nx0

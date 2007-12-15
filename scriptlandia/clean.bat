@@ -12,4 +12,4 @@ if exist projects\scriptlandia\target rmdir /S /Q projects\scriptlandia\target
 if exist target rmdir /S /Q target
 if exist classes rmdir /S /Q classes
 
-@call %SCRIPTLANDIA_HOME%\mvn -f pom.xml clean
+%LAUNCHER_HOME%\launcher.bat "-deps.file.name=languages/maven/core/pom.xml" "-main.class.name=org.apache.maven.cli.MavenCli" -f pom.xml clean

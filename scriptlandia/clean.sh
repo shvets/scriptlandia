@@ -12,4 +12,4 @@ rm -d -r -f projects/scriptlandia/target
 rm -d -r -f target
 rm -d -r -f classes
 
-$SCRIPTLANDIA_HOME/mvn.sh -f pom.xml clean
+$LAUNCHER_HOME/launcher.bat "-deps.file.name=languages/maven/core/pom.xml" "-main.class.name=org.apache.maven.cli.MavenCli" -f pom.xml clean

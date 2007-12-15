@@ -6,7 +6,7 @@
       <extension>lisp</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="kawa-starter" version="1.0.0">
+    <starter>
       <mainClass>org.sf.scriptlandia.KawaStarter</mainClass>
     </starter>
   </registration>

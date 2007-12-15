@@ -27,7 +27,7 @@
   <target name="config">
     <antcall target="copy.config.files"/>
 
-    <antcall target="configure.proxy"/>
+    <!--antcall target="configure.proxy"/-->
 
     <antcall target="configure.jdic.and.naligun"/>
 
@@ -67,6 +67,8 @@
       <filter token="launcher.home" value="${launcher.home.internal}"/>
       <filter token="launcher.version" value="${launcher.version}"/>
 
+      <filter token="debug.mode" value="${debug.mode}"/>
+
       <filter token="scriptlandia.version" value="${scriptlandia.version}"/>
       <filter token="classworlds.version" value="${classworlds.version}"/>
       <filter token="maven.version" value="${maven.version}"/>
@@ -87,7 +89,7 @@
       <filter token="nailgun.version" value="${nailgun.version}"/>
     </filterset>
 
-    <antcall target="copy.settings.xml"/>
+    <!--antcall target="copy.settings.xml"/-->
 
     <script language="beanshell">
       source("projects/scriptlandia-config/src/main/bsh/ChecksumScript.bsh");
@@ -147,7 +149,7 @@
     </move>
   </target>
 
-  <target name="configure.proxy">
+  <!--target name="configure.proxy">
     <script language="beanshell">
       String repositoryHome = System.getProperty("repository.home");
 
@@ -157,7 +159,7 @@
 
       ProxiesXmlHelper.main(new String[] {});
     </script>
-  </target>
+  </target-->
 
   <target name="configure.jdic.and.naligun">
     <condition property="jdic.native.libs.present">
@@ -172,7 +174,7 @@
     <antcall target="unzip.nailgun.binaries"/>
   </target>
 
-  <target name="copy.settings.xml">
+  <!--target name="copy.settings.xml">
     <copy todir="${user.home}/.m2" overwrite="false">
       <filterset>
         <filter token="proxyHost" value="${proxyHost}"/>
@@ -185,7 +187,7 @@
        <include name="settings.xml"/>
       </fileset>
     </copy>
-  </target>
+  </target-->
 
   <target name="unzip.jdic.native.libs" if="jdic.native.libs.present">
     <script language="beanshell">
@@ -235,13 +237,13 @@
 
   <target name="install" depends="config, install.projects, generate.scripts, install.libraries, prepare.unix.files"/>
 
-  <target name="package.projects">
+  <!--target name="package.projects">
     <installProject basedir="projects/antrun"/>
     <installProject basedir="projects/scriptlandia-installer"/>
     <installProject basedir="projects/scriptlandia-nailgun"/>
     <installProject basedir="projects/scriptlandia-launcher"/>
     <installProject basedir="projects/scriptlandia-helper"/>
-  </target>
+  </target-->
 
   <target name="install.projects">
     <installProject basedir="projects/scriptlandia-nailgun" build="false"/>
@@ -317,7 +319,7 @@
       <zipfileset dir="../../../jlaunchpad/trunk/launcher/projects" prefix="scriptlandia-${scriptlandia.version}/projects">
         <include name="**/target/*.jar"/>
         <include name="**/*.xml"/>
-        <include name="**/universal-launcher/src/main/config/*.*"/>
+        <include name="**/jlaunchpad-launcher/src/main/config/*.*"/>
       </zipfileset>
     </zip>
   </target>

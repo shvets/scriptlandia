@@ -7,7 +7,7 @@
       <extension>python</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="jython" version="1.0.0">
+    <starter>
       <mainClass>org.python.util.jython</mainClass>
     </starter>
   </registration>
