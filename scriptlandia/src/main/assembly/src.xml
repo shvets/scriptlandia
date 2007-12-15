@@ -37,8 +37,6 @@
         <include>antrun/pom.xml</include>
         <include>antrun/src/**</include>
 
-        <include>scriptlandia-startup/pom.*</include>
-
         <include>scriptlandia-installer/pom.xml</include>
         <include>scriptlandia-installer/src/**</include>
 

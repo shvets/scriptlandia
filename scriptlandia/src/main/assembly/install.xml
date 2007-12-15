@@ -35,8 +35,6 @@
         <include>scriptlandia-nailgun/pom.xml</include>
         <include>scriptlandia-nailgun/target/scriptlandia-nailgun.jar</include>
 
-        <include>scriptlandia-startup/pom.xml</include>
-
         <include>scriptlandia-launcher/pom.xml</include>
         <include>scriptlandia-launcher/target/scriptlandia-launcher.jar</include>
 
