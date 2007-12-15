@@ -1,21 +1,14 @@
 <?xml version="1.0"?>
 
-<project name="package.ant" default="package" basedir="..">
+<project name="build.ant" default="build" basedir="..">
 
-  <target name="package" depends="package.core, package.launcher">
+  <target name="build" depends="build.core, build.launcher">
   </target>
 
-  <target name="package.core">
+  <target name="build.core">
     <script language="beanshell">
       String basedir = project.getProperty("basedir");
       String repositoryHome = System.getProperty("repository.home");
-
-      print(basedir);
-
-      addClassPath(repositoryHome + "/org/sf/jlaunchpad/jlaunchpad-common/1.0.1/jlaunchpad-common-1.0.1.jar");
-      addClassPath(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8.jar");
-      addClassPath(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0.1/pom-reader-1.0.1.jar");
-      addClassPath(repositoryHome + "/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1.jar");
 
       addClassPath(basedir + "/projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
@@ -35,22 +28,19 @@
     </script>
   </target>
 
-  <target name="package.launcher">
+  <target name="build.launcher">
     <script language="beanshell">
+      System.setProperty("java.specification.version", "1.5");
+
       String basedir = project.getProperty("basedir");
       String repositoryHome = System.getProperty("repository.home");
 
       File installJarFile = new File(basedir + "/projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
       if(!installJarFile.exists()) {
-        print("Please run prepare.bat/prepare.sh for scriptlandia main project");
+        print("Please run build.bat/build.sh for scriptlandia main project");
       }
       else {
-        addClassPath(repositoryHome + "/org/sf/jlaunchpad/jlaunchpad-common/1.0.1/jlaunchpad-common-1.0.1.jar");
-        addClassPath(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8.jar");
-        addClassPath(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0.1/pom-reader-1.0.1.jar");
-        addClassPath(repositoryHome + "/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1.jar");
-
         addClassPath(basedir + "/projects/scriptlandia-installer/target/scriptlandia-installer.jar");
 
         import org.sf.pomreader.ProjectInstaller;

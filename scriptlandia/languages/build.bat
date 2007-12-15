@@ -15,6 +15,9 @@ echo ---### Installing basic dependencies, required projects and configuration f
 
 SET MAIN_CLASS=org.apache.tools.ant.Main
 
-SET PROPERTIES="-deps.file.name=..\projects\scriptlandia-startup\pom.xml" "-main.class.name=%MAIN_CLASS%"
+rem SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES%  
 
-%LAUNCHER_HOME%\launcher.bat %SYSTEM_PROPERTIES% %PROPERTIES% -f package.ant package
+SET PROPERTIES="-deps.file.name=../projects/scriptlandia-installer/pom.xml" "-main.class.name=%MAIN_CLASS%"
+
+rem SET LAUNCHER_HOME=c:\launcher2
+%LAUNCHER_HOME%\launcher.bat %SYSTEM_PROPERTIES% %PROPERTIES% -f build.xml build
