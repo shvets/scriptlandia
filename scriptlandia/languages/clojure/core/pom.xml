@@ -20,6 +20,12 @@
       <artifactId>clojure</artifactId>
       <version>${clojure.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>clojure</groupId>
+      <artifactId>boot</artifactId>
+      <version>${clojure.version}</version>
+    </dependency>
   </dependencies>
 
 </project>
