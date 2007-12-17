@@ -4,14 +4,15 @@ import org.sf.jlaunchpad.core.LauncherException;
 import org.sf.jlaunchpad.core.SimpleLauncher;
 import org.sf.jlaunchpad.install.LauncherProperties;
 import org.sf.jlaunchpad.util.ReflectionUtil;
+import org.sf.scriptlandia.xml.ExtXmlHelper;
 
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.*;
 import java.awt.event.*;
+import java.awt.*;
 import java.io.*;
 import java.util.Map;
 import java.util.Properties;
@@ -92,35 +93,6 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     tryEnableInstallButton();
     
     frame.setVisible(true);
-  }
-
-  private java.util.List readLanguages() throws LauncherException {
-    java.util.List languages;
-
-    SimpleLauncher launcher = new SimpleLauncher(new String[] {});
-
-    prepare(launcher, true);
-
-    launcher.configure(Thread.currentThread().getContextClassLoader());
-
-    try {
-      Class clazz = launcher.getClassLoader().loadClass("bsh.Interpreter");
-      Object object = clazz.newInstance();
-
-      String command =
-        "source(\"projects/scriptlandia-config/src/main/bsh/ext-xml-helper.bsh\");" +
-        "ExtXmlHelper xmlHelper = new ExtXmlHelper();" +
-        "xmlHelper.readLanguages(\"languages\");" +
-        "languages = xmlHelper.getLanguages();";
-
-      languages = (java.util.List) ReflectionUtil.invokePrivateMethod(
-        object, new Object[] { command }, clazz, "eval", new Class[] { String.class });
-    }
-    catch (Exception e) {
-      throw new LauncherException(e);
-    }
-
-    return languages;
   }
 
   public void caretUpdate(CaretEvent e) {
@@ -496,9 +468,9 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
   }
 
   private void update() throws LauncherException {
-    if(!isConfigMode() ) {
+   // if(!isConfigMode() ) {
       coreInstall();
-    }
+  //  }
 
     languages = readLanguages();
 
@@ -530,9 +502,9 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     try {
       updateProperties();
 
-      if(!isConfigMode() ) {
+    //  if(!isConfigMode() ) {
         coreInstall();
-      }
+    //  }
 
       try {
         save();
@@ -684,7 +656,6 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
       properties.put(property, comboBox.getSelectedItem());
     }
   }
-
 
   /**
    * Launches the GUI installer.

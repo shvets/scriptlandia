@@ -235,7 +235,7 @@
            dest="${repository.home}/com/martiansoftware/nailgun-bin/${nailgun.version}" overwrite="false"/>
   </target>
 
-  <target name="install" depends="config, install.projects, generate.scripts, install.libraries, prepare.unix.files"/>
+  <target name="install" depends="config, install.libraries, prepare.unix.files"/>
 
   <!--target name="package.projects">
     <installProject basedir="projects/antrun"/>
@@ -245,28 +245,28 @@
     <installProject basedir="projects/scriptlandia-helper"/>
   </target-->
 
-  <target name="install.projects">
+  <!--target name="install.projects">
     <installProject basedir="projects/scriptlandia-nailgun" build="false"/>
     <installProject basedir="projects/scriptlandia-launcher" build="false"/>
     <installProject basedir="projects/scriptlandia-helper" build="false"/>
-  </target>
+  </target-->
 
-  <target name="install.languages">
+  <!--target name="install.languages">
     <installLanguages section="core"/>
 
     <installLanguages section="starter"/>
 
     <registerLanguages/>
-  </target>
+  </target-->
 
-  <target name="generate.scripts">
+  <!--target name="generate.scripts">
     <script language="beanshell">
       source("projects/scriptlandia-config/src/main/bsh/ext-installer.bsh");
 
       ExtInstaller installer = new ExtInstaller();
       installer.generateScripts();
     </script>
-  </target>
+  </target-->
 
   <target name="install.libraries">
     <copy todir="${scriptlandia.home}">
@@ -306,7 +306,6 @@
 
   <target name="prepare.unix.files">
     <fixcrlf eol="unix" srcdir="${scriptlandia.home}" includes="*.sh"/>
-
     <chmod perm="ugo+x">
       <fileset dir="${scriptlandia.home}">
         <include name="*.sh"/>
@@ -315,21 +314,66 @@
   </target>
 
   <target name="assembly">
+    <script language="beanshell">
+/*      import org.sf.scriptlandia.MavenHelper;
+
+      System.setProperty("-Djava.specification.version", "1.5");
+
+      MavenHelper.executeMaven("pom.xml", new String[] { "assembly:assembly" });
+*/
+//print("test");
+
+    import org.codehaus.classworlds.ClassWorld;
+    import org.sf.jlaunchpad.DepsLauncher;
+    import org.sf.jlaunchpad.JLaunchPadLauncher;
+    import org.sf.jlaunchpad.core.LauncherCommandLineParser;
+
+
+    String[] args = new String[]{ "assembly:assembly" };
+
+    ClassWorld classWorld = new ClassWorld();
+
+    LauncherCommandLineParser parser = new LauncherCommandLineParser();
+
+    DepsLauncher launcher = new DepsLauncher(parser, args, classWorld);
+
+    launcher.configure(Thread.currentThread().getContextClassLoader());
+
+    launcher.resolveDependencies("bsh", "bsh", "2.0b5");
+
+    import org.apache.maven.cli.MavenCli;
+
+    MavenCli.main(args, classWorld);
+  </script>
+
+<!--
+    <condition property="extension" value="bat" else="sh">
+      <os family="Windows"/>
+    </condition>
+
+    <ant antfile="build.xml" dir="languages"/>
+
+    <exec executable="mvn.${extension}">
+      <arg value="assembly:assembly"/>
+    </exec>
+  -->
     <zip destfile="target/scriptlandia-${scriptlandia.version}-install.zip" update="true">
       <zipfileset dir="../../../jlaunchpad/trunk/launcher/projects" prefix="scriptlandia-${scriptlandia.version}/projects">
         <include name="**/target/*.jar"/>
         <include name="**/*.xml"/>
         <include name="**/jlaunchpad-launcher/src/main/config/*.*"/>
+        <exclude name="**/target/*-javadoc.jar"/>
+        <exclude name="**/target/*-sources.jar"/>
       </zipfileset>
     </zip>
   </target>
 
-  <target name="uninstall.all.languages">
+  <!--target name="uninstall.all.languages">
     <script language="beanshell">
       source("projects/scriptlandia-config/src/main/bsh/ext-installer.bsh");
 
       ExtInstaller installer = new ExtInstaller();
       installer.uninstallAll();
     </script>
-  </target>
+  </target-->
 </project>
