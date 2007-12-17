@@ -1,6 +1,6 @@
 package org.sf.scriptlandia.install;
 
-import org.sf.scriptlandia.xml.ExtXmlHelper;
+import org.sf.scriptlandia.install.ExtXmlHelper;
 
 import java.io.IOException;
 import java.io.BufferedWriter;

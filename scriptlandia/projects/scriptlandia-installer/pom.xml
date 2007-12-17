@@ -114,11 +114,11 @@
       <version>2.4.0</version>
     </dependency>
 
-    <dependency>
+    <!--dependency>
       <groupId>jdom</groupId>
       <artifactId>jdom</artifactId>
-      <version>1.0</version>
-    </dependency>
+      <version>1.1</version>
+    </dependency-->
 
     <dependency>
       <groupId>commons-logging</groupId>
@@ -224,10 +224,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-
-        <configuration>
-          <proxyPort>0</proxyPort>
-        </configuration>
       </plugin>
 
       <plugin>

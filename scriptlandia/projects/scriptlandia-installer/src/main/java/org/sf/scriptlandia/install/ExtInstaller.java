@@ -2,7 +2,6 @@ package org.sf.scriptlandia.install;
 
 import org.jdesktop.jdic.filetypes.*;
 import org.apache.tools.ant.*;
-import org.sf.scriptlandia.xml.ExtXmlHelper;
 import org.sf.jlaunchpad.core.SimpleLauncher;
 import org.sf.jlaunchpad.core.LauncherException;
 import org.jdom.JDOMException;
@@ -139,15 +138,6 @@ public class ExtInstaller {
 
     launcher.setMainClassName("org.sf.pomreader.ProjectInstaller");
 
-/*    String repositoryHome = System.getProperty("repository.home");
-    
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/jlaunchpad-common/1.0.1/jlaunchpad-common-1.0.1.jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8.jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/pom-reader/1.0.1/pom-reader-1.0.1.jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1.jar");    
-
-    launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
-*/
     launcher.configure(Thread.currentThread().getContextClassLoader());
     launcher.launch();
   }

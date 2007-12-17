@@ -4,7 +4,7 @@ package org.sf.scriptlandia.install;
 
 String repositoryHome = System.getProperty("repository.home");
 
-addClassPath(repositoryHome + "/jdom/jdom/1.0/jdom-1.0.jar");
+addClassPath(repositoryHome + "/jdom/jdom/1.1/jdom-1.1.jar");
 addClassPath(repositoryHome + "/org/sf/image4j/0.6/image4j-0.6.jar");
 
 import org.jdom.Element;

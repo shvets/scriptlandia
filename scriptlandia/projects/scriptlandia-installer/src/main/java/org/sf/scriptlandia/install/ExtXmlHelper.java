@@ -1,11 +1,12 @@
 // ext-xml-helper.bsh
 
-package org.sf.scriptlandia.xml;
+package org.sf.scriptlandia.install;
 
 
 import org.jdom.Element;
 import org.jdom.Attribute;
 import org.jdom.JDOMException;
+import org.sf.jlaunchpad.xml.XmlHelper;
 
 import net.sf.image4j.codec.ico.ICODecoder;
 
@@ -29,11 +30,6 @@ public class ExtXmlHelper extends XmlHelper {
   }
 
   public void readLanguages(String languageDir) {
-  //  String repositoryHome = System.getProperty("repository.home");
-
- //   addClassPath(repositoryHome + "/jdom/jdom/1.0/jdom-1.0.jar");
-//    addClassPath(repositoryHome + "/org/sf/image4j/0.6/image4j-0.6.jar");
-
     languages.clear();
 
     File[] list = new File(languageDir).listFiles();
@@ -136,12 +132,6 @@ public class ExtXmlHelper extends XmlHelper {
     map.put("starter.groupId", starterXml.getElementByName("groupId").getValue());
     map.put("starter.artifactId", starterXml.getElementByName("artifactId").getValue());
     map.put("starter.version", starterXml.getElementByName("version").getValue());
-
-//print("? " + starterXml.getElementByName("groupId"));
-
-  //  map.put("starter.groupId", "org.sf.scriptlandia");
- //   map.put("starter.artifactId", name + "-starter");
-//    map.put("starter.version", "1.0.1");
 
     Element starter = getElementByName(registration, "starter");
 

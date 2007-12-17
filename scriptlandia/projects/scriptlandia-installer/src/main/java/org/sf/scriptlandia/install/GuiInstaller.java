@@ -1,10 +1,7 @@
 package org.sf.scriptlandia.install;
 
 import org.sf.jlaunchpad.core.LauncherException;
-import org.sf.jlaunchpad.core.SimpleLauncher;
 import org.sf.jlaunchpad.install.LauncherProperties;
-import org.sf.jlaunchpad.util.ReflectionUtil;
-import org.sf.scriptlandia.xml.ExtXmlHelper;
 
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
@@ -342,7 +339,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
             });
 
             try {
-              GuiInstaller.this.installLanguages(args);
+              GuiInstaller.this.installLanguages();
             }
             catch (Exception e) {
               e.printStackTrace();
@@ -520,7 +517,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     }
   }
 
-  public void installLanguages(final String[] args) throws LauncherException {
+  public void installLanguages() throws LauncherException {
     try {
       updateProperties();
 
@@ -542,7 +539,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
         throw new LauncherException(e);
       }
 
-      super.instalLanguageProjects(args);
+      super.installLanguageProjects();
     }
     catch (Exception e) {
       e.printStackTrace();

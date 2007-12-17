@@ -24,14 +24,20 @@
     <os family="unix"/>
   </condition>
 
-  <target name="config">
+  <!--target name="config">
     <antcall target="copy.config.files"/>
-
-    <!--antcall target="configure.proxy"/-->
 
     <antcall target="configure.jdic.and.naligun"/>
 
-    <!--antcall target="install.languages"/-->
+    <antcall target="prepare.unix.files"/>
+  </target-->
+
+  <target name="install">
+    <antcall target="copy.config.files"/>
+
+    <antcall target="configure.jdic.and.naligun"/>
+
+    <antcall target="install.libraries"/>
 
     <antcall target="prepare.unix.files"/>
   </target>
@@ -57,8 +63,8 @@
       <filter token="mobile.java.home" value="${mobile.java.home}"/>
       <filter token="mobile.java.home" value="${mobile.java.home}"/>
 
-      <filter token="proxyHost" value="${proxyHost}"/>
-      <filter token="proxyPort" value="${proxyPort}"/>
+      <!--filter token="proxyHost" value="${proxyHost}"/>
+      <filter token="proxyPort" value="${proxyPort}"/-->
 
       <filter token="repository.home" value="${repository.home}"/>
       <filter token="scriptlandia.home" value="${scriptlandia.home.internal}"/>
@@ -116,13 +122,13 @@
       </fileset>
     </copy>
 
-    <copy todir="${scriptlandia.home}" overwrite="true">
+    <!--copy todir="${scriptlandia.home}" overwrite="true">
       <fileset dir=".">
         <include name="projects/scriptlandia-installer/target/*.jar"/>
 
         <include name="scriptlandia.classpath"/>
       </fileset>
-    </copy>
+    </copy-->
 
     <copy todir="${java.io.tmpdir}" overwrite="true">
       <fileset dir="${scriptlandia.home}">
@@ -235,8 +241,6 @@
            dest="${repository.home}/com/martiansoftware/nailgun-bin/${nailgun.version}" overwrite="false"/>
   </target>
 
-  <target name="install" depends="config, install.libraries, prepare.unix.files"/>
-
   <!--target name="package.projects">
     <installProject basedir="projects/antrun"/>
     <installProject basedir="projects/scriptlandia-installer"/>
@@ -277,29 +281,29 @@
       </fileset>
     </copy>
 
-    <copy todir="${scriptlandia.home}/languages">
+    <!--copy todir="${scriptlandia.home}/languages">
       <fileset dir="languages">
        <include name="**/*.xml"/>
        <include name="**/src/**/*.java"/>
        <include name="**/target/**"/>
        <include name="**/*.ico"/>
       </fileset>
-    </copy>
+    </copy-->
 
-    <copy todir="${scriptlandia.home}">
+    <!--copy todir="${scriptlandia.home}">
       <fileset dir="projects/scriptlandia-config/bin">
        <include name="*.exe"/>
       </fileset>
-    </copy>
+    </copy-->
 
-    <copy todir="${scriptlandia.home}">
+    <!--copy todir="${scriptlandia.home}">
       <fileset dir=".">
         <include name="projects/scriptlandia-config/bin/*.*"/>
         <exclude name="projects/scriptlandia-config/bin/*.exe"/>
         <include name="projects/scriptlandia-config/src/main/bsh/**"/>
         <include name="projects/scriptlandia-config/src/main/config/**"/>
       </fileset>
-    </copy>
+    </copy-->
 
     <copy-properties/>
   </target>

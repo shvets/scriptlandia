@@ -10,7 +10,7 @@ sourceRelative("ext-xml-helper.bsh");
 String repositoryHome = System.getProperty("repository.home");
 String jdicVersion = System.getProperty("jdic.version");
 
-addClassPath(repositoryHome + "/jdom/jdom/1.0/jdom-1.0.jar");
+addClassPath(repositoryHome + "/jdom/jdom/1.1/jdom-1.1.jar");
 addClassPath(repositoryHome + "/org/jdesktop/jdic/" + jdicVersion + "/jdic-" + jdicVersion + ".jar");
 
 import java.util.Arrays;
