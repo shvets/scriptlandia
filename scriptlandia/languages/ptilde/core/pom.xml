@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>ptilde</artifactId>
+  <version>1.0.1</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia P~ Core Module</name>
+  <description>Scriptlandia P~ Core Module</description>
+
+  <properties>
+    <ptilde.version>0.90</ptilde.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>ptilde</groupId>
+      <artifactId>ptilde</artifactId>
+      <version>${ptilde.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>ptilde</groupId>
+      <artifactId>ptilde-lib</artifactId>
+      <version>${ptilde.version}</version>
+    </dependency>
+  </dependencies>
+
+</project>

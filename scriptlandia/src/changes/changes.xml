@@ -7,13 +7,13 @@
   </properties>
 
   <body>
-    <release version="2.0" date="8-Apr-2006" description="Initial Release">    
+    <release version="2.0" date="8-Apr-2006" description="Initial Release">
       <action dev="Alexander Shvets" type="add">
         Initial Release.
       </action>
     </release>
 
-    <release version="2.0.1" date="21-Apr-2006" description="Maintainance Release">    
+    <release version="2.0.1" date="21-Apr-2006" description="Maintainance Release">
       <action dev="Alexander Shvets" type="fix">
         Using maven 2.0.4.
       </action>
@@ -31,13 +31,13 @@
       </action>
     </release>
 
-    <release version="2.1.0" date="21-Apr-2006" description="Maintainance Release">    
+    <release version="2.1.0" date="21-Apr-2006" description="Maintainance Release">
       <action dev="Alexander Shvets" type="fix">
         Changes in class hierarchy. Simplified code.
       </action>
 
       <action dev="Alexander Shvets" type="add">
-        Added translate.bsh example. Connects to google translate service and perform the translation 
+        Added translate.bsh example. Connects to google translate service and perform the translation
         from one language to another.
       </action>
 
@@ -46,7 +46,7 @@
       </action>
 
       <action dev="Alexander Shvets" type="add">
-        Added support for classworlds format (*.cwd). This type of file could be launched from 
+        Added support for classworlds format (*.cwd). This type of file could be launched from
         command line in same was as any other registered type.
       </action>
 
@@ -55,15 +55,15 @@
       </action>
 
       <action dev="Alexander Shvets" type="add">
-        Added support for class format (*.class). 
+        Added support for class format (*.class).
       </action>
 
       <action dev="Alexander Shvets" type="add">
-        Added support for apt-fmt format (*.apt-fmt). 
+        Added support for apt-fmt format (*.apt-fmt).
       </action>
 
       <action dev="Alexander Shvets" type="add">
-        Added support for apt-jelly format (*.apt-jelly). 
+        Added support for apt-jelly format (*.apt-jelly).
       </action>
 
       <action dev="Alexander Shvets" type="add">
@@ -71,7 +71,7 @@
       </action>
     </release>
 
-    <release version="2.2.0" date="23-Feb-2007" description="New Features Release">    
+    <release version="2.2.0" date="23-Feb-2007" description="New Features Release">
       <action dev="Alexander Shvets" type="add">
         Adding support for -X attribute.
       </action>
@@ -106,7 +106,7 @@
 
       <action dev="Alexander Shvets" type="add">
         Adding ability to run nailgun in system tray.
-      </action>        
+      </action>
 
       <action dev="Alexander Shvets" type="add">
         Adding ability to run scripts with GUI (-gui command line parameter).
@@ -122,7 +122,7 @@
 
       <action dev="Alexander Shvets" type="add">
         Added support for Ivy project.
-      </action>        
+      </action>
 
       <action dev="Alexander Shvets" type="add">
         Added support for Scriptella project.
@@ -178,7 +178,7 @@
 
     </release>
 
-    <release version="2.2.1" date="1-Apr-2007" description="Bug Fix Release">    
+    <release version="2.2.1" date="1-Apr-2007" description="Bug Fix Release">
       <action dev="Alexander Shvets" type="add">
         Microemu library is used for JME support when JME is not installed.
       </action>
@@ -189,7 +189,7 @@
 
       <action dev="Alexander Shvets" type="add">
         Upgrade Scriptella up to version 0.8.
-      </action>        
+      </action>
 
       <action dev="Alexander Shvets" type="fix">
         Using maven 2.0.6.
@@ -224,7 +224,7 @@
       </action>
     </release>
 
-    <release version="2.2.2" date="15-July-2007" description="Bug Fix Release">    
+    <release version="2.2.2" date="15-July-2007" description="Bug Fix Release">
       <action dev="Alexander Shvets" type="add">
         Refactoting languages as plugins.
       </action>
@@ -239,7 +239,7 @@
 
       <action dev="Alexander Shvets" type="fix">
         Upgrade Scriptella up to version 0.9.
-      </action>        
+      </action>
 
       <action dev="Alexander Shvets" type="add">
         Added support for Judo language ver. 0.9.
@@ -250,7 +250,7 @@
       </action>
 
       <action dev="Alexander Shvets" type="fix">
-        Upgraded to Fortress build  163.
+        Upgraded to Fortress build 163.
       </action>
 
       <action dev="Alexander Shvets" type="fix">
@@ -270,7 +270,7 @@
       </action>
     </release>
 
-    <release version="2.2.3" date="15-August-2007" description="Bug Fix Release">    
+    <release version="2.2.3" date="15-August-2007" description="Bug Fix Release">
       <action dev="Alexander Shvets" type="fix">
         Separating launcher code from scriptlandia code.
       </action>
@@ -288,7 +288,7 @@
       </action>
     </release>
 
-    <release version="2.2.4" date="30-September-2007" description="Bug Fix Release">    
+    <release version="2.2.4" date="30-September-2007" description="Bug Fix Release">
       <action dev="Alexander Shvets" type="add">
         Added support for proxy with authenication.
       </action>
@@ -327,7 +327,7 @@
 
       <action dev="Alexander Shvets" type="fix">
         Upgrade Scriptella up to version 1.0beta.
-      </action>        
+      </action>
 
       <action dev="Alexander Shvets" type="fix">
         Using maven 2.0.8.
@@ -339,6 +339,14 @@
 
       <action dev="Alexander Shvets" type="fix">
         Upgraded to Freemarker version 2.3.11.
+      </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Using jdom 1.1.
+      </action>
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for P~ language version 0.90.
       </action>
     </release>
   </body>

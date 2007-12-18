@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<language name="ptilde" groupId="ptilde" artifactId="ptilde" version="0.90">
+  <registration mimeType="text/ptilde" icon="scriptlandia.ico">
+    <extensions>
+      <extension>p7e</extension>
+      <extension>p7ei</extension>
+    </extensions>
+
+    <starter>
+      <mainClass>p7e.engine.Engine</mainClass>
+    </starter>
+  </registration>
+</language>

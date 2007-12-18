@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<project name="install.ant" default="install" basedir=".">
+  <property name="ptilde.version" value="0.90"/>
+
+  <property name="ptilde-lib.base" 
+            value="${repository.home}/ptilde/ptilde-lib/${ptilde.version}"/>
+
+  <property name="ptilde.lib" 
+            value="${repository.home}/ptilde/ptilde-lib/${ptilde.version}/ptilde-lib-${ptilde.version}.jar"/>
+
+  <target name="install">
+    <condition property="ptilde.lib.is.present">
+      <and>
+        <available file="${ptilde.lib}"/>
+        <istrue value="${ptilde.install}"/>
+      </and>
+    </condition>
+
+    <antcall target="unzip.ptilde.lib"/>
+  </target>
+
+  <target name="unzip.ptilde.lib" if="ptilde.lib.is.present">
+    <unzip src="${ptilde.lib}" dest="${ptilde-lib.base}" overwrite="false"/>
+  </target>
+
+</project>
