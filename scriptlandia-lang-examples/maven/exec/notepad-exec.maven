@@ -21,7 +21,7 @@
           </execution>
         </executions>
         <configuration>
-          <executable>c:/winnt/notepad</executable>
+          <executable>${env.windir}/notepad</executable>
           <!-- optional -->
 <!--
           <workingDirectory>/tmp</workingDirectory>
