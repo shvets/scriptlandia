@@ -48,48 +48,48 @@
     </developer>
   </developers>
 
-<!--
-
   <modules>
-    <module>freemarker</module>
+<!--
+    <module>ant/starter</module>
+    <module>apt-fmt/starter</module>
+    <module>apt-jelly/starter</module>
+    <module>beanshell/starter</module>
+    <module>class/starter</module>
+    <module>classworlds/starter</module>
+    <module>clojure/starter</module>
+    <module>etl/starter</module>
+    <module>fortress/starter</module>
+    <module>freemarker/starter</module>
+    <module>groovy/starter</module>
+    <module>jad/starter</module>
+    <module>janino/starter</module>
+    <module>jar/starter</module>
+    <module>jaskell/starter</module>
+    <module>javafx/starter</module>
+    <module>javascript/starter</module>
+    <module>jawk/starter</module>
+    <module>jelly/starter</module>
+    <module>jruby/starter</module>
+    <module>jscheme/starter</module>
+    <module>judo/starter</module>
+    <module>jython/starter</module>
+    <module>kawa/starter</module>
+    <module>lolcode/starter</module>
+    <module>maven/starter</module>
+    <module>pnuts/starter</module>
+    <module>scala/starter</module>
+    <module>scriptlandia/starter</module>
+    <module>sleep/starter</module>
+    <module>tcl/starter</module>
+    <module>velocity/starter</module>
+    <module>war/starter</module>
+    <module>xgql/starter</module>
+    <module>xruby/starter</module>
+    <module>ptilde/starter</module>
+-->
 
-    <module>ant</module>
-    <module>apt-fmt</module>
-    <module>apt-jelly</module>
-    <module>beanshell</module>
- 
-   <module>class</module>
-    <module>classworlds</module>
-    <module>clojure</module>
-    <module>etl</module>
-    <module>fortress</module>
-    <module>groovy</module>
-    <module>jad</module>
-    <module>janino</module>
-    <module>jar</module>
-    <module>jaskell</module>
-    <module>javafx</module>
-    <module>javascript</module>
-    <module>jawk</module>
-    <module>jelly</module>
-    <module>jruby</module>
-    <module>jscheme</module>
-    <module>judo</module>
-    <module>jython</module>
-    <module>kawa</module>
-    <module>lolcode</module>
-    <module>maven</module>
-    <module>pnuts</module>
-    <module>scala</module>
-    <module>scriptlandia</module>
-    <module>sleep</module>
-    <module>tcl</module>
-    <module>velocity</module>
-    <module>war</module>
-    <module>xgql</module>
-    <module>xruby</module>
+    <module>scala/starter</module>
   </modules>
-   -->
 
   <distributionManagement>
     <site>
