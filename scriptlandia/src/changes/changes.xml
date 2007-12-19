@@ -348,6 +348,11 @@
       <action dev="Alexander Shvets" type="add">
         Added support for P~ language version 0.90.
       </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgrade to Apache Ivy 2.0 beta 1.
+      </action>
+
     </release>
   </body>
 
