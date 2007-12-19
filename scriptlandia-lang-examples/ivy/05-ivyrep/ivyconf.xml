@@ -1,0 +1,26 @@
+<ivyconf>
+    <conf defaultResolver="public" defaultLatestStragegy="latest-revision" validate="false"/>
+    <resolvers>
+        <ibiblio name="dotsrc-maven2-resolver"
+                checkconsistency="false"
+                m2compatible="true"
+                root="http://mirrors.dotsrc.org/maven2/"/>
+        <ibiblio name="ibiblio-maven2-resolver"
+                m2compatible="true"
+                root="http://www.ibiblio.org/maven2/"/>
+
+    	<url name="public" checkmodified="true">
+    		<ivy pattern="http://ivyrep.jayasoft.org/[organisation]/[module]/ivy-[revision].xml"/>
+    		<artifact pattern="http://ivyrep.jayasoft.org/[organisation]/[module]/[revision]/[artifact].[ext]"/>
+    		<artifact pattern="http://www.ibiblio.org/maven/[module]/[type]s/[artifact]-[revision].[ext]"/>
+    	</url>
+
+    </resolvers>
+<!--
+    <modules>
+        <module organisation="commons-pool" name="commons-pool"
+                resolver="ibiblio-maven2-resolver"/>
+    </modules>
+-->
+</ivyconf>
+
