@@ -1,14 +1,4 @@
-//
-
-//import org.sf.scriptlandia.ScriptlandiaHelper
-
-//ScriptlandiaHelper.resolveDependencies("groovy", "scriptom", "1.2")
-//ScriptlandiaHelper.resolveDependencies("jacob", "jacob", "1.10.1")
-
-//def repositoryHome = System.getProperty("repository.home")
-
-//this.class.classLoader.rootLoader.addURL(new URL("file:///" +  repositoryHome + "/groovy/scriptom/1.2/scriptom-1.2.jar"))
-//this.class.classLoader.rootLoader.addURL(new URL("file:///" +  repositoryHome + "/jacob/jacob/1.10.1/jacob-1.10.1.jar"))
+// excel.groovy
 
 import org.codehaus.groovy.scriptom.ActiveXProxy
 

@@ -5,17 +5,12 @@
 <project name="install-jacob.ant" default="install" basedir=".">
 
   <target name="install">
-    <condition property="jacob.lib.is.present">
-      <and>
-        <available file="${repository.home}/jacob/jacob-dll/1.10.1/jacob-dll-1.10.1.jar"/>
-        <istrue value="true"/>
-      </and>
-    </condition>
+    <script language="beanshell">
+      org.sf.scriptlandia.ScriptlandiaHelper.resolveDependencies("groovy", "scriptom", "1.2");
+      org.sf.scriptlandia.ScriptlandiaHelper.resolveDependencies("jacob", "jacob", "1.10.1");
+      org.sf.scriptlandia.ScriptlandiaHelper.resolveDependencies("jacob", "jacob-dll", "1.10.1");
+    </script>  
 
-    <antcall target="unzip.jacob.lib"/>
-  </target>
-
-  <target name="unzip.jacob.lib" if="jacob.lib.is.present">
     <unzip src="${repository.home}/jacob/jacob-dll/1.10.1/jacob-dll-1.10.1.jar"
            dest="${repository.home}/jacob/jacob-dll/1.10.1" overwrite="false">
       <patternset>
