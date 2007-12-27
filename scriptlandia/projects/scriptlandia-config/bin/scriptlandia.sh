@@ -1,7 +1,5 @@
 #! /bin/sh
 
-DEBUG_MODE=@debug.mode@
-
 MOBILE_JAVA_HOME=@mobile.java.home@
 SCRIPTLANDIA_HOME=@scriptlandia.home@
 LAUNCHER_HOME=@launcher.home@

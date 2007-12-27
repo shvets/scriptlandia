@@ -32,10 +32,15 @@ if not exist %REPOSITORY_HOME%\org\apache\maven\bootstrap\bootstrap-mini\2.0.8\b
   exit
 )
 
-rem Build scriptlandia-installer project
 
 SET PROPERTIES1="-deps.file.name=%REPOSITORY_HOME%/org/sf/jlaunchpad/jlaunchpad-launcher/%LAUNCHER_VERSION%/jlaunchpad-launcher-%LAUNCHER_VERSION%.pom" 
 SET PROPERTIES1=%PROPERTIES1% "-main.class.name=org.sf.pomreader.ProjectInstaller"
+
+rem Install antrun project
+
+@call %LAUNCHER_HOME%\launcher.bat %SYSTEM_PROPERTIES% %PROPERTIES1% "-Dbasedir=projects/antrun" "-Dbuild.required=false"
+
+rem Install scriptlandia-installer project
 
 @call %LAUNCHER_HOME%\launcher.bat %SYSTEM_PROPERTIES% %PROPERTIES1% "-Dbasedir=projects/scriptlandia-installer" "-Dbuild.required=false"
 

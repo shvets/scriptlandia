@@ -1,10 +1,8 @@
 package org.sf.scriptlandia.install;
 
-import org.sf.scriptlandia.install.ExtXmlHelper;
-
-import java.io.IOException;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -21,17 +19,24 @@ public class ScriptGenerator extends ExtInstaller {
     xmlHelper.readLanguages("languages");
     List languages = xmlHelper.getLanguages();
 
-    generateBatchFile(languages, scriptlandiaHome);
-    generateShellFile(languages, scriptlandiaHome);
+    generateSlBatchFile(languages, scriptlandiaHome);
+    generateSlShellFile(languages, scriptlandiaHome);
+
+    for (Object language : languages) {
+      generateLanguageBatchScript((Map)language, scriptlandiaHome);
+      generateLanguageShellScript((Map)language, scriptlandiaHome);
+    }
   }
 
-  public void generateBatchFile(List languages, String dir) throws IOException {
+  public void generateSlBatchFile(List languages, String dir) throws IOException {
     BufferedWriter writer = new BufferedWriter(new FileWriter(dir + "/sl.bat"));
 
-    writer.write("@echo off"); writer.newLine();
+    writer.write("@echo off");
+    writer.newLine();
     writer.newLine();
 
-    writer.write("rem sl.bat"); writer.newLine();
+    writer.write("rem sl.bat");
+    writer.newLine();
     writer.newLine();
 
     writer.write("SET REPOSITORY_HOME=" + repositoryHome.replace('/', '\\'));
@@ -44,7 +49,7 @@ public class ScriptGenerator extends ExtInstaller {
     writer.newLine();
     writer.newLine();
 
-    String scriptName = getScriptName("%SCRIPTLANDIA_HOME%", LAUNCHER_SCRIPT_NAME, "bat");
+    String scriptName = getScriptName("%SCRIPTLANDIA_HOME%", "scriptlandia", "bat");
 
     writer.write("SET SCRIPT_NAME=" + scriptName.replace('/', '\\'));
     writer.newLine();
@@ -55,16 +60,12 @@ public class ScriptGenerator extends ExtInstaller {
     writer.write("SET EXT=%~x1");
     writer.newLine();
 
-    for(int i=0; i < languages.size(); i++) {
-      Map language = (Map)languages.get(i);
+    for (Object language : languages) {
+      String name = (String) ((Map)language).get("name");
 
-      String name = (String)language.get("name");
+      List extensions = (List) ((Map)language).get("extensions");
 
-      List extensions = (List) language.get("extensions");
-
-      for(int j=0; j < extensions.size(); j++) {
-        String extension = (String)extensions.get(j);
-
+      for (Object extension : extensions) {
         writer.newLine();
         writer.write("if \"%EXT%\" == \"." + extension + "\" goto " + name + "Setup");
         writer.newLine();
@@ -85,17 +86,17 @@ public class ScriptGenerator extends ExtInstaller {
     writer.write("goto end");
     writer.newLine();
 
-    for(int i=0; i < languages.size(); i++) {
-      Map language = (Map)languages.get(i);
+    for (Object language : languages) {
+      String name = (String) ((Map)language).get("name");
 
-      String name = (String)language.get("name");
-
-      String depsProperty = getDepsProperty(language, "%REPOSITORY_HOME%", '\\');
-      String mainClassProperty = getMainClassProperty(language);
-      String commandLine = getCommandLine(language);
+      String depsProperty = getDepsProperty(((Map)language), "%REPOSITORY_HOME%", '\\');
+      String mainClassProperty = getMainClassProperty(((Map)language));
+      String commandLine = getCommandLine(((Map)language));
 
       writer.newLine();
       writer.write(":" + name + "Setup");
+      writer.newLine();
+      writer.write("SET APP_NAME=" + name);
       writer.newLine();
       writer.write("SET DEPS_PROPERTY=" + depsProperty);
       writer.newLine();
@@ -108,7 +109,8 @@ public class ScriptGenerator extends ExtInstaller {
     }
 
     writer.newLine();
-    writer.write(":execute"); writer.newLine();
+    writer.write(":execute");
+    writer.newLine();
     writer.write("%SCRIPT_NAME% %DEPS_PROPERTY% %MAIN_CLASS_PROPERTY% %CMD_LINE% %*");
     writer.newLine();
     writer.newLine();
@@ -119,7 +121,7 @@ public class ScriptGenerator extends ExtInstaller {
     writer.close();
   }
 
-  public void generateShellFile(List languages, String dir) throws IOException {
+  public void generateSlShellFile(List languages, String dir) throws IOException {
     BufferedWriter writer = new BufferedWriter(new FileWriter(dir + "/sl.sh"));
 
     writer.write("#!/bin/sh");
@@ -136,7 +138,7 @@ public class ScriptGenerator extends ExtInstaller {
     writer.newLine();
     writer.newLine();
 
-    String scriptName = getScriptName("$SCRIPTLANDIA_HOME", LAUNCHER_SCRIPT_NAME, "sh");
+    String scriptName = getScriptName("$SCRIPTLANDIA_HOME", "scriptlandia", "sh");
 
     writer.write("SCRIPT_NAME=" + scriptName.replace('\\', '/'));
     writer.newLine();
@@ -146,23 +148,21 @@ public class ScriptGenerator extends ExtInstaller {
     writer.newLine();
     writer.write("case \"$EXT\" in");
     writer.newLine();
-    for(int i=0; i < languages.size(); i++) {
-      Map language = (Map)languages.get(i);
+    for (Object language : languages) {
+      String name = (String) ((Map)language).get("name");
 
-      String name = (String)language.get("name");
+      //String action = getAction(language, "sh", "$REPOSITORY_HOME", "$SCRIPTLANDIA_HOME");
 
-      String action = getAction(language, "sh", "$REPOSITORY_HOME", "$SCRIPTLANDIA_HOME");
+      String depsProperty = getDepsProperty((Map)language, "$REPOSITORY_HOME", '/');
+      String mainClassProperty = getMainClassProperty((Map)language);
+      String commandLine = getCommandLine((Map)language);
 
-      String depsProperty = getDepsProperty(language, "$REPOSITORY_HOME", '/');
-      String mainClassProperty = getMainClassProperty(language);
-      String commandLine = getCommandLine(language);
+      List extensions = (List) ((Map)language).get("extensions");
 
-      List extensions = (List) language.get("extensions");
-
-      for(int j=0; j < extensions.size(); j++) {
-        String extension = (String)extensions.get(j);
-
+      for (Object extension : extensions) {
         writer.write("  '" + extension + "')");
+        writer.newLine();
+        writer.write("    APP_NAME=" + name);
         writer.newLine();
         writer.write("    DEPS_PROPERTY=" + depsProperty);
         writer.newLine();
@@ -182,6 +182,93 @@ public class ScriptGenerator extends ExtInstaller {
     writer.newLine();
 
     writer.write("esac");
+    writer.newLine();
+    writer.newLine();
+
+    writer.write("$SCRIPT_NAME $DEPS_PROPERTY $MAIN_CLASS_PROPERTY $CMD_LINE $*");
+    writer.newLine();
+
+    writer.close();
+  }
+
+  private void generateLanguageBatchScript(Map language, String dir) throws IOException {
+    String name = (String) language.get("name");
+    String scriptName = (String) language.get("scriptName");
+
+    BufferedWriter writer = new BufferedWriter(new FileWriter(dir + "/" + scriptName + ".bat"));
+
+    writer.write("@echo off");
+    writer.newLine();
+    writer.newLine();
+
+    writer.write("rem " + scriptName + ".bat");
+    writer.newLine();
+    writer.newLine();
+
+    writer.write("SET REPOSITORY_HOME=" + repositoryHome.replace('/', '\\'));
+    writer.newLine();
+
+    writer.write("SET SCRIPTLANDIA_HOME=" + scriptlandiaHome.replace('/', '\\'));
+    writer.newLine();
+
+    String fullScriptName = getScriptName("%SCRIPTLANDIA_HOME%", "scriptlandia", "bat");
+
+    writer.write("SET SCRIPT_NAME=" + fullScriptName.replace('/', '\\'));
+    writer.newLine();
+    writer.newLine();
+
+    String depsProperty = getDepsProperty(language, "%REPOSITORY_HOME%", '\\');
+    String mainClassProperty = getMainClassProperty(language);
+    String commandLine = getCommandLine(language);
+
+    writer.write("SET APP_NAME=" + name);
+    writer.newLine();
+    writer.write("SET DEPS_PROPERTY=" + depsProperty);
+    writer.newLine();
+    writer.write("SET MAIN_CLASS_PROPERTY=" + mainClassProperty);
+    writer.newLine();
+    writer.write("SET CMD_LINE=" + commandLine);
+    writer.newLine(); writer.newLine();
+
+    writer.write("%SCRIPT_NAME% %DEPS_PROPERTY% %MAIN_CLASS_PROPERTY% %CMD_LINE% %*");
+    writer.newLine();
+
+    writer.close();
+  }
+
+  private void generateLanguageShellScript(Map language, String dir) throws IOException {
+    String name = (String) language.get("name");
+    String scriptName = (String) language.get("scriptName");
+
+    BufferedWriter writer = new BufferedWriter(new FileWriter(dir + "/" + scriptName + ".sh"));
+
+    writer.write("#!/bin/sh");
+    writer.newLine();
+    writer.newLine();
+
+    writer.write("REPOSITORY_HOME=" + repositoryHome.replace('\\', '/'));
+    writer.newLine();
+
+    writer.write("SCRIPTLANDIA_HOME=" + scriptlandiaHome.replace('\\', '/'));
+    writer.newLine();
+
+    String fullScriptName = getScriptName("$SCRIPTLANDIA_HOME", scriptName, "sh");
+
+    writer.write("SCRIPT_NAME=" + fullScriptName.replace('\\', '/'));
+    writer.newLine();
+    writer.newLine();
+
+    String depsProperty = getDepsProperty(language, "$REPOSITORY_HOME", '/');
+    String mainClassProperty = getMainClassProperty(language);
+    String commandLine = getCommandLine(language);
+
+    writer.write("APP_NAME=" + name);
+    writer.newLine();
+    writer.write("DEPS_PROPERTY=" + depsProperty);
+    writer.newLine();
+    writer.write("MAIN_CLASS_PROPERTY=" + mainClassProperty);
+    writer.newLine();
+    writer.write("CMD_LINE=" + commandLine);
     writer.newLine();
     writer.newLine();
 

@@ -19,7 +19,7 @@ public class InstallerTest extends TestCase {
     super.tearDown();
   }
 
-  public void testResolveDependencies() {
+ /* public void testResolveDependencies() {
     String[] args = new String[]{};
 
     try {
@@ -32,7 +32,8 @@ public class InstallerTest extends TestCase {
       fail(e.getMessage());
     }
   }
-
+  */
+  
   public static void main(String[] args) {
     TestSuite suite = new TestSuite();
 

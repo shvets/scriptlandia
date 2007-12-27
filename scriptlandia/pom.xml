@@ -82,12 +82,22 @@
          </archive>
 -->
         </configuration>
+ <!-- if we want assembly:assembly along with package
+        <executions>
+          <execution>
+            <goals>
+              <goal>attached</goal>
+            </goals>
+            <phase>package</phase>
+          </execution>
+        </executions>
+        -->
       </plugin>
 
       <!--plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>pomtools-maven-plugin</artifactId>
-        <version>1.0-20060116.042802-1</version> 	
+        <version>1.0-20060116.042802-1</version>        
        </plugin--> 
 
       <plugin>

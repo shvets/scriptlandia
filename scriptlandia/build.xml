@@ -73,8 +73,6 @@
       <filter token="launcher.home" value="${launcher.home.internal}"/>
       <filter token="launcher.version" value="${launcher.version}"/>
 
-      <filter token="debug.mode" value="${debug.mode}"/>
-
       <filter token="scriptlandia.version" value="${scriptlandia.version}"/>
       <filter token="classworlds.version" value="${classworlds.version}"/>
       <filter token="maven.version" value="${maven.version}"/>
@@ -365,9 +363,12 @@
       <zipfileset dir="../../../jlaunchpad/trunk/launcher/projects" prefix="scriptlandia-${scriptlandia.version}/projects">
         <include name="**/target/*.jar"/>
         <include name="**/*.xml"/>
-        <include name="**/jlaunchpad-launcher/src/main/config/*.*"/>
         <exclude name="**/target/*-javadoc.jar"/>
         <exclude name="**/target/*-sources.jar"/>
+      </zipfileset>
+
+      <zipfileset dir="../../../jlaunchpad/trunk/launcher" prefix="scriptlandia-${scriptlandia.version}">
+        <include name="src/main/config/*.*"/>
       </zipfileset>
     </zip>
   </target>

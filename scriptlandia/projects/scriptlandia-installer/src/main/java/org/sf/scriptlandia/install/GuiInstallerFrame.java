@@ -1,5 +1,7 @@
 package org.sf.scriptlandia.install;
 
+import org.sf.jlaunchpad.util.IconProducer;
+
 import javax.swing.*;
 import java.awt.event.WindowEvent;
 import java.awt.*;
@@ -11,12 +13,15 @@ import java.awt.*;
  * @version 1.0 01/14/2007
  */
 public class GuiInstallerFrame extends JFrame {
-  private boolean isCancel = false;
+  private GuiInstaller parent;
 
   /**
    * Creates new GUI frame.
    */
-  public GuiInstallerFrame() {
+  public GuiInstallerFrame(GuiInstaller parent) {
+
+    this.parent = parent;
+
     setTitle("Installing Scriptlandia...");
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setSize(800, 600);
@@ -27,7 +32,11 @@ public class GuiInstallerFrame extends JFrame {
       (int) (size.getWidth() / 2 - this.getWidth() / 2),
       (int) (size.getHeight() / 2 - this.getHeight() / 2));
 
-    getGlassPane().setCursor(new Cursor(Cursor.WAIT_CURSOR));
+    //getGlassPane().setCursor(new Cursor(Cursor.WAIT_CURSOR));
+
+    IconProducer.setClass(GuiInstallerFrame.class);
+    ImageIcon icon = IconProducer.getImageIcon("scriptlandia.gif");
+    setIconImage(icon.getImage());
   }
 
   protected void processWindowEvent(WindowEvent e) {
@@ -38,6 +47,8 @@ public class GuiInstallerFrame extends JFrame {
     } else {
       super.processWindowEvent(e);
     }
+
+    //super.processWindowEvent(e);    
   }
 
   /**
@@ -46,12 +57,12 @@ public class GuiInstallerFrame extends JFrame {
    * @return true if installer can perform "exit" operation; false otherwise.
    */
   public boolean canExit() {
-    if(isCancel) {
+   if(!parent.isInProcess()) {
       return true;
     }
 
     int value = JOptionPane.showConfirmDialog(this,
-      "Do you want to leave installation?",
+      "Do you want to cancel the installation?",
       "Confirmation",
       JOptionPane.YES_NO_OPTION);
 
@@ -73,15 +84,6 @@ public class GuiInstallerFrame extends JFrame {
     WindowEvent evt = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
 
     processWindowEvent(evt);
-  }
-
-  /**
-   * Performs "cancel" operation.
-   */
-  public void cancel() {
-    isCancel = true;
-
-    exit();
   }
 
 }

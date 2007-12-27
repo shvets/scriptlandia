@@ -4,12 +4,16 @@ import org.sf.jlaunchpad.core.LauncherException;
 import org.sf.jlaunchpad.install.LauncherProperties;
 
 import javax.swing.*;
+import javax.swing.border.EtchedBorder;
+import javax.swing.border.TitledBorder;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.event.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.io.*;
 import java.util.Map;
 import java.util.Properties;
@@ -22,9 +26,9 @@ import java.util.Properties;
  */
 public class GuiInstaller extends CoreInstaller implements CaretListener {
   public final static String LAUNCHER_PROPERTIES =
-          System.getProperty("user.home") + File.separatorChar + ".jlaunchpad";
+      System.getProperty("user.home") + File.separatorChar + ".jlaunchpad";
   private final static String SCRIPTLANDIA_PROPERTIES =
-          System.getProperty("user.home") + File.separatorChar + ".scriptlandia";
+      System.getProperty("user.home") + File.separatorChar + ".scriptlandia";
 
   protected LauncherProperties launcherProps = new LauncherProperties(LAUNCHER_PROPERTIES);
   private ScriptlandiaProperties scriptlandiaProps = new ScriptlandiaProperties(SCRIPTLANDIA_PROPERTIES);
@@ -33,11 +37,18 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
   private JTextField scriptlandiaHomeField = new JTextField(35);
   private JTextField launcherHomeField = new JTextField(35);
   private JTextField rubyHomeField = new JTextField(35);
-  private JComboBox javaSpecVersionComboBox = new JComboBox(new String[] { "1.5", "1.6", "1.7"});
+  private JComboBox javaSpecVersionComboBox = new JComboBox(new String[]{"1.5", "1.6", "1.7"});
 
-  private JButton installButton = new JButton("Install");
-  private JButton installLanguagesButton = new JButton("Install languages");
-  private JTextArea console = new JTextArea();
+  private JButton installCoreButton = new JButton("Install Core");
+  private JButton installLanguagesButton = new JButton("Install");
+  private JButton uninstallLanguagesButton = new JButton("Uninstall");
+  private JButton closeButton;
+
+  private JTextArea consoleArea = new JTextArea();
+
+  private JLabel statusLabel = new JLabel();
+
+  private boolean inProcess = false;
 
   private JTabbedPane tabbedPane = new JTabbedPane();
 
@@ -51,17 +62,18 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     public void write(byte b[], int off, int len) throws IOException {
       super.write(b, off, len);
 
-      console.append(new String(b, off, len));
-      console.setCaretPosition(console.getDocument().getLength());
+      consoleArea.append(new String(b, off, len));
+      consoleArea.setCaretPosition(consoleArea.getDocument().getLength());
     }
   };
 
-  private GuiInstallerFrame frame = new GuiInstallerFrame();
+  private GuiInstallerFrame frame = new GuiInstallerFrame(this);
 
   private String[] args;
 
   /**
    * Creates new GUI installer.
+   *
    * @param args command line arguments
    * @throws LauncherException the exception
    */
@@ -78,17 +90,13 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
       throw new LauncherException(e);
     }
 
-    console.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
-    Font currentFont = console.getFont();
-    console.setFont(new Font(currentFont.getName(), Font.BOLD, currentFont.getSize()));
-
     scriptlandiaHomeField.addCaretListener(this);
     launcherHomeField.addCaretListener(this);
 
     frame.getContentPane().add(createContent(), BorderLayout.CENTER);
 
     tryEnableInstallButton();
-    
+
     frame.setVisible(true);
   }
 
@@ -108,37 +116,75 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
       }
     }
 
-    installButton.setEnabled(enabled);
+    installCoreButton.setEnabled(enabled);
     installLanguagesButton.setEnabled(enabled);
+    uninstallLanguagesButton.setEnabled(enabled);
 
     tabbedPane.setEnabledAt(1, enabled);
+  }
+
+  private void enableControls() {
+    applyEnabledFlag(tabbedPane, true);
+
+    installCoreButton.setEnabled(true);
+
+    tryEnableInstallButton();
+  }
+
+  private void applyEnabledFlag(Container container, boolean enabled) {
+    Component[] components = container.getComponents();
+
+    for (Component component : components) {
+      component.setEnabled(enabled);
+
+      if (component instanceof Container) {
+        applyEnabledFlag((Container) component, enabled);
+      } else {
+        component.setEnabled(enabled);
+      }
+    }
+  }
+
+  private void disableControls() {
+    applyEnabledFlag(tabbedPane, false);
+    installCoreButton.setEnabled(false);
+
+    consoleArea.setEnabled(true);
+  }
+
+  public boolean isInProcess() {
+    return inProcess;
   }
 
   public JPanel createContent() {
     JPanel panel = new JPanel();
     panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-    JComponent panel1 = makeBasicSettingsPanel();
-    tabbedPane.addTab("Basic Settings", null, panel1, "Specifies important locations.");
+    JComponent basicSettingPanel = makeBasicSettingsPanel();
+    tabbedPane.addTab("Basic Settings", null, basicSettingPanel, "Specifies important locations.");
     tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
 
     final JPanel languagesPanel = new JPanel();
-    tabbedPane.addTab("Languages/Extensions", null, new JScrollPane(languagesPanel), "Languages/Extensions");
+    tabbedPane.addTab("Languages/Extensions", null, languagesPanel, "Languages/Extensions");
     tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
 
     tabbedPane.addChangeListener(new ChangeListener() {
       // This method is called whenever the selected tab changes
       public void stateChanged(ChangeEvent event) {
-        JTabbedPane pane = (JTabbedPane)event.getSource();
+        JTabbedPane pane = (JTabbedPane) event.getSource();
 
         // Get current tab
         int selectedIndex = pane.getSelectedIndex();
 
-        if(selectedIndex == 1) {
-          makeLanguagesPanel(languagesPanel);
+        if (selectedIndex == 1) {
+          fillLanguagesPanel(languagesPanel);
         }
       }
     });
+
+    final JPanel consolePanel = makeConsolePanel();
+    tabbedPane.addTab("Console", null, consolePanel, "Console");
+    tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
 
     //The following line enables to use scrolling tabs.
     tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
@@ -212,24 +258,6 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
       }
     });
 
-    /*JLabel rubyHomeLabel = new JLabel("Ruby Home:                  ");
-
-    JButton rubyHomeSearchButton = new JButton("Search...");
-
-    rubyHomeSearchButton.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent event) {
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setCurrentDirectory(new File(rubyHomeField.getText().trim()));
-        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-
-        int returnVal = fileChooser.showDialog(frame, "Select Ruby Home...");
-
-        if (returnVal == JFileChooser.APPROVE_OPTION) {
-          rubyHomeField.setText(fileChooser.getSelectedFile().getPath());
-        }
-      }
-    });
-*/
     GridBagConstraints constraints = new GridBagConstraints();
     constraints.fill = GridBagConstraints.HORIZONTAL;
     constraints.weightx = 0.5;
@@ -239,8 +267,9 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
 
     panel1.setLayout(new GridBagLayout());
 
-    constraints.gridx = 0; panel1.add(javaSpecVersionLabel, constraints);
-    constraints.gridx = 1; 
+    constraints.gridx = 0;
+    panel1.add(javaSpecVersionLabel, constraints);
+    constraints.gridx = 1;
     panel1.add(javaSpecVersionComboBox, constraints);
 
     JPanel panel2 = new JPanel();
@@ -248,138 +277,75 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
 
     panel2.setLayout(new GridBagLayout());
 
-    constraints.gridx = 0; panel2.add(launcherHomeLabel, constraints);
-    constraints.gridx = 1; panel2.add(launcherHomeField, constraints);
-    constraints.gridx = 2; panel2.add(launcherHomeSearchButton, constraints);
+    constraints.gridx = 0;
+    panel2.add(launcherHomeLabel, constraints);
+    constraints.gridx = 1;
+    panel2.add(launcherHomeField, constraints);
+    constraints.gridx = 2;
+    panel2.add(launcherHomeSearchButton, constraints);
 
     JPanel panel3 = new JPanel();
     constraints.gridy = 2;
 
     panel3.setLayout(new GridBagLayout());
 
-    constraints.gridx = 0; panel3.add(scriptlandiaHomeLabel, constraints);
-    constraints.gridx = 1; panel3.add(scriptlandiaHomeField, constraints);
-    constraints.gridx = 2; panel3.add(scriptlandiaHomeSearchButton, constraints);
+    constraints.gridx = 0;
+    panel3.add(scriptlandiaHomeLabel, constraints);
+    constraints.gridx = 1;
+    panel3.add(scriptlandiaHomeField, constraints);
+    constraints.gridx = 2;
+    panel3.add(scriptlandiaHomeSearchButton, constraints);
 
     JPanel panel4 = new JPanel();
     constraints.gridy = 3;
 
     panel4.setLayout(new GridBagLayout());
 
-    constraints.gridx = 0; panel4.add(mobileJavaHomeLabel, constraints);
-    constraints.gridx = 1; panel4.add(mobileJavaHomeField, constraints);
-    constraints.gridx = 2; panel4.add(mobileJavaHomeSearchButton, constraints);
+    constraints.gridx = 0;
+    panel4.add(mobileJavaHomeLabel, constraints);
+    constraints.gridx = 1;
+    panel4.add(mobileJavaHomeField, constraints);
+    constraints.gridx = 2;
+    panel4.add(mobileJavaHomeSearchButton, constraints);
 
-/*    JPanel panel5 = new JPanel();
-    constraints.gridy = 4;
-
-    panel5.setLayout(new GridBagLayout());
-
-    constraints.gridx = 0; panel5.add(rubyHomeLabel, constraints);
-    constraints.gridx = 1; panel5.add(rubyHomeField, constraints);
-    constraints.gridx = 2; panel5.add(rubyHomeSearchButton, constraints);
-*/
     panel.add(panel1);
     panel.add(panel2);
     panel.add(panel3);
     panel.add(panel4);
-//    panel.add(panel5);
+    panel.add(Box.createRigidArea(new Dimension(0, 200)));
 
     return panel;
   }
 
-  protected JComponent makeInstallPanel() {
+  private JPanel makeConsolePanel() {
     JPanel panel = new JPanel();
     panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-    installButton.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent event) {
-        Thread thread = new Thread() {
-          public void run() {
-            Component glassPane = frame.getGlassPane();
-
-            glassPane.setVisible(true);
-
-            glassPane.addMouseListener(new MouseAdapter() {
-              @SuppressWarnings({"UnnecessarySemicolon"})
-              public void mousePressed(MouseEvent e) {
-                ; // supress
-              }
-            });
-
-            try {
-              GuiInstaller.this.install(args);
-            }
-            catch (Exception e) {
-              e.printStackTrace();
-            }
-            finally {
-              glassPane.setVisible(false);
-            }
-          }
-        };
-
-        thread.start();
-      }
-    });
-
-    installLanguagesButton.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent event) {
-        Thread thread = new Thread() {
-          public void run() {
-            Component glassPane = frame.getGlassPane();
-
-            glassPane.setVisible(true);
-
-            glassPane.addMouseListener(new MouseAdapter() {
-              @SuppressWarnings({"UnnecessarySemicolon"})
-              public void mousePressed(MouseEvent e) {
-                ; // supress
-              }
-            });
-
-            try {
-              GuiInstaller.this.installLanguages();
-            }
-            catch (Exception e) {
-              e.printStackTrace();
-            }
-            finally {
-              glassPane.setVisible(false);
-            }
-          }
-        };
-
-        thread.start();
-      }
-    });
-
-
-    JButton closeButton = new JButton("Close");
-
-    closeButton.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent event) {
-        frame.cancel();
-      }
-    });
+    consoleArea.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
+    Font currentFont = consoleArea.getFont();
+    consoleArea.setFont(new Font(currentFont.getName(), Font.BOLD, currentFont.getSize()));
+    consoleArea.setEditable(false);
 
     JPanel panel11 = new JPanel();
     panel11.setLayout(new BoxLayout(panel11, BoxLayout.X_AXIS));
 
-    panel11.add(Box.createRigidArea(new Dimension(200, 0)));
-    panel11.add(installButton);
-    panel11.add(Box.createRigidArea(new Dimension(50, 0)));
-    panel11.add(installLanguagesButton);
-    panel11.add(Box.createRigidArea(new Dimension(50, 0)));
-    panel11.add(closeButton);
-    panel11.add(Box.createRigidArea(new Dimension(200, 0)));
+    consoleArea.setRows(25);
+    consoleArea.setColumns(80);
+
+    panel11.add(new JScrollPane(consoleArea));
 
     JPanel panel12 = new JPanel();
     panel12.setLayout(new BoxLayout(panel12, BoxLayout.X_AXIS));
 
-    console.setRows(10);
-    console.setColumns(300);
-    panel12.add(new JScrollPane(console));
+    JButton clearButton = new JButton("Clear Console");
+    clearButton.addActionListener(new ActionListener() {
+
+      public void actionPerformed(ActionEvent e) {
+        consoleArea.setText("");
+      }
+    });
+
+    panel12.add(clearButton);
 
     panel.add(panel11);
     panel.add(Box.createRigidArea(new Dimension(0, 10)));
@@ -388,105 +354,302 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     return panel;
   }
 
-  protected JComponent makeLanguagesPanel(final JPanel panel) {
-    if(!languagesPanelUpdated) {
-      if(System.getProperty("launcher.home") == null) {
+  protected JComponent makeInstallPanel() {
+    JPanel panel = new JPanel();
+    panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+
+    installCoreButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+        Thread thread = new Thread() {
+          public void run() {
+            blockControls("Installing Scriptlandia core...");
+
+            try {
+              GuiInstaller.this.install(args);
+            }
+            catch (Exception e) {
+              e.printStackTrace();
+            }
+            finally {
+              unblockControls("Scriptlandia core installed.");
+            }
+          }
+        };
+
+        thread.start();
+      }
+    });
+
+    closeButton = new JButton("Close");
+
+    closeButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+        frame.exit();
+      }
+    });
+
+    JPanel panel10 = new JPanel();
+    panel10.setLayout(new BoxLayout(panel10, BoxLayout.X_AXIS));
+
+    panel10.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel10.add(statusLabel);
+    panel10.add(Box.createRigidArea(new Dimension(600, 0)));
+
+    JPanel panel11 = new JPanel();
+    panel11.setLayout(new BoxLayout(panel11, BoxLayout.X_AXIS));
+
+    panel11.add(Box.createRigidArea(new Dimension(200, 0)));
+    panel11.add(installCoreButton);
+    panel11.add(Box.createRigidArea(new Dimension(50, 0)));
+    panel11.add(closeButton);
+    panel11.add(Box.createRigidArea(new Dimension(200, 0)));
+
+    panel.add(panel10);
+    panel.add(Box.createRigidArea(new Dimension(0, 10)));
+    panel.add(panel11);
+
+    return panel;
+  }
+
+  private int selectedTabIndex;
+
+  private void unblockControls(String message) {
+    closeButton.setText("Close");
+    enableControls();
+    inProcess = false;
+    statusLabel.setText(message);
+    tabbedPane.setSelectedIndex(selectedTabIndex);
+  }
+
+  private void blockControls(String message) {
+    selectedTabIndex = tabbedPane.getSelectedIndex();
+    tabbedPane.setSelectedIndex(2);
+
+    statusLabel.setText(message);
+    inProcess = true;
+    disableControls();
+    closeButton.setText("Cancel");
+  }
+
+  protected JComponent fillLanguagesPanel(final JPanel panel) {
+    if (!languagesPanelUpdated) {
+      if (System.getProperty("launcher.home") == null) {
         System.setProperty("launcher.home", launcherHomeField.getText().trim());
       }
 
-      if(System.getProperty("scriptlandia.home") == null) {
+      if (System.getProperty("scriptlandia.home") == null) {
         System.setProperty("scriptlandia.home", scriptlandiaHomeField.getText().trim());
       }
 
-      if(System.getProperty("native.ruby.home") == null) {
+      if (System.getProperty("native.ruby.home") == null) {
         System.setProperty("native.ruby.home", rubyHomeField.getText().trim());
       }
 
-      Thread thread = new Thread() {
-        public void run() {
-          Component glassPane = frame.getGlassPane();
+      panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-          glassPane.setVisible(true);
+      final JPanel panel1 = new JPanel();
+      panel1.setLayout(new BoxLayout(panel1, BoxLayout.X_AXIS));
+      panel1.setBorder(new TitledBorder(new EtchedBorder(), "Install/Uninstall Single Language"));
 
-          glassPane.addMouseListener(new MouseAdapter() {
-            @SuppressWarnings({"UnnecessarySemicolon"})
-            public void mousePressed(MouseEvent e) {
-              ; // supress
-            }
-          });
+      final JPanel panel20 = new JPanel();
+      panel20.setBorder(new TitledBorder(new EtchedBorder(), "Install/Uninstall Multiple Languages"));
 
-          try {
-            updateProperties();
+      final JPanel panel2 = new JPanel(new CardLayout());
 
-            update();
+      panel20.add(panel2);
 
-            panel.setLayout(new GridBagLayout());
+      final JPanel panel3 = new JPanel();
+      panel3.setLayout(new BoxLayout(panel3, BoxLayout.X_AXIS));
 
-            GridBagConstraints constraints = new GridBagConstraints();
-            constraints.fill = GridBagConstraints.HORIZONTAL;
-            constraints.weightx = 0.5;
+      panel.add(Box.createRigidArea(new Dimension(0, 10)));
+      panel.add(panel1);
+      panel.add(Box.createRigidArea(new Dimension(0, 20)));
+      panel.add(panel20);
+      panel.add(Box.createRigidArea(new Dimension(0, 20)));
+      panel.add(panel3);
+      panel.add(Box.createRigidArea(new Dimension(0, 100)));
 
-            final int COLUMNS = 3;
-            for(int i=0, j=0; i < languages.size(); i++) {
-              Map language = (Map)languages.get(i);
-              String name = (String)language.get("name");
-              ImageIcon imageIcon = (ImageIcon)language.get("imageIcon");
+      blockControls("Installing required dependencies...");
 
-              JLabel label = new JLabel(name);
-              label.setIcon(imageIcon);
+      try {
+        updateProperties();
 
-              constraints.gridy = i / COLUMNS;
+        update();
 
-              constraints.gridx = j++;
-              panel.add(label, constraints);
+        final JComboBox languageCombo = new JComboBox();
 
-              constraints.gridx = j++;
-              panel.add(checkBoxes[i], constraints);
+        final JCheckBox installLanguageCheckBox = new JCheckBox("Install/Uninstall");
+        installLanguageCheckBox.setSelected(true);
+        JButton executeSingleLanguageButton = new JButton("Run");
 
-              if(j == (COLUMNS*2)) {
-                j = 0;
+        executeSingleLanguageButton.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            String name = (String) ((Map) languageCombo.getSelectedItem()).get("name");
+
+            try {
+              if (installLanguageCheckBox.isSelected()) {
+                blockControls("Installing \"" + name + "\" language...");
+                installLanguage(name, languages);
+                unblockControls("Language \"" + name + "\" installed.");
+              } else {
+                blockControls("Unnstalling \"" + name + "\" language...");
+                uninstallLanguage(name, languages);
+                unblockControls("Language \"" + name + "\" uninstalled.");
               }
+            } catch (Exception e1) {
+              e1.printStackTrace();
             }
           }
-          catch (Exception e) {
-            e.printStackTrace();
-          }
-          finally {
-            languagesPanelUpdated = true;
-            glassPane.setVisible(false);
+        });
+
+        panel1.add(Box.createRigidArea(new Dimension(10, 0)));
+        panel1.add(new JLabel("Select language:"));
+        panel1.add(Box.createRigidArea(new Dimension(10, 0)));
+        panel1.add(languageCombo);
+
+        panel1.add(Box.createRigidArea(new Dimension(10, 0)));
+        panel1.add(installLanguageCheckBox);
+        panel1.add(Box.createRigidArea(new Dimension(10, 0)));
+        panel1.add(executeSingleLanguageButton);
+        panel1.add(Box.createRigidArea(new Dimension(500, 0)));
+
+        languageCombo.setModel(new LanguageModel(languages));
+        languageCombo.setSelectedIndex(0);
+        languageCombo.setRenderer(new LanguageRenderer());
+
+        panel2.setLayout(new GridBagLayout());
+
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.weightx = 0.5;
+
+        final int COLUMNS = 7;
+        for (int i = 0, j = 0; i < languages.size(); i++) {
+          Map language = (Map) languages.get(i);
+          String name = (String) language.get("name");
+          ImageIcon imageIcon = (ImageIcon) language.get("imageIcon");
+
+          JLabel label = new JLabel(name);
+          label.setIcon(imageIcon);
+
+          constraints.gridy = i / COLUMNS;
+
+          constraints.gridx = j++;
+          panel2.add(checkBoxes[i], constraints);
+
+          constraints.gridx = j++;
+          panel2.add(label, constraints);
+
+          if (j == (COLUMNS * 2)) {
+            j = 0;
           }
         }
-      };
 
-      thread.start();
+        installLanguagesButton.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent event) {
+            Thread thread = new Thread() {
+              public void run() {
+                blockControls("Installing Scriptlandia languages...");
+
+                try {
+                  GuiInstaller.this.installLanguages();
+                }
+                catch (Exception e) {
+                  e.printStackTrace();
+                }
+                finally {
+                  unblockControls("Scriptlandia languages installed.");
+                }
+              }
+            };
+
+            thread.start();
+          }
+        });
+
+        uninstallLanguagesButton.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent event) {
+            Thread thread = new Thread() {
+              public void run() {
+                blockControls("Uninstalling Scriptlandia languages...");
+
+                try {
+                  GuiInstaller.this.uninstallLanguages();
+                }
+                catch (Exception e) {
+                  e.printStackTrace();
+                }
+                finally {
+                  unblockControls("Scriptlandia languages uninstalled.");
+                }
+              }
+            };
+
+            thread.start();
+          }
+        });
+        JButton selectUnselectAllButton = new JButton("Select/Unselect All");
+
+        selectUnselectAllButton.addActionListener(new ActionListener() {
+          private boolean state = true;
+
+          public void actionPerformed(ActionEvent event) {
+            setupLanguageCheckboxes(panel2, state);
+            state = !state;
+          }
+        });
+
+        panel3.add(Box.createRigidArea(new Dimension(200, 0)));
+        panel3.add(selectUnselectAllButton);
+        panel3.add(Box.createRigidArea(new Dimension(50, 0)));
+        panel3.add(installLanguagesButton);
+        panel3.add(Box.createRigidArea(new Dimension(50, 0)));
+        panel3.add(uninstallLanguagesButton);
+        panel3.add(Box.createRigidArea(new Dimension(500, 0)));
+      }
+      catch (Exception e) {
+        e.printStackTrace();
+      }
+      finally {
+        languagesPanelUpdated = true;
+        unblockControls("");
+      }
     }
 
     return panel;
   }
 
-  private void update() throws LauncherException {
-   // if(!isConfigMode() ) {
-      coreInstall();
-  //  }
+  private void setupLanguageCheckboxes(Container container, boolean selected) {
+    Component[] components = container.getComponents();
 
+    for (Component component : components) {
+      if (component instanceof JCheckBox) {
+        JCheckBox checkBox = (JCheckBox) component;
+
+        checkBox.setSelected(selected);
+      }
+    }
+  }
+
+  private void update() throws LauncherException {
     languages = readLanguages();
 
     checkBoxes = new JCheckBox[languages.size()];
 
-    for(int i=0; i < languages.size(); i++) {
+    for (int i = 0; i < languages.size(); i++) {
       checkBoxes[i] = new JCheckBox();
     }
 
-    for(int i=0; i < languages.size(); i++) {
-      Map language = (Map)languages.get(i);
-      String name = (String)language.get("name");
+    for (int i = 0; i < languages.size(); i++) {
+      Map language = (Map) languages.get(i);
+      String name = (String) language.get("name");
 
       updateProperty(scriptlandiaProps, checkBoxes[i], name + ".install");
     }
   }
 
   private void updateProperties() {
-    System.setProperty("java.specification.version", (String)javaSpecVersionComboBox.getSelectedItem());
+    System.setProperty("java.specification.version", (String) javaSpecVersionComboBox.getSelectedItem());
 
     System.setProperty("mobile.java.home", mobileJavaHomeField.getText().trim());
 
@@ -498,10 +661,6 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
   public void install(final String[] args) throws LauncherException {
     try {
       updateProperties();
-
-    //  if(!isConfigMode() ) {
-        coreInstall();
-    //  }
 
       try {
         save();
@@ -521,13 +680,13 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     try {
       updateProperties();
 
-      if(!languagesPanelUpdated) {
+      if (!languagesPanelUpdated) {
         update();
       }
 
-      for(int i=0; i < languages.size(); i++) {
-        Map language = (Map)languages.get(i);
-        String name = (String)language.get("name");
+      for (int i = 0; i < languages.size(); i++) {
+        Map language = (Map) languages.get(i);
+        String name = (String) language.get("name");
 
         System.setProperty(name + ".install", String.valueOf(checkBoxes[i].isSelected()));
       }
@@ -546,13 +705,39 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     }
   }
 
+  private void uninstallLanguages() {
+    try {
+      updateProperties();
+
+      if (!languagesPanelUpdated) {
+        update();
+      }
+
+      for (int i = 0; i < languages.size(); i++) {
+        Map language = (Map) languages.get(i);
+        String name = (String) language.get("name");
+
+        System.setProperty(name + ".install", String.valueOf(checkBoxes[i].isSelected()));
+      }
+
+      try {
+        save();
+      }
+      catch (IOException e) {
+        throw new LauncherException(e);
+      }
+
+      super.uninstallLanguageProjects();
+    }
+    catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
   @SuppressWarnings({"MismatchedQueryAndUpdateOfCollection"})
   private void load() throws IOException {
     launcherProps.load();
 
-    //System.setProperty("proxySet", launcherProps.getProperty("proxySet"));
-    //System.setProperty("proxyHost", launcherProps.getProperty("proxyHost"));
-    //System.setProperty("proxyPort", launcherProps.getProperty("proxyPort"));
     System.setProperty("java.home.internal", launcherProps.getProperty("java.home.internal"));
     System.setProperty("repository.home", launcherProps.getProperty("repository.home"));
 
@@ -580,9 +765,9 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     scriptlandiaProps.put("nailgun.version", System.getProperty("nailgun.version"));
     scriptlandiaProps.put("java.compiler.version", System.getProperty("java.compiler.version"));
 
-    for(int i=0; i < languages.size(); i++) {
-      Map language = (Map)languages.get(i);
-      String name = (String)language.get("name");
+    for (int i = 0; i < languages.size(); i++) {
+      Map language = (Map) languages.get(i);
+      String name = (String) language.get("name");
 
       saveProperty(scriptlandiaProps, checkBoxes[i], name + ".install");
     }
@@ -594,34 +779,32 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
    * Updates GUI component from the property.
    *
    * @param properties properties
-   * @param component GUI component
-   * @param property the property to be propagated
+   * @param component  GUI component
+   * @param property   the property to be propagated
    */
   public void updateProperty(Properties properties, JComponent component, String property) {
-    if(component instanceof JTextField) {
-      JTextField textField = (JTextField)component;
+    if (component instanceof JTextField) {
+      JTextField textField = (JTextField) component;
 
-      String value = (String)properties.get(property);
+      String value = (String) properties.get(property);
 
-      if(value != null) {
+      if (value != null) {
         textField.setText(value.replace('/', File.separatorChar));
       }
-    }
-    else if(component instanceof JCheckBox) {
-      JCheckBox checkBox = (JCheckBox)component;
+    } else if (component instanceof JCheckBox) {
+      JCheckBox checkBox = (JCheckBox) component;
 
-      String value = (String)properties.get(property);
+      String value = (String) properties.get(property);
 
-      if(value != null) {
+      if (value != null) {
         checkBox.setSelected(Boolean.parseBoolean(value));
       }
-    }
-    else if(component instanceof JComboBox) {
-      JComboBox comboBox = (JComboBox)component;
+    } else if (component instanceof JComboBox) {
+      JComboBox comboBox = (JComboBox) component;
 
-      String value = (String)properties.get(property);
+      String value = (String) properties.get(property);
 
-      if(value != null) {
+      if (value != null) {
         comboBox.setSelectedItem(value);
       }
     }
@@ -631,24 +814,22 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
    * Updates the property from GUI component.
    *
    * @param properties properties
-   * @param component GUI component
-   * @param property the property to be updated
+   * @param component  GUI component
+   * @param property   the property to be updated
    */
   public void saveProperty(Properties properties, JComponent component, String property) {
-    if(component instanceof JTextField) {
-      JTextField textField = (JTextField)component;
+    if (component instanceof JTextField) {
+      JTextField textField = (JTextField) component;
 
       String value = textField.getText().trim();
 
       properties.put(property, value.replace(File.separatorChar, '/'));
-    }
-    else if(component instanceof JCheckBox) {
-      JCheckBox checkBox = (JCheckBox)component;
+    } else if (component instanceof JCheckBox) {
+      JCheckBox checkBox = (JCheckBox) component;
 
       properties.put(property, String.valueOf(checkBox.isSelected()));
-    }
-    else if(component instanceof JComboBox) {
-      JComboBox comboBox = (JComboBox)component;
+    } else if (component instanceof JComboBox) {
+      JComboBox comboBox = (JComboBox) component;
 
       properties.put(property, comboBox.getSelectedItem());
     }

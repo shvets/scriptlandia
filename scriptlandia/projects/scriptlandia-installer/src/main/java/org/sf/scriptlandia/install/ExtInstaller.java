@@ -24,8 +24,6 @@ public class ExtInstaller {
   protected String launcherHome = System.getProperty("launcher.home");
   protected final String scriptlandiaHome = System.getProperty("scriptlandia.home");
 
-  public static final String LAUNCHER_SCRIPT_NAME = "scriptlandia";
-
   private AssociationService associationService = new AssociationService();
 
   /**
@@ -39,14 +37,14 @@ public class ExtInstaller {
 
     List languages = xmlHelper.getLanguages();
 
-    for(int i=0; i < languages.size(); i++) {
-      Map language = (Map)languages.get(i);
+    for (Object language1 : languages) {
+      Map language = (Map) language1;
 
-      String name = (String)language.get("name");
+      String name = (String) language.get("name");
 
       boolean requiresInstallation = Boolean.valueOf(System.getProperty(name + ".install")).booleanValue();
 
-      if(requiresInstallation) {
+      if (requiresInstallation) {
         registerLanguage(language);
       }
     }
@@ -64,10 +62,8 @@ public class ExtInstaller {
 
     List languages = xmlHelper.getLanguages();
 
-    for(int i=0; i < languages.size(); i++) {
-      Map language = (Map)languages.get(i);
-
-      unregisterLanguage(language);
+    for (Object language : languages) {
+      unregisterLanguage((Map)language);
     }
   }
 
@@ -84,12 +80,12 @@ public class ExtInstaller {
 
     List extensions = (List) language.get("extensions");
 
-    for(int i=0; i < extensions.size(); i++) {
-      unregisterExtension((String)extensions.get(i), (String)language.get("mimeType"), (String)language.get("name"));
+    for (Object extension : extensions) {
+      unregisterExtension((String) extension, (String) language.get("mimeType"), (String) language.get("name"));
     }
   }
 
-  private void registerLanguage(Map language) throws LauncherException {
+  public void registerLanguage(Map language) throws LauncherException {
     List extensions = (List) language.get("extensions");
 
     Boolean[] registrations = new Boolean[extensions.size()];
@@ -142,7 +138,7 @@ public class ExtInstaller {
     launcher.launch();
   }
 
-  private void unregisterLanguage(Map language) {
+  public void unregisterLanguage(Map language) {
     List extensions = (List) language.get("extensions");
 
    // Boolean[] registrations = new Boolean[extensions.size()];
@@ -152,13 +148,12 @@ public class ExtInstaller {
 
     System.out.print("Unregistering extension(s): " + extensions + "... ");
 
-    for(int i=0; i < extensions.size(); i++) {
+    for (Object extension : extensions) {
       try {
-        unregisterExtension((String)extensions.get(i), (String)language.get("mimeType"), (String)language.get("name"));
+        unregisterExtension((String) extension, (String) language.get("mimeType"), (String) language.get("name"));
       }
-      catch(Throwable t) {
+      catch (Throwable t) {
         System.out.println(t.getMessage());
-
       }
     }
 
@@ -198,20 +193,21 @@ public class ExtInstaller {
    */
   private void registerExtensions(String[] extensions, String mimeType, String iconName, 
                                   String artifactId, String mainClassName,
-                                  String additionalParams) {
+                                  String additionalParams, String scriptName) {
     Boolean[] registrations = new Boolean[extensions.length];
 
-    String groupId = "org.sf.scriptlandia";
+ //   String groupId = "org.sf.scriptlandia";
 
-    String version = /*project.getProperty("scriptlandia.version")*/"2.2.4";
+  //  String version = /*project.getProperty("scriptlandia.version")*/"2.2.4";
 
     StringBuffer openAction = new StringBuffer();
     openAction.append(scriptlandiaHome.replace('/', File.separatorChar));
     openAction.append(File.separatorChar);
-    openAction.append(LAUNCHER_SCRIPT_NAME + ".");
+    //openAction.append(LAUNCHER_SCRIPT_NAME + ".");
+    openAction.append(scriptName + ".");
     openAction.append(getScriptExt());
     openAction.append(" \"");
-    openAction.append("-deps.file.name=");
+/*    openAction.append("-deps.file.name=");
     openAction.append(repositoryHome.replace('/', File.separatorChar));
     openAction.append(File.separatorChar);
     openAction.append(groupId.replace('.', File.separatorChar));
@@ -240,50 +236,14 @@ public class ExtInstaller {
     }
 
     openAction.append(getCommandLineExpression());
-
+    */
+    
     System.out.print("Registering extension(s): " + Arrays.asList(extensions) + "... ");
 
     for(int i=0; i < extensions.length; i++) {
       registrations[i] = registerExtension(extensions[i], "", mimeType, iconName, openAction.toString());
 
       System.out.println(openAction.toString());
-    }
-
-    System.out.println("Registered: " + Arrays.asList(registrations) + ".");
-  }
-
-  /**
-   * Registers extensions for artefact specified as (groupId; artefactId; version).
-   *
-   * @param extensions the list of extensions
-   * @param mimeType mime type 
-   *,@param iconName icon name
-   * @param iconName the 
-   * @param artifactId the artefact Id
-   * @param mainClassName the main class name
-   */
-  private void registerExtensions(String[] extensions, String mimeType, String iconName, 
-                                  String artifactId, String mainClassName) {
-    registerExtensions(extensions, "", mimeType, iconName, artifactId, mainClassName);
-  }
-
-  /**
-   * Registers extensions for ruby gem.
-   *
-   * @param extensions the list of extensions
-   */
-  private void registerRubyGemExtensions(String[] extensions) {
-    Boolean[] registrations = new Boolean[extensions.length];
-
-    String openAction =
-            scriptlandiaHome + "/" + "gem." +  getScriptExt() +
-            " install" +
-            " " + getCommandLineExpression();
-
-    System.out.print("Registering extension(s): " + Arrays.asList(extensions) + "... ");
-
-    for(int i=0; i < extensions.length; i++) {
-      registrations[i] = registerExtension((String)extensions[i], "text/ruby", openAction, "", "");
     }
 
     System.out.println("Registered: " + Arrays.asList(registrations) + ".");
@@ -525,15 +485,17 @@ public class ExtInstaller {
   }
 
   protected String getAction(Map language, String extension, String repositoryHome, String scriptlandiaHome) {
-    String scriptName = getScriptName(scriptlandiaHome, LAUNCHER_SCRIPT_NAME, extension);
-    String depsProperty = getDepsProperty(language, repositoryHome, File.separatorChar);
-    String mainClassProperty = getMainClassProperty(language);
-    String commandLine = getCommandLine(language);
+    String scriptName = (String) language.get("scriptName");
+
+    String fullScriptName = getScriptName(scriptlandiaHome, "sl", extension);
+//    String depsProperty = getDepsProperty(language, repositoryHome, File.separatorChar);
+//    String mainClassProperty = getMainClassProperty(language);
+ //   String commandLine = getCommandLine(language);
 
     StringBuffer action = new StringBuffer();
 
-    action.append(scriptName.replace('/', '\\'));
-    action.append(" ");
+    action.append(fullScriptName.replace('/', '\\'));
+/*    action.append(" ");
     action.append(depsProperty);
     action.append(" ");
 
@@ -544,10 +506,10 @@ public class ExtInstaller {
     if(commandLine.length() > 0) {
       action.append(" ");
     }
+   */
 
     return action.toString();
   }
-
 
   public static void main(String[] args) throws Exception {
     ExtInstaller installer = new ExtInstaller();

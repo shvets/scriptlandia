@@ -34,22 +34,22 @@ public class ExtXmlHelper extends XmlHelper {
 
     File[] list = new File(languageDir).listFiles();
 
-    for(int i=0; i < list.length; i++) {
-      if(!list[i].isHidden() && list[i].isDirectory()) {
-        String name = list[i].getName();
+    for (File aList : list) {
+      if (!aList.isHidden() && aList.isDirectory()) {
+        String name = aList.getName();
 
         try {
           String fileName = languageDir + "/" + name + "/language.xml";
 
-          if(new File(fileName).exists()) {
+          if (new File(fileName).exists()) {
             Map map = readLanguage(languageDir, name);
 
-            if(map != null) {
+            if (map != null) {
               languages.add(map);
             }
           }
         }
-        catch(Throwable t) {
+        catch (Throwable t) {
           t.printStackTrace();
           System.out.println("Error reading \"language.xml\" file for language: " + name + ".");
         }
@@ -61,8 +61,6 @@ public class ExtXmlHelper extends XmlHelper {
     String userDir = System.getProperty("user.dir");
 
     String path = new File(userDir).getCanonicalPath();
-
-//    String fileName = userDir + "/language.xml";
 
     return readLanguage(new File(path).getParentFile().getPath(), new File(userDir).getName());
   }
@@ -153,6 +151,14 @@ public class ExtXmlHelper extends XmlHelper {
 
     map.put("extensions", list);
 
+    Element script = getElementByName(registration, "script");
+    if(script == null) {
+       map.put("scriptName", name);
+    }
+    else {
+      map.put("scriptName", script.getAttribute("name").getValue());
+    }
+
     return map;
   }
 
@@ -208,22 +214,22 @@ public class ExtXmlHelper extends XmlHelper {
 
     String repositoryHome = System.getProperty("repository.home");
 
-    for(int i=0; i < languages.size(); i++) {
-      Map map = (Map)languages.get(i);
+    for (Object language : languages) {
+      Map map = (Map) language;
 
-      if(map.get("name") == null || map.get("groupId") == null || 
-         map.get("artifactId") == null || map.get("version") == null) {
+      if (map.get("name") == null || map.get("groupId") == null ||
+          map.get("artifactId") == null || map.get("version") == null) {
         continue;
       }
 
-      String name = (String)map.get("name");
-      String groupId = (String)map.get("groupId");
-      String artifactId = (String)map.get("artifactId");
-      String version = (String)map.get("version");
+      String name = (String) map.get("name");
+      String groupId = (String) map.get("groupId");
+      String artifactId = (String) map.get("artifactId");
+      String version = (String) map.get("version");
 
       props.put(name + ".version", version);
       props.put(name + ".base", repositoryHome + "/" + groupId.replace('.', '/') + "/" +
-                                artifactId + "/" + version);
+          artifactId + "/" + version);
     }
 
     props.store(new FileOutputStream(propsFileName), "Scriptlandia properties");
@@ -232,22 +238,22 @@ public class ExtXmlHelper extends XmlHelper {
   public void setupProperties(Project project) {
     String repositoryHome = System.getProperty("repository.home");
 
-    for(int i=0; i < languages.size(); i++) {
-      Map map = (Map)languages.get(i);
+    for (Object language : languages) {
+      Map map = (Map) language;
 
-      if(map.get("name") == null || map.get("groupId") == null || 
-         map.get("artifactId") == null || map.get("version") == null) {
+      if (map.get("name") == null || map.get("groupId") == null ||
+          map.get("artifactId") == null || map.get("version") == null) {
         continue;
       }
 
-      String name = (String)map.get("name");
-      String groupId = (String)map.get("groupId");
-      String artifactId = (String)map.get("artifactId");
-      String version = (String)map.get("version");
+      String name = (String) map.get("name");
+      String groupId = (String) map.get("groupId");
+      String artifactId = (String) map.get("artifactId");
+      String version = (String) map.get("version");
 
       project.setNewProperty(name + ".version", version);
       project.setNewProperty(name + ".base", repositoryHome + "/" + groupId.replace('.', '/') + "/" +
-                                             artifactId + "/" + version);
+          artifactId + "/" + version);
     }
   }
 

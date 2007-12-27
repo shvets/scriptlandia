@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * The class perform initial (command line) installation of scriptlandia.
@@ -24,54 +25,6 @@ public class CoreInstaller {
    * @throws LauncherException the exception
    */
   public CoreInstaller() throws LauncherException {
-  }
-
-  public void coreInstall() throws LauncherException {
-    installAntRun();
-  }
-
-  /**
-   * Installs AntRun project.
-   *
-   * @throws LauncherException the exception
-   */
-  private void installAntRun() throws LauncherException {
-    String antVersion = System.getProperty("ant.version.internal");
-    String repositoryHome = System.getProperty("repository.home");
-
-    SimpleLauncher launcher = new SimpleLauncher(getAntRunArgsList());
-
-    launcher.setMainClassName("org.sf.pomreader.ProjectInstaller");
-
-    launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
-
-    launcher.addClasspathEntry(repositoryHome + "/org/apache/ant/ant-launcher/" + antVersion +
-        "/ant-launcher-" + antVersion + ".jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/apache/ant/ant/" + antVersion +
-        "/ant-" + antVersion + ".jar");
-
-    launcher.configure(Thread.currentThread().getContextClassLoader());
-    launcher.launch();
-  }
-
-  /**
-   * Gets the ant run arguments list.
-   *
-   * @return the ant run arguments list
-   */
-  private static String[] getAntRunArgsList() {
-    List<String> newArgsList = new ArrayList<String>();
-
-    newArgsList.add("-basedir");
-    newArgsList.add("projects/antrun");
-    newArgsList.add("-build.required");
-    newArgsList.add("false");
-
-    String[] newArgs = new String[newArgsList.size()];
-
-    newArgsList.toArray(newArgs);
-
-    return newArgs;
   }
 
   /**
@@ -104,17 +57,12 @@ public class CoreInstaller {
     SimpleLauncher launcher = new SimpleLauncher(args);
 
     launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
+    launcher.addClasspathEntry("projects/antrun/target/antrun.jar");
 
-    prepare(launcher);
+    launcher.setMainClassName("org.sf.scriptlandia.antrun.AntRun");
 
     launcher.configure(Thread.currentThread().getContextClassLoader());
     launcher.launch();
-  }
-
-  protected void prepare(SimpleLauncher launcher/*, boolean config*/) throws LauncherException {
-    launcher.setMainClassName("org.sf.scriptlandia.antrun.AntRun");
-
-      launcher.addClasspathEntry("projects/antrun/target/antrun.jar");
   }
 
   private void installProjects() throws Exception {
@@ -141,7 +89,24 @@ public class CoreInstaller {
 
     installLanguages("starter", false);
 
-    new ExtInstaller().registerLanguages();
+    ExtInstaller extInstaller = new ExtInstaller();
+
+    ExtXmlHelper xmlHelper = new ExtXmlHelper();
+    xmlHelper.readLanguages("languages");
+
+    List languages = xmlHelper.getLanguages();
+
+    for(int i=0; i < languages.size(); i++) {
+      Map language = (Map)languages.get(i);
+
+      String name = (String)language.get("name");
+
+      boolean requiresInstallation = Boolean.valueOf(System.getProperty(name + ".install")).booleanValue();
+
+      if(requiresInstallation) {
+        extInstaller.registerLanguage(language);
+      }
+    }
 
     System.out.println("Scriptlandia supported languages installed.");
   }
@@ -152,37 +117,95 @@ public class CoreInstaller {
     File[] files = new File("languages").listFiles();
 
     for (int i = 0; i < files.length; i++) {
-      if (!files[i].isHidden() && files[i].isDirectory()) {
-        String name = files[i].getName();
+      installLanguage(section, install, installer, files[i]);
+    }
+  }
 
-        boolean requiresInstallation = false;
+  public void installLanguage(String name, List languages) throws Exception {
+    ProjectInstaller installer = new ProjectInstaller(true);
 
-        if (Boolean.valueOf(System.getProperty(name + ".install")).booleanValue() || install == true) {
-          requiresInstallation = true;
+    String path = "languages" + File.separatorChar + name;
+
+    installLanguage("core", true, installer, new File(path));
+    installLanguage("starter", true, installer, new File(path));
+
+    Map language = findLanguage(languages, name);
+    
+    ExtInstaller extInstaller = new ExtInstaller();
+    extInstaller.registerLanguage(language);
+  }
+
+  private Map findLanguage(List languages, String name) {
+    Map language = null;
+
+    for(int i=0; i < languages.size() && language == null; i++) {
+      Map currentLanguage = (Map)languages.get(i);
+      String currentName = (String)currentLanguage.get("name");
+
+       if(currentName.equalsIgnoreCase(name)) {
+         language = currentLanguage;
+       }
+    }
+
+    return language;
+  }
+
+ protected void uninstallLanguageProjects() {
+   ExtInstaller extInstaller = new ExtInstaller();
+
+   ExtXmlHelper xmlHelper = new ExtXmlHelper();
+   xmlHelper.readLanguages("languages");
+
+   List languages = xmlHelper.getLanguages();
+
+   for(int i=0; i < languages.size(); i++) {
+     Map language = (Map)languages.get(i);
+
+     String name = (String)language.get("name");
+
+     boolean requiresInstallation = Boolean.valueOf(System.getProperty(name + ".install")).booleanValue();
+
+     if(requiresInstallation) {
+       extInstaller.unregisterLanguage(language);
+     }
+   }
+
+   System.out.println("Scriptlandia supported languages uninstalled.");
+  }
+
+  public void uninstallLanguage(String name, List languages) {
+    Map language = findLanguage(languages, name);
+
+    ExtInstaller extInstaller = new ExtInstaller();
+
+    extInstaller.unregisterLanguage(language);
+  }
+
+  private void installLanguage(String section, boolean install, ProjectInstaller installer, File file) throws Exception {
+    if (!file.isHidden() && file.isDirectory()) {
+      String name = file.getName();
+
+      boolean requiresInstallation = false;
+
+      if (Boolean.valueOf(System.getProperty(name + ".install")).booleanValue() || install) {
+        requiresInstallation = true;
+      }
+
+      if (requiresInstallation) {
+        boolean compile = false;
+
+        if (new File("languages/" + name + "/" + section + "/src/main/java").exists() &&
+            !new File("languages/" + name + "/" + section + "/target/" + name + "-" + section + ".jar").exists()) {
+          compile = true;
         }
 
-        if (requiresInstallation) {
-          boolean compile = false;
-
-          if (new File("languages/" + name + "/" + section + "/src/main/java").exists() &&
-              !new File("languages/" + name + "/" + section + "/target/" + name + "-" + section + ".jar").exists()) {
-            compile = true;
-          }
-
-          installer.install("languages/" + name + "/" + section, compile);
-        }
+        installer.install("languages/" + name + "/" + section, compile);
       }
     }
   }
 
   protected List readLanguages() throws LauncherException {
     java.util.List languages;
-
-    SimpleLauncher launcher = new SimpleLauncher(new String[] {});
-
-    prepare(launcher);
-
-    launcher.configure(Thread.currentThread().getContextClassLoader());
 
     try {
       ExtXmlHelper xmlHelper = new ExtXmlHelper();
@@ -195,19 +218,6 @@ public class CoreInstaller {
     }
 
     return languages;
-  }
-
-  /**
-   * Launches the installer from the command line.
-   *
-   * @param args The application command-line arguments.
-   * @throws LauncherException exception
-   */
-  public static void main(String[] args) throws LauncherException {
-    CoreInstaller installer = new CoreInstaller();
-
-    installer.coreInstall();
-    installer.install(args);
   }
 
 }
