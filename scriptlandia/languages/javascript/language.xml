@@ -9,5 +9,7 @@
     <starter>
       <mainClass>org.mozilla.javascript.tools.shell.Main</mainClass>
     </starter>
+
+    <script name="js"/>
   </registration>
 </language>

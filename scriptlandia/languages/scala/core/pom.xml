@@ -11,33 +11,41 @@
   <description>Scriptlandia Scala Core Module</description>
 
   <properties>
-    <scala.version>2.6.0</scala.version>
+    <scala.version>2.6.1</scala.version>
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>scala</groupId>
+    <!--dependency>
+      <groupId>org.scala-lang</groupId>
       <artifactId>scala-library</artifactId>
       <version>${scala.version}</version>
-    </dependency>
+    </dependency-->
 
     <dependency>
-      <groupId>scala</groupId>
+      <groupId>org.scala-lang</groupId>
       <artifactId>scala-compiler</artifactId>
       <version>${scala.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>scala</groupId>
+      <groupId>org.scala-lang</groupId>
       <artifactId>scala-dbc</artifactId>
       <version>${scala.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>scala</groupId>
+      <groupId>org.scala-lang</groupId>
       <artifactId>scala-decoder</artifactId>
       <version>${scala.version}</version>
     </dependency>
   </dependencies>
 
+  <repositories>
+    <repository>
+      <id>scala-repo</id>
+      <name>Scala Maven2 repository</name>
+      <url>http://scala-tools.org/repo-releases</url>
+    </repository>
+  </repositories>
+  
 </project>

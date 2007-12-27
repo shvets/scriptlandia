@@ -10,5 +10,7 @@
       <mainClass>org.sf.scriptlandia.ScriptlandiaStarter</mainClass>
       <commandLine>-script.name</commandLine>
     </starter>
+
+    <script name="sl-run"/>
   </registration>
 </language>

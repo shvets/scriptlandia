@@ -10,7 +10,9 @@
 
     <starter>
       <mainClass>org.sf.scriptlandia.MavenStarter</mainClass>
-      <commandLine>-f</commandLine>
+      <!--commandLine>-f</commandLine-->
     </starter>
+
+    <script name="mvn"/>
   </registration>
 </language>

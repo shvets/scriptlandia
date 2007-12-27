@@ -10,5 +10,7 @@
       <mainClass>clojure.lang.Script</mainClass>
       <commandLine>${repository.home}/clojure/boot/${clojure.version}/boot.clj</commandLine>
     </starter>
+
+    <script name="clj"/>
   </registration>
 </language>

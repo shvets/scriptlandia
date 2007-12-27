@@ -55,6 +55,10 @@ public class AntStarter extends Main {
 
     parseCommandLine(args, arguments, specialArguments);
 
+    //String[] newArgs = arguments.toArray(new String[arguments.size()]);
+
+    arguments.add(0, "-f");
+
     String[] newArgs = arguments.toArray(new String[arguments.size()]);
 
     try {

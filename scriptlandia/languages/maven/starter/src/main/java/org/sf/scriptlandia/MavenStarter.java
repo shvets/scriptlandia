@@ -24,7 +24,18 @@ public final class MavenStarter {
       System.out.println("args: " + java.util.Arrays.asList(args));
     }
 
-    MavenCli.main(args, classWorld);
+    final List<String> newArgsList = new ArrayList<String>();
+
+    newArgsList.add("-f");
+
+    for (int i = 0; i < args.length; i++) {
+      newArgsList.add(args[i]);
+    }
+
+    String[] newArgs = new String[newArgsList.size()];
+    newArgsList.toArray(newArgs);
+
+    MavenCli.main(newArgs, classWorld);
   }
 
   /**

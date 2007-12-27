@@ -30,7 +30,7 @@
       <version>1.0.1</version>
       <type>pom</type>
     </dependency>
-
+<!--
     <dependency>
       <groupId>groovy</groupId>
       <artifactId>scriptom</artifactId>
@@ -42,6 +42,8 @@
       <artifactId>jacob</artifactId>
       <version>1.10.1</version>
     </dependency>
+  -->
+  
   </dependencies>
 
   <build>

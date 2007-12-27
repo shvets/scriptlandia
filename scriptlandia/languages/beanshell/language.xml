@@ -9,5 +9,7 @@
     <starter>
       <mainClass>bsh.Interpreter</mainClass>
     </starter>
+
+    <script name="bsh"/>
   </registration>
 </language>

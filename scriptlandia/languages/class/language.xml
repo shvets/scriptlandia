@@ -9,5 +9,7 @@
     <starter>
       <mainClass>org.sf.scriptlandia.ClassStarter</mainClass>
     </starter>
+
+    <script name="class-run"/>
   </registration>
 </language>

@@ -1,16 +1,20 @@
 package org.sf.scriptlandia;
 
-
 import org.codehaus.classworlds.ClassRealm;
-import org.apache.tools.ant.taskdefs.Java;
-import org.apache.tools.ant.types.Path;
+import org.sf.jlaunchpad.JLaunchPadLauncher;
+import org.sf.jlaunchpad.util.FileUtil;
+import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.BuildLogger;
 import org.apache.tools.ant.DefaultLogger;
-import org.sf.jlaunchpad.JLaunchPadLauncher;
-import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
+import org.apache.tools.ant.types.Path;
+import org.apache.tools.ant.taskdefs.Java;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.util.StringTokenizer;
+import java.net.URL;
 
 /**
  * This class is used for executing script in Scala.
@@ -18,31 +22,30 @@ import java.io.File;
  * @author Alexander Shvets
  * @version 1.0 12/02/2006
  */
-public final class ScalaStarter2 extends Java {
+public final class ScalaStarter2 {
   private final static String RUNNER_CLASS = "scala.tools.nsc.MainGenericRunner";
 
   /**
    * The main starter method.
    *
    * @param args command line arguments
+   * @param mainRealm  main realm
    * @throws Exception the exception
    */
   public void start(final String[] args, ClassRealm mainRealm) throws Exception {
-    String fullFileName = args[0];
-
     Project project = createProject();
 
-    Java javaTask = createJavaTask(project, RUNNER_CLASS);
-    Path classpath = getClasspath(project);
-    classpath.setLocation(new File(fullFileName));
-    
-    javaTask.setClasspath(classpath);
+    Java forker = createJavaTask(project, RUNNER_CLASS);
+    Path classpath = getClasspath(project, mainRealm);
 
-    for (String arg : args) {
-      javaTask.createArg().setValue(arg);
+    forker.setClasspath(classpath);
+    forker.setDescription("forker");
+
+    for (int i=0; i < args.length; i++) {
+      forker.createArg().setValue(args[i]);
     }
 
-    javaTask.execute();
+    forker.execute();
   }
 
   private Java createJavaTask(Project project, String className) {
@@ -70,21 +73,20 @@ public final class ScalaStarter2 extends Java {
     return project;
   }
 
-
-  private Path getClasspath(Project project) {
-    String repositoryHome = System.getProperty("repository.home");
-    String scalaVersion = System.getProperty("scala.version");
-
+  private Path getClasspath(Project project, ClassRealm mainRealm) {
     Path classpath = new Path(project);
 
-    classpath.setLocation(new File(repositoryHome + "/scala/scala-library/" + scalaVersion +
-       "/scala-library-" + scalaVersion + ".jar"));
-   classpath.setLocation(new File(repositoryHome + "/scala/scala-compiler/" + scalaVersion +
-        "/scala-compiler-" + scalaVersion + ".jar"));
-    classpath.setLocation(new File(repositoryHome + "/scala/scala-dbc/" + scalaVersion +
-        "/scala-dbc-" + scalaVersion + ".jar"));
-    classpath.setLocation(new File(repositoryHome + "/scala/scala-decoder/" + scalaVersion +
-        "/scala-decoder-" + scalaVersion + ".jar"));
+    URL[] constituents = mainRealm.getConstituents();
+
+    for (URL constituent : constituents) {
+      classpath.setLocation(new File(constituent.getFile()));
+    }
+
+    StringTokenizer st = new StringTokenizer(System.getProperty("java.class.path"), File.pathSeparator);
+
+    while(st.hasMoreTokens()) {
+        classpath.setLocation(new File(st.nextToken()));
+    }
 
     return classpath;
   }
@@ -98,10 +100,13 @@ public final class ScalaStarter2 extends Java {
   public static void main(String[] args) throws Exception {
     JLaunchPadLauncher launcher = ScriptlandiaLauncher.getInstance();
 
-    ClassRealm mainRealm = launcher.getMainRealm();
+    ClassRealm mainRealm = null;
+
+    if(launcher != null) {
+      mainRealm = launcher.getMainRealm();
+    }
 
     new ScalaStarter2().start(args, mainRealm);
   }
 
 }
-
