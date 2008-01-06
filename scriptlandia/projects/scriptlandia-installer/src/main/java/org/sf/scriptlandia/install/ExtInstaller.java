@@ -119,7 +119,7 @@ public class ExtInstaller {
 
       Project project = createAntProject();
 
-      project.setUserProperty("ant.file", buildFile.getAbsolutePath());	
+      project.setUserProperty("ant.file", buildFile.getAbsolutePath()); 
 
       ProjectHelper.getProjectHelper().parse(project, buildFile);
 
@@ -267,7 +267,7 @@ public class ExtInstaller {
     if(existingAssociation == null || existingAssociation.getMimeType() == null ||
        (!existingAssociation.getFileExtList().contains("." + extension) ||
         !existingAssociation.getMimeType().equals(mimeType) ||
-        !existingAssociation.getActionByVerb("open").getCommand().equals(openAction))) {
+        (existingAssociation.getActionByVerb("open") != null && !existingAssociation.getActionByVerb("open").getCommand().equals(openAction)))) {
       Association association = new Association();
       association.setName(name);
       // Adds specific type to the Association object.

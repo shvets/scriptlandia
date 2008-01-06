@@ -57,7 +57,7 @@ public class AntStarter extends Main {
 
     //String[] newArgs = arguments.toArray(new String[arguments.size()]);
 
-    arguments.add(0, "-f");
+    //arguments.add(0, "-f");
 
     String[] newArgs = arguments.toArray(new String[arguments.size()]);
 

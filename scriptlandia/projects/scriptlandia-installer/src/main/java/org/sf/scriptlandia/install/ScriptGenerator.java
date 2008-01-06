@@ -102,7 +102,13 @@ public class ScriptGenerator extends ExtInstaller {
       writer.newLine();
       writer.write("SET MAIN_CLASS_PROPERTY=" + mainClassProperty);
       writer.newLine();
-      writer.write("SET CMD_LINE=" + commandLine);
+      writer.write("SET CMD_LINE=");
+
+      if(name.equals("ant") || name.equals("maven")) {
+        writer.write("-f ");
+      }
+
+      writer.write(commandLine);
       writer.newLine();
       writer.write("goto execute ");
       writer.newLine();

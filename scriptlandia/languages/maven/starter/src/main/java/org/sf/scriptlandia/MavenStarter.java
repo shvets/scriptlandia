@@ -29,7 +29,7 @@ public final class MavenStarter {
 
     final List<String> newArgsList = new ArrayList<String>();
 
-    newArgsList.add("-f");
+   // newArgsList.add("-f");
 
     for (int i = 0; i < args.length; i++) {
       newArgsList.add(args[i]);
