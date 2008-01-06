@@ -161,6 +161,21 @@ ifeq ($(CC_VERSION),msvc)
       CC_LOWER_OPT   = -O1
     endif
   endif
+  ifeq ($(COMPILER_VERSION), VS2008)
+    # Automatic precompiled header option to use (if COMPILE_APPROACH=batch)
+    AUTOMATIC_PCH_OPTION =
+    # VS2008 compiler, only with Platform SDK right now?
+    GX_OPTION = -EHsc
+    ifeq ($(ARCH_DATA_MODEL), 32)
+      CC_HIGHEST_OPT = -O2
+      CC_HIGHER_OPT  = -O1
+      CC_LOWER_OPT   = -O1
+    else
+      CC_HIGHEST_OPT = -O2
+      CC_HIGHER_OPT  = -O1
+      CC_LOWER_OPT   = -O1
+    endif
+  endif
   CC_NO_OPT      = -Od
 else # CC_VERSION
   # GCC not supported, but left for historical reference...

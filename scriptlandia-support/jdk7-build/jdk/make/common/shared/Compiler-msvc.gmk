@@ -44,6 +44,10 @@ ifeq ($(PLATFORM), windows)
   REQUIRED_CC_VER=
   REQUIRED_LINK_VER=
   
+  #CC_VER=
+  #CC_TYPE=
+  #CC_MAJORVER=
+
   # unset any GNU Make settings of MFLAGS and MAKEFLAGS which may mess up nmake
   NMAKE          = MFLAGS= MAKEFLAGS= $(COMPILER_PATH)nmake -nologo
 
@@ -53,6 +57,11 @@ ifeq ($(PLATFORM), windows)
     LINK_VER := $(shell $(LINK) | $(HEAD) -n 1 | $(NAWK) '{print $$6}')
     CC_TYPE := $(shell $(CC) 2>&1 | $(HEAD) -n 1 | $(NAWK) '{print $$5}')
     CC_MAJORVER :=$(call MajorVersion,$(CC_VER))
+
+    $(warning "WARNING: ver: $(CC_VER) link ver. $(LINK_VER) cc type: $(CC_TYPE) cc majorver: $(CC_MAJORVER)")
+    $(warning "??? $(COMPILER_PATH)")
+        $(warning "??? $(CC)")
+
     REQUIRED_CCTYPE = Optimizing
     REQUIRED_CC_VER = 13.10.3077
     REQUIRED_LINK_VER = 7.10.3077
@@ -70,7 +79,7 @@ ifeq ($(PLATFORM), windows)
       REBASE     = $(COMPILER_PATH)../../Common7/Tools/Bin/rebase
       MTL        = $(COMPILER_PATH)../../Common7/Tools/Bin/midl
       ifndef COMPILER_PATH
-	COMPILER_PATH := $(error COMPILER_PATH cannot be empty here)
+        COMPILER_PATH := $(error COMPILER_PATH cannot be empty here)
       endif
     endif
     ifeq ($(CC_MAJORVER), 14)
@@ -81,7 +90,18 @@ ifeq ($(PLATFORM), windows)
       REBASE     = $(COMPILER_PATH)../../Common8/Tools/Bin/rebase
       MTL        = $(COMPILER_PATH)../../Common8/Tools/Bin/midl
       ifndef COMPILER_PATH
-	COMPILER_PATH := $(error COMPILER_PATH cannot be empty here)
+        COMPILER_PATH := $(error COMPILER_PATH cannot be empty here)
+      endif
+    endif
+    ifeq ($(CC_MAJORVER), 15)
+      # This should be: CC_VER=15.00.0000 LINK_VER=9.00.0000
+      # NOTE: This compiler has not been tried yet on 32bit systems
+      COMPILER_NAME=Microsoft Visual Studio 9.0
+      COMPILER_VERSION=VS2008
+      REBASE     = $(COMPILER_PATH)../../Common8/Tools/Bin/rebase
+      MTL        = $(COMPILER_PATH)../../Common8/Tools/Bin/midl
+      ifndef COMPILER_PATH
+        COMPILER_PATH := $(error COMPILER_PATH cannot be empty here)
       endif
     endif
   else
@@ -110,14 +130,14 @@ ifeq ($(PLATFORM), windows)
       ifeq ($(ARCH), amd64)
         ifeq ($(CC_MICROVER), 30701)
           # This should be: CC_VER=14.00.30701 LINK_VER=8.00.30701
-	  # WARNING: it says 14, but it is such an early build it doesn't
-	  #          have all the VS2005 compiler option changes, so treat
-	  #          this like a VS2003 compiler.
+          # WARNING: it says 14, but it is such an early build it doesn't
+          #          have all the VS2005 compiler option changes, so treat
+          #          this like a VS2003 compiler.
           COMPILER_NAME=Microsoft Platform SDK - February 2003 Edition
           COMPILER_VERSION=VS2003
         else
           # This should be: CC_VER=14.00.40310.41 LINK_VER=8.00.40310.39
-	  COMPILER_NAME=Microsoft Platform SDK - April 2005 Edition (3790.1830)
+          COMPILER_NAME=Microsoft Platform SDK - April 2005 Edition (3790.1830)
           COMPILER_VERSION=VS2005
         endif
       endif
