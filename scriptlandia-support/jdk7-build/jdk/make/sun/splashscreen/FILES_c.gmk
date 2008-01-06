@@ -1,0 +1,110 @@
+#
+# Copyright 2005 Sun Microsystems, Inc.  All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+FILES_c = \
+	java_awt_SplashScreen.c \
+	splashscreen_gfx_impl.c \
+	splashscreen_gif.c \
+	splashscreen_impl.c \
+	splashscreen_jpeg.c \
+	splashscreen_png.c \
+	splashscreen_sys.c \
+	png.c \
+	pngerror.c \
+	pngget.c \
+	pngmem.c  \
+	pngpread.c \
+	pngread.c \
+	pngrio.c \
+	pngrtran.c \
+	pngrutil.c \
+	pngset.c \
+	pngtrans.c \
+	pngwio.c \
+	pngwrite.c \
+	pngwtran.c \
+	pngwutil.c \
+	dgif_lib.c \
+	gif_err.c \
+	gifalloc.c \
+	compress.c \
+	deflate.c \
+	gzio.c \
+	infblock.c \
+	infcodes.c \
+	inffast.c \
+	inflate.c \
+	inftrees.c \
+	infutil.c \
+	trees.c \
+	uncompr.c \
+	zadler32.c \
+	zcrc32.c \
+	zutil.c \
+	jcomapi.c \
+	jdapimin.c \
+	jdapistd.c \
+	jdcoefct.c \
+	jdcolor.c \
+	jddctmgr.c \
+	jdhuff.c \
+	jdinput.c \
+	jdmainct.c \
+	jdmarker.c \
+	jdmaster.c \
+	jdmerge.c \
+	jdphuff.c \
+	jdpostct.c \
+	jdsample.c \
+	jerror.c \
+	jidctflt.c \
+	jidctfst.c \
+	jidctint.c \
+	jidctred.c \
+	jmemmgr.c \
+	jmemnobs.c \
+	jquant1.c \
+	jquant2.c \
+	jutils.c \
+	jcapimin.c \
+	jcapistd.c \
+	jccoefct.c \
+	jccolor.c \
+	jcdctmgr.c \
+	jchuff.c \
+	jcinit.c \
+	jcmainct.c \
+	jcmarker.c \
+	jcmaster.c \
+	jcparam.c \
+	jcphuff.c \
+	jcprepct.c \
+	jcsample.c \
+	jctrans.c \
+	jdtrans.c \
+	jfdctflt.c \
+	jfdctfst.c \
+	jfdctint.c
+

@@ -1,0 +1,45 @@
+#
+# Copyright 2007 Sun Microsystems, Inc. All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+
+DEPLOY_COMMON_WIN_SRC = $(DEPLOY_TOPDIR)/src/common/windows/native
+
+# fix for 5043602: windows-i586 deploy build have some linker warning.
+# we want to use our own resource file in plugin
+LOCAL_RESOURCE_FILE=true
+
+# Base address for dll relocation.  Above the recommended 0x60000000 to allow
+# larger heaps.
+REBASE_ADDR = 0x6D000000
+
+PLUGIN_PLATFORM_SRC := $(DEPLOY_TOPDIR)/src/plugin/win32
+VERSION_SRC   := $(DEPLOY_TOPDIR)/src/plugin/win32/common/PluginVersion.hpp
+VERSION_DEST  := $(TEMPDIR)/PluginVersion.h
+
+ifeq ($(VARIANT), DBG)
+  CPPFLAGS1  = $(MS_RUNTIME_OPTION) $(MS_RUNTIME_DEBUG_OPTION) 
+  CPPFLAGS1 += -W3 -Od $(GX_OPTION) -Gm -GZ -Zi -ZI -Fd"$(OBJDIR)\debug" 
+  LFLAGS = -nologo -map -mapinfo:exports -mapinfo:lines -incremental:no -machine:I386 -debug -opt:noref
+  RSCFLAGS = -l 0x409 -r $(MS_RC_DEBUG_OPTION)
+else
+  CPPFLAGS1  = $(MS_RUNTIME_OPTION) $(MS_RUNTIME_DEBUG_OPTION) 
+  CPPFLAGS1 += -W3 -Ox -Os $(GX_OPTION) -Zi -DNDEBUG -Fd"$(OBJDIR)\release" 
+  LFLAGS = -nologo -map -mapinfo:exports -mapinfo:lines -incremental:no -machine:I386 -debug -opt:ref 
+  RSCFLAGS = -l 0x409 -r $(MS_RC_DEBUG_OPTION)
+endif
+
+CPPFLAGS= $(patsubst %,-I%,$(CPPINCPATH)) $(patsubst %,-I%,$(subst $(CLASSPATH_SEPARATOR), ,$(VPATH.h))) -nologo $(CPPFLAGS1) -DXP_WIN -DXP_PC -D_MBCS -D_ATL_STATIC_REGISTRY -DWIN32 -D_WINDOWS -DARCH=\"$(ARCH)\" -c -Fm$(OBJDIR) $(EXTRA_CPPFLAGS)
+
+CXXFLAGS = $(MS_RUNTIME_OPTION)
+
+# CAB file locations
+#
+ifdef ALT_CAB_LOCATION
+CAB_LOCATION=$(ALT_CAB_LOCATION)
+DEFAULT_XML=$(CAB_LOCATION)/$(FULL_VERSION).xml
+else
+CAB_LOCATION=http://java.sun.com/update/$(JDK_MAJOR_VERSION).$(JDK_MINOR_VERSION).$(JDK_MICRO_VERSION)/$(FULL_VERSION)/$(PLATFORM)-$(ARCH)
+DEFAULT_XML=http://java.sun.com/update/$(JDK_MAJOR_VERSION).$(JDK_MINOR_VERSION).$(JDK_MICRO_VERSION)/$(FULL_VERSION).xml
+endif
+

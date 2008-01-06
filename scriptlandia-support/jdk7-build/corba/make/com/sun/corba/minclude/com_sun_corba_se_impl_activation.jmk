@@ -1,0 +1,41 @@
+#
+# Copyright 2003 Sun Microsystems, Inc.  All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+#
+# Java IDL Server Activation Files
+#
+
+com_sun_corba_se_impl_activation_java = \
+	com/sun/corba/se/impl/activation/ProcessMonitorThread.java \
+	com/sun/corba/se/impl/activation/RepositoryImpl.java \
+	com/sun/corba/se/impl/activation/ServerTool.java \
+	com/sun/corba/se/impl/activation/ORBD.java \
+	com/sun/corba/se/impl/activation/CommandHandler.java \
+	com/sun/corba/se/impl/activation/ServerManagerImpl.java \
+	com/sun/corba/se/impl/activation/ServerTableEntry.java \
+	com/sun/corba/se/impl/activation/NameServiceStartThread.java \
+	com/sun/corba/se/impl/activation/ServerMain.java
+
+FILES_java = $(com_sun_corba_se_impl_activation_java)

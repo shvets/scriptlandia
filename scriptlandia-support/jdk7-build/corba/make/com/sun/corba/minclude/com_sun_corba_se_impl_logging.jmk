@@ -1,0 +1,39 @@
+#
+# Copyright 2002-2003 Sun Microsystems, Inc.  All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+#
+# Files for logging implementation
+#
+
+# The following files are generated from the .mc files that describe system exceptions:
+com_sun_corba_se_impl_logging_java = \
+	com/sun/corba/se/impl/logging/ActivationSystemException.java \
+	com/sun/corba/se/impl/logging/IORSystemException.java \
+	com/sun/corba/se/impl/logging/InterceptorsSystemException.java \
+	com/sun/corba/se/impl/logging/NamingSystemException.java \
+	com/sun/corba/se/impl/logging/OMGSystemException.java \
+	com/sun/corba/se/impl/logging/ORBUtilSystemException.java \
+	com/sun/corba/se/impl/logging/POASystemException.java \
+	com/sun/corba/se/impl/logging/UtilSystemException.java 

@@ -1,0 +1,138 @@
+#
+# Copyright 1997-2003 Sun Microsystems, Inc.  All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+FILES_c = \
+	attrmgr.c \
+	auxpt.c \
+	calc.c \
+	calcgtbl.c \
+	calcitbl.c \
+	calcmtbl.c \
+	calcotbl.c \
+	chainsu.c \
+	chnrules.c \
+	cmmdll.c \
+	cmpsatt.c \
+	cmpsattf.c \
+	cmyklin.c \
+	combine.c \
+	compilut.c \
+	compitbl.c \
+	compose.c \
+	compotbl.c \
+	convert1.c \
+	copy.c \
+	crc32.c \
+	dispatch.c \
+	doevalsw.c \
+	eval.c \
+	evalth13.c \
+	evalth14.c \
+	evalth1c.c \
+	evalth1g.c \
+	f4lex.c \
+	filemap.c \
+	fmtdata.c \
+	futiomem.c \
+	futiotbl.c \
+	futmft2.c \
+	fwdmono.c \
+	fwdxform.c \
+	fxnull.c \
+	invmono.c \
+	invxform.c \
+	io.c \
+	io_swab.c \
+	ioencode.c \
+	iomf.c \
+	iotable.c \
+	kcms_io.c \
+	kcpmgr.c \
+	kcpmgru.c \
+	kpfile.c \
+	kplib.c \
+	kpmd5.c \
+	lab2uvl.c \
+	lab2xyz.c \
+	lensity.c \
+	linlab.c \
+	logrgb.c \
+	loguvl.c \
+	malloc.c \
+	mat2fut.c \
+	matrix.c \
+	memory.c \
+	moncurv.c \
+	new.c \
+	outmat.c \
+	profile.c \
+	profilem.c \
+	ptchain.c \
+	pteval.c \
+	ptinvert.c \
+	ptiomem.c \
+	pttmgr.c \
+	registry.c \
+	rel2abs.c \
+	resize.c \
+	share.c \
+	solvemat.c \
+	spattpr.c \
+	spattr.c \
+	spattrio.c \
+	spcvrt.c \
+	speval.c \
+	splink.c \
+	splut.c \
+	sprofile.c \
+	sprofpr.c \
+	spsave.c \
+	spsearch.c \
+	spsys.c \
+	spsystem.c \
+	sptagio.c \
+	sptagmgr.c \
+	sputilpr.c \
+	spxf_gen.c \
+	spxfcvrt.c \
+	spxffile.c \
+	spxfgpr.c \
+	spxfmtag.c \
+	spxform.c \
+	spxfprv.c \
+	spxfromr.c \
+	sync.c \
+	sysinfo.c \
+	systime.c \
+	thread.c \
+	thredmem.c \
+	util.c \
+	uvl2lab.c \
+	winmem.c \
+	wkcpmgr.c \
+	xfers.c \
+	xyz2lab.c \
+	xyzmap.c \
+	CMM.c

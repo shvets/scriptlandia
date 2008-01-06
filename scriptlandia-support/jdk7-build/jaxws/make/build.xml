@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<!--
+ Copyright 2007 Sun Microsystems, Inc.  All rights reserved.
+ SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+
+<!--
+ This is the main build file for the jaxws workspace.
+ -->
+
+<project name="jaxws" default="all" basedir=".">
+
+    <!-- Convenient shorthands for standard locations within the workspace. -->
+    <property file="build.properties"/>
+    <property name="topdir" value=".."/>
+    <property name="build.dir" location="${topdir}/build"/>
+    <property name="build.classes.dir" location="${build.dir}/classes"/>
+    <property name="build.gensrc.dir" location="${build.dir}/gensrc"/>
+    <property name="build.toolclasses.dir" location="${build.dir}/toolclasses"/>
+    <property name="dist.dir" location="${topdir}/dist"/>
+    <property name="dist.lib.dir" location="${dist.dir}/lib"/>
+    <property name="make.dir" location="${topdir}/make"/>
+    <property name="make.tools.dir" location="${make.dir}/tools"/>
+    <property name="src.dir" location="${topdir}/src"/>
+    <property name="src.classes.dir" location="${src.dir}/share/classes"/>
+    <property environment="env"/>
+
+    <target name="build" depends="banner, build-classes, build-tools, build-binaries">
+	<mkdir dir="${dist.lib.dir}"/>
+	<jar file="${dist.lib.dir}/classes.jar" basedir="${build.classes.dir}"/>
+	<zip file="${dist.lib.dir}/src.zip" basedir="${src.classes.dir}"/>
+    </target>
+
+    <!-- Debug information -->
+    <target name="sanity"
+        description="display settings of configuration values">
+        <echo level="info">ant.home = ${ant.home}</echo>
+        <echo level="info">java.home = ${env.JAVA_HOME}</echo>
+        <echo level="info">bootstrap.dir = ${bootstrap.dir}</echo>
+    </target>
+
+    <target name="build-tools" depends="-defs-pstrip">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${build.classes.dir}"/>
+	    <pstrip srcdir="${src.classes.dir}"
+                    destdir="${build.classes.dir}"
+		    includes="**/*.properties"/>
+    </target>
+
+    <target name="build-binaries">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${build.classes.dir}"/>
+            <copy todir="${build.classes.dir}">
+                 <fileset dir="${src.classes.dir}"
+                     includes="**/*.xsd, **/*.default"
+                     excludes="**/*.java, **/*.package.html, **/*.properties"/>
+            </copy>
+        <mkdir dir="${build.classes.dir}/META-INF/services"/>
+            <copy todir="${build.classes.dir}/META-INF/services"
+                  file="${src.classes.dir}/com/sun/tools/etc/META-INF/services/com.sun.mirror.apt.AnnotationProcessorFactory"/>
+    </target>
+
+    <target name="-defs-pstrip">
+      <mkdir dir="${build.toolclasses.dir}"/>
+      <javac srcdir="${make.tools.dir}/StripProperties"
+		destdir="${build.toolclasses.dir}/"
+		classpath="${ant.home}/lib/ant.jar"/>
+      <taskdef name="pstrip"
+		 classname="StripPropertiesTask"
+		 classpath="${build.toolclasses.dir}/"/>
+    </target>
+
+    <target name="build-classes" depends="sanity">
+      <mkdir dir="${build.dir}"/>
+      <mkdir dir="${build.classes.dir}"/>
+      <javac fork="true"
+             srcdir="${src.classes.dir}"
+             destdir="${build.classes.dir}"
+             memoryInitialSize="${javac.memoryInitialSize}"
+             memoryMaximumSize="${javac.memoryMaximumSize}"
+             target="${javac.target}"
+             excludes="com/sun/tools/internal/txw2/**">
+         <compilerarg value="-J-Xbootclasspath/p:${bootstrap.dir}/lib/javac.jar"/>
+         <compilerarg line="${javac.version.opt}"/>
+         <compilerarg line="${javac.no.jdk.warnings}"/>
+      </javac>
+    </target>
+
+    <target name="clean" description="Delete all generated files">
+	<delete dir="${build.dir}"/>
+	<delete dir="${dist.dir}"/>
+    </target>
+
+    <target name="banner">
+      <echo>+---------------------------------------+</echo>
+      <echo>+    Building JAX-WS Component          +</echo>
+      <echo>+---------------------------------------+</echo>
+    </target>
+
+</project>

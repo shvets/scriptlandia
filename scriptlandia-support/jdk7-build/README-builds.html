@@ -1,592 +1,259 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
 <html>
-<head><title>OpenJDK Build README</title></head>
 
-<!-- ------------------------------------------------------ -->
-<hr noshade="noshade" size="3">
+<head>
+    <title>JDK Builds</title>
+</head>
 
-<center>
-    <h1>OpenJDK Build README</h1>
-</center>
+<body style="background-color: rgb(255, 255, 255);">
+<!-- ====================================================== -->
+<table border="0" width="100%">
+    <tbody>
+        <tr>
+            <td width="40"> <img src="javalogo52x88.gif" alt="Java"
+            border="0" height="88" width="52"> </td>
+            <td align="center">
+                <center>
+                    <h1>README: JDK Builds</h1>
+                    <h2>Java<sup><font size="-2">TM</font></sup> Platform, 
+                    Standard Edition Development Kit (JDK)</h2>
+                    <h2>v7 ea</h2>
+                </center>
+            </td>
+            <td align="right" valign="top"><!-- The following &nbsp; line enables the title above to be centered -->
+                <font size="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 <!-- ------------------------------------------------------ --> 
 <hr noshade="noshade" size="3">
 
-<h2><a name="introduction">Introduction</a></h2>
+<a name="introduction">
+    <h2>Introduction</h2>
+</a>
 
 <blockquote>
-    <p>
     This README file contains build instructions for the 
-    <a href="http://openjdk.java.net">OpenJDK</a>.
-    Building the source code for the 
-    OpenJDK
-    requires
-    a certain degree of technical expertise.
+    Java<sup><font size="-2">TM</font></sup> Platform, Standard Edition Development Kit 
+    v7 (JDK 7) 
+    Community Source Release. 
+    Building the source code for the JDK requires
+    a high level of technical expertise. Sun provides the source code
+    primarily for technical experts who want to conduct research, port the
+    platform to new operating systems and hardware, or add enhancements
+    that require access to platform internals. If you are not a technical
+    professional in one of these categories, this release is probably not
+    for you.
 </blockquote>
 
 <!-- ------------------------------------------------------ -->
 <hr noshade="noshade" size="3">
 
-<h2><a name="contents">Contents</a></h2>
+<h2>Contents</h2>
 
 <blockquote>
     <ul>
         <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#MBE">Minimum Build Environments</a></li>
-        <li><a href="#SDBE">Specific Developer Build Environments</a></li>
         <li><a href="#directories">Source Directory Structure</a> </li>
-        <li><a href="#building">Build Information</a>
+        <li><a href="#building">Building </a>
             <ul type="disc">
-                <li><a href="#gmake">GNU Make (<tt><i>gmake</i></tt>)</a> </li>
-                <li><a href="#linux">Basic Linux System Setup</a> </li>
-                <li><a href="#solaris">Basic Solaris System Setup</a> </li>
-                <li><a href="#windows">Basic Windows System Setup</a> </li>
+                <li><a href="#gnumake">GNU Make</a> </li>
+                <li><a href="#windows">Windows System Setup</a> </li>
+                <li><a href="#paths">Windows Paths</a> </li>
+                <li><a href="#windows_checklist">Windows Check List</a> </li>
+                <li><a href="#linux">Linux System Setup</a> </li>
+                <li><a href="#linux_checklist">Linux Check List</a> </li>
+                <li><a href="#solaris">Solaris System Setup</a> </li>
+                <li><a href="#solaris_checklist">Solaris Check List</a> </li>
                 <li><a href="#dependencies">Build Dependencies</a> </li>
-                <ul type="disc">
-                    <li><a href="#bootjdk">Bootstrap JDK</a> </li>
-                    <li><a href="#binaryplugs">Binary Plugs</a> </li>
-                    <li><a href="#cacerts">Certificate Authority File (cacert)</a> </li>
-                    <li><a href="#compilers">Compilers</a> 
-                        <ul>
-                            <li><a href="#msvc">Microsoft Visual Studio</a> </li>
-                            <li><a href="#mssdk">Microsoft Platform SDK</a> </li>
-                            <li><a href="#gcc">Linux gcc/binutils</a> </li>
-                            <li><a href="#studio">Sun Studio</a> </li>
-                        </ul>
-                    </li>
-                    <li>Linux and Solaris:
-                        <ul>
-                            <li><a href="#cups">CUPS Include files</a> </li>
-                        </ul>
-                    </li>
-                    <li>Windows only:
-                        <ul>
-                            <li>Unix Command Tools (<a href="#cygwin">CYGWIN</a>)</li>
-                            <li><a href="#dxsdk">DirectX 9.0 SDK</a> </li>
-                        </ul>
+                <ul>
+                    <li>
+                        <li><a href="#bootjdk">Bootstrap JDK</a> </li>
+                        <li><a href="#importjdk">Import JDK</a> </li>
+                        <li><a href="#cacert">Certificate Authority File (cacert)</a> </li>
+                        <li><a href="#zip">zip and unzip</a> </li>
+                        <li><a href="#compilers">Compilers</a> 
+                            <ul>
+                                <li><a href="#msvc">Microsoft Visual Studio .NET 2003</a> </li>
+                                <li><a href="#mssdk">Microsoft Platform SDK</a> </li>
+                                <li><a href="#gcc">Linux gcc/binutils</a> </li>
+                                <li><a href="#studio">Sun Studio 11 Compilers</a> </li>
+                            </ul>
+                        </li>
+                        <li>Plugins only:
+                            <ul>
+                                <li><a href="#mozilla">Mozilla Headers</a> </li>
+                                <li><a href="#gcc29">gcc 2.9</a> </li>
+                            </ul>
+                        </li>
+                        
+                        <li>Windows only:
+                            <ul>
+                                <li><a href="#cygwin">CYGWIN</a> </li>
+                                <li><a href="#mks">MKS</a> </li>
+                                <li><a href="#dxsdk">DirectX 9.0 SDK</a> </li>
+                                <li><a href="#msvcrt">MSVCRT.DLL</a> </li>
+                                <li><a href="#msvcr71">MSVCR71.DLL</a> </li>
+                                <li><a href="#install_mssdk">Installer SDK</a> </li>
+                                <li><a href="#install_msival2">MsiVal2</a> </li>
+                            </ul>
+                        </li>
+                        <li>Solaris & Linux:
+                            <ul>
+                                <li><a href="#cups">CUPS Headers</a> </li>
+                            </ul>
+                        </li>
+                        <li>Linux only:
+                            <ul>
+                                <li><a href="#alsa">ALSA</a> </li>
+                            </ul>
+                        </li>
                     </li>
                 </ul>
             </ul>
         </li>
         <li><a href="#creating">Creating the Build</a> </li>
         <li><a href="#testing">Testing the Build</a> </li>
-        <li><a href="#variables">Environment/Make Variables</a></li>
         <li><a href="#troubleshooting">Troubleshooting</a></li>
+        <li><a href="#variables">Environment/Make Variables</a></li>
     </ul>
 </blockquote>
 
 <!-- ------------------------------------------------------ -->
 <hr noshade="noshade" size="3">
 
-<h2><a name="MBE">Minimum Build Environments</a></h2>
+<a name="directories">
+    <h2>Source Directory Structure</h2>
+</a>
 
 <blockquote>
-    <p>
-    This file often describes specific requirements for what we call the
-    "minimum build environments" (MBE) for the JDK.
-    Building with the MBE will generate the most compatible
-    bits that install on, and run correctly on, the most variations
-    of the same base OS and hardware architecture.
-    These usually represent what is often called the
-    least common denominator platforms.
-    It is understood that most developers will NOT be using these 
-    specific platforms, and in fact creating these specific platforms
-    may be difficult due to the age of some of this software.
-    <p>
-    
-    <p>
-    The minimum OS and C/C++ compiler versions needed for building the
-    OpenJDK:
-    <p>
-    <center>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Base OS and Architecture</th>
-                    <th>OS</th>
-                    <th>Compiler</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Linux X86 (32bit)</td>
-                    <td>Red Hat Enterprise Linux 4 </td>
-                    <td>gcc 4 </td>
-                </tr>
-                <tr>
-                    <td>Linux X64 (64bit)</td>
-                    <td>Red Hat Enterprise Linux 4 </td>
-                    <td>gcc 4 </td>
-                </tr>
-                <tr>
-                    <td>Solaris SPARC (32bit)</td>
-                    <td>Solaris 10 + patches 
-                        <br>
-                        See <a href="http://sunsolve.sun.com/pub-cgi/show.pl?target=patches/JavaSE">SunSolve</a> for patch downloads.
-                    </td>
-                    <td>Sun Studio 11 </td>
-                </tr>
-                <tr>
-                    <td>Solaris SPARCV9 (64bit)</td>
-                    <td>Solaris 10 + patches
-                        <br>
-                        See <a href="http://sunsolve.sun.com/pub-cgi/show.pl?target=patches/JavaSE">SunSolve</a> for patch downloads.
-                    </td>
-                    <td>Sun Studio 11</td>
-                </tr>
-                <tr>
-                    <td>Solaris X86 (32bit)</td>
-                    <td>Solaris 10 + patches
-                        <br>
-                        See <a href="http://sunsolve.sun.com/pub-cgi/show.pl?target=patches/JavaSE">SunSolve</a> for patch downloads.
-                    </td>
-                    <td>Sun Studio 11</td>
-                </tr>
-                <tr>
-                    <td>Solaris X64 (64bit)</td>
-                    <td>Solaris 10 + patches
-                        <br>
-                        See <a href="http://sunsolve.sun.com/pub-cgi/show.pl?target=patches/JavaSE">SunSolve</a> for patch downloads.
-                    </td>
-                    <td>Sun Studio 11</td>
-                </tr>
-                <tr>
-                    <td>Windows X86 (32bit)</td>
-                    <td>Windows XP</td>
-                    <td>Microsoft Visual Studio .NET 2003 Professional</td>
-                </tr>
-                <tr>
-                    <td>Windows X64 (64bit)</td>
-                    <td>Windows Server 2003 - Enterprise x64 Edition</td>
-                    <td>Microsoft Platform SDK - April 2005</td>
-                </tr>
-            </tbody>
-        </table>
-    </center>
-</blockquote>
-
-<!-- ------------------------------------------------------ -->
-<hr noshade="noshade" size="3">
-
-<h2><a name="SDBE">Specific Developer Build Environments</a></h2>
-
-<blockquote>
-    <p>
-    We won't be listing all the possible environments, but
-    we will try to provide what information we have available to us.
-</blockquote>
-
-<h3><a name="fedora">Fedora</a></h3>
-
-<blockquote>
-    TBD
-</blockquote>
-
-<h3><a name="debian">Debian</a></h3>
-
-<blockquote>
-    TBD
-</blockquote>
-
-<h3><a name="ubuntu">Ubuntu</a></h3>
-
-<blockquote>
-    <p>
-    In addition to needing the Bootstrap JDK and the Binary Plugs, 
-    when building on Ubuntu you will need to
-    make sure certain packages are installed.
-    In particular, certain X11 packages, make, m4, gawk, gcc 4, 
-    binutils, cups, freetype
-    and alsa.
-    
-    <h4>Ubuntu 6.06</h4>
-    
-    <p>
-    The following list of packages for Ubuntu 6.06 is a working set that
-    does appear to work. 
-    
-    <p>
-    <b>Note that it's quite possible that some of these
-        packages are not required, so anyone discovering that some of the
-        packages listed below are NOT required,
-        please let the
-        OpenJDK
-    team know.</b>
-    <p>
-    All the packages below can be installed with the
-    Synaptic Package manager provided with the base Ubuntu 6.06 release.
-    
-    <blockquote>
-        <ul>
-            <li>binutils (2.16.1cvs20060117-1ubuntu2.1)</li>
-            <li>cpp (4:4.0.3-1)</li>
-            <li>cpp-4.0 (4.0.3-1ubuntu5)</li>
-            <li>libfreetype6-dev</li>
-            <li>g++ (4:4.0.3-1)</li>
-            <li>g++-4.0 (4.0.3-1ubuntu5)</li>
-            <li>gawk (1:3.1.5-2build1)</li>
-            <li>gcc (4:4.0.3-1)</li>
-            <li>gcc-4.0 (4.0.3-1ubuntu5)</li>
-            <li>libasound2-dev (1.0.10-2ubuntu4)</li>
-            <li>libc6 (2.3.6-0ubuntu20) to 2.3.6-0ubuntu20.4</li>
-            <li>libc6-dev (2.3.6-0ubuntu20.4)</li>
-            <li>libc6-i686 (2.3.6-0ubuntu20) to 2.3.6-0ubuntu20.4</li>
-            <li>libcupsys2-dev (1.2.2-0ubuntu0.6.06)</li>
-            <li>libgcrypt11-dev (1.2.2-1)</li>
-            <li>libgnutls-dev (1.2.9-2ubuntu1.1)</li>
-            <li>libgnutls12 (1.2.9-2ubuntu1) to 1.2.9-2ubuntu1.1</li>
-            <li>libgpg-error-dev (1.1-4)</li>
-            <li>libice-dev (2:1.0.0-0ubuntu2)</li>
-            <li>liblockfile1 (1.06.1)</li>
-            <li>libopencdk8-dev (0.5.7-2)</li>
-            <li>libpopt-dev (1.7-5)</li>
-            <li>libsm-dev (2:1.0.0-0ubuntu2)</li>
-            <li>libstdc++6-4.0-dev (4.0.3-1ubuntu5)</li>
-            <li>libtasn1-2-dev (0.2.17-1ubuntu1)</li>
-            <li>libx11-dev (2:1.0.0-0ubuntu9)</li>
-            <li>libxau-dev (1:1.0.0-0ubuntu4)</li>
-            <li>libxaw-headers (2:1.0.1-0ubuntu3)</li>
-            <li>libxaw7-dev (2:1.0.1-0ubuntu3)</li>
-            <li>libxdmcp-dev (1:1.0.0-0ubuntu2)</li>
-            <li>libxext-dev (2:1.0.0-0ubuntu4)</li>
-            <li>libxi-dev (2:1.0.0-0ubuntu3) </li>
-            <li>libxmu-dev (2:1.0.0-0ubuntu3)</li>
-            <li>libxmu-headers (2:1.0.0-0ubuntu3)</li>
-            <li>libxmuu-dev (2:1.0.0-0ubuntu3)</li>
-            <li>libxp-dev (6.8.2-11ubuntu2)</li>
-            <li>libxpm-dev (1:3.5.4.2-0ubuntu3)</li>
-            <li>libxrandr-dev (1:1.1.0.2-0ubuntu4)</li>
-            <li>libxt-dev (1:1.0.0-0ubuntu3)</li>
-            <li>libxtrap-dev (2:1.0.0-0ubuntu2)</li>
-            <li>libxtst-dev (2:1.0.1-0ubuntu2)</li>
-            <li>libxv-dev (2:1.0.1-0ubuntu3)</li>
-            <li>linux-kernel-headers (2.6.11.2-0ubuntu18)</li>
-            <li>m4 (1.4.4-1)</li>
-            <li>make (3.80+3.81.b4-1)</li>
-            <li>ssl-cert (1.0.13)</li>
-            <li>x-dev (7.0.4-0ubuntu2)</li>
-            <li>x11proto-core-dev (7.0.4-0ubuntu2)</li>
-            <li>x11proto-input-dev (1.3.2-0ubuntu2)</li>
-            <li>x11proto-kb-dev (1.0.2-0ubuntu2)</li>
-            <li>x11proto-randr-dev (1.1.2-0ubuntu2)</li>
-            <li>x11proto-record-dev (1.13.2-0ubuntu2)</li>
-            <li>x11proto-trap-dev (3.4.3-0ubuntu2)</li>
-            <li>x11proto-video-dev (2.2.2-0ubuntu2)</li>
-            <li>x11proto-xext-dev (7.0.2-0ubuntu2)</li>
-            <li>xlibs-dev (7.0.0-0ubuntu45)</li>
-            <li>zlib1g-dev (1:1.2.3-6ubuntu4)</li>
-        </ul>
-    </blockquote>
-    
-    <h4>Ubuntu 7.04</h4>
-    
-    <p>
-    Using the Synaptic Package Manager, download the following
-    packages (double indented packages are automatically aquired
-    due to package dependencies):
-    
-    <blockquote>
-        <ul>
-            <li>build-essential</li>
-            <ul>
-                <li>dpkg-dev</li>
-                <li>g++</li>
-                <li>g++-4.1</li>
-                <li>libc6-dev</li>
-                <li>libstdc++6.4.1-dev</li>
-                <li>linux-libc-dev</li>
-            </ul>
-            <li>gawk</li>
-            <li>m4</li>
-            <li>libasound2-dev</li>
-            <li>libcupsys2-dev</li>
-            <ul>
-                <li>libgcrypt11-dev</li>
-                <li>lgnutls-dev</li>
-                <li>libgpg-error-dev</li>
-                <li>liblzo-dev</li>
-                <li>libopencdk8-dev</li>
-                <li>libpopt-dev</li>
-                <li>libtasn1-3-dev</li>
-                <li>zlib1g-dev</li>
-            </ul>
-            <li>sun-java6-jdk</li>
-            <ul>
-                <li>java-common</li>
-                <li>libltdl3</li>
-                <li>odbcinst1debian1</li>
-                <li>sun-java6-bin</li>
-                <li>sun-java6-jre</li>
-                <li>unixodbc</li>
-            </ul>
-            <li>xlibs-dev</li>
-            <ul>
-                <li>(many)</li>
-            </ul>
-            <li>x11proto-print-dev</li>
-            <li>libxaw7-dev</li>
-            <ul>
-                <li>libxaw-headers</li>
-            </ul>
-            <li>libxp-dev</li>
-            <li>libfreetype6-dev</li>
-        </ul>
-    </blockquote>
-</blockquote>
-
-<!-- ------------------------------------------------------ -->
-<hr noshade="noshade" size="3">
-
-<h2><a name="directories">Source Directory Structure</a></h2>
-
-<blockquote>
-    <p>
-    The source code for the 
-    OpenJDK is
-    delivered in <i>3</i> sibling directories:
-    <tt>hotspot</tt>, 
+    The source code for the JDK is
+    delivered in <i>N</i> sibling directories, three primary ones are:
     <tt>langtools</tt>, 
     <tt>corba</tt>, 
     <tt>jaxws</tt>, 
     <tt>jaxp</tt>, 
+    <tt>hotspot</tt>, 
     <tt>jdk</tt>
-    and
+    and <tt>control</tt>.
     The <tt>hotspot</tt> directory contains the source code and make
     files for
-    building the 
-    OpenJDK
-    Hotspot Virtual Machine. 
+    building the Java(tm) Hotspot Virtual Machine. 
     The <tt>jdk</tt>
     directory contains the source code and make files for
-    building the 
-    OpenJDK
-    runtime libraries, tools and demos. 
-    The top level Makefile is used to build the complete OpenJDK 
-    release including building the hotspot
-    VM, staging the VM binaries, and building the 
-    OpenJDK 
-    runtime libraries,
+    building the JDK runtime libraries, tools and demos. 
+    The <tt>control</tt>
+    directory contains make files to build the complete
+    JDK release including building the hotspot
+    VM, staging the VM binaries, and building the JDK runtime libraries,
     tools and demos.
+    Building using the <tt>control</tt> workspace is
+    the recommended manner of
+    building the JDK.
 </blockquote>
 
 <!-- ------------------------------------------------------ -->
 <hr noshade="noshade" size="3">
 
-<h2><a name="building">Build Information</a></h2>
+<a name="building">
+    <h2>Building</h2>
+</a>
 
 <blockquote>
-    <p>
-    Building the 
-    OpenJDK
-    is done with a <tt><i>gmake</i></tt>
-    command line and various
+    Building the JDK is done with a GNU make command line and various
     environment or make variable settings that direct the make rules
     to where various components have been installed.
     Where possible the makefiles will attempt to located the various
     components in the default locations or any component specific 
     variable settings.
-    When the normal defaults fail or components cannot be found,
-    the various
+    When the normal defaults fail or components cannot be found, the various
     <tt>ALT_*</tt> variables (alternates)
-    can be used to help the makefiles locate components.
-    <p>
-    Refer to the bash/sh/ksh setup file
-    <tt>jdk/make/jdk_generic_profile.sh</tt>
-    if you need help in setting up your environment variables.
-    A build could be as simple as:
-    <blockquote>
-        <pre><tt>
-                bash
-                . jdk/make/jdk_generic_profile.sh
-                <i>gmake</i> sanity &amp;&amp; <i>gmake</i>
-        </tt></pre>
-    </blockquote>
-    <p>
-    Of course ksh or sh would work too.
-    But some customization will probably be necessary.
-    The <tt>sanity</tt> rule will make some basic checks on build
-    dependencies and generate appropriate warning messages
-    regarding missing, out of date, or newer than expected components
-    found on your system.
+    can be used to help the makefiles locate
+    components.
 </blockquote>
 
 <!-- ------------------------------------------------------ -->
 <hr noshade="noshade" size="3">
 
-<h3><a name="gmake">GNU make (<tt><i>gmake</i></tt>)</a></h3>
+<a name="gnumake">
+    <h3><tt><i>GNUmake</i></tt></h3>
+</a>
 
 <blockquote>
-    <p>
-    The Makefiles in the 
-    OpenJDK 
-    are only valid when used with the 
-    GNU version of the utility command <tt>make</tt>
-    (<tt><i>gmake</i></tt>).
-    A few notes about using GNU make:
+    The Makefiles in the JDK are only valid when used with the 
+    GNU version of the utility command <tt>make</tt> (<tt><i>GNUmake</i></tt>).
+    Information on GNU make, and access to ftp download sites, are
+    available on the
+    <a href="http://www.gnu.org/software/make/make.html">GNU make web site</a>.
+    The latest source to GNU make is available at
+    <a href="http://ftp.gnu.org/pub/gnu/make/">http://ftp.gnu.org/pub/gnu/make/</a>.
+    A few notes about GNU make:
     <ul>
         <li>
-            In general, you need GNU make version 3.78.1 or newer.
+            You need GNU make version 3.78.1 or newer.
         </li>
         <li>
             Place the location of the GNU make binary in the <tt>PATH</tt>. 
         </li>
         <li>
-            <strong>Linux:</strong>
-            The <tt>/usr/bin/make</tt> command should work fine for you.
+            <strong>Windows:</strong>
+            Note that when using CYGWIN, this should be the CYGWIN
+            version of GNU make, started from a CYGWIN shell.
+            When using MKS Toolkit it should be your own MKS
+            built version of GNU make for the MKS shell per
+            the instructions in its documentation, and started from
+            a MKS shell.
+            To build GNU make for MKS:
+            <ol>
+                <li>
+                    Download the sources from 
+                    <a href="http://ftp.gnu.org/pub/gnu/make/">http://ftp.gnu.org/pub/gnu/make/</a>.
+                </li>
+                <li>
+                    In an MKS shell command with the compiler <tt>cl</tt> in your
+                    path run: <tt>./configure CC=cl ; nmake -f NMakefile</tt>
+                </li>
+                <li>
+                    The resulting GNU make should be WinRel/make.exe.
+                </li>
+            </ol>
         </li>
         <li>
             <strong>Solaris:</strong>
-            Do NOT use <tt>/usr/bin/make</tt> on Solaris.
+            Do NOT use /usr/bin/make on Solaris, this is not the make command you want.
             If your Solaris system has the software
             from the Solaris Companion CD installed, 
-            you should use <tt>gmake</tt>
-            which will be located in either the <tt>/opt/sfw/bin</tt> or 
-            <tt>/usr/sfw/bin</tt> directory.
+            you may be able to use <tt>gmake</tt>
+            which would be located in either the /opt/sfw/bin or 
+            /usr/sfw/bin directory.
         </li>
         <li>
-            <strong>Windows:</strong>
-            Make sure you start your build inside a bash/sh/ksh shell.
-            <br>
-            <b>WARNING:</b> Watch out for make version 3.81, it may
-            not work due to a lack of support for drive letter paths
-            like <tt>C:/</tt>. Use a 3.80 version, or find a newer
-            version that has this problem fixed.
+            <strong>Linux:</strong>
+            The <tt>/usr/bin/make</tt> command should work fine for you.
         </li>
     </ul>
-    <p>
-    Information on GNU make, and access to ftp download sites, are
-    available on the
-    <a href="http://www.gnu.org/software/make/make.html">
-        GNU make web site
-    </a>.
-    The latest source to GNU make is available at
-    <a href="http://ftp.gnu.org/pub/gnu/make/">ftp.gnu.org/pub/gnu/make/</a>.
+    
+    
+    
 </blockquote>
 
 <!-- ------------------------------------------------------ -->
 <hr noshade="noshade" size="3">
 
-<h3><a name="linux">Basic Linux System Setup</a></h3>
-
-<blockquote>
-    <p>
-    <strong>i586 only:</strong>
-    The minimum recommended hardware for building the Linux version
-    is a Pentium class processor or better, at least 256 MB of RAM, and
-    approximately 1.5 GB of free disk space.
-    <p> 
-    <strong>X64 only:</strong>
-    The minimum recommended hardware for building the Linux
-    version is an AMD Opteron class processor, at least 512 MB of RAM, and
-    approximately 4 GB of free disk space.
-    <p> 
-    The build will use the tools contained in 
-    <tt>/bin</tt> and 
-    <tt>/usr/bin</tt>
-    of a standard installation of the Linux operating environment. 
-    You should ensure that these directories are in your 
-    <tt>PATH</tt>.
-    <p>
-    Note that some Linux systems have a habit of pre-populating
-    your environment variables for you, for example <tt>JAVA_HOME</tt>
-    might get pre-defined for you to refer to the JDK installed on
-    your Linux system. 
-    You will need to unset <tt>JAVA_HOME</tt>.
-    It's a good idea to run <tt>env</tt> and verify the
-    environment variables you are getting from the default system
-    settings make sense for building the 
-    OpenJDK.
-</blockquote>
-
-<!-- ------------------------------------------------------ -->
-
-<h4><a name="linux_checklist">Basic Linux Check List</a></h4>
-
-<blockquote>
-    <ol>
-        <li>
-            Install the
-            <a href="#bootjdk">Bootstrap JDK</a>, set
-            <tt><a href="#ALT_BOOTDIR">ALT_BOOTDIR</a></tt>.
-        </li>
-        <li>
-            Install the
-            <a href="#binaryplugs">Binary Plugs</a>, set
-            <tt><a href="#ALT_BINARY_PLUGS_PATH">ALT_BINARY_PLUGS_PATH</a></tt>.
-        </li>
-        <li>
-            Install or upgrade the <a href="#freetype">FreeType development
-            package</a>.
-        </li>
-    </ol>
-</blockquote>
-
-<!-- ------------------------------------------------------ -->
-<hr noshade="noshade" size="3">
-
-<h3><a name="solaris">Basic Solaris System Setup</a></h3>
-
-<blockquote>
-    <p>
-    The minimum recommended hardware for building the
-    Solaris SPARC version is an UltraSPARC with 512 MB of RAM. 
-    For building
-    the Solaris x86 version, a Pentium class processor or better and at
-    least 128 MB of RAM are recommended. 
-    Approximately 1.4 GB of free disk
-    space is needed for a 32-bit build.
-    <p>
-    If you are building the 64bit version, you should
-    run the command "isainfo -v" to verify that you have a
-    64-bit installation. 
-    An additional 7 GB of free disk space is needed
-    for a 64-bit build.
-    <p> 
-    The build uses the tools contained in <tt>/usr/ccs/bin</tt>
-    and <tt>/usr/bin</tt> of a standard developer or full installation of
-    the Solaris operating environment.
-</blockquote>
-
-<!-- ------------------------------------------------------ -->
-
-<h4><a name="solaris_checklist">Basic Solaris Check List</a></h4>
-
-<blockquote>
-    <ol>
-        <li>
-            Install the
-            <a href="#bootjdk">Bootstrap JDK</a>, set
-            <tt><a href="#ALT_BOOTDIR">ALT_BOOTDIR</a></tt>.
-        </li>
-        <li>
-            Install the
-            <a href="#binaryplugs">Binary Plugs</a>, set
-            <tt><a href="#ALT_BINARY_PLUGS_PATH">ALT_BINARY_PLUGS_PATH</a></tt>.
-        </li>
-        <li>
-            Install the
-            <a href="#studio">Sun Studio Compilers</a>, set
-            <a href="#ALT_COMPILER_PATH"><tt>ALT_COMPILER_PATH</tt></a>.
-        </li>
-        <li>
-            Install the
-            <a href="#cups">CUPS Include files</a>, set
-            <tt><a href="#ALT_CUPS_HEADERS_PATH">ALT_CUPS_HEADERS_PATH</a></tt>.
-        </li>
-    </ol>
-</blockquote>
-
-<!-- ------------------------------------------------------ -->
-<hr noshade="noshade" size="3">
-
-<h3><a name="windows">Basic Windows System Setup</a></h3>
+<a name="windows">
+    <h3>Windows System Setup</h3>
+</a>
 
 <blockquote> 
     <p>
     <strong>i586 only:</strong>
-    The minimum recommended hardware for building the 32bit or X86
-    Windows version is an Pentium class processor or better, at least
+    The official 32-bit build
+    platform for the JDK 7 is Windows Professional 2000 with
+    Service Pack 4. 
+    The minimum recommended hardware for building
+    Windows-i586 version is an Pentium class processor or better, at least
     512 MB of RAM, and approximately 600 MB of free disk space.
     <strong>
         NOTE: The Windows 2000 build machines need to use the
@@ -595,38 +262,41 @@
         because FAT32 doesn't support case-sensitivity in file names.
     </strong>
     <p> 
-    <strong>X64 only:</strong>
-    The minimum recommended hardware for building
-    the Windows X64 version is an AMD Opteron class processor, at least 1
+    <strong>amd64 only:</strong>
+    The official 64-bit (amd64) build
+    platform for the amd64 Windows JDK 7 is Windows Server 2003 -
+    Enterprise x64 Edition. The minimum recommended hardware for building
+    the Windows-amd64 version is an AMD Opteron class processor, at least 1
     GB of RAM, and approximately 10 GB of free disk space.
 </blockquote>
 
 <!-- ------------------------------------------------------ -->
+<hr noshade="noshade" size="3">
 
-<h4><a name="paths">Windows Paths</a></h4>
+<a name="paths">
+    <h3>Windows Paths</h3>
+</a>
 
 <blockquote>
-    <p>
     <strong>Windows:</strong>
     Note that GNU make is a historic utility and is based very
     heavily on shell scripting, so it does not tolerate the Windows habit
-    of having spaces in pathnames or the use of the <tt>\</tt>characters in pathnames.
-    Luckily on most Windows systems, you can use <tt>/</tt>instead of \, and
+    of having spaces in pathnames or the use of the \ characters in pathnames.
+    Luckily on most Windows systems, you can use / instead of \, and
     there is always a 'short' pathname without spaces for any path that 
     contains spaces.
     Unfortunately, this short pathname can be somewhat dynamic and the
     formula is difficult to explain.
-    You can use <tt>cygpath</tt> utility to map pathnames with spaces
-    or the <tt>\</tt>character into the <tt>C:/</tt> style of pathname
-    (called 'mixed'), e.g.
-    <tt>cygpath -s -m "<i>path</i>"</tt>.
-    <p>
-    The makefiles will try to translate any pathnames supplied
-    to it into the <tt>C:/</tt> style automatically.
+    The MKS utility <tt>dosname</tt> has a <tt>-s</tt> option that will
+    provide the translation for you.
+    And CYGWIN has a <tt>cygpath -s -m</tt> utility that will do the same.
+    So the JDK makefiles will try to translate any pathnames supplied
+    to it into the MKS style or so called CYGWIN 'mixed' style of 
+    <tt>C:/no-spaces-path</tt>.
     <p>
     Note that use of CYGWIN creates a unique problem with regards to
     setting <a href="#path"><tt>PATH</tt></a>. Normally on Windows
-    the <tt>PATH</tt> variable contains directories
+    and with MKS, the <tt>PATH</tt> variable contains directories
     separated with the ";" character (Solaris and Linux uses ":").
     With CYGWIN, it uses ":", but that means that paths like "C:/path"
     cannot be placed in the CYGWIN version  of <tt>PATH</tt> and
@@ -636,28 +306,32 @@
 </blockquote>
 
 <!-- ------------------------------------------------------ -->
+<hr noshade="noshade" size="3">
 
-<h4><a name="windows_checklist">Basic Windows Check List</a></h4>
+<a name="windows_checklist">
+    <h3>Windows Check List</h3>
+</a>
 
 <blockquote>
     <ol>
         <li>
-            Install the
-            <a href="#cygwin">CYGWIN product</a>. 
+            Install or check OS version.
+        </li>
+        <li>
+            Install 
+            <a href="#mks">MKS</a> or 
+            <a href="#cygwin">CYGWIN</a>. 
+            If MKS, you will need a 
+            <a href="#gnumake">GNU make</a>, 
+            <a href="#zip">zip, and unzip</a>.
         </li>
         <li>
             Install the 
-            <a href="#bootjdk">Bootstrap JDK</a>, set
-            <tt><a href="#ALT_BOOTDIR">ALT_BOOTDIR</a></tt>.
+            <a href="#bootjdk">Bootstrap JDK</a>.
         </li>
         <li>
-            Install the
-            <a href="#binaryplugs">Binary Plugs</a>, set
-            <tt><a href="#ALT_BINARY_PLUGS_PATH">ALT_BINARY_PLUGS_PATH</a></tt>..
-        </li>
-        <li>
-            Install the
-            <a href="#msvc">Microsoft Visual Studio .NET 2003 Professional</a> or the 
+            Install 
+            <a href="#msvc">Microsoft Visual Studio .NET 2003</a> and/or 
             <a href="#mssdk">Microsoft Platform SDK</a>.
         </li>
         <li>
@@ -668,42 +342,235 @@
             Install 
             <a href="#dxsdk">Microsoft DirectX SDK</a>.
         </li>
+        <li>
+            <strong>i586 only:</strong>
+            <ol>
+                <li>
+                    <strong>plugin only:</strong>
+                    Get the
+                    <a href="#mozilla">Mozilla Headers</a>.
+                </li>
+                <li>
+                    If creating install bundles, install
+                    <a href="#install_mssdk">Microsoft Installer SDK</a> and
+                    <a href="#install_msival2">Microsoft Installer MsiVal2</a>.
+                </li>
+            </ol>
+        </li>
     </ol>
 </blockquote>
 
 <!-- ------------------------------------------------------ -->
 <hr noshade="noshade" size="3">
 
-<h3><a name="dependencies">Build Dependencies</a></h3>
+<a name="linux">
+    <h3>Linux System Setup</h3>
+</a>
 
 <blockquote>
+    <strong>i586 only:</strong>
+    The official build platform for the JDK 7 is
+    Redhat Enterprise Advanced Server 2.1 update 2. 
+    Formerly known as RedHat Advanced Server 2.1 update 2.
+    <p> 
+    The minimum recommended hardware for building the Linux version
+    is a Pentium class processor or better, at least 256 MB of RAM, and
+    approximately 1.5 GB of free disk space.
+    <p> 
+    <strong>amd64 only:</strong>
+    The official build platform for the amd 64-bit
+    version of JDK 7 is Suse 8 Enterprise Server - AMD64
+    Edition. 
+    The minimum recommended hardware for building the Linux-amd64
+    version is a AMD opteron class processor, at least 512 MB of RAM, and
+    approximately 4 GB of free disk space.
+    <p> 
+    The build uses the tools contained in 
+    <tt>/bin</tt> and 
+    <tt>/usr/bin</tt>
+    of a standard installation of the Linux operating environment. 
+    You should ensure that these directories are on your 
+    <tt>PATH</tt>.
     <p>
-    Depending on the platform, the 
-    OpenJDK 
-    build process has some basic
-    dependencies on components not part of the 
-    OpenJDK 
-    sources.
+    Note that some Linux systems have a habit of pre-populating
+    your environment variables for you, for example <tt>JAVA_HOME</tt>
+    might get pre-defined for you to refer to the JDK installed on
+    your Linux system. 
+    You need to unset <tt>JAVA_HOME</tt>.
+    It's a good idea to run <tt>env</tt> and verify the
+    environment variables you are getting from the default system
+    settings.
+</blockquote>
+
+<!-- ------------------------------------------------------ -->
+<hr noshade="noshade" size="3">
+
+<a name="linux_checklist">
+    <h3>Linux Check List</h3>
+</a>
+
+<blockquote>
+    <ol>
+        <li>
+            Install or check OS version.
+        </li>
+        <li>
+            Install 
+            <a href="#bootjdk">Bootstrap JDK</a>.
+        </li>
+        <li>
+            Install 
+            <a href="#alsa">ALSA packages</a>.
+        </li>
+        <li>
+            Install 
+            <a href="#cups">CUPS files</a>.
+        </li>
+        <li>
+        <strong>i586 only:</strong>
+        <ul>
+            <li>
+                Install
+                <a href="#gcc">gcc/binutils</a>.
+            </li>
+            <li> 
+                <strong>plugin only:</strong>
+                <ol>
+                    <li>
+                        Install 
+                        <a href="#gcc29">gcc 2.9</a>.
+                    </li>
+                    <li>
+                        Install
+                        <a href="#mozilla">Mozilla Headers</a>.
+                    </li>
+                </ol>
+            </li>
+        </ul>
+    </ol>
+</blockquote>
+
+<!-- ------------------------------------------------------ -->
+<hr noshade="noshade" size="3">
+
+<a name="solaris">
+    <h3>Solaris System Setup</h3>
+</a>
+
+<blockquote> 
+    The official build platform for both the 32-bit and 64-bit version of
+    JDK 7 is Solaris 10.
+    <p> 
+    The minimum recommended hardware for building the
+    Solaris SPARC version is an UltraSPARC with 512 MB of RAM. 
+    For building
+    the Solaris x86 version, a Pentium class processor or better and at
+    least 512 MB of RAM are recommended. 
+    Approximately 1.4 GB of free disk
+    space is needed for a 32-bit build.
+    An additional 7 GB of free disk space is needed
+    for a 64-bit build.
+    <p>
+    You may run the command "isainfo -v" to verify that you have a
+    64-bit installation. 
+    <p> 
+    The build uses the tools contained in <tt>/usr/ccs/bin</tt>
+    and <tt>/usr/bin</tt> of a standard developer or full installation of
+    the Solaris operating environment.
+    <p> 
+    Minimum patch revisions are given in the tables below, though
+    later patch revisions are expected to work also. Patches may be
+    downloaded from the 
+    <a href="http://java.sun.com/javase/6/downloads/index.jsp#patches"> JDK download page</a>.
+    All the runtime
+    patches should be installed to ensure proper behavior of all JDK
+    functionality after the build is completed.
+    You should ensure that the latest patch cluster for
+    your version of the Solaris operating environment has been installed
+    prior to installing these patches. 
+    The <a href="http://sunsolve.sun.com/pub-cgi/show.pl?target=patches/patch-access">
+    JDK patch clusters</a> 
+    are available for download on the SunSolve web
+    site.
+    <p> 
+    The term "required" means the patch is required for
+    non-international build.
+    <br>
+    <center>#include /net/mizu.sfbay/n/dolphin/jdk7/licenseebundles/b24-2007-12-04/tmp/readme/solaris_os_patches.html </center>
+    
+</blockquote>
+
+<!-- ------------------------------------------------------ -->
+<hr noshade="noshade" size="3">
+
+<a name="solaris_checklist">
+    <h3>Solaris Check List</h3>
+</a>
+
+<blockquote>
+    <ol>
+        <li>
+            Install or check OS version.
+        </li>
+        <li>
+            Install
+            <a href="#bootjdk">Bootstrap JDK</a>.
+        </li>
+        <li>
+            Install 
+            <a href="#patches">Solaris system patches</a>.
+        </li>
+        <li>
+            Install 
+            <a href="#compilers">Sun Studio 11 Compilers</a>.
+        </li>
+        <li>
+            Install
+            <a href="#compilers">Compiler Patches</a>.
+        </li>
+        <li>
+            Install 
+            <a href="#cups">CUPS files</a>.
+        </li>
+        <li>
+            <strong>plugin only:</strong>
+            Get the 
+            <a href="#mozilla">Mozilla Headers</a>.
+        </li>
+    </ol>
+</blockquote>
+
+<!-- ------------------------------------------------------ -->
+<hr noshade="noshade" size="3">
+
+<a name="dependencies">
+    <h3>Build Dependencies</h3>
+</a>
+
+<blockquote>
+    Depending on the platform, the JDK build process has some basic
+    dependencies on components not part of the JDK sources.
     Some of these are specific to a platform, some even specific to
     an architecture.
     Each dependency will have a set of ALT variables that can be set
-    to tell the makefiles where to locate the component.
+    to tell the makefiles where to locate files.
     In most cases setting these ALT variables may not be necessary
     and the makefiles will find defaults on the system in standard
-    install locations or through component specific variables.
+    install locations or through component specific 
+    variables.
     
-    <h4><a name="bootjdk">Bootstrap JDK</a></h4>
+    <a name="bootjdk">
+        <h4>Bootstrap JDK</h4>
+    </a>
     
     <blockquote>
-        <p>
-        All 
-        OpenJDK 
-        builds require access to the previously released 
+        All JDK builds require access to the previously released 
         JDK 6, this is often called a bootstrap JDK.
         The JDK 6 binaries can be downloaded from Sun's 
-        <a href="http://java.sun.com/javase/1.6.0/download.html">JDK 6 download site</a>.
+        <a href="http://java.sun.com/javase/6/downloads/index.jsp">JDK 6</a>
+        download site.
         For build performance reasons
-        is very important that this bootstrap JDK be made available on the
+        is very important that this JDK be made available on the
         local disk of the machine doing the build.
         You should always set 
         <tt><a href="#ALT_BOOTDIR">ALT_BOOTDIR</a></tt>
@@ -714,50 +581,50 @@
         in the <tt>PATH</tt> environment variable, although it's
         not required.
         <p>
-        <strong>Solaris:</strong>
-        Some pre-installed JDK images may be available to you in the
-        directory <tt>/usr/jdk/instances</tt>.
-        If you don't set
-        <tt><a href="#ALT_BOOTDIR">ALT_BOOTDIR</a></tt>
-        the makefiles will look in that location for a JDK it can use.
+        Note that the Bootstrap JDK can be a newer JDK, and in fact
+        you could make the Bootstrap JDK and the Import JDK 
+        (described below) the same. There is some risk in this
+        approach if the Bootstrap JDK you choose happens to be unstable.
     </blockquote>
     
-    <h4><a name="binaryplugs">Binary Plugs</a></h4>
+    <a name="importjdk">
+        <h4>Import JDK</h4>
+    </a>
     
     <blockquote>
+        When building just portions of the JDK, you will need what is
+        called an <strong>import</strong> JDK.
+        If you plan on building the entire JDK, this JDK
+        installation isn't necessary.
+        This should be the same JDK version (JDK 7)
+        as the source you are building,
+        and ideally a very recent build, one that matches fairly
+        well the sources you are building.
+        Download the JDK Binary snapshot from
+        <a href="http://www.java.net/download/jdk6/">
+        http://www.java.net/download/jdk6</a> 
+        install the JDK and make sure you set
+        <tt><a href="#ALT_JDK_IMPORT_PATH">ALT_JDK_IMPORT_PATH</a></tt>.
         <p>
-        Not all of the source code that makes up the JDK is available
-        under an open-source license.
-        In order to build an OpenJDK binary from source code,
-        you must first download and install the appropriate
-        binary plug bundles from the OpenJDK Download area.
-        During the OpenJDK build process these "binary plugs"
-        for the encumbered components will be copied into your
-        resulting OpenJDK binary build image.
-        These binary plug files are only for the purpose of
-        building an OpenJDK binary.
-        Download the Binary Plugs by selecting the <b>Downloads</b>
-        link at
-        <a href="http://openjdk.java.net/">the OpenJDK site</a>,
-        install the bundle,
-        and make sure you set
-        <tt><a href="#ALT_BINARY_PLUGS_PATH">ALT_BINARY_PLUGS_PATH</a></tt>
-        to the root of this installation.
+        Note that the Import JDK can also be a source of some of the
+        dependencies described in this section, for example, some of
+        the Windows DLL files like <tt>MSVCRT.DLL</tt>.
     </blockquote>
     
-    <h4><a name="cacerts">Certificate Authority File (cacert)</a></h4>
+    <a name="cacerts">
+        <h4>Certificate Authority File (cacert)</h4>
+    </a>
     
     <blockquote>
-        <p>
         See <a href="http://en.wikipedia.org/wiki/CAcert">
-        www.wikipedia.org/wiki/CAcert</a>
+        http://en.wikipedia.org/wiki/CAcert</a>
         for a better understanding of the Certificate Authority (CA).
         A certificates file named "cacerts"
         represents a system-wide keystore with CA certificates. 
         In JDK and JRE
         binary bundles, the "cacerts" file contains root CA certificates from
         several public CAs (e.g., VeriSign, Thawte, and Baltimore).
-        The source contain a cacerts file
+        The source bundles contain a cacerts file
         without CA root certificates. 
         Formal JDK builders will need to secure
         permission from each public CA and include the certificates into their
@@ -772,55 +639,45 @@
         fine for most JDK developers.
     </blockquote>
     
-    <h4><a name="compilers">Compilers</a></h4>
+    <a name="zip">
+        <h4>zip and unzip</h4>
+    </a>
+    
+    <blockquote>
+        <p>
+        Version 2.2 (November 3rd 1997) or newer of the zip utility 
+        and version 5.12 or newer of the unzip utility is needed 
+        to build the JDK.
+        With Solaris, Linux, and Windows CYGWIN, the zip and unzip
+        utilities installed on the system should be fine.
+        <p>
+        <strong>Windows with MKS:</strong>
+        If you are using 
+        <a href="#mks">MKS</a>
+        Toolkit, then you need MKS built versions of
+        <tt>ZIP.EXE</tt> and <tt>UNZIP.EXE</tt> installed in
+        <tt><a href="#ALT_DEVTOOLS_PATH">ALT_DEVTOOLS_PATH</a></tt>.
+        Information and the source code for
+        ZIP.EXE and UNZIP.EXE is available on the
+        <a href="http://www.info-zip.org">info-zip web site</a>.
+        <p>
+        <strong>Solaris only:</strong>
+        unzipsfx is required for creation of Solaris installation
+        bundles only.
+    </blockquote>
+    
+    <a name="compilers">
+        <h4>Compilers</h4>
+    </a>
     
     <blockquote>
         
-        <a name="gcc">
-            <strong>Linux gcc/binutils</strong>
-        </a>
-        
-        <blockquote>
-            <p>
-            The GNU gcc compiler version should be 3.2.2 or newer.
-            The binutils package should be 2.11.93.0.2-11 or newer.
-            The compiler used should be the default compiler installed
-            in <tt>/usr/bin</tt>.
-        </blockquote>
-        
-        <strong><a name="studio">Solaris: Sun Studio</a></strong>
-        
-        <blockquote>
-            <p>
-            At a minimum, the
-            <a href="http://developers.sun.com/sunstudio/index.jsp">
-            Sun Studio 11 Compilers</a>
-            (containing version 5.8 of the C and C++ compilers) is required,
-            with patches from the
-            <a href="http://sunsolve.sun.com/pub-cgi/show.pl?target=patches/patch-access">
-            SunSolve web site</a>.
-            <p> 
-            Set 
-            <a href="#ALT_COMPILER_PATH"><tt>ALT_COMPILER_PATH</tt></a>
-            to point to the location of
-            the compiler binaries, and place this location in the <tt>PATH</tt>.
-            <p>
-            The Sun Studio Express compilers at:
-            <a href="http://developers.sun.com/sunstudio/downloads/express.jsp">
-            Sun Studio Express Download site</a>
-            are also an option, although these compilers have not
-            been extensively used yet.
-        </blockquote>
-        
         <a name="msvc">
-            <strong>Windows i586: Microsoft Visual Studio .NET 2003 Professional</strong>
+            <strong>Windows i586: Microsoft Visual Studio .NET 2003</strong>
         </a>
         
-        <blockquote>
-            <p>
-            The 32-bit 
-            OpenJDK
-            Windows build
+        <blockquote> 
+            The 32-bit JDK Windows build
             requires Microsoft Visual Studio .NET 2003 (VS2003) Professional
             Edition compiler. 
             The compiler and other tools are expected to reside
@@ -834,30 +691,31 @@
             <tt>INCLUDE</tt>,
             <tt>LIB</tt>, and
             <tt>PATH</tt> 
-            prior to building the 
-            OpenJDK.
+            prior to building the JDK.
             The above environment variables <b>MUST</b> be set.
-            <p>
-            The Microsoft Visual Studio .NET 2005 (VS2005) compiler
-            will not work at this time due to the new runtime dll
-            and the manifest requirements.
+            If your compiler resides in a place other than the default, 
+            you will need to set 
+            <a href="#ALT_COMPILER_PATH"><tt>ALT_COMPILER_PATH</tt></a>.
         </blockquote>
         
         <a name="mssdk">
-            <strong>Windows X64: Microsoft Platform SDK April 2005</strong>
+            <strong>Windows: Microsoft Platform SDK April 2005</strong>
         </a>
         
         <blockquote>
-            <p>
-            On <b>X64</b>,
+            On <b>amd64</b>,
             the Microsoft Platform Software
             Development Kit (SDK), April 2005 Edition compiler, is required for
-            building the 
-            OpenJDK
-            because it contains the C/C++ compiler. 
+            building the JDK because it contains the amd64 compiler. 
             You will need to minimally install the Core SDK and
             the MDAC SDK features of this compiler.
+            But for <b>i586</b> portions of this Platform SDK is also needed.
+            To complicate matters the Visual Studio .NET 2003 installation
+            also contains a PlatformSDK directory that contains portions of
+            the Platform SDK and can satisfy some of the Platform SDK needs
+            for building on <b>i586</b>.
             <p>
+            <strong>amd64 only:</strong>
             Once the Platform SDK is installed,
             it is recommended that you run <tt>SetEnv.Cmd /X64</tt> 
             to set the compiler environment variables
@@ -866,156 +724,349 @@
             <tt>INCLUDE</tt>,
             <tt>LIB</tt>, and
             <tt>PATH</tt> 
-            prior to building the 
-            OpenJDK.
+            prior to building the JDK.
             The above environment variables <b>MUST</b> be set.
+            If your compiler resides in a place other than the default, 
+            you will need to set 
+            <a href="#ALT_COMPILER_PATH"><tt>ALT_COMPILER_PATH</tt></a>.
+        </blockquote>
+        
+        <a name="gcc">
+            <strong>Linux gcc/binutils (i586 only)</strong>
+        </a>
+        
+        <blockquote>
+            <strong>i586 only:</strong>
+            The binutils package 2.11.93.0.2-11 or later is
+            required. You can obtain this binutils package from 
+            <a href="http://www.redhat.com">Redhat web site</a>. 
+            You need to remove
+            the default binutils package shipped with 
+            Redhat Enterprise Advanced Server 2.1 update 2
+            and install the binutils package
+            2.11.93.0.2-11 or later into the default location on the
+            system.
             <p>
-            Note that this compiler may say it's version is a
-            Microsoft Visual Studio .NET 2005 (VS2005), but be careful,
-            it will not match the official VS2005 product.
-            This Platform SDK compiler is only used on X64 builds.
+            <strong>i586 only:</strong>
+            A GNU gcc compiler version 3.2.2 is required or gcc
+            3.2.1-7 built with the latest 
+            binutils package, version 2.13. 
+            This requirement is needed due to the presence of gcc assembler bugs in
+            early versions. 
+            You need to remove the default compiler shipped with
+            Redhat Enterprise Advanced Server 2.1 update 2
+            which is 2.96. 
+            However if you have a new video card driver, like 
+            Geforce 4 it is best to use
+            the same compiler as the kernel was used to 
+            build the new module, so
+            either build the modules now or 
+            rebuild the kernel using gcc 3.x.
+            <p> 
+            The compiler resides in the <tt>/usr/bin</tt> directory. If
+            the compiler resides in a different directory on your machine, then set
+            <a href="#ALT_COMPILER_PATH"><tt>ALT_COMPILER_PATH</tt></a>
+            to point to the location of the gcc
+            compiler binaries.
+            The GCC compiler binaries must also be in the <tt>PATH</tt>.
+            
+        </blockquote>
+        
+        <strong>Solaris Sun Studio 11 Compilers</strong>
+        
+        <blockquote> 
+            Sun Studio 11, Compiler Collection (containing version
+            5.8 of the C and C++ compilers) is required, with patches as defined
+            below. You can download these compilers from the 
+            <a href="http://developers.sun.com/prodtech/cc/index.jsp"> 
+            Sun Studio Developer Tools web site</a>.
+            <p> 
+            Set 
+            <a href="#ALT_COMPILER_PATH"><tt>ALT_COMPILER_PATH</tt></a>
+            to point to the location of
+            the compiler binaries, and place this location in the <tt>PATH</tt>.
+            The necessary Sun Studio patches are available for download on the 
+            <a href="http://sunsolve.sun.com/pub-cgi/show.pl?target=patches/patch-access">
+            SunSolve web site</a>.
+            <br>
+            <center>#include /net/mizu.sfbay/n/dolphin/jdk7/licenseebundles/b24-2007-12-04/tmp/readme/solaris_compiler_patches.html </center>
+            
         </blockquote>
         
     </blockquote>
     
-    <h4><a name="cups">Common UNIX Printing System (CUPS) Headers (Solaris &amp; Linux)</a></h4>
+    <a name="mozilla">
+        <h4>Mozilla Header Dependencies (for the 32-bit plugin only)</h4>
+    </a>
     
     <blockquote>
+        <strong>32-bit plugin only:</strong>
+        The Mozilla plugin is currently only built for the 32-bit platforms.
+        These files are
+        only required for building the Java Plug-in. 
+        If you do not need to build Java
+        Plug-in, the headers and libraries are not required.
         <p>
-        <strong>Solaris:</strong>
-        CUPS header files are required for building the 
-        OpenJDK on Solaris.
-        The Solaris header files can be obtained by installing 
-        the package <strong>SFWcups</strong> from the Solaris Software
-        Companion CD/DVD, these often will be installed into 
-        <tt>/opt/sfw/cups</tt>.
+        Since Netscape 7 has been widely adopted, we
+        decided to stop building OJI plugin for Netscape 6.x in JDK release. 
+        As
+        a result, the JDK build requires set of header files as shown below. 
+        Download the Mozilla Header files from
+        <a href="http://www.java.net/download/jdk6/">
+        http://www.java.net/download/jdk6</a>.
+        To unpack the jar file do not run jar on it, just execute it with
+        <tt>java -jar <i>file</i>.jar</tt>
+        then place the
+        headers and libraries into a directory similar to the one shown below.
+        Finally, set the 
+        <tt><a href="#ALT_MOZILLA_HEADERS_PATH">ALT_MOZILLA_HEADERS_PATH</a></tt> 
+        variable to the absolute path of the plugin directory.
+        <ul>
+            <li>
+                <strong>
+                    Windows:
+                    NOTE: The
+                    Java Plug-in product for Windows cannot be built from the Community
+                    Source Release. 
+                    This section applies only to those with a separate
+                    source license for that product.
+                </strong>
+                <br><tt>              
+                    +- plugin\          (set ALT_MOZILLA_HEADERS_PATH to this level)<br>
+                    +-     mozilla_headers_ns7.win32\     
+                </tt>
+            </li>
+            <li>
+                <strong>
+                    Solaris or Linux:
+                </strong>
+                <br><tt>
+                    +- plugin/      (set ALT_MOZILLA_HEADERS_PATH to this level)<br>
+                    +- mozilla_headers_ns7/
+                </tt>
+            </li>
+        </ul>
+    </blockquote>
+    
+    <a name="gcc29">
+        <h4>Mozilla Plugin Needs gcc 2.9 Compiler</h4>
+    </a>
+    
+    <blockquote>
+        <strong>plugin only:</strong>
         <p>
-        <strong>Linux:</strong>
-        CUPS header files are required for building the 
-        OpenJDK on Linux.
-        The Linux header files are usually available from a "cups"
-        development package, it's recommended that you try and use
-        the package provided by the particular version of Linux that
-        you are using.
+        <strong>Solaris 32-bit only:</strong>
+        GNU gcc version 2.95.2 is required for
+        building the Mozilla Plug-in on Solaris. 
+        The source code for gcc is available from 
+        <a href="http://www.gnu.org/software/gcc/">http://www.gnu.org/software/gcc/</a>, 
+        and some pre-built binaries are available from 
+        <a href="http://sunfreeware.com/">sunfreeware.com</a>.
+        Set 
+        <a href="#ALT_GCC_COMPILER_PATH"><tt>ALT_GCC_COMPILER_PATH</tt></a>
+        to point to the location of the gcc bin directory. 
+        
         <p>
-        The CUPS header files can always be downloaded from 
-        <a href="http://www.cups.org">www.cups.org</a>.
+        <strong>Linux 32-bit only:</strong>
+        To support Mozilla compiled with GCC egcs 2.91.66 on
+        Linux platform, you <strong>MUST</strong> build the OJI Plug-in 
+        library using GNU gcc/g++ compiler version egcs 2.91.66.
+        Unfortunately you have to do this without causing anything else
+        to be built with this compiler, so this is tricky.
+        If you can avoid building the plugin, you need not worry about this.
+        If someone already has this compiler on a system, you should
+        probably just set 
+        <a href="#ALT_GCC29_COMPILER_PATH"><tt>ALT_GCC29_COMPILER_PATH</tt></a>
+        otherwise there are two ways to do this:
+        <ul>
+            <li>
+                Using a single build system 
+                <p>
+                In this case, both default GCC 3.2 and GCC egcs 2.91.66 are made to
+                co-exist in the same build machine. 
+                Information on GCC egcs 2.91.66,
+                including download sites, is available on the 
+                <a href="http://gcc.gnu.org">GNU Gcc web site</a> 
+                set 
+                <a href="#ALT_GCC29_COMPILER_PATH"><tt>ALT_GCC29_COMPILER_PATH</tt></a>
+                to point to the location of GCC egcs 2.91.66 binary. 
+                If the
+                GCC egcs 2.91.66 compiler resides in the <tt>/localtools/usr/bin</tt>
+                directory then you must set 
+                <a href="#ALT_GCC29_COMPILER_PATH"><tt>ALT_GCC29_COMPILER_PATH</tt></a>
+                to <tt>/localtools/usr/</tt>.
+            </li>
+            <li>
+                Using two build systems 
+                <p>
+                In this case, you need to build the OJI Plug-in library with GCC
+                egcs 2.91.66 first before you start your primary linux-i586 build. 
+                You can build the OJI Plug-in library on another system where GCC egcs
+                2.91.66 comes as the default compiler such as RH 6.1. 
+                Then you can follow the guidelines below:
+                <ul>
+                    <li>
+                        Get the 
+                        <a href="#mozilla">Mozilla Headers</a>.
+                    </li>
+                    <li>
+                        Set up JDK and Deploy workspaces
+                    </li>
+                    <li>
+                        cd into deploy/make/plugin/adapter directory. 
+                    </li>
+                    <li>
+                        Start the OJI Plug-in library compiled with GCC egcs 2.91.66
+                        build with the command<br>
+                        <tt>make all</tt>
+                    </li>
+                    <li>
+                        The libjavaplugin_oji.so library will be in the
+                        <tt>$(OUTPUTDIR)/plugin/i386/ns7-gcc29</tt> directory.
+                    </li>
+                </ul>
+                <p>
+                After successfully building the library, copy it to the primary
+                build system and set 
+                <a href="#ALT_GCC29_PLUGIN_LIB_PATH"><tt>ALT_GCC29_PLUGIN_LIB_PATH</tt></a>
+                to point to the location of that library.
+            </li>
+        </ul>
+    </blockquote>
+    
+    <a name="cups">
+        <h4>Common UNIX Printing System (CUPS) Headers (Solaris & Linux)</h4>
+    </a>
+    
+    <blockquote>
+        <strong>Solaris & Linux only:</strong>
+        CUPS header files are required for building the JDK on Solaris
+        and Linux.
+        The CUPS header files may be downloaded from 
+        <a href="http://www.cups.org">http://www.cups.org</a>.
+        The Solaris header files may also be obtained by installing 
+        the package <strong>SFWcups</strong> from the Solaris Software Companion CD/DVD.
         The variable 
         <tt><a href="#ALT_CUPS_HEADERS_PATH">ALT_CUPS_HEADERS_PATH</a></tt>
         can be used to override the default location of the
         CUPS Header files.
     </blockquote>
     
-    <h4><a name="freetype">FreeType 2</a></h4>
-
-    <blockquote>
-        <p>
-        Version 2.3 or newer of FreeType is required for building the OpenJDK.
-        On Unix systems required files can be available as part of your
-        distribution (while you still may need to upgrade them).
-        Note that you need development version of package that 
-        includes both FreeType library and header files.
-        </p>
-        <p>
-        You can always download latest FreeType version from the
-        <a href="http://www.freetype.org">FreeType website</a>.
-        </p>
-        <p>
-        Makefiles will try to pick FreeType from /usr/lib and /usr/include.
-        In case it is installed elsewhere you will need to set environment
-        variables 
-        <tt><a href="#ALT_FREETYPE_LIB_PATH">ALT_FREETYPE_LIB_PATH</a></tt>
-        and 
-        <tt><a href="#ALT_FREETYPE_HEADERS_PATH">ALT_FREETYPE_HEADERS_PATH</a></tt>
-        to refer to place where library and header files are installed.
-        </p>
-    </blockquote>    
-
-    <h4><a name="alsa">Advanced Linux Sound Architecture (ALSA) (Linux only)</a></h4>
-    
-    <blockquote>
-        <p>
-        <strong>Linux only:</strong>
-        Version 0.9.1 or newer of the ALSA files are
-        required for building the 
-        OpenJDK on Linux.
-        These Linux files are usually available from an "alsa"
-        of "libasound"
-        development package, it's recommended that you try and use
-        the package provided by the particular version of Linux that
-        you are using.
-        The makefiles will check this emit a sanity error if it is
-        missing or the wrong version.
-        As a last resort you can go to the
-        <a href="http://www.alsa-project.org" target="_blank">
-        Advanced Linux Sound Architecture Site</a>.
-    </blockquote>
-    
     <h4>Windows Specific Dependencies</h4>
     
     <blockquote>
         
-        <strong>Unix Command Tools (<a name="cygwin">CYGWIN</a>)</strong>
+        <strong>Unix Command Tools</strong>
         
         <blockquote> 
-            <p>
-            The 
-            OpenJDK
-            requires access to a set of unix command tools
-            on Windows which can be supplied by 
-            <a href="http://www.cygwin.com">CYGWIN</a>. 
-            <p>
-            The 
-            OpenJDK 
-            build
-            requires CYGWIN version 1.5.12 or newer. 
-            Information about CYGWIN can
-            be obtained from the CYGWIN website at 
-            <a href="http://www.cygwin.com">www.cygwin.com</a>. 
-            <p>
-            By default CYGWIN doesn't install all the tools required for building
-            the OpenJDK.
-            Along with the default installation, you need to install
-            the following tools.
+            
             <blockquote>
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <td>Binary Name</td>
-                            <td>Package</td>
-                            <td>Description</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>ar.exe</td>
-                            <td>Devel</td>
-                            <td>binutils: The GNU assembler, linker and binary
-                            utilities</td>
-                        </tr>
-                        <tr>
-                            <td>make.exe</td>
-                            <td>Devel</td>
-                            <td>make: The GNU version of the 'make' utility</td>
-                        </tr>
-                        <tr>
-                            <td>m4.exe</td>
-                            <td>Interpreters</td>
-                            <td>m4: GNU implementation of the traditional Unix macro
-                            processor</td>
-                        </tr>
-                        <tr>
-                            <td>cpio.exe</td>
-                            <td>Utils</td>
-                            <td>cpio: A program to manage archives of files</td>
-                        </tr>
-                        <tr>
-                            <td>file.exe</td>
-                            <td>Utils</td>
-                            <td>file: Determines file type using 'magic' numbers</td>
-                        </tr>
-                    </tbody>
-                </table>
+                The JDK requires access to a set of command tools
+                on Windows supplied by MKS Toolkit or CYGWIN. 
+                Note that the build
+                environment must be pure MKS or pure CYGWIN. 
+                An MKS build cannot use
+                CYGWIN binaries and a CYGWIN build cannot use the MKS Shell, binaries
+                or GNU Make built for MKS. 
+            </blockquote>
+            
+            <br>
+            <a name="cygwin"> 
+                <strong>CYGWIN:</strong> 
+            </a>
+            
+            <blockquote>
+                The JDK build
+                requires CYGWIN version 1.5.12 or later. 
+                Information about CYGWIN can
+                be obtained from the CYGWIN website at 
+                <a href="http://www.cygwin.com">http://www.cygwin.com</a>. 
+                If the binaries are not installed in <tt>/bin</tt>, 
+                set the 
+                <a href="#ALT_UNIXCOMMAND_PATH"><tt>ALT_UNIXCOMMAND_PATH</tt></a>
+                variable to their location. 
+                It comes complete with GNU Make
+                version 3.80 (as <tt>make</tt> instead of <tt>gnumake</tt>).
+                <br>
+                By default CYGWIN doesn't install all the tools required for building
+                jdk product. Along with the default installation, you need to install
+                the following tools.
+                
+                <blockquote>
+                    <table nosave="" border="1">
+                        <tbody>
+                            <tr nosave="" bgcolor="#009900">
+                                <td bgcolor="#4c6a9e"><strong><font color="#ffffff">Binary Name</font></strong></td>
+                                <td bgcolor="#4c6a9e"><strong><font color="#ffffff">Package</font></strong></td>
+                                <td bgcolor="#4c6a9e"><strong><font color="#ffffff">Description</font></strong></td>
+                            </tr>
+                            <tr>
+                                <td>ar.exe</td>
+                                <td>Devel</td>
+                                <td>binutils: The GNU assembler, linker and binary
+                                utilities</td>
+                            </tr>
+                            <tr>
+                                <td>make.exe</td>
+                                <td>Devel</td>
+                                <td>make: The GNU version of the 'make' utility</td>
+                            </tr>
+                            <tr>
+                                <td>m4.exe</td>
+                                <td>Interpreters</td>
+                                <td>m4: GNU implementation of the traditional Unix macro
+                                processor</td>
+                            </tr>
+                            <tr>
+                                <td>cpio.exe</td>
+                                <td>Utils</td>
+                                <td>cpio: A program to manage archives of files</td>
+                            </tr>
+                            <tr>
+                                <td>file.exe</td>
+                                <td>Utils</td>
+                                <td>file: Determines file type using 'magic' numbers</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </blockquote>
+            </blockquote>
+            
+            <br>
+            <a name="mks"> 
+                <strong>MKS Toolkit:</strong> 
+            </a>
+            
+            <blockquote>
+                The 32-bit JDK build requires MKS
+                Toolkit version 8.7 or later, older versions of MKS may work but they
+                are not recommended. 
+                Information about the MKS Toolkit can
+                be obtained from the MKS website at
+                <a href="http://www.mks.com">http://www.mks.com</a>.
+                If the binaries are not installed in <tt>%SYSTEMDRIVE%\mksnt\</tt> for 32-bit and
+                <tt>%SYSTEMDRIVE%\mksnt\mksnt</tt> for 64-bit, set the
+                <a href="#ALT_UNIXCOMMAND_PATH"><tt>ALT_UNIXCOMMAND_PATH</tt></a>
+                variable to their location.
+                <p> 
+                If MKS is installed into a Path that contains spaces, it
+                will be necessary to set 
+                <a href="#ALT_UNIXCOMMAND_PATH"><tt>ALT_UNIXCOMMAND_PATH</tt></a>
+                to identify
+                that location using Microsoft Mangled Path Name conventions. 
+                For
+                example, if the MKS command are located in 
+                <tt>%SYSTEMDRIVE%\Program Files\MKS
+                Toolkit\mksnt</tt>, 
+                then 
+                <a href="#ALT_UNIXCOMMAND_PATH"><tt>ALT_UNIXCOMMAND_PATH</tt></a>
+                should be set
+                to <tt>%SYSTEMDRIVE%\Progra~1\MKSToo~1\mksnt</tt> 
+                (or whatever mangled name
+                setting is appropriate for your installation). 
+                You can use the DOS
+                command DIR /x as an aide in determining the mangled path and file
+                names.
             </blockquote>
         </blockquote>
         
@@ -1024,15 +1075,13 @@
         </a>
         
         <blockquote>
-            <p>
             Microsoft DirectX 9.0 SDK (Summer 2004)
-            headers are required for building
-            OpenJDK.
+            headers are required for building both 32-bit and 64-bit (amd64) JDK.
             This SDK can be downloaded from 
-            <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=FD044A42-9912-42A3-9A9E-D857199F888E&amp;displaylang=en">
+            <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=FD044A42-9912-42A3-9A9E-D857199F888E&displaylang=en">
             Microsoft DirectX 9.0 SDK (Summer 2004)</a>.
             If the link above becomes obsolete, the SDK can be found from 
-            <a href="http://download.microsoft.com">the Microsoft Download Site</a>
+            <a href="http://download.microsoft.com">http://download.microsoft.com</a>
             (search with "DirectX 9.0 SDK Update Summer 2004"). 
             The location of this SDK can be set with 
             <tt><a href="#ALT_DXSDK_PATH">ALT_DXSDK_PATH</a></tt>
@@ -1045,90 +1094,193 @@
         </a>
         
         <blockquote> 
-            <p>
             <strong>i586 only:</strong>
-            The 
-            OpenJDK
-            32bit build requires
-            access to <tt>MSVCRT.DLL</tt> 
-            version 6.00.8337.0 or newer.
+            The JDK build requires
+            access to a recent <tt>MSVCRT.DLL</tt> (at least version 6.00.8337.0 or newer)
+            which is usually supplied by the Microsoft Visual Studio compiler
+            in the <tt>redist</tt> directory.
             If the <tt>MSVCRT.DLL</tt> is not installed in 
-            the system32 directory set the 
-            <a href="#ALT_MSVCRT_DLL_PATH"><tt>ALT_MSVCRT_DLL_PATH</tt></a>
-            variable to the location.
-            <p> 
-            <strong>X64 only:</strong>
-            The OpenJDK 64bit build requires access to
-            <tt>MSVCRT.DLL</tt> version 7.0.3790.0 or newer, which is
-            usually supplied by the
-            <a href="#mssdk">Platform SDK</a>.
-            If it is not available from the Platform SDK,
+            <tt>$(JDK_TOPDIR)\make\redist\i586</tt>,
             set the 
             <a href="#ALT_MSVCRT_DLL_PATH"><tt>ALT_MSVCRT_DLL_PATH</tt></a>
-            variable to the location.
+            variable to their location.
+            <p> 
+            <strong>amd64 only:</strong>
+            The JDK build requires access to
+            <tt>MSVCRT.DLL</tt> version 7.0.3790.0 and (version that we use ) supplied by
+            The Microsoft Platform Software Development Kit (SDK), April 2005
+            Edition compiler (usually found in <tt>%SYSTEMDRIVE%\Program Files\Microsoft
+            SDK\redist\win64\AMD64</tt>). 
+            If the <tt>MSVCRT.DLL</tt> is not installed in 
+            <tt>$(JDK_TOPDIR)\make\redist\amd64</tt>,
+            set the 
+            <a href="#ALT_MSVCRT_DLL_PATH"><tt>ALT_MSVCRT_DLL_PATH</tt></a>
+            variable to their location.
         </blockquote>
         
         <a name="msvcr71">
             <strong><tt>MSVCR71.DLL</tt></strong>
         </a>
         
-        <blockquote>
-            <p>
+        <blockquote> 
             <strong>i586 only:</strong>
-            The 
-            OpenJDK
-            build requires access to 
-            MSVCR71.DLL version 7.10.3052.4 or newer which should be
-            supplied by the
-            <a href="#msvc">Visual Studio product</a>
-            If the <tt>MSVCR71.DLL</tt> is not available from the
-            Visual Studio product
-            set the 
+            If you are building with
+            VS.NET 2003 compiler then the JDK build requires access to msvcr71
+            version 7.10.3052.4 (version that we use ) supplied by Microsoft Visual
+            Studio.NET 2003 Professional Edition compiler (usually found in <tt>%SYSTEMDRIVE%\Program
+                Files\Microsoft Visual Studio .NET 2003\ Visual Studio .NET
+            Professional 2003 - English</tt>). 
+            If the <tt>MSVCR71.DLL</tt> is not installed
+            in <tt>$(JDK_TOPDIR)\make\redist\i586</tt>, set the 
             <a href="#ALT_MSVCR71_DLL_PATH"><tt>ALT_MSVCR71_DLL_PATH</tt></a>
-            variable to the location.
+            variable to their location.
+        </blockquote>
+        
+        <a name="install_mssdk">
+            <strong>Microsoft Installer SDK</strong>
+        </a>
+        
+        <blockquote>
+            <strong>Only needed if creating install bundles:</strong>
+            When you install the Platform SDK, make sure the
+	    the Windows Installer files are also installed.
+        </blockquote>
+        
+        <a name="install_msival2">
+            <strong>Microsoft MsiVal2</strong>
+        </a>
+        
+        <blockquote> 
+            <strong>Only needed if creating install bundles:</strong>
+            The MsiVal2 is available from the 
+            Microsoft Windows Installer SDK
+            component of any recent Microsoft Platform SDK. 
+            To obtain MsiVal2 files, you must double click on the 
+            <tt>MsiVal2.msi</tt> in the
+            bin directory of the Platform SDK. 
+            Select "Custom" install type, and
+            install into the 
+            <tt>%SYSTEMDRIVE%/Program Files/MsiVal2</tt>
+            directory. 
         </blockquote>
         
     </blockquote>
     
     
+    <a name="alsa">
+        <h4>Advanced Linux Sound Architecture (ALSA) (Linux only)</h4>
+    </a>
+    
+    <blockquote>
+        <strong>Linux only:</strong>
+        <a href="http://www.alsa-project.org" target="_blank">
+        Advanced Linux Sound Architecture</a> 
+        version 0.9.1 or later is required for building the JDK on Linux.
+        <p> 
+        Redhat AS 2.1 U2, and SuSE 8.1 do not include a sufficiently 
+        recent ALSA distribution.
+        Most modern Linux distributions ship with ALSA. 
+        On rpm-based systems, you can see if ALSA is installed by 
+        running this command:
+        <br>
+        <tt>rpm -qa | grep alsa</tt>
+        <br>
+        Both <tt>alsa</tt> and <tt>alsa-devel</tt> packages are needed.
+        <p> 
+        If your distribution does not come with ALSA, you can install
+        pre-built ALSA rpm packages, for example from 
+        <a href="http://www.freshrpms.net/" target="_blank">Fresh RPMs</a>. 
+        <p>
+        Note that installing a newer ALSA could
+        break sound output if an older version of ALSA is installed on the system,
+        but it will enable JDK compilation.<br>
+        Installation: execute as root<br>
+        [i586]: <code>rpm -Uv --force alsa-lib-devel-0.9.1-rh61.i386.rpm</code><br>
+        [amd64]: <code>rpm -Uv --force alsa-lib-devel-0.9.8-amd64.x86_64.rpm</code><br>
+        Uninstallation:<br>
+        [i586]: <code>rpm -ev alsa-lib-devel-0.9.1-rh61</code><br>
+        [amd64]:<code>rpm -ev alsa-lib-devel-0.9.8-amd64</code><br>
+        Make
+        sure that you do not link to the static library (<tt>libasound.a</tt>),
+        by verifying that the dynamic library (<tt>libasound.so</tt>) is
+        correctly installed in <tt>/usr/lib</tt>.
+        <p> 
+        If you are unable to find a pre-built ALSA package, you need
+        to build it from the source distribution: Download driver and library
+        source tarballs from 
+        <a href="http://www.alsa-project.org" target="_blank">ALSA's homepage</a>. 
+        As root, execute the following
+        commands (you may need to adapt the version number):
+        <pre>
+            <tt>
+                $ tar xjf alsa-driver-0.9.1.tar.bz2
+                $ cd alsa-driver-0.9.1
+                $ ./configure
+                $ make install
+                $ cd ..
+                $ tar xjf alsa-lib-0.9.1.tar.bz2
+                $ cd alsa-lib-0.9.1
+                $ ./configure
+                $ make install
+            </tt>
+        </pre>
+        <p>
+        Should one of the above steps fail, refer to the documentation on
+        ALSA's home page. Note that this is a minimum install that enables
+        building the JDK platform. To actually use ALSA sound drivers, more
+        steps are necessary as outlined in the documentation on ALSA's homepage.
+        <p>
+        ALSA can be uninstalled by executing <tt>make uninstall</tt> first in
+        the <tt>alsa-lib-0.9.1</tt> directory and then in 
+        <tt>alsa-driver-0.9.1</tt>.
+        <p>
+        There is no ALT* variable to change the assumed locations of ALSA,
+        the makefiles will expect to find the ALSA include files and library at:
+        <tt>/usr/include/alsa</tt> and <tt>/usr/lib/libasound.so</tt>.
+    </blockquote>
+    
 </blockquote>
 
 
+<!-- ------------------------------------------------------ -->
 <hr noshade="noshade" size="3">
 
-<h2><a name="creating">Creating the Build</a></h2>
+<a name="creating">
+    <h2>Creating the Build</h2>
+</a>
 
 <blockquote>
     <p>
-    Once a machine is setup to build the 
-    OpenJDK,
-    the steps to create the
+    Once a machine is setup to build the JDK, the steps to create the
     build are fairly simple.
     The various ALT settings can either be made into  variables
     or can be supplied on the 
-    <a href="#gmake"><tt><i>gmake</i></tt></a> 
+    <a href="#gnumake"><tt><i>GNUmake</i></tt></a> 
     command.
-    <p>
+    <br>
     <ol>
-        <li>Use the sanity rule to double check all the ALT settings:
-            <blockquote>
-                <tt>
-                    <i>gmake</i> 
-                    sanity
-                    [ARCH_DATA_MODEL=<i>32 or 64</i>]
-                    [other "ALT_" overrides]
-                </tt>
-            </blockquote>
+        <li>cd into the <tt>control/make</tt> directory.</li>
+        <li>Use the dev-sanity rule to double check all the ALT settings:<br>
+            <tt>
+                <i>GNUmake</i> 
+                dev-sanity
+                [ARCH_DATA_MODEL=<i>32 or 64</i>]
+                [ALT_OUTPUTDIR=<i>output_directory</i>] 
+                [MILESTONE=<i>milestone_name</i>]
+                [BUILD_NUMBER=<i>build_number</i>] 
+                [other "ALT_" overrides]
+            </tt>
         </li>
-        <li>Start the build with the command:
-            <blockquote>
-                <tt>
-                    <i>gmake</i> 
-                    [ARCH_DATA_MODEL=<i>32 or 64</i>]
-                    [ALT_OUTPUTDIR=<i>output_directory</i>] 
-                    [other "ALT_" overrides] 
-                </tt>
-            </blockquote>
+        <li>Start the build with the command:<br>
+            <tt>
+                <i>GNUmake</i> 
+                dev 
+                [ARCH_DATA_MODEL=<i>32 or 64</i>]
+                [ALT_OUTPUTDIR=<i>output_directory</i>] 
+                [MILESTONE=<i>milestone_name</i>]
+                [BUILD_NUMBER=<i>build_number</i>] 
+                [other "ALT_" overrides] 
+            </tt>
         </li>
     </ol>
     <p>
@@ -1137,58 +1289,60 @@
     indicate you want to built the 64-bit version.
     And before the Solaris 64-bit binaries can be used, they
     must be merged with the binaries from a separate 32-bit build. 
-    The merged binaries may then be used in either 32-bit or 64-bit mode, with
-    the selection occurring at runtime 
-    with the <tt>-d32</tt> or <tt>-d64</tt> options. 
+    The
+    merged binaries may then be used in either 32-bit or 64-bit mode, with
+    the selection occurring at runtime. 
 </blockquote>
 
 <!-- ------------------------------------------------------ -->
 <hr noshade="noshade" size="3">
 
-<h2><a name="testing">Testing the Build</a></h2>
+<a name="testing">
+    <h2>Testing the Build</h2>
+</a>
 
 <blockquote>
-    <p>
     When the build is completed, you should see the generated
     binaries and associated files in the <tt>j2sdk-image</tt> 
     directory in the output directory. 
     The default output directory is
-    <tt>build/<i>platform</i></tt>,
+    <tt>control/build/<i>platform</i></tt>,
     where <tt><i>platform</i></tt> is one of
-    <tt><ul>
-            <li>solaris-sparc</li>
-            <li>solaris-sparcv9</li>
-            <li>solaris-i586</li>
-            <li>solaris-amd64</li>
-            <li>linux-i586</li>
-            <li>linux-amd64</li>
-            <li>windows-i586</li>
-            <li>windows-amd64</li>
-    </ul></tt>
+    <tt>
+        "solaris-{sparc,sparcv9,i586,amd64}",
+        "linux-{i586,amd64}", or
+        "windows-{i586,amd64}"
+    </tt>.
     In particular, the 
-    <tt>build/<i>platform</i>/j2sdk-image/bin</tt>
-    directory should contain executables for the 
-    OpenJDK
-    tools and utilities.
+    <tt>control/build/<i>platform</i>/j2sdk-image/bin</tt>
+    directory should contain executables for the JDK tools and utilities.
     <p>
     You can test that the build completed properly by using the build
     to run the various demos that you will find in the 
-    <tt>build/<i>platform</i>/j2sdk-image/demo</tt>
+    <tt>control/build/<i>platform</i>/j2sdk-image/demo</tt>
     directory.
+    For example to run the Java 2D<sup><font size="-2">TM</font></sup>
+    technology demo, change directories to 
+    <tt>control/build/<i>platform</i>/j2sdk-image/demo/jfc/Java2D</tt>
+    and launch the demo with this command:
+    <br>
+    <blockquote>
+        <tt>../../../bin/java -jar Java2Demo.jar -runs=1</tt>
+    </blockquote>
     <p>
-    The provided regression tests can be run with the <tt>jtreg</tt>
-    utility from 
-    <a href="http://openjdk.java.net/jtreg/">the jtreg site</a>.
+    The demo application should run and cycle through all the Java2Demo
+    tests.
 </blockquote>
 
 <!-- ------------------------------------------------------ -->
 <hr noshade="noshade" size="3">
 
-<h2><a name="variables">Environment/Make Variables</a></h2>
+<a name="variables">
+    <h2>Environment/Make Variables</h2>
+</a>
 
 <p>
-Some of the
-environment or make variables (just called <b>variables</b> in this
+The environment or make variables (just called <b>variables</b> in this
 document) that can impact the build are:
 
 <blockquote>
@@ -1202,13 +1356,13 @@ document) that can impact the build are:
                 <li>The location of the JDK 6 <tt>java</tt> 
                 (see <a href="#bootjdk">Bootstrap JDK</a>)</li>
                 <li>The location of the C/C++ compilers 
-                (see <a href="#compilers"><tt>compilers</tt></a>)</li>
+                (see <a href="#compiler"><tt>compilers</tt></a>)</li>
                 <li>The location or locations for the Unix command utilities
-                (e.g. <tt>/usr/bin</tt>)</li>
+                (see <a href="#unixcommand"><tt>ALT_UNIXCOMMAND_PATH</tt></a>)</li>
             </ul>
         </dd>
         
-        <dt><a name="arch_data_model"><tt>ARCH_DATA_MODEL</tt></a></dt>
+        <dt><tt>ARCH_DATA_MODEL</tt> </dt>
         <dd>The <tt>ARCH_DATA_MODEL</tt> variable
             is used to specify whether the build is to generate 32-bit or 64-bit
             binaries. 
@@ -1220,11 +1374,30 @@ document) that can impact the build are:
             or to <tt>64</tt> for generating 64-bit binaries.
         </dd>
         
+        <dt><tt>MILESTONE</tt> </dt>
+        <dd>
+            The milestone name for the build (<i>e.g.</i>"beta"). 
+            The default value is "internal".
+        </dd>
+        
+        <dt><tt>BUILD_NUMBER</tt> </dt>
+        <dd>
+            The build number for the build (<i>e.g.</i> "b27"). 
+            The default value is "b00".
+        </dd>
+        
         <dt><a name="ALT_BOOTDIR"><tt>ALT_BOOTDIR</tt></a></dt>
         <dd>
             The location of the bootstrap JDK installation. 
             See <a href="#bootjdk">Bootstrap JDK</a> for more information.
-            You should always install your own local Bootstrap JDK and
+            The first default will be <tt>%SYSTEMDRIVE%/jdk1.6.0</tt> on Windows, and
+            <tt>$(ALT_SLASH_JAVA)/re/jdk/6/archive/fcs/binaries/<i>platform</i></tt>
+            on Solaris and Linux.
+            If the first default does not exist, then the second default is
+            <tt>/opt/java/jdk1.6.0</tt> on Linux,
+            <tt>/usr/jdk/instances/jdk1.6.0</tt> on Solaris, and
+            <tt>%SYSTEMDRIVE%/Program Files/Java/jdk1.6.0</tt> on Windows.
+            However, it's a good idea to install your own Bootstrap JDK and
             always set <tt>ALT_BOOTDIR</tt> explicitly.
         </dd>
         
@@ -1232,7 +1405,32 @@ document) that can impact the build are:
         <dd>
             An override for specifying the (absolute) path of where the
             build output is to go.
-            The default output directory will be build/<i>platform</i>.
+            The default output directory will be control/<i>platform</i>.
+        </dd>
+        
+        <dt><a name="ALT_UNIXCOMMAND_PATH"><tt>ALT_UNIXCOMMAND_PATH</tt></a> </dt>
+        <dd>
+            An override for specifying where the
+            Unix command set are located. 
+            The default location varies depending on the platform,
+            <tt>"%SYSTEMDRIVE%/MKSNT"</tt> or
+            <tt>$(ROOTDIR)</tt> on Windows with MKS, otherwise it's 
+            <tt>"/bin"</tt> or <tt>/usr/bin</tt>.
+        </dd>
+        
+        <dt><a name="ALT_UNIXCCS_PATH"><tt>ALT_UNIXCCS_PATH</tt></a></dt>
+        <dd>
+            <strong>Solaris only:</strong>
+            An override for specifying where the Unix CCS
+            command set are located.
+            The default location is <tt>/usr/ccs/bin</tt> 
+        </dd>
+        
+        <dt><a name="ALT_USRBIN_PATH"><tt>ALT_USRBIN_PATH</tt></a></dt>
+        <dd>
+            An override for specifying where the
+            Unix <tt>/usr/bin</tt> commands are located. You usually do not need
+            to set this variable: the default location is <tt>/usr/bin</tt>)
         </dd>
         
         <dt><a name="ALT_COMPILER_PATH"><tt>ALT_COMPILER_PATH</tt></a> </dt>
@@ -1245,81 +1443,202 @@ document) that can impact the build are:
         <dd>
             The location of the <a href="#cacerts">cacerts</a> file.
             The default will refer to 
-            <tt>jdk/src/share/lib/security/cacerts</tt>.
+            <tt>jdk/src/share/lib/security/cacerts</tt> if it exists, 
+            otherwise it will use
+            <tt>jdk/src/share/lib/security/cacerts.internal</tt>.
         </dd>
         
-        <dt><a name="ALT_BINARY_PLUGS_PATH"><tt>ALT_BINARY_PLUGS_PATH</tt></a></dt>
+        <dt><a name="ALT_SLASHJAVA"><tt>ALT_SLASHJAVA</tt></a></dt>
         <dd>
-            The location of the binary plugs installation.
-            See <a href="#binaryplugs">Binary Plugs</a> for more information.
-            You should always have a local copy of a
-            recent Binary Plugs install image
-            and set this variable to that location.
+            The default root location for many of the ALT path locations
+            of the following ALT variables.
+            The default value is 
+            <tt>"/java"</tt> on Solaris and Linux, 
+            <tt>"J:"</tt> on Windows.
         </dd>
         
-        <dt><a name="ALT_CUPS_HEADERS_PATH"><tt>ALT_CUPS_HEADERS_PATH</tt></a> </dt>
-        <dd>
-            The location of the CUPS header files.
-            See <a href="#cups">CUPS information</a> for more information.
-            If this path does not exist the fallback path is 
-            <tt>/usr/include</tt>.
-        </dd>
-        
-        
-        <dt><a name="ALT_FREETYPE_LIB_PATH"><tt>ALT_FREETYPE_LIB_PATH</tt></a></dt>
-        <dd>
-            The location of the FreeType shared library. 
-            See <a href="#freetype">FreeType information</a> for details. 
-        </dd>
-        
-        <dt><a name="ALT_FREETYPE_HEADERS_PATH"><tt>ALT_FREETYPE_HEADERS_PATH</tt></a></dt>
-        <dd>
-            The location of the FreeType header files.
-            See <a href="#freetype">FreeType information</a> for details. 
-        </dd>
+        <dl>
+            
+            <dt><a name="ALT_JDK_DEVTOOLS_PATH"><tt>ALT_JDK_DEVTOOLS_PATH</tt></a></dt>
+            <dd>
+                The default root location of the devtools.
+                The default value is 
+                <tt>$(ALT_SLASH_JAVA)/devtools</tt>.
+            </dd>
+            
+            <dt><tt><a name="ALT_DEVTOOLS_PATH">ALT_DEVTOOLS_PATH</a></tt> </dt>
+            <dd>
+                The location of tools like the 
+                <a href="#zip"><tt>zip</tt> and <tt>unzip</tt></a>
+                binaries, but might also contain the GNU make utility
+                (<tt>gnumake</tt>).
+                So this area is a bit of a grab bag, especially on Windows.
+                The default value depends on the platform and
+                Unix Commands being used.
+                On Linux the default will be 
+                <tt>$(ALT_JDK_DEVTOOLS_PATH)/linux/bin</tt>, 
+                on Solaris
+                <tt>$(ALT_JDK_DEVTOOLS_PATH)/</i>{sparc,i386}</i>/bin</tt>, 
+                on Windows with MKS
+                <tt>%SYSTEMDRIVE%/UTILS</tt>, 
+                and on Windows with CYGWIN
+                <tt>/usr/bin</tt>.
+            </dd>
+            
+            <dt><a name="ALT_JDK_IMPORT_PATH"><tt>ALT_JDK_IMPORT_PATH</tt></a></dt>
+            <dd>
+                The location of
+                the import JDK installation. 
+                See <a href="#importjdk">Import JDK</a> for more information.
+                The default value is
+                <tt>$(ALT_SLASH_JAVA)/re/jdk/6/promoted/latest/binaries/<i>platform</i></tt>.
+            </dd>
+            
+            <dt><a name="ALT_CUPS_HEADERS_PATH"><tt>ALT_CUPS_HEADERS_PATH</tt></a> </dt>
+            <dd>
+                The location of the CUPS header files.
+                See <a href="#cups">CUPS information</a> for more information.
+                The default value is
+                <tt>$(ALT_JDK_DEVTOOLS_PATH)/shared/cups</tt>.
+                If this path does not exist the fallback path is 
+                <tt>/usr/include</tt>.
+            </dd>
+            
+            <dt><a name="ALT_MOZILLA_HEADERS_PATH"><tt>ALT_MOZILLA_HEADERS_PATH</tt></a></dt>
+            <dd>
+                <strong>plugin only:</strong>
+                The location of the Mozilla Header files.
+                See <a href="#mozilla">Mozilla Headers</a> for more information.
+                The default location is 
+                <tt>$(ALT_JDK_DEVTOOLS_PATH)/share/plugin</tt>
+            </dd>
+            
+            <dt><a name="ALT_GCC_COMPILER_PATH"><tt>ALT_GCC_COMPILER_PATH</tt></a> </dt>
+            <dd>
+                <strong>plugin only:</strong>
+                The location of the GNU C compiler and tools, for building
+                the Plug-in. 
+                See 
+                <a href="#gcc29">Mozilla Plugin Needs gcc 2.9 Compiler</a> 
+                for details.
+            </dd>
+            
+            <dt><a name="ALT_GCC29_COMPILER_PATH"><tt>ALT_GCC29_COMPILER_PATH</tt></a></dt>
+            <dd>
+                <strong>plugin only:</strong>
+                An override for specifying the location of the GCC 2.9
+                compiler. 
+                See 
+                <a href="#gcc29">Mozilla Plugin Needs gcc 2.9 Compiler</a> 
+                for details. 
+            </dd>
+            
+            <dt><a name="ALT_GCC29_PLUGIN_LIB_PATH"><tt>ALT_GCC29_PLUGIN_LIB_PATH</tt></a></dt>
+            <dd>
+                <strong>plugin only:</strong>
+                An override for specifying the location of the OJI Plug-in
+                library compiled with GCC 2.9. 
+                See 
+                <a href="#gcc29">Mozilla Plugin Needs gcc 2.9 Compiler</a> 
+                for details. 
+            </dd>
+            
+        </dl>
         
         <dt><strong>Windows specific:</strong></dt>
+        <dl>
+            
+            <dt><a name="ALT_MSDEVTOOLS_PATH"><tt>ALT_MSDEVTOOLS_PATH</tt></a> </dt>
+            <dd>
+                The location of the Microsoft Visual Studio .NET 2003
+                tools 'bin' directory.
+                The default is usually derived from
+                <a href="#ALT_COMPILER_PATH"><tt>ALT_COMPILER_PATH</tt></a>.
+            </dd>
+            
+            <dt><tt><a name="ALT_DXSDK_PATH">ALT_DXSDK_PATH</a></tt> </dt>
+            <dd>
+                The location of the 
+                <a href="#dxsdk">Microsoft DirectX SDK</a>.
+                The default will be to try and use the DirectX environment
+                variable <tt>DXSDK_DIR</tt>,
+                failing that, look in <tt>%SYSTEMDRIVE%/DXSDK</tt>.
+            </dd>
+            
+            <dt><tt><a name="ALT_INSTALL_MSSDK">ALT_INSTALL_MSSDK</a></tt> </dt>
+            <dd>
+                <strong>Only needed if creating install bundles:</strong>
+                The location of the 
+                <a href="#install_mssdk">Microsoft Installer SDK</a>.
+                The default will be to use
+                <tt>%SYSTEMDRIVE%/Program Files/Microsoft Platform SDK</tt>.
+            </dd>
+            
+            <dt><tt><a name="ALT_INSTALL_MSIVAL2">ALT_INSTALL_MSIVAL2</a></tt> </dt>
+            <dd>
+                <strong>Only needed if creating install bundles:</strong>
+                The location of the 
+                <a href="#install_msival2">Microsoft MsiVal2</a>.
+                The default will be to look in
+                <tt>%SYSTEMDRIVE%/Program Files/MsiVal2</tt>.
+            </dd>
+            
+            <dt><tt><a name="ALT_MSVCRT_DLL_PATH">ALT_MSVCRT_DLL_PATH</a></tt> </dt>
+            <dd>
+                The location of the 
+                <a href="#msvcrt"><tt>MSVCRT.DLL</tt></a>. 
+            </dd>
+            
+            <dt><tt><a name="ALT_MSVCR71_DLL_PATH">ALT_MSVCR71_DLL_PATH</a></tt> </dt>
+            <dd>
+                <strong>i586 only:</strong>
+                The location of the 
+                <a href="#msvcr71"><tt>MSVCR71.DLL</tt></a>. 
+            </dd>
+            
+        </dl>
+        
+        <dt><tt>SECURITY_BASELINE_142</tt> </dt>
         <dd>
-            <dl>
-                <dt><a name="ALT_MSDEVTOOLS_PATH"><tt>ALT_MSDEVTOOLS_PATH</tt></a> </dt>
-                <dd>
-                    The location of the Microsoft Visual Studio .NET 2003
-                    tools 'bin' directory.
-                    The default is usually derived from
-                    <a href="#ALT_COMPILER_PATH"><tt>ALT_COMPILER_PATH</tt></a>.
-                </dd>
-                
-                <dt><tt><a name="ALT_DXSDK_PATH">ALT_DXSDK_PATH</a></tt> </dt>
-                <dd>
-                    The location of the 
-                    <a href="#dxsdk">Microsoft DirectX 9 SDK</a>.
-                    The default will be to try and use the DirectX environment
-                    variable <tt>DXSDK_DIR</tt>,
-                    failing that, look in <tt>C:/DXSDK</tt>.
-                </dd>
-                
-                <dt><tt><a name="ALT_MSVCRT_DLL_PATH">ALT_MSVCRT_DLL_PATH</a></tt> </dt>
-                <dd>
-                    The location of the 
-                    <a href="#msvcrt"><tt>MSVCRT.DLL</tt></a>. 
-                </dd>
-                
-                <dt><tt><a name="ALT_MSVCR71_DLL_PATH">ALT_MSVCR71_DLL_PATH</a></tt> </dt>
-                <dd>
-                    <strong>i586 only:</strong>
-                    The location of the 
-                    <a href="#msvcr71"><tt>MSVCR71.DLL</tt></a>. 
-                </dd>
-            </dl>
+            <B>FIXME: Need more words here as to what this is for.</B>
+            The version corresponding to the latest publicly available
+            JRE 1.4.2 update release (<i>e.g.</i> "1.4.2_10"). 
+        </dd>
+        
+        <dt><tt>SECURITY_BASELINE_150</tt> </dt>
+        <dd>
+            <B>FIXME: Need more words here as to what this is for.</B>
+            The version corresponding to the latest publicly available
+            JRE 1.6.0 update release (<i>e.g.</i> "1.6.0_02"). 
         </dd>
         
     </dl>
+    
 </blockquote>
 
-<!-- ------------------------------------------------------ -->
+<!-- ====================================================== -->
 <hr noshade="noshade" size="3">
 
-<h2><a name="troubleshooting">Troubleshooting</a></h2>
+<a name="jre">
+    <h2>Building Just the JRE</h2>
+</a>
+
+<blockquote>
+    It is possible to build the Java 2 Runtime Enviroment instead of the full
+    JDK. To peform a JRE only build, set the  variable J2RE_ONLY
+    to any value, such as 'true'. This tells the build that only JRE sources 
+    are to be built.
+    <p>
+    The only targets supported for the JRE builds are 'all' and
+    'clobber'.
+</blockquote>
+
+<!-- ====================================================== -->
+<hr noshade="noshade" size="3">
+
+<a name="troubleshooting">
+    <h2>Troubleshooting</h2>
+</a>
 
 <blockquote>
     <p>
@@ -1330,12 +1649,10 @@ document) that can impact the build are:
     The first step in
     troubleshooting a build failure is to recheck that you have satisfied
     all the pre-build requirements for your platform.
-    Look for the check list of the platform you are building on in the
-    <a href="#contents">Table of Contents</a>.
     
     <p>
-    You can validate your build environment by using the <tt>sanity</tt>
-    target.
+    You can validate your build environment by using the <tt>dev-sanity</tt>
+    target from the <tt>control/make</tt> directory. 
     Any errors listed
     will stop the build from starting, and any warnings may result in
     a flawed product build.
@@ -1344,109 +1661,77 @@ document) that can impact the build are:
     further with your build.
     
     <p>
-    Some of the more common problems with builds are briefly described
+    Some of the more common problems with builds are briefly descibed
     below, with suggestions for remedies.
     
     <ul>
         <li>
-            <b>Slow Builds:</b>
-            <blockquote>
-                <p>
-                If your build machine seems to be overloaded from too many
-                simultaneous C++ compiles, try setting the <tt>HOTSPOT_BUILD_JOBS</tt>
-                variable to <tt>1</tt> (if you're using a multiple CPU
-                machine, setting it to more than the the number of CPUs is probably
-                not a good idea).
-                <p>
-                Creating the javadocs can be very slow, if you are running
-                javadoc, consider skipping that step.
-                <p>
-                Faster hardware and more RAM always helps too.
-                The VM build tends to be CPU intensive (many C++ compiles),
-                and the rest of the JDK will often be disk intensive.
-                <p>
-                Faster compiles are possible using a tool called
-                <a href="http://ccache.samba.org/">ccache</a>.
-            </blockquote>
+            If your build machine seems to be overloaded from too many
+            simultaneous C++ compiles, try setting the <tt>HOTSPOT_BUILD_JOBS</tt>
+            variable to <tt>1</tt> (or, if you're using a multiple CPU
+            machine, set it to the largest integer that is less than or equal to
+            1.5 times the number of CPUs). 
         </li>
         <li>
-            <b>File time issues:</b>
-            <blockquote>
-                <p>
-                If you see warnings that refer to file time stamps, e.g.
-                <blockquote>
-                    <i>Warning message:</i><tt> File `xxx' has modification time in
-                    the future.</tt>
-                    <br>
-                    <i>Warning message:</i> <tt> Clock skew detected. Your build may
-                    be incomplete.</tt> 
-                </blockquote>
-                <p>
-                These warnings can occur when the clock on the build machine is out of
-                sync with the timestamps on the source files. Other errors, apparently
-                unrelated but in fact caused by the clock skew, can occur along with
-                the clock skew warnings. These secondary errors may tend to obscure the
-                fact that the true root cause of the problem is an out-of-sync clock.
-                For example, an out-of-sync clock has been known to cause an old
-                version of javac to be used to compile some files, resulting in errors
-                when the pre-1.4 compiler ran across the new <tt>assert</tt> keyword
-                in the 1.4 source code.
-                <p>
-                If you see these warnings, reset the clock on the build
-                machine, run "<tt><i>gmake</i> clobber</tt>" or delete the directory
-                containing the build output, and restart the build from the beginning.
-            </blockquote>
+            <i>Error message:</i><tt> Your Microsoft Visual C++ compiler
+            isn't new enough</tt> -- (Windows only) To do a build on a
+            Windows system, you must use Microsoft Visual Studio .NET 2003.
         </li>
         <li>
-            <b>Error message: <tt>Trouble writing out table to disk</tt></b>
-            <blockquote>
-                <p>
-                Increase the amount of swap space on your build machine.
-            </blockquote>
+            <i>Warning message:</i><tt> File `xxx' has modification time in
+            the future.</tt><br>
+            <i>Warning message:</i> <tt> Clock skew detected. Your build may
+            be incomplete.</tt> 
+            <br>
+            These warnings can occur when the clock on the build machine is out of
+            sync with the timestamps on the source files. Other errors, apparently
+            unrelated but in fact caused by the clock skew, can occur along with
+            the clock skew warnings. These secondary errors may tend to obscure the
+            fact that the true root cause of the problem is an out-of-sync clock.
+            For example, an out-of-sync clock has been known to cause an old
+            version of javac to be used to compile some files, resulting in errors
+            when the pre-1.4 compiler ran across the new <tt>assert</tt> keyword
+            in the 1.4 source code.
+            <p>
+            If you see these warnings, reset the clock on the build
+            machine, run "<tt>gnumake clobber</tt>" or delete the directory
+            containing the build output, and restart the build from the beginning.
         </li>
         <li>
-            <b>Error Message: <tt>libstdc++ not found:</tt></b>
-            <blockquote>
-                This is caused by a missing libstdc++.a library.
-                This is installed as part of a specific package
-                (e.g. libstdc++.so.devel.386).
-                By default some 64bit Linux versions (e.g. Fedora)
-                only install the 64bit version of the libstdc++ package.
-                Various parts of the JDK build require a static
-                link of the C++ runtime libraries to allow for maximum
-                portability of the built images.
-            </blockquote>
+            <i>Warning message:</i><tt> as of release 1.4, assert is a
+            keyword </tt> --
+            See note on clock skew above. 
         </li>
         <li>
-            <b>Error Message: <tt>cannot restore segment prot after reloc</tt></b>
-            <blockquote>
-                This is probably an issue with SELinux (See
-                <a href="http://en.wikipedia.org/wiki/SELinux">http://en.wikipedia.org/wiki/SELinux</a>).
-                Parts of the VM is built without the <tt>-fPIC</tt> for
-                performance reasons.
-                <p>
-                To completely disable SELinux:
-                <ol><tt>
-                    
-                    <li>$ su root</li>
-                    <li># system-config-securitylevel</li>
-                    <li>In the window that appears, select the SELinux tab</li>
-                    <li>Disable SELinux</li>
-                </ol></tt>
-                <p>
-                Alternatively, instead of completely disabling it you could
-                disable just this one check.
-                <ol><tt>
-                    <li>Select System->Administration->SELinux Management</li>
-                    <li>In the SELinux Management Tool which appears, 
-                    select "Boolean" from the menu on the left</li>
-                    <li>Expand the "Memory Protection" group</li>
-                    <li>Check the first item, labeled
-                    "Allow all unconfined executables to use libraries requiring text relocation ..."</li>
-                </ol></tt>
-            </blockquote>
+            <i>Error message:</i><tt> internal: Space Manager: Trouble
+            writing out table to disk </tt><br>
+            <i>Error message:</i><tt> make[3]: *** [ad_i486.o] Error 154 </tt>
+            <br>
+            <strong>Solaris only:</strong>
+            Increase the amount of swap space on your build machine.
         </li>
     </ul>
 </blockquote>
 
+<!-- ====================================================== -->
+
 <hr noshade="noshade" size="3">
+
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top"> <font size="-2">
+                    Copyright 2006 Sun Microsystems, Inc., 
+                    4150 Network Circle, Santa Clara, California 95054, U.S.A. 
+                    All rights reserved.
+                </font> 
+            </td>
+            <td>
+                <p align="right"> <img src="sunlogo64x30.gif" alt="Sun"
+                border="0" height="30" width="64"> </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

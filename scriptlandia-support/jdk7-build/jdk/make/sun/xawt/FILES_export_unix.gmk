@@ -1,0 +1,36 @@
+#
+# Copyright 2002-2005 Sun Microsystems, Inc.  All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+#
+# include rules
+#
+
+FILES_export =   \
+      sun/awt/X11/XlibWrapper.java \
+      sun/awt/X11/XWindow.java \
+      sun/awt/X11/XDesktopPeer.java \
+      sun/awt/X11/XToolkit.java \
+      sun/awt/X11/XComponentPeer.java \
+      sun/awt/X11/XInputMethod.java

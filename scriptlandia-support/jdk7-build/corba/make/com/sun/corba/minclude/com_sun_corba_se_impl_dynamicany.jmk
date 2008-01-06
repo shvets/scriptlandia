@@ -1,0 +1,44 @@
+#
+# Copyright 2000-2003 Sun Microsystems, Inc.  All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+#
+# Files for DynamicAny implementation 
+#
+
+com_sun_corba_se_impl_dynamicany_java = \
+	com/sun/corba/se/impl/dynamicany/DynAnyBasicImpl.java \
+	com/sun/corba/se/impl/dynamicany/DynAnyCollectionImpl.java \
+	com/sun/corba/se/impl/dynamicany/DynAnyComplexImpl.java \
+	com/sun/corba/se/impl/dynamicany/DynAnyConstructedImpl.java \
+	com/sun/corba/se/impl/dynamicany/DynAnyFactoryImpl.java \
+	com/sun/corba/se/impl/dynamicany/DynAnyImpl.java \
+	com/sun/corba/se/impl/dynamicany/DynAnyUtil.java \
+	com/sun/corba/se/impl/dynamicany/DynArrayImpl.java \
+	com/sun/corba/se/impl/dynamicany/DynEnumImpl.java \
+	com/sun/corba/se/impl/dynamicany/DynFixedImpl.java \
+	com/sun/corba/se/impl/dynamicany/DynSequenceImpl.java \
+	com/sun/corba/se/impl/dynamicany/DynStructImpl.java \
+	com/sun/corba/se/impl/dynamicany/DynUnionImpl.java \
+	com/sun/corba/se/impl/dynamicany/DynValueImpl.java

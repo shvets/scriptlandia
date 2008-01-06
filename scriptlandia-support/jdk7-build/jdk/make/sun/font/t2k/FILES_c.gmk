@@ -1,0 +1,67 @@
+#
+# Copyright 2007 Sun Microsystems, Inc.  All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+FILES_c_shared = \
+        autogrid.c \
+        ghints.c \
+        glyph.c \
+        hstrat97.c \
+        t2ksc.c \
+        scoder.c \
+        shapet.c \
+        t1.c \
+	t1hint.c \
+        t2k.c \
+        t2kstrm.c \
+        truetype.c \
+        tsimem.c \
+        util.c \
+        t2ksbit.c  \
+        FixMulDiv.c \
+        Fnt.c \
+        FntDebug.c \
+        FntInit.c \
+        FntRare.c \
+        FntUtilities.c \
+        FontMath.c \
+        GlyphOutline.c \
+        HintGlyph.c \
+        HintIO.c \
+        HintTran.c \
+        InterpreterGlue.c \
+        PinkGlue.c \
+        TTHintFont.c \
+        HintScan.c \
+        sc.c \
+        Orient.c \
+        OrientDB.c \
+        scalerMethods.c
+
+FILES_cpp_shared = \
+	GeneralPath.cpp \
+	t2kScalerMethods.cpp
+
+FILES_c = $(FILES_c_shared)  $(FILES_c_platform)
+FILES_cpp = $(FILES_cpp_shared) $(FILES_cpp_platform)

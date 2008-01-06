@@ -1,0 +1,878 @@
+#
+# Copyright 2007 Sun Microsystems, Inc. All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+
+#####################
+# Source bundle names and rules
+#####################
+
+# Product names
+J2RE_NAME               = jre
+J2SDK_NAME              = jdk
+PLUGIN_NAME             = java_plugin
+JAVAWS_NAME             = javaws
+OPENJDK_NAME            = openjdk
+JRL_COMPONENT_NAME      =-jrl
+RHINO_COMPONENT_NAME    =-javascript_rhino
+SRCLIC_COMPONENT_NAME   =
+INTERNAL_COMPONENT_NAME =-internal
+OPEN_COMPNENT_NAME      =-open
+SPONSORS_NAME           =sponsors
+SECURITY_COMPONENT_NAME =-security
+
+# Version patterns and trailing suffix patterns for all bundles 
+SRC_VERPAT    = -$(JDK_MKTG_UNDERSCORE_VERSION)-$(MILESTONE)-src-$(BUILD_NUMBER)
+BIN_VERPAT    = -$(JDK_MKTG_UNDERSCORE_VERSION)-$(MILESTONE)-bin-$(BUILD_NUMBER)
+SRC_2_VERPAT  = -$(JDK_UNDERSCORE_VERSION)-$(MILESTONE)-src-$(BUILD_NUMBER)
+BUNDLE_ZIPSUF = $(BUNDLE_DATE).zip
+SRCLIC_ZIPSUF = $(SRCLIC_COMPONENT_NAME)-$(BUNDLE_ZIPSUF)
+JRL_ZIPSUF    = $(JRL_COMPONENT_NAME)-$(BUNDLE_ZIPSUF)
+JRL_JARSUF    = $(JRL_COMPONENT_NAME)-$(BUNDLE_DATE).jar
+OPEN_ZIPSUF   = $(OPEN_COMPONENT_NAME)-$(BUNDLE_ZIPSUF)
+RHINO_ZIPSUF  = $(RHINO_COMPONENT_NAME)-$(BUNDLE_ZIPSUF)
+JAVAWS_ZIPSUF = -$(BUNDLE_ZIPSUF)
+SECURITY_ZIPSUF= $(SECURITY_COMPONENT_NAME)-$(BUNDLE_ZIPSUF)
+
+# Platform patterns used in platform specific bundle names
+WINDOWS_PAT   = -windows
+SOLARIS_PAT   = -solaris
+SOLX86_PAT    = -solwin
+LINUX_PAT     = -linux
+
+# Internal bundles
+INTERNAL_BUNDLE_NAME = $(ABS_SRC_BUNDLEDIR)/internal.zip
+
+# JRL bundles
+JRL_README_BUNDLE_NAME = $(ABS_JRL_BUNDLEDIR)/jrl-$(BUILD_NUMBER)-readme.zip
+J2SDK_ALL_JRLBUNDLE_NAME    = \
+  $(ABS_JRL_BUNDLEDIR)/$(J2SDK_NAME)$(SRC_VERPAT)$(JRL_ZIPSUF)
+J2SDK_BIN_JRLBUNDLE_NAME    = \
+  $(ABS_JRL_BUNDLEDIR)/$(J2SDK_NAME)$(BIN_VERPAT)$(JRL_ZIPSUF)
+JDK_ALL_JRL_JARBUNDLE_NAME    = \
+  $(ABS_JRL_BUNDLEDIR)/$(J2SDK_NAME)$(SRC_VERPAT)$(JRL_JARSUF)
+JDK_BIN_JRL_JARBUNDLE_NAME    = \
+  $(ABS_JRL_BUNDLEDIR)/$(J2SDK_NAME)$(BIN_VERPAT)$(JRL_JARSUF)
+
+# Licensee bundles
+J2RE_SOLWIN_SRCLICBUNDLE_NAME   = \
+  $(ABS_SRC_BUNDLEDIR)/$(J2RE_NAME)$(SRC_VERPAT)$(SOLX86_PAT)$(SRCLIC_ZIPSUF)
+J2RE_WINDOWS_SRCLICBUNDLE_NAME   = \
+  $(ABS_SRC_BUNDLEDIR)/$(J2RE_NAME)$(SRC_VERPAT)$(WINDOWS_PAT)$(SRCLIC_ZIPSUF)
+J2RE_SOLARIS_SRCLICBUNDLE_NAME    = \
+  $(ABS_SRC_BUNDLEDIR)/$(J2RE_NAME)$(SRC_VERPAT)$(SOLARIS_PAT)$(SRCLIC_ZIPSUF)
+J2RE_LINUX_SRCLICBUNDLE_NAME    = \
+  $(ABS_SRC_BUNDLEDIR)/$(J2RE_NAME)$(SRC_VERPAT)$(LINUX_PAT)$(SRCLIC_ZIPSUF)
+J2SDK_SOLWIN_SRCLICBUNDLE_NAME  = \
+  $(ABS_SRC_BUNDLEDIR)/$(J2SDK_NAME)$(SRC_VERPAT)$(SOLX86_PAT)$(SRCLIC_ZIPSUF)
+J2SDK_WINDOWS_SRCLICBUNDLE_NAME  = \
+  $(ABS_SRC_BUNDLEDIR)/$(J2SDK_NAME)$(SRC_VERPAT)$(WINDOWS_PAT)$(SRCLIC_ZIPSUF)
+J2SDK_SOLARIS_SRCLICBUNDLE_NAME   = \
+  $(ABS_SRC_BUNDLEDIR)/$(J2SDK_NAME)$(SRC_VERPAT)$(SOLARIS_PAT)$(SRCLIC_ZIPSUF)
+J2SDK_LINUX_SRCLICBUNDLE_NAME   = \
+  $(ABS_SRC_BUNDLEDIR)/$(J2SDK_NAME)$(SRC_VERPAT)$(LINUX_PAT)$(SRCLIC_ZIPSUF)
+PLUGIN_WINDOWS_SRCLICBUNDLE_NAME = \
+  $(ABS_SRC_BUNDLEDIR)/$(PLUGIN_NAME)$(SRC_VERPAT)$(WINDOWS_PAT)$(SRCLIC_ZIPSUF)
+SPONSORS_SRCLICBUNDLE_NAME = \
+  $(ABS_SRC_BUNDLEDIR)/$(SPONSORS_NAME)$(SRC_2_VERPAT)$(WINDOWS_PAT)$(SRCLIC_ZIPSUF)
+JAVAWEBSTART_SRCLICBUNDLE_NAME = \
+  $(ABS_SRC_BUNDLEDIR)/$(JAVAWS_NAME)$(SRC_VERPAT)$(JAVAWS_ZIPSUF)
+
+# Specials
+RHINO_BUNDLE_NAME = \
+  $(ABS_SRC_BUNDLEDIR)/$(J2SDK_NAME)$(SRC_VERPAT)$(RHINO_ZIPSUF)
+SECURITY_BUNDLE_NAME = \
+  $(ABS_SRC_BUNDLEDIR)/$(J2SDK_NAME)$(SRC_VERPAT)$(SECURITY_ZIPSUF)
+
+# Open Source bundles
+OPENJDK_SOURCE_BUNDLE_NAME = \
+  $(ABS_SRC_BUNDLEDIR)/$(OPENJDK_NAME)$(SRC_VERPAT)$(OPEN_ZIPSUF)
+
+#####################
+# Shared by many rules
+#####################
+
+TOOLS_FILEPATH = $(JDK_TOPDIR)/make/closed/tools
+SRCLIC_TOOLS_FILEPATH = $(TOOLS_FILEPATH)/source-bundles
+
+################################################################
+# SCM rules
+################################################################
+
+TEAMWARE_DATADIR=Codemgr_wsdata
+TEAMWARE_DELETED_FILES=deleted_files
+
+# $(call TeamwareSourceList,workspace,results)
+define TeamwareSourceList
+  if [ ! -f $1/$(TEAMWARE_DATADIR)/nametable ] ; then \
+    $(ECHO) "error ERROR: Workspace nametable is missing: $1"; \
+    exit 1; \
+  fi; \
+  $(CAT) $1/$(TEAMWARE_DATADIR)/nametable | \
+	$(SED) -e '1,1d' | \
+	$(CUT) -d' ' -f1 | \
+	$(EGREP) -v "^$(TEAMWARE_DELETED_FILES)" | \
+        $(SORT) -u >> $2 ; \
+  $(ECHO) "In `basename $1` found `$(CAT) $2 | wc -l` files"
+endef
+
+################################################################
+
+MERCURIAL=hg
+MERCURIAL_DATADIR=.hg
+
+define MercurialChildStatus
+if [ -d $1/$2/$(MERCURIAL_DATADIR) ] ; then \
+  (cd $1/$2 && $(MERCURIAL) locate) | $(SED) -e "s@^@$2/@" >> $3; \
+fi
+endef
+
+# $(call MercurialSourceList,repository,results)
+define MercurialSourceList
+  if [ ! -d $1/$(MERCURIAL_DATADIR) ] ; then \
+    $(ECHO) "ERROR: Repository $(MERCURIAL_DATADIR) is missing: $1"; \
+    exit 1; \
+  else \
+    (cd $1 && $(MERCURIAL) locate) >> $2; \
+    $(call MercurialChildStatus,$1,build/closed,$2); \
+    $(call MercurialChildStatus,$1,src/closed,$2); \
+    $(call MercurialChildStatus,$1,test/closed,$2); \
+    $(call MercurialChildStatus,$1,make/closed,$2); \
+    $(ECHO) "In `basename $1` found `$(CAT) $2 | wc -l` files"; \
+  fi
+endef
+
+###################################################################
+# Generic macros
+
+# $(call SourceList,stree_list,results)
+define SourceList
+  $(RM) $2; \
+  $(TOUCH) $2; \
+  for idir in $1; do \
+    $(ECHO) "Processing $${idir}"; \
+    $(RM) $2.temp; \
+    if [ -d "$${idir}/$(TEAMWARE_DATADIR)" ]; then  \
+      $(call TeamwareSourceList,$${idir},$2.temp); \
+    elif [ -d "$${idir}/$(MERCURIAL_DATADIR)" ]; then \
+      $(call MercurialSourceList,$${idir},$2.temp); \
+    else \
+      $(ECHO) "ERROR: Unknown SCM,  not workspace, not repository: $${idir}"; \
+      exit 1; \
+    fi; \
+    $(SED)  -e "s/^/`$(BASENAME) $${idir}`\//" $2.temp >> $2 ; \
+    $(RM) $2.temp; \
+  done; \
+  $(SORT) -u -o $2 $2
+endef
+
+# $(call FindSourceList,dirs,results)
+define FindSourceList
+  $(RM) $2; \
+  $(TOUCH) $2; \
+  for idir in $1; do \
+      $(FIND) $${idir}  \
+	-type d $(SCM_DIRS_prune) -prune  -o \
+	-type d -name $(MERCURIAL_DATADIR) -prune  -o \
+	-type d -name $(TEAMWARE_DATADIR)  -prune  -o \
+	-type f -name ,\* -prune  -o \
+	-type f -print >> $2 ; \
+  done
+endef
+
+#####################
+# Default target
+#####################
+default_rule: source
+
+#####################
+# add to top level clobber rules
+#####################
+
+jdk-clobber:: jdk-source-clobber
+deploy-clobber:: deploy-source-clobber
+
+#####################
+# deploy bundles
+#####################
+
+deploy-source::
+
+ifeq ($(BUILD_DEPLOY), true)
+deploy-source:: $(PLUGIN_WINDOWS_SRCLICBUNDLE_NAME) \
+	        $(JAVAWEBSTART_SRCLICBUNDLE_NAME)
+endif
+
+$(TEMP_DIR)/deploy-allfiles.txt: allfiles
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	$(CAT) $(TEMP_DIR)/allfiles.txt | $(EGREP) "^deploy/" > $@
+
+# Note that the windows plugin bundle does not use the exclude-all file...
+$(TEMP_DIR)/deploy-excludepaths.txt: \
+		  $(SRCLIC_TOOLS_FILEPATH)/exclude-plugin-windows
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	$(CAT) $^ | $(GREP) -v '^#' > $@
+
+$(TEMP_DIR)/deploy-excludefiles.txt: $(TEMP_DIR)/deploy-excludepaths.txt
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	$(CAT) $(TEMP_DIR)/deploy-excludepaths.txt | \
+	    $(SED) -e 's/^/# Exclude Path: /'
+	for file in `$(CAT) $(TEMP_DIR)/deploy-excludepaths.txt`; do \
+	    if [ -f $(TOPDIR)/$$file ]; then \
+		$(ECHO) $$file >> $@ ; \
+	    elif [ -d $(TOPDIR)/$$file ]; then \
+	      $(RM) $@-temp.txt; \
+	      $(call FindSourceList,$(TOPDIR)/$$file,$@-temp.txt); \
+	      $(CAT) $@-temp.txt | $(SED) 's#^$(TOPDIR)/##' >> $@; \
+	      $(RM) $@-temp.txt; \
+	    fi \
+	done
+	$(SORT) -u -o $@ $@
+
+# The plugin bundle contains all the plugin code required to build the windows 
+# plugin. It is built in the same manner as above, but the allfiles.txt file 
+# generates too many excludes and blows a buffer in $(COMM), so the list is 
+# pared down to the candidate files when building deploy-allfiles.txt. The windows
+# plugin bundle is intended to be additive (without overlap) to the windows 
+# jdk source bundle.
+$(PLUGIN_WINDOWS_SRCLICBUNDLE_NAME):  $(TEMP_DIR)/deploy-allfiles.txt  \
+				      $(TEMP_DIR)/deploy-excludefiles.txt
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	$(COMM) -2 -3 $(TEMP_DIR)/deploy-allfiles.txt \
+		      $(TEMP_DIR)/deploy-excludefiles.txt | \
+	    ( $(CD) $(TOPDIR) && $(ZIPEXE) -q@ $@ )
+
+$(JAVAWEBSTART_SRCLICBUNDLE_NAME): $(TEMP_DIR)/deploy-allfiles.txt
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	$(GREP) -v plugin $(TEMP_DIR)/deploy-allfiles.txt | \
+	    ( $(CD) $(TOPDIR) && $(ZIPEXE) -q@ $@ )
+
+deploy-source-clobber:
+	$(RM) $(JAVAWEBSTART_SRCLICBUNDLE_NAME)
+	$(RM) $(PLUGIN_WINDOWS_SRCLICBUNDLE_NAME)
+	$(RM) $(TEMP_DIR)/deploy-allfiles.txt
+	$(RM) $(TEMP_DIR)/deploy-excludefiles.txt
+	$(RM) $(TEMP_DIR)/deploy-excludepaths.txt
+
+#####################
+# openjdk open source bundles
+#####################
+
+openjdk-source: $(OPENJDK_SOURCE_BUNDLE_NAME)
+
+# All open areas, minus the /closed/ files.
+$(TEMP_DIR)/openjdk-files.txt: allfiles
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	(($(CAT) $(TEMP_DIR)/allfiles.txt | \
+	  $(EGREP) "^control/" ); \
+	 ($(CAT) $(TEMP_DIR)/allfiles.txt | \
+	   $(EGREP) "^hotspot/" ); \
+	 ($(CAT) $(TEMP_DIR)/allfiles.txt | \
+	   $(EGREP) "^langtools/" ); \
+	 ($(CAT) $(TEMP_DIR)/allfiles.txt | \
+	   $(EGREP) "^corba/" ); \
+	 ($(CAT) $(TEMP_DIR)/allfiles.txt | \
+	   $(EGREP) "^jaxp/" ); \
+	 ($(CAT) $(TEMP_DIR)/allfiles.txt | \
+	   $(EGREP) "^jaxws/" ); \
+	 ($(CAT) $(TEMP_DIR)/allfiles.txt | \
+	   $(EGREP) "^jdk/" )) | \
+	$(GREP) -v '/closed/' > $@
+
+# Files to place at the top of the openjdk bundle
+OPENJDK_TEMP_PARENT_DIR  = $(ABS_TEMP_DIR)/image
+OPENJDK_TEMP_IMAGE       = $(OPENJDK_TEMP_PARENT_DIR)/openjdk
+OPENJDK_TOP_FILES_SRCDIR = $(JDK_TOPDIR)/make
+OPENJDK_TOP_FILES        = LICENSE
+OPENJDK_TOP_FILES       += ASSEMBLY_EXCEPTION THIRD_PARTY_README
+OPENJDK_TOP_FILES       += README.html README-builds.html
+
+$(OPENJDK_TEMP_IMAGE)/%: $(OPENJDK_TOP_FILES_SRCDIR)/%
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	$(CP) $< $@
+
+$(OPENJDK_TEMP_IMAGE)/%.html: $(OPENJDK_TOP_FILES_SRCDIR)/%.html
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	$(SED) 	-e 's/$$(JDK_VERSION)/$(JDK_VERSION)/' \
+		-e 's/$$(FULL_VERSION)/$(FULL_VERSION)/' \
+		-e 's/$$(RELEASE)/$(RELEASE)/' \
+		-e 's/$$(BUILD_DATE)/'"`date +'%B %Y'`"'/' \
+		$< > $@
+
+openjdk-image-source: $(TEMP_DIR)/openjdk-files.txt
+	$(RM) -r $(OPENJDK_TEMP_IMAGE)
+	$(MKDIR) -p $(OPENJDK_TEMP_IMAGE)
+	( $(CD) $(TOPDIR) && \
+	  ( $(CAT) $(ABS_TEMP_DIR)/openjdk-files.txt | \
+	    $(CPIO) -pdum $(OPENJDK_TEMP_IMAGE) ) )
+
+openjdk-image-topfiles: $(OPENJDK_TOP_FILES:%=$(OPENJDK_TEMP_IMAGE)/%)
+
+$(OPENJDK_SOURCE_BUNDLE_NAME): openjdk-image-source openjdk-image-topfiles
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	($(CD) $(OPENJDK_TEMP_PARENT_DIR) && $(ZIPEXE) -q -r $@ openjdk)
+
+openjdk-source-clobber:
+	$(RM) $(OPENJDK_SOURCE_BUNDLE_NAME)
+	$(RM) $(TEMP_DIR)/openjdk-files.txt
+
+#####################
+# jrl extractor jar
+#####################
+
+JRL_EXTRACTOR_DIR = $(TEMP_DIR)/jrl-extractor
+JRL_EXTRACTOR_SRC =  $(TOOLS_FILEPATH)/jrl-extractor/src
+
+jrl-extractor: $(JRL_EXTRACTOR_DIR)/extractor.jar
+
+$(JRL_EXTRACTOR_DIR)/manifest:
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	$(ECHO) "Manifest-Version: 1.0" >> $@
+	$(ECHO) "Main-Class: com.sun.tools.extractor.Maker" >> $@
+
+$(JRL_EXTRACTOR_DIR)/extractor.jar: $(JRL_EXTRACTOR_DIR)/manifest
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	@$(call FindSourceList,$(JRL_EXTRACTOR_SRC),$@-list.txt)
+	$(BOOTDIR)/bin/javac -source 1.4 -d $(JRL_EXTRACTOR_DIR) \
+	   `$(CAT) $@-list.txt`
+	$(BOOTDIR)/bin/jar -cfm  $(JRL_EXTRACTOR_DIR)/extractor.jar \
+	       $(JRL_EXTRACTOR_DIR)/manifest -C $(JRL_EXTRACTOR_DIR) com
+
+jrl-extractor-clobber: 
+	$(RM) $(JRL_EXTRACTOR_DIR)/extractor.jar
+	$(RM) -r $(JRL_EXTRACTOR_DIR)
+
+#####################
+# jdk source bundles
+#####################
+
+jdk-source:    jdk-readme \
+	        $(J2RE_WINDOWS_SRCLICBUNDLE_NAME) \
+	        $(J2RE_SOLARIS_SRCLICBUNDLE_NAME) \
+	        $(J2RE_LINUX_SRCLICBUNDLE_NAME) \
+	        $(J2RE_SOLWIN_SRCLICBUNDLE_NAME) \
+	        $(J2SDK_WINDOWS_SRCLICBUNDLE_NAME) \
+	        $(J2SDK_SOLARIS_SRCLICBUNDLE_NAME) \
+	        $(J2SDK_LINUX_SRCLICBUNDLE_NAME) \
+	        $(J2SDK_SOLWIN_SRCLICBUNDLE_NAME) \
+	        $(RHINO_BUNDLE_NAME) \
+	        $(SECURITY_BUNDLE_NAME) \
+	        $(BIN_BUNDLEDIR)/build.tar \
+		jrl-license \
+	        $(JRL_README_BUNDLE_NAME) \
+	        $(INTERNAL_BUNDLE_NAME) \
+                $(JDK_ALL_JRL_JARBUNDLE_NAME) \
+		$(JDK_BIN_JRL_JARBUNDLE_NAME)
+
+$(JDK_ALL_JRL_JARBUNDLE_NAME): \
+		 jrl-extractor  \
+		 $(JRL_LICENSE_TMPDIR)/$(JRL_SRC_BUNDLE_LICENSE_DOCLIST) \
+		 $(J2SDK_ALL_JRLBUNDLE_NAME)
+	$(BOOTDIR)/bin/java -jar $(JRL_EXTRACTOR_DIR)/extractor.jar \
+	   $(JRL_LICENSE_TMPDIR)/$(JRL_SRC_BUNDLE_LICENSE_DOCLIST) \
+	   $(J2SDK_ALL_JRLBUNDLE_NAME) $(JDK_ALL_JRL_JARBUNDLE_NAME)
+
+$(JDK_BIN_JRL_JARBUNDLE_NAME): \
+		  jrl-extractor \
+		  $(JRL_LICENSE_TMPDIR)/$(JRL_BIN_BUNDLE_LICENSE_DOCLIST) \
+		  $(J2SDK_BIN_JRLBUNDLE_NAME)
+	$(BOOTDIR)/bin/java -jar $(JRL_EXTRACTOR_DIR)/extractor.jar \
+	   $(JRL_LICENSE_TMPDIR)/$(JRL_BIN_BUNDLE_LICENSE_DOCLIST) \
+	   $(J2SDK_BIN_JRLBUNDLE_NAME) $(JDK_BIN_JRL_JARBUNDLE_NAME)
+
+jdk-source-clobber: \
+		jdk-readme-clobber jrl-license-clobber jrl-extractor-clobber
+	$(RM) $(TEMP_DIR)/jdk-excludefiles.txt 
+	$(RM) $(TEMP_DIR)/jdk-excludepaths.txt 
+	$(RM) $(TEMP_DIR)/jdk-includefiles.txt
+	$(RM) $(TEMP_DIR)/jdk-includepaths.txt
+	$(RM) $(J2RE_WINDOWS_SRCLICBUNDLE_NAME) 
+	$(RM) $(J2RE_SOLARIS_SRCLICBUNDLE_NAME)
+	$(RM) $(J2RE_LINUX_SRCLICBUNDLE_NAME) 
+	$(RM) $(J2SDK_WINDOWS_SRCLICBUNDLE_NAME)
+	$(RM) $(RHINO_BUNDLE_NAME)
+	$(RM) $(SECURITY_BUNDLE_NAME)
+	$(RM) $(J2SDK_SOLARIS_SRCLICBUNDLE_NAME)
+	$(RM) $(J2SDK_LINUX_SRCLICBUNDLE_NAME) 
+	$(RM) $(J2RE_SOLWIN_SRCLICBUNDLE_NAME)
+	$(RM) $(J2SDK_SOLWIN_SRCLICBUNDLE_NAME)
+	$(RM) $(J2SDK_ALL_JRLBUNDLE_NAME)
+	$(RM) $(J2SDK_BIN_JRLBUNDLE_NAME)
+	$(RM) -r $(BUILD_README_STAGEDDIR)
+	$(RM) -r $(BIN_BUNDLEDIR)/build.tar
+	$(RM) -r $(JRL_README_BUNDLE_NAME)
+	$(RM) -r $(INTERNAL_BUNDLE_NAME)
+
+#####################
+# allfiles generation
+#####################
+
+# The allfiles.txt file contains all the names of all the SCM controlled 
+#    files in all the source trees, open and closed.
+
+TOPDIR_LIST = $(CONTROL_TOPDIR) \
+	      $(MOTIF_TOPDIR) \
+	      $(HOTSPOT_TOPDIR) \
+	      $(JDK_TOPDIR) \
+	      $(LANGTOOLS_TOPDIR) \
+	      $(CORBA_TOPDIR) \
+	      $(JAXP_TOPDIR) \
+	      $(JAXWS_TOPDIR) \
+	      $(DEPLOY_TOPDIR) \
+	      $(INSTALL_TOPDIR) \
+	      $(SPONSORS_TOPDIR)
+
+allfiles: $(TEMP_DIR)/allfiles.txt
+
+$(TEMP_DIR)/allfiles.txt:
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	$(RM) $@-rawlist.txt
+	@$(call SourceList,$(TOPDIR_LIST),$@)
+	@$(ECHO) "allfiles: `$(CAT) $@ | $(WC) -l` files"
+
+allfiles-clobber:
+	$(RM) $(TEMP_DIR)/allfiles.txt
+
+# generate the appropriate list of excluded dirs and files for 
+# each bundle...
+$(J2RE_WINDOWS_SRCLICBUNDLE_NAME):: FORCE $(SRCLIC_TOOLS_FILEPATH)/exclude-all \
+               $(SRCLIC_TOOLS_FILEPATH)/exclude-j2re-all  \
+	       $(SRCLIC_TOOLS_FILEPATH)/exclude-j2re-windows
+	$(MKDIR) -p $(TEMP_DIR)
+	$(CAT) $^ | $(GREP) -v '^#' > $(TEMP_DIR)/jdk-excludepaths.txt
+
+$(J2RE_SOLARIS_SRCLICBUNDLE_NAME):: FORCE $(SRCLIC_TOOLS_FILEPATH)/exclude-all \
+               $(SRCLIC_TOOLS_FILEPATH)/exclude-j2re-all  \
+	       $(SRCLIC_TOOLS_FILEPATH)/exclude-j2re-solaris
+	$(MKDIR) -p $(TEMP_DIR)
+	$(CAT) $^ | $(GREP) -v '^#' > $(TEMP_DIR)/jdk-excludepaths.txt
+
+$(J2RE_LINUX_SRCLICBUNDLE_NAME):: FORCE $(SRCLIC_TOOLS_FILEPATH)/exclude-all \
+               $(SRCLIC_TOOLS_FILEPATH)/exclude-j2re-all  \
+	       $(SRCLIC_TOOLS_FILEPATH)/exclude-j2re-linux
+	$(MKDIR) -p $(TEMP_DIR)
+	$(CAT) $^ | $(GREP) -v '^#' > $(TEMP_DIR)/jdk-excludepaths.txt
+
+$(J2RE_SOLWIN_SRCLICBUNDLE_NAME):: FORCE $(SRCLIC_TOOLS_FILEPATH)/exclude-all \
+               $(SRCLIC_TOOLS_FILEPATH)/exclude-j2re-all  \
+	       $(SRCLIC_TOOLS_FILEPATH)/exclude-j2re-solwin
+	$(MKDIR) -p $(TEMP_DIR)
+	$(CAT) $^ | $(GREP) -v '^#' > $(TEMP_DIR)/jdk-excludepaths.txt
+
+$(J2SDK_WINDOWS_SRCLICBUNDLE_NAME):: FORCE $(SRCLIC_TOOLS_FILEPATH)/exclude-all \
+               $(SRCLIC_TOOLS_FILEPATH)/exclude-j2sdk-all \
+	       $(SRCLIC_TOOLS_FILEPATH)/exclude-j2sdk-windows
+	$(MKDIR) -p $(TEMP_DIR)
+	$(CAT) $^ | $(GREP) -v '^#' > $(TEMP_DIR)/jdk-excludepaths.txt
+
+$(J2SDK_SOLARIS_SRCLICBUNDLE_NAME):: FORCE $(SRCLIC_TOOLS_FILEPATH)/exclude-all \
+               $(SRCLIC_TOOLS_FILEPATH)/exclude-j2sdk-all \
+	       $(SRCLIC_TOOLS_FILEPATH)/exclude-j2sdk-solaris
+	$(MKDIR) -p $(TEMP_DIR)
+	$(CAT) $^ | $(GREP) -v '^#' > $(TEMP_DIR)/jdk-excludepaths.txt
+
+$(J2SDK_LINUX_SRCLICBUNDLE_NAME):: FORCE $(SRCLIC_TOOLS_FILEPATH)/exclude-all \
+               $(SRCLIC_TOOLS_FILEPATH)/exclude-j2sdk-all \
+	       $(SRCLIC_TOOLS_FILEPATH)/exclude-j2sdk-linux
+	$(MKDIR) -p $(TEMP_DIR)
+	$(CAT) $^ | $(GREP) -v '^#' > $(TEMP_DIR)/jdk-excludepaths.txt
+
+$(J2SDK_SOLWIN_SRCLICBUNDLE_NAME):: FORCE $(SRCLIC_TOOLS_FILEPATH)/exclude-all \
+              $(SRCLIC_TOOLS_FILEPATH)/exclude-j2sdk-all \
+	      $(SRCLIC_TOOLS_FILEPATH)/exclude-j2sdk-solwin
+	$(MKDIR) -p $(TEMP_DIR)
+	$(CAT) $^ | $(GREP) -v '^#' > $(TEMP_DIR)/jdk-excludepaths.txt
+
+$(J2SDK_ALL_JRLBUNDLE_NAME):: FORCE $(SRCLIC_TOOLS_FILEPATH)/exclude-all \
+              $(SRCLIC_TOOLS_FILEPATH)/exclude-j2sdk-all \
+	      $(SRCLIC_TOOLS_FILEPATH)/include-jrl-binary \
+              $(SRCLIC_TOOLS_FILEPATH)/exclude-jrl
+	$(MKDIR) -p $(TEMP_DIR)
+	$(CAT) $^ | $(GREP) -v '^#' > $(TEMP_DIR)/jdk-excludepaths.txt
+
+# generate the appropriate list of included dirs and files for 
+# JRL binary and internal bundle...
+$(J2SDK_BIN_JRLBUNDLE_NAME):: FORCE $(SRCLIC_TOOLS_FILEPATH)/include-jrl-binary
+	$(MKDIR) -p $(TEMP_DIR)
+	$(CAT) $^ | $(GREP) -v '^#' > $(TEMP_DIR)/jdk-includepaths.txt
+
+$(INTERNAL_BUNDLE_NAME):: FORCE $(SRCLIC_TOOLS_FILEPATH)/include-internal
+	$(MKDIR) -p $(TEMP_DIR)
+	$(CAT) $^ | $(GREP) -v '^#' > $(TEMP_DIR)/jdk-includepaths.txt
+
+$(RHINO_BUNDLE_NAME):: FORCE $(SRCLIC_TOOLS_FILEPATH)/include-rhino
+	$(MKDIR) -p $(TEMP_DIR)
+	$(CAT) $^ | $(GREP) -v '^#' > $(TEMP_DIR)/jdk-includepaths.txt
+
+$(SECURITY_BUNDLE_NAME):: FORCE $(SRCLIC_TOOLS_FILEPATH)/include-security
+	$(MKDIR) -p $(TEMP_DIR)
+	$(CAT) $^ | $(GREP) -v '^#' > $(TEMP_DIR)/jdk-includepaths.txt
+
+# generate each bundle by first resolving an excluded file or dir to an actual
+# file, then put that real file into the exclude list. Next, create a zip file using
+# every file found in the source tree, but use the zip eclude capability to not add
+# the actual files to exclude.
+$(J2RE_WINDOWS_SRCLICBUNDLE_NAME) \
+    $(J2RE_SOLARIS_SRCLICBUNDLE_NAME) \
+    $(J2RE_LINUX_SRCLICBUNDLE_NAME) \
+    $(J2SDK_WINDOWS_SRCLICBUNDLE_NAME) \
+    $(J2RE_SOLWIN_SRCLICBUNDLE_NAME) \
+    $(J2SDK_SOLWIN_SRCLICBUNDLE_NAME) \
+    $(J2SDK_SOLARIS_SRCLICBUNDLE_NAME) \
+    $(J2SDK_LINUX_SRCLICBUNDLE_NAME) \
+    $(J2SDK_ALL_JRLBUNDLE_NAME):: FORCE allfiles
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	$(RM) $(TEMP_DIR)/jdk-excludefiles.txt
+	$(MKDIR) -p $(TEMP_DIR)
+	$(CAT) $(TEMP_DIR)/jdk-excludepaths.txt | \
+	    $(SED) -e 's/^/# Exclude Path: /'
+	for file in `$(CAT) $(TEMP_DIR)/jdk-excludepaths.txt`; do \
+	    if [ -f $(TOPDIR)/$$file ]; then \
+		$(ECHO) $$file >> $(TEMP_DIR)/jdk-excludefiles.txt ; \
+	    elif [ -d $(TOPDIR)/$$file ]; then \
+		$(CAT) $(TEMP_DIR)/allfiles.txt | $(GREP) "^$$file/" \
+		   >> $(TEMP_DIR)/jdk-excludefiles.txt ; \
+	    fi \
+	done
+	$(SORT) -u -o $(TEMP_DIR)/jdk-excludefiles.txt \
+		      $(TEMP_DIR)/jdk-excludefiles.txt 
+	$(COMM) -2 -3 $(TEMP_DIR)/allfiles.txt \
+		      $(TEMP_DIR)/jdk-excludefiles.txt | \
+	    ( $(CD) $(TOPDIR) && $(ZIPEXE) -q@ $@ )
+	$(RM) $(TEMP_DIR)/jdk-excludefiles.txt
+	$(RM) $(TEMP_DIR)/jdk-excludepaths.txt
+
+# internal.zip bundle contains all the files used internally.
+# JRL binary bundle contains all the binary files.
+$(RHINO_BUNDLE_NAME) $(SECURITY_BUNDLE_NAME) \
+    $(INTERNAL_BUNDLE_NAME) \
+    $(J2SDK_BIN_JRLBUNDLE_NAME):: FORCE allfiles
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	$(RM) $(TEMP_DIR)/jdk-includefiles.txt
+	$(CAT) $(TEMP_DIR)/jdk-includepaths.txt | \
+	    $(SED) -e 's/^/# Include Path: /'
+	for file in `$(CAT) $(TEMP_DIR)/jdk-includepaths.txt`; do \
+	    if [ -f $(TOPDIR)/$$file ]; then \
+	        $(ECHO) $$file >> $(TEMP_DIR)/jdk-includefiles.txt ; \
+	    elif [ -d $(TOPDIR)/$$file ]; then \
+		$(CAT) $(TEMP_DIR)/allfiles.txt | $(GREP) "^$$file/" \
+		   >> $(TEMP_DIR)/jdk-includefiles.txt ; \
+	    fi \
+	done
+	$(SORT) -u -o $(TEMP_DIR)/jdk-includefiles.txt \
+		      $(TEMP_DIR)/jdk-includefiles.txt
+	$(CAT) $(TEMP_DIR)/jdk-includefiles.txt | \
+	     ( $(CD) $(TOPDIR) && $(ZIPEXE) -q@ $@  )
+	$(RM) $(TEMP_DIR)/jdk-includefiles.txt
+	$(RM) $(TEMP_DIR)/jdk-includepaths.txt
+
+# This is the list of staged README files
+README_TMPDIR = $(OUTPUTDIR)/tmp/readme
+
+JRL_LICENSE_TMPDIR = $(ABS_OUTPUTDIR)/tmp/jrl
+
+# Where are the readme's located within the source tree
+CLOSED_DOCS = $(JDK_TOPDIR)/src/closed/share/doc
+JDK_BUILD_README_DIR = $(CLOSED_DOCS)/build
+
+# where are the jrl license file's located within the source tree
+JRL_BUNDLE_LICENSE_DIR = $(CLOSED_DOCS)/jrl
+
+# Where are the require patch list files in the source tree
+JDK_SOLARIS_PATCHES = $(JDK_TOPDIR)/make/PatchList.solaris
+SOLARIS_OS_PATCHES_HTML = $(README_TMPDIR)/solaris_os_patches.html
+SOLARIS_COMPILER_PATCHES_HTML = $(README_TMPDIR)/solaris_compiler_patches.html
+
+$(SOLARIS_OS_PATCHES_HTML): \
+		  $(SRCLIC_TOOLS_FILEPATH)/osPatchTable.awk \
+		  $(JDK_SOLARIS_PATCHES)
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	$(NAWK) -f $(SRCLIC_TOOLS_FILEPATH)/osPatchTable.awk \
+		$(JDK_SOLARIS_PATCHES) > $@
+
+$(SOLARIS_COMPILER_PATCHES_HTML): \
+		    $(SRCLIC_TOOLS_FILEPATH)/compilerPatchTable.awk \
+		    $(JDK_SOLARIS_PATCHES)
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	$(NAWK) -f $(SRCLIC_TOOLS_FILEPATH)/compilerPatchTable.awk \
+	       $(JDK_SOLARIS_PATCHES) > $@
+
+# These are the platform-specific build readmes
+SOLARIS_README = build-solaris.html README-builds.html
+LINUX_README = build-linux.html README-builds.html
+WINDOWS_README = build-windows.html README-builds.html
+
+# These are the files that are platform/bundle-type independent
+BASIC_READMES = build.html
+
+README_BINARIES = sunlogo64x30.gif \
+	javalogo52x88.gif 
+
+# These are the bundle-specific readme file lists
+JRL_README = README-JRL.html
+SRCLIC_README = README-SRCLIC.html
+INTERNAL_READMES = \
+	index.html \
+	README-internal.html \
+	README-RE.html \
+	README-SRCLIC.html \
+	README-JRL.html
+
+# These are the jrl bundle specific license file lists.
+JRL_SRC_BUNDLE_LICENSE_DOCLIST = JavaResearchLicense.txt
+JRL_BIN_BUNDLE_LICENSE_DOCLIST = BinaryLicense.txt
+RHINO_SRC_BUNDLE_LICENSE_DOCLIST = MPL-1.1.txt
+
+# This is the complete list of all files to be staged
+ALL_READMES = $(BASIC_READMES) $(SOLARIS_README) $(LINUX_README) \
+	      $(WINDOWS_README) $(JRL_README) $(SRCLIC_README) \
+	      $(INTERNAL_READMES) $(README_BINARIES)
+JRL_READMES = $(BASIC_READMES) $(SOLARIS_README) $(LINUX_README) \
+	      $(WINDOWS_README) $(JRL_README) $(README_BINARIES)
+
+# These are the lists of source and staged readme binaries (not to be processed)
+SRC_README_BINARIES = \
+    $(addprefix $(JDK_BUILD_README_DIR)/, $(README_BINARIES))
+
+STAGED_READMES = \
+    $(addprefix $(README_TMPDIR)/, $(BASIC_READMES) $(SOLARIS_README) $(LINUX_README) $(WINDOWS_README)) \
+    $(addprefix $(README_TMPDIR)/, $(README_BINARIES)) \
+    $(addprefix $(README_TMPDIR)/, $(JRL_README) $(SRCLIC_README) $(INTERNAL_READMES))
+
+# the rule for jdk-readme must follow the defintion of STAGED_READMES
+jdk-readme: $(STAGED_READMES) \
+		  $(SOLARIS_OS_PATCHES_HTML) \
+		  $(SOLARIS_COMPILER_PATCHES_HTML)
+	$(ECHO) $(STAGED_READMES)
+
+JRL_BUNDLE_LICENSE = $(JRL_SRC_BUNDLE_LICENSE_DOCLIST) \
+		     $(JRL_BIN_BUNDLE_LICENSE_DOCLIST) \
+		     $(RHINO_SRC_BUNDLE_LICENSE_DOCLIST)
+
+jrl-license: $(addprefix $(JRL_LICENSE_TMPDIR)/, $(JRL_BUNDLE_LICENSE))
+
+$(JRL_LICENSE_TMPDIR)/% : $(JRL_BUNDLE_LICENSE_DIR)/%
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	$(CP) $< $@
+
+$(README_TMPDIR)/%.gif : $(JDK_BUILD_README_DIR)/%.gif
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	$(CP) $< $@
+
+$(README_TMPDIR)/% : $(JDK_BUILD_README_DIR)/%
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	$(CAT) $< | \
+	$(SED)  -e "s@#VERSION#@$(JDK_MKTG_VERSION)@g" \
+	  -e "s@#MILESTONE#@$(MILESTONE)@g" \
+	  -e "s@#SOLARIS_OS_PATCH_TABLE#@$(SOLARIS_OS_PATCHES_HTML)@g" \
+	  -e "s@#SOLARIS_COMPILER_PATCH_TABLE#@$(SOLARIS_COMPILER_PATCHES_HTML)@g" | \
+	  $(NAWK) -f $(SRCLIC_TOOLS_FILEPATH)/include.awk > $@
+
+# add the appropriate readmes to each bundle. 
+$(J2RE_WINDOWS_SRCLICBUNDLE_NAME) \
+    $(J2SDK_WINDOWS_SRCLICBUNDLE_NAME) \
+    $(J2RE_SOLARIS_SRCLICBUNDLE_NAME) \
+    $(J2SDK_SOLARIS_SRCLICBUNDLE_NAME) \
+    $(J2RE_SOLWIN_SRCLICBUNDLE_NAME) \
+    $(J2SDK_SOLWIN_SRCLICBUNDLE_NAME) \
+    $(J2RE_LINUX_SRCLICBUNDLE_NAME) \
+    $(J2SDK_LINUX_SRCLICBUNDLE_NAME):: FORCE \
+               $(addprefix $(README_TMPDIR)/, $(SRCLIC_README) $(BASIC_READMES)  $(README_BINARIES) $(SOLARIS_README) $(LINUX_README) $(WINDOWS_README))
+	$(MKDIR) -p $(@D)
+	( $(CD) $(README_TMPDIR) && \
+	    $(RM) README.html; \
+	    $(CP) $(SRCLIC_README) README.html; \
+	    $(ZIPEXE) -q -u $@ README.html $(BASIC_READMES) \
+		$(README_BINARIES) $(SOLARIS_README) \
+		$(LINUX_README) $(WINDOWS_README); \
+	    $(RM) README.html)
+
+$(J2SDK_ALL_JRLBUNDLE_NAME):: FORCE \
+               $(addprefix $(JRL_LICENSE_TMPDIR)/, $(JRL_SRC_BUNDLE_LICENSE_DOCLIST)) \
+               $(addprefix $(README_TMPDIR)/, $(BASIC_READMES) $(README_BINARIES) $(SOLARIS_README) $(LINUX_README) $(WINDOWS_README))
+	$(MKDIR) -p $(@D)
+	( $(CD) $(README_TMPDIR) && \
+	    $(MV) $(JRL_README) README.html; \
+	    $(ZIPEXE) -q -u $@ README.html $(BASIC_READMES) \
+		$(README_BINARIES) $(SOLARIS_README) \
+		$(LINUX_README) $(WINDOWS_README); \
+	    $(MV) README.html $(JRL_README) )
+	( $(CD) $(JRL_LICENSE_TMPDIR) && \
+	    $(ZIPEXE) -q -u $@ $(JRL_SRC_BUNDLE_LICENSE_DOCLIST) )
+
+$(J2SDK_BIN_JRLBUNDLE_NAME):: FORCE \
+               $(addprefix $(JRL_LICENSE_TMPDIR)/, $(JRL_BIN_BUNDLE_LICENSE_DOCLIST))
+	$(MKDIR) -p $(@D)
+	( $(CD) $(JRL_LICENSE_TMPDIR) && \
+	    $(ZIPEXE) -q -u $@ $(JRL_BIN_BUNDLE_LICENSE_DOCLIST) )
+
+$(RHINO_BUNDLE_NAME):: FORCE \
+               $(addprefix $(JRL_LICENSE_TMPDIR)/, $(RHINO_SRC_BUNDLE_LICENSE_DOCLIST))
+	$(MKDIR) -p $(@D)
+	( $(CD) $(JRL_LICENSE_TMPDIR) && \
+	    $(ZIPEXE) -q -u $@ $(RHINO_SRC_BUNDLE_LICENSE_DOCLIST) )
+
+BUILD_README_STAGED_ROOTDIR = docs
+BUILD_README_STAGEDDIR = $(BUILD_README_STAGED_ROOTDIR)/build
+JRL_BUILD_README_DIR = jrl
+JRL_BUILD_README_STAGEDDIR = \
+	    $(JRL_BUILD_README_DIR)/$(BUILD_README_STAGED_ROOTDIR)/build
+
+$(BIN_BUNDLEDIR)/build.tar: $(addprefix $(README_TMPDIR)/, $(ALL_READMES))
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	( $(CD) $(README_TMPDIR) && \
+	    $(MKDIR) -p $(BUILD_README_STAGEDDIR); \
+	    $(CP) -f $(ALL_READMES) $(BUILD_README_STAGEDDIR) && \
+	    $(TAR) cf build.tar $(BUILD_README_STAGED_ROOTDIR) )
+	$(MV) $(README_TMPDIR)/build.tar $@
+
+$(JRL_README_BUNDLE_NAME): $(addprefix $(README_TMPDIR)/, $(JRL_READMES))
+	$(MKDIR) -p $(@D)
+	( $(CD) $(README_TMPDIR) && \
+	    $(MKDIR) -p $(JRL_BUILD_README_STAGEDDIR); \
+	    $(CP) -f $(JRL_READMES) $(JRL_BUILD_README_STAGEDDIR) )
+	( $(CD) $(README_TMPDIR)/$(JRL_BUILD_README_DIR) && \
+	    $(ZIPEXE) -q -u -r $@ $(BUILD_README_STAGED_ROOTDIR) )
+
+jdk-readme-clobber:
+	$(RM) -r $(README_TMPDIR)
+jrl-license-clobber:
+	$(RM) -r $(JRL_LICENSE_TMPDIR)
+
+#####################
+# Sponsors source rule
+#####################
+
+sponsors-source::
+ifeq ($(BUILD_SPONSORS), true)
+sponsors-source:: $(SPONSORS_SRCLICBUNDLE_NAME)
+endif
+$(SPONSORS_SRCLICBUNDLE_NAME): $(TEMP_DIR)/sponsors-allfiles.txt
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	$(ECHO) "# Bundle file count: `$(CAT) $(TEMP_DIR)/sponsors-allfiles.txt | $(WC) -l` files"
+	$(CAT) $(TEMP_DIR)/sponsors-allfiles.txt | \
+	    ( $(CD) $(TOPDIR) && \
+	      $(ZIPEXE) -q@ $(SPONSORS_SRCLICBUNDLE_NAME) )
+$(TEMP_DIR)/sponsors-allfiles.txt: allfiles
+	$(RM) $@
+	$(MKDIR) -p $(@D)
+	$(CAT) $(TEMP_DIR)/allfiles.txt | $(EGREP) "^$(SPONSORS_NAME)/" > $@
+sponsors-source-clobber:
+	$(RM) $(SPONSORS_SRCLICBUNDLE_NAME)
+	$(RM) $(TEMP_DIR)/sponsors-allfiles.txt
+
+#####################
+# Primary source rule
+#####################
+
+source: source-sanity source-clobber source-all
+source-all: allfiles \
+     openjdk-source \
+     deploy-source \
+     sponsors-source \
+     jdk-source
+source-clobber: allfiles-clobber \
+     openjdk-source-clobber \
+     deploy-source-clobber \
+     sponsors-source-clobber \
+     jdk-source-clobber
+
+#####################
+# .PHONY
+#####################
+
+.PHONY: source source-clobber \
+	openjdk-source openjdk-source-clobber \
+        openjdk-image-source openjdk-image-topfiles \
+        jdk-source jdk-source-clobber \ \
+        deploy-source deploy-source-clobber \
+	sponsors-source sponsors-source-clobber \
+	jdk-readme jdk-readme-clobber \
+	jrl-license jrl-license-clobber \
+	jrl-extractor jrl-extractor-clobber \
+	allfiles allfiles-clobber
+
+FORCE:
+
+#####################
+# OPENJDK Binary bundle names and rules
+#####################
+
+PLUG_NAME_PREFIX = $(J2SDK_NAME)-$(JDK_MKTG_UNDERSCORE_VERSION)-$(MILESTONE)
+PLUG_NAME_SUFFIX = $(BUILD_NUMBER)-$(PLATFORM)-$(ARCH)-$(BUNDLE_DATE)
+PLUG_NAME        = $(PLUG_NAME_PREFIX)-plug-$(PLUG_NAME_SUFFIX)
+PLUG_DEBUG_NAME  = $(PLUG_NAME_PREFIX)-plug-debug-$(PLUG_NAME_SUFFIX)
+
+OPENJDK_BINARY_PLUGS_ZIP          = $(ABS_BIN_BUNDLEDIR)/$(PLUG_NAME).zip
+OPENJDK_DEBUG_BINARY_PLUGS_ZIP    = $(ABS_BIN_BUNDLEDIR)/$(PLUG_DEBUG_NAME).zip
+
+OPENJDK_BINARY_PLUGS_BUNDLE       = $(ABS_BIN_BUNDLEDIR)/$(PLUG_NAME).jar
+OPENJDK_DEBUG_BINARY_PLUGS_BUNDLE = $(ABS_BIN_BUNDLEDIR)/$(PLUG_DEBUG_NAME).jar
+
+OPENJDK_BINARY_PLUGS_LICENSE      = $(CLOSED_DOCS)/openjdk/binary-plugs/LICENSE
+
+OPENJDK_BINARY_PLUGS_DNAME        = openjdk-binary-plugs
+OPENJDK_BINARY_PLUGS_INAME        = openjdk-binary-plugs-image
+
+#####################
+# OPENJDK Binary Plug Bundles
+#####################
+
+openjdk-binary-plugs-bundles: \
+    $(OPENJDK_BINARY_PLUGS_BUNDLE) \
+    $(OPENJDK_DEBUG_BINARY_PLUGS_BUNDLE)
+
+$(OPENJDK_BINARY_PLUGS_ZIP): FORCE
+	@$(prep-target)
+	($(CD) $(OUTPUTDIR) && \
+	 $(RM) -r $(OPENJDK_BINARY_PLUGS_DNAME) && \
+	 $(MV) $(OPENJDK_BINARY_PLUGS_INAME) $(OPENJDK_BINARY_PLUGS_DNAME) && \
+	 $(ZIPEXE) -q -r $@ $(OPENJDK_BINARY_PLUGS_DNAME) && \
+	 $(MV) $(OPENJDK_BINARY_PLUGS_DNAME) $(OPENJDK_BINARY_PLUGS_INAME))
+
+$(OPENJDK_DEBUG_BINARY_PLUGS_ZIP): FORCE
+	@$(prep-target)
+	$(MKDIR) -p $(OUTPUTDIR)-$(INSTALL_DEBUG_NAME)/$(OPENJDK_BINARY_PLUGS_INAME)
+	($(CD) $(OUTPUTDIR)-$(INSTALL_DEBUG_NAME) && \
+	 $(RM) -r $(OPENJDK_BINARY_PLUGS_DNAME) && \
+	 $(MV) $(OPENJDK_BINARY_PLUGS_INAME) $(OPENJDK_BINARY_PLUGS_DNAME) && \
+	 $(ZIPEXE) -q -r $@ $(OPENJDK_BINARY_PLUGS_DNAME) && \
+	 $(MV) $(OPENJDK_BINARY_PLUGS_DNAME) $(OPENJDK_BINARY_PLUGS_INAME))
+
+$(OPENJDK_BINARY_PLUGS_BUNDLE): \
+    jrl-extractor $(OPENJDK_BINARY_PLUGS_ZIP)
+	@$(prep-target)
+	$(BOOTDIR)/bin/java -jar $(JRL_EXTRACTOR_DIR)/extractor.jar \
+	   $(OPENJDK_BINARY_PLUGS_LICENSE) \
+	   $(OPENJDK_BINARY_PLUGS_ZIP) $@
+
+$(OPENJDK_DEBUG_BINARY_PLUGS_BUNDLE): \
+    jrl-extractor $(OPENJDK_DEBUG_BINARY_PLUGS_ZIP)
+	@$(prep-target)
+	$(BOOTDIR)/bin/java -jar $(JRL_EXTRACTOR_DIR)/extractor.jar \
+	   $(OPENJDK_BINARY_PLUGS_LICENSE) \
+	   $(OPENJDK_DEBUG_BINARY_PLUGS_ZIP) $@
+
+.PHONY: openjdk-binary-plugs-bundles
+

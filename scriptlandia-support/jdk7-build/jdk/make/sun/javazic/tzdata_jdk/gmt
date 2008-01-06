@@ -1,0 +1,27 @@
+#
+# Copyright 2000-2005 Sun Microsystems, Inc.  All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+# Zone	NAME		GMTOFF	RULES	FORMAT	[UNTIL]
+Zone	GMT		0:00	-	GMT

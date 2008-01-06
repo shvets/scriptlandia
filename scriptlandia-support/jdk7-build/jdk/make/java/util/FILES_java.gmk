@@ -1,0 +1,40 @@
+#
+# Copyright 2005 Sun Microsystems, Inc.  All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+FILES_java = \
+        sun/util/resources/LocaleData.java \
+        sun/util/resources/OpenListResourceBundle.java \
+        sun/util/resources/LocaleNamesBundle.java \
+        sun/util/resources/TimeZoneNamesBundle.java \
+        sun/util/resources/TimeZoneNames.java \
+        sun/util/resources/TimeZoneNames_de.java \
+        sun/util/resources/TimeZoneNames_en.java \
+        sun/util/resources/TimeZoneNames_en_CA.java \
+        sun/util/resources/TimeZoneNames_en_GB.java \
+        sun/util/resources/TimeZoneNames_en_IE.java \
+        sun/util/resources/TimeZoneNames_es.java \
+        sun/util/resources/TimeZoneNames_fr.java \
+        sun/util/resources/TimeZoneNames_it.java \
+        sun/util/resources/TimeZoneNames_sv.java

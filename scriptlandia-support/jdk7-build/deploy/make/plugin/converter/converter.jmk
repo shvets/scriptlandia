@@ -1,0 +1,45 @@
+#
+# Copyright 2007 Sun Microsystems, Inc. All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+
+#
+# Java source files for the HTML converter
+#
+
+CONVERTER_java = \
+			HTMLConverter.java \
+			sun/plugin/converter/engine/AppletPieces.java \
+			sun/plugin/converter/engine/ConvertFile.java \
+			sun/plugin/converter/engine/ConvertSet.java \
+			sun/plugin/converter/engine/DefaultSet.java \
+			sun/plugin/converter/engine/ConverterProgressEvent.java \
+			sun/plugin/converter/engine/Converter.java \
+			sun/plugin/converter/engine/ConverterProgressListener.java \
+			sun/plugin/converter/engine/PluginConverter.java \
+			sun/plugin/converter/gui/ConverterGUI.java \
+			sun/plugin/converter/gui/ProgressGUI.java \
+			sun/plugin/converter/ResourceHandler.java \
+			sun/plugin/converter/util/AdvancedDialog.java \
+			sun/plugin/converter/util/BasicPrinter.java \
+			sun/plugin/converter/util/FlexFilter.java \
+			sun/plugin/converter/util/HelpDialog.java \
+			sun/plugin/converter/util/NotDirectoryException.java \
+			sun/plugin/converter/util/PrintManyPlaces.java \
+			sun/plugin/converter/util/NotFileException.java \
+			sun/plugin/converter/util/StdUtils.java \
+			sun/plugin/converter/util/CommandLine.java \
+			sun/plugin/converter/util/CommandLineException.java \
+			sun/plugin/converter/util/FileAccessException.java \
+			sun/plugin/converter/resources/ConverterHelpTemplates.java
+
+RESOURCE_BUNDLES =	sun/plugin/converter/resources/Converter.java \
+			sun/plugin/converter/resources/ConverterHelp.java 
+
+LOCALE_SUFFIXES = 	$(PLUGIN_LOCALES)
+
+CONVERTER_java += 	$(RESOURCE_BUNDLES)
+
+CONVERTER_java +=	$(foreach file,$(RESOURCE_BUNDLES),$(foreach locale,$(LOCALE_SUFFIXES),$(basename $(file))_$(locale).java))
+
+FILES_java = 		$(CONVERTER_java)

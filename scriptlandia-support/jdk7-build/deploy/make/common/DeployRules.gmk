@@ -1,0 +1,120 @@
+#
+# Copyright 2007 Sun Microsystems, Inc. All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+# Base rules used when building the generic Deploy JAR file and libraries.
+#
+
+include ../common/Defs.gmk
+
+DEPLOYOBJDIR         = $(OUTPUTDIR)/tmp/deploy/deployObj
+DEPLOYCLASSDESTDIR   = $(OUTPUTDIR)/tmp/deploy/deployClasses
+DEPLOY_SHARE_SRC     = $(DEPLOY_TOPDIR)/src/common/share
+DEPLOY_COMMON_DIR    = $(OUTPUTDIR)/tmp/deploy/common
+DEPLOY_COMMON_JAR    = $(DEPLOY_COMMON_DIR)/lib/deploy.jar
+DEPLOY_OUTPUT_JAR    = $(OUTPUTDIR)/lib/deploy.jar
+DEPLOY_JAR_CLASSPATH = $(DEPLOYCLASSDESTDIR)$(CLASSPATH_SEPARATOR)$(DEPLOY_SHARE_SRC)/classes$(CLASSPATH_SEPARATOR)$(DEPLOY_PLATFORM_SRC)/classes
+DEPLOYCLASSHDRDIR    = $(OUTPUTDIR)/tmp/deploy/deployClassHeaders
+COMMONCLASSDESTDIR   = "$(OUTPUTDIR)/classes$(CLASSPATH_SEPARATOR)$(CLASSDIR)$(CLASSPATH_SEPARATOR)$(DEPLOYCLASSDESTDIR)"
+DEPLOY_DIRS          = $(DEPLOYOBJDIR)          \
+                       $(DEPLOY_COMMON_DIR)     \
+                       $(DEPLOY_COMMON_DIR)/lib \
+                       $(DEPLOYCLASSDESTDIR)    \
+                       $(DEPLOYCLASSHDRDIR)
+
+DEPLOY_FILES = $(DEPLOY_COMMON_FILES)
+
+ifeq ($(PLATFORM), windows)
+    DEPLOY_FILES        += $(DEPLOY_WINDOWS_FILES)
+    DEPLOY_PLATFORM_SRC := $(DEPLOY_TOPDIR)/src/common/windows
+    DEPLOY_SHARE_SRC    := $(DEPLOY_TOPDIR)/src/common/share
+else
+    DEPLOY_FILES        += $(DEPLOY_SOLARIS_FILES)
+    DEPLOY_PLATFORM_SRC  = $(DEPLOY_TOPDIR)/src/common/unix
+endif
+
+DEPLOY_GENSRC = $(DEPLOY_FILES_GENSRC:%.java=$(DEPLOY_L10N_TMP_OUTPUTDIR)/%.java)
+CONVERT_COPYRIGHT_CMD = "s/@@COPYRIGHT_YEAR@@/$(COPYRIGHT_YEAR)/g"
+
+# Java files for Deploy common jar file
+FILES_java_deploy_common = $(DEPLOY_FILES)
+FILES_class_deploy_common = $(FILES_java_deploy_common:%.java=$(DEPLOYCLASSDESTDIR)/%.class)
+
+# replace these java files' copyright year
+$(DEPLOY_L10N_TMP_OUTPUTDIR)/com/sun/deploy/resources/%.java: $(DEPLOY_SHARE_SRC)/classes/com/sun/deploy/resources/%.java
+	@$(MKDIR) -p $(@D)
+	$(SED) $(CONVERT_COPYRIGHT_CMD) $? > $@
+
+# Redirect resources/%.java files to tmp directory
+$(DEPLOYCLASSDESTDIR)/%.class: $(DEPLOY_L10N_TMP_OUTPUTDIR)/%.java
+	$(JAVAC_CMD) -classpath "$(DEPLOY_JAR_CLASSPATH)" \
+		     -d $(DEPLOYCLASSDESTDIR) $?
+
+$(DEPLOYCLASSDESTDIR)/%.class: $(DEPLOY_SHARE_SRC)/classes/%.java
+	$(JAVAC_CMD) -classpath "$(DEPLOY_JAR_CLASSPATH)" \
+		     -d $(DEPLOYCLASSDESTDIR) $?
+
+$(DEPLOYCLASSDESTDIR)/%.class: $(DEPLOY_PLATFORM_SRC)/classes/%.java
+	$(JAVAC_CMD) -classpath "$(DEPLOY_JAR_CLASSPATH)" \
+		     -d $(DEPLOYCLASSDESTDIR) $?
+
+# Redirect zh_HK java files to tmp directory which created from zh_TW
+$(DEPLOYCLASSDESTDIR)/%_zh_HK.class: $(DEPLOY_L10N_TMP_OUTPUTDIR)/%_zh_HK.java
+	$(JAVAC_CMD) -classpath "$(DEPLOY_JAR_CLASSPATH)" \
+		     -d $(DEPLOYCLASSDESTDIR) $?
+
+#
+# Running Javah to generate stuff into CClassHeaders.
+#
+ifdef FILES_export
+CLASSES.export  = $(subst /,.,$(FILES_export:%.java=%))
+CLASSES.export += $(subst /,.,$(FILES_export2:%.java=%))
+CLASSES.export += $(subst /,.,$(FILES_export3:%.java=%))
+CLASSES_export  = $(FILES_export:%.java=$(DEPLOYCLASSDESTDIR)/%.class)
+
+# Change the -bootclasspath option to include deploy class files
+JAVAHFLAGS = -bootclasspath $(COMMONCLASSDESTDIR)
+
+deployclassheaders: $(DEPLOYOBJDIR)/.class.headers.$(ARCH)
+
+$(DEPLOYOBJDIR)/.class.headers.$(ARCH) : $(CLASSES_export)
+	$(JAVAH_CMD) -d $(DEPLOYCLASSHDRDIR)/ $(CLASSES.export)
+	-$(TOUCH) $@
+deployclassheaders.clean:
+	$(RM) -r $(DEPLOYCLASSHDRDIR) $(OBJDIR)/.class.headers.$(ARCH)
+else # FILES_export
+deployclassheaders deployclassheaders.clean: 
+	@$(TRUE)
+endif # FILES_export
+
+deploy-gensrc: $(DEPLOY_GENSRC)
+
+deploy-mkdir:: $(DEPLOY_DIRS)
+
+$(DEPLOY_DIRS):
+	$(MKDIR) -p $@
+
+deploy-jar: sanity-comprehensive               \
+            deploy-gensrc                       \
+            deploy-mkdir                       \
+            $(FILES_class_deploy_common)       \
+            $(FILES_debug_class_deploy_common) \
+            deployclassheaders                 \
+            deploy-native
+	@$(ECHO) "Building deploy.jar ... "
+	@for i in $(DEPLOYCLASSDESTDIR) ; do \
+	  $(MKDIR) -p $$i/com/sun/deploy/resources/image; \
+	  $(MKDIR) -p $$i/com/sun/deploy/panel; \
+	  $(RM) $$i/com/sun/deploy/resources/image/*.*; \
+	  $(RM) $$i/com/sun/deploy/panel/*.xml; \
+	  $(RM) $$i/com/sun/deploy/panel/*.dtd; \
+	  $(CP) $(DEPLOY_SHARE_SRC)/classes/com/sun/deploy/resources/image/*.* $$i/com/sun/deploy/resources/image; \
+	  $(CP) $(DEPLOY_SHARE_SRC)/classes/com/sun/deploy/panel/*.xml $$i/com/sun/deploy/panel; \
+	  $(CP) $(DEPLOY_SHARE_SRC)/classes/com/sun/deploy/panel/*.dtd $$i/com/sun/deploy/panel; \
+	done
+
+	$(JAR) cf $(DEPLOY_COMMON_JAR) -C "$(DEPLOYCLASSDESTDIR)" com/sun/deploy -C "$(DEPLOYCLASSDESTDIR)" sun/net/www/protocol/http
+
+	$(CP) $(DEPLOY_COMMON_JAR) $(DEPLOY_OUTPUT_JAR) 
+	
+	@$(ECHO) "Finish building deploy.jar ... "

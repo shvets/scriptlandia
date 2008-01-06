@@ -1,0 +1,30 @@
+#
+# Copyright 2007 Sun Microsystems, Inc. All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+# these are specific to Linux (RH6.1)
+include $(JDK_MAKE_SHARED_DIR)/Defs.gmk
+
+BUNDLE_SUFFIX  = .zip
+CC	       = $(COMPILER_PATH)gcc
+HEAD           = $(USRBIN_PATH)head
+CLASSPATH_SEP  = $(CLASSPATH_SEPARATOR)
+JUMP_EXE       = $(BIN_DIR)/javaws
+PATH_SEP       = /
+X11DIR         = /usr/X11R6
+LIBS           = -L$(X11DIR)/lib -lX11 -lnsl -ldl
+MD_SRC         = $(DEPLOY_TOPDIR)/src/javaws/solaris
+
+C_FLAGS_COMMON = -I$(SHARE_SRC)/native -I$(MD_SRC)/native -I$(SHARE_SRC)/native/jpeg -I$(GENHDIR) -DLINUX
+CC_FLAGS_COMMON = -I$(JAVAWS_BOOTDIR)/include -I$(JAVAWS_BOOTDIR)/include/linux -I$(SHARE_SRC)/native -I$(MD_SRC)/native -I$(SHARE_SRC)/native/jpeg -I$(GENHDIR) -DLINUX
+LINK_FLAGS_COMMON = 
+
+C_FLAGS_OPT =
+CC_FLAGS_OPT =
+C_FLAGS_DBG = -g -D_DEBUG
+CC_FLAGS_DBG = -g -D_DEBUG
+
+PLATFORM_SRC   = $(DEPLOY_TOPDIR)/src/javaws/linux
+UNIX_SHARE_SRC = $(DEPLOY_TOPDIR)/src/javaws/unix
+
+JAVAWS_SUBSTITUTE_VERSIONS = $(CAT)

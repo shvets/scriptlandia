@@ -1,0 +1,39 @@
+#
+# Copyright 1999-2003 Sun Microsystems, Inc.  All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+#
+# Files for Persistent CosNaming
+#
+
+com_sun_corba_se_impl_naming_pcosnaming_java = \
+	com/sun/corba/se/impl/naming/pcosnaming/NameServer.java \
+	com/sun/corba/se/impl/naming/pcosnaming/NameService.java \
+	com/sun/corba/se/impl/naming/pcosnaming/ServantManagerImpl.java \
+	com/sun/corba/se/impl/naming/pcosnaming/PersistentBindingIterator.java \
+	com/sun/corba/se/impl/naming/pcosnaming/InternalBindingKey.java \
+	com/sun/corba/se/impl/naming/pcosnaming/InternalBindingValue.java \
+	com/sun/corba/se/impl/naming/pcosnaming/NamingContextImpl.java
+
+FILES_java = $(com_sun_corba_se_impl_naming_pcosnaming_java)

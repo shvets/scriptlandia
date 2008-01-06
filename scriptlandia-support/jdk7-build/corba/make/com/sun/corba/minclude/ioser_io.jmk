@@ -1,0 +1,31 @@
+#
+# Copyright 2003 Sun Microsystems, Inc.  All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+IOSER_IO_java = \
+	com/sun/corba/se/internal/io/ObjectStreamClass.java \
+	com/sun/corba/se/internal/io/IIOPInputStream.java \
+	com/sun/corba/se/internal/io/IIOPOutputStream.java \
+	com/sun/corba/se/internal/io/LibraryManager.java 
+	

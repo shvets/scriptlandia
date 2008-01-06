@@ -1,0 +1,49 @@
+#
+# Copyright 1996-2006 Sun Microsystems, Inc.  All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+JAVA_ZIP_java = \
+	java/util/zip/Adler32.java \
+	java/util/zip/CRC32.java \
+	java/util/zip/Checksum.java \
+	java/util/zip/CheckedInputStream.java \
+	java/util/zip/CheckedOutputStream.java \
+	java/util/zip/DataFormatException.java \
+	java/util/zip/Deflater.java \
+	java/util/zip/DeflaterInputStream.java \
+	java/util/zip/DeflaterOutputStream.java \
+	java/util/zip/GZIPInputStream.java \
+	java/util/zip/GZIPOutputStream.java \
+	java/util/zip/Inflater.java \
+	java/util/zip/InflaterInputStream.java \
+	java/util/zip/InflaterOutputStream.java \
+	java/util/zip/ZipConstants.java \
+	java/util/zip/ZipEntry.java \
+	java/util/zip/ZipError.java \
+	java/util/zip/ZipException.java \
+	java/util/zip/ZipFile.java \
+	java/util/zip/ZipInputStream.java \
+	java/util/zip/ZipOutputStream.java
+
+FILES_java = $(JAVA_ZIP_java)

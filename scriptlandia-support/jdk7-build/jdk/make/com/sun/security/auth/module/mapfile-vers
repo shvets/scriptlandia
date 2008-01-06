@@ -1,0 +1,35 @@
+#
+# Copyright 2005 Sun Microsystems, Inc.  All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+# Define library interface.
+
+SUNWprivate_1.1 {
+	global:
+            Java_com_sun_security_auth_module_SolarisSystem_getSolarisInfo;
+            Java_com_sun_security_auth_module_UnixSystem_getUnixInfo;
+        local:
+	    *;
+};
+

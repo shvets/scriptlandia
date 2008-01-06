@@ -1,0 +1,47 @@
+#
+# Copyright 2007 Sun Microsystems, Inc. All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+
+PRODUCT = deploy/plugin
+
+# Choose the default output directory.
+_OUTPUTDIR = $(DEPLOY_TOPDIR)/build/$(PLATFORM)-$(ARCH)
+
+include $(DEPLOY_TOPDIR)/make/plugin/common/Plugin.gmk
+
+CLASSDIR = $(TEMPDIR)/classes
+
+JAVASRCDIR = $(DEPLOY_TOPDIR)/src/plugin/share/classes
+
+PLUGIN_JARFILE = $(LIBDIR)/plugin.jar
+
+ifeq ($(MILESTONE), rc)
+  CPPFLAGS += -DFCSRCBUILD
+endif
+ifeq ($(MILESTONE), fcs)
+  CPPFLAGS += -DFCSRCBUILD
+endif
+
+ifndef SECURITY_BASELINE_142
+SECURITY_BASELINE_142=1.4.2_10
+endif #SECURITY_BASELINE_142
+
+ifndef SECURITY_BASELINE_150
+SECURITY_BASELINE_150=1.5.0_07
+endif #SECURITY_BASELINE_150
+
+PLUGIN_LOCALES = de es fr it ja ko sv zh_CN zh_TW
+
+include $(JDK_MAKE_SHARED_DIR)/../Defs.gmk
+
+# Temporarily use -source 1.4 until the plugin build is 1.5-clean.
+# Problems are: use of `enum', use of non-ASCII characters in
+# resources/Activator_it.java, security/StripClassFile.java
+LANGUAGE_VERSION = -source 1.4
+
+#Define and create l10n tmp directory for deploy
+DEPLOY_L10N_TMP_OUTPUTDIR=$(OUTPUTDIR)/tmp/l10n/deploy
+dummy := $(shell $(MKDIR) -p $(DEPLOY_L10N_TMP_OUTPUTDIR))
+
+include $(DEPLOY_TOPDIR)/make/plugin/common/Defs-$(PLATFORM).gmk

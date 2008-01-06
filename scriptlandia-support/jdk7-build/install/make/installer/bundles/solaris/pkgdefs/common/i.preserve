@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# Copyright 2006 Sun Microsystems, Inc. All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+# Simply preserve the existing contents of the file.
+#
+while read src dest
+do
+	if [ ! -f $dest ] ; then
+		cp $src $dest
+	fi
+done
+exit 0

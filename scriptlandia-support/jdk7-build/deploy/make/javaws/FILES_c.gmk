@@ -1,0 +1,31 @@
+#
+# Copyright 2007 Sun Microsystems, Inc. All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+
+LAUNCHER_c = launcher.c
+
+FILES_less2_c =                       \
+        launcher_md.c       \
+        configurationFile.c \
+        launchFile.c        \
+        xmlparser.c         \
+        propertyParser.c    \
+        versionId.c         \
+        secure.c            \
+        system.c            \
+        system_md.c         \
+        splash_md.c         \
+        msgString.c         \
+	splashFile.c        \
+	util.c
+
+FILES_c = $(LAUNCHER_c) $(FILES_less2_c) 
+
+FILES_GENH = $(SHARE_SRC)/native/version/jawsversion.h
+GENH = $(FILES_GENH:$(SHARE_SRC)/native/version/%.h=$(GENHDIR)/%.h)
+
+ifeq ($(PLATFORM),windows)
+   FILES_GENRGS = $(PLATFORM_SRC)/activex/isInstalled_pre.rgs
+   GENRGS = $(FILES_GENRGS:$(PLATFORM_SRC)/activex/%_pre.rgs=$(GENHDIR)/%.rgs)
+endif

@@ -1,0 +1,48 @@
+#
+# Copyright 2007 Sun Microsystems, Inc.  All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+FILES_c = \
+    cmscam02.c \
+    cmscam97.c \
+    cmscgats.c \
+    cmscnvrt.c \
+    cmserr.c \
+    cmsgamma.c \
+    cmsgmt.c \
+    cmsintrp.c \
+    cmsio0.c \
+    cmsio1.c \
+    cmslut.c \
+    cmsmatsh.c \
+    cmsmtrx.c \
+    cmsnamed.c \
+    cmspack.c \
+    cmspcs.c \
+    cmsps2.c \
+    cmssamp.c \
+    cmsvirt.c \
+    cmswtpnt.c \
+    cmsxform.c \
+    LCMS.c

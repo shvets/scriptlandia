@@ -1,0 +1,45 @@
+#
+# Copyright 1999-2007 Sun Microsystems, Inc.  All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+FILES_c = \
+	Utilities.c \
+	Platform.c
+
+FILES_solaris = \
+	PLATFORM_API_SolarisOS_Utils.c \
+	PLATFORM_API_SolarisOS_Ports.c \
+	PLATFORM_API_SolarisOS_PCM.c
+
+FILES_linux = 
+
+FILES_windows = \
+	PLATFORM_API_WinOS_MidiIn.c \
+	PLATFORM_API_WinOS_MidiOut.c \
+	PLATFORM_API_WinOS_Util.c \
+	PLATFORM_API_WinOS_Ports.c
+
+FILES_export = \
+	com/sun/media/sound/Platform.java
+

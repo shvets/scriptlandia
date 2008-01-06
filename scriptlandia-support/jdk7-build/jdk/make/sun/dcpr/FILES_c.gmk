@@ -1,0 +1,51 @@
+#
+# Copyright 1997-2007 Sun Microsystems, Inc.  All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+FILES_c = \
+	CJError.c \
+	doeObject.c \
+	doeSun.c \
+	dcPool.c \
+	CJPathConsumer.c \
+	CJPathConsumer2D.c \
+	dcPathConsumer.c \
+	dcPathStore.c \
+	dcPathError.c \
+	dcPathException.c \
+	PathFiller.c \
+	PathDasher.c \
+	PathStroker.c \
+	dcLLFiller.c \
+	dcLLFillerH.c \
+	dcLLFillerS.c \
+        dcPRError.c \
+        dcPRException.c \
+	dcPathFiller.c \
+	dcPathDasher.c \
+	dcPathStorage.c \
+	dcPathStroker.c \
+	affine.c \
+	angles.c \
+	arcs.c \

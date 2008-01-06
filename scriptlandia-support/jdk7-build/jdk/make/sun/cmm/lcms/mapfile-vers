@@ -1,0 +1,45 @@
+#
+# Copyright 2007 Sun Microsystems, Inc.  All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+# Define public interface.
+
+SUNWprivate_1.1 {
+	global:
+        Java_sun_java2d_cmm_lcms_LCMS_loadProfile;
+        Java_sun_java2d_cmm_lcms_LCMS_freeProfile;
+        Java_sun_java2d_cmm_lcms_LCMS_getProfileSize;
+        Java_sun_java2d_cmm_lcms_LCMS_getProfileData;
+        Java_sun_java2d_cmm_lcms_LCMS_getTagSize;
+        Java_sun_java2d_cmm_lcms_LCMS_getTagData;
+        Java_sun_java2d_cmm_lcms_LCMS_setTagData;
+        Java_sun_java2d_cmm_lcms_LCMS_colorConvert;
+        Java_sun_java2d_cmm_lcms_LCMS_getProfileID;
+        Java_sun_java2d_cmm_lcms_LCMS_initLCMS;
+        Java_sun_java2d_cmm_lcms_LCMS_createNativeTransform;
+        JNI_OnLoad;
+
+	local:
+		*;
+};

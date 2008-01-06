@@ -1,0 +1,57 @@
+#
+# Copyright 2003-2004 Sun Microsystems, Inc.  All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+com_sun_corba_se_impl_transport_java = \
+	com/sun/corba/se/impl/transport/ByteBufferPoolImpl.java \
+	com/sun/corba/se/impl/transport/CorbaConnectionCacheBase.java \
+	com/sun/corba/se/impl/transport/CorbaContactInfoBase.java \
+	com/sun/corba/se/impl/transport/CorbaContactInfoListImpl.java \
+	com/sun/corba/se/impl/transport/CorbaContactInfoListIteratorImpl.java \
+	com/sun/corba/se/impl/transport/CorbaInboundConnectionCacheImpl.java \
+	com/sun/corba/se/impl/transport/CorbaOutboundConnectionCacheImpl.java \
+	com/sun/corba/se/impl/transport/CorbaResponseWaitingRoomImpl.java \
+	com/sun/corba/se/impl/transport/CorbaTransportManagerImpl.java \
+	com/sun/corba/se/impl/transport/DefaultIORToSocketInfoImpl.java \
+	com/sun/corba/se/impl/transport/DefaultSocketFactoryImpl.java \
+	com/sun/corba/se/impl/transport/EventHandlerBase.java \
+	com/sun/corba/se/impl/transport/ListenerThreadImpl.java \
+	com/sun/corba/se/impl/transport/ReaderThreadImpl.java \
+	com/sun/corba/se/impl/transport/ReadTCPTimeoutsImpl.java \
+	com/sun/corba/se/impl/transport/SelectorImpl.java \
+	com/sun/corba/se/impl/transport/SharedCDRContactInfoImpl.java \
+	com/sun/corba/se/impl/transport/SocketOrChannelAcceptorImpl.java \
+	com/sun/corba/se/impl/transport/SocketOrChannelConnectionImpl.java \
+	com/sun/corba/se/impl/transport/SocketOrChannelContactInfoImpl.java \
+	com/sun/corba/se/impl/legacy/connection/DefaultSocketFactory.java \
+	com/sun/corba/se/impl/legacy/connection/EndPointInfoImpl.java \
+	com/sun/corba/se/impl/legacy/connection/LegacyServerSocketManagerImpl.java \
+	com/sun/corba/se/impl/legacy/connection/SocketFactoryAcceptorImpl.java \
+	com/sun/corba/se/impl/legacy/connection/SocketFactoryConnectionImpl.java \
+	com/sun/corba/se/impl/legacy/connection/SocketFactoryContactInfoImpl.java \
+	com/sun/corba/se/impl/legacy/connection/SocketFactoryContactInfoListImpl.java \
+	com/sun/corba/se/impl/legacy/connection/SocketFactoryContactInfoListIteratorImpl.java \
+	com/sun/corba/se/impl/legacy/connection/USLPort.java
+
+

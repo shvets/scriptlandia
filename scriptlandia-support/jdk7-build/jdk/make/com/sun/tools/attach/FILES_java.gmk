@@ -1,0 +1,54 @@
+#
+# Copyright 2005 Sun Microsystems, Inc.  All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+FILES_java = \
+	com/sun/tools/attach/AgentLoadException.java \
+	com/sun/tools/attach/AgentInitializationException.java \
+	com/sun/tools/attach/AttachPermission.java \
+	com/sun/tools/attach/AttachNotSupportedException.java \
+	com/sun/tools/attach/VirtualMachine.java \
+	com/sun/tools/attach/VirtualMachineDescriptor.java \
+	com/sun/tools/attach/spi/AttachProvider.java \
+	sun/tools/attach/HotSpotAttachProvider.java \
+	sun/tools/attach/HotSpotVirtualMachine.java 
+	
+ifeq ($(PLATFORM), solaris)
+FILES_java += \
+	sun/tools/attach/SolarisAttachProvider.java
+endif
+
+ifeq ($(PLATFORM), linux)
+FILES_java += \
+	sun/tools/attach/LinuxAttachProvider.java
+endif
+
+#
+# Files that need to be copied
+#
+SERVICEDIR = $(CLASSBINDIR)/META-INF/services
+                                                                                                
+FILES_copy = \
+	$(SERVICEDIR)/com.sun.tools.attach.spi.AttachProvider
+
+
