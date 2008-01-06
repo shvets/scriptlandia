@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<!-- prepare.ant -->
+
+<project name="prepare.ant" default="copy.sources" basedir=".">
+  <property name="jdk7.src" value="c:/tools/jdk7-src-orig"/>
+  <property name="jdk7.build" value="c:/toools/jdk7-build"/>
+
+  <target name="copy.sources">
+    <copy dir="${jdk7.src}" todir="${jdk7.build}">
+      <fileset>
+        <exclude name="hotspot/make/common/Defs-windows.gmk"/>
+        <exclude name="hotspot/make/common/shared/Compiler-msvc.gmk"/>
+        
+        <exclude name="jdk/make/common/Defs-windows.gmk"/>
+        <exclude name="jdk/make/common/shared/Compiler-msvc.gmk"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean">
+    <delete dir="${jdk7.build}">
+      <fileset>
+        <exclude name="corba/make/**"/>
+        <exclude name="deploy/make/**"/>
+        <exclude name="hotspot/make/**"/>
+        <exclude name="install/make/**"/>
+        <exclude name="jaxp/make/**"/>
+        <exclude name="jdk/make/**"/>
+        <exclude name="langtools/make/**"/>
+        <exclude name="make/**"/>
+        <exclude name="*.*"/>                                              
+      </fileset>
+    </delete>
+  </target>
+</project>
