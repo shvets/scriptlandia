@@ -3,12 +3,12 @@
 <!-- prepare.ant -->
 
 <project name="prepare.ant" default="build" basedir=".">
-  <property name="langtools.home" value="c:/Work/Sources/openjdk-b23/langtools"/>
+  <property name="langtools.home" value="c:/tools/jdk7-src-orig/langtools"/>
   <property name="repository.home" value="c:/maven-repository"/>
 
-  <property name="ant.home" value="."/>
+  <property name="ant.home" value="${basedir}"/>
 
-  <copy file="${repository.home}/org/apache/ant/ant/1.7.0/ant-1.7.0.jar " todir="${ant.home}/lib"/>
+  <copy file="${repository.home}/org/apache/ant/ant/1.7.0/ant-1.7.0.jar " tofile="${ant.home}/lib/ant.jar"/>
 
   <target name="build">
     <ant dir="${langtools.home}" antfile="${langtools.home}/make/build.xml" target="build">
