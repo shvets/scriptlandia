@@ -48,17 +48,15 @@
   </target>
   
   <target name="clean">
-    <delete dir="${jdk7.build}">
-      <fileset>
-        <exclude name="corba/make/**"/>
-        <exclude name="deploy/make/**"/>
-        <exclude name="hotspot/make/**"/>
-        <exclude name="install/make/**"/>
-        <exclude name="jaxp/make/**"/>
-        <exclude name="jdk/make/**"/>
-        <exclude name="langtools/make/**"/>
-        <exclude name="make/**"/>
-        <exclude name="*.*"/>                                              
+    <delete>
+      <fileset dir="${jdk7.build}">
+        <exclude name="corba/make\common/shared/Compiler-msvc.gmk"/>
+        <exclude name="jdk\make\common\shared\Compiler-msvc.gmk"/>
+
+        <exclude name=".svn"/>
+        <exclude name="buildenv.bat"/>
+        <exclude name="prepare.ant"/>
+        <exclude name="README.txt"/>                                                                      
       </fileset>
     </delete>
   </target>

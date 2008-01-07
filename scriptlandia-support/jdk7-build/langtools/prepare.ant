@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<!-- prepare.ant -->
+
+<project name="prepare.ant" default="build" basedir=".">
+  <property name="langtools.home" value="c:/Work/Sources/openjdk-b23/langtools"/>
+  <property name="repository.home" value="c:/maven-repository"/>
+
+  <property name="ant.home" value="."/>
+
+  <copy file="${repository.home}/org/apache/ant/ant/1.7.0/ant-1.7.0.jar " todir="${ant.home}/lib"/>
+
+  <target name="build">
+    <ant dir="${langtools.home}" antfile="${langtools.home}/make/build.xml" target="build">
+      <property name="boot.java.home" value="${java.home}"/>
+      <property name="ant.home" value="${ant.home}"/>
+    </ant>
+  </target>
+
+  <target name="clean">
+    <ant dir="${langtools.home}" antfile="${langtools.home}/make/build.xml" target="clean">
+      <property name="boot.java.home" value="${java.home}"/>
+      <property name="ant.home" value="${ant.home}"/>
+    </ant>
+  </target>
+
+</project>
