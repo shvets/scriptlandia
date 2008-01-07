@@ -27,8 +27,7 @@ public class SimpleFlashExample extends JPanel {
   public SimpleFlashExample() {
     super(new BorderLayout(0, 0));
     //String fileURL = /*DemoUtils.*/extractFileURL(SimpleFlashExample.class, "resource/Movement-pointer_or_click.swf");
-    //String fileURL = "resource/Movement-pointer_or_click.swf";
-     String fileURL = "resource/dyn_text_moving.swf";
+    String fileURL = "resource/Movement-pointer_or_click.swf";
 
     if(fileURL == null) {
       add(new JLabel("Failed to extract the Flash file."), BorderLayout.CENTER);
