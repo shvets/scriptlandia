@@ -1,7 +1,0 @@
-FILES_cpp = StdAfx.cpp \
-            RegInstallMSI.cpp \
-            UserProfile.cpp \
-	    UpdateConf.cpp \
-            common.cpp
-
-

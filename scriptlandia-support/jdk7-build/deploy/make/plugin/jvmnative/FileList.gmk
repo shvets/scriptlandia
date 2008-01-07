@@ -1,5 +1,0 @@
-FILES_c = native.c \
-          server.c \
-          protocol.c \
-          buffered_pipe_interface.c
-
