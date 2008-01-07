@@ -51,7 +51,10 @@
     <delete>
       <fileset dir="${jdk7.build}">
         <exclude name="corba/make\common/shared/Compiler-msvc.gmk"/>
-        <exclude name="jdk\make\common\shared\Compiler-msvc.gmk"/>
+        <exclude name="jdk/make/common/shared/Compiler-msvc.gmk"/>
+
+        <exclude name="langtools/prepare.ant"/>
+        <exclude name="langtools/README.txt"/>
 
         <exclude name=".svn"/>
         <exclude name="buildenv.bat"/>
