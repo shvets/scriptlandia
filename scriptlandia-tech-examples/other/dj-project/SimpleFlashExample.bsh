@@ -1,0 +1,94 @@
+/*
+ * Christopher Deckers (chrriis@nextencia.net)
+ * http://www.nextencia.net
+ * 
+ * See the file "readme.txt" for information on usage and redistribution of
+ * this file, and for a DISCLAIMER OF ALL WARRANTIES.
+ */
+//package chrriis.dj.nativeswing.demo.examples.flashplayer;
+
+org.sf.scriptlandia.ScriptlandiaHelper.resolveDependencies("chrriis.dj", "nativeswing", "0.9.1");
+
+import chrriis.dj.nativeswing.NativeInterfaceHandler;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+//import chrriis.dj.nativeswing.demo.DemoUtils;
+import chrriis.dj.nativeswing.ui.JFlashPlayer;
+
+/**
+ * @author Christopher Deckers
+ */
+public class SimpleFlashExample extends JPanel {
+
+  public SimpleFlashExample() {
+    super(new BorderLayout(0, 0));
+    //String fileURL = /*DemoUtils.*/extractFileURL(SimpleFlashExample.class, "resource/Movement-pointer_or_click.swf");
+    //String fileURL = "resource/Movement-pointer_or_click.swf";
+     String fileURL = "resource/dyn_text_moving.swf";
+
+    if(fileURL == null) {
+      add(new JLabel("Failed to extract the Flash file."), BorderLayout.CENTER);
+      return;
+    }
+    JFlashPlayer player = new JFlashPlayer();
+    player.setControlBarVisible(false);
+    player.setURL(fileURL);
+    add(player, BorderLayout.CENTER);
+  }
+
+  public static String extractFileURL(Class/*<?>*/ clazz, String resource) {
+    File file = null;
+    try {
+      file = File.createTempFile("nsfe", ".swf");
+    } catch(Exception e) {
+      e.printStackTrace();
+      return null;
+    }
+    file.deleteOnExit();
+    BufferedInputStream in = new BufferedInputStream(clazz.getResourceAsStream(resource));
+    try {
+      BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(file));
+      byte[] bytes = new byte[1024];
+      for(int i; (i=in.read(bytes)) != -1; ) {
+        out.write(bytes, 0, i);
+      }
+      in.close();
+      out.close();
+      return file.toURI().toURL().toExternalForm();
+    } catch(Exception e) {
+      e.printStackTrace();
+    }
+    return null;
+  }
+  
+}
+
+NativeInterfaceHandler.init();
+
+SwingUtilities.invokeLater(new Runnable() {
+  public void run() {
+    final JFrame frame = new JFrame();
+
+    new Thread() {
+      //@Override
+      public void run() {
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+           frame.getContentPane().add(new SimpleFlashExample(), BorderLayout.CENTER);
+         }
+        });
+      }
+    }.start();
+
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setSize(new Dimension(800,800));
+
+    frame.setVisible(true);
+  }
+});
+
+NativeInterfaceHandler.runEventPump();
