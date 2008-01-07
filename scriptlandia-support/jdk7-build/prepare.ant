@@ -4,18 +4,47 @@
 
 <project name="prepare.ant" default="copy.sources" basedir=".">
   <property name="jdk7.src" value="c:/tools/jdk7-src-orig"/>
-  <property name="jdk7.build" value="c:/toools/jdk7-build"/>
+  <property name="jdk7.build" value="c:/tools/jdk7-build"/>
 
   <target name="copy.sources">
-    <copy dir="${jdk7.src}" todir="${jdk7.build}">
-      <fileset>
-        <exclude name="hotspot/make/common/Defs-windows.gmk"/>
-        <exclude name="hotspot/make/common/shared/Compiler-msvc.gmk"/>
-        
-        <exclude name="jdk/make/common/Defs-windows.gmk"/>
-        <exclude name="jdk/make/common/shared/Compiler-msvc.gmk"/>
+    <copy todir="${jdk7.build}/corba">
+      <fileset dir="${jdk7.src}/corba"/>
+    </copy>
+
+    <copy todir="${jdk7.build}/deploy">
+      <fileset dir="${jdk7.src}/deploy"/>
+    </copy>
+
+    <copy todir="${jdk7.build}/hotspot">
+      <fileset dir="${jdk7.src}/hotspot">
+        <exclude name="make/common/Defs-windows.gmk"/>
+        <exclude name="make/common/shared/Compiler-msvc.gmk"/>
       </fileset>
     </copy>
+
+    <copy todir="${jdk7.build}/install">
+      <fileset dir="${jdk7.src}/install"/>
+    </copy>
+
+    <copy todir="${jdk7.build}/jaxp">
+      <fileset dir="${jdk7.src}/jaxp"/>
+    </copy>
+
+    <copy todir="${jdk7.build}/jaxws">
+      <fileset dir="${jdk7.src}/jaxws"/>
+    </copy>
+
+    <copy todir="${jdk7.build}/jdk">
+      <fileset dir="${jdk7.src}/jdk">
+        <exclude name="make/common/Defs-windows.gmk"/>
+        <exclude name="make/common/shared/Compiler-msvc.gmk"/>
+      </fileset>
+    </copy>
+
+    <copy todir="${jdk7.build}/langtools">
+      <fileset dir="${jdk7.src}/langtools"/>
+    </copy>
+    
   </target>
   
   <target name="clean">

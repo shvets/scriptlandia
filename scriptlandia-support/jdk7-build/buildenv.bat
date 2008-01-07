@@ -36,6 +36,11 @@ set ALT_DXSDK_PATH=%DIRECTX_HOME%
 
 SET ALT_OUTPUTDIR=%TOOLS_HOME%/openjdk-output
 
+SET JCE_JAR=%ALT_BOOTDIR%/jre/lib/jce.jar
+SET JAVAC_JAR=%ALT_OUTPUTDIR%/dist/bootstrap/lib/javac.jar
+
+SET JAVAC=%ALT_BOOTDIR%/bin/java -Xmx896m -Xms128m "-Xbootclasspath/p:%JAVAC_JAR%;%JCE_JAR%" -jar %JAVAC_JAR% -source 1.5 -target 5 -encoding ascii
+
 set VISUAL_STUDIO_HOME=C:/Program Files/Microsoft Visual Studio 9.0
 
 set WINDOWS_SDK_HOME=C:/Program Files/Microsoft Platform SDK for Windows Server 2003 R2
