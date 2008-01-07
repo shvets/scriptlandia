@@ -59,8 +59,8 @@ ifeq ($(PLATFORM), windows)
     CC_MAJORVER :=$(call MajorVersion,$(CC_VER))
 
     $(warning "WARNING: ver: $(CC_VER) link ver. $(LINK_VER) cc type: $(CC_TYPE) cc majorver: $(CC_MAJORVER)")
-    #test := $(shell $(CC))
-    #$(warning "shell: $(test)")
+    $(warning "??? $(COMPILER_PATH)")
+        $(warning "??? $(CC)")
 
     REQUIRED_CCTYPE = Optimizing
     REQUIRED_CC_VER = 13.10.3077
