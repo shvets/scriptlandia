@@ -2,9 +2,15 @@
 
 <!-- prepare.ant -->
 
-<project name="prepare.ant" default="copy.sources" basedir=".">
+<project name="prepare.ant" default="copy.jdk.sources" basedir=".">
   <property name="jdk7.src" value="c:/tools/jdk7-src-orig"/>
   <property name="jdk7.build" value="c:/tools/jdk7-build"/>
+
+  <target name="copy.jdk.sources">
+    <copy todir="${jdk7.build}/jdk">
+      <fileset dir="${jdk7.src}/jdk"/>
+    </copy>
+ </target>
 
   <target name="copy.sources">
     <copy todir="${jdk7.build}/corba">
