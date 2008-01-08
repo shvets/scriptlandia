@@ -24,6 +24,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * This is the class for holding convenient methods when working with Maven.
@@ -66,7 +69,26 @@ public class MavenHelper {
       newArgsList.add(pomName);
     }
 
-    newArgsList.addAll(Arrays.asList(args));
+    Map origSystemParams = new HashMap();
+
+    for (int i = 0; i < args.length; i++) {
+      String arg = args[i];
+
+      if (arg.startsWith("-D")) {
+        int index = arg.indexOf("=");
+        String key = arg.substring(2, index);
+        String value = arg.substring(index+1);
+
+        origSystemParams.put(key, System.getProperty(key));
+
+        System.setProperty(key, value);
+      }
+      else {
+        newArgsList.add(arg);
+      }
+    }
+
+    //newArgsList.addAll(Arrays.asList(args));
 
     String[] newArgs = new String[newArgsList.size()];
 
@@ -76,6 +98,17 @@ public class MavenHelper {
 
     //System.out.println("Maven args: " + java.util.Arrays.asList(newArgs));
     MavenCli.main(newArgs, classWorld);
+
+    Iterator iterator = origSystemParams.keySet().iterator();
+
+    while(iterator.hasNext()) {
+      String key = (String)iterator.next();
+      String value = System.getProperty(key);
+
+      if(value != null) {
+        System.setProperty(key, value);
+      }
+    }
   }
 
   /**
