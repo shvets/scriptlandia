@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>helloworld</groupId>
+  <artifactId>helloworld</artifactId>
+  <version>1.0</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>aspectj</groupId>
+      <artifactId>aspectjrt</artifactId>
+      <version>1.5.2a</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>compile</defaultGoal>
+
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>aspectj-maven-plugin</artifactId>
+
+        <configuration>
+          <aspectDirectory>src/main/aj</aspectDirectory>
+        </configuration>
+
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>       <!-- use this goal to weave all your main classes -->
+              <goal>test-compile</goal>  <!-- use this goal to weave all your test classes -->
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+
+        <executions>
+          <execution>
+            <id>run</id>
+            <phase>compile</phase>
+            <configuration>
+              <tasks>
+                <java classname="HelloWorld" fork="yes">
+                  <classpath>
+                    <pathelement path="${project.build.directory}/classes"/>
+                    <path refid="maven.compile.classpath"/>
+                  </classpath>
+                </java>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+         </executions>
+      </plugin>
+    </plugins>
+ </build>
+
+</project>
