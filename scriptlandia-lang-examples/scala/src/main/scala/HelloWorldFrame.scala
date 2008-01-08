@@ -10,3 +10,5 @@ object HelloWorldFrame extends JFrame( "Greetings" )
         setVisible( true );
     }
 }
+
+HelloWorldFrame.main(args)

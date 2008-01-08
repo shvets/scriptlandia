@@ -37,3 +37,5 @@ object DemoXML {
   	go("XML Patterns");  
   }
 }
+
+DemoXML.main(args);

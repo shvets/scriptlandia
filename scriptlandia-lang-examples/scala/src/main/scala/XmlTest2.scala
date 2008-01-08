@@ -62,3 +62,5 @@ object XmlTest2 {
   }
 
 }
+
+XmlTest2.main(args)

@@ -17,3 +17,5 @@ object TargetTest2 extends Application {
     i = i - 1
   } unless (i == 0)
 }
+
+TargetTest2.main(args)

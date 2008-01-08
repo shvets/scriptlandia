@@ -39,3 +39,5 @@ object Test {
     iter foreach System.out.println
   }
 }
+
+Test.main(args)

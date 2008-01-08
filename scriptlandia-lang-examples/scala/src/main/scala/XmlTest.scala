@@ -28,3 +28,5 @@ object XmlTest {
   }
 
 }
+
+XmlTest.main(args)

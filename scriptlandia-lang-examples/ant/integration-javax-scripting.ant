@@ -135,4 +135,13 @@
     </script>
   </target>
 
+  <target name="scala">
+    <configure-language name="scala" manager="javax"/>
+
+    <script language="scala">
+      Console.println("Hello, world from Scala!")
+     </script>
+  </target>
+
+
 </project>

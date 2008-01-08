@@ -15,3 +15,5 @@ object TargetTest1 extends Application {
   }
 
 }
+
+TargetTest1.main(args)
