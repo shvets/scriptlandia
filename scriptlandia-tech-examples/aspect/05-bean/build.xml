@@ -1,0 +1,15 @@
+<project name="bean" default="run" basedir=".">
+<!-- xmlns:aspectj="antlib:org.aspectj" -->
+  
+  <import file="../build-common.xml"/>
+
+  <target name="run" depends="compile">
+    <java classname="Demo" fork="yes">
+      <classpath>
+        <pathelement path="${classes.dir}"/>
+        <path refid="aspectj.rt.path"/>
+      </classpath>
+    </java>
+  </target>
+
+</project>

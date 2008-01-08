@@ -1,0 +1,30 @@
+<project name="telecom" default="run" basedir=".">
+<!-- xmlns:aspectj="antlib:org.aspectj" -->
+  
+  <import file="../build-common.xml"/>
+
+  <target name="run" depends="compile">
+    <java classname="BasicSimulation" fork="yes">
+      <classpath>
+        <pathelement path="${classes.dir}"/>
+        <path refid="aspectj.rt.path"/>
+      </classpath>
+    </java>
+
+    <java classname="TimingSimulation" fork="yes">
+      <classpath>
+        <pathelement path="${classes.dir}"/>
+        <path refid="aspectj.rt.path"/>
+      </classpath>
+    </java>
+
+    <java classname="BillingSimulation" fork="yes">
+      <classpath>
+        <pathelement path="${classes.dir}"/>
+        <path refid="aspectj.rt.path"/>
+      </classpath>
+    </java>
+  
+  </target>
+
+</project>
