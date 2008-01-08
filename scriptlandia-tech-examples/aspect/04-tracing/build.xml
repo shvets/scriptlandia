@@ -1,0 +1,76 @@
+<project name="tracing" default="run1" basedir=".">
+<!-- xmlns:aspectj="antlib:org.aspectj" -->
+  
+  <import file="../build-common.xml"/>
+
+  <target name="compile1" depends="init">
+    <iajc sourceroots="src/main/java" 
+          aspectpathref="aspectj.rt.path" destDir="${classes.dir}"/> 
+   </target>
+
+  <target name="run1" depends="compile1">
+    <java classname="ExampleMain" fork="yes">
+      <classpath>
+        <pathelement path="${classes.dir}"/>
+        <path refid="aspectj.rt.path"/>
+      </classpath>
+    </java>
+  </target>
+
+  <target name="compile2" depends="init">
+    <iajc sourceroots="src/main/java;src/main/aj/version1" 
+          aspectpathref="aspectj.rt.path" destDir="${classes.dir}"/> 
+   </target>
+
+  <target name="run2" depends="compile2">
+    <java classname="TraceMyClasses" fork="yes">
+      <classpath>
+        <pathelement path="${classes.dir}"/>
+        <path refid="aspectj.rt.path"/>
+      </classpath>
+    </java>
+  </target>
+
+  <target name="compile3" depends="init">
+    <iajc sourceroots="src/main/java;src/main/aj/version2" 
+          aspectpathref="aspectj.rt.path" destDir="${classes.dir}"/> 
+   </target>
+
+  <target name="run3" depends="compile3">
+    <java classname="TraceMyClasses" fork="yes">
+      <classpath>
+        <pathelement path="${classes.dir}"/>
+        <path refid="aspectj.rt.path"/>
+      </classpath>
+    </java>
+  </target>
+
+  <target name="compile4" depends="init">
+    <iajc sourceroots="src/main/java;src/main/aj/version3" 
+          aspectpathref="aspectj.rt.path" destDir="${classes.dir}"/> 
+   </target>
+
+  <target name="run4" depends="compile4">
+    <java classname="TraceMyClasses" fork="yes">
+      <classpath>
+        <pathelement path="${classes.dir}"/>
+        <path refid="aspectj.rt.path"/>
+      </classpath>
+    </java>
+  </target>
+
+  <target name="compile5" depends="init">
+    <iajc sourceroots="src/main/java;src/main/aj/version4" 
+          aspectpathref="aspectj.rt.path" destDir="${classes.dir}"/> 
+   </target>
+
+  <target name="run5" depends="compile5">
+    <java classname="TraceMyClasses" fork="yes">
+      <classpath>
+        <pathelement path="${classes.dir}"/>
+        <path refid="aspectj.rt.path"/>
+      </classpath>
+    </java>
+  </target>
+
+</project>
