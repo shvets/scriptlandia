@@ -1,0 +1,14 @@
+<project name="test1" default="link" basedir=".">
+
+ <import file="../vs-cpp-macrodefs.xml"/>
+
+  <target name="compile">
+    <vs-cl options="/D_UNICODE /DUNICODE /DWIN32 /D_WINDOWS"
+           source="src/main/cpp/*.cpp" out="hello-world-win.obj"/>
+  </target>
+
+  <target name="link" depends="compile">
+    <vs-link  libraries="user32.lib Gdi32.lib" source="hello-world-win.obj" out="hello-world-win.exe"/>
+  </target>
+
+</project>  

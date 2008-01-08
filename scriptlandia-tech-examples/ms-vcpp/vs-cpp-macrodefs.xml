@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<project name="vs-cpp-macrodefs" basedir=".">
+
+  <property name="visual.studio.home" value="C:/Program Files/Microsoft Visual Studio 9.0"/>
+  <property name="visual.cpp.home" value="${visual.studio.home}/VC"/>
+  <property name="dot.net.home" value="C:/WINDOWS/Microsoft.NET/Framework"/>
+  <property name="dot.net.version" value="v3.5"/>
+
+  <!--property name="windows.sdk.home" value="C:/Program Files/Microsoft SDKs/Windows/v6.0A"/-->
+  <property name="windows.sdk.home" value="C:/Program Files/Microsoft Platform SDK for Windows Server 2003 R2"/>
+
+  <macrodef name="vs-cl">
+    <attribute name="options" default=""/>
+    <attribute name="libraries" default=""/>
+    <attribute name="source" default=""/>
+    <attribute name="out" default=""/>
+    <attribute name="more" default=""/>
+
+    <sequential>
+      <exec dir="${basedir}" executable="${visual.cpp.home}/bin/cl.exe" os="Windows XP">
+        <arg line="@{options} @{libraries} /c"/>
+        <arg line="/Fo@{out} @{more}"/>
+        <arg line="@{source}"/>
+        
+        <env key="VSINSTALLDIR" value="${visual.studio.home}"/>
+        <env key="VCINSTALLDIR" value="${visual.cpp.home}"/>
+        <env key="FrameworkDir" value="${dot.net.home}"/>
+        <env key="FrameworkVersion" value="v2.0.50727"/>
+        <env key="Framework35Version" value="${dot.net.version}"/>
+        <env key="DevEnvDir" value="${visual.studio.home}/Common7/IDE"/>
+        <env key="PATH" value="${visual.studio.home}/Common7/IDE;${visual.studio.home}/VC/BIN;${visual.studio.home}/Common7/Tools;${dot.net.home}/${dot.net.version};${dot.net.home}/v2.0.50727;${visual.studio.home}/VC/VCPackages;${windows.sdk.home}/bin"/>
+        <env key="INCLUDE" value="${visual.studio.home}/VC/INCLUDE;${windows.sdk.home}/Include"/>
+        <env key="LIB" value="${visual.studio.home}/VC/LIB;${windows.sdk.home}/Lib"/>
+        <env key="LIBPATH" value="${dot.net.home}/v3.5;${dot.net.home}/v2.0.50727;${visual.studio.home}/VC/LIB"/>
+      </exec>
+    </sequential>
+  </macrodef>
+     
+  <macrodef name="vs-link">
+    <attribute name="out" default=""/>
+    <attribute name="libraries" default=""/>
+    <attribute name="source" default=""/>
+
+    <sequential>
+      <exec dir="${basedir}" executable="${visual.cpp.home}/bin/link.exe" os="Windows XP">
+        <arg line="@{libraries}"/>
+        <arg line="-out:@{out}"/>
+        <arg line="@{source}"/>
+                
+        <env key="VSINSTALLDIR" value="${visual.studio.home}"/>
+        <env key="VCINSTALLDIR" value="${visual.cpp.home}"/>
+        <env key="FrameworkDir" value="${dot.net.home}"/>
+        <env key="FrameworkVersion" value="v2.0.50727"/>
+        <env key="Framework35Version" value="${dot.net.version}"/>
+        <env key="DevEnvDir" value="${visual.studio.home}/Common7/IDE"/>
+        <env key="PATH" value="${visual.studio.home}/Common7/IDE;${visual.studio.home}/VC/BIN;${visual.studio.home}/Common7/Tools;${dot.net.home}/${dot.net.version};${dot.net.home}/v2.0.50727;${visual.studio.home}/VC/VCPackages;${windows.sdk.home}/bin"/>
+        <env key="INCLUDE" value="${visual.studio.home}/VC/INCLUDE;${windows.sdk.home}/Include"/>
+        <env key="LIB" value="${visual.studio.home}/VC/LIB;${windows.sdk.home}/Lib"/>
+        <env key="LIBPATH" value="${dot.net.home}/v3.5;${dot.net.home}/v2.0.50727;${visual.studio.home}/VC/LIB"/>
+      </exec>
+    </sequential>
+  </macrodef>
+
+</project>

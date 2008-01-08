@@ -1,0 +1,17 @@
+<project name="test1" default="link" basedir=".">
+
+ <import file="../vs-cpp-macrodefs.xml"/>
+
+  <target name="compile">
+    <vs-cl options="/EHsc" source="src/main/cpp/simple.cpp" out="simple.obj"/>
+ 
+    <vs-cl options="/clr" source="src/main/cpp/simpleclr.cpp" out="simpleclr.obj"/>
+  </target>
+
+  <target name="link" depends="compile">
+    <vs-link source="simple.obj" out="simple.exe"/>
+ 
+    <vs-link source="simpleclr.obj" out="simpleclr.exe"/>
+  </target>
+
+</project>  
