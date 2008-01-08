@@ -1,0 +1,13 @@
+<!-- prepare.ant -->
+
+<project name="prepare" default="prepare" basedir=".">
+
+  <target name="prepare">
+    <mkdir dir="lib"/>
+
+    <get src="http://webpages.charter.net/daltontk/scala/ScalaSquibV0_3.jar" dest="lib/ScalaSquibV0_3.jar"/>
+
+    <get src="http://webpages.charter.net/daltontk/scala/lib/Scenario-0.4.jar" dest="lib/Scenario-0.4.jar"/>
+  </target>
+
+</project>
