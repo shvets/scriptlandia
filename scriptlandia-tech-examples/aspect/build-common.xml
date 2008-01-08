@@ -1,0 +1,48 @@
+<project name="build-common" default="run" basedir=".">
+<!-- xmlns:aspectj="antlib:org.aspectj" -->
+
+  <target name="init">
+    <script language="beanshell">
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      ScriptlandiaHelper.resolveDependencies("aspectj", "aspectjrt", "1.5.3");
+      ScriptlandiaHelper.resolveDependencies("aspectj", "aspectjtools", "1.5.3");
+      ScriptlandiaHelper.resolveDependencies("aspectj", "aspectjweaver", "1.5.3");
+    </script>
+
+    <property name="classes.dir" value="target/classes"/>
+
+    <path id="aspectj.rt.path">
+      <pathelement path="${repository.home}/aspectj/aspectjrt/1.5.3/aspectjrt-1.5.3.jar"/>
+    </path>
+
+    <path id="aspectj.tools.path">
+      <pathelement path="${repository.home}/aspectj/aspectjtools/1.5.3/aspectjtools-1.5.3.jar"/>
+    </path>
+
+    <path id="aspectj.weaver.path">
+      <pathelement path="${repository.home}/aspectj/aspectjweaver/1.5.3/aspectjweaver-1.5.3.jar"/>
+    </path>
+
+    <!-- sets name of new task to iajc, old task to ajc -->
+    <taskdef resource="org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties">
+      <classpath> 
+        <path refid="aspectj.tools.path"/> 
+      </classpath>
+    </taskdef>
+  </target>
+
+  <target name="compile" depends="init">
+    <iajc sourceroots="src/main/java;src/main/aj" 
+          aspectpathref="aspectj.rt.path" destDir="${classes.dir}"/> 
+   </target>
+
+  <target name="run" depends="compile">
+    <java classname="HelloWorld" fork="yes">
+      <classpath>
+        <pathelement path="${classes.dir}"/>
+        <path refid="aspectj.rt.path"/>
+      </classpath>
+    </java>
+  </target>
+</project>
