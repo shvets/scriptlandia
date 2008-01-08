@@ -163,7 +163,7 @@ class InstallFrame extends JFrame {
 
     String repositoryHome = System.getProperty("repository.home");
 
-    String dir = repositoryHome + "/" + getGroupId() + "/" + getArtifactId() + "/" + getVersion();
+    String dir = repositoryHome + "/" + getGroupId().replace('.', File.separatorChar) + "/" + getArtifactId() + "/" + getVersion();
 
     ChecksumScript checksum = new ChecksumScript();
 
