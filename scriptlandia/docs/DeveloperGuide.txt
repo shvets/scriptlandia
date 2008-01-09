@@ -621,16 +621,13 @@ dependencies in the form of maven file. For example, this file describes depende
 We can use these dependencies inside Ant script (within "script" task). For example,
 by running the following method we will add all classes in "compile" scope to main class realm:
 
-import org.sf.scriptlandia.MavenHelper;
+import org.sf.scriptlandia.ScriptlandiaHelper;
 
-MavenHelper.resolveMavenDependencies("deps.maven", "compile");
-
-By running next line we can add all maven dependencies to classpath:
-
-MavenHelper.addMavenDependencies("some-pom-file");
+ScriptlandiaHelper.resolveDependencies("deps.maven");
 
 If you need to run Maven from within your script, use this method:
 
+import org.sf.scriptlandia.MavenHelper;
 MavenHelper.executeMaven("deps.maven", args); 
 
 

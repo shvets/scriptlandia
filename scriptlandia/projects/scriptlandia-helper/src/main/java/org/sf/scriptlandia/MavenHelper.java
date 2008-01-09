@@ -1,32 +1,31 @@
 package org.sf.scriptlandia;
 
+import org.apache.maven.cli.MavenCli;
+import org.apache.maven.artifact.ant.Pom;
 import org.apache.maven.artifact.ant.DependenciesTask;
 import org.apache.maven.artifact.ant.LocalRepository;
-import org.apache.maven.artifact.ant.Pom;
 import org.apache.maven.artifact.ant.RemoteRepository;
-import org.apache.maven.cli.MavenCli;
 import org.apache.maven.bootstrap.model.Repository;
-import org.apache.tools.ant.BuildLogger;
-import org.apache.tools.ant.DefaultLogger;
-import org.apache.tools.ant.Location;
+import org.apache.maven.bootstrap.download.ArtifactResolver;
 import org.apache.tools.ant.Project;
+import org.apache.tools.ant.DefaultLogger;
+import org.apache.tools.ant.BuildLogger;
+import org.apache.tools.ant.Location;
 import org.apache.tools.ant.types.Path;
-import org.codehaus.classworlds.ClassRealm;
 import org.codehaus.classworlds.ClassWorld;
+import org.codehaus.classworlds.ClassRealm;
 import org.sf.jlaunchpad.JLaunchPadLauncher;
-import org.sf.pomreader.RepositoriesReader;
 import org.sf.pomreader.PomReader;
+import org.sf.pomreader.OnlineArtifactDownloader;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.Iterator;
 
 /**
  * This is the class for holding convenient methods when working with Maven.
@@ -69,24 +68,22 @@ public class MavenHelper {
       newArgsList.add(pomName);
     }
 
-    Map origSystemParams = new HashMap();
+    Map<String, String> origSystemParams = new HashMap<String, String>();
 
-    for (int i = 0; i < args.length; i++) {
-      String arg = args[i];
+	  for (String arg : args) {
+		  if (arg.startsWith("-D")) {
+			  int index = arg.indexOf("=");
+			  String key = arg.substring(2, index);
+			  String value = arg.substring(index + 1);
 
-      if (arg.startsWith("-D")) {
-        int index = arg.indexOf("=");
-        String key = arg.substring(2, index);
-        String value = arg.substring(index+1);
+			  origSystemParams.put(key, System.getProperty(key));
 
-        origSystemParams.put(key, System.getProperty(key));
-
-        System.setProperty(key, value);
-      }
-      else {
-        newArgsList.add(arg);
-      }
-    }
+			  System.setProperty(key, value);
+		  }
+		  else {
+			  newArgsList.add(arg);
+		  }
+	  }
 
     //newArgsList.addAll(Arrays.asList(args));
 
@@ -99,16 +96,13 @@ public class MavenHelper {
     //System.out.println("Maven args: " + java.util.Arrays.asList(newArgs));
     MavenCli.main(newArgs, classWorld);
 
-    Iterator iterator = origSystemParams.keySet().iterator();
+	  for (String s : origSystemParams.keySet()) {
+		  String value = System.getProperty(s);
 
-    while(iterator.hasNext()) {
-      String key = (String)iterator.next();
-      String value = System.getProperty(key);
-
-      if(value != null) {
-        System.setProperty(key, value);
-      }
-    }
+		  if (value != null) {
+			  System.setProperty(s, value);
+		  }
+	  }
   }
 
   /**
@@ -119,27 +113,6 @@ public class MavenHelper {
    */
   public static void executeMaven(String[] args) throws Exception {
     executeMaven("pom.xml", args);
-  }
-
-  /**
-   * Creates Ant project.
-   *
-   * @return Ant project
-   */
-  private static Project createAntProject() {
-    Project project = new Project();
-
-    project.init();
-
-    BuildLogger logger = new DefaultLogger();
-
-    logger.setMessageOutputLevel(Project.MSG_INFO);
-    logger.setOutputPrintStream(System.out);
-    logger.setErrorPrintStream(System.err);
-
-    project.addBuildListener(logger);
-
-    return project;
   }
 
   /**
@@ -177,9 +150,7 @@ public class MavenHelper {
     PomReader pomReader = new PomReader();
     pomReader.init();
 
-    List<URL> deps = pomReader.calculateDependencies(new File(pomName));
-
-    return deps;
+	return pomReader.calculateDependencies(new File(pomName));
   }
 
   /**
@@ -187,23 +158,23 @@ public class MavenHelper {
    *
    * @throws Exception some exception
    */
-  public static void addMavenDependencies() throws Exception {
+/*  public static void addMavenDependencies() throws Exception {
     addMavenDependencies("pom.xml");
   }
-
+ */
   /**
    * Adds maven exceptions to the class realm.
    *
    * @param pomName the pom project name
    * @throws Exception some exception
    */
-  public static void addMavenDependencies(String pomName) throws Exception {
+/*  public static void addMavenDependencies(String pomName) throws Exception {
     JLaunchPadLauncher launcher = ScriptlandiaLauncher.getInstance();
     ClassRealm classRealm = launcher.getMainRealm();
 
     addMavenDependencies(pomName, classRealm);
   }
-
+*/
   /**
    * Adds maven exceptions to the class realm.
    *
@@ -211,25 +182,25 @@ public class MavenHelper {
    * @param classRealm the class realm
    * @throws Exception some exception
    */
-  public static void addMavenDependencies(String pomName, ClassRealm classRealm) throws Exception {
-    /*MavenProject project = getDependencies(pomName);
+ /* public static void addMavenDependencies(String pomName, ClassRealm classRealm) throws Exception {
+//    MavenProject project = getDependencies(pomName);
+//
+//    Set<Artifact> artifacts = project.getArtifacts();
+//
+//    for (Artifact artifact : artifacts) {
+//      File file = artifact.getFile();
+//
+//      classRealm.addConstituent(file.toURI().toURL());
+//    }
 
-    Set<Artifact> artifacts = project.getArtifacts();
-
-    for (Artifact artifact : artifacts) {
-      File file = artifact.getFile();
-
-      classRealm.addConstituent(file.toURI().toURL());
-    }
-    */
 
     List<URL> deps = getDependencies(pomName);
 
     for (URL dep : deps) {
       classRealm.addConstituent(dep);
     }
-
   }
+  */
 
   /**
    * Resolves Maven dependencies and saves them as Ant's reference: "maven.compile.classpath"
@@ -239,7 +210,7 @@ public class MavenHelper {
    * @throws Exception some exception
    */
   public static Project resolveMavenDependencies() throws Exception {
-    return resolveMavenDependencies("pom.xml", "compile", true);
+    return resolveMavenDependencies("pom.xml", "compile");
   }
 
   /**
@@ -251,7 +222,7 @@ public class MavenHelper {
    * @throws Exception some exception
    */
   public static Project resolveMavenDependencies(String useScope) throws Exception {
-    return resolveMavenDependencies("pom.xml", useScope, true);
+    return resolveMavenDependencies("pom.xml", useScope);
   }
 
   /**
@@ -265,24 +236,9 @@ public class MavenHelper {
    */
   public static Project resolveMavenDependencies(String pomName, String useScope)
       throws Exception {
-    return resolveMavenDependencies(pomName, useScope, true);
-  }
-
-  /**
-   * Resolves Maven dependencies and saves them as Ant's reference: "maven.<useScope>.classpath"
-   * of Path type.
-   *
-   * @param pomName  the Maven project file name
-   * @param useScope the used scope
-   * @param online   if online flag is set
-   * @return Ant project
-   * @throws Exception some exception
-   */
-  public static Project resolveMavenDependencies(String pomName, String useScope, boolean online)
-      throws Exception {
     Project project = createAntProject();
 
-    resolveMavenDependencies(project, pomName, useScope, online);
+    resolveMavenDependencies(project, pomName, useScope);
 
     return project;
   }
@@ -297,21 +253,6 @@ public class MavenHelper {
    * @throws Exception the exception
    */
   public static void resolveMavenDependencies(Project project, String pomName, String useScope) throws Exception {
-    resolveMavenDependencies(project, pomName, useScope, true);
-  }
-
-  /**
-   * Resolves Maven dependencies and saves them as Ant's reference: "maven.<useScope>.classpath"
-   * of Path type.
-   *
-   * @param project  the aAnt project
-   * @param pomName  the Maven project file name
-   * @param useScope the used scope
-   * @param online   if online flag is set
-   * @throws Exception the exception
-   */
-  public static void resolveMavenDependencies(Project project, String pomName, String useScope,
-                                              boolean online) throws Exception {
     createLocalRepository();
 
     String id = "maven.project";
@@ -320,10 +261,10 @@ public class MavenHelper {
 
     project.addReference(id, pom);
 
-    DependenciesTask dependenciesTask = createDependenciesTask(project, id, useScope, online);
+    DependenciesTask dependenciesTask = createDependenciesTask(project, id, useScope);
 
-    String launcherHome = System.getProperty("launcher.home");
-    List<org.apache.maven.bootstrap.model.Repository> repositories;
+    //String launcherHome = System.getProperty("launcher.home");
+/*    List<org.apache.maven.bootstrap.model.Repository> repositories;
 
     RepositoriesReader reader = new RepositoriesReader();
     File file = new File("repositories.xml");
@@ -339,6 +280,19 @@ public class MavenHelper {
       reader.parse(file);
       repositories = reader.getRepositories();
     }
+    */
+
+	  //project.setNewProperty("maven.repo.local", System.getProperty("maven.repo.local"));
+	  PomReader pomReader = new PomReader();
+	   pomReader.init();
+
+	   List<Repository> repositories = new ArrayList<Repository>();
+
+	  ArtifactResolver resolver = pomReader.getResolver();
+
+	  if(resolver instanceof OnlineArtifactDownloader) {
+		 repositories = ((OnlineArtifactDownloader)resolver).getRemoteRepositories();
+	  }
 
       for (Repository r : repositories) {
           RemoteRepository repository = new RemoteRepository();
@@ -349,6 +303,8 @@ public class MavenHelper {
           dependenciesTask.addRemoteRepository(repository);
       }
 
+	dependenciesTask.setSettingsFile(new File(System.getProperty("launcher.home") + File.separatorChar + "settings.xml"));
+	  
     dependenciesTask.execute();
 
     JLaunchPadLauncher launcher = ScriptlandiaLauncher.getInstance();
@@ -357,6 +313,27 @@ public class MavenHelper {
     Path path = (Path) project.getReference("maven." + useScope + ".classpath");
 
     resolvePath(path, classRealm);
+  }
+
+  /**
+   * Creates Ant project.
+   *
+   * @return Ant project
+   */
+  private static Project createAntProject() {
+    Project project = new Project();
+
+    project.init();
+
+    BuildLogger logger = new DefaultLogger();
+
+    logger.setMessageOutputLevel(Project.MSG_INFO);
+    logger.setOutputPrintStream(System.out);
+    logger.setErrorPrintStream(System.err);
+
+    project.addBuildListener(logger);
+
+    return project;
   }
 
   /**
@@ -404,12 +381,10 @@ public class MavenHelper {
    * @param project  Ant project
    * @param id       maven project ID
    * @param useScope the used scope
-   * @param online   the online flag
    * @return Ant Dependency task for maven
    * @throws Exception the exception
    */
-  private static DependenciesTask createDependenciesTask(Project project, String id, String useScope,
-                                                         boolean online) throws Exception {
+  private static DependenciesTask createDependenciesTask(Project project, String id, String useScope) throws Exception {
     DependenciesTask dependenciesTask = new DependenciesTask();
 
     dependenciesTask.setProject(project);

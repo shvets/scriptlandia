@@ -131,8 +131,8 @@ public class ScriptlandiaHelper {
      * @param launcher the launcher
      * @throws Exception the exception
      */
-    public static void resolveDependencies(String depsFileName, JLaunchPadLauncher launcher) throws Exception {
-     launcher.resolveDependencies(depsFileName);
+    public static void resolveDependencies(String depsFileName, boolean ignore, JLaunchPadLauncher launcher) throws Exception {
+      launcher.resolveDependencies(depsFileName, ignore);
     }
 
   /**
@@ -142,8 +142,35 @@ public class ScriptlandiaHelper {
    * @param depsFileName dependencies file name
    */
   public static void resolveDependencies(String depsFileName) throws Exception {
-    resolveDependencies(depsFileName, ScriptlandiaLauncher.getInstance());
+    resolveDependencies(depsFileName, false, ScriptlandiaLauncher.getInstance());
   }
+  /**
+   * Resolves dependencies for specified dependencies file.
+   *
+   * @throws Exception the exception
+   * @param depsFileName dependencies file name
+   */
+  public static void resolveDependencies(String depsFileName, boolean ignore) throws Exception {
+    resolveDependencies(depsFileName, ignore,ScriptlandiaLauncher.getInstance());
+  }
+
+ /**
+   * Resolves dependencies for specified dependencies file.
+   *
+   * @throws Exception the exception
+   */
+  public static void resolveDependencies() throws Exception {
+    resolveDependencies("pom.xml", false, ScriptlandiaLauncher.getInstance());
+  }
+
+	/**
+	  * Resolves dependencies for specified dependencies file.
+	  *
+	  * @throws Exception the exception
+	  */
+	 public static void resolveDependencies(boolean ignore) throws Exception {
+	   resolveDependencies("pom.xml", ignore, ScriptlandiaLauncher.getInstance());
+	 }
 
   public static JLaunchPadLauncher getLauncher() {
     return ScriptlandiaLauncher.getInstance();

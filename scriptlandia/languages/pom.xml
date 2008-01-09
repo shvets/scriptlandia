@@ -49,7 +49,6 @@
   </developers>
 
   <modules>
-<!--
     <module>ant/starter</module>
     <module>apt-fmt/starter</module>
     <module>apt-jelly/starter</module>
@@ -86,9 +85,6 @@
     <module>xgql/starter</module>
     <module>xruby/starter</module>
     <module>ptilde/starter</module>
--->
-
-    <module>scala/starter</module>
   </modules>
 
   <distributionManagement>

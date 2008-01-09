@@ -6,7 +6,6 @@ import org.codehaus.classworlds.ClassWorld;
 import org.codehaus.classworlds.Launcher;
 import org.sf.jlaunchpad.JLaunchPadLauncher;
 import org.sf.scriptlandia.MavenHelper;
-import org.sf.scriptlandia.ScriptlandiaHelper;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncherCommandLineParser;
 
@@ -59,7 +58,7 @@ public class MavenHelperTest extends TestCase {
     }
   }
 
-  public void testAddMavenDependencies() {
+/* public void testAddMavenDependencies() {
     String[] args = new String[]{};
 
     try {
@@ -88,7 +87,7 @@ public class MavenHelperTest extends TestCase {
       fail(e.getMessage());
     }
   }
-
+*/
 
  public void testExecutLauncher() {
     String[] args = new String[]{
