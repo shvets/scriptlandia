@@ -6,7 +6,7 @@
     <script language="groovy">
       import org.sf.scriptlandia.MavenHelper;
 
-      MavenHelper.addMavenDependencies("pom.xml");
+      MavenHelper.resolveMavenDependencies("pom.xml");
 
       import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 

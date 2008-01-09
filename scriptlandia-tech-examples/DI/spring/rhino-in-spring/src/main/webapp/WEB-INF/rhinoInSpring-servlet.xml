@@ -2,6 +2,8 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
+  <bean id="scriptStorage" class="org.szegedi.spring.web.jsflow.ScriptStorage"/>
+
   <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
     <property name="templateLoaderPath" value="/"/>
     <property name="freemarkerSettings">

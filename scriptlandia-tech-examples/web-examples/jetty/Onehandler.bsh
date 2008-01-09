@@ -14,7 +14,7 @@
                                                                                                                                                        
 //package org.mortbay.jetty.example;                                                                                                                     
 
-org.sf.scriptlandia.MavenHelper.addMavenDependencies("deps.maven");
+org.sf.scriptlandia.ScriptlandiaHelper.resolveDependencies("deps.maven");
                                                                                                                                                       
 import java.io.IOException;                                                                                                                            
                                                                                                                                                        

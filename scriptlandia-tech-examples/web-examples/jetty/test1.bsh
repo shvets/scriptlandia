@@ -1,6 +1,6 @@
 //
 
-org.sf.scriptlandia.MavenHelper.addMavenDependencies("deps.maven");
+org.sf.scriptlandia.ScriptlandiaHelper.resolveDependencies("deps.maven");
 
 import javax.servlet.*;
 import javax.servlet.http.*;

@@ -1,6 +1,6 @@
 // dynamo-test.bsh
 
-org.sf.scriptlandia.MavenHelper.addMavenDependencies("pom.xml");
+org.sf.scriptlandia.ScriptlandiaHelper.resolveDependencies("pom.xml");
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;

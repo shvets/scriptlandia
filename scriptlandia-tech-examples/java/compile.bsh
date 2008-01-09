@@ -7,9 +7,7 @@ if(javaVersion.startsWith("1.5")) {
   String compilerPomFileName = repositoryHome + 
     "/org/sf/scriptlandia/compiler/2.2.0/compiler-2.2.0.pom";
 
-  import org.sf.scriptlandia.MavenHelper;
-
-  MavenHelper.addMavenDependencies(compilerPomFileName);
+  org.sf.scriptlandia.ScriptlandiaHelper.resolveDependencies(compilerPomFileName);
 }
 
 import javax.tools.StandardJavaFileManager;
