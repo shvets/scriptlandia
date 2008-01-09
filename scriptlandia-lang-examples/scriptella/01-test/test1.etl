@@ -18,12 +18,12 @@
   <query connection-id="janino">
     /*import java.util.Properties;
     import java.io.FileInputStream;
-    import org.sf.scriptlandia.MavenHelper;
+    import org.sf.scriptlandia.ScriptlandiaHelper;
 
     Properties props = new Properties();
     props.load(new FileInputStream(System.getProperty("user.home") + "/.scriptlandia"));
 
-    MavenHelper.resolveMavenDependencies("../get-libraries.maven", "compile");*/
+    ScriptlandiaHelper.resolveDependencies("../get-libraries.maven");*/
   </query>
 
   <connection id="test" 
