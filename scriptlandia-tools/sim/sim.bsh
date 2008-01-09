@@ -1,7 +1,5 @@
 // sim.bsh
 
-import org.sf.scriptlandia.MavenHelper;
-
 //MavenHelper.resolveMavenDependencies("sim.deps", "compile");
 
 //String repositoryHome = System.getProperty("repository.home");
@@ -10,7 +8,7 @@ import org.sf.scriptlandia.MavenHelper;
 
 //launcher.addURL(new File(repositoryHome + "/xerces/xercesImpl/2.7.1/xercesImpl-2.7.1.jar").toURL());
 
-MavenHelper.addMavenDependencies("get-deps.maven");
+org.sf.scriptlandia.ScriptlandiaHelper.resolveDependencies("get-deps.maven");
 
 //addClassPath("bsh-2.0b4.jar");
 //addClassPath("commons-cli-1.0.jar");
