@@ -1,0 +1,26 @@
+<project name="testcase-generator" default="run" basedir=".">
+<!-- xmlns:aspectj="antlib:org.aspectj" -->
+  
+  <import file="../build-common.xml"/>
+
+  <target name="compile" depends="init">
+    <path id="aspectj.rt.path">
+      <pathelement path="${repository.home}/aspectj/aspectjrt/1.5.3/aspectjrt-1.5.3.jar"/>
+      <pathelement path="${repository.home}/jdom/jdom/1.1/jdom-1.1.jar"/>
+    </path>
+
+    <iajc sourceroots="src/main/java;src/main/aj/aspect1" 
+          aspectpathref="aspectj.rt.path" destDir="${classes.dir}"/>
+  </target>
+
+  <target name="run" depends="compile">
+    <java classname="HelloWorld" fork="yes">
+      <classpath>
+        <pathelement path="${classes.dir}"/>
+        <path refid="aspectj.rt.path"/>
+      </classpath>
+    </java>
+
+  </target>
+
+</project>

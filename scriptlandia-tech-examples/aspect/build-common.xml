@@ -4,10 +4,16 @@
   <target name="init">
     <script language="beanshell">
       import org.sf.scriptlandia.ScriptlandiaHelper;
-
+      /*
       ScriptlandiaHelper.resolveDependencies("aspectj", "aspectjrt", "1.5.3");
       ScriptlandiaHelper.resolveDependencies("aspectj", "aspectjtools", "1.5.3");
       ScriptlandiaHelper.resolveDependencies("aspectj", "aspectjweaver", "1.5.3");
+
+      ScriptlandiaHelper.resolveDependencies("jgroups", "jgroups-all", "2.4.1");
+      */
+      import org.sf.scriptlandia.MavenHelper;
+
+      ScriptlandiaHelper.resolveDependencies("../aj-deps.maven");
     </script>
 
     <property name="classes.dir" value="target/classes"/>
