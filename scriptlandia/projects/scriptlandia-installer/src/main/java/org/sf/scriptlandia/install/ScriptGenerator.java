@@ -104,9 +104,9 @@ public class ScriptGenerator extends ExtInstaller {
       writer.newLine();
       writer.write("SET CMD_LINE=");
 
-      if(name.equals("ant") || name.equals("maven")) {
-        writer.write("-f ");
-      }
+      //if(name.equals("ant") || name.equals("maven")) {
+      //  writer.write("-f ");
+      //}
 
       writer.write(commandLine);
       writer.newLine();
@@ -174,7 +174,14 @@ public class ScriptGenerator extends ExtInstaller {
         writer.newLine();
         writer.write("    MAIN_CLASS_PROPERTY=" + mainClassProperty);
         writer.newLine();
-        writer.write("    CMD_LINE=" + commandLine);
+        writer.write("    CMD_LINE=");
+
+        //if(name.equals("ant") || name.equals("maven")) {
+        //  writer.write("-f ");
+        //}
+
+        writer.write(commandLine);
+
         writer.newLine();
         writer.write("    ;;");
         writer.newLine();
@@ -258,7 +265,7 @@ public class ScriptGenerator extends ExtInstaller {
     writer.write("SCRIPTLANDIA_HOME=" + scriptlandiaHome.replace('\\', '/'));
     writer.newLine();
 
-    String fullScriptName = getScriptName("$SCRIPTLANDIA_HOME", scriptName, "sh");
+    String fullScriptName = getScriptName("$SCRIPTLANDIA_HOME", "scriptlandia", "sh");
 
     writer.write("SCRIPT_NAME=" + fullScriptName.replace('\\', '/'));
     writer.newLine();

@@ -96,10 +96,14 @@ public class ExtInstaller {
     System.out.print("Registering extension(s): " + extensions + "... ");
 
     for(int i=0; i < extensions.size(); i++) {
-      registrations[i] = registerExtension((String)extensions.get(i), (String)language.get("name"), (String)language.get("mimeType"),
+      try {
+        registrations[i] = registerExtension((String)extensions.get(i), (String)language.get("name"), (String)language.get("mimeType"),
                                            (String)language.get("icon"), openAction);
-
-      System.out.println(openAction);
+        System.out.println(openAction);
+      }
+      catch(Throwable t) {
+        System.out.println("Exception: " + t.getMessage());
+      }
     }
 
     executeAdditionalTasks(language);
@@ -253,7 +257,9 @@ public class ExtInstaller {
    * Registers single extension.
    *
    * @param extension the extension to be registered
+   * @param iconName  icon name
    * @param openAction the action, assosiated with this extension
+   * @param name name
    * @param mimeType mime type
    *,@param iconName icon name
    * @return true if the extension is registered; false otherwise
