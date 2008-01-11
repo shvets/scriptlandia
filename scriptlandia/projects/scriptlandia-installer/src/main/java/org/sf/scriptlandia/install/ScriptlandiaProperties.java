@@ -42,7 +42,7 @@ public class ScriptlandiaProperties extends Properties {
         root = System.getProperty("user.dir").substring(0, 1) + ":\\";
       }
 
-      put("java.specification.version", "1.5");
+      put("java.specification.version.level", "1.5");
       //put("java.home", root + "Java" + File.separatorChar + "jdk1.6.0");
       put("mobile.java.home", "");
       put("scriptlandia.home", root + "scriptlandia");

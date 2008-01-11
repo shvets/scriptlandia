@@ -649,7 +649,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
   }
 
   private void updateProperties() {
-    System.setProperty("java.specification.version", (String) javaSpecVersionComboBox.getSelectedItem());
+    System.setProperty("java.specification.version.level", (String) javaSpecVersionComboBox.getSelectedItem());
 
     System.setProperty("mobile.java.home", mobileJavaHomeField.getText().trim());
 
@@ -743,7 +743,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
 
     scriptlandiaProps.load();
 
-    updateProperty(scriptlandiaProps, javaSpecVersionComboBox, "java.specification.version");
+    updateProperty(scriptlandiaProps, javaSpecVersionComboBox, "java.specification.version.level");
     updateProperty(scriptlandiaProps, mobileJavaHomeField, "mobile.java.home");
     updateProperty(scriptlandiaProps, scriptlandiaHomeField, "scriptlandia.home");
     updateProperty(scriptlandiaProps, rubyHomeField, "native.ruby.home");
@@ -754,7 +754,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
   private void save() throws IOException {
     scriptlandiaProps.load();
 
-    saveProperty(scriptlandiaProps, javaSpecVersionComboBox, "java.specification.version");
+    saveProperty(scriptlandiaProps, javaSpecVersionComboBox, "java.specification.version.level");
     saveProperty(scriptlandiaProps, mobileJavaHomeField, "mobile.java.home");
     saveProperty(scriptlandiaProps, scriptlandiaHomeField, "scriptlandia.home");
     saveProperty(scriptlandiaProps, rubyHomeField, "native.ruby.home");

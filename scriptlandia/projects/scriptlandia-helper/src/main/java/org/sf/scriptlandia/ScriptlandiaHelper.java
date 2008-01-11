@@ -128,6 +128,7 @@ public class ScriptlandiaHelper {
      * Resolves dependencies for specified dependencies file.
      *
      * @param depsFileName dependencies file name
+     * @param ignore ignore dependency from download
      * @param launcher the launcher
      * @throws Exception the exception
      */

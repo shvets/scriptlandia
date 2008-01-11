@@ -2,6 +2,8 @@ package org.sf.scriptlandia;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.io.File;
 
 import org.apache.maven.cli.MavenCli;
 import org.codehaus.classworlds.ClassWorld;
@@ -30,10 +32,15 @@ public final class MavenStarter {
     final List<String> newArgsList = new ArrayList<String>();
 
    // newArgsList.add("-f");
+    if(args.length > 0 && !args[0].equals("-f") && !args[0].equals("-file")) {
+       String name = new File(args[0]).getName();
 
-    for (int i = 0; i < args.length; i++) {
-      newArgsList.add(args[i]);
-    }
+       if(name.endsWith(".mvn") || name.endsWith(".maven") || name.endsWith(".pom")) {
+          newArgsList.add("-f");
+       }
+     }
+
+    newArgsList.addAll(Arrays.asList(args));
 
     String[] newArgs = new String[newArgsList.size()];
     newArgsList.toArray(newArgs);

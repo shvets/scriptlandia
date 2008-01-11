@@ -101,7 +101,7 @@ public class LauncherHelper {
     System.setProperty("jdic.version", "0.9.3");
     System.setProperty("nailgun.version", "0.7.1");
 
-    setupJavaSpecificationVersion();
+    //setupJavaSpecificationVersion();
   }
   
   /**
@@ -119,7 +119,7 @@ public class LauncherHelper {
 
       String javaSpecificationVersion = mainAttributes.getValue("Specification-Version");
 
-      System.setProperty("java.specification.version", javaSpecificationVersion);
+      System.setProperty("java.specification.version.level", javaSpecificationVersion);
     }
     catch (IOException e) {
       e.printStackTrace();

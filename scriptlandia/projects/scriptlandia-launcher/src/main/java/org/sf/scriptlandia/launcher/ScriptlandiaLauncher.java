@@ -142,6 +142,8 @@ public class ScriptlandiaLauncher extends JLaunchPadLauncher {
    * @throws LauncherException exception
    */
   public static void main(String[] args, ClassWorld classWorld) throws LauncherException {
+    System.out.println("1 " + System.getProperty("java.specification.version.level"));
+
     ScriptlandiaLauncherCommandLineParser parser = new ScriptlandiaLauncherCommandLineParser();
 
     String[] newArgs = parser.parse(args);
@@ -158,6 +160,7 @@ public class ScriptlandiaLauncher extends JLaunchPadLauncher {
     JLaunchPadLauncher launcher = createLauncher(classWorld, parser, newArgs);
 
     launcher.launch();
+    System.out.println("2 " + System.getProperty("java.specification.version.level"));
   }
 
 }
