@@ -59,6 +59,12 @@ public class AntStarter extends Main {
 
     //arguments.add(0, "-f");
 
+   if(args.length > 0 && !args[0].equals("-f") && !args[0].equals("-file")) {
+      if(new File(args[0]).getName().endsWith(".ant")) {
+         arguments.add(0, "-f");
+      }
+    }
+
     String[] newArgs = arguments.toArray(new String[arguments.size()]);
 
     try {
