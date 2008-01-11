@@ -17,7 +17,7 @@ Before executing this script, execute this in scriptlandia-examples-and-tools\pr
     <script language="beanshell">
       import org.sf.scriptlandia.MavenHelper;
 
-      System.setProperty("java.specification.version", "1.5");
+      System.setProperty("java.specification.version.level", "1.5");
 
       MavenHelper.executeMaven("projects/antrun/pom.xml", new String[] {"compile", "jar:jar"});
 
@@ -53,7 +53,7 @@ Before executing this script, execute this in scriptlandia-examples-and-tools\pr
     <script language="beanshell">
       import org.sf.scriptlandia.MavenHelper;
 
-      System.setProperty("java.specification.version", "1.5");
+      System.setProperty("java.specification.version.level", "1.5");
 
       MavenHelper.executeMaven("projects/scriptlandia-installer/pom.xml", new String[] {"compile", "jar:jar"});
     </script>

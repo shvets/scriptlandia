@@ -9,7 +9,7 @@ if [ ! -f $LAUNCHER_HOME/launcher.sh ]; then
   exit 1
 fi
 
-echo ---### Java Specification Version: $JAVA_SPECIFICATION_VERSION
+echo ---### Java Specification Version Level: $JAVA_SPECIFICATION_VERSION_LEVEL
 echo ---### Installing basic dependencies, required projects and configuration files...
 
 SYSTEM_PROPERTIES="$SYSTEM_PROPERTIES -Dbuild.required=true"

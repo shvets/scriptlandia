@@ -9,7 +9,7 @@ if not exist %LAUNCHER_HOME%\launcher.bat (
   exit
 )
 
-echo ---### Java Specification Version: %JAVA_SPECIFICATION_VERSION%
+echo ---### Java Specification Version Level: %JAVA_SPECIFICATION_VERSION_LEVEL%
 echo ---### Installing basic dependencies, required projects and configuration files...
 
 SET PROPERTIES="-deps.file.name=%REPOSITORY_HOME%/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1.pom" 

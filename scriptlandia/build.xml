@@ -59,6 +59,7 @@
       <filter token="launcher.home" value="${launcher.home}"/>
 
     <filterset id="copy.filterset">
+      <filter token="java.specification.version.level" value="${java.specification.version.level}"/>
       <filter token="java.home.internal" value="${java.home.internal}"/>
       <filter token="mobile.java.home" value="${mobile.java.home}"/>
       <filter token="mobile.java.home" value="${mobile.java.home}"/>
@@ -319,7 +320,7 @@
     <script language="beanshell">
 /*      import org.sf.scriptlandia.MavenHelper;
 
-      System.setProperty("-Djava.specification.version", "1.5");
+      System.setProperty("-Djava.specification.version.level", "1.5");
 
       MavenHelper.executeMaven("pom.xml", new String[] { "assembly:assembly" });
 */

@@ -30,7 +30,7 @@
 
   <target name="build.launcher">
     <script language="beanshell">
-      System.setProperty("java.specification.version", "1.5");
+      System.setProperty("java.specification.version.level", "1.5");
 
       String basedir = project.getProperty("basedir");
       String repositoryHome = System.getProperty("repository.home");

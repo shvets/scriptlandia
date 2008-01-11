@@ -10,7 +10,7 @@ if not exist %LAUNCHER_HOME%\launcher.bat (
 )
 
 
-echo ---### Java Specification Version: %JAVA_SPECIFICATION_VERSION%
+echo ---### Java Specification Version: %JAVA_SPECIFICATION_VERSION_LEVEL%
 echo ---### Installing basic dependencies, required projects and configuration files...
 
 SET MAIN_CLASS=org.apache.tools.ant.Main

@@ -6,7 +6,7 @@ if [ -f ~/jlaunchpad/config.sh ]; then
   . ~/jlaunchpad/config.sh
 fi
 
-echo ---### Java Specification Version: $JAVA_SPECIFICATION_VERSION
+echo ---### Java Specification Version Level: $JAVA_SPECIFICATION_VERSION_LEVEL
 echo ---### Installing required projects and configuration files...
 
 MAIN_CLASS=org.apache.tools.ant.Main
