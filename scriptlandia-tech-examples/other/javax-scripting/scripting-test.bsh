@@ -1,6 +1,6 @@
 // scripting-test.bsh 
 
-import org.sf.scriptlandia.MavenHelper;
+//import org.sf.scriptlandia.MavenHelper;
 
 String javaVersion = System.getProperty("java.version");
 
@@ -8,11 +8,11 @@ print("Java Version: " + javaVersion);
 
 import org.sf.scriptlandia.ScriptlandiaHelper;
 
-MavenHelper.resolveLanguageDependencies("bsh", "javax");
-MavenHelper.resolveLanguageDependencies("javascript", "javax");
-MavenHelper.resolveLanguageDependencies("jruby", "javax");
-MavenHelper.resolveLanguageDependencies("java", "javax");
-MavenHelper.resolveLanguageDependencies("groovy", "javax");
+ScriptlandiaHelper.resolveLanguageDependencies("bsh", "javax");
+ScriptlandiaHelper.resolveLanguageDependencies("javascript", "javax");
+ScriptlandiaHelper.resolveLanguageDependencies("jruby", "javax");
+ScriptlandiaHelper.resolveLanguageDependencies("java", "javax");
+ScriptlandiaHelper.resolveLanguageDependencies("groovy", "javax");
 
 
 import java.util.*;
@@ -144,15 +144,15 @@ public class ScriptingTest {
     Map m = new HashMap();
     CompiledScript script = m.get("fib");
     if(script == null) {
-    	Compilable compilingEngine = (Compilable)engine;
-    	script = compilingEngine.compile(
-    			"fib(num);" +
-    			"function fib(n) {" +
-    			"  if(n <= 1) return n; " +
-    			"  return fib(n-1) + fib(n-2); " +
-    			"};"		
-    	);
-    	m.put("fib", script);
+        Compilable compilingEngine = (Compilable)engine;
+        script = compilingEngine.compile(
+                        "fib(num);" +
+                        "function fib(n) {" +
+                        "  if(n <= 1) return n; " +
+                        "  return fib(n-1) + fib(n-2); " +
+                        "};"            
+        );
+        m.put("fib", script);
 
     }
 
@@ -184,12 +184,12 @@ public class ScriptingTest {
 
     test.testBeanshell();
     test.testJava();
-    test.testJRuby();
     test.testJavascript1();
     test.testJavascript2();
     test.testJavascript3();
     test.testJavascript4();
     test.testGroovy();
+    test.testJRuby();
 
     // test.listEngines(System.out);
 //    test.listEngines(new PrintStream(new FileOutputStream("result.txt")));
