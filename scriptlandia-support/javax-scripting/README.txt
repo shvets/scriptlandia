@@ -17,3 +17,4 @@ Note: You should use Java 6 Compiler.
 4.
 
 >prepare.ant
+>prepare.ant prepare16

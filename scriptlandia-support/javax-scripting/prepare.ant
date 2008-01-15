@@ -2,7 +2,7 @@
 
 <!-- prepare.ant -->
 
-<project name="prepare" default="prepare" basedir=".">
+<project name="prepare" default="prepare15" basedir=".">
 
   <property name="original.project.home" value="c:/Work/Sources/scripting/engines"/>
 
@@ -94,7 +94,7 @@
     <copy-project name="xslt"/>
   </target>
 
-  <target name="prepare">
+  <target name="prepare15">
     <script language="beanshell">
       import org.sf.scriptlandia.MavenHelper;
 
@@ -111,7 +111,9 @@
 
       MavenHelper.executeMaven("pom.xml", args);
     </script>
+  </target>
 
+  <target name="prepare16">
     <delete includeEmptyDirs="true" failonerror="false">
       <fileset dir=".">
         <include name="**/target/classes/**"/>
@@ -136,7 +138,10 @@
         <include name="*.jar"/>
       </fileset>
     </copy>
-  
+
+    <copy tofile="${svn.project.home}/javax/script/bsh-engine/1.0/bsh-engine-1.0.pom" 
+          file="beanshell/pom.xml" overwrite="true"/>
+    
     <!--copy-jar path="${svn.project.home}" name="beanshell" version="1.0"/-->
     <copy-jar path="${svn.project.home}" name="browserjs" version="1.0"/>
     <copy-jar path="${svn.project.home}" name="freemarker" version="1.0"/>
