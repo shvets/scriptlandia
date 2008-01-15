@@ -4,7 +4,9 @@
 
 <project name="prepare" default="prepare" basedir=".">
 
-  <property name="original.project.home" value="d:/Work/scripting/engines"/>
+  <property name="original.project.home" value="c:/Work/Sources/scripting/engines"/>
+
+  <property name="svn.project.home" value="C:/Work/Projects/scriptlandia-repository/languages"/>
 
   <import file="${basedir}/prepare-macrodefs.xml"/>
 
@@ -126,6 +128,38 @@
 
       MavenHelper.executeMaven("pom.xml", args);
     </script>
+  </target>
+
+  <target name="copy-jars">
+    <copy todir="${svn.project.home}/javax/script/bsh-engine/1.0" overwrite="true">
+      <fileset dir="beanshell/target">
+        <include name="*.jar"/>
+      </fileset>
+    </copy>
+  
+    <!--copy-jar path="${svn.project.home}" name="beanshell" version="1.0"/-->
+    <copy-jar path="${svn.project.home}" name="browserjs" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="freemarker" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="groovy" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="jacl" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="jaskell" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="java" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="javascript" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="jawk" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="jelly" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="jep" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="jexl" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="jruby" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="judo" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="juel" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="jython" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="ognl" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="pnuts" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="scheme" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="sleep" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="velocity" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="xpath" version="1.0"/>
+    <copy-jar path="${svn.project.home}" name="xslt" version="1.0"/>
   </target>
 
 </project>

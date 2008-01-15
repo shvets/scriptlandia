@@ -39,4 +39,18 @@
     </sequential>
   </macrodef>
 
+  <macrodef name="copy-jar">
+    <attribute name="path"/>
+    <attribute name="name"/>
+    <attribute name="version"/>
+
+    <sequential>
+      <copy todir="@{path}/javax/script/@{name}-engine/@{version}" overwrite="true">
+        <fileset dir="@{name}/target">
+          <include name="*.jar"/>
+        </fileset>
+      </copy>
+    </sequential>
+  </macrodef>
+
 </project>

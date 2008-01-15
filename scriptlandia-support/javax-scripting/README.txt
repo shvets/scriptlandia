@@ -8,7 +8,7 @@ Note: You should use Java 6 Compiler.
 
 2. In prepare.ant file modify "original.project.home":
 
-  <property name="original.project.home" value="scripting"/>
+  <property name="original.project.home" value="c:/Sources/scripting/engines"/>
 
 3. 
 
