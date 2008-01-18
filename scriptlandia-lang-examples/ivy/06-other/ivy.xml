@@ -1,0 +1,20 @@
+<ivy-module version="2.0">
+  <info organisation="org" module="standalone" revision="working"/>
+
+  <configurations defaultconfmapping="runtime->*">
+    <conf name="base"/>
+    <conf name="compile" extends="base" />
+    <conf name="test" extends="compile"/>
+  </configurations>
+
+  <dependencies>
+    <dependency org="commons-lang" name="commons-lang" rev="2.0" conf="compile->*"/>
+    <dependency org="commons-cli" name="commons-cli" rev="1.0" conf="test->*"/>
+
+    <dependency org="adobe/flex2" name="flex2-anttasks" rev="1.0" conf="compile->*"/>
+
+    <dependency org="scriptlandia" name="scriptlandia" rev="2.2.3-install" conf="compile->*"/>
+  </dependencies>
+
+
+</ivy-module>
