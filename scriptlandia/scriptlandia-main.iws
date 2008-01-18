@@ -16,50 +16,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/velocity/starter/velocity-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projects/scriptlandia-launcher/scriptlandia-launcher.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/clojure/starter/clojure-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/judo/starter/judo-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/scriptlandia/starter/scriptlandia-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projects/scriptlandia-helper/scriptlandia-helper.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projects/scriptlandia-config/scriptlandia-config.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/Console.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptlandia-main.iws" afterPath="$PROJECT_DIR$/scriptlandia-main.iws" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/janino/starter/janino-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/class/starter/class-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/jaskell/starter/jaskell-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projects/scriptlandia-nailgun/scriptlandia-nailgun.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/kawa/starter/kawa-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/ptilde/starter/ptilde-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/pnuts/starter/pnuts-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/jad/starter/jad-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/tcl/starter/tcl-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/war/starter/war-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/jelly/starter/jelly-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/etl/starter/etl-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/scriptlandia-installer.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/groovy/starter/groovy-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/fortress/starter/fortress-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/maven/starter/maven-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/jar/starter/jar-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/ant/starter/ant-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/jscheme/starter/jscheme-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projects/antrun/antrun.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/freemarker/starter/freemarker-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/javascript/starter/javascript-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/apt-fmt/starter/apt-fmt-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/jawk/starter/jawk-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/classworlds/starter/classworlds-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/xgql/starter/xgql-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/sleep/starter/sleep-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/beanshell/starter/beanshell-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/jruby/starter/jruby-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/scala/starter/scala-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/xruby/starter/xruby-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scriptlandia-main.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/jython/starter/jython-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/languages.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/apt-jelly/starter/apt-jelly-starter.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/javafx/starter/javafx-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstallerFrame.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstallerFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptlandia-main.ipr" afterPath="$PROJECT_DIR$/scriptlandia-main.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstaller.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstaller.java" />
     </list>
     <ignored path="scriptlandia-main.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -202,7 +163,7 @@
       <file leaf-file-name="MavenStarter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/languages/maven/starter/src/main/java/org/sf/scriptlandia/MavenStarter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="0" selection-start="1212" selection-end="1212" vertical-scroll-proportion="0.6321627">
+            <state line="51" column="0" selection-start="1353" selection-end="1353" vertical-scroll-proportion="0.69079626">
               <folding />
             </state>
           </provider>
@@ -217,10 +178,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScriptlandiaHelper.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ScriptlandiaHelper.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/ScriptlandiaHelper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GuiInstallerFrame.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstallerFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="22" selection-start="447" selection-end="447" vertical-scroll-proportion="0.019648397">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GuiInstaller.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstaller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="323" column="22" selection-start="10376" selection-end="10376" vertical-scroll-proportion="0.019648397">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Console.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/Console.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="20" selection-start="330" selection-end="337" vertical-scroll-proportion="0.16028956">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoreInstaller.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="13" selection-start="453" selection-end="453" vertical-scroll-proportion="0.019648397">
               <folding />
             </state>
           </provider>
@@ -298,6 +295,154 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
       </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-launcher" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-launcher" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-launcher" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher\src\main\java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-launcher\src\main\java\org\sf\scriptlandia\launcher" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-installer" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-installer" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-installer" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-installer" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-installer" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer\src\main\java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-installer\src\main\java\org\sf\scriptlandia\install" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
     </subPane>
   </component>
   <component name="ProjectReloadState">
@@ -358,51 +503,31 @@
       <recent name="org.sf.scriptlandia.commandlauncher" />
     </key>
   </component>
+  <component name="RubyDocSettings">
+    <RUBY_DOC NAME="DEFAULTS" VALUE="TRUE" />
+    <RUBY_DOC NAME="NUMBER" VALUE="0" />
+  </component>
   <component name="RunManager" selected="Application.scala-starter">
+    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby test">
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_CLASS_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e &quot;STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)&quot;" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="MODULE_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="INHERITANCE_CHECK_DISABLED" VALUE="false" />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="ADDITIONAL_CLASS_PATH" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <envs />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method>
-        <option name="Make" value="true" />
-      </method>
     </configuration>
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
@@ -443,6 +568,40 @@
         </option>
       </MavenSettings>
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <envs />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -472,17 +631,21 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method>
+        <option name="Make" value="true" />
+      </method>
     </configuration>
     <configuration default="false" name="installer" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.codehaus.classworlds.Launcher" />
@@ -635,6 +798,9 @@
       <Port>5050</Port>
     </configuration>
   </component>
+  <component name="SQLPlugin.ProjectConfiguration">
+    <queries />
+  </component>
   <component name="ScopeViewComponent">
     <subPane subId="Problems" />
     <subPane subId="Production">
@@ -701,40 +867,43 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1162" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="1" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41983968" order="8" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="2" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41883767" order="8" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24906467" order="1" />
+      <window_info id="DBHelper" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="1" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977018" order="3" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960325" order="8" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32902583" order="7" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32549438" order="3" />
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24798712" order="0" />
-      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
+      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="4" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32902583" order="2" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
       <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
-      <window_info id="Archetypes" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977018" order="7" />
+      <window_info id="Archetypes" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977018" order="8" />
+      <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46593186" order="1" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49602386" order="3" />
-      <window_info id="FileBrowser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="2" />
+      <window_info id="FileBrowser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32902583" order="8" />
-      <window_info id="CafeBabe" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" order="4" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24932103" order="5" />
+      <window_info id="CafeBabe" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" order="5" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24932103" order="6" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
+      <window_info id="DBOutput" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Maven Runner Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32902583" order="8" />
       <window_info id="Maven Build Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32902583" order="8" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
       <window_info id="Maven Importer Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32902583" order="8" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="6" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="7" />
       <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="4" />
     </layout>
   </component>
@@ -801,34 +970,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/ScriptlandiaLauncher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="162" column="50" selection-start="4414" selection-end="4414" vertical-scroll-proportion="0.79978925">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-nailgun/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="20" selection-start="2132" selection-end="2132" vertical-scroll-proportion="0.16306695">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scriptlandia-macrodefs.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="68" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.16306695">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scriptlandia-main.iws">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="476" column="50" selection-start="25273" selection-end="25273" vertical-scroll-proportion="0.32762313">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/languages/ant/starter/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="101" column="52" selection-start="2592" selection-end="2592" vertical-scroll-proportion="1.4425532">
@@ -894,7 +1035,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/languages/maven/starter/src/main/java/org/sf/scriptlandia/MavenStarter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="1212" selection-end="1212" vertical-scroll-proportion="0.6321627">
+        <state line="51" column="0" selection-start="1353" selection-end="1353" vertical-scroll-proportion="0.69079626">
           <folding />
         </state>
       </provider>
@@ -909,6 +1050,34 @@
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/ScriptlandiaHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstallerFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="22" selection-start="447" selection-end="447" vertical-scroll-proportion="0.019648397">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/Console.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="20" selection-start="330" selection-end="337" vertical-scroll-proportion="0.16028956">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="13" selection-start="453" selection-end="453" vertical-scroll-proportion="0.019648397">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="323" column="22" selection-start="10376" selection-end="10376" vertical-scroll-proportion="0.019648397">
           <folding />
         </state>
       </provider>

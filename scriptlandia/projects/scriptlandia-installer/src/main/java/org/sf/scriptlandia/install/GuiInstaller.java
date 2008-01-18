@@ -44,7 +44,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
   private JButton uninstallLanguagesButton = new JButton("Uninstall");
   private JButton closeButton;
 
-  private JTextArea consoleArea = new JTextArea();
+  private Console console = new Console();
 
   private JLabel statusLabel = new JLabel();
 
@@ -58,15 +58,6 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
 
   private boolean languagesPanelUpdated = false;
 
-  private final FilterOutputStream filterOutputStream = new FilterOutputStream(new ByteArrayOutputStream()) {
-    public void write(byte b[], int off, int len) throws IOException {
-      super.write(b, off, len);
-
-      consoleArea.append(new String(b, off, len));
-      consoleArea.setCaretPosition(consoleArea.getDocument().getLength());
-    }
-  };
-
   private GuiInstallerFrame frame = new GuiInstallerFrame(this);
 
   private String[] args;
@@ -79,9 +70,6 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
    */
   public GuiInstaller(String[] args) throws LauncherException {
     this.args = args;
-
-    System.setOut(new PrintStream(filterOutputStream));
-    System.setErr(new PrintStream(filterOutputStream));
 
     try {
       load();
@@ -149,7 +137,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     applyEnabledFlag(tabbedPane, false);
     installCoreButton.setEnabled(false);
 
-    consoleArea.setEnabled(true);
+    console.getComponent().setEnabled(true);
   }
 
   public boolean isInProcess() {
@@ -321,18 +309,10 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     JPanel panel = new JPanel();
     panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-    consoleArea.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
-    Font currentFont = consoleArea.getFont();
-    consoleArea.setFont(new Font(currentFont.getName(), Font.BOLD, currentFont.getSize()));
-    consoleArea.setEditable(false);
-
     JPanel panel11 = new JPanel();
     panel11.setLayout(new BoxLayout(panel11, BoxLayout.X_AXIS));
 
-    consoleArea.setRows(25);
-    consoleArea.setColumns(80);
-
-    panel11.add(new JScrollPane(consoleArea));
+    panel11.add(new JScrollPane(console.getComponent()));
 
     JPanel panel12 = new JPanel();
     panel12.setLayout(new BoxLayout(panel12, BoxLayout.X_AXIS));
@@ -341,7 +321,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     clearButton.addActionListener(new ActionListener() {
 
       public void actionPerformed(ActionEvent e) {
-        consoleArea.setText("");
+        console.clear();
       }
     });
 

@@ -17,6 +17,7 @@ public class GuiInstallerFrame extends JFrame {
 
   /**
    * Creates new GUI frame.
+   * @param parent the parent
    */
   public GuiInstallerFrame(GuiInstaller parent) {
 
