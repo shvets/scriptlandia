@@ -353,6 +353,10 @@
         Upgrade to Apache Ivy 2.0 beta 1.
       </action>
 
+      <action dev="Alexander Shvets" type="add">
+        Removing dependency to jdic library in favor of Java's deploy.jar.
+      </action>
+
     </release>
   </body>
 

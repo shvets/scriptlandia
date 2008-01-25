@@ -98,7 +98,7 @@ public class LauncherHelper {
     System.setProperty("scriptlandia.version", scriptlandiaVersion);
     System.setProperty("launcher.version", launcherVersion);
 
-    System.setProperty("jdic.version", "0.9.3");
+    //System.setProperty("jdic.version", "0.9.3");
     System.setProperty("nailgun.version", "0.7.1");
 
     //setupJavaSpecificationVersion();
@@ -137,7 +137,7 @@ public class LauncherHelper {
     String scriptlandiaVersion = (String)scriptlandiaProps.get("scriptlandia.version");
     String launcherVersion = (String)scriptlandiaProps.get("launcher.version");
     String nailgunVersion = (String)scriptlandiaProps.get("nailgun.version");
-    String jdicVersion = (String)scriptlandiaProps.get("jdic.version");
+    //String jdicVersion = (String)scriptlandiaProps.get("jdic.version");
 
     launcher.addClasspathEntry(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8.jar");
     launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/pom-reader/" + launcherVersion +
@@ -154,7 +154,7 @@ public class LauncherHelper {
 
     launcher.addClasspathEntry(repositoryHome + "/com/martiansoftware/nailgun/" + nailgunVersion + "/nailgun-" +
       nailgunVersion + ".jar");
-    launcher.addClasspathEntry(repositoryHome + "/org/jdesktop/jdic/" + jdicVersion + "/jdic-" + jdicVersion + ".jar");
+    //launcher.addClasspathEntry(repositoryHome + "/org/jdesktop/jdic/" + jdicVersion + "/jdic-" + jdicVersion + ".jar");
     launcher.addClasspathEntry(repositoryHome + "/commons-cli/commons-cli/1.1/commons-cli-1.1.jar");
   }
 

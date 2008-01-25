@@ -35,7 +35,7 @@
   <target name="install">
     <antcall target="copy.config.files"/>
 
-    <antcall target="configure.jdic.and.naligun"/>
+    <antcall target="configure.naligun"/>
 
     <antcall target="install.libraries"/>
 
@@ -53,10 +53,10 @@
       project.setNewProperty("launcher.home.internal", launcherHome.replace('\\', '/'));
     </script>
 
-      <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
-      <filter token="native.ruby.home" value="${native.ruby.home}"/>
+    <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
+    <filter token="native.ruby.home" value="${native.ruby.home}"/>
 
-      <filter token="launcher.home" value="${launcher.home}"/>
+    <filter token="launcher.home" value="${launcher.home}"/>
 
     <filterset id="copy.filterset">
       <filter token="java.specification.version.level" value="${java.specification.version.level}"/>
@@ -90,7 +90,7 @@
       <filter token="jaskell.version" value="${jaskell.version}"/>
       <filter token="clojure.version" value="${clojure.version}"/>
 
-      <filter token="jdic.version" value="${jdic.version}"/>
+      <!--filter token="jdic.version" value="${jdic.version}"/-->
       <filter token="nailgun.version" value="${nailgun.version}"/>
     </filterset>
 
@@ -119,6 +119,18 @@
         <include name="scriptlandia.classpath"/>
         <exclude name="*-exe.*"/>
       </fileset>
+    </copy>
+
+    <copy todir="${scriptlandia.home}/images" overwrite="true">
+      <mapper type="flatten"/>
+      <fileset dir="languages">
+        <include name="**/*.ico"/>
+      </fileset>
+
+      <fileset dir="projects">
+        <include name="**/*.gif"/>
+      </fileset>
+   
     </copy>
 
     <!--copy todir="${scriptlandia.home}" overwrite="true">
@@ -166,16 +178,16 @@
     </script>
   </target-->
 
-  <target name="configure.jdic.and.naligun">
-    <condition property="jdic.native.libs.present">
+  <target name="configure.naligun">
+    <!--condition property="jdic.native.libs.present">
       <available file="${repository.home}/org/jdesktop/jdic-native-libs/${jdic.version}/jdic-native-libs-${jdic.version}.jar"/>
-    </condition>
+    </condition-->
 
     <condition property="nailgun.binaries.present">
       <available file="${repository.home}/com/martiansoftware/nailgun-bin/${nailgun.version}/nailgun-bin-${nailgun.version}.jar"/>
     </condition>
 
-    <antcall target="unzip.jdic.native.libs"/>
+    <!--antcall target="unzip.jdic.native.libs"/-->
     <antcall target="unzip.nailgun.binaries"/>
   </target>
 
@@ -194,7 +206,7 @@
     </copy>
   </target-->
 
-  <target name="unzip.jdic.native.libs" if="jdic.native.libs.present">
+  <!--target name="unzip.jdic.native.libs" if="jdic.native.libs.present">
     <script language="beanshell">
       String osName = System.getProperty("os.name").toLowerCase();
 
@@ -220,20 +232,14 @@
     </script>
 
     <unzip src="${repository.home}/org/jdesktop/jdic-native-libs/${jdic.version}/jdic-native-libs-${jdic.version}.jar"
-           dest="${repository.home}/org/jdesktop/jdic/${jdic.version}" overwrite="false">
+           dest="${repository.home}/org/jdesktop/jdic-${os.short.name}/${jdic.version}" overwrite="false">
       <mapper type="flatten"/>
 
       <patternset>
-        <include name="${os.name.temp}/jdic_stub.jar"/>
         <include name="${os.name.temp}/${os.arch.temp}/*.*"/>
       </patternset>
     </unzip>
-<!--    
-    <unzip src="${repository.home}/org/jdesktop/jdic-native-libs/${jdic.version}/jdic-native-libs-${jdic.version}.jar"
-           dest="${repository.home}/org/jdesktop/jdic/${jdic.version}" overwrite="false">
-    </unzip>
--->
-  </target>
+  </target-->
 
   <target name="unzip.nailgun.binaries" if="nailgun.binaries.present">
     <unzip src="${repository.home}/com/martiansoftware/nailgun-bin/${nailgun.version}/nailgun-bin-${nailgun.version}.jar"

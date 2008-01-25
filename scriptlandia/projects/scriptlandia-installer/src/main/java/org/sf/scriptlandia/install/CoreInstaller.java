@@ -96,14 +96,14 @@ public class CoreInstaller {
 
     List languages = xmlHelper.getLanguages();
 
-    for(int i=0; i < languages.size(); i++) {
-      Map language = (Map)languages.get(i);
+    for (Object language1 : languages) {
+      Map language = (Map) language1;
 
-      String name = (String)language.get("name");
+      String name = (String) language.get("name");
 
       boolean requiresInstallation = Boolean.valueOf(System.getProperty(name + ".install")).booleanValue();
 
-      if(requiresInstallation) {
+      if (requiresInstallation) {
         extInstaller.registerLanguage(language);
       }
     }
@@ -116,8 +116,8 @@ public class CoreInstaller {
 
     File[] files = new File("languages").listFiles();
 
-    for (int i = 0; i < files.length; i++) {
-      installLanguage(section, install, installer, files[i]);
+    for (File file : files) {
+      installLanguage(section, install, installer, file);
     }
   }
 
@@ -158,15 +158,20 @@ public class CoreInstaller {
 
    List languages = xmlHelper.getLanguages();
 
-   for(int i=0; i < languages.size(); i++) {
-     Map language = (Map)languages.get(i);
+   for (Object language1 : languages) {
+     Map language = (Map) language1;
 
-     String name = (String)language.get("name");
+     String name = (String) language.get("name");
 
      boolean requiresInstallation = Boolean.valueOf(System.getProperty(name + ".install")).booleanValue();
 
-     if(requiresInstallation) {
-       extInstaller.unregisterLanguage(language);
+     if (requiresInstallation) {
+       try {
+         extInstaller.unregisterLanguage(language);
+       }
+       catch (Exception e) {
+         System.out.println("Exception: " + e.getMessage());
+       }
      }
    }
 
@@ -178,7 +183,12 @@ public class CoreInstaller {
 
     ExtInstaller extInstaller = new ExtInstaller();
 
-    extInstaller.unregisterLanguage(language);
+     try {
+       extInstaller.unregisterLanguage(language);
+     }
+     catch (Exception e) {
+       System.out.println("Exception: " + e.getMessage());
+     }
   }
 
   private void installLanguage(String section, boolean install, ProjectInstaller installer, File file) throws Exception {

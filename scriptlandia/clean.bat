@@ -1,6 +1,6 @@
 @echo off 
 
-@call config.bat
+@call ..\..\..\jlaunchpad\trunk\launcher\config.bat
 
 if exist projects\antrun\target rmdir /S /Q projects\antrun\target
 if exist projects\scriptlandia-helper\target rmdir /S /Q projects\scriptlandia-helper\target

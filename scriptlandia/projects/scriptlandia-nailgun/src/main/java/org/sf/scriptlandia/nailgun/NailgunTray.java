@@ -2,12 +2,11 @@ package org.sf.scriptlandia.nailgun;
 
 import com.martiansoftware.nailgun.NGConstants;
 import com.martiansoftware.nailgun.NGServer;
-import org.jdesktop.jdic.tray.SystemTray;
-import org.jdesktop.jdic.tray.TrayIcon;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
+import java.awt.*;
 import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import java.net.InetAddress;
 
 /**
@@ -16,12 +15,13 @@ import java.net.InetAddress;
  * @author Alexander Shvets
  * @version 1.0 12/16/2006
  */
-public class NailgunTray extends TrayIcon {
+public class NailgunTray extends TrayIcon
+{
   /** The popup frame that displays available menu choice. */
   //private JFrame popupFrame;
 
   /** The popup menu. */
-  private JPopupMenu popupMenu;
+  private java.awt.PopupMenu popupMenu;
 
   /** The Nailgun server instance. */
   private NGServer server;
@@ -30,9 +30,12 @@ public class NailgunTray extends TrayIcon {
    * Creates new system tray. /
    */
   public NailgunTray() {
-    super(new ImageIcon(NailgunTray.class.getResource("/images/scriptlandia.gif")));
+    //super(new ImageIcon(NailgunTray.class.getResource("/images/scriptlandia.gif")));
+    super(Toolkit.getDefaultToolkit().getImage(NailgunTray.class.getResource("/images/scriptlandia.gif")));
 
-    this.setCaption("Scriptlandia Launching Pad");
+    this.setImageAutoSize(true);
+
+    this.setToolTip("Scriptlandia Launching Pad");
 
     createPopupMenu();
 
@@ -50,20 +53,20 @@ public class NailgunTray extends TrayIcon {
    * Creates popup menu.
    */
   private void createPopupMenu() {
-    popupMenu = new JPopupMenu("Menu");
+    popupMenu = new PopupMenu("Menu");
 
-    JMenuItem serverMenuItem = new JMenuItem();
+    MenuItem serverMenuItem = new MenuItem();
 
     //setServerMenuItemTitle(serverMenuItem);
-    serverMenuItem.setText("Start Nailgun Server");    
+    serverMenuItem.setLabel("Start Nailgun Server");
 
     serverMenuItem.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        executeServerMenuItem((JMenuItem) e.getSource());
+        executeServerMenuItem((MenuItem) e.getSource());
       }
     });
 
-    JMenuItem exitMenuItem = new JMenuItem("Exit");
+    MenuItem exitMenuItem = new MenuItem("Exit");
     exitMenuItem.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         exit();
@@ -123,7 +126,7 @@ public class NailgunTray extends TrayIcon {
    *
    * @param menuItem the menu item
    */
-  private void executeServerMenuItem(JMenuItem menuItem) {
+  private void executeServerMenuItem(MenuItem menuItem) {
     if (server == null || !server.isRunning()) {
       InetAddress serverAddress = null;
       int port = NGConstants.DEFAULT_PORT;
@@ -162,14 +165,14 @@ public class NailgunTray extends TrayIcon {
       displayMessage("Nailgun Server started on "
                 + ((serverAddress == null)
                   ? "all interfaces" : serverAddress.getHostAddress()) + ", port " + server.getPort() + ".",
-                   "Nailgun Server", 0);
-      menuItem.setText("Stop Nailgun Server");
+                   "Nailgun Server", MessageType.INFO);
+      menuItem.setLabel("Stop Nailgun Server");
     }
     else {
       server.shutdown(false);
-      displayMessage("Nailgun Server stopped.", "Nailgun Server", 0);
+      displayMessage("Nailgun Server stopped.", "Nailgun Server", MessageType.INFO);
 
-      menuItem.setText("Start Nailgun Server");
+      menuItem.setLabel("Start Nailgun Server");
     }
 
     //setServerMenuItemTitle(menuItem);
@@ -200,9 +203,14 @@ public class NailgunTray extends TrayIcon {
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        SystemTray systemTray = SystemTray.getDefaultSystemTray();
+        SystemTray systemTray = SystemTray.getSystemTray();
 
-        systemTray.addTrayIcon(new NailgunTray());
+        try {
+          systemTray.add(new NailgunTray());
+        }
+        catch (AWTException e) {
+          e.printStackTrace();
+        }
       }
     });
   }

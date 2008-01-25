@@ -1,6 +1,6 @@
 @ECHO OFF
 
-@call config.bat
+@call ..\..\..\jlaunchpad\trunk\launcher\config.bat
 
 if not exist %LAUNCHER_HOME%\launcher.bat (
   echo Please run jlaunchpad-installer.bat first.
@@ -17,7 +17,7 @@ SET PROPERTIES=%PROPERTIES% "-main.class.name=org.sf.pomreader.ProjectInstaller"
 
 @call %LAUNCHER_HOME%\launcher.bat %SYSTEM_PROPERTIES% %PROPERTIES% "-Dbasedir=projects/antrun" "-Dbuild.required=true"
 
-@call %LAUNCHER_HOME%\launcher.bat %SYSTEM_PROPERTIES% %PROPERTIES% "-Dbasedir=projects/scriptlandia-installer" "-Dbuild.required=true"
+@call %LAUNCHER_HOME%\launcher.bat -Xbootclasspath/a:%JAVA_HOME%/jre/lib/deploy.jar %SYSTEM_PROPERTIES% %PROPERTIES% "-Dbasedir=projects/scriptlandia-installer" "-Dbuild.required=true"
 
 @call %LAUNCHER_HOME%\launcher.bat %SYSTEM_PROPERTIES% %PROPERTIES% "-Dbasedir=projects/scriptlandia-nailgun" "-Dbuild.required=true"
 

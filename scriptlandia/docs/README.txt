@@ -174,7 +174,6 @@ Versions for used components
 
 
 ClassWorlds    1.1          http://classworlds.codehaus.org
-JDIC           0.9.3        https://jdic.dev.java.net
 Nailgun Server 0.7.1        http://www.martiansoftware.com/nailgun
 log4j          1.2.13       http://logging.apache.org/log4j
 MicroEmu       2.0.1        http://microemu.org

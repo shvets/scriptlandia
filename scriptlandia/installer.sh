@@ -53,6 +53,8 @@ MAIN_CLASS=org.sf.scriptlandia.install.GuiInstaller
 PROPERTIES2="-deps.file.name=projects/scriptlandia-installer/pom.xml"
 PROPERTIES2="$PROPERTIES2 -main.class.name=$MAIN_CLASS"
 
-LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$REPOSITORY_HOME/org/jdesktop/jdic/0.9.3"
+#LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$REPOSITORY_HOME/org/jdesktop/jdic/0.9.3"
 
-$LAUNCHER_HOME/launcher.sh $SYSTEM_PROPERTIES $PROPERTIES2 -Djava.library.path=$REPOSITORY_HOME/org/jdesktop/jdic/0.9.3 -wait
+$LAUNCHER_HOME/launcher.sh $SYSTEM_PROPERTIES $PROPERTIES2-wait
+
+# -Djava.library.path=$REPOSITORY_HOME/org/jdesktop/jdic/0.9.3

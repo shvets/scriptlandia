@@ -41,7 +41,7 @@ It also will ask for languages to be installed and proxy settings, if you are be
 
 
 The installation is completed. During the installation we associate extensions like ".ant", ".maven",
-".bsh" etc. with appropriate dynamic language interpreter (thanks to JDIC library).
+".bsh" etc. with appropriate dynamic language interpreter.
 
 During installation, a lot of files will be downloaded and installed into local repository. 
 
@@ -65,7 +65,7 @@ It is also good idea to add SCRIPTLANDIA_HOME variable to your PATH variable.
 
     Direct invocation of Scriptlandia script
 
-if your operating system is not supported by JDIC library, you still can use
+if your operating system is not supported by deploy library, you still can use
 Scriptlandia to launch your language scripts. To do it you have to call "sl.bat/sl.sh" script:
 
 >sl.sh test.ant
@@ -117,3 +117,44 @@ they are bigger than example, but from another - they are not as big as yet anot
 language. Plus, it requires some additional steps in order to integrate them too. For example:
 jruby on rails, grails, different maven archetypes (webtide, appfuse, ...) etc.
 
+Ubuntu
+
+sudo apt-get install libstdc++5
+
+
+>gnomevfs-info test.bsh
+
+>sudo gedit /usr/share/mime/packages/scriptlandia.xml
+
+>sudo update-mime-database /usr/share/mime
+
+>gnomevfs-info test.bsh
+
+>sudo update-desktop-database
+
+>sudo gedit /usr/share/applications/scriptlandia.desktop
+
+>gnomevfs-info test.bsh
+
+
+
+
+>gnomevfs-info test.bsh
+
+>gedit ~/.local/share/mime/packages/scriptlandia.xml
+
+>update-mime-database ~/.local/share/mime
+
+>gnomevfs-info test.bsh
+
+>sudo update-desktop-database
+
+>gedit ~/.local/share/applications/scriptlandia.desktop
+
+>gnomevfs-info test.bsh
+
+
+gnome-open test.bsh 
+kfmclient exec test.bsh
+
+http://portland.freedesktop.org/wiki/

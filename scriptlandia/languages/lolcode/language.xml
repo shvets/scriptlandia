@@ -4,7 +4,6 @@
   <registration mimeType="text/lolcode" icon="scriptlandia.ico">
     <extensions>
       <extension>lol</extension>
-      <extension>LOL</extension>
       <extension>lcd</extension>
     </extensions>
 

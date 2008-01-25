@@ -2,6 +2,7 @@ package org.sf.scriptlandia.install;
 
 import org.sf.jlaunchpad.core.LauncherException;
 import org.sf.jlaunchpad.install.LauncherProperties;
+import org.sf.jlaunchpad.JLaunchPadLauncher;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
@@ -17,6 +18,8 @@ import java.awt.event.KeyEvent;
 import java.io.*;
 import java.util.Map;
 import java.util.Properties;
+
+import com.sun.deploy.config.Config;
 
 /**
  * The class perform initial (gui) installation of scriprlandia.
@@ -741,7 +744,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     saveProperty(scriptlandiaProps, launcherHomeField, "launcher.home");
 
     scriptlandiaProps.put("launcher.version", System.getProperty("launcher.version"));
-    scriptlandiaProps.put("jdic.version", System.getProperty("jdic.version"));
+    //scriptlandiaProps.put("jdic.version", System.getProperty("jdic.version"));
     scriptlandiaProps.put("nailgun.version", System.getProperty("nailgun.version"));
     scriptlandiaProps.put("java.compiler.version", System.getProperty("java.compiler.version"));
 
@@ -822,6 +825,20 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
    * @throws LauncherException exception
    */
   public static void main(String[] args) throws LauncherException {
+    JLaunchPadLauncher launcher = JLaunchPadLauncher.getInstance();
+
+    launcher.addClasspathEntry(System.getProperty("java.home") + File.separator + "lib" + File.separator + "deploy.jar");
+   System.out.println("1 " + System.getProperty("java.home"));
+    System.out.println("2 " + System.getProperty("java.home.internal"));
+    //System.out.println("? " + GuiInstaller.class.getClassLoader().getClass().getName());
+
+    try {
+      System.load(Config.getJavaHome() + File.separator + "bin" + File.separator + "deploy.dll");
+    }
+    catch(Throwable t) {
+      t.printStackTrace();
+    }
+    
     new GuiInstaller(args);
   }
 
