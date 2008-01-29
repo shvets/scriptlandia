@@ -1,4 +1,4 @@
-<%@ include file="/taglibs1-inc.jsp" %>
+<%@ include file="/taglibs2-inc.jsp" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 

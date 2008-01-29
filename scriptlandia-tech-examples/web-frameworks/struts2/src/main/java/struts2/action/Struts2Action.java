@@ -1,7 +1,6 @@
 package struts2.action;
 
 import org.apache.struts2.interceptor.ServletRequestAware;
-import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import com.opensymphony.xwork2.ActionSupport;
@@ -13,8 +12,6 @@ import javax.servlet.ServletContext;
 
 import business.User;
 import business.UserService;
-import dao.UserServiceImpl;
-import struts1.form.UserForm;
 
 public class Struts2Action extends ActionSupport
   implements ModelDriven, Preparable, ServletRequestAware {

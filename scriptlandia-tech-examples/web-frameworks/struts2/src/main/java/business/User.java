@@ -4,6 +4,8 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
+import org.json.JSONObject;
+import org.json.JSONException;
 
 public class User {
   private long id;
@@ -11,6 +13,7 @@ public class User {
   private String firstName;
   private String lastName;
   private boolean admin;
+  private String role;
 
   public long getId() {
     return id;
@@ -52,6 +55,14 @@ public class User {
     this.admin = admin;
   }
 
+  public String getRole() {
+    return role;
+  }
+
+  public void setRole(String role) {
+    this.role = role;
+  }
+
   /**
    * Equals.
    *
@@ -80,4 +91,16 @@ public class User {
     return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
   }
 
+	public String toJSONString() throws JSONException {
+		JSONObject jsonObj = new JSONObject();
+		jsonObj.put("id", new Long(this.id));
+		jsonObj.put("title", this.title);
+		jsonObj.put("firstName", this.firstName);
+		jsonObj.put("lastName", this.lastName);
+		jsonObj.put("admin", this.admin);
+		jsonObj.put("role", this.role);
+
+    return jsonObj.toString();
+	}
+  
 }

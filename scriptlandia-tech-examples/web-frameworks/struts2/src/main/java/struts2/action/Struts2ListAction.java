@@ -14,8 +14,6 @@ import business.UserService;
 
 import java.util.List;
 
-import dao.UserServiceImpl;
-
 public class Struts2ListAction extends ActionSupport
        implements ServletRequestAware {
   //private UserService userService = new UserServiceImpl();

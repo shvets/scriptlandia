@@ -17,6 +17,8 @@ public class UserServiceImpl implements UserService {
     user1.setTitle("title1");
     user1.setFirstName("firstName1");
     user1.setLastName("lastName1");
+    user1.setRole("role1");
+
     user1.setAdmin(false);
 
     list.add(user1);
@@ -27,6 +29,7 @@ public class UserServiceImpl implements UserService {
     user2.setFirstName("firstName2");
     user2.setLastName("lastName2");
     user2.setAdmin(false);
+    user2.setRole("role2");
 
     list.add(user2);
 
@@ -36,6 +39,7 @@ public class UserServiceImpl implements UserService {
     user3.setFirstName("firstName3");
     user3.setLastName("lastName3");
     user3.setAdmin(true);
+    user3.setRole("role3");
 
     list.add(user3);
   }
