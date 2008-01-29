@@ -158,3 +158,30 @@ gnome-open test.bsh
 kfmclient exec test.bsh
 
 http://portland.freedesktop.org/wiki/
+
+
+JAVA_BOOTCLASSPATH_APPEND:
+JAVA_BOOTCLASSPATH_PREPEND:
+JAVA_BOOTCLASSPATH:
+JAVA_LIBRARY_PATH:
+JAVA_EXT_DIRS: -Djava.ext.dirs=/home/alex/jdk1.6.0_03/lib/ext:/home/alex/jdk1.6.0_03/jre/lib/ext
+JAVA_ENDORSED_DIRS:
+JVM_ARGS: -Xmx256m -Xss1024k -da
+JAVA_SYSTEM_PROPS: -Dclassworlds.conf=/home/alex/launcher/classworlds.conf -Drepository.home=/media/sda2/maven-repository -Dlauncher.home=/home/alex/launcher -Dlauncher.version=1.0.1
+JAVA_CLASSPATH: -classpath /media/sda2/maven-repository/classworlds/classworlds/1.1/classworlds-1.1.jar
+LAUNCHER_CLASS: org.codehaus.classworlds.Launcher
+COMMAND_LINE_ARGS: -deps.file.name=/media/sda2/maven-repository/org/sf/scriptlandia/scala-starter/1.0.1/scala-starter-1.0.1.pom -main.class.name=org.sf.scriptlandia.ScalaStarter2 test1.scala
+
+
+
+
+JAVA_BOOTCLASSPATH_APPEND: -Xbootclasspath/a:"C:/maven-repository/org/scala-lang/scala-library/2.6.1/scala-library-2.6.1.jar"
+
+JAVA_SYSTEM_PROPS: "-Dclassworlds.conf=C:/launcher/classworlds.conf" "-Drepository.home=C:/maven-repository" "-Dlauncher.home=C:/launcher" "-Dlauncher.version=1.0.1" "-Dclassworlds
+.conf=C:/scriptlandia/classworlds.conf"
+
+JAVA_CLASSPATH: -classpath "C:/maven-repository/classworlds/classworlds/1.1/classworlds-1.1.jar;C:/maven-repository/org/scala-lang/scala-compiler/2.6.1/scala-compiler-2.6.1.jar;C:/
+maven-repository/org/scala-lang/scala-dbc/2.6.1/scala-dbc-2.6.1.jar;C:/maven-repository/org/scala-lang/scala-decoder/2.6.1/scala-decoder-2.6.1.jar"
+
+COMMAND_LINE_ARGS:  "-deps.file.name=C:\maven-repository\org\sf\scriptlandia\scala-starter\1.0.1\scala-starter-1.0.1.pom" "-main.class.name=org.sf.scriptlandia.ScalaStarter2" "-noc
+ompdaemon" "-howtorun:script" "C:\Work\Projects\scriptlandia\trunk\scriptlandia-lang-examples\scala\test1.scala"

@@ -22,10 +22,87 @@ public class ScriptGenerator extends ExtInstaller {
     generateSlBatchFile(languages, scriptlandiaHome);
     generateSlShellFile(languages, scriptlandiaHome);
 
+    generateXFreeDesktopApplicationXml(languages, scriptlandiaHome);
+    generateXFreeDesktopApplicationDesktop(languages, scriptlandiaHome);
+
     for (Object language : languages) {
       generateLanguageBatchScript((Map)language, scriptlandiaHome);
       generateLanguageShellScript((Map)language, scriptlandiaHome);
     }
+  }
+
+  private void generateXFreeDesktopApplicationXml(List languages, String dir) throws IOException {
+    BufferedWriter writer = new BufferedWriter(new FileWriter(dir + "/scriptlandia.xml"));
+
+    writer.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+    writer.newLine();
+
+    writer.write("<mime-info xmlns=\"http://www.freedesktop.org/standards/shared-mime-info\">");
+    writer.newLine();
+    writer.newLine();
+
+    for (Object language : languages) {
+      String name = (String) ((Map)language).get("name");
+      String mimeType = (String) ((Map)language).get("mimeType");
+
+      writer.write("  <mime-type type=\"" + mimeType + "\">");
+      writer.newLine();
+      writer.write("    <comment xml:lang=\"en\">" + Character.toUpperCase(name.charAt(0)) + name.substring(1) + " Language" + "</comment>");
+      writer.newLine();
+
+      List extensions = (List) ((Map)language).get("extensions");
+
+      for (Object extension : extensions) {
+        writer.write("    <glob pattern=\"*." + extension + "\"/>");
+        writer.newLine();        
+        writer.write("    <glob pattern=\"*." + extension.toString().toUpperCase() + "\"/>");
+        writer.newLine();
+      }
+
+      writer.write("  </mime-type>");
+      writer.newLine();
+      writer.newLine();
+    }
+
+    writer.write("</mime-info>");
+    writer.newLine();
+
+    writer.close();
+  }
+
+
+  private void generateXFreeDesktopApplicationDesktop(List languages, String dir) throws IOException {
+    BufferedWriter writer = new BufferedWriter(new FileWriter(dir + "/scriptlandia.desktop"));
+
+    writer.write("[Desktop Entry]"); writer.newLine();
+    writer.write("Type=Application"); writer.newLine();
+    writer.write("Encoding=UTF-8"); writer.newLine();
+    writer.write("Name=Scriptlandia Framework"); writer.newLine();
+    writer.write("Comment=Scriptlandia Framework"); writer.newLine();
+    writer.write("Terminal=true"); writer.newLine();
+    writer.write("Path=" + dir); writer.newLine();
+    writer.write("Exec=" + dir + "/sl.sh %F; read"); writer.newLine();
+    writer.write("Icon=" + dir + "/icons/scriptlandia.gif"); writer.newLine();
+
+     writer.write("MimeType=");
+
+     for (int i=0; i < languages.size(); i++) {
+       Map language = (Map)languages.get(i);
+       String mimeType = (String) ((Map)language).get("mimeType");
+
+      writer.write(mimeType);
+
+       if(i < languages.size()-1) {
+         writer.write(";");
+       }
+    }
+    
+    writer.newLine();
+
+    writer.close();
+
+    //#NoDisplay=true
+    //#StartupNotify=false
   }
 
   public void generateSlBatchFile(List languages, String dir) throws IOException {
@@ -179,9 +256,10 @@ public class ScriptGenerator extends ExtInstaller {
         //if(name.equals("ant") || name.equals("maven")) {
         //  writer.write("-f ");
         //}
-
+        writer.write('\"');
         writer.write(commandLine);
-
+        writer.write('\"');
+        
         writer.newLine();
         writer.write("    ;;");
         writer.newLine();
@@ -195,6 +273,10 @@ public class ScriptGenerator extends ExtInstaller {
     writer.newLine();
 
     writer.write("esac");
+    writer.newLine();
+    writer.newLine();
+
+    writer.write("export APP_NAME");
     writer.newLine();
     writer.newLine();
 

@@ -24,14 +24,6 @@
     <os family="unix"/>
   </condition>
 
-  <!--target name="config">
-    <antcall target="copy.config.files"/>
-
-    <antcall target="configure.jdic.and.naligun"/>
-
-    <antcall target="prepare.unix.files"/>
-  </target-->
-
   <target name="install">
     <antcall target="copy.config.files"/>
 
@@ -40,6 +32,24 @@
     <antcall target="install.libraries"/>
 
     <antcall target="prepare.unix.files"/>
+  </target>
+
+  <target name="register.xfeedesktop.extensions">
+    <property name="xdg.utils.home" value="projects/scriptlandia-config/bin/xdg-utils"/>
+
+    <!-- Copy to destination: ~/.local/share/applications/scriptlandia.desktop -->
+    <exec executable="${xdg.utils.home}/xdg-desktop-menu" osfamily="unix">
+      <arg line="install --novendor ${scriptlandia.home}/scriptlandia.desktop"/>
+    </exec>
+
+    <!-- Copy to destination: ~/.local/share/mime/packages/scriptlandia.xml -->
+    <exec executable="${xdg.utils.home}/xdg-mime" osfamily="unix">
+      <arg line="install --novendor ${scriptlandia.home}/scriptlandia.xml"/>
+    </exec>
+
+    <exec executable="${xdg.utils.home}/xdg-desktop-icon" osfamily="unix">
+      <arg line="install --novendor ${scriptlandia.home}/scriptlandia.desktop"/>
+    </exec>
   </target>
 
   <target name="copy.config.files">
@@ -64,9 +74,6 @@
       <filter token="mobile.java.home" value="${mobile.java.home}"/>
       <filter token="mobile.java.home" value="${mobile.java.home}"/>
 
-      <!--filter token="proxyHost" value="${proxyHost}"/>
-      <filter token="proxyPort" value="${proxyPort}"/-->
-
       <filter token="repository.home" value="${repository.home}"/>
       <filter token="scriptlandia.home" value="${scriptlandia.home.internal}"/>
       <filter token="native.ruby.home" value="${native.ruby.home}"/>
@@ -89,12 +96,8 @@
       <filter token="scala.version" value="${scala.version}"/>
       <filter token="jaskell.version" value="${jaskell.version}"/>
       <filter token="clojure.version" value="${clojure.version}"/>
-
-      <!--filter token="jdic.version" value="${jdic.version}"/-->
       <filter token="nailgun.version" value="${nailgun.version}"/>
     </filterset>
-
-    <!--antcall target="copy.settings.xml"/-->
 
     <script language="beanshell">
       source("projects/scriptlandia-config/src/main/bsh/ChecksumScript.bsh");
@@ -133,14 +136,6 @@
    
     </copy>
 
-    <!--copy todir="${scriptlandia.home}" overwrite="true">
-      <fileset dir=".">
-        <include name="projects/scriptlandia-installer/target/*.jar"/>
-
-        <include name="scriptlandia.classpath"/>
-      </fileset>
-    </copy-->
-
     <copy todir="${java.io.tmpdir}" overwrite="true">
       <fileset dir="${scriptlandia.home}">
        <include name="ant.bat"/>
@@ -166,116 +161,18 @@
     </move>
   </target>
 
-  <!--target name="configure.proxy">
-    <script language="beanshell">
-      String repositoryHome = System.getProperty("repository.home");
-
-      addClassPath(repositoryHome + "/jdom/jdom/1.0/jdom-1.0.jar");
-
-      source("projects/scriptlandia-config/src/main/bsh/ProxiesXmlHelper.bsh");
-
-      ProxiesXmlHelper.main(new String[] {});
-    </script>
-  </target-->
-
   <target name="configure.naligun">
-    <!--condition property="jdic.native.libs.present">
-      <available file="${repository.home}/org/jdesktop/jdic-native-libs/${jdic.version}/jdic-native-libs-${jdic.version}.jar"/>
-    </condition-->
-
     <condition property="nailgun.binaries.present">
       <available file="${repository.home}/com/martiansoftware/nailgun-bin/${nailgun.version}/nailgun-bin-${nailgun.version}.jar"/>
     </condition>
 
-    <!--antcall target="unzip.jdic.native.libs"/-->
     <antcall target="unzip.nailgun.binaries"/>
   </target>
-
-  <!--target name="copy.settings.xml">
-    <copy todir="${user.home}/.m2" overwrite="false">
-      <filterset>
-        <filter token="proxyHost" value="${proxyHost}"/>
-        <filter token="proxyHost" value="${proxyPort}"/>
-
-        <filter token="repository.home" value="${repository.home}"/>
-      </filterset>
-
-      <fileset dir="projects/scriptlandia-config/src/main/config">
-       <include name="settings.xml"/>
-      </fileset>
-    </copy>
-  </target-->
-
-  <!--target name="unzip.jdic.native.libs" if="jdic.native.libs.present">
-    <script language="beanshell">
-      String osName = System.getProperty("os.name").toLowerCase();
-
-      if(osName.startsWith("windows")) {
-        osName = "windows";
-      }
-      else if(osName.startsWith("linux")) {
-        osName = "linux";
-      }
-      else if(osName.startsWith("sunos")) {
-        osName = "sunos";
-      }
-
-      project.setNewProperty("os.name.temp", osName);
-
-      String osArch = System.getProperty("os.arch").toLowerCase();
-
-      if(osArch.startsWith("i386")) {
-        osArch = "x86";
-      }
-
-      project.setNewProperty("os.arch.temp", osArch);
-    </script>
-
-    <unzip src="${repository.home}/org/jdesktop/jdic-native-libs/${jdic.version}/jdic-native-libs-${jdic.version}.jar"
-           dest="${repository.home}/org/jdesktop/jdic-${os.short.name}/${jdic.version}" overwrite="false">
-      <mapper type="flatten"/>
-
-      <patternset>
-        <include name="${os.name.temp}/${os.arch.temp}/*.*"/>
-      </patternset>
-    </unzip>
-  </target-->
 
   <target name="unzip.nailgun.binaries" if="nailgun.binaries.present">
     <unzip src="${repository.home}/com/martiansoftware/nailgun-bin/${nailgun.version}/nailgun-bin-${nailgun.version}.jar"
            dest="${repository.home}/com/martiansoftware/nailgun-bin/${nailgun.version}" overwrite="false"/>
   </target>
-
-  <!--target name="package.projects">
-    <installProject basedir="projects/antrun"/>
-    <installProject basedir="projects/scriptlandia-installer"/>
-    <installProject basedir="projects/scriptlandia-nailgun"/>
-    <installProject basedir="projects/scriptlandia-launcher"/>
-    <installProject basedir="projects/scriptlandia-helper"/>
-  </target-->
-
-  <!--target name="install.projects">
-    <installProject basedir="projects/scriptlandia-nailgun" build="false"/>
-    <installProject basedir="projects/scriptlandia-launcher" build="false"/>
-    <installProject basedir="projects/scriptlandia-helper" build="false"/>
-  </target-->
-
-  <!--target name="install.languages">
-    <installLanguages section="core"/>
-
-    <installLanguages section="starter"/>
-
-    <registerLanguages/>
-  </target-->
-
-  <!--target name="generate.scripts">
-    <script language="beanshell">
-      source("projects/scriptlandia-config/src/main/bsh/ext-installer.bsh");
-
-      ExtInstaller installer = new ExtInstaller();
-      installer.generateScripts();
-    </script>
-  </target-->
 
   <target name="install.libraries">
     <copy todir="${scriptlandia.home}">
@@ -285,30 +182,6 @@
        <include name="scriptlandia-classpath"/>
       </fileset>
     </copy>
-
-    <!--copy todir="${scriptlandia.home}/languages">
-      <fileset dir="languages">
-       <include name="**/*.xml"/>
-       <include name="**/src/**/*.java"/>
-       <include name="**/target/**"/>
-       <include name="**/*.ico"/>
-      </fileset>
-    </copy-->
-
-    <!--copy todir="${scriptlandia.home}">
-      <fileset dir="projects/scriptlandia-config/bin">
-       <include name="*.exe"/>
-      </fileset>
-    </copy-->
-
-    <!--copy todir="${scriptlandia.home}">
-      <fileset dir=".">
-        <include name="projects/scriptlandia-config/bin/*.*"/>
-        <exclude name="projects/scriptlandia-config/bin/*.exe"/>
-        <include name="projects/scriptlandia-config/src/main/bsh/**"/>
-        <include name="projects/scriptlandia-config/src/main/config/**"/>
-      </fileset>
-    </copy-->
 
     <copy-properties/>
   </target>
@@ -324,48 +197,28 @@
 
   <target name="assembly">
     <script language="beanshell">
-/*      import org.sf.scriptlandia.MavenHelper;
+      import org.codehaus.classworlds.ClassWorld;
+      import org.sf.jlaunchpad.DepsLauncher;
+      import org.sf.jlaunchpad.JLaunchPadLauncher;
+      import org.sf.jlaunchpad.core.LauncherCommandLineParser;
 
-      System.setProperty("-Djava.specification.version.level", "1.5");
+      String[] args = new String[]{ "assembly:assembly" };
 
-      MavenHelper.executeMaven("pom.xml", new String[] { "assembly:assembly" });
-*/
-//print("test");
+      ClassWorld classWorld = new ClassWorld();
 
-    import org.codehaus.classworlds.ClassWorld;
-    import org.sf.jlaunchpad.DepsLauncher;
-    import org.sf.jlaunchpad.JLaunchPadLauncher;
-    import org.sf.jlaunchpad.core.LauncherCommandLineParser;
+      LauncherCommandLineParser parser = new LauncherCommandLineParser();
 
+      DepsLauncher launcher = new DepsLauncher(parser, args, classWorld);
 
-    String[] args = new String[]{ "assembly:assembly" };
+      launcher.configure(Thread.currentThread().getContextClassLoader());
 
-    ClassWorld classWorld = new ClassWorld();
+      launcher.resolveDependencies("bsh", "bsh", "2.0b5");
 
-    LauncherCommandLineParser parser = new LauncherCommandLineParser();
+      import org.apache.maven.cli.MavenCli;
 
-    DepsLauncher launcher = new DepsLauncher(parser, args, classWorld);
+      MavenCli.main(args, classWorld);
+    </script>
 
-    launcher.configure(Thread.currentThread().getContextClassLoader());
-
-    launcher.resolveDependencies("bsh", "bsh", "2.0b5");
-
-    import org.apache.maven.cli.MavenCli;
-
-    MavenCli.main(args, classWorld);
-  </script>
-
-<!--
-    <condition property="extension" value="bat" else="sh">
-      <os family="Windows"/>
-    </condition>
-
-    <ant antfile="build.xml" dir="languages"/>
-
-    <exec executable="mvn.${extension}">
-      <arg value="assembly:assembly"/>
-    </exec>
-  -->
     <zip destfile="target/scriptlandia-${scriptlandia.version}-install.zip" update="true">
       <zipfileset dir="../../../jlaunchpad/trunk/launcher/projects" prefix="scriptlandia-${scriptlandia.version}/projects">
         <include name="**/target/*.jar"/>
@@ -380,12 +233,4 @@
     </zip>
   </target>
 
-  <!--target name="uninstall.all.languages">
-    <script language="beanshell">
-      source("projects/scriptlandia-config/src/main/bsh/ext-installer.bsh");
-
-      ExtInstaller installer = new ExtInstaller();
-      installer.uninstallAll();
-    </script>
-  </target-->
 </project>

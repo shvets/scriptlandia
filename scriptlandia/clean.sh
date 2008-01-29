@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. ./config.sh
+. ../../../jlaunchpad/trunk/launcher/config.sh
 
 rm -d -r -f projects/antrun\target
 rm -d -r -f projects/scriptlandia-helper/target

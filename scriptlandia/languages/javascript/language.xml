@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="javascript" groupId="rhino" artifactId="js" version="1.6R4">
-  <registration mimeType="text/js" icon="javascript.ico">
+  <registration mimeType="application/js" icon="javascript.ico">
     <extensions>
       <extension>js</extension>
     </extensions>

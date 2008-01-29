@@ -41,11 +41,24 @@ public class CoreInstaller {
 
         generateScripts();
 
+        registerXFreeDesktopExtensions();
+
         System.out.println("Scriptlandia core installed.");
       } catch (Exception e) {
         throw new LauncherException(e.getMessage());
       }
   }
+
+  private void registerXFreeDesktopExtensions() throws LauncherException {
+    SimpleLauncher launcher = new SimpleLauncher(new String[] { "register.xfeedesktop.extensions" });
+
+    launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
+    launcher.addClasspathEntry("projects/antrun/target/antrun.jar");
+
+    launcher.setMainClassName("org.sf.scriptlandia.antrun.AntRun");
+
+    launcher.configure(Thread.currentThread().getContextClassLoader());
+    launcher.launch();  }
 
   /**
    * Installs required projects.

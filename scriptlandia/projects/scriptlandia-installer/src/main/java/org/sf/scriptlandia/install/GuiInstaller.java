@@ -1,8 +1,9 @@
 package org.sf.scriptlandia.install;
 
+import com.sun.deploy.config.Config;
+import org.sf.jlaunchpad.JLaunchPadLauncher;
 import org.sf.jlaunchpad.core.LauncherException;
 import org.sf.jlaunchpad.install.LauncherProperties;
-import org.sf.jlaunchpad.JLaunchPadLauncher;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
@@ -15,11 +16,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.Map;
 import java.util.Properties;
-
-import com.sun.deploy.config.Config;
 
 /**
  * The class perform initial (gui) installation of scriprlandia.
@@ -818,6 +818,23 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     }
   }
 
+  public static void loadLibDeploy() {
+    String osName = System.getProperty("os.name").toLowerCase();
+
+    if(osName.startsWith("windows")) {
+      System.load(Config.getJavaHome() + File.separator + "bin" + File.separator + "deploy.dll");
+    }
+    else {
+      String libDir = System.getProperty("os.arch");
+
+      if (libDir.equals("x86")) {
+        libDir = "i386";
+      }
+
+      System.load(Config.getJavaHome() + File.separator + "lib" + File.separator + libDir + File.separator + "libdeploy.so");
+    }
+  }
+
   /**
    * Launches the GUI installer.
    *
@@ -828,17 +845,14 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     JLaunchPadLauncher launcher = JLaunchPadLauncher.getInstance();
 
     launcher.addClasspathEntry(System.getProperty("java.home") + File.separator + "lib" + File.separator + "deploy.jar");
-   System.out.println("1 " + System.getProperty("java.home"));
-    System.out.println("2 " + System.getProperty("java.home.internal"));
-    //System.out.println("? " + GuiInstaller.class.getClassLoader().getClass().getName());
 
     try {
-      System.load(Config.getJavaHome() + File.separator + "bin" + File.separator + "deploy.dll");
+      loadLibDeploy();
     }
-    catch(Throwable t) {
-      t.printStackTrace();
+    catch (Throwable t) {
+      throw new LauncherException(t);
     }
-    
+
     new GuiInstaller(args);
   }
 

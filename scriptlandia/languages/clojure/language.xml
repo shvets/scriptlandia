@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="clojure" groupId="clojure" artifactId="clojure" version="20071203">
-  <registration mimeType="text/clojure" icon="scriptlandia.ico">
+  <registration mimeType="application/clojure" icon="scriptlandia.ico">
     <extensions>
       <extension>clj</extension>
     </extensions>

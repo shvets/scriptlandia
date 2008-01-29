@@ -62,7 +62,6 @@ SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% "-Djava.compiler.version=%JAVA_COMPILE
 SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% "-Dscriptlandia.home=%SCRIPTLANDIA_HOME%"
 SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% "-Dlauncher.home=%LAUNCHER_HOME%"
 SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% "-Drepository.home=%REPOSITORY_HOME%"
-SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% "-Djava.library.path=."
 
 SET PROPERTIES1="-deps.file.name=%REPOSITORY_HOME%/org/sf/jlaunchpad/jlaunchpad-launcher/%LAUNCHER_VERSION%/jlaunchpad-launcher-%LAUNCHER_VERSION%.pom" 
 SET PROPERTIES1=%PROPERTIES1% "-main.class.name=org.sf.pomreader.ProjectInstaller"

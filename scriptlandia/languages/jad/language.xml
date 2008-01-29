@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="jad">
-  <registration mimeType="text/jad" icon="jad.ico">
+  <registration mimeType="application/jad" icon="jad.ico">
     <extensions>
       <extension>jad</extension>
     </extensions>

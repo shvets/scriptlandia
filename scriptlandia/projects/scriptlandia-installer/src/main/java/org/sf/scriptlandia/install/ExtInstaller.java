@@ -1,18 +1,21 @@
 package org.sf.scriptlandia.install;
 
 //import org.jdesktop.jdic.filetypes.*;
-import org.apache.tools.ant.*;
-import org.sf.jlaunchpad.core.SimpleLauncher;
-import org.sf.jlaunchpad.core.LauncherException;
-import org.jdom.JDOMException;
-
-import java.util.Arrays;
-import java.util.Map;
-import java.util.List;
-import java.io.IOException;
-import java.io.File;
 
 import com.sun.deploy.association.*;
+import org.apache.tools.ant.BuildLogger;
+import org.apache.tools.ant.DefaultLogger;
+import org.apache.tools.ant.Project;
+import org.apache.tools.ant.ProjectHelper;
+import org.jdom.JDOMException;
+import org.sf.jlaunchpad.core.LauncherException;
+import org.sf.jlaunchpad.core.SimpleLauncher;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This is the class for installing extensions.
@@ -30,7 +33,6 @@ public class ExtInstaller {
 
   /**
    * Install the extensions.
-   *
    */
   public void unregisterAllLanguages() {
     ExtXmlHelper xmlHelper = new ExtXmlHelper();
@@ -40,7 +42,7 @@ public class ExtInstaller {
 
     for (Object language : languages) {
       try {
-        unregisterLanguage((Map)language);
+        unregisterLanguage((Map) language);
       }
       catch (Exception e) {
         System.out.println("Exception: " + e.getMessage());
@@ -50,7 +52,7 @@ public class ExtInstaller {
 
   public void registerLanguage() throws JDOMException, IOException, LauncherException {
     ExtXmlHelper xmlHelper = new ExtXmlHelper();
-    Map language =  xmlHelper.readLanguage();
+    Map language = xmlHelper.readLanguage();
 
     registerLanguage(language);
   }
@@ -60,17 +62,17 @@ public class ExtInstaller {
 
     Boolean[] registrations = new Boolean[extensions.size()];
 
-    String openAction = getAction(getScriptExt(),  scriptlandiaHome) + " " + getCommandLineExpression();
+    String openAction = getAction(getScriptExt(), scriptlandiaHome) + " " + getCommandLineExpression();
 
     System.out.print("Registering extension(s): " + extensions + "... ");
 
-    for(int i=0; i < extensions.size(); i++) {
+    for (int i = 0; i < extensions.size(); i++) {
       try {
-        registrations[i] = registerExtension((String)extensions.get(i), (String)language.get("name"), (String)language.get("mimeType"),
-                                           (String)language.get("icon"), openAction);
+        registrations[i] = registerExtension((String) extensions.get(i), (String) language.get("name"), (String) language.get("mimeType"),
+            (String) language.get("icon"), openAction);
         System.out.println(openAction);
       }
-      catch(Throwable t) {
+      catch (Throwable t) {
         System.out.println("Exception: " + t.getMessage());
       }
     }
@@ -81,18 +83,18 @@ public class ExtInstaller {
   }
 
   private void executeAdditionalTasks(Map language) throws LauncherException {
-    String name = (String)language.get("name");
+    String name = (String) language.get("name");
 
     String antInstallName = "languages/" + name + "/install.ant";
 
-    if(new File(antInstallName).exists()) {
+    if (new File(antInstallName).exists()) {
       downloadLanguageArtifacts(language);
 
       File buildFile = new File("languages/" + name + "/install.ant");
 
       Project project = createAntProject();
 
-      project.setUserProperty("ant.file", buildFile.getAbsolutePath()); 
+      project.setUserProperty("ant.file", buildFile.getAbsolutePath());
 
       ProjectHelper.getProjectHelper().parse(project, buildFile);
 
@@ -101,7 +103,7 @@ public class ExtInstaller {
   }
 
   private void downloadLanguageArtifacts(Map language) throws LauncherException {
-    String[] args = new String[] { "-basedir", "languages/" + language.get("name") + "/core", "-build.required", "true"};
+    String[] args = new String[]{"-basedir", "languages/" + language.get("name") + "/core", "-build.required", "true"};
 
     SimpleLauncher launcher = new SimpleLauncher(args);
 
@@ -118,7 +120,7 @@ public class ExtInstaller {
 
     System.out.print("Unregistering extension(s): " + extensions + "... ");
 
-   for(int i=0; i < extensions.size(); i++) {
+    for (int i = 0; i < extensions.size(); i++) {
       try {
         registrations[i] = unregisterExtension((String) extensions.get(i), (String) language.get("mimeType"), (String) language.get("name"));
       }
@@ -131,8 +133,9 @@ public class ExtInstaller {
     System.out.println("Unregistered: " + Arrays.asList(registrations) + ".");
   }
 
- /**
+  /**
    * Creates Ant project.
+   *
    * @return Ant project
    */
   private Project createAntProject() {
@@ -154,32 +157,35 @@ public class ExtInstaller {
   /**
    * Registers single extension.
    *
-   * @param extension the extension to be registered
-   * @param iconName  icon name
+   * @param extension  the extension to be registered
+   * @param iconName   icon name
    * @param openAction the action, assosiated with this extension
-   * @param name name
-   * @param mimeType mime type
-   *,@param iconName icon name
+   * @param name       name
+   * @param mimeType   mime type
+   *                   ,@param iconName icon name
    * @return true if the extension is registered; false otherwise
+   * @throws AssociationAlreadyRegisteredException
+   *                                 exception
+   * @throws RegisterFailedException exception
    */
   private boolean registerExtension(String extension, String name, String mimeType,
-                                    String iconName, String openAction) throws AssociationAlreadyRegisteredException, RegisterFailedException
-  {
+                                    String iconName, String openAction) throws AssociationAlreadyRegisteredException, RegisterFailedException {
     boolean registered = false;
 
-    Association existingAssociation = associationService.getFileExtensionAssociation(extension);
+    Association association = null;
 
+    try {
 
-    if(existingAssociation == null || existingAssociation.getMimeType() == null ||
-       (!existingAssociation.getFileExtList().contains("." + extension) ||
-        !existingAssociation.getMimeType().equals(mimeType) ||
-        (existingAssociation.getActionByVerb("open") != null && !existingAssociation.getActionByVerb("open").getCommand().equals(openAction)))) {
-      Association association = new Association();
+      if (OS_NAME.toLowerCase().startsWith("windows")) {
+        Association existingAssociation = associationService.getFileExtensionAssociation(extension);
 
-      try {
-        // Adds the Association to the file types' table
-        // at the user level using an AssociationService object.
-        if(OS_NAME.toLowerCase().startsWith("windows")) {
+        if (existingAssociation == null || existingAssociation.getMimeType() == null ||
+            (!existingAssociation.getFileExtList().contains("." + extension) ||
+                !existingAssociation.getMimeType().equals(mimeType) ||
+                (existingAssociation.getActionByVerb("open") != null && !existingAssociation.getActionByVerb("open").getCommand().equals(openAction)))) {
+
+          association = new Association();
+
           association.setName(name);
           // Adds specific type to the Association object.
           association.addFileExtension(extension);
@@ -194,75 +200,81 @@ public class ExtInstaller {
           // Register an association in system level.
           //associationService.registerSystemAssociation(association);
           associationService.registerUserAssociation(association);
+        } else {
+          System.out.println("Registration is not required.");
         }
-        else {
-          association.setName(name.replace('\\', File.separatorChar));
-          association.addFileExtension(extension.toLowerCase());
-          association.addFileExtension(extension.toUpperCase());
-          association.setMimeType(mimeType);
-          //association.setDescription(mimeType);
-          association.setIconFileName(scriptlandiaHome + "/images/" + /* name.replace('/', File.separatorChar) + "/" + */ iconName);
+      } else {
 
-          // Be careful!!! Here neither "%1" not "%f" is required, and only "open" verb
-          // is used for this API.
-
-          association.addAction(new Action("open", openAction.replace('\\', File.separatorChar)));
-
-         // Register an association in system level.
-          // This requires root permission, would generate three files:
-          // javaws.keys and javaws.mime under /usr/share/mime-info or /usr/share/gnome/mime-info and
-          // javaws.applications under /usr/share/application-registry or /usr/share/gnome/application-registry.
-          //assocService.registerSystemAssociation(assoc);
-
-          // Register an association in user level.
-          // This would generate three files: javaws.keys and javaws.mime under ~/.gnome/mime-info,
-          // and javaws.applications under ~/.gnome/application-info.
-          associationService.registerUserAssociation(association);
-        }
-
-        registered = true;
+//        association = new Association();
+//
+//        association.setName(name.replace('\\', File.separatorChar));
+//        association.addFileExtension(extension.toLowerCase());
+//        association.addFileExtension(extension.toUpperCase());
+//        association.setMimeType(mimeType);
+//        //association.setDescription(mimeType);
+//        association.setIconFileName(scriptlandiaHome + "/images/" + /* name.replace('/', File.separatorChar) + "/" + */ iconName);
+//
+//        // Be careful!!! Here neither "%1" not "%f" is required, and only "open" verb
+//        // is used for this API.
+//
+//        association.addAction(new Action("open", openAction.replace('\\', File.separatorChar)));
+//
+//        // Register an association in system level.
+//        // This requires root permission, would generate three files:
+//        // javaws.keys and javaws.mime under /usr/share/mime-info or /usr/share/gnome/mime-info and
+//        // javaws.applications under /usr/share/application-registry or /usr/share/gnome/application-registry.
+//        //assocService.registerSystemAssociation(assoc);
+//
+//        // Register an association in user level.
+//        // This would generate three files: javaws.keys and javaws.mime under ~/.gnome/mime-info,
+//        // and javaws.applications under ~/.gnome/application-info.
+//        associationService.registerUserAssociation(association);
       }
-      catch (java.lang.IllegalArgumentException e) {
-        // This exception will be caught if the given Association is not valid
-        // to be added to the table of file types.
-        System.err.println(e);
-        //e.printStackTrace();
-      }
-      catch (AssociationAlreadyRegisteredException e) {
-        // This exception will be caught if the Association already
-        // exists in the table of file types.
 
-        //System.err.println(e);
+      registered = true;
+    }
+    catch (java.lang.IllegalArgumentException e) {
+      // This exception will be caught if the given Association is not valid
+      // to be added to the table of file types.
+      System.err.println(e);
+      //e.printStackTrace();
+    }
+    catch (AssociationAlreadyRegisteredException e) {
+      // This exception will be caught if the Association already
+      // exists in the table of file types.
 
-        try {
+      //System.err.println(e);
+
+      try {
+        if (association != null) {
           associationService.unregisterUserAssociation(association);
           associationService.registerUserAssociation(association);
 
           registered = true;
         }
-        catch(Exception e2) {
-          ;
-        }
       }
-      catch (RegisterFailedException e) {
-        // This exception will be caught if the Association was
-        // unable to be added to the table of file types.
+      catch (Exception e2) {
+        ;
+      }
+    }
+    catch (RegisterFailedException e) {
+      // This exception will be caught if the Association was
+      // unable to be added to the table of file types.
 
-        //System.err.println(e);
-        try {
+      //System.err.println(e);
+      try {
+        if (association != null) {
           associationService.unregisterUserAssociation(association);
           associationService.registerUserAssociation(association);
 
           registered = true;
         }
-        catch(Exception e2) {
-          System.err.println(e2);
-        }
+      }
+      catch (Exception e2) {
+        System.err.println(e2);
       }
     }
-    else {
-      System.out.println("Registration is not required.");
-    }
+
 
     return registered;
   }
@@ -270,7 +282,7 @@ public class ExtInstaller {
   public boolean unregisterExtension(String extension, String mimeType, String name) {
     boolean registered = false;
 
-    if(OS_NAME.toLowerCase().startsWith("windows")) {
+    if (OS_NAME.toLowerCase().startsWith("windows")) {
       Association association = new Association();
 
       association.addFileExtension(extension);
@@ -286,8 +298,7 @@ public class ExtInstaller {
       catch (RegisterFailedException e) {
         ;
       }
-    }
-    else {
+    } else {
       Association assosiation = new Association();
 
       assosiation.setName(name);
@@ -324,11 +335,10 @@ public class ExtInstaller {
   private String getScriptExt() {
     String scriptExt;
 
-    if(OS_NAME.toLowerCase().startsWith("windows")) {
+    if (OS_NAME.toLowerCase().startsWith("windows")) {
       scriptExt = "bat";
       //scriptExt = "exe";
-    }
-    else {
+    } else {
       scriptExt = "sh";
     }
 
@@ -343,10 +353,9 @@ public class ExtInstaller {
   private String getCommandLineExpression() {
     String scriptExt;
 
-    if(OS_NAME.toLowerCase().startsWith("windows")) {
+    if (OS_NAME.toLowerCase().startsWith("windows")) {
       scriptExt = "%1 %*";
-    }
-    else {
+    } else {
       //scriptExt = "$<";
       scriptExt = "";
     }
@@ -409,7 +418,7 @@ public class ExtInstaller {
   protected String getCommandLine(Map language) {
     String commandLine = (String) language.get("commandLine");
 
-    if(commandLine == null) {
+    if (commandLine == null) {
       commandLine = "";
     }
 

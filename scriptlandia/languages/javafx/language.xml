@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="javafx" groupId="javafx" artifactId="javafx" version="200710081507">
-  <registration mimeType="text/javafx" icon="javafx.ico">
+  <registration mimeType="application/javafx" icon="javafx.ico">
     <extensions>
       <extension>fx</extension>
     </extensions>

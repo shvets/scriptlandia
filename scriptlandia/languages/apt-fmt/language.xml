@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="apt-fmt" version="2.0">
-  <registration mimeType="text/apt-fmt" icon="apt-fmt.ico">
+  <registration mimeType="application/apt-fmt" icon="apt-fmt.ico">
     <extensions>
       <extension>apt-fmt</extension>
     </extensions>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="jawk" groupId="org.jawk" artifactId="jawk" version="0.14">
-  <registration mimeType="text/awk" icon="jawk.ico">
+  <registration mimeType="application/awk" icon="jawk.ico">
     <extensions>
       <extension>awk</extension>
       <extension>jawk</extension>

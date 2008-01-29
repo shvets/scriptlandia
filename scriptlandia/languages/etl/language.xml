@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="etl" groupId="scriptella" artifactId="scriptella-core" version="1.0beta">
-  <registration mimeType="text/etl" icon="etl.ico">
+  <registration mimeType="application/etl" icon="etl.ico">
     <extensions>
       <extension>etl</extension>
     </extensions>

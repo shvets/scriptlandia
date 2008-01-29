@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="scala" groupId="org.scala-lang" artifactId="scala-compiler" version="2.6.1">
-  <registration mimeType="text/scala" icon="scala.ico">
+  <registration mimeType="application/scala" icon="scala.ico">
     <extensions>
       <extension>scala</extension>
     </extensions>

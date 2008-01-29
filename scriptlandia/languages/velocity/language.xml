@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="velocity" groupId="org.apache.velocity" artifactId="velocity" version="1.5">
-  <registration mimeType="text/velocity" icon="velocity.ico">
+  <registration mimeType="application/velocity" icon="velocity.ico">
     <extensions>
       <extension>vm</extension>
       <extension>velocity</extension>

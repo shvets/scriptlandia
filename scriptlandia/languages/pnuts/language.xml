@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="pnuts" groupId="pnuts" artifactId="pnuts" version="1.2">
-  <registration mimeType="text/pnuts" icon="pnuts.ico">
+  <registration mimeType="application/pnuts" icon="pnuts.ico">
     <extensions>
       <extension>pnut</extension>
     </extensions>

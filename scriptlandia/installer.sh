@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. ./config.sh
+. ../../../jlaunchpad/trunk/launcher/config.sh
 
 
 if [ ! -f $LAUNCHER_HOME/launcher.sh ]; then
@@ -34,6 +34,39 @@ if [ ! -f $REPOSITORY_HOME/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/boots
 fi
 
 
+SCRIPTLANDIA_HOME=%DRIVE_LETTER%\scriptlandia
+MOBILE_JAVA_HOME=%DRIVE_LETTER%\Java\j2me-2.5
+RUBY_HOME=%DRIVE_LETTER%\Ruby\ruby-1.8.4-20
+
+SCRIPTLANDIA_VERSION=2.2.4
+ANT_VERSION=1.7.0
+BEANSHELL_VERSION=2.0b5
+NAILGUN_VERSION=0.7.1
+JAVA_COMPILER_VERSION=7.0-b23
+
+
+echo "? $JAVA_HOME"
+
+if [ ! -f $JAVA_HOME ]; then
+  ECHO JDK cannot be found!
+  pause
+  #exit
+fi
+
+if [ ! -f $MOBILE_JAVA_HOME ]; then
+  ECHO Java Micro Edition cannot be found!
+fi
+
+
+SYSTEM_PROPERTIES="$SYSTEM_PROPERTIES -Dant.version.internal=$ANT_VERSION"
+SYSTEM_PROPERTIES="$SYSTEM_PROPERTIES -Dbeanshell.version=$BEANSHELL_VERSION"
+SYSTEM_PROPERTIES="$SYSTEM_PROPERTIES -Dscriptlandia.version=$SCRIPTLANDIA_VERSION"
+SYSTEM_PROPERTIES="$SYSTEM_PROPERTIES -Dnailgun.version=$NAILGUN_VERSION"
+SYSTEM_PROPERTIES="$SYSTEM_PROPERTIES -Djava.compiler.version=$JAVA_COMPILER_VERSION"
+SYSTEM_PROPERTIES="$SYSTEM_PROPERTIES -Dscriptlandia.home=$SCRIPTLANDIA_HOME"
+SYSTEM_PROPERTIES="$SYSTEM_PROPERTIES -Dlauncher.home=$LAUNCHER_HOME"
+SYSTEM_PROPERTIES="$SYSTEM_PROPERTIES -Drepository.home=$REPOSITORY_HOME"
+
 PROPERTIES1="-deps.file.name=$REPOSITORY_HOME/org/sf/jlaunchpad/jlaunchpad-launcher/$LAUNCHER_VERSION/jlaunchpad-launcher-$LAUNCHER_VERSION.pom"
 PROPERTIES1="$PROPERTIES1 -main.class.name=org.sf.pomreader.ProjectInstaller"
 
@@ -55,6 +88,6 @@ PROPERTIES2="$PROPERTIES2 -main.class.name=$MAIN_CLASS"
 
 #LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$REPOSITORY_HOME/org/jdesktop/jdic/0.9.3"
 
-$LAUNCHER_HOME/launcher.sh $SYSTEM_PROPERTIES $PROPERTIES2-wait
+$LAUNCHER_HOME/launcher.sh $SYSTEM_PROPERTIES $PROPERTIES2 -wait
 
 # -Djava.library.path=$REPOSITORY_HOME/org/jdesktop/jdic/0.9.3

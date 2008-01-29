@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="jelly" groupId="commons-jelly" artifactId="commons-jelly" version="1.0">
-  <registration mimeType="text/jelly" icon="jelly.ico">
+  <registration mimeType="application/jelly" icon="jelly.ico">
     <extensions>
       <extension>jelly</extension>
     </extensions>

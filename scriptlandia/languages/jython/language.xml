@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="jython" groupId="jython" artifactId="jython" version="2.2.1">
-  <registration mimeType="text/python" icon="jython.ico">
+  <registration mimeType="application/python" icon="jython.ico">
     <extensions>
       <extension>py</extension>
       <extension>python</extension>

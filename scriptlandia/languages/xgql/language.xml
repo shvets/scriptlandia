@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="xgql" groupId="org.symeria.xgql" artifactId="xgq" version="2.0">
-  <registration mimeType="text/xqg" icon="xgql.ico">
+  <registration mimeType="application/xqg" icon="xgql.ico">
     <extensions>
       <extension>xgq</extension>
       <extension>xgql</extension>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="classworlds" groupId="classworlds" artifactId="classworlds" version="1.1">
-  <registration mimeType="text/classworlds" icon="classworlds.ico">
+  <registration mimeType="application/classworlds" icon="classworlds.ico">
     <extensions>
       <extension>cwd</extension>
     </extensions>

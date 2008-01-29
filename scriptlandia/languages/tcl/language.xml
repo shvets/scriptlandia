@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="tcl" groupId="tcl" artifactId="tcl" version="1.4.0">
-  <registration mimeType="text/tcl" icon="tcl.ico">
+  <registration mimeType="application/tcl" icon="tcl.ico">
     <extensions>
       <extension>tcl</extension>
     </extensions>

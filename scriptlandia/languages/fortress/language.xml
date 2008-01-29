@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="fortress" groupId="com.sun.fortress" artifactId="fortress" version="588">
-  <registration mimeType="text/fortress" icon="fortress.ico">
+  <registration mimeType="application/fortress" icon="fortress.ico">
     <extensions>
       <extension>fss</extension>
     </extensions>

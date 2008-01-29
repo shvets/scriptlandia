@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="freemarker" groupId="org.freemarker" artifactId="freemarker" version="2.3.11">
-  <registration mimeType="text/freemarker" icon="freemarker.ico">
+  <registration mimeType="application/freemarker" icon="freemarker.ico">
     <extensions>
       <extension>ftl</extension>
       <extension>freemarker</extension>

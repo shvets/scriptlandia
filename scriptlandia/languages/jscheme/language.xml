@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <language name="jscheme" groupId="jscheme" artifactId="jscheme" version="7.2">
-  <registration mimeType="text/scheme" icon="jscheme.ico">
+  <registration mimeType="application/scheme" icon="jscheme.ico">
     <extensions>
       <extension>scm</extension>
       <extension>scheme</extension>

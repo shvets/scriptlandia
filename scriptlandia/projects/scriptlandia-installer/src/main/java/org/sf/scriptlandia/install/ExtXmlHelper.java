@@ -111,21 +111,22 @@ public class ExtXmlHelper extends XmlHelper {
     map.put("mimeType", registration.getAttribute("mimeType").getValue());
     map.put("icon", registration.getAttribute("icon").getValue());
 
-    //String location = languageDir + "/" + name2;
+    String location = languageDir + "/" + name2;
 
-    //File file = new File(location + "/" + registration.getAttribute("icon").getValue());
+    File file = new File(location + "/" + registration.getAttribute("icon").getValue());
 
-    //if(!file.exists()) {
-    //  file = new File(languageDir + "/scriptlandia/scriptlandia.ico");
-    //}
+    if(!file.exists()) {
+      file = new File(languageDir + "/scriptlandia/scriptlandia.ico");
+    }
 
-    String scriptlandiaHome = System.getProperty("scriptlandia.home");
+  /*  String scriptlandiaHome = System.getProperty("scriptlandia.home");
 
     File file = new File(scriptlandiaHome + "/images/" + registration.getAttribute("icon").getValue());
 
     if(!file.exists()) {
       file = new File(scriptlandiaHome + "/images/" + "scriptlandia.ico");
     }
+    */
 
     java.util.List images = ICODecoder.read(file);
     ImageIcon icon = new ImageIcon((Image)images.get(0));
