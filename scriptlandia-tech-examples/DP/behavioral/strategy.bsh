@@ -22,7 +22,7 @@ class MyStrategy2 implements Strategy {
   }
 }
 
-// context's type and it's implementation
+// 2. context's type and it's implementation
 
 interface Context {
   void setStrategy(Strategy strategy);
@@ -42,7 +42,7 @@ class MyContext implements Context {
   }
 }
 
-// test
+// 3. test
 
 Context context = new MyContext();
 

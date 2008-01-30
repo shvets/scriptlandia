@@ -3,7 +3,7 @@
 // Compose objects into tree structures to represents part-whole hierarchies.
 // Let's clientstreat individual objects and compositions of objects uniformly.
 
-// 1.
+// 1. type interfaces: containing elements and leaves
 
 interface Component {
   boolean add(Component component);
@@ -14,16 +14,10 @@ interface Component {
 
 interface Leaf implements Component {}
 
-// 2.
+// 2. uncomplete implemetation
 
-class MyComponent implements Component {
-  private List children =new ArrayList();
-
-  private String name;
-
-  public MyComponent(String name) {
-    this.name = name;
-  }
+class AbstractComponent implements Component {
+  protected List children = new ArrayList();
 
   public boolean add(Component component) {
     return children.add(component);
@@ -36,19 +30,9 @@ class MyComponent implements Component {
   public List children() {
     return children;
   }
-
-  public String toString() {
-    return name + "\n  children: " + children;
-  }                    
 }
 
-class MyLeaf implements Leaf {
-  private String name;
-
-  public MyLeaf(String name) {
-    this.name = name;
-  }
-  
+class AbstractLeaf implements Leaf {
   public boolean add(Component component) {
     return false; // not supported
   }
@@ -60,27 +44,52 @@ class MyLeaf implements Leaf {
   public List children() {
     return null; // not supported
   }
+}
+
+// 3. implementations 
+
+class MyComponent extends AbstractComponent {
+  private String name;
+
+  public MyComponent(String name) {
+    this.name = name;
+  }
+
+  public String toString() {
+    return name + "\n  children: " + children;
+  }                    
+}
+
+class MyLeaf extends AbstractLeaf {
+  private String name;
+
+  public MyLeaf(String name) {
+    this.name = name;
+  }
+  
+  public boolean add(Component component) {
+    return false; // not supported
+  }
 
   public String toString() {
     return name;
   }
 }
 
-// 3. test
+// 4. test
 
-MyComponent container1 = new MyComponent("c1");
+Component component1 = new MyComponent("c1");
+Component component2 = new MyComponent("c2");
 
-MyComponent container2 = new MyComponent("c2");
+Leaf leaf1 = new MyLeaf("l1");
+Leaf leaf2 = new MyLeaf("l2");
+Leaf leaf3 = new MyLeaf("l3");
 
-MyLeaf leaf1 = new MyLeaf("l1");
-MyLeaf leaf2 = new MyLeaf("l2");
-MyLeaf leaf3 = new MyLeaf("l3");
+component1.add(component2);
+component1.add(leaf1);
+component1.add(leaf2);
 
-container1.add(container2);
-container1.add(leaf1);
-container1.add(leaf2);
+component2.add(leaf3);
 
-container2.add(leaf3);
-
-System.out.println("container1: " + container1);
+System.out.println("container1: " + component1);
 

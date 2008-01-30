@@ -4,10 +4,26 @@
 // Promotes loose coupling by keeping objects from referring to each other 
 // explicitly and it lets you vary their interactions independently.
 
+// 1. mediator interface
+
 interface Mediator {
   void operation1();
   void operation2();
 }
+
+// 2. Mediator implementation
+
+class MyMediator implements Mediator {
+  public void operation1() {
+    System.out.println("mediator: operation 1");
+  }
+
+  public void operation2() {
+    System.out.println("mediator: operation 2");
+  }
+}
+
+// 3. Concrete classes that are aware of mediator
 
 class Product1 {
   private Mediator mediator;
@@ -45,17 +61,7 @@ class Product3 {
   }
 }
 
-class MyMediator implements Mediator {
-  public void operation1() {
-    System.out.println("mediator: operation 1");
-  }
-
-  public void operation2() {
-    System.out.println("mediator: operation 2");
-  }
-}
-
-// test
+// 4. test
 
 MyMediator mediator = new MyMediator();
 

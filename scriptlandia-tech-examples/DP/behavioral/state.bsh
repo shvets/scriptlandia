@@ -21,7 +21,7 @@ class MyState2 implements State {
   }
 }
 
-// context's type and it's implementation
+// 2. context's type and it's implementation
 
 interface Context {
   void setState(State state);
@@ -41,7 +41,7 @@ class MyContext implements Context {
   }
 }
 
-// test
+// 3. test
 
 Context context = new MyContext();
 

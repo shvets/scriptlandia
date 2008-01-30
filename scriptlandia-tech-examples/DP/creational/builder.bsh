@@ -3,21 +3,7 @@
 // Separates the construction of a complex object from its representation so that the same
 // construction process can create different representations.
 
-// 1. type interface
-
-interface Product {
-  String name();
-}
-
-// 2. type implementation
-
-class Computer implements Product {
-  public String name() {
-    return "computer";
-  }
-}
-
-// 3. type builder interface
+// 1. type builder interface
 
 interface ProductBuilder {
   void buildPart1();
@@ -25,7 +11,7 @@ interface ProductBuilder {
   void buildPart3();
 }
 
-// 3. type builder implementations
+// 2. type builder implementations
 
 class ComputerBuilder implements ProductBuilder {
   public void buildPart1() {
@@ -55,7 +41,7 @@ class TableBuilder implements ProductBuilder {
   }
 }
 
-// 4. director
+// 3. director
 
 class Director {
   public void construct(ProductBuilder builder) {
@@ -65,7 +51,7 @@ class Director {
   }
 }
 
-// 5. test
+// 4. test
 
 Director director = new Director();
 

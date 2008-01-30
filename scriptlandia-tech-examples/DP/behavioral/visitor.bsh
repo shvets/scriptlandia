@@ -4,9 +4,6 @@
 // Lets you define a new operation without changing the classes of the elements on which
 // it operates.
 
-import java.util.*;
-
-
 // 1. type and visitor interfaces
 
 interface Visitable {
@@ -48,6 +45,7 @@ class MyVisitable3 implements Visitable {
 class MyCompoundVisitable implements Visitable {
   private Visitable visitable1 = new MyVisitable1();
   private Visitable visitable2 = new MyVisitable2();
+
   private Visitable[] visitables3 = new MyVisitable3[] {
     new MyVisitable3(), new MyVisitable3(), new MyVisitable3()
   };
@@ -58,6 +56,7 @@ class MyCompoundVisitable implements Visitable {
     // takes care of components
     visitable1.accept(visitor);
     visitable2.accept(visitor);
+
     for(MyVisitable3 visitable: visitables3) {
       visitable.accept(visitor);
     }
@@ -102,7 +101,7 @@ class MyVisitor2 implements Visitor {
   }
 }
 
-// test
+// 4. test
 
 Visitable visitable = new MyCompoundVisitable();
 

@@ -25,6 +25,7 @@ class Square implements Shape {
 // 3. Creator class for various types
 
 class ShapeCreator {
+
   // factory methods
 
   public Shape createLine() {

@@ -3,9 +3,13 @@
 // Define a one-to-many dependency between objects so that when one object
 // changes state, all it's dependents are notified and updated automatically.
 
+// 1. observer interface
+
 interface Observer {
   void update();
 }
+
+// 2. observer implementation
 
 class MyObserver implements Observer {
   String name;
@@ -19,6 +23,8 @@ class MyObserver implements Observer {
   }
 }
 
+// 3. Active component, serves as a container for observers and takes care of notifying
+//    them
 
 interface Subject {
   void addObserver(Observer observer);
@@ -27,6 +33,8 @@ interface Subject {
 
   void notifyObservers();
 }
+
+// 4. Implementation of active component
 
 class MySubject {
   private List observers = new ArrayList();
@@ -50,7 +58,7 @@ class MySubject {
   }
 }
 
-// test
+// 5. test
 
 Observer observer1 = new MyObserver("n1");
 Observer observer2 = new MyObserver("n2");
