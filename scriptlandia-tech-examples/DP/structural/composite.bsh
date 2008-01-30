@@ -1,0 +1,86 @@
+// composite.bsh
+
+// Compose objects into tree structures to represents part-whole hierarchies.
+// Let's clientstreat individual objects and compositions of objects uniformly.
+
+// 1.
+
+interface Component {
+  boolean add(Component component);
+  boolean remove(Component component);
+
+  List children();
+}
+
+interface Leaf implements Component {}
+
+// 2.
+
+class MyComponent implements Component {
+  private List children =new ArrayList();
+
+  private String name;
+
+  public MyComponent(String name) {
+    this.name = name;
+  }
+
+  public boolean add(Component component) {
+    return children.add(component);
+  }
+
+  public boolean remove(Component component) {
+    return children.remove(component);
+  }
+
+  public List children() {
+    return children;
+  }
+
+  public String toString() {
+    return name + "\n  children: " + children;
+  }                    
+}
+
+class MyLeaf implements Leaf {
+  private String name;
+
+  public MyLeaf(String name) {
+    this.name = name;
+  }
+  
+  public boolean add(Component component) {
+    return false; // not supported
+  }
+
+  public boolean remove(Component component) {
+    return false; // not supported
+  }
+
+  public List children() {
+    return null; // not supported
+  }
+
+  public String toString() {
+    return name;
+  }
+}
+
+// 3. test
+
+MyComponent container1 = new MyComponent("c1");
+
+MyComponent container2 = new MyComponent("c2");
+
+MyLeaf leaf1 = new MyLeaf("l1");
+MyLeaf leaf2 = new MyLeaf("l2");
+MyLeaf leaf3 = new MyLeaf("l3");
+
+container1.add(container2);
+container1.add(leaf1);
+container1.add(leaf2);
+
+container2.add(leaf3);
+
+System.out.println("container1: " + container1);
+

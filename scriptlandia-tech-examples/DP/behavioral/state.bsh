@@ -1,0 +1,5 @@
+// states.bsh
+
+// Allow an object to alter it's behavior when it's internal state changes.
+// The object will appear to change it's class.
+

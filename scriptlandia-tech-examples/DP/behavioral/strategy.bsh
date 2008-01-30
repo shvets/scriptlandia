@@ -1,0 +1,7 @@
+// strategy.bsh
+
+// Defines a family of algorithms, encapsulate each one, and
+make them interchangeable. Let the algorithm vart independently from
+clients that use it.
+
+

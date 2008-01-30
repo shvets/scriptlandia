@@ -1,0 +1,7 @@
+// template-method.bsh
+
+// Defines the skeleton of an algorithm in an operation, deferring some steps
+to subclases. Let subclasses redefine certain steps of an algorithm without 
+chranging the algorithm's structure.
+
+

@@ -1,0 +1,71 @@
+// decorator.bsh
+
+// Attaches additional responsibilities to an object dynamically. Provides
+// a flexible alternative to subclassing for extending functionality.
+
+// 1. type
+interface Item {
+  void preform();
+}
+
+// 2. type implementation
+
+class MyItem implements Item {
+  public void perform() {
+    System.out.println("my item");
+  }
+}
+
+// 3. traditional solution based on inheritance
+
+class TraditionalItem extends MyItem {
+  public void preDecoration() {
+    System.out.println("my item pre decoration");
+  }
+
+  public void postDecoration() {
+    System.out.println("my item post decoration");
+  }
+
+  public void perform() {
+    preDecoration();
+
+    super.perform();
+
+    postDecoration();
+  }
+}
+
+// 4. solution based on decorator
+
+class Decorator implements Item {
+  private Item item;
+
+  public Decorator(Item item) {
+    this.item = item;
+  }
+
+  public void preDecoration() {
+    System.out.println("my item pre decoration");
+  }
+
+  public void postDecoration() {
+    System.out.println("my item post decoration");
+  }
+
+  public void perform() {
+    preDecoration();
+
+    item.perform();
+
+    postDecoration();
+  }
+}
+
+// 5. test
+
+Item item1 = new TraditionalItem();
+Item item2 = new Decorator(new MyItem());
+
+item1.perform();
+item2.perform();
