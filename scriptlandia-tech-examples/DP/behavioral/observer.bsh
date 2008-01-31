@@ -23,10 +23,9 @@ class MyObserver implements Observer {
   }
 }
 
-// 3. Active component, serves as a container for observers and takes care of notifying
-//    them
+// 3. Observable, serves as a container for observers and takes care of notifying them
 
-interface Subject {
+interface Observable {
   void addObserver(Observer observer);
   
   void removeObserver(Observer observer);
@@ -34,9 +33,9 @@ interface Subject {
   void notifyObservers();
 }
 
-// 4. Implementation of active component
+// 4. Implementation of observable
 
-class MySubject {
+class AbstractObservable implements Observable {
   private List observers = new ArrayList();
 
   public void addObserver(Observer observer) {
@@ -64,10 +63,10 @@ Observer observer1 = new MyObserver("n1");
 Observer observer2 = new MyObserver("n2");
 Observer observer3 = new MyObserver("n3");
 
-MySubject subject = new MySubject();
+Observable observable = new AbstractObservable();
 
-subject.addObserver(observer1);
-subject.addObserver(observer2);
-subject.addObserver(observer3);
+observable.addObserver(observer1);
+observable.addObserver(observer2);
+observable.addObserver(observer3);
 
-subject.notifyObservers();
+observable.notifyObservers();
