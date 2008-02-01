@@ -6,6 +6,4 @@
 
   <bean id="userService" class="dao.UserServiceImpl" singleton="true" />
 
-  <!-- add your spring beans here -->
-  
 </beans>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+  <definition name=".simpleLayout" template="/WEB-INF/templates/simpleLayout.jsp">
+    <put-attribute name="title" type="string" value='blank'/>
+    <put-attribute name="header" value='/WEB-INF/templates/emptyContent.jsp'/>
+    <put-attribute name="content" value='/WEB-INF/templates/emptyContent.jsp'/>
+    <put-attribute name="footer" value='/WEB-INF/templates/emptyContent.jsp'/>
+  </definition>
+
+  <definition name=".list" extends=".simpleLayout">
+    <put-attribute name="title" type="string" value='List users'/>
+    <put-attribute name="content" value='/struts2/list.jsp'/>
+  </definition>
+
+</tiles-definitions>
