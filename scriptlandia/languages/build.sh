@@ -13,6 +13,4 @@ MAIN_CLASS=org.apache.tools.ant.Main
 
 PROPERTIES="-deps.file.name=../projects/scriptlandia-startup/pom.xml -main.class.name=$MAIN_CLASS"
 
-$LAUNCHER_HOME/launcher.sh \
-  $SYSTEM_PROPERTIES $PROPERTIES \
-  -f package.ant package
+$JLAUNCHPAD_HOME/jlaunchpad.sh $SYSTEM_PROPERTIES $PROPERTIES -f package.ant package

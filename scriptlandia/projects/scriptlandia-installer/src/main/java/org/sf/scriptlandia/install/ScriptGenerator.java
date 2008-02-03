@@ -119,7 +119,7 @@ public class ScriptGenerator extends ExtInstaller {
     writer.write("SET REPOSITORY_HOME=" + repositoryHome.replace('/', '\\'));
     writer.newLine();
 
-    writer.write("SET LAUNCHER_HOME=" + launcherHome.replace('/', '\\'));
+    writer.write("SET JLAUNCHPAD_HOME=" + launcherHome.replace('/', '\\'));
     writer.newLine();
 
     writer.write("SET SCRIPTLANDIA_HOME=" + scriptlandiaHome.replace('/', '\\'));
@@ -214,7 +214,7 @@ public class ScriptGenerator extends ExtInstaller {
     writer.write("REPOSITORY_HOME=" + repositoryHome.replace('\\', '/'));
     writer.newLine();
 
-    writer.write("LAUNCHER_HOME=" + launcherHome.replace('\\', '/'));
+    writer.write("JLAUNCHPAD_HOME=" + launcherHome.replace('\\', '/'));
     writer.newLine();
 
     writer.write("SCRIPTLANDIA_HOME=" + scriptlandiaHome.replace('\\', '/'));

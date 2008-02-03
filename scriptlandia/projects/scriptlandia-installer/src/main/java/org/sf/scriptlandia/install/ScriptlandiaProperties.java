@@ -46,7 +46,7 @@ public class ScriptlandiaProperties extends Properties {
       //put("java.home", root + "Java" + File.separatorChar + "jdk1.6.0");
       put("mobile.java.home", "");
       put("scriptlandia.home", root + "scriptlandia");
-      put("launcher.home", root + "launcher");
+      put("jlaunchpad.home", root + "launcher");
 
       put("native.ruby.home", "");
     }

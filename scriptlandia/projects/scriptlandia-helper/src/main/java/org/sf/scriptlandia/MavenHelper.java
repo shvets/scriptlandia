@@ -70,20 +70,20 @@ public class MavenHelper {
 
     Map<String, String> origSystemParams = new HashMap<String, String>();
 
-	  for (String arg : args) {
-		  if (arg.startsWith("-D")) {
-			  int index = arg.indexOf("=");
-			  String key = arg.substring(2, index);
-			  String value = arg.substring(index + 1);
+          for (String arg : args) {
+                  if (arg.startsWith("-D")) {
+                          int index = arg.indexOf("=");
+                          String key = arg.substring(2, index);
+                          String value = arg.substring(index + 1);
 
-			  origSystemParams.put(key, System.getProperty(key));
+                          origSystemParams.put(key, System.getProperty(key));
 
-			  System.setProperty(key, value);
-		  }
-		  else {
-			  newArgsList.add(arg);
-		  }
-	  }
+                          System.setProperty(key, value);
+                  }
+                  else {
+                          newArgsList.add(arg);
+                  }
+          }
 
     //newArgsList.addAll(Arrays.asList(args));
 
@@ -96,13 +96,13 @@ public class MavenHelper {
     //System.out.println("Maven args: " + java.util.Arrays.asList(newArgs));
     MavenCli.main(newArgs, classWorld);
 
-	  for (String s : origSystemParams.keySet()) {
-		  String value = System.getProperty(s);
+          for (String s : origSystemParams.keySet()) {
+                  String value = System.getProperty(s);
 
-		  if (value != null) {
-			  System.setProperty(s, value);
-		  }
-	  }
+                  if (value != null) {
+                          System.setProperty(s, value);
+                  }
+          }
   }
 
   /**
@@ -150,7 +150,7 @@ public class MavenHelper {
     PomReader pomReader = new PomReader();
     pomReader.init();
 
-	return pomReader.calculateDependencies(new File(pomName));
+        return pomReader.calculateDependencies(new File(pomName));
   }
 
   /**
@@ -263,48 +263,28 @@ public class MavenHelper {
 
     DependenciesTask dependenciesTask = createDependenciesTask(project, id, useScope);
 
-    //String launcherHome = System.getProperty("launcher.home");
-/*    List<org.apache.maven.bootstrap.model.Repository> repositories;
+    PomReader pomReader = new PomReader();
+     pomReader.init();
 
-    RepositoriesReader reader = new RepositoriesReader();
-    File file = new File("repositories.xml");
+     List<Repository> repositories = new ArrayList<Repository>();
 
-    if (!file.exists()) {
-      file = new File(launcherHome + File.separatorChar + "repositories.xml");
+    ArtifactResolver resolver = pomReader.getResolver();
+
+    if(resolver instanceof OnlineArtifactDownloader) {
+           repositories = ((OnlineArtifactDownloader)resolver).getRemoteRepositories();
     }
 
-    if (!file.exists()) {
-      System.out.println("File " + file.getName() + " cannot be found.");
-      repositories = new ArrayList<org.apache.maven.bootstrap.model.Repository>();
-    } else {
-      reader.parse(file);
-      repositories = reader.getRepositories();
+    for (Repository r : repositories) {
+      RemoteRepository repository = new RemoteRepository();
+      repository.setId(r.getId());
+      repository.setLayout(r.getLayout());
+      repository.setUrl(r.getBasedir());
+
+      dependenciesTask.addRemoteRepository(repository);
     }
-    */
 
-	  //project.setNewProperty("maven.repo.local", System.getProperty("maven.repo.local"));
-	  PomReader pomReader = new PomReader();
-	   pomReader.init();
-
-	   List<Repository> repositories = new ArrayList<Repository>();
-
-	  ArtifactResolver resolver = pomReader.getResolver();
-
-	  if(resolver instanceof OnlineArtifactDownloader) {
-		 repositories = ((OnlineArtifactDownloader)resolver).getRemoteRepositories();
-	  }
-
-      for (Repository r : repositories) {
-          RemoteRepository repository = new RemoteRepository();
-          repository.setId(r.getId());
-          repository.setLayout(r.getLayout());
-          repository.setUrl(r.getBasedir());
-
-          dependenciesTask.addRemoteRepository(repository);
-      }
-
-	dependenciesTask.setSettingsFile(new File(System.getProperty("launcher.home") + File.separatorChar + "settings.xml"));
-	  
+    dependenciesTask.setSettingsFile(new File(System.getProperty("jlaunchpad.home") + File.separatorChar + "settings.xml"));
+          
     dependenciesTask.execute();
 
     JLaunchPadLauncher launcher = ScriptlandiaLauncher.getInstance();

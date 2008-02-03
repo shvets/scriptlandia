@@ -1,27 +1,27 @@
 #!/bin/sh
 
-. ../../../jlaunchpad/trunk/launcher/config.sh
+. ../../../jlaunchpad/trunk/jlaunchpad/config.sh
 
 
-if [ ! -f $LAUNCHER_HOME/launcher.sh ]; then
+if [ ! -f $LAUNCHER_HOME/jlaunchpad.sh ]; then
   echo Please run jlaunchpad-installer.sht first.
   pause
   exit
 fi
 
-if [ ! -f $REPOSITORY_HOME/org/sf/jlaunchpad/jlaunchpad-launcher/$LAUNCHER_VERSION/jlaunchpad-launcher-$LAUNCHER_VERSION.jar ]; then
+if [ ! -f $REPOSITORY_HOME/org/sf/jlaunchpad/jlaunchpad-launcher/$JLAUNCHPAD_VERSION/jlaunchpad-launcher-$JLAUNCHPAD_VERSION.jar ]; then
   echo Please run jlaunchpad-installer.bat first.
   pause
   exit
 fi
 
-if [ ! -f $REPOSITORY_HOME/org/sf/jlaunchpad/jlaunchpad-common/$LAUNCHER_VERSION/jlaunchpad-common-$LAUNCHER_VERSION.jar ]; then
+if [ ! -f $REPOSITORY_HOME/org/sf/jlaunchpad/jlaunchpad-common/$JLAUNCHPAD_VERSION/jlaunchpad-common-$JLAUNCHPAD_VERSION.jar ]; then
   echo Please run jlaunchpad-installer.bat first.
   pause
   exit
 fi
 
-if [ ! -f $REPOSITORY_HOME/org/sf/jlaunchpad/pom-reader/$LAUNCHER_VERSION/pom-reader-$LAUNCHER_VERSION.jar ]; then
+if [ ! -f $REPOSITORY_HOME/org/sf/jlaunchpad/pom-reader/$JLAUNCHPAD_VERSION/pom-reader-$JLAUNCHPAD_VERSION.jar ]; then
   echo Please run jlaunchpad-installer.bat first.
   pause
   exit
@@ -44,9 +44,6 @@ BEANSHELL_VERSION=2.0b5
 NAILGUN_VERSION=0.7.1
 JAVA_COMPILER_VERSION=7.0-b23
 
-
-echo "? $JAVA_HOME"
-
 if [ ! -f $JAVA_HOME ]; then
   ECHO JDK cannot be found!
   pause
@@ -64,19 +61,19 @@ SYSTEM_PROPERTIES="$SYSTEM_PROPERTIES -Dscriptlandia.version=$SCRIPTLANDIA_VERSI
 SYSTEM_PROPERTIES="$SYSTEM_PROPERTIES -Dnailgun.version=$NAILGUN_VERSION"
 SYSTEM_PROPERTIES="$SYSTEM_PROPERTIES -Djava.compiler.version=$JAVA_COMPILER_VERSION"
 SYSTEM_PROPERTIES="$SYSTEM_PROPERTIES -Dscriptlandia.home=$SCRIPTLANDIA_HOME"
-SYSTEM_PROPERTIES="$SYSTEM_PROPERTIES -Dlauncher.home=$LAUNCHER_HOME"
+SYSTEM_PROPERTIES="$SYSTEM_PROPERTIES -Djlaunchpad.home=$JLAUNCHPAD_HOME"
 SYSTEM_PROPERTIES="$SYSTEM_PROPERTIES -Drepository.home=$REPOSITORY_HOME"
 
-PROPERTIES1="-deps.file.name=$REPOSITORY_HOME/org/sf/jlaunchpad/jlaunchpad-launcher/$LAUNCHER_VERSION/jlaunchpad-launcher-$LAUNCHER_VERSION.pom"
+PROPERTIES1="-deps.file.name=$REPOSITORY_HOME/org/sf/jlaunchpad/jlaunchpad-launcher/$JLAUNCHPAD_VERSION/jlaunchpad-launcher-$JLAUNCHPAD_VERSION.pom"
 PROPERTIES1="$PROPERTIES1 -main.class.name=org.sf.pomreader.ProjectInstaller"
 
 # Install antrun project
 
-$LAUNCHER_HOME/launcher.sh $SYSTEM_PROPERTIES $PROPERTIES1 -Dbasedir=projects/antrun -Dbuild.required=false
+$JLAUNCHPAD_HOME/jlaunchpad.sh $SYSTEM_PROPERTIES $PROPERTIES1 -Dbasedir=projects/antrun -Dbuild.required=false
 
 # Install scriptlandia-installer project
 
-$LAUNCHER_HOME/launcher.sh $SYSTEM_PROPERTIES $PROPERTIES1 -Dbasedir=projects/scriptlandia-installer -Dbuild.required=false
+$JLAUNCHPAD_HOME/jlaunchpad.sh $SYSTEM_PROPERTIES $PROPERTIES1 -Dbasedir=projects/scriptlandia-installer -Dbuild.required=false
 
 # Execute scriptlandia-installer project
 
@@ -86,8 +83,4 @@ MAIN_CLASS=org.sf.scriptlandia.install.GuiInstaller
 PROPERTIES2="-deps.file.name=projects/scriptlandia-installer/pom.xml"
 PROPERTIES2="$PROPERTIES2 -main.class.name=$MAIN_CLASS"
 
-#LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$REPOSITORY_HOME/org/jdesktop/jdic/0.9.3"
-
-$LAUNCHER_HOME/launcher.sh $SYSTEM_PROPERTIES $PROPERTIES2 -wait
-
-# -Djava.library.path=$REPOSITORY_HOME/org/jdesktop/jdic/0.9.3
+$JLAUNCHPAD_HOME/jlaunchpad.sh $SYSTEM_PROPERTIES $PROPERTIES2 -wait

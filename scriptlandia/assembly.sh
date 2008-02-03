@@ -6,7 +6,7 @@
 
 . ./build.sh
 
-. ./$LAUNCHER_HOME/launcher.sh \
+. ./$JLAUNCHPAD_HOME/jlaunchpad.sh \
   "-deps.file.name=languages/ant/core/pom.xml" \
   "-deps.file.name=languages/beanshell/core/pom.xml" \
   "-deps.file.name=languages/maven/core/pom.xml" \

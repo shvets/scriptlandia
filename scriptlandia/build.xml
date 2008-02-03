@@ -57,16 +57,16 @@
 
     <script language="beanshell">
       String scriptlandiaHome = System.getProperty("scriptlandia.home");
-      String launcherHome = System.getProperty("launcher.home");
+      String launcherHome = System.getProperty("jlaunchpad.home");
 
       project.setNewProperty("scriptlandia.home.internal", scriptlandiaHome.replace('\\', '/'));
-      project.setNewProperty("launcher.home.internal", launcherHome.replace('\\', '/'));
+      project.setNewProperty("jlaunchpad.home.internal", launcherHome.replace('\\', '/'));
     </script>
 
     <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
     <filter token="native.ruby.home" value="${native.ruby.home}"/>
 
-    <filter token="launcher.home" value="${launcher.home}"/>
+    <filter token="jlaunchpad.home" value="${jlaunchpad.home}"/>
 
     <filterset id="copy.filterset">
       <filter token="java.specification.version.level" value="${java.specification.version.level}"/>
@@ -78,8 +78,8 @@
       <filter token="scriptlandia.home" value="${scriptlandia.home.internal}"/>
       <filter token="native.ruby.home" value="${native.ruby.home}"/>
 
-      <filter token="launcher.home" value="${launcher.home.internal}"/>
-      <filter token="launcher.version" value="${launcher.version}"/>
+      <filter token="jlaunchpad.home" value="${jlaunchpad.home.internal}"/>
+      <filter token="jlaunchpad.version" value="${jlaunchpad.version}"/>
 
       <filter token="scriptlandia.version" value="${scriptlandia.version}"/>
       <filter token="classworlds.version" value="${classworlds.version}"/>

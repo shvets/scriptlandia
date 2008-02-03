@@ -314,7 +314,7 @@
       </action>
 
       <action dev="Alexander Shvets" type="fix">
-        Upgrade Groovy up to version 1.5.0.
+        Upgrade Groovy up to version 1.5.1.
       </action>
 
       <action dev="Alexander Shvets" type="fix">

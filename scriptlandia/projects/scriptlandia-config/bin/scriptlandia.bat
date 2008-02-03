@@ -2,7 +2,7 @@
 
 set MOBILE_JAVA_HOME=@mobile.java.home@
 set SCRIPTLANDIA_HOME=@scriptlandia.home@
-set LAUNCHER_HOME=@launcher.home@
+set JLAUNCHPAD_HOME=@jlaunchpad.home@
 
 SET NAILGUN=@repository.home@\com\martiansoftware\nailgun-bin\@nailgun.version@\ng
 
@@ -37,6 +37,6 @@ SET LAUNCHER_CLASS=org.codehaus.classworlds.Launcher
 goto end
 
 :runJava
-call %LAUNCHER_HOME%\launcher-core.bat %*
+call %JLAUNCHPAD_HOME%\jlaunchpad-core.bat %*
 
 :end

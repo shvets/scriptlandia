@@ -19,7 +19,7 @@
 
   <properties>
     <ant.version>1.7.0</ant.version>
-    <launcher.version>1.0.1</launcher.version>
+    <jlaunchpad.version>1.0.1</jlaunchpad.version>
   </properties>
     
   <issueManagement>
@@ -81,7 +81,7 @@
     <dependency>
       <groupId>org.sf.jlaunchpad</groupId>
       <artifactId>jlaunchpad-launcher</artifactId>
-      <version>${launcher.version}</version>
+      <version>${jlaunchpad.version}</version>
     </dependency>
 
     <dependency>

@@ -12,7 +12,7 @@ public class InstallerTest extends TestCase {
 
     System.setProperty("repository.home", "c:/maven-repository");
     System.setProperty("ant.version.internal", "1.7.0");    
-    //System.setProperty("launcher.home", "c:/launcher");
+    //System.setProperty("jlaunchpad.home", "c:/launcher");
   }
 
   protected void tearDown() throws Exception {

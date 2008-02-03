@@ -66,11 +66,11 @@ public class LauncherHelper {
     System.setProperty("java.home.internal", (String) launcherProps.get("java.home.internal"));
 
     String scriptlandiaHome = (String) scriptlandiaProps.get("scriptlandia.home");
-    String launcherHome = (String) scriptlandiaProps.get("launcher.home");
+    String launcherHome = (String) scriptlandiaProps.get("jlaunchpad.home");
 
     String scalaVersion = (String)scriptlandiaProps.get("scala.version");
     String scriptlandiaVersion = (String)scriptlandiaProps.get("scriptlandia.version");
-    String launcherVersion = (String)scriptlandiaProps.get("launcher.version");
+    String launcherVersion = (String)scriptlandiaProps.get("jlaunchpad.version");
     String jaskellVersion = (String)scriptlandiaProps.get("jaskell.version");
     String jrubyVersion = (String)scriptlandiaProps.get("jruby.version");
     String jythonVersion = (String)scriptlandiaProps.get("jython.version");
@@ -80,7 +80,7 @@ public class LauncherHelper {
 //    System.setProperty("maven.repo.local", repositoryHome);
     System.setProperty("repository.home", repositoryHome);
     System.setProperty("scriptlandia.home", scriptlandiaHome);
-    System.setProperty("launcher.home", launcherHome);
+    System.setProperty("jlaunchpad.home", launcherHome);
 
     System.setProperty("java.compiler.version", javaCompilerVersion);
 
@@ -96,7 +96,7 @@ public class LauncherHelper {
     System.setProperty("jaskell.home", repositoryHome + "/jaskell/jaskell/" + jaskellVersion);
     System.setProperty("scala.version", scalaVersion);
     System.setProperty("scriptlandia.version", scriptlandiaVersion);
-    System.setProperty("launcher.version", launcherVersion);
+    System.setProperty("jlaunchpad.version", launcherVersion);
 
     //System.setProperty("jdic.version", "0.9.3");
     System.setProperty("nailgun.version", "0.7.1");
@@ -135,7 +135,7 @@ public class LauncherHelper {
     String repositoryHome = (String) launcherProps.get("repository.home");
 
     String scriptlandiaVersion = (String)scriptlandiaProps.get("scriptlandia.version");
-    String launcherVersion = (String)scriptlandiaProps.get("launcher.version");
+    String launcherVersion = (String)scriptlandiaProps.get("jlaunchpad.version");
     String nailgunVersion = (String)scriptlandiaProps.get("nailgun.version");
     //String jdicVersion = (String)scriptlandiaProps.get("jdic.version");
 

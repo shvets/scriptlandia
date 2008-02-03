@@ -26,7 +26,7 @@ import java.util.Map;
 public class ExtInstaller {
   protected final String OS_NAME = System.getProperty("os.name");
   protected final String repositoryHome = System.getProperty("repository.home");
-  protected String launcherHome = System.getProperty("launcher.home");
+  protected String launcherHome = System.getProperty("jlaunchpad.home");
   protected final String scriptlandiaHome = System.getProperty("scriptlandia.home");
 
   private AssociationService associationService = new AssociationService();

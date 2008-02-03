@@ -416,8 +416,8 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
 
   protected JComponent fillLanguagesPanel(final JPanel panel) {
     if (!languagesPanelUpdated) {
-      if (System.getProperty("launcher.home") == null) {
-        System.setProperty("launcher.home", launcherHomeField.getText().trim());
+      if (System.getProperty("jlaunchpad.home") == null) {
+        System.setProperty("jlaunchpad.home", launcherHomeField.getText().trim());
       }
 
       if (System.getProperty("scriptlandia.home") == null) {
@@ -637,7 +637,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     System.setProperty("mobile.java.home", mobileJavaHomeField.getText().trim());
 
     System.setProperty("scriptlandia.home", scriptlandiaHomeField.getText().trim());
-    System.setProperty("launcher.home", launcherHomeField.getText().trim());
+    System.setProperty("jlaunchpad.home", launcherHomeField.getText().trim());
     System.setProperty("native.ruby.home", rubyHomeField.getText().trim());
   }
 
@@ -730,7 +730,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     updateProperty(scriptlandiaProps, mobileJavaHomeField, "mobile.java.home");
     updateProperty(scriptlandiaProps, scriptlandiaHomeField, "scriptlandia.home");
     updateProperty(scriptlandiaProps, rubyHomeField, "native.ruby.home");
-    updateProperty(scriptlandiaProps, launcherHomeField, "launcher.home");
+    updateProperty(scriptlandiaProps, launcherHomeField, "jlaunchpad.home");
   }
 
   @SuppressWarnings({"MismatchedQueryAndUpdateOfCollection"})
@@ -741,9 +741,9 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     saveProperty(scriptlandiaProps, mobileJavaHomeField, "mobile.java.home");
     saveProperty(scriptlandiaProps, scriptlandiaHomeField, "scriptlandia.home");
     saveProperty(scriptlandiaProps, rubyHomeField, "native.ruby.home");
-    saveProperty(scriptlandiaProps, launcherHomeField, "launcher.home");
+    saveProperty(scriptlandiaProps, launcherHomeField, "jlaunchpad.home");
 
-    scriptlandiaProps.put("launcher.version", System.getProperty("launcher.version"));
+    scriptlandiaProps.put("jlaunchpad.version", System.getProperty("jlaunchpad.version"));
     //scriptlandiaProps.put("jdic.version", System.getProperty("jdic.version"));
     scriptlandiaProps.put("nailgun.version", System.getProperty("nailgun.version"));
     scriptlandiaProps.put("java.compiler.version", System.getProperty("java.compiler.version"));

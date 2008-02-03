@@ -2,7 +2,7 @@
 
 MOBILE_JAVA_HOME=@mobile.java.home@
 SCRIPTLANDIA_HOME=@scriptlandia.home@
-LAUNCHER_HOME=@launcher.home@
+JLAUNCHPAD_HOME=@jlaunchpad.home@
 NAILGUN=@repository.home@/com/martiansoftware/nailgun-bin/@nailgun.version@/ng
 
 #APP=`dirname "$0"`
@@ -16,6 +16,6 @@ if [ ! -f $MAIN_APP_CONF ]; then
   MAIN_APP_CONF=$SCRIPTLANDIA_HOME/scriptlandia.conf
 fi
 
-export LAUNCHER_HOME NAILGUN MAIN_APP_CONF
+export JLAUNCHPAD_HOME NAILGUN MAIN_APP_CONF
 
-$LAUNCHER_HOME/launcher-core.sh $*
+$JLAUNCHPAD_HOME/jlaunchpad-core.sh $*

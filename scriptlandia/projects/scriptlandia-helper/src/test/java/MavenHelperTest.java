@@ -18,7 +18,7 @@ public class MavenHelperTest extends TestCase {
     super.setUp();
 
     System.setProperty("repository.home", "c:/maven-repository");
-    System.setProperty("launcher.home", "c:/launcher");
+    System.setProperty("jlaunchpad.home", "c:/jlaunchpad");
   }
 
   protected void tearDown() throws Exception {
@@ -98,7 +98,7 @@ public class MavenHelperTest extends TestCase {
 
     try {
       System.setProperty("classworlds.conf", "C:/scriptlandia/classworlds.conf");
-      System.setProperty("launcher.version", "1.0.1");
+      System.setProperty("jlaunchpad.version", "1.0.1");
 
       Launcher.main(args);
     } catch (Exception e) {
