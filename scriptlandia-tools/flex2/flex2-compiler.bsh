@@ -1,0 +1,16 @@
+// flex2-compiler.bsh
+
+//org.sf.scriptlandia.ScriptlandiaHelper.resolveDependencies("adobe.flex2", "flex2-anttasks", "1.0");
+org.sf.scriptlandia.launcher.ScriptlandiaLauncher.getInstance().addClasspathEntry("flex-compiler-oem.jar");
+org.sf.scriptlandia.launcher.ScriptlandiaLauncher.getInstance().addClasspathEntry("C:/Java/flex/sdk/lib/swfkit.jar");
+org.sf.scriptlandia.launcher.ScriptlandiaLauncher.getInstance().addClasspathEntry("C:/Java/flex/sdk/lib/mxmlc.jar");
+
+import flex2.tools.oem.*;
+import java.io.*;
+
+Application application = new Application(/*"example", */new File("helloworld.mxml"));
+Configuration c = application.getDefaultConfiguration();
+c.setLicense("compiler","0000-0000-0000-0000-0000-0000");
+application.setConfiguration(c);
+application.setOutput(new File("helloworld.swf"));
+application.build(false);
