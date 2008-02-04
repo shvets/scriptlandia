@@ -357,6 +357,10 @@
         Removing dependency to jdic library in favor of Java's deploy.jar.
       </action>
 
+      <action dev="Alexander Shvets" type="add">
+        Added support for YOIX language version 2.1.10.
+      </action>
+
     </release>
   </body>
 
