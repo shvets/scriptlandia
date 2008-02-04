@@ -3,7 +3,7 @@
   <component name="DBNavigator.Module.ConnectionManager">
     <connections />
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <exclude-output />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
@@ -874,15 +874,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.codehaus.groovy:groovy-all:1.5.0">
+      <library name="org.codehaus.groovy:groovy-all:1.5.1">
         <CLASSES>
-          <root url="jar://C:/maven-repository/org/codehaus/groovy/groovy-all/1.5.0/groovy-all-1.5.0.jar!/" />
+          <root url="jar://C:/maven-repository/org/codehaus/groovy/groovy-all/1.5.1/groovy-all-1.5.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/org/codehaus/groovy/groovy-all/1.5.0/groovy-all-1.5.0-javadoc.jar!/" />
+          <root url="jar://C:/maven-repository/org/codehaus/groovy/groovy-all/1.5.1/groovy-all-1.5.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/org/codehaus/groovy/groovy-all/1.5.0/groovy-all-1.5.0-sources.jar!/" />
+          <root url="jar://C:/maven-repository/org/codehaus/groovy/groovy-all/1.5.1/groovy-all-1.5.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

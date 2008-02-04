@@ -7,7 +7,7 @@
     </extensions>
 
     <starter>
-      <mainClass>org.sf.scriptlandia.AptStarter1</mainClass>
+      <mainClass>org.sf.scriptlandia.AptJellyStarter</mainClass>
     </starter>
   </registration>
 </language>

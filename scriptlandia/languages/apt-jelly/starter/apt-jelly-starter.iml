@@ -3,7 +3,7 @@
   <component name="DBNavigator.Module.ConnectionManager">
     <connections />
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <exclude-output />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
@@ -12,48 +12,11 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/target/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/target/maven-archiver" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" exported="">
-      <library name="apt-jelly:apt-jelly-core:2.0">
-        <CLASSES>
-          <root url="jar://C:/maven-repository/apt-jelly/apt-jelly-core/2.0/apt-jelly-core-2.0.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar://C:/maven-repository/apt-jelly/apt-jelly-core/2.0/apt-jelly-core-2.0-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar://C:/maven-repository/apt-jelly/apt-jelly-core/2.0/apt-jelly-core-2.0-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library name="apt-jelly:apt-jelly-freemarker:2.0">
-        <CLASSES>
-          <root url="jar://C:/maven-repository/apt-jelly/apt-jelly-freemarker/2.0/apt-jelly-freemarker-2.0.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar://C:/maven-repository/apt-jelly/apt-jelly-freemarker/2.0/apt-jelly-freemarker-2.0-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar://C:/maven-repository/apt-jelly/apt-jelly-freemarker/2.0/apt-jelly-freemarker-2.0-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library name="apt-jelly:apt-jelly-jelly:2.0">
-        <CLASSES>
-          <root url="jar://C:/maven-repository/apt-jelly/apt-jelly-jelly/2.0/apt-jelly-jelly-2.0.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar://C:/maven-repository/apt-jelly/apt-jelly-jelly/2.0/apt-jelly-jelly-2.0-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar://C:/maven-repository/apt-jelly/apt-jelly-jelly/2.0/apt-jelly-jelly-2.0-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="bcel:bcel:5.1">
         <CLASSES>
@@ -584,6 +547,19 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://c:/maven-repository/log4j/log4j/1.2.13/log4j-1.2.13-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="net.sf.apt-jelly:apt-jelly:2.3">
+        <CLASSES>
+          <root url="jar://C:/maven-repository/net/sf/apt-jelly/apt-jelly/2.3/apt-jelly-2.3.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/maven-repository/net/sf/apt-jelly/apt-jelly/2.3/apt-jelly-2.3-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://C:/maven-repository/net/sf/apt-jelly/apt-jelly/2.3/apt-jelly-2.3-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

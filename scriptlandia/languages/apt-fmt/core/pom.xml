@@ -11,7 +11,7 @@
   <description>Scriptlandia Apt FMT Core Module</description>
 
   <properties>
-    <apt.version>2.0</apt.version>
+    <apt.version>2.3</apt.version>
   </properties>
 
   <dependencies>
@@ -46,7 +46,7 @@
       <version>1.6.1</version>
     </dependency>
 
-    <dependency>
+    <!--dependency>
       <groupId>apt-jelly</groupId>
       <artifactId>apt-jelly-core</artifactId>
       <version>${apt.version}</version>
@@ -62,6 +62,12 @@
       <groupId>apt-jelly</groupId>
       <artifactId>apt-jelly-jelly</artifactId>
       <version>${apt.version}</version>
+    </dependency-->
+
+    <dependency>
+      <groupId>net.sf.apt-jelly</groupId>
+      <artifactId>apt-jelly</artifactId>
+      <version>2.3</version>
     </dependency>
   </dependencies>
 </project>

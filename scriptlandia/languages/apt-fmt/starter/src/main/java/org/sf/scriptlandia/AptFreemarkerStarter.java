@@ -5,14 +5,13 @@ import org.apache.tools.ant.DefaultLogger;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.taskdefs.Java;
 import org.apache.tools.ant.types.Path;
+import org.apache.tools.ant.types.Commandline;
 import org.codehaus.classworlds.ClassRealm;
 import org.codehaus.classworlds.ClassWorld;
-import org.sf.jlaunchpad.util.FileUtil;
 import org.sf.jlaunchpad.util.CommonUtil;
 
 import java.io.File;
 import java.net.URL;
-import java.util.Iterator;
 
 
 /**
@@ -21,54 +20,19 @@ import java.util.Iterator;
  * @author Alexander Shvets
  * @version 2.0 02/19/2006
  */
-public final class AptStarter {
+public final class AptFreemarkerStarter {
 
   /**
    * The main starter method.
    *
    * @param args command line arguments
-   * @param mainRealm main class realm
+   * @param mainRealm main realm
    * @throws Exception the exception
    */
   public void start(final String[] args, ClassRealm mainRealm) throws Exception {
     final String scriptName = args[0];
 
-    String factoryClassName = "";
-
-    if(FileUtil.getExtension(scriptName).equals("apt-fmt")) {
-      factoryClassName = "net.sf.jelly.apt.freemarker.FreemarkerProcessorFactory";
-    }
-    else if(FileUtil.getExtension(scriptName).equals("apt-jelly")) {
-      factoryClassName = "net.sf.jelly.apt.APTJellyProcessorFactory";
-    }
-
-    StringBuffer sb = new StringBuffer();
-
-    sb.append("-factory");
-    sb.append(" ");
-    sb.append(factoryClassName);
-    sb.append(" ");
-
-    if(FileUtil.getExtension(scriptName).equals("apt-jelly")) {
-      sb.append("-AjellyScript=");
-      sb.append(scriptName);
-    }
-    else {
-      sb.append("-Atemplate=");
-      sb.append(scriptName);
-    }
-
-    sb.append(" ");
-    sb.append("-nocompile");
-    sb.append(" ");
-
-    for (int i = 1; i < args.length; i++) {
-      sb.append(args[i]);
-
-      if(i < args.length-1) {
-        sb.append(" ");
-      }
-    }
+    String factoryClassName = "net.sf.jelly.apt.freemarker.FreemarkerProcessorFactory";
 
     Project project = new Project();
     project.init();
@@ -86,7 +50,22 @@ public final class AptStarter {
 
     javaTask.setClassname("com.sun.tools.apt.Main");
     javaTask.setFork(true);
-    javaTask.setArgs(sb.toString());
+    javaTask.setTaskName("apt-freemarker");
+
+    Commandline.Argument arg1 = javaTask.createArg();
+    arg1.setLine("-factory " + factoryClassName);
+
+    Commandline.Argument arg2 = javaTask.createArg();
+    arg2.setLine("-Atemplate=" + scriptName);
+
+    Commandline.Argument arg3 = javaTask.createArg();
+    arg3.setValue("-nocompile");
+
+    for (int i = 1; i < args.length; i++) {
+      Commandline.Argument argI = javaTask.createArg();
+
+      argI.setValue(args[i]);
+    }
 
     Path classpath = new Path(project);
 
@@ -97,6 +76,7 @@ public final class AptStarter {
     }
 
     File toolsJar = CommonUtil.getCompilerJar();
+
     if ( toolsJar.exists() ) {
       classpath.setLocation(toolsJar);
     }
@@ -114,13 +94,7 @@ public final class AptStarter {
    * @throws Exception the exception
    */
   public static void main(String[] args, ClassWorld classWorld) throws Throwable {
-    Iterator iterator = classWorld.getRealms().iterator();
-
-    if(iterator.hasNext()) {
-      ClassRealm mainRealm = ((ClassRealm)iterator.next());
-
-      new AptStarter().start(args, mainRealm);
-    }
+    new AptFreemarkerStarter().start(args, classWorld.getRealm("pom-launcher-apt-fmt"));
   }
 
 }

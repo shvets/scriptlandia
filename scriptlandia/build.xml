@@ -200,7 +200,7 @@
       import org.codehaus.classworlds.ClassWorld;
       import org.sf.jlaunchpad.DepsLauncher;
       import org.sf.jlaunchpad.JLaunchPadLauncher;
-      import org.sf.jlaunchpad.core.LauncherCommandLineParser;
+      import org.sf.jlaunchpad.LauncherCommandLineParser;
 
       String[] args = new String[]{ "assembly:assembly" };
 

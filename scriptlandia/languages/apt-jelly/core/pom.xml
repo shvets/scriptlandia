@@ -11,7 +11,7 @@
   <description>Scriptlandia Apt Jelly Core Module</description>
 
   <properties>
-    <apt.version>2.0</apt.version>
+    <apt.version>2.3</apt.version>
   </properties>
 
   <dependencies>
@@ -47,21 +47,21 @@
     </dependency>
 
     <dependency>
-      <groupId>apt-jelly</groupId>
-      <artifactId>apt-jelly-core</artifactId>
-      <version>${apt.version}</version>
+      <groupId>net.sf.apt-jelly</groupId>
+      <artifactId>apt-jelly</artifactId>
+      <version>2.3</version>
     </dependency>
 
-    <dependency>
+    <!--dependency>
       <groupId>apt-jelly</groupId>
       <artifactId>apt-jelly-freemarker</artifactId>
       <version>${apt.version}</version>
-    </dependency>
+    </dependency-->
 
-    <dependency>
+    <!--dependency>
       <groupId>apt-jelly</groupId>
       <artifactId>apt-jelly-jelly</artifactId>
       <version>${apt.version}</version>
-    </dependency>
+    </dependency-->
   </dependencies>
 </project>

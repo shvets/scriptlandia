@@ -71,11 +71,13 @@ public final class ScriptlandiaStarter {
   public static void main(String[] args, ClassWorld classWorld) throws Exception {
     Iterator iterator = classWorld.getRealms().iterator();
 
-    if(iterator.hasNext()) {
-      ClassRealm mainRealm = ((ClassRealm)iterator.next());
+    //if(iterator.hasNext()) {
+      //ClassRealm mainRealm = ((ClassRealm)iterator.next());
 
-      new ScriptlandiaStarter().start(args, mainRealm);
-    }
+      //new ScriptlandiaStarter().start(args, mainRealm);
+    //}
+
+    new ScriptlandiaStarter().start(args, classWorld.getRealm("pom-launcher-sl"));
   }
 
 }

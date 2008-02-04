@@ -16,6 +16,71 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
+      <library name="asm:asm-analysis:3.0">
+        <CLASSES>
+          <root url="jar://C:/maven-repository/asm/asm-analysis/3.0/asm-analysis-3.0.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/maven-repository/asm/asm-analysis/3.0/asm-analysis-3.0-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://C:/maven-repository/asm/asm-analysis/3.0/asm-analysis-3.0-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="asm:asm-commons:3.0">
+        <CLASSES>
+          <root url="jar://C:/maven-repository/asm/asm-commons/3.0/asm-commons-3.0.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/maven-repository/asm/asm-commons/3.0/asm-commons-3.0-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://C:/maven-repository/asm/asm-commons/3.0/asm-commons-3.0-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="asm:asm-tree:3.0">
+        <CLASSES>
+          <root url="jar://C:/maven-repository/asm/asm-tree/3.0/asm-tree-3.0.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/maven-repository/asm/asm-tree/3.0/asm-tree-3.0-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://C:/maven-repository/asm/asm-tree/3.0/asm-tree-3.0-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="asm:asm-util:3.0">
+        <CLASSES>
+          <root url="jar://C:/maven-repository/asm/asm-util/3.0/asm-util-3.0.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/maven-repository/asm/asm-util/3.0/asm-util-3.0-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://C:/maven-repository/asm/asm-util/3.0/asm-util-3.0-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="asm:asm:3.0">
+        <CLASSES>
+          <root url="jar://C:/maven-repository/asm/asm/3.0/asm-3.0.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/maven-repository/asm/asm/3.0/asm-3.0-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://C:/maven-repository/asm/asm/3.0/asm-3.0-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
       <library name="bcel:bcel:5.1">
         <CLASSES>
           <root url="jar://C:/maven-repository/bcel/bcel/5.1/bcel-5.1.jar!/" />
@@ -289,41 +354,41 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="jline:jline:0.9.93">
+      <library name="jline:jline:0.9.91">
         <CLASSES>
-          <root url="jar://C:/maven-repository/jline/jline/0.9.93/jline-0.9.93.jar!/" />
+          <root url="jar://C:/maven-repository/jline/jline/0.9.91/jline-0.9.91.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/jline/jline/0.9.93/jline-0.9.93-javadoc.jar!/" />
+          <root url="jar://C:/maven-repository/jline/jline/0.9.91/jline-0.9.91-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/jline/jline/0.9.93/jline-0.9.93-sources.jar!/" />
+          <root url="jar://C:/maven-repository/jline/jline/0.9.91/jline-0.9.91-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="jruby:jruby-lib:1.1b1">
+      <library name="jruby:jruby-lib:1.1RC1">
         <CLASSES>
-          <root url="jar://C:/maven-repository/jruby/jruby-lib/1.1b1/jruby-lib-1.1b1.jar!/" />
+          <root url="jar://C:/maven-repository/jruby/jruby-lib/1.1RC1/jruby-lib-1.1RC1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/jruby/jruby-lib/1.1b1/jruby-lib-1.1b1-javadoc.jar!/" />
+          <root url="jar://C:/maven-repository/jruby/jruby-lib/1.1RC1/jruby-lib-1.1RC1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/jruby/jruby-lib/1.1b1/jruby-lib-1.1b1-sources.jar!/" />
+          <root url="jar://C:/maven-repository/jruby/jruby-lib/1.1RC1/jruby-lib-1.1RC1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="jruby:jruby:1.1b1">
+      <library name="jruby:jruby:1.1RC1">
         <CLASSES>
-          <root url="jar://C:/maven-repository/jruby/jruby/1.1b1/jruby-1.1b1.jar!/" />
+          <root url="jar://C:/maven-repository/jruby/jruby/1.1RC1/jruby-1.1RC1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/jruby/jruby/1.1b1/jruby-1.1b1-javadoc.jar!/" />
+          <root url="jar://C:/maven-repository/jruby/jruby/1.1RC1/jruby-1.1RC1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/jruby/jruby/1.1b1/jruby-1.1b1-sources.jar!/" />
+          <root url="jar://C:/maven-repository/jruby/jruby/1.1RC1/jruby-1.1RC1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -978,15 +1043,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.codehaus.groovy:groovy-all:1.5.0">
+      <library name="org.codehaus.groovy:groovy-all:1.5.1">
         <CLASSES>
-          <root url="jar://C:/maven-repository/org/codehaus/groovy/groovy-all/1.5.0/groovy-all-1.5.0.jar!/" />
+          <root url="jar://C:/maven-repository/org/codehaus/groovy/groovy-all/1.5.1/groovy-all-1.5.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/org/codehaus/groovy/groovy-all/1.5.0/groovy-all-1.5.0-javadoc.jar!/" />
+          <root url="jar://C:/maven-repository/org/codehaus/groovy/groovy-all/1.5.1/groovy-all-1.5.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/org/codehaus/groovy/groovy-all/1.5.0/groovy-all-1.5.0-sources.jar!/" />
+          <root url="jar://C:/maven-repository/org/codehaus/groovy/groovy-all/1.5.1/groovy-all-1.5.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

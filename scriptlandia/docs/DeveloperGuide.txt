@@ -559,7 +559,7 @@ For scripting languages that do not have dynamic libraries loading feature, we c
 into Scriplandia internals (to ClassWorlds guts):
 
 
-import org.sf.jlaunchpad.core.Launcher;
+import org.sf.jlaunchpad.Launcher;
 import org.sf.scriptlandia.ScriptlandiaHelper;
 
 Launcher launcher = ScriptlandiaHelper.getLauncher();
