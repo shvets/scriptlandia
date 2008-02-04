@@ -1,6 +1,7 @@
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:apt="jelly:net.sf.jelly.apt.tags.APTTagLibrary">
 
-  <apt:javaSource name="net.sf.jelly.apt.examples.ClassAndMethodPrinter">
+<apt:javaSource name="ClassAndMethodPrinter">
+
 package net.sf.jelly.apt.examples;
 
 public class ClassAndMethodPrinter {
@@ -14,6 +15,7 @@ public class ClassAndMethodPrinter {
     </apt:forAllTypes>
   }
 }
-  </apt:javaSource>
+
+</apt:javaSource>
 
 </j:jelly>
