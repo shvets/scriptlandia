@@ -2,8 +2,8 @@ package org.sf.scriptlandia.launcher;
 
 import org.codehaus.classworlds.ClassWorld;
 import org.sf.jlaunchpad.util.FileUtil;
-import org.sf.jlaunchpad.core.LauncherException;
-import org.sf.jlaunchpad.core.LauncherCommandLineParser;
+import org.sf.jlaunchpad.LauncherException;
+import org.sf.jlaunchpad.LauncherCommandLineParser;
 import org.sf.jlaunchpad.JLaunchPadLauncher;
 
 import java.util.*;
@@ -25,7 +25,7 @@ public class ScriptlandiaLauncher extends JLaunchPadLauncher {
   private String scriptName;
 
   /** The current used extension within instances collection. */
-  protected static String currentExtension;
+ // protected static String currentExtension;
 
   /**
    * Creates new launcher.
@@ -115,9 +115,10 @@ public class ScriptlandiaLauncher extends JLaunchPadLauncher {
    *
    * @return the singleton instance
    */
-  public static JLaunchPadLauncher getInstance() {
+/*  public static JLaunchPadLauncher getInstance() {
     return instances.get(currentExtension);
   }
+*/
 
   /**
    * Checks for "wait" mode.
@@ -156,7 +157,6 @@ public class ScriptlandiaLauncher extends JLaunchPadLauncher {
     }
 
     JLaunchPadLauncher launcher = createLauncher(classWorld, parser, newArgs);
-
     launcher.launch();
   }
 

@@ -145,6 +145,7 @@ public class ScriptlandiaHelper {
   public static void resolveDependencies(String depsFileName) throws Exception {
     resolveDependencies(depsFileName, false, ScriptlandiaLauncher.getInstance());
   }
+
   /**
    * Resolves dependencies for specified dependencies file.
    *
@@ -155,7 +156,7 @@ public class ScriptlandiaHelper {
     resolveDependencies(depsFileName, ignore,ScriptlandiaLauncher.getInstance());
   }
 
- /**
+  /**
    * Resolves dependencies for specified dependencies file.
    *
    * @throws Exception the exception
@@ -164,14 +165,14 @@ public class ScriptlandiaHelper {
     resolveDependencies("pom.xml", false, ScriptlandiaLauncher.getInstance());
   }
 
-	/**
-	  * Resolves dependencies for specified dependencies file.
-	  *
-	  * @throws Exception the exception
-	  */
-	 public static void resolveDependencies(boolean ignore) throws Exception {
-	   resolveDependencies("pom.xml", ignore, ScriptlandiaLauncher.getInstance());
-	 }
+  /**
+   * Resolves dependencies for specified dependencies file.
+   *
+   * @throws Exception the exception
+   */
+  public static void resolveDependencies(boolean ignore) throws Exception {
+    resolveDependencies("pom.xml", ignore, ScriptlandiaLauncher.getInstance());
+  }
 
   public static JLaunchPadLauncher getLauncher() {
     return ScriptlandiaLauncher.getInstance();

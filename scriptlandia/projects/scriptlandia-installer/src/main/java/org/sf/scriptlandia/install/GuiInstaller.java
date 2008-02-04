@@ -2,7 +2,7 @@ package org.sf.scriptlandia.install;
 
 import com.sun.deploy.config.Config;
 import org.sf.jlaunchpad.JLaunchPadLauncher;
-import org.sf.jlaunchpad.core.LauncherException;
+import org.sf.jlaunchpad.LauncherException;
 import org.sf.jlaunchpad.install.LauncherProperties;
 
 import javax.swing.*;

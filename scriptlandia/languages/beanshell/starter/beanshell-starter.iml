@@ -226,26 +226,26 @@
     <orderEntry type="module-library" exported="">
       <library name="javax.activation:activation:1.1">
         <CLASSES>
-          <root url="jar://C:/maven-repository/javax/activation/activation/1.1/activation-1.1.jar!/" />
+          <root url="jar://c:/maven-repository/javax/activation/activation/1.1/activation-1.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/javax/activation/activation/1.1/activation-1.1-javadoc.jar!/" />
+          <root url="jar://c:/maven-repository/javax/activation/activation/1.1/activation-1.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/javax/activation/activation/1.1/activation-1.1-sources.jar!/" />
+          <root url="jar://c:/maven-repository/javax/activation/activation/1.1/activation-1.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="javax.mail:mail:1.4">
         <CLASSES>
-          <root url="jar://C:/maven-repository/javax/mail/mail/1.4/mail-1.4.jar!/" />
+          <root url="jar://c:/maven-repository/javax/mail/mail/1.4/mail-1.4.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/javax/mail/mail/1.4/mail-1.4-javadoc.jar!/" />
+          <root url="jar://c:/maven-repository/javax/mail/mail/1.4/mail-1.4-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/javax/mail/mail/1.4/mail-1.4-sources.jar!/" />
+          <root url="jar://c:/maven-repository/javax/mail/mail/1.4/mail-1.4-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -356,13 +356,13 @@
     <orderEntry type="module-library" exported="">
       <library name="log4j:log4j:1.2.13">
         <CLASSES>
-          <root url="jar://C:/maven-repository/log4j/log4j/1.2.13/log4j-1.2.13.jar!/" />
+          <root url="jar://c:/maven-repository/log4j/log4j/1.2.13/log4j-1.2.13.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/log4j/log4j/1.2.13/log4j-1.2.13-javadoc.jar!/" />
+          <root url="jar://c:/maven-repository/log4j/log4j/1.2.13/log4j-1.2.13-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/log4j/log4j/1.2.13/log4j-1.2.13-sources.jar!/" />
+          <root url="jar://c:/maven-repository/log4j/log4j/1.2.13/log4j-1.2.13-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -1073,13 +1073,13 @@
     <orderEntry type="module-library" exported="">
       <library name="oro:oro:2.0.8">
         <CLASSES>
-          <root url="jar://C:/maven-repository/oro/oro/2.0.8/oro-2.0.8.jar!/" />
+          <root url="jar://c:/maven-repository/oro/oro/2.0.8/oro-2.0.8.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/oro/oro/2.0.8/oro-2.0.8-javadoc.jar!/" />
+          <root url="jar://c:/maven-repository/oro/oro/2.0.8/oro-2.0.8-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/oro/oro/2.0.8/oro-2.0.8-sources.jar!/" />
+          <root url="jar://c:/maven-repository/oro/oro/2.0.8/oro-2.0.8-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

@@ -2,7 +2,6 @@
 
 package org.sf.scriptlandia.install;
 
-
 import org.jdom.Element;
 import org.jdom.Attribute;
 import org.jdom.JDOMException;

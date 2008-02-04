@@ -1,12 +1,9 @@
 package org.sf.scriptlandia.launcher;
 
-import org.sf.jlaunchpad.util.FileUtil;
-import org.sf.jlaunchpad.core.LauncherException;
+import org.sf.jlaunchpad.LauncherException;
 import org.sf.jlaunchpad.CoreLauncher;
 
 import java.util.Properties;
-import java.util.jar.Manifest;
-import java.util.jar.Attributes;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -107,7 +104,7 @@ public class LauncherHelper {
   /**
    * Sets up the java specification version.
    */
-  private void setupJavaSpecificationVersion() {
+ /* private void setupJavaSpecificationVersion() {
     String javaHome = System.getProperty("java.home.internal");
     String rtJarName = javaHome + "/jre/lib/rt.jar";
 
@@ -125,6 +122,7 @@ public class LauncherHelper {
       e.printStackTrace();
     }
   }
+  */
 
   /**
    * Sets up libraries, required for running scriptlandia.

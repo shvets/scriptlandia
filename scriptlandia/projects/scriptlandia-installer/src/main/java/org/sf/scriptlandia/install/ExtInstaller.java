@@ -8,8 +8,8 @@ import org.apache.tools.ant.DefaultLogger;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.ProjectHelper;
 import org.jdom.JDOMException;
-import org.sf.jlaunchpad.core.LauncherException;
-import org.sf.jlaunchpad.core.SimpleLauncher;
+import org.sf.jlaunchpad.LauncherException;
+import org.sf.jlaunchpad.DefaultLauncher;
 
 import java.io.File;
 import java.io.IOException;
@@ -105,7 +105,7 @@ public class ExtInstaller {
   private void downloadLanguageArtifacts(Map language) throws LauncherException {
     String[] args = new String[]{"-basedir", "languages/" + language.get("name") + "/core", "-build.required", "true"};
 
-    SimpleLauncher launcher = new SimpleLauncher(args);
+    DefaultLauncher launcher = new DefaultLauncher(args);
 
     launcher.setMainClassName("org.sf.pomreader.ProjectInstaller");
 

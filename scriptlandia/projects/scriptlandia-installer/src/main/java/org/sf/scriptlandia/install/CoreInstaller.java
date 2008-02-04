@@ -1,13 +1,12 @@
 package org.sf.scriptlandia.install;
 
 
-import org.sf.jlaunchpad.core.LauncherException;
-import org.sf.jlaunchpad.core.SimpleLauncher;
+import org.sf.jlaunchpad.LauncherException;
+import org.sf.jlaunchpad.DefaultLauncher;
 import org.sf.pomreader.ProjectInstaller;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -50,7 +49,7 @@ public class CoreInstaller {
   }
 
   private void registerXFreeDesktopExtensions() throws LauncherException {
-    SimpleLauncher launcher = new SimpleLauncher(new String[] { "register.xfeedesktop.extensions" });
+    DefaultLauncher launcher = new DefaultLauncher(new String[] { "register.xfeedesktop.extensions" });
 
     launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
     launcher.addClasspathEntry("projects/antrun/target/antrun.jar");
@@ -67,7 +66,7 @@ public class CoreInstaller {
    * @throws LauncherException the exception
    */
   private void instalRequiredlProjects(String[] args) throws LauncherException {
-    SimpleLauncher launcher = new SimpleLauncher(args);
+    DefaultLauncher launcher = new DefaultLauncher(args);
 
     launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
     launcher.addClasspathEntry("projects/antrun/target/antrun.jar");

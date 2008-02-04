@@ -16,97 +16,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/freemarker/starter/freemarker-starter.iml" afterPath="$PROJECT_DIR$/languages/freemarker/starter/freemarker-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/clojure/language.xml" afterPath="$PROJECT_DIR$/languages/clojure/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/velocity/language.xml" afterPath="$PROJECT_DIR$/languages/velocity/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jad/language.xml" afterPath="$PROJECT_DIR$/languages/jad/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/clojure/starter/clojure-starter.iml" afterPath="$PROJECT_DIR$/languages/clojure/starter/clojure-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/beanshell/starter/beanshell-starter.iml" afterPath="$PROJECT_DIR$/languages/beanshell/starter/beanshell-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jruby/language.xml" afterPath="$PROJECT_DIR$/languages/jruby/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/xgql/language.xml" afterPath="$PROJECT_DIR$/languages/xgql/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/beanshell/language.xml" afterPath="$PROJECT_DIR$/languages/beanshell/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jelly/language.xml" afterPath="$PROJECT_DIR$/languages/jelly/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-config/bin/scriptlandia.sh" afterPath="$PROJECT_DIR$/projects/scriptlandia-config/bin/scriptlandia.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/javafx/starter/javafx-starter.iml" afterPath="$PROJECT_DIR$/languages/javafx/starter/javafx-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/janino/language.xml" afterPath="$PROJECT_DIR$/languages/janino/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/ant/starter/ant-starter.iml" afterPath="$PROJECT_DIR$/languages/ant/starter/ant-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/judo/starter/judo-starter.iml" afterPath="$PROJECT_DIR$/languages/judo/starter/judo-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/installer.sh" afterPath="$PROJECT_DIR$/installer.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clean.sh" afterPath="$PROJECT_DIR$/clean.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jelly/starter/jelly-starter.iml" afterPath="$PROJECT_DIR$/languages/jelly/starter/jelly-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/ant/language.xml" afterPath="$PROJECT_DIR$/languages/ant/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/apt-fmt/starter/apt-fmt-starter.iml" afterPath="$PROJECT_DIR$/languages/apt-fmt/starter/apt-fmt-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/freemarker/language.xml" afterPath="$PROJECT_DIR$/languages/freemarker/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/xgql/starter/xgql-starter.iml" afterPath="$PROJECT_DIR$/languages/xgql/starter/xgql-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jscheme/language.xml" afterPath="$PROJECT_DIR$/languages/jscheme/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptlandia-main.ipr" afterPath="$PROJECT_DIR$/scriptlandia-main.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/lolcode/language.xml" afterPath="$PROJECT_DIR$/languages/lolcode/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/ptilde/language.xml" afterPath="$PROJECT_DIR$/languages/ptilde/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/xruby/starter/xruby-starter.iml" afterPath="$PROJECT_DIR$/languages/xruby/starter/xruby-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/scriptlandia/starter/scriptlandia-starter.iml" afterPath="$PROJECT_DIR$/languages/scriptlandia/starter/scriptlandia-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/janino/starter/janino-starter.iml" afterPath="$PROJECT_DIR$/languages/janino/starter/janino-starter.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jar/starter/jar-starter.iml" afterPath="$PROJECT_DIR$/languages/jar/starter/jar-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jaskell/starter/jaskell-starter.iml" afterPath="$PROJECT_DIR$/languages/jaskell/starter/jaskell-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/class/starter/class-starter.iml" afterPath="$PROJECT_DIR$/languages/class/starter/class-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/pnuts/language.xml" afterPath="$PROJECT_DIR$/languages/pnuts/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/xruby/language.xml" afterPath="$PROJECT_DIR$/languages/xruby/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/etl/starter/etl-starter.iml" afterPath="$PROJECT_DIR$/languages/etl/starter/etl-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jython/language.xml" afterPath="$PROJECT_DIR$/languages/jython/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-helper/scriptlandia-helper.iml" afterPath="$PROJECT_DIR$/projects/scriptlandia-helper/scriptlandia-helper.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jscheme/starter/jscheme-starter.iml" afterPath="$PROJECT_DIR$/languages/jscheme/starter/jscheme-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ExtXmlHelper.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ExtXmlHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/installer.bat" afterPath="$PROJECT_DIR$/installer.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/apt-fmt/language.xml" afterPath="$PROJECT_DIR$/languages/apt-fmt/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-config/scriptlandia-config.iml" afterPath="$PROJECT_DIR$/projects/scriptlandia-config/scriptlandia-config.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/apt-jelly/language.xml" afterPath="$PROJECT_DIR$/languages/apt-jelly/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/tcl/language.xml" afterPath="$PROJECT_DIR$/languages/tcl/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/antrun/antrun.iml" afterPath="$PROJECT_DIR$/projects/antrun/antrun.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.sh" afterPath="$PROJECT_DIR$/build.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/javafx/language.xml" afterPath="$PROJECT_DIR$/languages/javafx/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/maven/starter/maven-starter.iml" afterPath="$PROJECT_DIR$/languages/maven/starter/maven-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/apt-jelly/starter/apt-jelly-starter.iml" afterPath="$PROJECT_DIR$/languages/apt-jelly/starter/apt-jelly-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jawk/language.xml" afterPath="$PROJECT_DIR$/languages/jawk/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/groovy/starter/groovy-starter.iml" afterPath="$PROJECT_DIR$/languages/groovy/starter/groovy-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/javascript/language.xml" afterPath="$PROJECT_DIR$/languages/javascript/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/classworlds/starter/classworlds-starter.iml" afterPath="$PROJECT_DIR$/languages/classworlds/starter/classworlds-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptlandia-main.iws" afterPath="$PROJECT_DIR$/scriptlandia-main.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jruby/starter/jruby-starter.iml" afterPath="$PROJECT_DIR$/languages/jruby/starter/jruby-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/ptilde/starter/ptilde-starter.iml" afterPath="$PROJECT_DIR$/languages/ptilde/starter/ptilde-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/sleep/starter/sleep-starter.iml" afterPath="$PROJECT_DIR$/languages/sleep/starter/sleep-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-launcher/scriptlandia-launcher.iml" afterPath="$PROJECT_DIR$/projects/scriptlandia-launcher/scriptlandia-launcher.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/velocity/starter/velocity-starter.iml" afterPath="$PROJECT_DIR$/languages/velocity/starter/velocity-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/lolcode/starter/lolcode-starter.iml" afterPath="$PROJECT_DIR$/languages/lolcode/starter/lolcode-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-installer/scriptlandia-installer.iml" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/scriptlandia-installer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/scala/starter/scala-starter.iml" afterPath="$PROJECT_DIR$/languages/scala/starter/scala-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/fortress/language.xml" afterPath="$PROJECT_DIR$/languages/fortress/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jawk/starter/jawk-starter.iml" afterPath="$PROJECT_DIR$/languages/jawk/starter/jawk-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-nailgun/scriptlandia-nailgun.iml" afterPath="$PROJECT_DIR$/projects/scriptlandia-nailgun/scriptlandia-nailgun.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ExtInstaller.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ExtInstaller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/kawa/language.xml" afterPath="$PROJECT_DIR$/languages/kawa/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/Installation.txt" afterPath="$PROJECT_DIR$/docs/Installation.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/etl/language.xml" afterPath="$PROJECT_DIR$/languages/etl/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/war/starter/war-starter.iml" afterPath="$PROJECT_DIR$/languages/war/starter/war-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/fortress/starter/fortress-starter.iml" afterPath="$PROJECT_DIR$/languages/fortress/starter/fortress-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptlandia-main.iml" afterPath="$PROJECT_DIR$/scriptlandia-main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ScriptGenerator.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ScriptGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jython/starter/jython-starter.iml" afterPath="$PROJECT_DIR$/languages/jython/starter/jython-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/kawa/starter/kawa-starter.iml" afterPath="$PROJECT_DIR$/languages/kawa/starter/kawa-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/sleep/language.xml" afterPath="$PROJECT_DIR$/languages/sleep/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/javascript/starter/javascript-starter.iml" afterPath="$PROJECT_DIR$/languages/javascript/starter/javascript-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/scala/language.xml" afterPath="$PROJECT_DIR$/languages/scala/language.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/pnuts/starter/pnuts-starter.iml" afterPath="$PROJECT_DIR$/languages/pnuts/starter/pnuts-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/groovy/language.xml" afterPath="$PROJECT_DIR$/languages/groovy/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/classworlds/language.xml" afterPath="$PROJECT_DIR$/languages/classworlds/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jad/starter/jad-starter.iml" afterPath="$PROJECT_DIR$/languages/jad/starter/jad-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jaskell/language.xml" afterPath="$PROJECT_DIR$/languages/jaskell/language.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/antrun/antrun.iml" afterPath="$PROJECT_DIR$/projects/antrun/antrun.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jython/starter/jython-starter.iml" afterPath="$PROJECT_DIR$/languages/jython/starter/jython-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jar/starter/src/main/java/org/sf/scriptlandia/JarStarter.java" afterPath="$PROJECT_DIR$/languages/jar/starter/src/main/java/org/sf/scriptlandia/JarStarter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/scriptlandia/starter/scriptlandia-starter.iml" afterPath="$PROJECT_DIR$/languages/scriptlandia/starter/scriptlandia-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/groovy/starter/groovy-starter.iml" afterPath="$PROJECT_DIR$/languages/groovy/starter/groovy-starter.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/tcl/starter/tcl-starter.iml" afterPath="$PROJECT_DIR$/languages/tcl/starter/tcl-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/judo/language.xml" afterPath="$PROJECT_DIR$/languages/judo/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/maven/language.xml" afterPath="$PROJECT_DIR$/languages/maven/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstaller.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstaller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/classworlds/starter/classworlds-starter.iml" afterPath="$PROJECT_DIR$/languages/classworlds/starter/classworlds-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jruby/starter/jruby-starter.iml" afterPath="$PROJECT_DIR$/languages/jruby/starter/jruby-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/xruby/starter/xruby-starter.iml" afterPath="$PROJECT_DIR$/languages/xruby/starter/xruby-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/ScriptlandiaLauncher.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/ScriptlandiaLauncher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/beanshell/starter/beanshell-starter.iml" afterPath="$PROJECT_DIR$/languages/beanshell/starter/beanshell-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/sleep/starter/sleep-starter.iml" afterPath="$PROJECT_DIR$/languages/sleep/starter/sleep-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/ptilde/starter/ptilde-starter.iml" afterPath="$PROJECT_DIR$/languages/ptilde/starter/ptilde-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/war/starter/war-starter.iml" afterPath="$PROJECT_DIR$/languages/war/starter/war-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/class/starter/class-starter.iml" afterPath="$PROJECT_DIR$/languages/class/starter/class-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/lolcode/starter/lolcode-starter.iml" afterPath="$PROJECT_DIR$/languages/lolcode/starter/lolcode-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/kawa/starter/kawa-starter.iml" afterPath="$PROJECT_DIR$/languages/kawa/starter/kawa-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jaskell/starter/jaskell-starter.iml" afterPath="$PROJECT_DIR$/languages/jaskell/starter/jaskell-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/ant/starter/ant-starter.iml" afterPath="$PROJECT_DIR$/languages/ant/starter/ant-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/freemarker/starter/freemarker-starter.iml" afterPath="$PROJECT_DIR$/languages/freemarker/starter/freemarker-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-installer/scriptlandia-installer.iml" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/scriptlandia-installer.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/maven/starter/maven-starter.iml" afterPath="$PROJECT_DIR$/languages/maven/starter/maven-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/ScriptlandiaHelper.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-helper/src/main/java/org/sf/scriptlandia/ScriptlandiaHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/fortress/starter/fortress-starter.iml" afterPath="$PROJECT_DIR$/languages/fortress/starter/fortress-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/scala/starter/scala-starter.iml" afterPath="$PROJECT_DIR$/languages/scala/starter/scala-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ExtXmlHelper.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ExtXmlHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherHelper.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherManager.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/ant/starter/src/main/java/org/sf/scriptlandia/ant/taskdefs/AddToClassLoaderTask.java" afterPath="$PROJECT_DIR$/languages/ant/starter/src/main/java/org/sf/scriptlandia/ant/taskdefs/AddToClassLoaderTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/groovy/starter/src/main/java/org/sf/scriptlandia/GroovyStarter.java" afterPath="$PROJECT_DIR$/languages/groovy/starter/src/main/java/org/sf/scriptlandia/GroovyStarter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/velocity/starter/velocity-starter.iml" afterPath="$PROJECT_DIR$/languages/velocity/starter/velocity-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptlandia-main.iml" afterPath="$PROJECT_DIR$/scriptlandia-main.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptlandia-main.iws" afterPath="$PROJECT_DIR$/scriptlandia-main.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ExtInstaller.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ExtInstaller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-nailgun/scriptlandia-nailgun.iml" afterPath="$PROJECT_DIR$/projects/scriptlandia-nailgun/scriptlandia-nailgun.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-helper/scriptlandia-helper.iml" afterPath="$PROJECT_DIR$/projects/scriptlandia-helper/scriptlandia-helper.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/etl/starter/etl-starter.iml" afterPath="$PROJECT_DIR$/languages/etl/starter/etl-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jelly/starter/jelly-starter.iml" afterPath="$PROJECT_DIR$/languages/jelly/starter/jelly-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/judo/starter/judo-starter.iml" afterPath="$PROJECT_DIR$/languages/judo/starter/judo-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jawk/starter/jawk-starter.iml" afterPath="$PROJECT_DIR$/languages/jawk/starter/jawk-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jscheme/starter/jscheme-starter.iml" afterPath="$PROJECT_DIR$/languages/jscheme/starter/jscheme-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/xgql/starter/xgql-starter.iml" afterPath="$PROJECT_DIR$/languages/xgql/starter/xgql-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-config/scriptlandia-config.iml" afterPath="$PROJECT_DIR$/projects/scriptlandia-config/scriptlandia-config.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/apt-jelly/starter/apt-jelly-starter.iml" afterPath="$PROJECT_DIR$/languages/apt-jelly/starter/apt-jelly-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/javafx/starter/javafx-starter.iml" afterPath="$PROJECT_DIR$/languages/javafx/starter/javafx-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/apt-fmt/starter/apt-fmt-starter.iml" afterPath="$PROJECT_DIR$/languages/apt-fmt/starter/apt-fmt-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jad/starter/jad-starter.iml" afterPath="$PROJECT_DIR$/languages/jad/starter/jad-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/janino/starter/janino-starter.iml" afterPath="$PROJECT_DIR$/languages/janino/starter/janino-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/ScriptlandiaLauncherCommandLineParser.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/ScriptlandiaLauncherCommandLineParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/clojure/starter/clojure-starter.iml" afterPath="$PROJECT_DIR$/languages/clojure/starter/clojure-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/javascript/starter/javascript-starter.iml" afterPath="$PROJECT_DIR$/languages/javascript/starter/javascript-starter.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/languages.iml" afterPath="$PROJECT_DIR$/languages/languages.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/scriptlandia/language.xml" afterPath="$PROJECT_DIR$/languages/scriptlandia/language.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-launcher/scriptlandia-launcher.iml" afterPath="$PROJECT_DIR$/projects/scriptlandia-launcher/scriptlandia-launcher.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstaller.java" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstaller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptlandia-main.ipr" afterPath="$PROJECT_DIR$/scriptlandia-main.ipr" />
     </list>
     <ignored path="scriptlandia-main.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -158,7 +125,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java" line="36" class="org.sf.scriptlandia.install.CoreInstaller" package="org.sf.scriptlandia.install">
+      <breakpoint url="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java" line="35" class="org.sf.scriptlandia.install.CoreInstaller" package="org.sf.scriptlandia.install">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -219,8 +186,8 @@
       <property name="field_breakpoints_groupByClasses" value="true" />
       <property name="method_breakpoints_groupByClasses" value="true" />
       <property name="exception_breakpoints_viewId" value="TABLE" />
-      <property name="field_breakpoints_viewId" value="TABLE" />
       <property name="exception_breakpoints_groupByClasses" value="true" />
+      <property name="field_breakpoints_viewId" value="TABLE" />
       <property name="method_breakpoints_groupByMethods" value="false" />
     </ui_properties>
   </component>
@@ -249,7 +216,7 @@
       <file leaf-file-name="clean.bat" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clean.bat">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="811" selection-end="811" vertical-scroll-proportion="0.24089935">
+            <state line="15" column="0" selection-start="817" selection-end="817" vertical-scroll-proportion="0.5480769">
               <folding />
             </state>
           </provider>
@@ -258,17 +225,130 @@
       <file leaf-file-name="ExtInstaller.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ExtInstaller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="32" selection-start="32" selection-end="32" vertical-scroll-proportion="0.0">
+            <state line="107" column="50" selection-start="3461" selection-end="3461" vertical-scroll-proportion="0.40384614">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GuiInstaller.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstaller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="643" column="50" selection-start="20656" selection-end="20656" vertical-scroll-proportion="0.40384614">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExtXmlHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ExtXmlHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="0" selection-start="60" selection-end="60" vertical-scroll-proportion="0.109615386">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScriptGenerator.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="LauncherHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="131" column="67" selection-start="4576" selection-end="4576" vertical-scroll-proportion="0.575">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LauncherManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="110" column="38" selection-start="3298" selection-end="3298" vertical-scroll-proportion="0.3903846">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddToClassLoaderTask.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/languages/ant/starter/src/main/java/org/sf/scriptlandia/ant/taskdefs/AddToClassLoaderTask.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="96" column="17" selection-start="2106" selection-end="2106" vertical-scroll-proportion="1.2692307">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AntStarter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/languages/ant/starter/src/main/java/org/sf/scriptlandia/AntStarter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="66" selection-start="902" selection-end="902" vertical-scroll-proportion="0.91346157">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GroovyStarter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/languages/groovy/starter/src/main/java/org/sf/scriptlandia/GroovyStarter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="120" selection-start="1434" selection-end="1434" vertical-scroll-proportion="0.6576923">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JarStarter.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/languages/jar/starter/src/main/java/org/sf/scriptlandia/JarStarter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="99" selection-start="282" selection-end="282" vertical-scroll-proportion="0.35384616">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScriptlandiaLauncher.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/ScriptlandiaLauncher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="82" column="74" selection-start="2161" selection-end="2161" vertical-scroll-proportion="0.3903846">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScriptlandiaLauncherCommandLineParser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/ScriptlandiaLauncherCommandLineParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="25" selection-start="64" selection-end="64" vertical-scroll-proportion="0.073076926">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScriptGenerator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ScriptGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="278" column="25" selection-start="8652" selection-end="8652" vertical-scroll-proportion="0.85117775">
+            <state line="288" column="21" selection-start="8865" selection-end="8865" vertical-scroll-proportion="0.4019231">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoreInstaller.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="4" selection-start="1189" selection-end="1189" vertical-scroll-proportion="0.40384614">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -276,7 +356,7 @@
       <file leaf-file-name="scriptlandia.bat" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/scriptlandia-config/bin/scriptlandia.bat">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="213" selection-end="359" vertical-scroll-proportion="0.2248394">
+            <state line="14" column="0" selection-start="213" selection-end="359" vertical-scroll-proportion="0.51153845">
               <folding />
             </state>
           </provider>
@@ -285,7 +365,7 @@
       <file leaf-file-name="scriptlandia.sh" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/scriptlandia-config/bin/scriptlandia.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="492" selection-end="492" vertical-scroll-proportion="0.3372591">
+            <state line="21" column="0" selection-start="502" selection-end="502" vertical-scroll-proportion="0.7673077">
               <folding />
             </state>
           </provider>
@@ -294,7 +374,7 @@
       <file leaf-file-name="Installation.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/Installation.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="186" column="0" selection-start="6074" selection-end="6074" vertical-scroll-proportion="0.9445049">
+            <state line="160" column="0" selection-start="4438" selection-end="4438" vertical-scroll-proportion="1.6365385">
               <folding />
             </state>
           </provider>
@@ -303,7 +383,7 @@
       <file leaf-file-name="clean.sh" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clean.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="514" selection-end="514" vertical-scroll-proportion="0.24089935">
+            <state line="15" column="0" selection-start="520" selection-end="520" vertical-scroll-proportion="0.5480769">
               <folding />
             </state>
           </provider>
@@ -407,38 +487,6 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="scriptlandia-config" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/media/sda2/Work/Projects/scriptlandia/trunk/scriptlandia/projects/scriptlandia-config" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="scriptlandia-main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="scriptlandia-config" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/media/sda2/Work/Projects/scriptlandia/trunk/scriptlandia/projects/scriptlandia-config" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/media/sda2/Work/Projects/scriptlandia/trunk/scriptlandia/projects/scriptlandia-config/bin" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="scriptlandia-main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
           <option name="myItemId" value="languages" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
@@ -466,7 +514,7 @@
       <showLibraryContents />
       <hideEmptyPackages />
       <abbreviatePackageNames />
-      <showStructure Favorites="false" Scope="false" PackagesPane="false" ProjectPane="false" />
+      <showStructure PackagesPane="false" Scope="false" Favorites="false" ProjectPane="false" />
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
@@ -518,31 +566,24 @@
     <RUBY_DOC NAME="NUMBER" VALUE="0" />
   </component>
   <component name="RunManager" selected="Application.installer">
-    <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
+    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" />
       <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="ADDITIONAL_CLASS_PATH" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="wholeProject" />
       </option>
-      <option name="PROPERTIES_FILE" />
       <envs />
-      <properties />
-      <listeners />
       <method>
         <option name="Make" value="true" />
       </method>
@@ -575,21 +616,20 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="goals">
-              <list />
-            </option>
-            <option name="pomPath" value="" />
-          </MavenRunnerParameters>
-        </option>
-        <option name="coreState">
-          <MavenCoreState>
+        <option name="myCoreSettings">
+          <MavenCoreSettings>
             <option name="checksumPolicy" value="fail" />
             <option name="failureBehavior" value="fail-fast" />
-            <option name="localRepository" value="" />
+            <option name="localRepository" value="C:\maven-repository" />
             <option name="mavenHome" value="" />
             <option name="mavenSettingsFile" value="" />
             <option name="nonRecursive" value="false" />
@@ -597,11 +637,11 @@
             <option name="produceExceptionErrorMessages" value="false" />
             <option name="usePluginRegistry" value="false" />
             <option name="workOffline" value="false" />
-          </MavenCoreState>
+          </MavenCoreSettings>
         </option>
-        <option name="myRunnerState">
-          <MavenRunnerState>
-            <option name="jreName" value="1.6" />
+        <option name="myRunnerSettings">
+          <MavenRunnerSettings>
+            <option name="jreName" value="1.5" />
             <option name="mavenProperties">
               <map />
             </option>
@@ -610,35 +650,46 @@
             <option name="syncAfterBuild" value="true" />
             <option name="useMavenEmbedder" value="false" />
             <option name="vmOptions" value="" />
-          </MavenRunnerState>
+          </MavenRunnerSettings>
+        </option>
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="pomPath" value="" />
+            <option name="profiles">
+              <set />
+            </option>
+          </MavenRunnerParameters>
         </option>
       </MavenSettings>
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
+    <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" />
       <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="ADDITIONAL_CLASS_PATH" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="wholeProject" />
       </option>
+      <option name="PROPERTIES_FILE" />
       <envs />
+      <properties />
+      <listeners />
       <method>
         <option name="Make" value="true" />
       </method>
@@ -813,7 +864,7 @@
   </component>
   <component name="ScopeViewComponent">
     <subPane subId="Problems" />
-    <subPane subId="Tests">
+    <subPane subId="Production">
       <PATH>
         <PATH_ELEMENT USER_OBJECT="Root">
           <option name="myItemId" value="" />
@@ -821,7 +872,7 @@
         </PATH_ELEMENT>
       </PATH>
     </subPane>
-    <subPane subId="Production">
+    <subPane subId="Tests">
       <PATH>
         <PATH_ELEMENT USER_OBJECT="Root">
           <option name="myItemId" value="" />
@@ -853,7 +904,7 @@
     <option name="UPDATE_RUN_STATUS" value="false" />
     <option name="UPDATE_RECURSIVELY" value="true" />
     <option name="MERGE_DRY_RUN" value="false" />
-    <configuration useDefault="true">/home/alex/.subversion</configuration>
+    <configuration useDefault="true">C:\Documents and Settings\alex\Application Data\Subversion</configuration>
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -876,45 +927,45 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1911" height="1114" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1919" height="1162" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="2" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41883767" order="8" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24838012" order="1" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46492985" order="1" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49599198" order="3" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960325" order="8" />
-      <window_info id="FileBrowser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2149028" order="3" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32865733" order="8" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32902583" order="7" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24906066" order="6" />
-      <window_info id="Maven projects" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32549438" order="3" />
-      <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24568035" order="0" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
-      <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32865733" order="2" />
-      <window_info id="Maven Runner Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32902583" order="8" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41883767" order="8" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24812031" order="1" />
       <window_info id="DBHelper" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="1" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977018" order="3" />
-      <window_info id="Maven Build Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32902583" order="8" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960325" order="8" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32902583" order="7" />
+      <window_info id="Maven projects" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32549438" order="3" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24543501" order="0" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="4" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32865733" order="2" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
       <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Archetypes" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32957596" order="8" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
       <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46492985" order="1" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49599198" order="3" />
+      <window_info id="FileBrowser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2149028" order="3" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32865733" order="8" />
+      <window_info id="CafeBabe" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" order="5" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24865736" order="7" />
+      <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
+      <window_info id="DBOutput" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="Maven Runner Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32902583" order="8" />
+      <window_info id="Maven Build Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32902583" order="8" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
       <window_info id="Maven Importer Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32902583" order="8" />
-      <window_info id="CafeBabe" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" order="5" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="7" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="6" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
       <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="4" />
-      <window_info id="DBOutput" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
@@ -925,7 +976,7 @@
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="new files" />
+    <option name="LAST_COMMIT_MESSAGE" value="reattanging class locations" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -940,6 +991,7 @@
     <MESSAGE value="bug fix for unix" />
     <MESSAGE value="replacing java.specification.version to java.specification.version.level" />
     <MESSAGE value="new files" />
+    <MESSAGE value="reattanging class locations" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -980,114 +1032,128 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/languages/scala/language.xml">
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-config/bin/scriptlandia.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="25" selection-start="141" selection-end="141" vertical-scroll-proportion="0.061822128">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/languages/scriptlandia/language.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="25" selection-start="151" selection-end="151" vertical-scroll-proportion="0.061822128">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/languages/sleep/language.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="25" selection-start="128" selection-end="128" vertical-scroll-proportion="0.061822128">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/languages/tcl/language.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="25" selection-start="117" selection-end="117" vertical-scroll-proportion="0.061822128">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/languages/velocity/language.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="25" selection-start="141" selection-end="141" vertical-scroll-proportion="0.061822128">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/languages/xgql/language.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="25" selection-start="129" selection-end="129" vertical-scroll-proportion="0.061822128">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdg-install.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="567" selection-end="567" vertical-scroll-proportion="0.27507755">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstaller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="42" selection-start="879" selection-end="879" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="128" selection-start="1702" selection-end="1702" vertical-scroll-proportion="0.016059957">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clean.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="811" selection-end="811" vertical-scroll-proportion="0.24089935">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ExtInstaller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="32" selection-start="32" selection-end="32" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clean.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="514" selection-end="514" vertical-scroll-proportion="0.24089935">
+        <state line="21" column="0" selection-start="502" selection-end="502" vertical-scroll-proportion="0.7673077">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/Installation.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="186" column="0" selection-start="6074" selection-end="6074" vertical-scroll-proportion="0.9445049">
+        <state line="160" column="0" selection-start="4438" selection-end="4438" vertical-scroll-proportion="1.6365385">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-config/bin/scriptlandia.bat">
+    <entry file="file://$PROJECT_DIR$/clean.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="213" selection-end="359" vertical-scroll-proportion="0.2248394">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-config/bin/scriptlandia.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="492" selection-end="492" vertical-scroll-proportion="0.3372591">
+        <state line="15" column="0" selection-start="520" selection-end="520" vertical-scroll-proportion="0.5480769">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ScriptGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="278" column="25" selection-start="8652" selection-end="8652" vertical-scroll-proportion="0.85117775">
+        <state line="288" column="21" selection-start="8865" selection-end="8865" vertical-scroll-proportion="0.4019231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/CoreInstaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="4" selection-start="1189" selection-end="1189" vertical-scroll-proportion="0.40384614">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ExtInstaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="107" column="50" selection-start="3461" selection-end="3461" vertical-scroll-proportion="0.40384614">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/GuiInstaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="643" column="50" selection-start="20656" selection-end="20656" vertical-scroll-proportion="0.40384614">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-installer/src/main/java/org/sf/scriptlandia/install/ExtXmlHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="60" selection-end="60" vertical-scroll-proportion="0.109615386">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="67" selection-start="4576" selection-end="4576" vertical-scroll-proportion="0.575">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/ScriptlandiaLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="74" selection-start="2161" selection-end="2161" vertical-scroll-proportion="0.3903846">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/ScriptlandiaLauncherCommandLineParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="25" selection-start="64" selection-end="64" vertical-scroll-proportion="0.073076926">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="110" column="38" selection-start="3298" selection-end="3298" vertical-scroll-proportion="0.3903846">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/languages/ant/starter/src/main/java/org/sf/scriptlandia/ant/taskdefs/AddToClassLoaderTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="17" selection-start="2106" selection-end="2106" vertical-scroll-proportion="1.2692307">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/languages/ant/starter/src/main/java/org/sf/scriptlandia/AntStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="66" selection-start="902" selection-end="902" vertical-scroll-proportion="0.91346157">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/languages/groovy/starter/src/main/java/org/sf/scriptlandia/GroovyStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="120" selection-start="1434" selection-end="1434" vertical-scroll-proportion="0.6576923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/languages/jar/starter/src/main/java/org/sf/scriptlandia/JarStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="99" selection-start="282" selection-end="282" vertical-scroll-proportion="0.35384616">
           <folding />
         </state>
       </provider>

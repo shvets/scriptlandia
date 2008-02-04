@@ -10,7 +10,7 @@ import org.apache.tools.ant.types.Reference;
 
 import org.sf.jlaunchpad.JLaunchPadLauncher;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
-import org.sf.jlaunchpad.core.LauncherException;
+import org.sf.jlaunchpad.LauncherException;
 
 /**
  * Adds new libraries to the current class realm.

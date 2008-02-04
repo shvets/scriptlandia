@@ -9,7 +9,7 @@ import java.util.zip.ZipEntry;
 
 import org.sf.jlaunchpad.util.FileUtil;
 import org.sf.jlaunchpad.util.ReflectionUtil;
-import org.sf.jlaunchpad.core.LauncherException;
+import org.sf.jlaunchpad.LauncherException;
 import org.sf.jlaunchpad.JLaunchPadLauncher;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 import org.codehaus.classworlds.ClassRealm;

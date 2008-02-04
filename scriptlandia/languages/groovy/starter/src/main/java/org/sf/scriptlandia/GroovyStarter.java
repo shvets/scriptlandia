@@ -20,6 +20,7 @@ import org.sf.jlaunchpad.JLaunchPadLauncher;
 import org.sf.jlaunchpad.util.ReflectionUtil;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 import org.codehaus.classworlds.ClassRealm;
+import org.codehaus.groovy.tools.LoaderConfiguration;
 
 import java.lang.reflect.*;
 import java.io.FileInputStream;
