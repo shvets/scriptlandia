@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>yoix</artifactId>
+  <version>1.0.1</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia YOIX Core Module</name>
+  <description>Scriptlandia YOIX Core Module</description>
+
+  <properties>
+    <yoix.version>2.1.10</yoix.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>att.research</groupId>
+      <artifactId>yoix</artifactId>
+      <version>${yoix.version}</version>
+    </dependency>
+  </dependencies>
+
+</project>

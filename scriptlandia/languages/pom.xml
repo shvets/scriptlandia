@@ -85,6 +85,7 @@
     <module>xgql/starter</module>
     <module>xruby/starter</module>
     <module>ptilde/starter</module>
+    <module>yoix/starter</module>
   </modules>
 
   <distributionManagement>

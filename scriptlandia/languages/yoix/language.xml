@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<language name="yoix" groupId="att.research" artifactId="yoix" version="2.1.10">
+  <registration mimeType="application/yoix" icon="scriptlandia.ico">
+    <extensions>
+      <extension>yx</extension>
+    </extensions>
+
+    <starter>
+      <mainClass>att.research.yoix.YoixMain</mainClass>
+    </starter>
+  </registration>
+</language>
