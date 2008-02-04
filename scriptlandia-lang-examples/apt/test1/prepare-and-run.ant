@@ -20,7 +20,7 @@
            optimize="${optimize}"
            deprecation ="${deprecation}">
         <src path="${src.dir}"/>
-        <include name ="ListClassApf.java"/>
+        <include name ="ListClassesAndFieldsAPF.java"/>
         <classpath>
           <path location="${java.home}/../lib/tools.jar"/>
         </classpath>
@@ -29,8 +29,8 @@
 
   <target name="run" depends="prepare">
     <java classname="com.sun.tools.apt.Main" fork="yes">
-      <arg line="-factory ListClassApf"/>
-      <arg line="-Atemplate ListClassApf.java"/>
+      <arg line="-factory ListClassesAndFieldsAPF"/>
+      <arg line="-Atemplate Test.java"/>
       <arg value="-nocompile"/>
 
       <classpath>

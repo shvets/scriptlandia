@@ -15,7 +15,7 @@ import static com.sun.mirror.util.DeclarationVisitors.*;
  * names.  The functionality of the processor is analogous to the
  * ListClass doclet in the Doclet Overview.
  */
-public class ListClassApf implements AnnotationProcessorFactory {
+public class ListClassesAndFieldsAPF implements AnnotationProcessorFactory {
     // Process any set of annotations
     private static final Collection<String> supportedAnnotations
         = unmodifiableCollection(Arrays.asList("*"));
@@ -34,25 +34,29 @@ public class ListClassApf implements AnnotationProcessorFactory {
     public AnnotationProcessor getProcessorFor(
             Set<AnnotationTypeDeclaration> atds,
             AnnotationProcessorEnvironment env) {
-        return new ListClassAp(env);
+        return new ListClassesAndFieldsAP(env);
     }
 
-    private static class ListClassAp implements AnnotationProcessor {
+    private static class ListClassesAndFieldsAP implements AnnotationProcessor {
         private final AnnotationProcessorEnvironment env;
-        ListClassAp(AnnotationProcessorEnvironment env) {
+        ListClassesAndFieldsAP(AnnotationProcessorEnvironment env) {
             this.env = env;
         }
 
         public void process() {
-	    for (TypeDeclaration typeDecl : env.getSpecifiedTypeDeclarations())
-		typeDecl.accept(getDeclarationScanner(new ListClassVisitor(),
-						      NO_OP));
+            for (TypeDeclaration typeDecl : env.getSpecifiedTypeDeclarations())
+                typeDecl.accept(getDeclarationScanner(new ListClasssesAndFieldsVisitor(),
+                                                      NO_OP));
         }
 
-	private static class ListClassVisitor extends SimpleDeclarationVisitor {
-	    public void visitClassDeclaration(ClassDeclaration d) {
-		System.out.println(d.getQualifiedName());
-	    }
-	}
+        private static class ListClasssesAndFieldsVisitor extends SimpleDeclarationVisitor {
+            public void visitClassDeclaration(ClassDeclaration d) {
+                System.out.println(d.getQualifiedName());
+            }
+
+            public void visitFieldDeclaration(FieldDeclaration d) {
+                System.out.println(d.getType() + " " + d.getSimpleName());
+            }
+        }
     }
 }
