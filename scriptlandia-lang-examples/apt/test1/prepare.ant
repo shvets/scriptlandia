@@ -1,6 +1,6 @@
 <!-- prepare.ant -->
 
-<project name="prepare" default="prepare" basedir=".">
+<project name="prepare" default="run" basedir=".">
 
   <target name="init">
     <property name="debug" value="false"/>
