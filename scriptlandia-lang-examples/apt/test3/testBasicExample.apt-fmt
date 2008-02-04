@@ -4,12 +4,6 @@
 <#--output each visited type.-->
 ${type.qualifiedName}=visited
 ${type.qualifiedName}.javadoc=${type.javaDoc}
-${type.qualifiedName}.javadoc.author=${type.javaDoc.author}
-
-<#--iterate through javadoc tags occuring multiple times.-->
-      <#list type.javaDoc.author as author>
-${type.qualifiedName}.javadoc.author${author_index}=${author}
-      </#list>
 
 <#--the modifiers of the type.-->
 ${type.qualifiedName}.public=${type.public}
