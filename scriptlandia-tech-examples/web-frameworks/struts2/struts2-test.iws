@@ -16,6 +16,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/struts2/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/struts2/list.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/struts2/action/Struts2Action.java" afterPath="$PROJECT_DIR$/src/main/java/struts2/action/Struts2Action.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/struts2-test.iws" afterPath="$PROJECT_DIR$/struts2-test.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/struts2-test.xml" afterPath="$PROJECT_DIR$/src/main/resources/struts2-test.xml" />
     </list>
     <ignored path="struts2-test.iws" />
@@ -49,59 +52,20 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/struts2/action/Struts2ListAction.java" line="25" class="struts2.action.Struts2ListAction" package="struts2.action">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/struts2/action/DojoAction.java" line="40" class="struts2.action.DojoAction" package="struts2.action">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/struts2/action/DojoAction.java" line="33" class="struts2.action.DojoAction" package="struts2.action">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/struts2/action/Struts2Action.java" line="38" class="struts2.action.Struts2Action" package="struts2.action">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
       <breakpoint url="file://$PROJECT_DIR$/src/test/java/HelloWorldActionTest.java" line="29" class="HelloWorldActionTest" package="">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/struts2/action/Struts2Action.java" line="84" class="struts2.action.Struts2Action" package="struts2.action">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -165,8 +129,16 @@
       <file leaf-file-name="struts2-test.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/struts2-test.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="34" selection-start="324" selection-end="324" vertical-scroll-proportion="0.020518359">
-              <folding />
+            <state line="8" column="35" selection-start="324" selection-end="324" vertical-scroll-proportion="0.036538463">
+              <folding>
+                <marker date="1202336803062" expanded="true" signature="1526:2504" placeholder="..." />
+                <marker date="1202336803062" expanded="true" signature="1605:1714" placeholder="..." />
+                <marker date="1202336803062" expanded="true" signature="1791:1929" placeholder="..." />
+                <marker date="1202336803062" expanded="true" signature="2020:2183" placeholder="..." />
+                <marker date="1202336803062" expanded="true" signature="2049:2169" placeholder="..." />
+                <marker date="1202336803062" expanded="true" signature="2240:2303" placeholder="..." />
+                <marker date="1202336803062" expanded="true" signature="2365:2491" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -174,7 +146,7 @@
       <file leaf-file-name="tiles.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="51" selection-start="202" selection-end="202" vertical-scroll-proportion="0.061555076">
+            <state line="3" column="51" selection-start="202" selection-end="202" vertical-scroll-proportion="0.109615386">
               <folding />
             </state>
           </provider>
@@ -183,7 +155,7 @@
       <file leaf-file-name="login.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/struts2/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="34" selection-start="260" selection-end="260" vertical-scroll-proportion="0.2462203">
+            <state line="12" column="34" selection-start="260" selection-end="260" vertical-scroll-proportion="0.43846154">
               <folding />
             </state>
           </provider>
@@ -192,7 +164,7 @@
       <file leaf-file-name="HelloWorldActionTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/HelloWorldActionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="13" selection-start="821" selection-end="821" vertical-scroll-proportion="0.14014752">
+            <state line="26" column="13" selection-start="821" selection-end="821" vertical-scroll-proportion="0.24493554">
               <folding />
             </state>
           </provider>
@@ -201,7 +173,7 @@
       <file leaf-file-name="BaseStrutsTestCase.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/BaseStrutsTestCase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="22" selection-start="780" selection-end="780" vertical-scroll-proportion="0.020021075">
+            <state line="19" column="22" selection-start="780" selection-end="780" vertical-scroll-proportion="0.03499079">
               <folding />
             </state>
           </provider>
@@ -210,16 +182,61 @@
       <file leaf-file-name="Struts2ActionTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Struts2ActionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="13" selection-start="156" selection-end="156" vertical-scroll-proportion="0.020021075">
+            <state line="5" column="13" selection-start="156" selection-end="156" vertical-scroll-proportion="0.03499079">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Book.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Book.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/esolaria/dojoex/Book.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="13" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0800843">
+            <state line="5" column="13" selection-start="103" selection-end="103" vertical-scroll-proportion="0.13996316">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Struts2Action.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/struts2/action/Struts2Action.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="0" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.33333334">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userForm.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/struts2/userForm.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="100" selection-start="595" selection-end="595" vertical-scroll-proportion="0.51153845">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PrepareInterceptor.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://C:/maven-repository/com/opensymphony/xwork/2.0.4/xwork-2.0.4.jar!/com/opensymphony/xwork2/interceptor/PrepareInterceptor.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="0" selection-start="717" selection-end="717" vertical-scroll-proportion="0.5248619">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Struts2ListAction.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/struts2/action/Struts2ListAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="0" selection-start="706" selection-end="706" vertical-scroll-proportion="0.33333334">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DojoAction.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/struts2/action/DojoAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="0" selection-start="1085" selection-end="1085" vertical-scroll-proportion="0.5782689">
               <folding />
             </state>
           </provider>
@@ -228,7 +245,7 @@
       <file leaf-file-name="HelloWorldAction.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/struts2/action/HelloWorldAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="5" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.42044258">
+            <state line="43" column="5" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.73480666">
               <folding />
             </state>
           </provider>
@@ -237,7 +254,7 @@
       <file leaf-file-name="LoginAction.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/struts2/action/LoginAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="13" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0800843">
+            <state line="4" column="13" selection-start="85" selection-end="85" vertical-scroll-proportion="0.13996316">
               <folding />
             </state>
           </provider>
@@ -246,7 +263,7 @@
       <file leaf-file-name="helloWorld.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/struts2/helloWorld.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="191" selection-end="191" vertical-scroll-proportion="0.22570194">
+            <state line="11" column="0" selection-start="191" selection-end="191" vertical-scroll-proportion="0.4019231">
               <folding />
             </state>
           </provider>
@@ -255,7 +272,7 @@
       <file leaf-file-name="applicationContext.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="34" selection-start="340" selection-end="340" vertical-scroll-proportion="0.25361514">
+            <state line="12" column="34" selection-start="340" selection-end="340" vertical-scroll-proportion="0.46247464">
               <folding />
             </state>
           </provider>
@@ -267,7 +284,7 @@
       <file leaf-file-name="index.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="93" selection-start="245" selection-end="245" vertical-scroll-proportion="0.2462203">
+            <state line="12" column="93" selection-start="245" selection-end="245" vertical-scroll-proportion="0.43846154">
               <folding />
             </state>
           </provider>
@@ -433,6 +450,36 @@
           <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia-tech-examples\web-frameworks\struts2\src\main" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia-tech-examples\web-frameworks\struts2\src\main\webapp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia-tech-examples\web-frameworks\struts2\src\main\webapp\struts2" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="struts2-test" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="struts2-test" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia-tech-examples\web-frameworks\struts2" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia-tech-examples\web-frameworks\struts2\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia-tech-examples\web-frameworks\struts2\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
       </PATH>
       <PATH>
         <PATH_ELEMENT>
@@ -560,7 +607,7 @@
     <RUBY_DOC NAME="DEFAULTS" VALUE="TRUE" />
     <RUBY_DOC NAME="NUMBER" VALUE="0" />
   </component>
-  <component name="RunManager" selected="JUnit.test">
+  <component name="RunManager" selected="Remote.remote">
     <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
@@ -682,7 +729,7 @@
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
+      <option name="PORT" value="6006" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="6006" />
         <option name="TRANSPORT" value="0" />
@@ -773,7 +820,7 @@
       <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296593" order="1" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997996" order="3" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3997996" order="3" />
       <window_info id="FileBrowser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="5" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296593" order="8" />
       <window_info id="CafeBabe" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975295" order="6" />
@@ -850,93 +897,58 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/struts2/action/DojoAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="434" selection-end="434" vertical-scroll-proportion="0.13547237">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/struts2/action/Struts2Action.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="504" selection-end="504" vertical-scroll-proportion="0.13547237">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/struts2/action/Struts2ListAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="44" selection-start="559" selection-end="559" vertical-scroll-proportion="0.20320855">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/struts2/action/LoginAction-validation.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="505" selection-end="505" vertical-scroll-proportion="0.46875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/struts2-test.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="34" selection-start="324" selection-end="324" vertical-scroll-proportion="0.020518359">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="51" selection-start="202" selection-end="202" vertical-scroll-proportion="0.061555076">
+        <state line="3" column="51" selection-start="202" selection-end="202" vertical-scroll-proportion="0.109615386">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/struts2/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="34" selection-start="260" selection-end="260" vertical-scroll-proportion="0.2462203">
+        <state line="12" column="34" selection-start="260" selection-end="260" vertical-scroll-proportion="0.43846154">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/HelloWorldActionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="13" selection-start="821" selection-end="821" vertical-scroll-proportion="0.14014752">
+        <state line="26" column="13" selection-start="821" selection-end="821" vertical-scroll-proportion="0.24493554">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/BaseStrutsTestCase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="22" selection-start="780" selection-end="780" vertical-scroll-proportion="0.020021075">
+        <state line="19" column="22" selection-start="780" selection-end="780" vertical-scroll-proportion="0.03499079">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/struts2/action/HelloWorldAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="5" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.42044258">
+        <state line="43" column="5" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.73480666">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/struts2/action/LoginAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0800843">
+        <state line="4" column="13" selection-start="85" selection-end="85" vertical-scroll-proportion="0.13996316">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/struts2/helloWorld.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="191" selection-end="191" vertical-scroll-proportion="0.22570194">
+        <state line="11" column="0" selection-start="191" selection-end="191" vertical-scroll-proportion="0.4019231">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="34" selection-start="340" selection-end="340" vertical-scroll-proportion="0.25361514">
+        <state line="12" column="34" selection-start="340" selection-end="340" vertical-scroll-proportion="0.46247464">
           <folding />
         </state>
       </provider>
@@ -946,21 +958,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="93" selection-start="245" selection-end="245" vertical-scroll-proportion="0.2462203">
+        <state line="12" column="93" selection-start="245" selection-end="245" vertical-scroll-proportion="0.43846154">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Struts2ActionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="156" selection-end="156" vertical-scroll-proportion="0.020021075">
+        <state line="5" column="13" selection-start="156" selection-end="156" vertical-scroll-proportion="0.03499079">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/esolaria/dojoex/Book.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0800843">
+        <state line="5" column="13" selection-start="103" selection-end="103" vertical-scroll-proportion="0.13996316">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/struts2/action/DojoAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="1085" selection-end="1085" vertical-scroll-proportion="0.5782689">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/struts2/userForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="100" selection-start="595" selection-end="595" vertical-scroll-proportion="0.51153845">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/maven-repository/com/opensymphony/xwork/2.0.4/xwork-2.0.4.jar!/com/opensymphony/xwork2/interceptor/PrepareInterceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="717" selection-end="717" vertical-scroll-proportion="0.5248619">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/struts2/action/Struts2Action.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/struts2/action/Struts2ListAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="706" selection-end="706" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>

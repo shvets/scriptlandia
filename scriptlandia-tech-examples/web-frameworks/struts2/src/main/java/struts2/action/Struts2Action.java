@@ -109,6 +109,10 @@ public class Struts2Action extends ActionSupport
     return SUCCESS;
   }
 
+ // public String doInput() {
+ //   return INPUT;
+//  }
+
   public Object getModel() {
     return user;
   }

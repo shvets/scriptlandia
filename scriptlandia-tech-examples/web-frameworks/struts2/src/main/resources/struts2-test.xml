@@ -6,6 +6,7 @@
 <struts>
   <constant name="struts.enable.DynamicMethodInvocation" value="false" />
   <constant name="struts.devMode" value="true" />
+  <constant name="struts.custom.i18n.resources" value="guest" />
 
   <package name="struts2" namespace="/struts2" extends="tiles-default">
 
@@ -26,6 +27,7 @@
       <result>/struts2/view.jsp</result>
     </action>
 
+<!--
     <action name="create" method="create" class="struts2.action.Struts2Action">
       <result>/struts2/update.jsp</result>
     </action>
@@ -33,7 +35,14 @@
     <action name="update" method="update" class="struts2.action.Struts2Action">
       <result>/struts2/update.jsp</result>
     </action>
+-->
 
+    <action name="update" method="input" class="struts2.action.Struts2Action">
+      <result name="success" type="redirect-action">list</result>
+      <result name="input">/struts2/userForm.jsp</result>
+      <result name="error">/struts2/error.jsp</result>
+    </action>
+    
     <action name="delete" method="delete" class="struts2.action.Struts2Action">
       <result type="redirect-action">list</result>
 
@@ -41,7 +50,8 @@
     </action>
 
     <action name="save" method="save" class="struts2.action.Struts2Action">
-      <result type="redirect-action">list</result>
+      <result name="success" type="redirect-action">list</result>
+      <!--result name="input">/struts2/userForm.jsp</result-->
     </action>
 
     <action name="dojoAction" method="userDescription" class="struts2.action.DojoAction">

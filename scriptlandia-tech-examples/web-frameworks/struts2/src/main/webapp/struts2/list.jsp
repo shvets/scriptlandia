@@ -74,7 +74,7 @@
   
   <div id="userInfo" style="display:none;"></div>
 
-  <a href="create.action">Add a new entry</a>
+  <a href="update.action">Add a new entry</a>
 
 </body>
 

@@ -3,14 +3,14 @@
 "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
 
 <validators>
-    <field name="username">
+    <field name="user.firstName">
         <field-validator type="requiredstring">
-            <message>Username is required</message>
+            <message>First name is required</message>
         </field-validator>
     </field>
-    <field name="password">
+    <field name="user.lastName">
         <field-validator type="requiredstring">
-            <message>Password is required</message>
+            <message>Last name is required</message>
         </field-validator>
     </field>
 </validators>
