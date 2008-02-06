@@ -13,7 +13,8 @@
       <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
     </result-types-->
 
-    <default-interceptor-ref name="defaultStack"/>
+    <!-- Default interceptor stack. -->
+    <default-interceptor-ref name="paramsPrepareParamsStack"/>
     
     <action name="list" class="struts2.action.Struts2ListAction">
       <result type="tiles">.list</result>
@@ -23,30 +24,24 @@
 
     <action name="view" method="view" class="struts2.action.Struts2Action">
       <result>/struts2/view.jsp</result>
-
-      <interceptor-ref name="paramsPrepareParamsStack"/>
     </action>
 
     <action name="create" method="create" class="struts2.action.Struts2Action">
       <result>/struts2/update.jsp</result>
-
-      <interceptor-ref name="paramsPrepareParamsStack"/>
     </action>
 
     <action name="update" method="update" class="struts2.action.Struts2Action">
       <result>/struts2/update.jsp</result>
-
-      <interceptor-ref name="paramsPrepareParamsStack"/>
     </action>
 
     <action name="delete" method="delete" class="struts2.action.Struts2Action">
-      <result type="redirect">list.action</result>
+      <result type="redirect-action">list</result>
 
       <interceptor-ref name="basicStack"/>
     </action>
 
     <action name="save" method="save" class="struts2.action.Struts2Action">
-      <result type="redirect">list.action</result>
+      <result type="redirect-action">list</result>
     </action>
 
     <action name="dojoAction" method="userDescription" class="struts2.action.DojoAction">
@@ -60,11 +55,10 @@
       <result type="tiles">.helloWorld</result>
     </action>
 
-<action name="login" class="struts2.action.LoginAction">
-  <result type="redirect-action">helloWorld</result>
-  <result name="input">/struts2/login.jsp</result>
-</action>
-
+    <action name="login" class="struts2.action.LoginAction">
+      <result type="redirect-action">helloWorld</result>
+      <result name="input">/struts2/login.jsp</result>
+    </action>
   </package>
 
 </struts>
