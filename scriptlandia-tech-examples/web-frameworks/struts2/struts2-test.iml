@@ -24,6 +24,10 @@
           <setting name="BUILD_ONLY_WEB_RESOURCES" value="false" />
         </building>
         <packaging>
+          <containerElement type="module" name="struts2-test">
+            <attribute name="method" value="1" />
+            <attribute name="URI" value="/WEB-INF/classes" />
+          </containerElement>
           <containerElement type="library" name="antlr:antlr:2.7.2" level="module">
             <attribute name="method" value="1" />
             <attribute name="URI" value="/WEB-INF/lib/antlr-2.7.2.jar" />
@@ -35,6 +39,10 @@
           <containerElement type="library" name="com.opensymphony:xwork:2.0.4" level="module">
             <attribute name="method" value="1" />
             <attribute name="URI" value="/WEB-INF/lib/xwork-2.0.4.jar" />
+          </containerElement>
+          <containerElement type="library" name="com.sun:tools:1.5.0" level="module">
+            <attribute name="method" value="0" />
+            <attribute name="URI" value="/WEB-INF/lib" />
           </containerElement>
           <containerElement type="library" name="commons-beanutils:commons-beanutils:1.7.0" level="module">
             <attribute name="method" value="1" />
@@ -52,6 +60,10 @@
             <attribute name="method" value="1" />
             <attribute name="URI" value="/WEB-INF/lib/commons-lang-2.2.jar" />
           </containerElement>
+          <containerElement type="library" name="commons-logging:commons-logging-api:1.1" level="module">
+            <attribute name="method" value="1" />
+            <attribute name="URI" value="/WEB-INF/lib/commons-logging-api-1.1.jar" />
+          </containerElement>
           <containerElement type="library" name="commons-logging:commons-logging:1.0.4" level="module">
             <attribute name="method" value="1" />
             <attribute name="URI" value="/WEB-INF/lib/commons-logging-1.0.4.jar" />
@@ -64,9 +76,25 @@
             <attribute name="method" value="1" />
             <attribute name="URI" value="/WEB-INF/lib/freemarker-2.3.8.jar" />
           </containerElement>
+          <containerElement type="library" name="javax.servlet:jsp-api:2.0" level="module">
+            <attribute name="method" value="0" />
+            <attribute name="URI" value="&lt;N/A&gt;" />
+          </containerElement>
           <containerElement type="library" name="javax.servlet:jstl:1.1.2" level="module">
             <attribute name="method" value="1" />
             <attribute name="URI" value="/WEB-INF/lib/jstl-1.1.2.jar" />
+          </containerElement>
+          <containerElement type="library" name="javax.servlet:servlet-api:2.4" level="module">
+            <attribute name="method" value="0" />
+            <attribute name="URI" value="&lt;N/A&gt;" />
+          </containerElement>
+          <containerElement type="library" name="jsonplugin:jsonplugin:0.19" level="module">
+            <attribute name="method" value="1" />
+            <attribute name="URI" value="/WEB-INF/lib/jsonplugin-0.19.jar" />
+          </containerElement>
+          <containerElement type="library" name="junit:junit:3.8.2" level="module">
+            <attribute name="method" value="0" />
+            <attribute name="URI" value="/WEB-INF/lib" />
           </containerElement>
           <containerElement type="library" name="opensymphony:ognl:2.6.11" level="module">
             <attribute name="method" value="1" />
@@ -79,6 +107,26 @@
           <containerElement type="library" name="org.apache.struts:struts2-spring-plugin:2.0.11" level="module">
             <attribute name="method" value="1" />
             <attribute name="URI" value="/WEB-INF/lib/struts2-spring-plugin-2.0.11.jar" />
+          </containerElement>
+          <containerElement type="library" name="org.apache.struts:struts2-tiles-plugin:2.0.11" level="module">
+            <attribute name="method" value="1" />
+            <attribute name="URI" value="/WEB-INF/lib/struts2-tiles-plugin-2.0.11.jar" />
+          </containerElement>
+          <containerElement type="library" name="org.apache.tiles:tiles-api:2.0.4" level="module">
+            <attribute name="method" value="1" />
+            <attribute name="URI" value="/WEB-INF/lib/tiles-api-2.0.4.jar" />
+          </containerElement>
+          <containerElement type="library" name="org.apache.tiles:tiles-core:2.0.4" level="module">
+            <attribute name="method" value="1" />
+            <attribute name="URI" value="/WEB-INF/lib/tiles-core-2.0.4.jar" />
+          </containerElement>
+          <containerElement type="library" name="org.apache.tiles:tiles-jsp:2.0.5" level="module">
+            <attribute name="method" value="1" />
+            <attribute name="URI" value="/WEB-INF/lib/tiles-jsp-2.0.5.jar" />
+          </containerElement>
+          <containerElement type="library" name="org.json:json:20070829" level="module">
+            <attribute name="method" value="1" />
+            <attribute name="URI" value="/WEB-INF/lib/json-20070829.jar" />
           </containerElement>
           <containerElement type="library" name="org.springframework:spring-beans:2.5.1" level="module">
             <attribute name="method" value="1" />
@@ -116,10 +164,6 @@
             <attribute name="method" value="1" />
             <attribute name="URI" value="/WEB-INF/lib/xml-apis-1.0.b2.jar" />
           </containerElement>
-          <containerElement type="module" name="struts2-test">
-            <attribute name="method" value="1" />
-            <attribute name="URI" value="/WEB-INF/classes" />
-          </containerElement>
         </packaging>
       </configuration>
       <facet type="struts" name="Struts">
@@ -135,7 +179,7 @@
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset1" name="My Fileset" removed="false">
-          <file>file://$MODULE_DIR$/src/main/resources/WEB-INF/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/applicationContext.xml</file>
         </fileset>
         <options>
           <option name="enableValidation" value="true" />
@@ -152,6 +196,9 @@
           <file>jar://C:/maven-repository/org/apache/struts/struts2-core/2.0.11/struts2-core-2.0.11.jar!/struts-default.xml</file>
           <file>jar://C:/maven-repository/org/apache/struts/struts2-core/2.0.11/struts2-core-2.0.11.jar!/struts-portlet-default.xml</file>
           <file>jar://C:/maven-repository/com/opensymphony/xwork/2.0.4/xwork-2.0.4.jar!/xwork-default.xml</file>
+          <file>jar://C:/maven-repository/org/apache/struts/struts2-spring-plugin/2.0.11/struts2-spring-plugin-2.0.11.jar!/struts-plugin.xml</file>
+          <file>jar://C:/maven-repository/org/apache/struts/struts2-tiles-plugin/2.0.11/struts2-tiles-plugin-2.0.11.jar!/struts-plugin.xml</file>
+          <file>jar://C:/maven-repository/jsonplugin/jsonplugin/0.19/jsonplugin-0.19.jar!/struts-plugin.xml</file>
         </fileset>
         <features>
           <errors_as_warnings>false</errors_as_warnings>
@@ -170,9 +217,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/target/classes" />
-      <excludeFolder url="file://$MODULE_DIR$/target/surefire-reports" />
-      <excludeFolder url="file://$MODULE_DIR$/target/test-classes" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -218,13 +262,13 @@
     <orderEntry type="module-library">
       <library name="com.sun:tools:1.5.0">
         <CLASSES>
-          <root url="jar://c:/editors/in4d94~1/jre/jre/../lib/tools.jar!/" />
+          <root url="jar://c:/editors/intell~2/jre/jre/../lib/tools.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://c:/editors/in4d94~1/jre/jre/../lib/tools-javadoc.jar!/" />
+          <root url="jar://c:/editors/intell~2/jre/jre/../lib/tools-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://c:/editors/in4d94~1/jre/jre/../lib/tools-sources.jar!/" />
+          <root url="jar://c:/editors/intell~2/jre/jre/../lib/tools-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -277,6 +321,19 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://C:/maven-repository/commons-lang/commons-lang/2.2/commons-lang-2.2-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="commons-logging:commons-logging-api:1.1">
+        <CLASSES>
+          <root url="jar://C:/maven-repository/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/maven-repository/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://C:/maven-repository/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -358,6 +415,19 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="jsonplugin:jsonplugin:0.19">
+        <CLASSES>
+          <root url="jar://C:/maven-repository/jsonplugin/jsonplugin/0.19/jsonplugin-0.19.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/maven-repository/jsonplugin/jsonplugin/0.19/jsonplugin-0.19-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://C:/maven-repository/jsonplugin/jsonplugin/0.19/jsonplugin-0.19-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
     <orderEntry type="module-library">
       <library name="junit:junit:3.8.2">
         <CLASSES>
@@ -407,6 +477,71 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://C:/maven-repository/org/apache/struts/struts2-spring-plugin/2.0.11/struts2-spring-plugin-2.0.11-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="org.apache.struts:struts2-tiles-plugin:2.0.11">
+        <CLASSES>
+          <root url="jar://C:/maven-repository/org/apache/struts/struts2-tiles-plugin/2.0.11/struts2-tiles-plugin-2.0.11.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/maven-repository/org/apache/struts/struts2-tiles-plugin/2.0.11/struts2-tiles-plugin-2.0.11-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://C:/maven-repository/org/apache/struts/struts2-tiles-plugin/2.0.11/struts2-tiles-plugin-2.0.11-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="org.apache.tiles:tiles-api:2.0.4">
+        <CLASSES>
+          <root url="jar://C:/maven-repository/org/apache/tiles/tiles-api/2.0.4/tiles-api-2.0.4.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/maven-repository/org/apache/tiles/tiles-api/2.0.4/tiles-api-2.0.4-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://C:/maven-repository/org/apache/tiles/tiles-api/2.0.4/tiles-api-2.0.4-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="org.apache.tiles:tiles-core:2.0.4">
+        <CLASSES>
+          <root url="jar://C:/maven-repository/org/apache/tiles/tiles-core/2.0.4/tiles-core-2.0.4.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/maven-repository/org/apache/tiles/tiles-core/2.0.4/tiles-core-2.0.4-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://C:/maven-repository/org/apache/tiles/tiles-core/2.0.4/tiles-core-2.0.4-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="org.apache.tiles:tiles-jsp:2.0.5">
+        <CLASSES>
+          <root url="jar://C:/maven-repository/org/apache/tiles/tiles-jsp/2.0.5/tiles-jsp-2.0.5.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/maven-repository/org/apache/tiles/tiles-jsp/2.0.5/tiles-jsp-2.0.5-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://C:/maven-repository/org/apache/tiles/tiles-jsp/2.0.5/tiles-jsp-2.0.5-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="org.json:json:20070829">
+        <CLASSES>
+          <root url="jar://C:/maven-repository/org/json/json/20070829/json-20070829.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/maven-repository/org/json/json/20070829/json-20070829-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://C:/maven-repository/org/json/json/20070829/json-20070829-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

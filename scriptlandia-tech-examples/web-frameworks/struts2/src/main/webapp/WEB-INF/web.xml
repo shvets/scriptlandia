@@ -48,7 +48,7 @@
       <param-value>application</param-value>
     </init-param>
 
-      <load-on-startup>2</load-on-startup>
+    <load-on-startup>2</load-on-startup>
   </servlet>
 
   <!-- Standard Action Servlet Mapping -->

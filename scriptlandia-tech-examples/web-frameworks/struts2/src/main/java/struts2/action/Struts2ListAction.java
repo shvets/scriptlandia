@@ -16,8 +16,6 @@ import java.util.List;
 
 public class Struts2ListAction extends ActionSupport
        implements ServletRequestAware {
-  //private UserService userService = new UserServiceImpl();
-
   private HttpServletRequest request;
 
   public void setServletRequest(HttpServletRequest httpServletRequest) {

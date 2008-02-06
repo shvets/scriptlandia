@@ -4,6 +4,11 @@
 
 <beans default-autowire="autodetect">
 
+  <!-- DAOs -->
+
   <bean id="userService" class="dao.UserServiceImpl" singleton="true" />
 
+  <!-- Struts2 actions -->
+
+  <bean id="helloWorldAction" class="struts2.action.HelloWorldAction" singleton="false" />
 </beans>
