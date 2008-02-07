@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-
-<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
-                                   "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_2_0.dtd">
 
 <tiles-definitions>
-  <definition name=".baseLayout" path="/templates/baseLayout.jsp">
-    <put name="header" value='/templates/header.jsp'/>
-    <put name="content" value='/templates/emptyContent.jsp'/>
-    <put name="footer" value='/templates/footer.jsp'/>
+  <definition name=".baseLayout" template="/templates/baseLayout.jsp">
+    <put-attribute name="header" value='/templates/header.jsp'/>
+    <put-attribute name="content" value='/templates/emptyContent.jsp'/>
+    <put-attribute name="footer" value='/templates/footer.jsp'/>
   </definition>
 
   <definition name=".page1" extends=".baseLayout">
-    <put name="content" value='/page1.jsp'/>
+    <put-attribute name="content" value='/page1.jsp'/>
   </definition>
 
   <definition name=".page2" extends=".baseLayout">
-    <put name="content" value='/page2.jsp'/>
+    <put-attribute name="content" value='/page2.jsp'/>
   </definition>
 
   <definition name=".page3" extends=".baseLayout">
-    <put name="content" value='/page3.jsp'/>
+    <put-attribute name="content" value='/page3.jsp'/>
   </definition>
 
 </tiles-definitions>

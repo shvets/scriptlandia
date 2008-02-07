@@ -9,19 +9,19 @@
   <table>
     <tr>
       <td>
-        <tiles:insert attribute="header"/>
+        <tiles:insertAttribute name="header"/>
       </td>
     </tr>
 
     <tr>
       <td>
-        <tiles:insert attribute="content"/>
+        <tiles:insertAttribute name="content"/>
       </td>
     </tr>
 
     <tr>
       <td>
-        <tiles:insert attribute="footer"/>
+        <tiles:insertAttribute name="footer"/>
       </td>
     </tr>
   </table>
