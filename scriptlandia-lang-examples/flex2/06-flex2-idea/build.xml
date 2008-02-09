@@ -1,0 +1,48 @@
+<project default="compile1" basedir=".">
+   <property name="repository.home" value="c:/maven-repository"/>
+
+  <property name="flex.home" value="c:/Java/flex/sdk"/>
+  <property name="FLEX_HOME" value="${flex.home}"/>
+
+  <property name="browser" value="C:/Program Files/Mozilla Firefox/firefox.exe"/>
+  <property name="flex.player" value="${flex.home}/../player/SAFlashPlayer.exe"/>
+  <property name="testAppFileName" value="application.swf"/>
+  <property name="deploymentPath" value="./deploy"/>
+
+    <property name="mxmlc.jar" location="${flex.home}/lib/mxmlc.jar"/>
+    <property name="deployDirectory" value="${deploymentPath}"/>
+
+    <target name="compile1">
+        <java	jar="${mxmlc.jar}" fork="true" 	maxmemory="512m" failonerror="true">
+    		  <arg value="+flexlib=${flex.home}/frameworks"/>
+          <arg line="-load-config+=flex-config.xml" />
+          <arg line="-source-path src/main/flex2"/>
+          <arg line="-output='${deployDirectory}/${testAppFileName}'"/>
+        </java>
+    </target>
+
+  <target name="compile2">
+   <taskdef resource="flexTasks.tasks"
+             classpath="${repository.home}/adobe/flex2/flex2-anttasks/1.0/flex2-anttasks-1.0.jar"/>
+
+     <mxmlc file="Application.mxml"
+            output="${deployDirectory}/${testAppFileName}"
+            keep-generated-actionscript="false">
+       <load-config filename="${flex.home}/frameworks/flex-config.xml"/>
+       <source-path path-element="${flex.home}/frameworks"/>
+       <source-path path-element="src/main/flex2"/>       
+     </mxmlc>
+  </target>
+
+    <target name="run1">
+       <exec executable="${browser}" spawn="yes" dir="${deployDirectory}">
+         <arg line="'${testAppFileName}'"/>
+       </exec>
+    </target>
+
+   <target name="run2">
+       <exec executable="${flex.player}" spawn="yes" dir="${deployDirectory}">
+         <arg line="'${testAppFileName}'"/>
+       </exec>
+    </target>
+</project>
