@@ -1,42 +1,42 @@
 #!/bin/sh
 
-. ../../../jlaunchpad/trunk/jlaunchpad/config.sh
+../../../jlaunchpad/trunk/jlaunchpad/config.sh
 
 
-if [ ! -f $LAUNCHER_HOME/jlaunchpad.sh ]; then
-  echo Please run jlaunchpad-installer.sht first.
-  pause
-  exit
+if [ ! -f $JLAUNCHPAD_HOME/jlaunchpad.sh ]; then
+  echo Please run jlaunchpad-installer.sh first.
+  
+  return
 fi
 
 if [ ! -f $REPOSITORY_HOME/org/sf/jlaunchpad/jlaunchpad-launcher/$JLAUNCHPAD_VERSION/jlaunchpad-launcher-$JLAUNCHPAD_VERSION.jar ]; then
-  echo Please run jlaunchpad-installer.bat first.
-  pause
-  exit
+  echo Please run jlaunchpad-installer.sh first.
+  
+  return
 fi
 
 if [ ! -f $REPOSITORY_HOME/org/sf/jlaunchpad/jlaunchpad-common/$JLAUNCHPAD_VERSION/jlaunchpad-common-$JLAUNCHPAD_VERSION.jar ]; then
-  echo Please run jlaunchpad-installer.bat first.
-  pause
-  exit
+  echo Please run jlaunchpad-installer.sh first.
+  
+  return
 fi
 
 if [ ! -f $REPOSITORY_HOME/org/sf/jlaunchpad/pom-reader/$JLAUNCHPAD_VERSION/pom-reader-$JLAUNCHPAD_VERSION.jar ]; then
-  echo Please run jlaunchpad-installer.bat first.
-  pause
-  exit
+  echo Please run jlaunchpad-installer.sh first.
+  
+  return
 fi
 
 if [ ! -f $REPOSITORY_HOME/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8.jar ]; then
-  echo Please run jlaunchpad-installer.bat first.
-  pause
-  exit
+  echo Please run jlaunchpad-installer.sh first.
+  
+  return
 fi
 
 
 SCRIPTLANDIA_HOME=%DRIVE_LETTER%\scriptlandia
 MOBILE_JAVA_HOME=%DRIVE_LETTER%\Java\j2me-2.5
-RUBY_HOME=%DRIVE_LETTER%\Ruby\ruby-1.8.4-20
+#RUBY_HOME=%DRIVE_LETTER%\Ruby\ruby-1.8.4-20
 
 SCRIPTLANDIA_VERSION=2.2.4
 ANT_VERSION=1.7.0
@@ -44,14 +44,8 @@ BEANSHELL_VERSION=2.0b5
 NAILGUN_VERSION=0.7.1
 JAVA_COMPILER_VERSION=7.0-b23
 
-if [ ! -f $JAVA_HOME ]; then
-  ECHO JDK cannot be found!
-  pause
-  #exit
-fi
-
 if [ ! -f $MOBILE_JAVA_HOME ]; then
-  ECHO Java Micro Edition cannot be found!
+  echo Java Micro Edition cannot be found!
 fi
 
 

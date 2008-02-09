@@ -2,11 +2,10 @@
 
 . ../../../jlaunchpad/trunk/jlaunchpad/config.sh
 
-if [ ! -f $LAUNCHER_HOME/jlaunchpad.sh ]; then
+if [ ! -f $JLAUNCHPAD_HOME/jlaunchpad.sh ]; then
   echo Please run jlaunchpad-installer.sh first.
 
-  pause
-  exit 1
+  return
 fi
 
 echo ---### Java Specification Version Level: $JAVA_SPECIFICATION_VERSION_LEVEL

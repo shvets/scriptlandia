@@ -16,51 +16,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jar/starter/jar-starter.iml" afterPath="$PROJECT_DIR$/languages/jar/starter/jar-starter.iml" />
-      <change type="DELETED" beforePath="C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-config\bin\groovy.bat" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/velocity/starter/velocity-starter.iml" afterPath="$PROJECT_DIR$/languages/velocity/starter/velocity-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/antrun/antrun.iml" afterPath="$PROJECT_DIR$/projects/antrun/antrun.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/apt-jelly/core/pom.xml" afterPath="$PROJECT_DIR$/languages/apt-jelly/core/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptlandia-main.iws" afterPath="$PROJECT_DIR$/scriptlandia-main.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-nailgun/scriptlandia-nailgun.iml" afterPath="$PROJECT_DIR$/projects/scriptlandia-nailgun/scriptlandia-nailgun.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/scriptlandia/starter/scriptlandia-starter.iml" afterPath="$PROJECT_DIR$/languages/scriptlandia/starter/scriptlandia-starter.iml" />
-      <change type="MOVED" beforePath="C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\apt-jelly\starter\src\main\java\org\sf\scriptlandia\AptStarter.java" afterPath="$PROJECT_DIR$/languages/apt-jelly/starter/src/main/java/org/sf/scriptlandia/AptJellyStarter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/groovy/starter/groovy-starter.iml" afterPath="$PROJECT_DIR$/languages/groovy/starter/groovy-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-helper/scriptlandia-helper.iml" afterPath="$PROJECT_DIR$/projects/scriptlandia-helper/scriptlandia-helper.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/classworlds/starter/classworlds-starter.iml" afterPath="$PROJECT_DIR$/languages/classworlds/starter/classworlds-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jruby/starter/jruby-starter.iml" afterPath="$PROJECT_DIR$/languages/jruby/starter/jruby-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/beanshell/starter/beanshell-starter.iml" afterPath="$PROJECT_DIR$/languages/beanshell/starter/beanshell-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-config/bin/ptilde.conf" afterPath="$PROJECT_DIR$/projects/scriptlandia-config/bin/ptilde.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/apt-jelly/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/apt-jelly/starter/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/scriptlandia/starter/src/main/java/org/sf/scriptlandia/ScriptlandiaStarter.java" afterPath="$PROJECT_DIR$/languages/scriptlandia/starter/src/main/java/org/sf/scriptlandia/ScriptlandiaStarter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/xgql/starter/xgql-starter.iml" afterPath="$PROJECT_DIR$/languages/xgql/starter/xgql-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jscheme/starter/jscheme-starter.iml" afterPath="$PROJECT_DIR$/languages/jscheme/starter/jscheme-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-config/scriptlandia-config.iml" afterPath="$PROJECT_DIR$/projects/scriptlandia-config/scriptlandia-config.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/war/starter/war-starter.iml" afterPath="$PROJECT_DIR$/languages/war/starter/war-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/apt-jelly/starter/apt-jelly-starter.iml" afterPath="$PROJECT_DIR$/languages/apt-jelly/starter/apt-jelly-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/apt-fmt/core/pom.xml" afterPath="$PROJECT_DIR$/languages/apt-fmt/core/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/DeveloperGuide.txt" afterPath="$PROJECT_DIR$/docs/DeveloperGuide.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/class/starter/class-starter.iml" afterPath="$PROJECT_DIR$/languages/class/starter/class-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/javafx/starter/javafx-starter.iml" afterPath="$PROJECT_DIR$/languages/javafx/starter/javafx-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/kawa/starter/kawa-starter.iml" afterPath="$PROJECT_DIR$/languages/kawa/starter/kawa-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/apt-fmt/starter/apt-fmt-starter.iml" afterPath="$PROJECT_DIR$/languages/apt-fmt/starter/apt-fmt-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jad/starter/jad-starter.iml" afterPath="$PROJECT_DIR$/languages/jad/starter/jad-starter.iml" />
       <change type="MOVED" beforePath="C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\apt-fmt\starter\src\main\java\org\sf\scriptlandia\AptStarter1.java" afterPath="$PROJECT_DIR$/languages/apt-fmt/starter/src/main/java/org/sf/scriptlandia/AptFreemarkerStarter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/yoix/starter/yoix-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/janino/starter/janino-starter.iml" afterPath="$PROJECT_DIR$/languages/janino/starter/janino-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/ant/starter/ant-starter.iml" afterPath="$PROJECT_DIR$/languages/ant/starter/ant-starter.iml" />
-      <change type="DELETED" beforePath="C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-config\bin\groovy-starter.conf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Work\Projects\scriptlandia\trunk\scriptlandia\projects\scriptlandia-config\bin\fortress.bat" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-installer/scriptlandia-installer.iml" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/scriptlandia-installer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/freemarker/starter/freemarker-starter.iml" afterPath="$PROJECT_DIR$/languages/freemarker/starter/freemarker-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/maven/starter/maven-starter.iml" afterPath="$PROJECT_DIR$/languages/maven/starter/maven-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/fortress/starter/fortress-starter.iml" afterPath="$PROJECT_DIR$/languages/fortress/starter/fortress-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/scala/starter/scala-starter.iml" afterPath="$PROJECT_DIR$/languages/scala/starter/scala-starter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-launcher/scriptlandia-launcher.iml" afterPath="$PROJECT_DIR$/projects/scriptlandia-launcher/scriptlandia-launcher.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/apt-jelly/language.xml" afterPath="$PROJECT_DIR$/languages/apt-jelly/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/apt-fmt/language.xml" afterPath="$PROJECT_DIR$/languages/apt-fmt/language.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptlandia-main.ipr" afterPath="$PROJECT_DIR$/scriptlandia-main.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
+      <change type="MOVED" beforePath="C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\apt-jelly\starter\src\main\java\org\sf\scriptlandia\AptStarter.java" afterPath="$PROJECT_DIR$/languages/apt-jelly/starter/src/main/java/org/sf/scriptlandia/AptJellyStarter.java" />
     </list>
     <ignored path="scriptlandia-main.iws" />
     <ignored path=".idea/workspace.xml" />

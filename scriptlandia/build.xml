@@ -4,7 +4,6 @@
 
   <!--splash imageurl="file:${basedir}/languages/scriptlandia/scriptlandia.ico"/-->
 
-
   <import file="scriptlandia-macrodefs.xml"/>
 
   <property file="${user.home}/launcher/config.properties"/>
