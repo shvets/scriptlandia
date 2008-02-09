@@ -5,14 +5,13 @@
 JLAUNCHPAD_PROJECT=.
 ORIGINAL_JLAUNCHPAD_PROJECT=../../../jlaunchpad/trunk
 
-if [ -f ~/jlaunchpad/config.sh ]; then
+if [ -e ~/jlaunchpad/config.sh ]; then
   . ~/jlaunchpad/config.sh
 fi
 
-if [ -f $ORIGINAL_JLAUNCHPAD_PROJECT/projects/jlaunchpad-launcher/target\jlaunchpad-launcher.jar ]; then
+if [ -e $ORIGINAL_JLAUNCHPAD_PROJECT/projects/jlaunchpad-launcher/target\jlaunchpad-launcher.jar ]; then
   cd $ORIGINAL_JLAUNCHPAD_PROJECT
 fi
-
 
 BOOTSTRAP_MINI_PROJECT=$JLAUNCHPAD_PROJECT/projects/bootstrap-mini
 JLAUNCHPAD_COMMON_PROJECT=$JLAUNCHPAD_PROJECT/projects/jlaunchpad-common

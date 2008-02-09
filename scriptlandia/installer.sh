@@ -3,31 +3,31 @@
 ../../../jlaunchpad/trunk/jlaunchpad/config.sh
 
 
-if [ ! -f $JLAUNCHPAD_HOME/jlaunchpad.sh ]; then
+if [ ! -e $JLAUNCHPAD_HOME/jlaunchpad.sh ]; then
   echo Please run jlaunchpad-installer.sh first.
   
   return
 fi
 
-if [ ! -f $REPOSITORY_HOME/org/sf/jlaunchpad/jlaunchpad-launcher/$JLAUNCHPAD_VERSION/jlaunchpad-launcher-$JLAUNCHPAD_VERSION.jar ]; then
+if [ ! -e $REPOSITORY_HOME/org/sf/jlaunchpad/jlaunchpad-launcher/$JLAUNCHPAD_VERSION/jlaunchpad-launcher-$JLAUNCHPAD_VERSION.jar ]; then
   echo Please run jlaunchpad-installer.sh first.
   
   return
 fi
 
-if [ ! -f $REPOSITORY_HOME/org/sf/jlaunchpad/jlaunchpad-common/$JLAUNCHPAD_VERSION/jlaunchpad-common-$JLAUNCHPAD_VERSION.jar ]; then
+if [ ! -e $REPOSITORY_HOME/org/sf/jlaunchpad/jlaunchpad-common/$JLAUNCHPAD_VERSION/jlaunchpad-common-$JLAUNCHPAD_VERSION.jar ]; then
   echo Please run jlaunchpad-installer.sh first.
   
   return
 fi
 
-if [ ! -f $REPOSITORY_HOME/org/sf/jlaunchpad/pom-reader/$JLAUNCHPAD_VERSION/pom-reader-$JLAUNCHPAD_VERSION.jar ]; then
+if [ ! -e $REPOSITORY_HOME/org/sf/jlaunchpad/pom-reader/$JLAUNCHPAD_VERSION/pom-reader-$JLAUNCHPAD_VERSION.jar ]; then
   echo Please run jlaunchpad-installer.sh first.
   
   return
 fi
 
-if [ ! -f $REPOSITORY_HOME/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8.jar ]; then
+if [ ! -e $REPOSITORY_HOME/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8.jar ]; then
   echo Please run jlaunchpad-installer.sh first.
   
   return

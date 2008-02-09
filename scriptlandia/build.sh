@@ -2,7 +2,7 @@
 
 . ../../../jlaunchpad/trunk/jlaunchpad/config.sh
 
-if [ ! -f $JLAUNCHPAD_HOME/jlaunchpad.sh ]; then
+if [ ! -e $JLAUNCHPAD_HOME/jlaunchpad.sh ]; then
   echo Please run jlaunchpad-installer.sh first.
 
   return
