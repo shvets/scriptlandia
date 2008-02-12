@@ -5,7 +5,7 @@
   <groupId>org.sf.scriptlandia</groupId>
   <artifactId>groovy-starter</artifactId>
   <version>1.0.1</version>
-  <packaging>pom</packaging>
+  <packaging>jar</packaging>
 
   <name>Scriptlandia Groovy Starter Module</name>
   <description>Scriptlandia Groovy Starter Module</description>

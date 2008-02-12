@@ -16,8 +16,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\apt-fmt\starter\src\main\java\org\sf\scriptlandia\AptStarter1.java" afterPath="$PROJECT_DIR$/languages/apt-fmt/starter/src/main/java/org/sf/scriptlandia/AptFreemarkerStarter.java" />
-      <change type="MOVED" beforePath="C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\apt-jelly\starter\src\main\java\org\sf\scriptlandia\AptStarter.java" afterPath="$PROJECT_DIR$/languages/apt-jelly/starter/src/main/java/org/sf/scriptlandia/AptJellyStarter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jar/starter/jar-starter.iml" afterPath="$PROJECT_DIR$/languages/jar/starter/jar-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/groovy/starter/src/main/java/org/sf/scriptlandia/GroovyStarter.java" afterPath="$PROJECT_DIR$/languages/groovy/starter/src/main/java/org/sf/scriptlandia/GroovyStarter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/pnuts/starter/pnuts-starter.iml" afterPath="$PROJECT_DIR$/languages/pnuts/starter/pnuts-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/velocity/starter/velocity-starter.iml" afterPath="$PROJECT_DIR$/languages/velocity/starter/velocity-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/antrun/antrun.iml" afterPath="$PROJECT_DIR$/projects/antrun/antrun.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jython/starter/jython-starter.iml" afterPath="$PROJECT_DIR$/languages/jython/starter/jython-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptlandia-main.iws" afterPath="$PROJECT_DIR$/scriptlandia-main.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-nailgun/scriptlandia-nailgun.iml" afterPath="$PROJECT_DIR$/projects/scriptlandia-nailgun/scriptlandia-nailgun.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/scriptlandia/starter/scriptlandia-starter.iml" afterPath="$PROJECT_DIR$/languages/scriptlandia/starter/scriptlandia-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/groovy/starter/groovy-starter.iml" afterPath="$PROJECT_DIR$/languages/groovy/starter/groovy-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/tcl/starter/tcl-starter.iml" afterPath="$PROJECT_DIR$/languages/tcl/starter/tcl-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-helper/scriptlandia-helper.iml" afterPath="$PROJECT_DIR$/projects/scriptlandia-helper/scriptlandia-helper.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/classworlds/starter/classworlds-starter.iml" afterPath="$PROJECT_DIR$/languages/classworlds/starter/classworlds-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/xruby/starter/xruby-starter.iml" afterPath="$PROJECT_DIR$/languages/xruby/starter/xruby-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jruby/starter/jruby-starter.iml" afterPath="$PROJECT_DIR$/languages/jruby/starter/jruby-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jelly/starter/jelly-starter.iml" afterPath="$PROJECT_DIR$/languages/jelly/starter/jelly-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/etl/starter/etl-starter.iml" afterPath="$PROJECT_DIR$/languages/etl/starter/etl-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/beanshell/starter/beanshell-starter.iml" afterPath="$PROJECT_DIR$/languages/beanshell/starter/beanshell-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/sleep/starter/sleep-starter.iml" afterPath="$PROJECT_DIR$/languages/sleep/starter/sleep-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/ptilde/starter/ptilde-starter.iml" afterPath="$PROJECT_DIR$/languages/ptilde/starter/ptilde-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/judo/starter/judo-starter.iml" afterPath="$PROJECT_DIR$/languages/judo/starter/judo-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/groovy/starter/pom.xml" afterPath="$PROJECT_DIR$/languages/groovy/starter/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/xgql/starter/xgql-starter.iml" afterPath="$PROJECT_DIR$/languages/xgql/starter/xgql-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jscheme/starter/jscheme-starter.iml" afterPath="$PROJECT_DIR$/languages/jscheme/starter/jscheme-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jawk/starter/jawk-starter.iml" afterPath="$PROJECT_DIR$/languages/jawk/starter/jawk-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/war/starter/war-starter.iml" afterPath="$PROJECT_DIR$/languages/war/starter/war-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/apt-jelly/starter/apt-jelly-starter.iml" afterPath="$PROJECT_DIR$/languages/apt-jelly/starter/apt-jelly-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/lolcode/starter/lolcode-starter.iml" afterPath="$PROJECT_DIR$/languages/lolcode/starter/lolcode-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/class/starter/class-starter.iml" afterPath="$PROJECT_DIR$/languages/class/starter/class-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/javafx/starter/javafx-starter.iml" afterPath="$PROJECT_DIR$/languages/javafx/starter/javafx-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/kawa/starter/kawa-starter.iml" afterPath="$PROJECT_DIR$/languages/kawa/starter/kawa-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jaskell/starter/jaskell-starter.iml" afterPath="$PROJECT_DIR$/languages/jaskell/starter/jaskell-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/apt-fmt/starter/apt-fmt-starter.iml" afterPath="$PROJECT_DIR$/languages/apt-fmt/starter/apt-fmt-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/jad/starter/jad-starter.iml" afterPath="$PROJECT_DIR$/languages/jad/starter/jad-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/janino/starter/janino-starter.iml" afterPath="$PROJECT_DIR$/languages/janino/starter/janino-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/ant/starter/ant-starter.iml" afterPath="$PROJECT_DIR$/languages/ant/starter/ant-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/groovy/language.xml" afterPath="$PROJECT_DIR$/languages/groovy/language.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/clojure/starter/clojure-starter.iml" afterPath="$PROJECT_DIR$/languages/clojure/starter/clojure-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-installer/scriptlandia-installer.iml" afterPath="$PROJECT_DIR$/projects/scriptlandia-installer/scriptlandia-installer.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/javascript/starter/javascript-starter.iml" afterPath="$PROJECT_DIR$/languages/javascript/starter/javascript-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/freemarker/starter/freemarker-starter.iml" afterPath="$PROJECT_DIR$/languages/freemarker/starter/freemarker-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/yoix/starter/yoix-starter.iml" afterPath="$PROJECT_DIR$/languages/yoix/starter/yoix-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/maven/starter/maven-starter.iml" afterPath="$PROJECT_DIR$/languages/maven/starter/maven-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/fortress/starter/fortress-starter.iml" afterPath="$PROJECT_DIR$/languages/fortress/starter/fortress-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/scala/starter/scala-starter.iml" afterPath="$PROJECT_DIR$/languages/scala/starter/scala-starter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/scriptlandia-launcher/scriptlandia-launcher.iml" afterPath="$PROJECT_DIR$/projects/scriptlandia-launcher/scriptlandia-launcher.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptlandia-main.ipr" afterPath="$PROJECT_DIR$/scriptlandia-main.ipr" />
     </list>
     <ignored path="scriptlandia-main.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -108,6 +153,19 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/languages/groovy/starter/src/main/java/org/sf/scriptlandia/GroovyStarter.java" line="96" class="org.sf.scriptlandia.GroovyStarter" package="org.sf.scriptlandia">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <breakpoint_any>
       <breakpoint>
@@ -156,8 +214,8 @@
       <property name="field_breakpoints_groupByClasses" value="true" />
       <property name="method_breakpoints_groupByClasses" value="true" />
       <property name="exception_breakpoints_viewId" value="TABLE" />
-      <property name="field_breakpoints_viewId" value="TABLE" />
       <property name="exception_breakpoints_groupByClasses" value="true" />
+      <property name="field_breakpoints_viewId" value="TABLE" />
       <property name="method_breakpoints_groupByMethods" value="false" />
     </ui_properties>
   </component>
@@ -183,37 +241,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ScriptlandiaStarter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/languages/scriptlandia/starter/src/main/java/org/sf/scriptlandia/ScriptlandiaStarter.java">
+      <file leaf-file-name="GroovyStarter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/languages/groovy/starter/src/main/java/org/sf/scriptlandia/GroovyStarter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="80" selection-start="2322" selection-end="2360" vertical-scroll-proportion="0.7987355">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MavenStarter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/languages/maven/starter/src/main/java/org/sf/scriptlandia/MavenStarter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="57" selection-start="588" selection-end="588" vertical-scroll-proportion="0.13804004">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClassworldStarter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/languages/classworlds/starter/src/main/java/org/sf/scriptlandia/ClassworldStarter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="152" column="28" selection-start="4524" selection-end="4524" vertical-scroll-proportion="0.7987355">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AptJellyStarter.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/languages/apt-jelly/starter/src/main/java/org/sf/scriptlandia/AptJellyStarter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="82" selection-start="1874" selection-end="1874" vertical-scroll-proportion="0.23919916">
+            <state line="92" column="0" selection-start="3096" selection-end="3096" vertical-scroll-proportion="2.2522795">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -221,28 +252,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AptFreemarkerStarter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/languages/apt-fmt/starter/src/main/java/org/sf/scriptlandia/AptFreemarkerStarter.java">
+      <file leaf-file-name="JLaunchPadLauncher.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1-sources.jar!/org/sf/jlaunchpad/JLaunchPadLauncher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="23" selection-start="1413" selection-end="1889" vertical-scroll-proportion="0.74077976">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ScalaStarter2.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/languages/scala/starter/src/main/java/org/sf/scriptlandia/ScalaStarter2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="147" selection-start="958" selection-end="958" vertical-scroll-proportion="0.38040042">
-              <folding />
+            <state line="23" column="44" selection-start="722" selection-end="722" vertical-scroll-proportion="0.6641337">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="DepsLauncher.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/maven-repository/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1-sources.jar!/org/sf/jlaunchpad/DepsLauncher.java">
+        <entry file="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1-sources.jar!/org/sf/jlaunchpad/DepsLauncher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="200" column="0" selection-start="5416" selection-end="5416" vertical-scroll-proportion="0.23814541">
+            <state line="22" column="40" selection-start="676" selection-end="676" vertical-scroll-proportion="0.34650457">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClassworldLauncher.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1-sources.jar!/org/sf/jlaunchpad/ClassworldLauncher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="46" selection-start="657" selection-end="657" vertical-scroll-proportion="0.11550152">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoreLauncher.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1-sources.jar!/org/sf/jlaunchpad/CoreLauncher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="13" selection-start="656" selection-end="656" vertical-scroll-proportion="0.08662614">
               <folding />
             </state>
           </provider>
@@ -251,7 +293,7 @@
       <file leaf-file-name="LauncherManager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="0" selection-start="4560" selection-end="4560" vertical-scroll-proportion="0.84404635">
+            <state line="153" column="0" selection-start="4560" selection-end="4560" vertical-scroll-proportion="1.1808511">
               <folding />
             </state>
           </provider>
@@ -260,7 +302,7 @@
       <file leaf-file-name="ScriptlandiaLauncher.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/ScriptlandiaLauncher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="160" column="0" selection-start="4272" selection-end="4272" vertical-scroll-proportion="0.86406744">
+            <state line="160" column="0" selection-start="4272" selection-end="4272" vertical-scroll-proportion="1.2097265">
               <folding />
             </state>
           </provider>
@@ -327,6 +369,132 @@
           <option name="myItemId" value="scriptlandia-main" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="yoix-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="yoix-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\yoix\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="velocity-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="velocity-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\velocity\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="velocity-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\velocity\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\velocity\starter\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\velocity\starter\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\velocity\starter\src\main\java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\velocity\starter\src\main\java\org\sf\scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="tcl-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="tcl-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\tcl\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="sleep-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="sleep-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\sleep\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
       </PATH>
       <PATH>
         <PATH_ELEMENT>
@@ -364,7 +532,537 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
+          <option name="myItemId" value="scala-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scala-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\scala\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scala-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\scala\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\scala\starter\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\scala\starter\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\scala\starter\src\main\java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\scala\starter\src\main\java\org\sf\scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="ptilde-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="ptilde-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\ptilde\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="pnuts-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="pnuts-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\pnuts\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="maven-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="maven-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\maven\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="maven-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\maven\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\maven\starter\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\maven\starter\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\maven\starter\src\main\java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\maven\starter\src\main\java\org\sf\scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
           <option name="myItemId" value="languages" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="jython-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="jython-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\jython\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="judo-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="judo-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\judo\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="jscheme-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="jscheme-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\jscheme\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="jscheme-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\jscheme\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\jscheme\starter\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\jscheme\starter\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\jscheme\starter\src\main\java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\jscheme\starter\src\main\java\org\sf\scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="jruby-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="jruby-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\jruby\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="jelly-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="jelly-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\jelly\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="javascript-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="jaskell-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="jaskell-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\jaskell\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="freemarker-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="freemarker-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\freemarker\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="freemarker-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\freemarker\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\freemarker\starter\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\freemarker\starter\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\freemarker\starter\src\main\java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\freemarker\starter\src\main\java\org\sf\scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="fortress-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="fortress-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\fortress\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="etl-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="etl-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\etl\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="clojure-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="clojure-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\clojure\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="classworlds-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="classworlds-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\classworlds\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="classworlds-starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\classworlds\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\classworlds\starter\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\classworlds\starter\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\classworlds\starter\src\main\java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\classworlds\starter\src\main\java\org\sf\scriptlandia" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="scriptlandia-main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="beanshell-starter" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -376,6 +1074,10 @@
         <PATH_ELEMENT>
           <option name="myItemId" value="beanshell-starter" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\scriptlandia\trunk\scriptlandia\languages\beanshell\starter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
     </subPane>
@@ -391,7 +1093,7 @@
       <showLibraryContents />
       <hideEmptyPackages />
       <abbreviatePackageNames />
-      <showStructure Favorites="false" Scope="false" PackagesPane="false" ProjectPane="false" />
+      <showStructure PackagesPane="false" Scope="false" Favorites="false" ProjectPane="false" />
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
@@ -443,6 +1145,35 @@
     <RUBY_DOC NAME="NUMBER" VALUE="0" />
   </component>
   <component name="RunManager" selected="Remote.remote">
+    <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -464,6 +1195,41 @@
       <method>
         <option name="Make" value="true" />
       </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
     </configuration>
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
@@ -506,70 +1272,6 @@
           </MavenRunnerParameters>
         </option>
       </MavenSettings>
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="ADDITIONAL_CLASS_PATH" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
     </configuration>
     <configuration default="false" name="installer" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.codehaus.classworlds.Launcher" />
@@ -758,7 +1460,7 @@
   </component>
   <component name="ScopeViewComponent">
     <subPane subId="Problems" />
-    <subPane subId="Tests">
+    <subPane subId="Production">
       <PATH>
         <PATH_ELEMENT USER_OBJECT="Root">
           <option name="myItemId" value="" />
@@ -766,7 +1468,7 @@
         </PATH_ELEMENT>
       </PATH>
     </subPane>
-    <subPane subId="Production">
+    <subPane subId="Tests">
       <PATH>
         <PATH_ELEMENT USER_OBJECT="Root">
           <option name="myItemId" value="" />
@@ -842,7 +1544,7 @@
       <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296593" order="8" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46492985" order="1" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49599198" order="3" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3026052" order="3" />
       <window_info id="FileBrowser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2149028" order="3" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32865733" order="8" />
       <window_info id="CafeBabe" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" order="5" />
@@ -921,119 +1623,119 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/languages/ant/starter/src/main/java/org/sf/scriptlandia/AntStarter.java">
+    <entry file="file://$PROJECT_DIR$/languages/scriptlandia/starter/src/main/java/org/sf/scriptlandia/ScriptlandiaStarter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="66" selection-start="902" selection-end="902" vertical-scroll-proportion="0.80508476">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/languages/groovy/starter/src/main/java/org/sf/scriptlandia/GroovyStarter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="120" selection-start="1434" selection-end="1434" vertical-scroll-proportion="0.579661">
+        <state line="42" column="30" selection-start="1225" selection-end="1225" vertical-scroll-proportion="0.2170706">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/languages/jar/starter/src/main/java/org/sf/scriptlandia/JarStarter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="110" selection-start="568" selection-end="568" vertical-scroll-proportion="0.5840708">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/maven-repository/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1.jar!/org/sf/jlaunchpad/DepsLauncher.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="1249" selection-end="1249" vertical-scroll-proportion="0.53555554">
+        <state line="22" column="19" selection-start="619" selection-end="619" vertical-scroll-proportion="-0.8040042">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/maven-repository/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1.jar!/org/sf/jlaunchpad/ClassworldLauncher.class">
+    <entry file="file://$PROJECT_DIR$/languages/velocity/starter/src/main/java/org/sf/scriptlandia/VelocityStarter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="18" column="19" selection-start="422" selection-end="422" vertical-scroll-proportion="-0.27507755">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/maven-repository/classworlds/classworlds/1.1/classworlds-1.1.jar!/org/codehaus/classworlds/Launcher.class">
+    <entry file="file://$PROJECT_DIR$/languages/freemarker/starter/src/main/java/org/sf/scriptlandia/FreeMarkerStarter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1699" selection-end="1699" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="0" selection-start="4560" selection-end="4560" vertical-scroll-proportion="0.84404635">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/ScriptlandiaLauncher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="160" column="0" selection-start="4272" selection-end="4272" vertical-scroll-proportion="0.86406744">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/maven-repository/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1-sources.jar!/org/sf/jlaunchpad/DepsLauncher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="200" column="0" selection-start="5416" selection-end="5416" vertical-scroll-proportion="0.23814541">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/languages/maven/starter/src/main/java/org/sf/scriptlandia/MavenStarter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="57" selection-start="588" selection-end="588" vertical-scroll-proportion="0.13804004">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/languages/classworlds/starter/src/main/java/org/sf/scriptlandia/ClassworldStarter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="28" selection-start="4524" selection-end="4524" vertical-scroll-proportion="0.7987355">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/languages/scriptlandia/starter/src/main/java/org/sf/scriptlandia/ScriptlandiaStarter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="80" selection-start="2322" selection-end="2360" vertical-scroll-proportion="0.7987355">
+        <state line="39" column="57" selection-start="959" selection-end="959" vertical-scroll-proportion="0.39193383">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/languages/scala/starter/src/main/java/org/sf/scriptlandia/ScalaStarter2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="147" selection-start="958" selection-end="958" vertical-scroll-proportion="0.38040042">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/maven-repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar!/org/apache/tools/ant/taskdefs/Java.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="8" selection-start="122" selection-end="151" vertical-scroll-proportion="0.06168831">
+        <state line="24" column="19" selection-start="702" selection-end="702" vertical-scroll-proportion="0.19648397">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/languages/apt-fmt/starter/src/main/java/org/sf/scriptlandia/AptFreemarkerStarter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="23" selection-start="1413" selection-end="1889" vertical-scroll-proportion="0.74077976">
+        <state line="71" column="54" selection-start="1984" selection-end="1984" vertical-scroll-proportion="0.8624612">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/languages/apt-jelly/starter/src/main/java/org/sf/scriptlandia/AptJellyStarter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="82" selection-start="1874" selection-end="1874" vertical-scroll-proportion="0.23919916">
+        <state line="75" column="121" selection-start="2079" selection-end="2079" vertical-scroll-proportion="0.4105481">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/scriptlandia-launcher/src/main/java/org/sf/scriptlandia/launcher/LauncherManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="153" column="0" selection-start="4560" selection-end="4560" vertical-scroll-proportion="1.1808511">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$maven-repository$/classworlds/classworlds/1.1/classworlds-1.1.jar!/org/codehaus/classworlds/ClassWorld.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="162" selection-end="162" vertical-scroll-proportion="0.07859359">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$maven-repository$/classworlds/classworlds/1.1/classworlds-1.1.jar!/org/codehaus/classworlds/ClassRealm.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="33" selection-start="247" selection-end="247" vertical-scroll-proportion="0.15718718">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1-sources.jar!/org/sf/jlaunchpad/JLaunchPadLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="44" selection-start="722" selection-end="722" vertical-scroll-proportion="0.6641337">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1-sources.jar!/org/sf/jlaunchpad/DepsLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="40" selection-start="676" selection-end="676" vertical-scroll-proportion="0.34650457">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1-sources.jar!/org/sf/jlaunchpad/ClassworldLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="46" selection-start="657" selection-end="657" vertical-scroll-proportion="0.11550152">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$maven-repository$/org/codehaus/groovy/groovy-all/1.5.1/groovy-all-1.5.1.jar!/org/codehaus/groovy/tools/RootLoader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="9" selection-start="487" selection-end="487" vertical-scroll-proportion="0.34650457">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/languages/groovy/starter/src/main/java/org/sf/scriptlandia/GroovyStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="0" selection-start="3096" selection-end="3096" vertical-scroll-proportion="2.2522795">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1-sources.jar!/org/sf/jlaunchpad/CoreLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="13" selection-start="656" selection-end="656" vertical-scroll-proportion="0.08662614">
+          <folding />
         </state>
       </provider>
     </entry>

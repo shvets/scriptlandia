@@ -21,6 +21,7 @@ import org.sf.jlaunchpad.util.ReflectionUtil;
 import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 import org.codehaus.classworlds.ClassRealm;
 import org.codehaus.groovy.tools.LoaderConfiguration;
+import org.codehaus.groovy.tools.RootLoader;
 
 import java.lang.reflect.*;
 import java.io.FileInputStream;
@@ -30,8 +31,8 @@ import java.io.FileInputStream;
  */
 public class GroovyStarter {
 
-  public static void rootLoader(String args[], ClassRealm mainRealm) {
-    String conf = System.getProperty("groovy.starter.conf", null);
+  public static void rootLoader(String args[], ClassRealm mainRealm) throws ClassNotFoundException, InvocationTargetException, IllegalAccessException {
+/*    String conf = System.getProperty("groovy.starter.conf", null);
     LoaderConfiguration lc = new LoaderConfiguration();
 
     // evaluate parameters
@@ -64,12 +65,14 @@ public class GroovyStarter {
       }
     }
 
+*/
+/*
     // we need to know the class we want to start
     if (lc.getMainClass() == null && conf == null) {
       exit("no configuration file or main class specified");
     }
-
-    // copy arguments for main class
+*/
+/*    // copy arguments for main class
     String[] newArgs = new String[args.length - argsOffset];
     for (int i = 0; i < newArgs.length; i++) {
       newArgs[i] = args[i + argsOffset];
@@ -84,41 +87,20 @@ public class GroovyStarter {
         exit(e);
       }
     }
+    */
     // create loader and execute main class
 
-    //ClassLoader loader = new RootLoader(lc);
+//    ClassLoader loader = new RootLoader(lc);
 //      ClassLoader loader = ClassLoader.getSystemClassLoader();
-    ClassLoader loader = Thread.currentThread().getContextClassLoader();
+   // ClassLoader loader = Thread.currentThread().getContextClassLoader();
 
-//     Class mainClass = mainRealm.loadClass(lc.getMainClass());
+     Class mainClass = mainRealm.loadClass(/*lc.getMainClass()*/"groovy.ui.GroovyMain");
 
-//     ReflectionUtil.launchClass(mainClass, newArgs,
-  //           "public static void main(String[] argv) main Method is missed.");
-
-/*    Method m = null;
-    try {
-      Class c = loader.loadClass(lc.getMainClass());
-      m = c.getMethod("main", new Class[]{String[].class});
-    } catch (ClassNotFoundException e1) {
-      exit(e1);
-    } catch (SecurityException e2) {
-      exit(e2);
-    } catch (NoSuchMethodException e2) {
-      exit(e2);
-    }
-    try {
-      m.invoke(null, new Object[]{newArgs});
-    } catch (IllegalArgumentException e3) {
-      exit(e3);
-    } catch (IllegalAccessException e3) {
-      exit(e3);
-    } catch (InvocationTargetException e3) {
-      exit(e3);
-    }
-    */
+     ReflectionUtil.launchClass(mainClass, args,
+             "public static void main(String[] argv) main Method is missed.");
   }
 
-  private static void exit(Exception e) {
+/*  private static void exit(Exception e) {
     e.printStackTrace();
     System.exit(1);
   }
@@ -127,7 +109,7 @@ public class GroovyStarter {
     System.err.println(msg);
     System.exit(1);
   }
-
+ */
   // after migration from classworlds to the rootloader rename
   // the rootLoader method to main and remove this method as
   // well as the classworlds method

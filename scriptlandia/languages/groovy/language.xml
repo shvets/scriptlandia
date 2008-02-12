@@ -8,6 +8,7 @@
 
     <starter>
       <mainClass>groovy.ui.GroovyMain</mainClass>
+      <!--mainClass>org.sf.scriptlandia.GroovyStarter</mainClass-->
     </starter>
   </registration>
 </language>
