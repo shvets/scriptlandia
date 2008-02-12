@@ -1,1 +1,0 @@
-http://refactr.com/blog/2007/10/10/groovy-builders

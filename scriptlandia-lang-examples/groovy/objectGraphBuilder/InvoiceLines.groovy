@@ -1,4 +1,0 @@
-class InvoiceLines 
-{
-	List invoiceLines = []
-}
