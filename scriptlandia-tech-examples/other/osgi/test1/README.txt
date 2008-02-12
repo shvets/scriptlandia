@@ -2,9 +2,13 @@
 
 Details: http://neilbartlett.name/blog/osgi-articles
 
+0. Download dependencies
+
+>mvn
+
 1. Run equinox (OSGI implementation):
 
->start ant osgi
+>start ant osgi                                                                                                        n
 
 2. Check installed bundles in console
 

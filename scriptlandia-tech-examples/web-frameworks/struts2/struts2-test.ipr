@@ -27,6 +27,9 @@
     <option name="scrTextFileName" value="" />
     <option name="historyRevisionsNumber" value="4" />
   </component>
+  <component name="CafeBabe.Configuration">
+    <option name="lastSelectedFile" value="C:/Work/Projects/cafebabe/trunk/classfile/target/classes/org/sf/classfile/AttributeEntry.class" />
+  </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CodeStyleProjectProfileManger">
     <option name="PROJECT_PROFILE" />
@@ -732,5 +735,8 @@
     </GetOptions>
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
+  <UsedPathMacros>
+    <macro name="maven-repository" />
+  </UsedPathMacros>
 </project>
 

@@ -4,7 +4,7 @@
        "http://jakarta.apache.org/struts/dtds/tiles-config_2_0.dtd">
 <tiles-definitions>
 
-  <definition name=".simpleLayout"  template="/WEB-INF/templates/simpleLayout.jsp">
+  <definition name=".simpleLayout" template="/WEB-INF/templates/simpleLayout.jsp">
     <put-attribute name="title" type="string" value='blank'/>
     <put-attribute name="header" value='/WEB-INF/templates/emptyContent.jsp'/>
     <put-attribute name="content" value='/WEB-INF/templates/emptyContent.jsp'/>

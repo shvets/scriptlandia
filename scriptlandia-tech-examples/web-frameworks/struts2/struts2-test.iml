@@ -193,12 +193,12 @@
         <fileset id="s2fileset1" name="My Fileset" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/struts2-test.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/struts.xml</file>
-          <file>jar://C:/maven-repository/org/apache/struts/struts2-core/2.0.11/struts2-core-2.0.11.jar!/struts-default.xml</file>
-          <file>jar://C:/maven-repository/org/apache/struts/struts2-core/2.0.11/struts2-core-2.0.11.jar!/struts-portlet-default.xml</file>
-          <file>jar://C:/maven-repository/com/opensymphony/xwork/2.0.4/xwork-2.0.4.jar!/xwork-default.xml</file>
-          <file>jar://C:/maven-repository/org/apache/struts/struts2-spring-plugin/2.0.11/struts2-spring-plugin-2.0.11.jar!/struts-plugin.xml</file>
-          <file>jar://C:/maven-repository/org/apache/struts/struts2-tiles-plugin/2.0.11/struts2-tiles-plugin-2.0.11.jar!/struts-plugin.xml</file>
-          <file>jar://C:/maven-repository/jsonplugin/jsonplugin/0.19/jsonplugin-0.19.jar!/struts-plugin.xml</file>
+          <file>jar://$maven-repository$/org/apache/struts/struts2-core/2.0.11/struts2-core-2.0.11.jar!/struts-default.xml</file>
+          <file>jar://$maven-repository$/org/apache/struts/struts2-core/2.0.11/struts2-core-2.0.11.jar!/struts-portlet-default.xml</file>
+          <file>jar://$maven-repository$/com/opensymphony/xwork/2.0.4/xwork-2.0.4.jar!/xwork-default.xml</file>
+          <file>jar://$maven-repository$/org/apache/struts/struts2-spring-plugin/2.0.11/struts2-spring-plugin-2.0.11.jar!/struts-plugin.xml</file>
+          <file>jar://$maven-repository$/org/apache/struts/struts2-tiles-plugin/2.0.11/struts2-tiles-plugin-2.0.11.jar!/struts-plugin.xml</file>
+          <file>jar://$maven-repository$/jsonplugin/jsonplugin/0.19/jsonplugin-0.19.jar!/struts-plugin.xml</file>
         </fileset>
         <features>
           <errors_as_warnings>false</errors_as_warnings>
@@ -223,39 +223,39 @@
     <orderEntry type="module-library" exported="">
       <library name="antlr:antlr:2.7.2">
         <CLASSES>
-          <root url="jar://C:/maven-repository/antlr/antlr/2.7.2/antlr-2.7.2.jar!/" />
+          <root url="jar://$maven-repository$/antlr/antlr/2.7.2/antlr-2.7.2.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/antlr/antlr/2.7.2/antlr-2.7.2-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/antlr/antlr/2.7.2/antlr-2.7.2-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/antlr/antlr/2.7.2/antlr-2.7.2-sources.jar!/" />
+          <root url="jar://$maven-repository$/antlr/antlr/2.7.2/antlr-2.7.2-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="aopalliance:aopalliance:1.0">
         <CLASSES>
-          <root url="jar://C:/maven-repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar!/" />
+          <root url="jar://$maven-repository$/aopalliance/aopalliance/1.0/aopalliance-1.0.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/aopalliance/aopalliance/1.0/aopalliance-1.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/aopalliance/aopalliance/1.0/aopalliance-1.0-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/aopalliance/aopalliance/1.0/aopalliance-1.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/aopalliance/aopalliance/1.0/aopalliance-1.0-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="com.opensymphony:xwork:2.0.4">
         <CLASSES>
-          <root url="jar://C:/maven-repository/com/opensymphony/xwork/2.0.4/xwork-2.0.4.jar!/" />
+          <root url="jar://$maven-repository$/com/opensymphony/xwork/2.0.4/xwork-2.0.4.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/com/opensymphony/xwork/2.0.4/xwork-2.0.4-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/com/opensymphony/xwork/2.0.4/xwork-2.0.4-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/com/opensymphony/xwork/2.0.4/xwork-2.0.4-sources.jar!/" />
+          <root url="jar://$maven-repository$/com/opensymphony/xwork/2.0.4/xwork-2.0.4-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -275,390 +275,390 @@
     <orderEntry type="module-library" exported="">
       <library name="commons-beanutils:commons-beanutils:1.7.0">
         <CLASSES>
-          <root url="jar://C:/maven-repository/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="commons-collections:commons-collections:2.1">
         <CLASSES>
-          <root url="jar://C:/maven-repository/commons-collections/commons-collections/2.1/commons-collections-2.1.jar!/" />
+          <root url="jar://$maven-repository$/commons-collections/commons-collections/2.1/commons-collections-2.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/commons-collections/commons-collections/2.1/commons-collections-2.1-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/commons-collections/commons-collections/2.1/commons-collections-2.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/commons-collections/commons-collections/2.1/commons-collections-2.1-sources.jar!/" />
+          <root url="jar://$maven-repository$/commons-collections/commons-collections/2.1/commons-collections-2.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="commons-digester:commons-digester:1.6">
         <CLASSES>
-          <root url="jar://C:/maven-repository/commons-digester/commons-digester/1.6/commons-digester-1.6.jar!/" />
+          <root url="jar://$maven-repository$/commons-digester/commons-digester/1.6/commons-digester-1.6.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/commons-digester/commons-digester/1.6/commons-digester-1.6-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/commons-digester/commons-digester/1.6/commons-digester-1.6-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/commons-digester/commons-digester/1.6/commons-digester-1.6-sources.jar!/" />
+          <root url="jar://$maven-repository$/commons-digester/commons-digester/1.6/commons-digester-1.6-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="commons-lang:commons-lang:2.2">
         <CLASSES>
-          <root url="jar://C:/maven-repository/commons-lang/commons-lang/2.2/commons-lang-2.2.jar!/" />
+          <root url="jar://$maven-repository$/commons-lang/commons-lang/2.2/commons-lang-2.2.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/commons-lang/commons-lang/2.2/commons-lang-2.2-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/commons-lang/commons-lang/2.2/commons-lang-2.2-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/commons-lang/commons-lang/2.2/commons-lang-2.2-sources.jar!/" />
+          <root url="jar://$maven-repository$/commons-lang/commons-lang/2.2/commons-lang-2.2-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="commons-logging:commons-logging-api:1.1">
         <CLASSES>
-          <root url="jar://C:/maven-repository/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar!/" />
+          <root url="jar://$maven-repository$/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1-sources.jar!/" />
+          <root url="jar://$maven-repository$/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="commons-logging:commons-logging:1.0.4">
         <CLASSES>
-          <root url="jar://C:/maven-repository/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar!/" />
+          <root url="jar://$maven-repository$/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4-sources.jar!/" />
+          <root url="jar://$maven-repository$/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="commons-validator:commons-validator:1.1.4">
         <CLASSES>
-          <root url="jar://C:/maven-repository/commons-validator/commons-validator/1.1.4/commons-validator-1.1.4.jar!/" />
+          <root url="jar://$maven-repository$/commons-validator/commons-validator/1.1.4/commons-validator-1.1.4.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/commons-validator/commons-validator/1.1.4/commons-validator-1.1.4-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/commons-validator/commons-validator/1.1.4/commons-validator-1.1.4-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/commons-validator/commons-validator/1.1.4/commons-validator-1.1.4-sources.jar!/" />
+          <root url="jar://$maven-repository$/commons-validator/commons-validator/1.1.4/commons-validator-1.1.4-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="freemarker:freemarker:2.3.8">
         <CLASSES>
-          <root url="jar://C:/maven-repository/freemarker/freemarker/2.3.8/freemarker-2.3.8.jar!/" />
+          <root url="jar://$maven-repository$/freemarker/freemarker/2.3.8/freemarker-2.3.8.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/freemarker/freemarker/2.3.8/freemarker-2.3.8-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/freemarker/freemarker/2.3.8/freemarker-2.3.8-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/freemarker/freemarker/2.3.8/freemarker-2.3.8-sources.jar!/" />
+          <root url="jar://$maven-repository$/freemarker/freemarker/2.3.8/freemarker-2.3.8-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
       <library name="javax.servlet:jsp-api:2.0">
         <CLASSES>
-          <root url="jar://C:/maven-repository/javax/servlet/jsp-api/2.0/jsp-api-2.0.jar!/" />
+          <root url="jar://$maven-repository$/javax/servlet/jsp-api/2.0/jsp-api-2.0.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/javax/servlet/jsp-api/2.0/jsp-api-2.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/javax/servlet/jsp-api/2.0/jsp-api-2.0-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/javax/servlet/jsp-api/2.0/jsp-api-2.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/javax/servlet/jsp-api/2.0/jsp-api-2.0-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="javax.servlet:jstl:1.1.2">
         <CLASSES>
-          <root url="jar://C:/maven-repository/javax/servlet/jstl/1.1.2/jstl-1.1.2.jar!/" />
+          <root url="jar://$maven-repository$/javax/servlet/jstl/1.1.2/jstl-1.1.2.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/javax/servlet/jstl/1.1.2/jstl-1.1.2-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/javax/servlet/jstl/1.1.2/jstl-1.1.2-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/javax/servlet/jstl/1.1.2/jstl-1.1.2-sources.jar!/" />
+          <root url="jar://$maven-repository$/javax/servlet/jstl/1.1.2/jstl-1.1.2-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
       <library name="javax.servlet:servlet-api:2.4">
         <CLASSES>
-          <root url="jar://C:/maven-repository/javax/servlet/servlet-api/2.4/servlet-api-2.4.jar!/" />
+          <root url="jar://$maven-repository$/javax/servlet/servlet-api/2.4/servlet-api-2.4.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/javax/servlet/servlet-api/2.4/servlet-api-2.4-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/javax/servlet/servlet-api/2.4/servlet-api-2.4-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/javax/servlet/servlet-api/2.4/servlet-api-2.4-sources.jar!/" />
+          <root url="jar://$maven-repository$/javax/servlet/servlet-api/2.4/servlet-api-2.4-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="jsonplugin:jsonplugin:0.19">
         <CLASSES>
-          <root url="jar://C:/maven-repository/jsonplugin/jsonplugin/0.19/jsonplugin-0.19.jar!/" />
+          <root url="jar://$maven-repository$/jsonplugin/jsonplugin/0.19/jsonplugin-0.19.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/jsonplugin/jsonplugin/0.19/jsonplugin-0.19-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/jsonplugin/jsonplugin/0.19/jsonplugin-0.19-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/jsonplugin/jsonplugin/0.19/jsonplugin-0.19-sources.jar!/" />
+          <root url="jar://$maven-repository$/jsonplugin/jsonplugin/0.19/jsonplugin-0.19-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
       <library name="junit:junit:3.8.2">
         <CLASSES>
-          <root url="jar://C:/maven-repository/junit/junit/3.8.2/junit-3.8.2.jar!/" />
+          <root url="jar://$maven-repository$/junit/junit/3.8.2/junit-3.8.2.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/junit/junit/3.8.2/junit-3.8.2-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/junit/junit/3.8.2/junit-3.8.2-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/junit/junit/3.8.2/junit-3.8.2-sources.jar!/" />
+          <root url="jar://$maven-repository$/junit/junit/3.8.2/junit-3.8.2-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="opensymphony:ognl:2.6.11">
         <CLASSES>
-          <root url="jar://C:/maven-repository/opensymphony/ognl/2.6.11/ognl-2.6.11.jar!/" />
+          <root url="jar://$maven-repository$/opensymphony/ognl/2.6.11/ognl-2.6.11.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/opensymphony/ognl/2.6.11/ognl-2.6.11-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/opensymphony/ognl/2.6.11/ognl-2.6.11-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/opensymphony/ognl/2.6.11/ognl-2.6.11-sources.jar!/" />
+          <root url="jar://$maven-repository$/opensymphony/ognl/2.6.11/ognl-2.6.11-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="org.apache.struts:struts2-core:2.0.11">
         <CLASSES>
-          <root url="jar://C:/maven-repository/org/apache/struts/struts2-core/2.0.11/struts2-core-2.0.11.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/struts/struts2-core/2.0.11/struts2-core-2.0.11.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/org/apache/struts/struts2-core/2.0.11/struts2-core-2.0.11-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/struts/struts2-core/2.0.11/struts2-core-2.0.11-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/org/apache/struts/struts2-core/2.0.11/struts2-core-2.0.11-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/struts/struts2-core/2.0.11/struts2-core-2.0.11-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="org.apache.struts:struts2-spring-plugin:2.0.11">
         <CLASSES>
-          <root url="jar://C:/maven-repository/org/apache/struts/struts2-spring-plugin/2.0.11/struts2-spring-plugin-2.0.11.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/struts/struts2-spring-plugin/2.0.11/struts2-spring-plugin-2.0.11.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/org/apache/struts/struts2-spring-plugin/2.0.11/struts2-spring-plugin-2.0.11-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/struts/struts2-spring-plugin/2.0.11/struts2-spring-plugin-2.0.11-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/org/apache/struts/struts2-spring-plugin/2.0.11/struts2-spring-plugin-2.0.11-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/struts/struts2-spring-plugin/2.0.11/struts2-spring-plugin-2.0.11-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="org.apache.struts:struts2-tiles-plugin:2.0.11">
         <CLASSES>
-          <root url="jar://C:/maven-repository/org/apache/struts/struts2-tiles-plugin/2.0.11/struts2-tiles-plugin-2.0.11.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/struts/struts2-tiles-plugin/2.0.11/struts2-tiles-plugin-2.0.11.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/org/apache/struts/struts2-tiles-plugin/2.0.11/struts2-tiles-plugin-2.0.11-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/struts/struts2-tiles-plugin/2.0.11/struts2-tiles-plugin-2.0.11-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/org/apache/struts/struts2-tiles-plugin/2.0.11/struts2-tiles-plugin-2.0.11-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/struts/struts2-tiles-plugin/2.0.11/struts2-tiles-plugin-2.0.11-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="org.apache.tiles:tiles-api:2.0.4">
         <CLASSES>
-          <root url="jar://C:/maven-repository/org/apache/tiles/tiles-api/2.0.4/tiles-api-2.0.4.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/tiles/tiles-api/2.0.4/tiles-api-2.0.4.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/org/apache/tiles/tiles-api/2.0.4/tiles-api-2.0.4-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/tiles/tiles-api/2.0.4/tiles-api-2.0.4-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/org/apache/tiles/tiles-api/2.0.4/tiles-api-2.0.4-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/tiles/tiles-api/2.0.4/tiles-api-2.0.4-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="org.apache.tiles:tiles-core:2.0.4">
         <CLASSES>
-          <root url="jar://C:/maven-repository/org/apache/tiles/tiles-core/2.0.4/tiles-core-2.0.4.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/tiles/tiles-core/2.0.4/tiles-core-2.0.4.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/org/apache/tiles/tiles-core/2.0.4/tiles-core-2.0.4-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/tiles/tiles-core/2.0.4/tiles-core-2.0.4-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/org/apache/tiles/tiles-core/2.0.4/tiles-core-2.0.4-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/tiles/tiles-core/2.0.4/tiles-core-2.0.4-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="org.apache.tiles:tiles-jsp:2.0.5">
         <CLASSES>
-          <root url="jar://C:/maven-repository/org/apache/tiles/tiles-jsp/2.0.5/tiles-jsp-2.0.5.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/tiles/tiles-jsp/2.0.5/tiles-jsp-2.0.5.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/org/apache/tiles/tiles-jsp/2.0.5/tiles-jsp-2.0.5-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/tiles/tiles-jsp/2.0.5/tiles-jsp-2.0.5-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/org/apache/tiles/tiles-jsp/2.0.5/tiles-jsp-2.0.5-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/tiles/tiles-jsp/2.0.5/tiles-jsp-2.0.5-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="org.json:json:20070829">
         <CLASSES>
-          <root url="jar://C:/maven-repository/org/json/json/20070829/json-20070829.jar!/" />
+          <root url="jar://$maven-repository$/org/json/json/20070829/json-20070829.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/org/json/json/20070829/json-20070829-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/json/json/20070829/json-20070829-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/org/json/json/20070829/json-20070829-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/json/json/20070829/json-20070829-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="org.springframework:spring-beans:2.5.1">
         <CLASSES>
-          <root url="jar://C:/maven-repository/org/springframework/spring-beans/2.5.1/spring-beans-2.5.1.jar!/" />
+          <root url="jar://$maven-repository$/org/springframework/spring-beans/2.5.1/spring-beans-2.5.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/org/springframework/spring-beans/2.5.1/spring-beans-2.5.1-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/springframework/spring-beans/2.5.1/spring-beans-2.5.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/org/springframework/spring-beans/2.5.1/spring-beans-2.5.1-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/springframework/spring-beans/2.5.1/spring-beans-2.5.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="org.springframework:spring-context:2.0.5">
         <CLASSES>
-          <root url="jar://C:/maven-repository/org/springframework/spring-context/2.0.5/spring-context-2.0.5.jar!/" />
+          <root url="jar://$maven-repository$/org/springframework/spring-context/2.0.5/spring-context-2.0.5.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/org/springframework/spring-context/2.0.5/spring-context-2.0.5-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/springframework/spring-context/2.0.5/spring-context-2.0.5-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/org/springframework/spring-context/2.0.5/spring-context-2.0.5-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/springframework/spring-context/2.0.5/spring-context-2.0.5-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="org.springframework:spring-core:2.5.1">
         <CLASSES>
-          <root url="jar://C:/maven-repository/org/springframework/spring-core/2.5.1/spring-core-2.5.1.jar!/" />
+          <root url="jar://$maven-repository$/org/springframework/spring-core/2.5.1/spring-core-2.5.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/org/springframework/spring-core/2.5.1/spring-core-2.5.1-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/springframework/spring-core/2.5.1/spring-core-2.5.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/org/springframework/spring-core/2.5.1/spring-core-2.5.1-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/springframework/spring-core/2.5.1/spring-core-2.5.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="org.springframework:spring-test:2.5.1">
         <CLASSES>
-          <root url="jar://C:/maven-repository/org/springframework/spring-test/2.5.1/spring-test-2.5.1.jar!/" />
+          <root url="jar://$maven-repository$/org/springframework/spring-test/2.5.1/spring-test-2.5.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/org/springframework/spring-test/2.5.1/spring-test-2.5.1-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/springframework/spring-test/2.5.1/spring-test-2.5.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/org/springframework/spring-test/2.5.1/spring-test-2.5.1-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/springframework/spring-test/2.5.1/spring-test-2.5.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="org.springframework:spring-web:2.5.1">
         <CLASSES>
-          <root url="jar://C:/maven-repository/org/springframework/spring-web/2.5.1/spring-web-2.5.1.jar!/" />
+          <root url="jar://$maven-repository$/org/springframework/spring-web/2.5.1/spring-web-2.5.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/org/springframework/spring-web/2.5.1/spring-web-2.5.1-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/springframework/spring-web/2.5.1/spring-web-2.5.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/org/springframework/spring-web/2.5.1/spring-web-2.5.1-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/springframework/spring-web/2.5.1/spring-web-2.5.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="oro:oro:2.0.7">
         <CLASSES>
-          <root url="jar://C:/maven-repository/oro/oro/2.0.7/oro-2.0.7.jar!/" />
+          <root url="jar://$maven-repository$/oro/oro/2.0.7/oro-2.0.7.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/oro/oro/2.0.7/oro-2.0.7-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/oro/oro/2.0.7/oro-2.0.7-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/oro/oro/2.0.7/oro-2.0.7-sources.jar!/" />
+          <root url="jar://$maven-repository$/oro/oro/2.0.7/oro-2.0.7-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="struts:struts:1.2.9">
         <CLASSES>
-          <root url="jar://C:/maven-repository/struts/struts/1.2.9/struts-1.2.9.jar!/" />
+          <root url="jar://$maven-repository$/struts/struts/1.2.9/struts-1.2.9.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/struts/struts/1.2.9/struts-1.2.9-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/struts/struts/1.2.9/struts-1.2.9-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/struts/struts/1.2.9/struts-1.2.9-sources.jar!/" />
+          <root url="jar://$maven-repository$/struts/struts/1.2.9/struts-1.2.9-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="taglibs:standard:1.1.2">
         <CLASSES>
-          <root url="jar://C:/maven-repository/taglibs/standard/1.1.2/standard-1.1.2.jar!/" />
+          <root url="jar://$maven-repository$/taglibs/standard/1.1.2/standard-1.1.2.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/taglibs/standard/1.1.2/standard-1.1.2-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/taglibs/standard/1.1.2/standard-1.1.2-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/taglibs/standard/1.1.2/standard-1.1.2-sources.jar!/" />
+          <root url="jar://$maven-repository$/taglibs/standard/1.1.2/standard-1.1.2-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="xml-apis:xml-apis:1.0.b2">
         <CLASSES>
-          <root url="jar://C:/maven-repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar!/" />
+          <root url="jar://$maven-repository$/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://C:/maven-repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://C:/maven-repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2-sources.jar!/" />
+          <root url="jar://$maven-repository$/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
