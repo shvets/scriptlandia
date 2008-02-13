@@ -9,6 +9,6 @@
 	Book book = BookManager.getBook(bookId);
 	if (book != null) {
 		out.println(book.toJSONString());
-		System.out.println("itis: " + book.toJSONString());
+		System.out.println("it is: " + book.toJSONString());
 	}
 %>

@@ -5,6 +5,13 @@
 <web-app>
   <display-name>Web Application</display-name>
 
+ <!-- Tiles2 configuration -->
+
+  <context-param>
+    <param-name>tilesDefinitions</param-name>
+    <param-value>/WEB-INF/tiles.xml</param-value>
+  </context-param>
+
   <!-- Struts2 configurations -->
 
   <filter>
@@ -22,11 +29,6 @@
   </listener>
 
   <!-- Tiles2 configuration -->
-
-  <context-param>
-    <param-name>tilesDefinitions</param-name>
-    <param-value>/WEB-INF/tiles.xml</param-value>
-  </context-param>
 
   <listener>
     <listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
