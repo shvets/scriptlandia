@@ -1,0 +1,21 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 1.0//EN"
+    "http://www.getahead.ltd.uk/dwr/dwr10.dtd">
+
+<dwr>
+  <allow>
+    <create creator="new" javascript="Suggestions">
+      <param name="class" value="typeahead.Suggestions"/>
+
+      <include method="getSuggestions"/>
+      <include method="getPartialSuggestions"/>
+      <include method="getSize"/>
+      <include method="search"/>
+      <include method="indexOf"/>
+    </create>
+
+    <convert converter="bean" match="typeahead.Pair">
+      <param name="include" value="key, content"/>
+    </convert>
+  </allow>
+</dwr>
