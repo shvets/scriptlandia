@@ -33,14 +33,14 @@ Before executing this script, execute this in scriptlandia-tools\jsmooth
     <taskdef name="jsmoothgen"
          classname="net.charabia.jsmoothgen.ant.JSmoothGen"
          classpath="${jsmooth.base}/jsmoothgen-ant-${jsmooth.version}.jar"/>
-
+         
     <mkdir dir="target"/>
 
     <jar destfile="target/scriptlandia.jar">
       <zipfileset src="${repository.home}/classworlds/classworlds/${classworlds.version}/classworlds-${classworlds.version}.jar"/>
 
       <fileset dir="projects/scriptlandia-config/bin">
-        <include name="scriptlandia.conf"/>
+        <include name="scriptlandia.jlcnf"/>
       </fileset>
 
       <manifest>

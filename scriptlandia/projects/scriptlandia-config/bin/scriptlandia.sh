@@ -10,12 +10,11 @@ NAILGUN=@repository.home@/com/martiansoftware/nailgun-bin/@nailgun.version@/ng
 # Make the path absolute
 #export APP=`cd "$APP" && pwd`
 
-MAIN_APP_CONF=$SCRIPTLANDIA_HOME/$APP_NAME.conf
+MAIN_APP_CONF=$SCRIPTLANDIA_HOME/$APP_NAME.jlcnf
 
 if [ ! -f $MAIN_APP_CONF ]; then
-  MAIN_APP_CONF=$SCRIPTLANDIA_HOME/scriptlandia.conf
-fi
-
+  MAIN_APP_CONF=$SCRIPTLANDIA_HOME/scriptlandia.jlcnf
+fi                                                                                               
 export JLAUNCHPAD_HOME NAILGUN MAIN_APP_CONF
 
 $JLAUNCHPAD_HOME/jlaunchpad-core.sh $*

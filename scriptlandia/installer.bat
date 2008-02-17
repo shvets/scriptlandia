@@ -52,25 +52,25 @@ IF NOT EXIST %MOBILE_JAVA_HOME% (
   ECHO Java Micro Edition cannot be found!
 )
 
-SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% "-Dant.version.internal=%ANT_VERSION%"
-SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% "-Dbeanshell.version=%BEANSHELL_VERSION%"
-SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% "-Dscriptlandia.version=%SCRIPTLANDIA_VERSION%"
-SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% "-Dnailgun.version=%NAILGUN_VERSION%"
-SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% "-Djava.compiler.version=%JAVA_COMPILER_VERSION%"
-SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% "-Dscriptlandia.home=%SCRIPTLANDIA_HOME%"
-SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% "-Djlaunchpad.home=%JLAUNCHPAD_HOME%"
-SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% "-Drepository.home=%REPOSITORY_HOME%"
+SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% -Dant.version.internal=%ANT_VERSION%
+SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% -Dbeanshell.version=%BEANSHELL_VERSION%
+SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% -Dscriptlandia.version=%SCRIPTLANDIA_VERSION%
+SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% -Dnailgun.version=%NAILGUN_VERSION%
+SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% -Djava.compiler.version=%JAVA_COMPILER_VERSION%
+SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% -Dscriptlandia.home=%SCRIPTLANDIA_HOME%
+SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% -Djlaunchpad.home=%JLAUNCHPAD_HOME%
+SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% -Drepository.home=%REPOSITORY_HOME%
 
 SET PROPERTIES1="-deps.file.name=%REPOSITORY_HOME%/org/sf/jlaunchpad/jlaunchpad-launcher/%JLAUNCHPAD_VERSION%/jlaunchpad-launcher-%JLAUNCHPAD_VERSION%.pom" 
 SET PROPERTIES1=%PROPERTIES1% "-main.class.name=org.sf.pomreader.ProjectInstaller"
 
 rem Install antrun project
 
-@call %JLAUNCHPAD_HOME%\jlaunchpad.bat %SYSTEM_PROPERTIES% %PROPERTIES1% "-Dbasedir=projects/antrun" "-Dbuild.required=false"
+@call %JLAUNCHPAD_HOME%\jlaunchpad.bat %SYSTEM_PROPERTIES% %PROPERTIES1% -Dbasedir=projects/antrun -Dbuild.required=false
 
 rem Install scriptlandia-installer project
 
-@call %JLAUNCHPAD_HOME%\jlaunchpad.bat %SYSTEM_PROPERTIES% %PROPERTIES1% "-Dbasedir=projects/scriptlandia-installer" "-Dbuild.required=false"
+@call %JLAUNCHPAD_HOME%\jlaunchpad.bat %SYSTEM_PROPERTIES% %PROPERTIES1% -Dbasedir=projects/scriptlandia-installer -Dbuild.required=false
 
 rem Execute scriptlandia-installer project
 

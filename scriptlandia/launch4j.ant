@@ -42,7 +42,7 @@ Before executing this script, execute this in scriptlandia-tools\launch4j
       <zipfileset src="${repository.home}/classworlds/classworlds/${classworlds.version}/classworlds-${classworlds.version}.jar"/>
 
       <fileset dir="projects/scriptlandia-config/bin">
-        <include name="scriptlandia.conf"/>
+        <include name="scriptlandia.jlcnf"/>
       </fileset>
 
       <manifest>

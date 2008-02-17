@@ -7,10 +7,10 @@ set JLAUNCHPAD_HOME=@jlaunchpad.home@
 SET NAILGUN=@repository.home@\com\martiansoftware\nailgun-bin\@nailgun.version@\ng
 
 
-SET MAIN_APP_CONF=%SCRIPTLANDIA_HOME%\%APP_NAME%.conf
+SET MAIN_APP_CONF=%SCRIPTLANDIA_HOME%\%APP_NAME%.jlcnf
 
 if not exist %MAIN_APP_CONF% (
-  SET MAIN_APP_CONF=%SCRIPTLANDIA_HOME%\scriptlandia.conf
+  SET MAIN_APP_CONF=%SCRIPTLANDIA_HOME%\scriptlandia.jlcnf
 )
 
 FOR %%i IN (%*) DO call :processParam ^"%%i^"
