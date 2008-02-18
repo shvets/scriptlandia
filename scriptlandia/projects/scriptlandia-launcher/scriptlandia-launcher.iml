@@ -30,6 +30,32 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
+      <library name="org.sf.jlaunchpad:jlaunchpad-launcher:1.0.1">
+        <CLASSES>
+          <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="org.sf.jlaunchpad:jlaunchpad-common:1.0.1">
+        <CLASSES>
+          <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-common/1.0.1/jlaunchpad-common-1.0.1.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-common/1.0.1/jlaunchpad-common-1.0.1-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-common/1.0.1/jlaunchpad-common-1.0.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
       <library name="jdom:jdom:1.1">
         <CLASSES>
           <root url="jar://$maven-repository$/jdom/jdom/1.1/jdom-1.1.jar!/" />
@@ -52,32 +78,6 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library name="org.sf.jlaunchpad:jlaunchpad-common:1.0.1">
-        <CLASSES>
-          <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-common/1.0.1/jlaunchpad-common-1.0.1.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-common/1.0.1/jlaunchpad-common-1.0.1-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-common/1.0.1/jlaunchpad-common-1.0.1-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library name="org.sf.jlaunchpad:jlaunchpad-launcher:1.0.1">
-        <CLASSES>
-          <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.1/jlaunchpad-launcher-1.0.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

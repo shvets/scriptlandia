@@ -17,32 +17,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
-      <library name="com.martiansoftware:nailgun-bin:0.7.1">
-        <CLASSES>
-          <root url="jar://$maven-repository$/com/martiansoftware/nailgun-bin/0.7.1/nailgun-bin-0.7.1.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar://$maven-repository$/com/martiansoftware/nailgun-bin/0.7.1/nailgun-bin-0.7.1-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar://$maven-repository$/com/martiansoftware/nailgun-bin/0.7.1/nailgun-bin-0.7.1-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library name="com.martiansoftware:nailgun:0.7.1">
-        <CLASSES>
-          <root url="jar://$maven-repository$/com/martiansoftware/nailgun/0.7.1/nailgun-0.7.1.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar://$maven-repository$/com/martiansoftware/nailgun/0.7.1/nailgun-0.7.1-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar://$maven-repository$/com/martiansoftware/nailgun/0.7.1/nailgun-0.7.1-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
       <library name="commons-cli:commons-cli:1.1">
         <CLASSES>
           <root url="jar://$maven-repository$/commons-cli/commons-cli/1.1/commons-cli-1.1.jar!/" />
@@ -52,6 +26,19 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/commons-cli/commons-cli/1.1/commons-cli-1.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="org.sf.jlaunchpad:jlaunchpad-common:1.0.1">
+        <CLASSES>
+          <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-common/1.0.1/jlaunchpad-common-1.0.1.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-common/1.0.1/jlaunchpad-common-1.0.1-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-common/1.0.1/jlaunchpad-common-1.0.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -69,15 +56,28 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.sf.jlaunchpad:jlaunchpad-common:1.0.1">
+      <library name="com.martiansoftware:nailgun:0.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-common/1.0.1/jlaunchpad-common-1.0.1.jar!/" />
+          <root url="jar://$maven-repository$/com/martiansoftware/nailgun/0.7.1/nailgun-0.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-common/1.0.1/jlaunchpad-common-1.0.1-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/com/martiansoftware/nailgun/0.7.1/nailgun-0.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-common/1.0.1/jlaunchpad-common-1.0.1-sources.jar!/" />
+          <root url="jar://$maven-repository$/com/martiansoftware/nailgun/0.7.1/nailgun-0.7.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="com.martiansoftware:nailgun-bin:0.7.1">
+        <CLASSES>
+          <root url="jar://$maven-repository$/com/martiansoftware/nailgun-bin/0.7.1/nailgun-bin-0.7.1.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$maven-repository$/com/martiansoftware/nailgun-bin/0.7.1/nailgun-bin-0.7.1-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$maven-repository$/com/martiansoftware/nailgun-bin/0.7.1/nailgun-bin-0.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

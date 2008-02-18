@@ -97,7 +97,7 @@ public class MavenHelperTest extends TestCase {
     };
 
     try {
-      System.setProperty("classworlds.conf", "C:/scriptlandia/classworlds.conf");
+      System.setProperty("classworlds.conf", "C:/scriptlandia/scriptlandia.conf");
       System.setProperty("jlaunchpad.version", "1.0.1");
 
       Launcher.main(args);

@@ -11,7 +11,7 @@
   <description>Scriptlandia Groovy Core Module</description>
 
   <properties>
-    <groovy.version>1.5.1</groovy.version>
+    <groovy.version>1.5.4</groovy.version>
   </properties>
 
   <dependencies>
@@ -19,15 +19,6 @@
       <groupId>org.codehaus.groovy</groupId>
       <artifactId>groovy-all</artifactId>
       <version>${groovy.version}</version>
-
-<!--
-      <exclusions>
-        <exclusion>
-          <groupId>com.thoughtworks.xstream</groupId>
-          <artifactId>xstream</artifactId>
-        </exclusion>
-      </exclusions>
--->
     </dependency>
 
     <dependency>

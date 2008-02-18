@@ -8,7 +8,7 @@
 
 <java.system.props>
 java.specification.version.level=@java.specification.version.level@
-classworlds.conf=@scriptlandia.home@/classworlds.conf
+classworlds.conf=@scriptlandia.home@/scriptlandia.conf
 
 beanshell.version=@beanshell.version@
 ant.version.internal=@ant.version.internal@

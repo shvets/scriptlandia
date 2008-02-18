@@ -11,7 +11,7 @@
   <description>Web Services stack</description>
 
   <properties>
-    <groovy.version>1.5.1</groovy.version>
+    <groovy.version>1.5.4</groovy.version>
     <ant.version>1.7.0</ant.version>
   </properties>
 

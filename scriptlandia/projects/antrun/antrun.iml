@@ -17,19 +17,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-launcher:1.7.0">
-        <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
       <library name="org.apache.ant:ant:1.7.0">
         <CLASSES>
           <root url="jar://$maven-repository$/org/apache/ant/ant/1.7.0/ant-1.7.0.jar!/" />
@@ -39,6 +26,19 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/apache/ant/ant/1.7.0/ant-1.7.0-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="org.apache.ant:ant-launcher:1.7.0">
+        <CLASSES>
+          <root url="jar://$maven-repository$/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$maven-repository$/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$maven-repository$/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

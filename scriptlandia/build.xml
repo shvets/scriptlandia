@@ -117,8 +117,9 @@
         <include name="*.bat"/>
         <include name="*.sh"/>
         <include name="*.conf"/>
-        <include name="*.ini"/>
-        <include name="scriptlandia.classpath"/>
+        <include name="*.jlcfg"/>
+        <!--include name="*.ini"/-->
+        <!--include name="scriptlandia.classpath"/-->
         <exclude name="*-exe.*"/>
       </fileset>
     </copy>
@@ -174,13 +175,13 @@
   </target>
 
   <target name="install.libraries">
-    <copy todir="${scriptlandia.home}">
+    <!--copy todir="${scriptlandia.home}">
       <fileset dir=".">
        <include name="build.xml"/>
        <include name="scriptlandia-macrodefs.xml"/>
        <include name="scriptlandia-classpath"/>
       </fileset>
-    </copy>
+    </copy-->
 
     <copy-properties/>
   </target>

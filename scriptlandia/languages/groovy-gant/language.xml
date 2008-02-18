@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<language name="groovy-gant" groupId="org.codehaus.groovy" artifactId="groovy-gant" version="1.1.0">
+  <registration mimeType="application/groovy-gant" icon="groovy.ico">
+    <extensions>
+      <extension>gant</extension>
+    </extensions>
+
+    <starter>
+      <mainClass>gant.Gant</mainClass>
+      <commandLine>-f</commandLine>
+    </starter>
+  </registration>
+</language>
