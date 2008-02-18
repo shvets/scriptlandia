@@ -1,0 +1,12 @@
+includeTargets << gant.targets.Maven
+
+//System.properties.'maven.repo.local' = 'c:/maven-repository'
+
+Maven.groupId = 'org.codehaus.gant'
+Maven.artifactId = 'gant'
+Maven.version = '1.0.1-SNAPSHOT'
+Maven.javaCompileProperties = [ source : '1.4' , target : '1.4' , debug : 'true' ]
+Maven.deployURL = 'https://dav.codehaus.org/repository/gant'
+Maven.deploySnapshotURL = 'https://dav.codehaus.org/snapshots.repository/gant'
+
+setDefaultTarget ( install )

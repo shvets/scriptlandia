@@ -1,0 +1,15 @@
+sourceDirectory = 'src/main/groovy'
+buildDirectory = 'build'
+includeTargets << gant.targets.Clean
+cleanPattern << '**/*~'
+cleanDirectory << buildDirectory
+
+Ant.taskdef (  name : 'groovyc' , classname : 'org.codehaus.groovy.ant.Groovyc' )
+
+target ( compile : 'Compile source to build directory.' ) {
+   mkdir ( dir : buildDirectory )
+   javac ( srcdir : sourceDirectory , destdir : buildDirectory , debug : 'on' )
+   groovyc ( srcdir : sourceDirectory , destdir : buildDirectory )
+}
+
+setDefaultTarget ( compile )
