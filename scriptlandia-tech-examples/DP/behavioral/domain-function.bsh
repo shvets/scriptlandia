@@ -1,0 +1,126 @@
+// domain-function.bsh
+// better than visitor 
+// http://blogs.concedere.net:8080/blog/discipline/java/?permalink=Domain-Function-Pattern.html
+
+class Employee {
+  private int type;
+  private String name;
+
+  public Employee(String name) {
+    this.name = name;
+  }
+
+  public int getType() {
+    return type;
+  }
+
+  public String toString() {
+    return name;
+  }
+}
+
+class Contractor extends Employee {
+  public Contractor(String name) {
+    super(name);
+  }
+}
+
+class Executive extends Employee {
+  public Executive(String name) {
+    super(name);
+  }
+}
+
+class Manager extends Employee {
+  public Manager(String name) {
+    super(name);
+  }
+}
+
+class Secretary extends Employee {
+  public Secretary(String name) {
+    super(name);
+  }
+}
+
+class Engineer extends Employee {
+  public Engineer(String name) {
+    super(name);
+  }
+}
+
+public abstract class EmployeeDomainFunction {
+  public void call(Employee e) {
+    if (e instanceof Contractor) {
+      call((Contractor) e);
+    }
+    else if (e instanceof Executive) {
+      call((Executive) e);
+    }
+    else if (e instanceof Manager) {
+      call((Manager) e);
+    }
+    else if (e instanceof Secretary) {
+      call((Secretary) e);
+    }
+    else if (e instanceof Engineer) {
+      call((Engineer) e);
+    }
+    else {
+      throw new IllegalArgumentException("unknown employee type: " + e.getClass().getName());
+    }
+  }
+
+  protected abstract void call(Contractor c);
+
+  protected abstract void call(Executive e);
+
+  protected abstract void call(Manager m);
+
+  protected abstract void call(Secretary s);
+
+  protected abstract void call(Engineer e);
+}
+
+class VacationPlanner extends EmployeeDomainFunction {
+  protected void call(Contractor c) {
+    System.out.println("Vacation planning for Contractor: " + 0);
+  }
+
+  protected void call(Executive e) {
+    System.out.println("Vacation planning for Executive: " + 90);
+  }
+
+  protected void call(Manager m) {
+    System.out.println("Vacation planning for Manager: " + 45);
+  }
+
+  protected void call(Secretary s) {
+    System.out.println("Vacation planning for Secretary: " + 15);
+  }
+
+  protected void call(Engineer e) {
+    System.out.println("Vacation planning for Engineer: " + 10);
+  }
+}
+
+
+VacationPlanner vacationPlanner = new VacationPlanner();
+
+Employee[] employees = new Employee[] {
+  new Contractor("c1"),
+  new Contractor("c2"),
+  new Executive("e1"),
+  new Manager("m1"),
+  new Secretary("s1"),
+  new Engineer("e1"),
+  new Engineer("e2")
+};
+
+System.out.println("employees: " + Arrays.asList(employees));
+
+System.out.println("Vacation planning:");
+
+for(int i=0; i < employees.length; i++) {
+  vacationPlanner.call(employees[i]);
+} 
