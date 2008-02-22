@@ -303,7 +303,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     panel.add(panel2);
     panel.add(panel3);
     panel.add(panel4);
-    panel.add(Box.createRigidArea(new Dimension(0, 200)));
+    panel.add(Box.createRigidArea(new Dimension(0, 180)));
 
     return panel;
   }

@@ -2,7 +2,7 @@
 
 <project name="install.ant" default="install" basedir=".">
 
-  <property name="clojure.version" value="20071203"/>
+  <property name="clojure.version" value="20080213"/>
 
   <property name="clojure.base" 
             value="${repository.home}/clojure/boot/${clojure.version}"/>

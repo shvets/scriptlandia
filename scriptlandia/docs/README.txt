@@ -189,7 +189,7 @@ Jelly          1.0          http://jakarta.apache.org/commons/jelly
 Velocity       1.5          http://velocity.apache.org
 Freemarker     2.3.9        http://freemarker.sourceforge.net
 Velocity Tools 1.1          http://jakarta.apache.org/velocity
-JRuby          1.1RC1       http://jruby.codehaus.org
+JRuby          1.1RC2       http://jruby.codehaus.org
 Pnuts          1.2          https://pnuts.dev.java.net
 Jython         2.2.1        http://www.jython.org
 Scriptlandia   2.2.4        http://sourceforge.net/projects/scriptlandia
@@ -205,10 +205,10 @@ Scala          2.6.0        http://scala-lang.org
 Judo           0.9          http://www.judoscript.com
 XGQL           2.0          https://sourceforge.net/projects/xgql
 LOLCODE        0.11         http://code.google.com/p/lolcode-java
-Clojure        20071203     http://clojure.sourceforge.net
+Clojure        20080213     http://clojure.sourceforge.net
 P~ (Ptilde)    0.90         http://ptilde.pbwiki.com
 YOIX           2.1.10       http://www.yoix.org
 
-e-mail:        shvets_alexander@yahoo.com, shvets@comcast.net
+e-mail:        alexander.shvets@gmail.com, shvets_alexander@yahoo.com
 home-page:     http://home.comcast.net/~shvets
 blog:          http://scriptlandia.blogspot.com

@@ -11,18 +11,18 @@
   <description>Scriptlandia JRuby Core Module</description>
 
   <properties>
-    <jruby.version>1.1RC1</jruby.version>
+    <jruby.version>1.1RC2</jruby.version>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>jruby</groupId>
+      <groupId>org.jruby</groupId>
       <artifactId>jruby</artifactId>
       <version>${jruby.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>jruby</groupId>
+      <groupId>org.jruby</groupId>
       <artifactId>jruby-lib</artifactId>
       <version>${jruby.version}</version>
     </dependency>

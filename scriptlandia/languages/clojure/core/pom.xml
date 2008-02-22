@@ -11,7 +11,7 @@
   <description>Scriptlandia Clojure Core Module</description>
 
   <properties>
-    <clojure.version>20071203</clojure.version>
+    <clojure.version>20080213</clojure.version>
   </properties>
 
   <dependencies>

@@ -3,7 +3,7 @@
 <document>
   <properties>
     <title>Scriptlandia project</title>
-    <author email="shvets_alexander@yahoo.com">Alexander Shvets</author>
+    <author email="alexander.shvets@gmail.com">Alexander Shvets</author>
   </properties>
 
   <body>
@@ -310,7 +310,7 @@
       </action>
 
       <action dev="Alexander Shvets" type="add">
-        Added support for Clojure version 20071203.
+        Added support for Clojure version 20080213.
       </action>
 
       <action dev="Alexander Shvets" type="fix">
@@ -318,7 +318,7 @@
       </action>
 
       <action dev="Alexander Shvets" type="fix">
-        Upgrade for JRuby version 1.1RC1.
+        Upgrade for JRuby version 1.1RC2.
       </action>
 
       <action dev="Alexander Shvets" type="fix">
@@ -359,6 +359,10 @@
 
       <action dev="Alexander Shvets" type="add">
         Added support for YOIX language version 2.1.10.
+      </action>
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for GANT version 1.1.0.
       </action>
 
     </release>

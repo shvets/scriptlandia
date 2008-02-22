@@ -23,6 +23,13 @@
       <version>1.0.1</version>
       <type>pom</type>
     </dependency>
+
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>ant</artifactId>
+      <version>1.0.1</version>
+      <type>pom</type>
+    </dependency>
   </dependencies>
 
   <build>
