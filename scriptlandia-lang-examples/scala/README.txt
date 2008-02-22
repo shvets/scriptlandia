@@ -22,5 +22,5 @@
 
 >mvn -f scala-test4.maven scala:compile
 
->mvn -f scala-test4.maven scala:run "-DmainClass=HelloWorld"
+>mvn -f scala-test4.maven scala:run -DmainClass=HelloWorld
 
