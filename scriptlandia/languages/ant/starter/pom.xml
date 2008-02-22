@@ -12,6 +12,7 @@
 
   <properties>
     <maven.version>2.0.8</maven.version>
+    <scriptlandia.version>2.2.5</scriptlandia.version>
   </properties>
 
   <dependencies>
@@ -44,20 +45,20 @@
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>ant</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>scriptlandia-helper</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>maven</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
 
@@ -76,15 +77,9 @@
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>beanshell</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
-
-    <!--dependency>
-      <groupId>fr.jayasoft</groupId>
-      <artifactId>ivy</artifactId>
-      <version>1.4.1</version>
-    </dependency-->
 
     <dependency>
       <groupId>org.apache.ivy</groupId>

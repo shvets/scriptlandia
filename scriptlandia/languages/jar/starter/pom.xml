@@ -10,50 +10,54 @@
   <name>Scriptlandia JAR Starter  Module</name>
   <description>Scriptlandia JAR Starter Module</description>
 
+  <properties>
+    <scriptlandia.version>2.2.5</scriptlandia.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>jar</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>jad-starter</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>scriptlandia-helper</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>ant</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>ant-starter</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>beanshell</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>javascript</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
   </dependencies>

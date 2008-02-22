@@ -10,45 +10,49 @@
   <name>Scriptlandia Apt Jelly Starter Module</name>
   <description>Scriptlandia Apt Jelly Module</description>
 
+  <properties>
+    <scriptlandia.version>2.2.5</scriptlandia.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>scriptlandia-helper</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>apt-jelly</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>jelly</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>ant</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>freemarker</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>jelly</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
   

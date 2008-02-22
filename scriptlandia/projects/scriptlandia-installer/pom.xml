@@ -146,7 +146,7 @@
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>antrun</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
     </dependency>
   </dependencies>
 

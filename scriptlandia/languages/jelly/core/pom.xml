@@ -180,24 +180,6 @@
       <version>${jelly.version}</version>
     </dependency>
 
-    <!--dependency>
-      <groupId>apt-jelly</groupId>
-      <artifactId>apt-jelly-core</artifactId>
-      <version>2.0</version>
-    </dependency>
-
-    <dependency>
-      <groupId>apt-jelly</groupId>
-      <artifactId>apt-jelly-jelly</artifactId>
-      <version>2.0</version>
-    </dependency>
-
-    <dependency>
-      <groupId>apt-jelly</groupId>
-      <artifactId>apt-jelly-freemarker</artifactId>
-      <version>2.0</version>
-    </dependency-->
-
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>

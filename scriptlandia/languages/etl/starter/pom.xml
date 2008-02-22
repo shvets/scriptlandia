@@ -10,11 +10,15 @@
   <name>Scriptlandia ETL Starter Module</name>
   <description>Scriptlandia ETL Starter Module</description>
 
+  <properties>
+    <scriptlandia.version>2.2.5</scriptlandia.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>etl</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
   </dependencies>

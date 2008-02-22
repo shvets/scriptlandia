@@ -10,17 +10,21 @@
   <name>Scriptlandia JAD Starter Module</name>
   <description>Scriptlandia Starter JAD Module</description>
 
+  <properties>
+    <scriptlandia.version>2.2.5</scriptlandia.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>scriptlandia-helper</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>ant</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
   </dependencies>

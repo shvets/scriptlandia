@@ -20,6 +20,7 @@
   <properties>
     <maven.version>2.0.8</maven.version>
     <ant.version>1.7.0</ant.version>
+    <scriptlandia.version>2.2.5</scriptlandia.version>
   </properties>
 
   <issueManagement>
@@ -81,7 +82,7 @@
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
       <artifactId>scriptlandia-launcher</artifactId>
-      <version>2.2.5</version>
+      <version>${scriptlandia.version}</version>
     </dependency>
 
     <dependency>

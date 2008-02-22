@@ -40,7 +40,7 @@ Before executing this script, execute this in scriptlandia-tools\jsmooth
       <zipfileset src="${repository.home}/classworlds/classworlds/${classworlds.version}/classworlds-${classworlds.version}.jar"/>
 
       <fileset dir="projects/scriptlandia-config/bin">
-        <include name="scriptlandia.jlcnf"/>
+        <include name="scriptlandia.jlcfg"/>
       </fileset>
 
       <manifest>
