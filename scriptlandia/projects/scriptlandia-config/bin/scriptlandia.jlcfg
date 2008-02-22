@@ -12,6 +12,7 @@ classworlds.conf=@scriptlandia.home@/scriptlandia.conf
 
 beanshell.version=@beanshell.version@
 ant.version.internal=@ant.version.internal@
+scriptlandia.version=@scriptlandia.version@
 
 mobile.java.home=@mobile.java.home@
 kvem.home=@mobile.java.home@
