@@ -12,7 +12,7 @@ import org.apache.maven.artifact.Artifact;
 import org.apache.maven.artifact.DependencyResolutionRequiredException;
 
 /**
- * @author <a href="mailto:shvets_alexander@yahoo.com">Alexander Shvets</a>
+ * @author <a href="mailto:alexander.shvets@gmail.com">Alexander Shvets</a>
  *
  * @goal run
  * @description Runs the nested ant source
