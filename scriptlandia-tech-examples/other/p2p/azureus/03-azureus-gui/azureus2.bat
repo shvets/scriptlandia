@@ -1,3 +1,3 @@
 SET REPOSITORY_HOME=d:\maven-repository
 
-azureus2.sl "-Djava.library.path=%REPOSITORY_HOME%\org\eclipse\swt-win32\3.2.1" 
+azureus2.sl -Djava.library.path=%REPOSITORY_HOME%\org\eclipse\swt-win32\3.2.1 

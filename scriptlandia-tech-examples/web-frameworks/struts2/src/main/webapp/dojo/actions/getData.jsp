@@ -49,15 +49,6 @@
 
 		List list = (List)map2.get(id1);
 
-		/*LabelValueBean lvb = (LabelValueBean)list.get(0);
-
-      JSONObject jsonObj = new JSONObject();
-	  jsonObj.put("label", lvb.getLabel());
-	  jsonObj.put("value", lvb.getValue());
-
-      out.print( jsonObj.toString());
-	*/
-
       JSONArray jsonArray = new JSONArray();
 
 		for(int i=0; i < list.size(); i++) {

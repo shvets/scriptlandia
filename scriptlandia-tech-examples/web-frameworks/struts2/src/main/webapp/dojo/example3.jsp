@@ -21,7 +21,6 @@
 	 function onchange_list1() {
 	    var id1 = document.getElementById("list1").value;
 		 var list2 = document.getElementById("list2");
-		 //list2.size = 0;
 
 		 if (list2.options) {
 		   for (var i = 0; i < list2.options.length; i++) {
@@ -74,11 +73,10 @@
 	    var id1 = document.getElementById("list1").value;
 	  var id2 = document.getElementById("list2").value;
 
-		 var params = new Array();
-		 params['command'] = 'list2Changed';
-		 params['id1'] = id1;
-		 params['id2'] = id2;
-
+	 var params = new Array();
+	 params['command'] = 'list2Changed';
+	 params['id1'] = id1;
+	 params['id2'] = id2;
 
 	  var bindArgs = {
 	   url: "actions/getData.jsp",
