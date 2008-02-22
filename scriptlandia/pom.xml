@@ -126,7 +126,7 @@
                   <fileset dir="docs"/>
                 </copy>
 
-                <copy file="languages/scriptlandia/scriptlandia.ico" 
+                <copy file="src/site/favicon.ico" 
                       tofile="target/site/favicon.ico"/>
               </tasks>
             </configuration>

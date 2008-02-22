@@ -18,7 +18,7 @@
         <include>*.iws</include>
         <include>*.iml</include>
 
-        <include>projects/**</include>
+        <include>**</include>
       </includes>
     </fileSet>
   </fileSets>
