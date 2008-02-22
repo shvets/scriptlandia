@@ -3,7 +3,7 @@
 DIR=../../../jlaunchpad/trunk/jlaunchpad
 
 if [ ! -d $DIR ]; then
-  DIR=jlaunchpad-1.0.1
+  DIR=jlaunchpad-1.0.2
 
   if [ ! -d $DIR ]; then
     echo Please run jlaunchpad-installer.sh first.
@@ -18,7 +18,7 @@ SCRIPTLANDIA_HOME=%DRIVE_LETTER%\scriptlandia
 MOBILE_JAVA_HOME=%DRIVE_LETTER%\Java\j2me-2.5
 #RUBY_HOME=%DRIVE_LETTER%\Ruby\ruby-1.8.4-20
 
-SCRIPTLANDIA_VERSION=2.2.4
+SCRIPTLANDIA_VERSION=2.2.5
 ANT_VERSION=1.7.0
 BEANSHELL_VERSION=2.0b5
 NAILGUN_VERSION=0.7.1

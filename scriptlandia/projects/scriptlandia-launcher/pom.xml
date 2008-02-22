@@ -5,7 +5,7 @@
 
   <groupId>org.sf.scriptlandia</groupId>
   <artifactId>scriptlandia-launcher</artifactId>
-  <version>2.2.4</version>
+  <version>2.2.5</version>
 
   <name>Scriptlandia Launcher Module</name>
   <description>
@@ -58,28 +58,14 @@
     <dependency>
       <groupId>org.sf.jlaunchpad</groupId>
       <artifactId>jlaunchpad-launcher</artifactId>
-      <version>1.0.1</version>
+      <version>1.0.2</version>
     </dependency>
 
     <dependency>
       <groupId>org.sf.jlaunchpad</groupId>
       <artifactId>jlaunchpad-common</artifactId>
-      <version>1.0.1</version>
+      <version>1.0.2</version>
     </dependency>
-
-<!--
-    <dependency>
-      <groupId>org.apache.maven.bootstrap</groupId>
-      <artifactId>bootstrap-mini</artifactId>
-      <version>2.0.8</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.sf.jlaunchpad</groupId>
-      <artifactId>pom-reader</artifactId>
-      <version>1.0.1</version>
-    </dependency>
--->
   </dependencies>
 
   <build>

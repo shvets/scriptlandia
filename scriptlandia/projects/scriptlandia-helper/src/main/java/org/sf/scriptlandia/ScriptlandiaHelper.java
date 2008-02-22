@@ -30,14 +30,14 @@ public class ScriptlandiaHelper {
   public static void resolveLanguageDependencies(String name, String manager)
          throws Exception {
     String repositoryHome = System.getProperty("repository.home");
-    //String scriptlandiaVersion = System.getProperty("scriptlandia.version");
+    String scriptlandiaVersion = System.getProperty("scriptlandia.version");
 
     JLaunchPadLauncher launcher = ScriptlandiaLauncher.getInstance();
 
     String pom;
 
     if(manager.equalsIgnoreCase("bsf")) {
-      pom = repositoryHome + "/org/sf/scriptlandia/" + name + "/1.0.1/" + name + "-1.0.1" + ".pom";
+      pom = repositoryHome + "/org/sf/scriptlandia/" + name + "/" + scriptlandiaVersion + "/" + name + "-" + scriptlandiaVersion + ".pom";
       launcher.resolveDependencies(pom);
     }
     else {

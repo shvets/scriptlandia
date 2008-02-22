@@ -6,7 +6,7 @@
       <extension>scala</extension>
     </extensions>
 
-    <starter groupId="org.sf.scriptlandia" artifactId="scala-starter" version="1.0.1">
+    <starter groupId="org.sf.scriptlandia" artifactId="scala-starter" version="2.2.5">
       <mainClass>org.sf.scriptlandia.ScalaStarter2</mainClass>
       <!--mainClass>scala.tools.nsc.MainGenericRunner</mainClass-->
       <commandLine>-nocompdaemon -howtorun:script</commandLine>

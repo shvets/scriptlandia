@@ -135,12 +135,6 @@ public class ExtXmlHelper extends XmlHelper {
     map.put("starter.artifactId", starterXml.getElementByName("artifactId").getValue());
     map.put("starter.version", starterXml.getElementByName("version").getValue());
 
-//print("? " + starterXml.getElementByName("groupId"));
-
-  //  map.put("starter.groupId", "org.sf.scriptlandia");
- //   map.put("starter.artifactId", name + "-starter");
-//    map.put("starter.version", "1.0.1");
-
     Element starter = getElementByName(registration, "starter");
 
     map.put("mainClass", getElementByName(starter, "mainClass").getValue());

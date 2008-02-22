@@ -17,7 +17,7 @@
     </starter>
 
 <!--
-    <starter groupId="org.sf.scriptlandia" artifactId="jawk-starter" version="1.0.1">
+    <starter groupId="org.sf.scriptlandia" artifactId="jawk-starter" version="2.2.5">
       <mainClass>org.jawk.Awkorg.sf.scriptlandia.JawkStarter</mainClass>
       <commandLine>-f</commandLine>
     </starter>

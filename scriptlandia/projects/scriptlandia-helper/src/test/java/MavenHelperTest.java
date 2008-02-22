@@ -43,7 +43,7 @@ public class MavenHelperTest extends TestCase {
 
       List<String> depsFileNames = new ArrayList<String>();
 
-      depsFileNames.add("C:/maven-repository/org/sf/scriptlandia/beanshell-starter/1.0.1/beanshell-starter-1.0.1.pom ");
+      depsFileNames.add("C:/maven-repository/org/sf/scriptlandia/beanshell-starter/2.2.5/beanshell-starter-2.2.5.pom ");
       parser.getCommandLine().put("main.class.name", "bsh.Interpreter");
       parser.getCommandLine().put("deps.file.name", depsFileNames);
 
@@ -68,7 +68,7 @@ public class MavenHelperTest extends TestCase {
 
       List<String> depsFileName = new ArrayList<String>();
 
-      depsFileName.add("C:/maven-repository/org/sf/scriptlandia/beanshell-starter/1.0.1/beanshell-starter-1.0.1.pom ");
+      depsFileName.add("C:/maven-repository/org/sf/scriptlandia/beanshell-starter/2.2.5/beanshell-starter-2.2.5.pom ");
       parser.getCommandLine().put("main.class.name", "bsh.Interpreter");
       parser.getCommandLine().put("deps.file.name", depsFileName);
 
@@ -91,14 +91,14 @@ public class MavenHelperTest extends TestCase {
 
  public void testExecutLauncher() {
     String[] args = new String[]{
-        "-deps.file.name=C:\\maven-repository\\org\\sf\\scriptlandia\\maven-starter\\1.0.1\\maven-starter-1.0.1.pom",
+        "-deps.file.name=C:\\maven-repository\\org\\sf\\scriptlandia\\maven-starter\\2.2.5\\maven-starter-2.2.5.pom",
         "-main.class.name=org.sf.scriptlandia.MavenStarter",
         "-f", "pom.xml", "clean"
     };
 
     try {
       System.setProperty("classworlds.conf", "C:/scriptlandia/scriptlandia.conf");
-      System.setProperty("jlaunchpad.version", "1.0.1");
+      System.setProperty("jlaunchpad.version", "1.0.2");
 
       Launcher.main(args);
     } catch (Exception e) {

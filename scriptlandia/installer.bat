@@ -3,7 +3,7 @@
 SET DIR=../../../jlaunchpad/trunk/jlaunchpad
 
 if not exist %DIR% (
-  SET DIR=jlaunchpad-1.0.1
+  SET DIR=jlaunchpad-1.0.2
 )
 
 if not exist %DIR% (
@@ -24,7 +24,7 @@ SET SCRIPTLANDIA_HOME=%DRIVE_LETTER%\scriptlandia
 SET MOBILE_JAVA_HOME=%DRIVE_LETTER%\Java\j2me-2.5
 SET RUBY_HOME=%DRIVE_LETTER%\Ruby\ruby-1.8.4-20
 
-SET SCRIPTLANDIA_VERSION=2.2.4
+SET SCRIPTLANDIA_VERSION=2.2.5
 SET ANT_VERSION=1.7.0
 SET BEANSHELL_VERSION=2.0b5
 SET NAILGUN_VERSION=0.7.1
