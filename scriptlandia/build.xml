@@ -220,15 +220,8 @@
     </script>
 
     <zip destfile="target/scriptlandia-${scriptlandia.version}-install.zip" update="true">
-      <zipfileset dir="../../../jlaunchpad/trunk/launcher/projects" prefix="scriptlandia-${scriptlandia.version}/projects">
-        <include name="**/target/*.jar"/>
-        <include name="**/*.xml"/>
-        <exclude name="**/target/*-javadoc.jar"/>
-        <exclude name="**/target/*-sources.jar"/>
-      </zipfileset>
-
-      <zipfileset dir="../../../jlaunchpad/trunk/launcher" prefix="scriptlandia-${scriptlandia.version}">
-        <include name="src/main/config/*.*"/>
+      <zipfileset dir="../../../jlaunchpad/trunk/jlaunchpad/target" prefix="scriptlandia-${scriptlandia.version}">
+        <include name="jlaunchpad-**-install.zip"/>
       </zipfileset>
     </zip>
   </target>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<language name="lolcode" groupId="lolcode" artifactId="lolcode" version="0.1">
+<language name="lolcode" groupId="lolcode" artifactId="lolcode" version="0.11">
   <registration mimeType="application/lolcode" icon="scriptlandia.ico">
     <extensions>
       <extension>lol</extension>

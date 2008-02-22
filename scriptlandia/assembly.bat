@@ -5,7 +5,7 @@
 
 @call build.bat
 
-@call %JLAUNCHPAD_HOME%\jlaunchpad.bat ^
+@call %JLAUNCHPAD_HOME%\jlaunchpad.bat %SYSTEM_PROPERTIES% ^
   "-deps.file.name=languages/ant/core/pom.xml" ^
   "-deps.file.name=languages/beanshell/core/pom.xml" ^
   "-deps.file.name=languages/maven/core/pom.xml" ^

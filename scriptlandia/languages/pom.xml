@@ -81,7 +81,7 @@
     <module>sleep/starter</module>
     <module>tcl/starter</module>
     <module>velocity/starter</module>
-    <module>war/starter</module>
+    <!--module>war/starter</module-->
     <module>xgql/starter</module>
     <module>xruby/starter</module>
     <module>ptilde/starter</module>

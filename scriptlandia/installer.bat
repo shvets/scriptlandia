@@ -1,32 +1,20 @@
 @ECHO OFF
 
-@call ..\..\..\jlaunchpad\trunk\jlaunchpad\config.bat
+SET DIR=../../../jlaunchpad/trunk/jlaunchpad
+
+if not exist %DIR% (
+  SET DIR=jlaunchpad-1.0.1
+)
+
+if not exist %DIR% (
+  echo Please run jlaunchpad-installer.bat first.
+  pause
+  exit
+)
+
+@call %DIR%\config.bat
 
 if not exist %JLAUNCHPAD_HOME%\jlaunchpad.bat (
-  echo Please run jlaunchpad-installer.bat first.
-  pause
-  exit
-)
-
-if not exist %REPOSITORY_HOME%\org\sf\jlaunchpad\jlaunchpad-launcher\%JLAUNCHPAD_VERSION%\jlaunchpad-launcher-%JLAUNCHPAD_VERSION%.jar (
-  echo Please run jlaunchpad-installer.bat first.
-  pause
-  exit
-)
-
-if not exist %REPOSITORY_HOME%\org\sf\jlaunchpad\jlaunchpad-common\%JLAUNCHPAD_VERSION%\jlaunchpad-common-%JLAUNCHPAD_VERSION%.jar (
-  echo Please run jlaunchpad-installer.bat first.
-  pause
-  exit
-)
-
-if not exist %REPOSITORY_HOME%\org\sf\jlaunchpad\pom-reader\%JLAUNCHPAD_VERSION%\pom-reader-%JLAUNCHPAD_VERSION%.jar (
-  echo Please run jlaunchpad-installer.bat first.
-  pause
-  exit
-)
-
-if not exist %REPOSITORY_HOME%\org\apache\maven\bootstrap\bootstrap-mini\2.0.8\bootstrap-mini-2.0.8.jar (
   echo Please run jlaunchpad-installer.bat first.
   pause
   exit

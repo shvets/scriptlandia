@@ -1,6 +1,6 @@
 @ECHO OFF
 
-@call ..\config.bat
+@call ..\..\..\..\jlaunchpad\trunk\jlaunchpad\config.bat
 
 if not exist %JLAUNCHPAD_HOME%\jlaunchpad.bat (
   echo Please run jlaunchpad-installer.bat first.

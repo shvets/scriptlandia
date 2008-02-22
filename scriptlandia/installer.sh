@@ -1,38 +1,18 @@
 #!/bin/sh
 
-../../../jlaunchpad/trunk/jlaunchpad/config.sh
+DIR=../../../jlaunchpad/trunk/jlaunchpad
 
+if [ ! -d $DIR ]; then
+  DIR=jlaunchpad-1.0.1
 
-if [ ! -e $JLAUNCHPAD_HOME/jlaunchpad.sh ]; then
-  echo Please run jlaunchpad-installer.sh first.
+  if [ ! -d $DIR ]; then
+    echo Please run jlaunchpad-installer.sh first.
   
-  return
+    return
+  fi
 fi
 
-if [ ! -e $REPOSITORY_HOME/org/sf/jlaunchpad/jlaunchpad-launcher/$JLAUNCHPAD_VERSION/jlaunchpad-launcher-$JLAUNCHPAD_VERSION.jar ]; then
-  echo Please run jlaunchpad-installer.sh first.
-  
-  return
-fi
-
-if [ ! -e $REPOSITORY_HOME/org/sf/jlaunchpad/jlaunchpad-common/$JLAUNCHPAD_VERSION/jlaunchpad-common-$JLAUNCHPAD_VERSION.jar ]; then
-  echo Please run jlaunchpad-installer.sh first.
-  
-  return
-fi
-
-if [ ! -e $REPOSITORY_HOME/org/sf/jlaunchpad/pom-reader/$JLAUNCHPAD_VERSION/pom-reader-$JLAUNCHPAD_VERSION.jar ]; then
-  echo Please run jlaunchpad-installer.sh first.
-  
-  return
-fi
-
-if [ ! -e $REPOSITORY_HOME/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8.jar ]; then
-  echo Please run jlaunchpad-installer.sh first.
-  
-  return
-fi
-
+. $DIR/config.sh
 
 SCRIPTLANDIA_HOME=%DRIVE_LETTER%\scriptlandia
 MOBILE_JAVA_HOME=%DRIVE_LETTER%\Java\j2me-2.5
