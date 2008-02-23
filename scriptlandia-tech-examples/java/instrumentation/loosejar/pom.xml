@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>test</groupId>
+  <artifactId>test</artifactId>
+  <version>1.0</version>
+
+  <dependencies>
+     <dependency>
+      <groupId>com.googlecode</groupId>
+      <artifactId>loosejar</artifactId>
+      <version>1.0</version>
+     </dependency>
+
+    <dependency>
+      <groupId>org.sf.cafebabe</groupId>
+      <artifactId>cafebabe-main</artifactId>
+      <version>1.4</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>compile</defaultGoal>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>scriptlandia-repo</id>
+      <name>Scriptlandia Maven2 repository</name>
+      <url>http://scriptlandia-repository.googlecode.com/svn/trunk/tools</url>
+    </repository>
+  </repositories>
+
+</project>
