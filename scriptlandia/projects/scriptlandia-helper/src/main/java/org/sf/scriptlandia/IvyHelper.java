@@ -1,7 +1,7 @@
 package org.sf.scriptlandia;
 
-import fr.jayasoft.ivy.Ivy;
-import fr.jayasoft.ivy.report.ResolveReport;
+import org.apache.ivy.Ivy;
+//import org.apache.ivy.report.ResolveReport;
 
 import java.io.File;
 import java.io.IOException;
@@ -56,11 +56,11 @@ public class IvyHelper {
     String repositoryHome = System.getProperty("repository.home");
     Ivy ivy = new Ivy();
     ivy.configure(new File(configName));
-    ivy.setCacheIvyPattern(repositoryHome.replace('\\', '/') + "/" + RETRIEVE_PATTERN);
+    //ivy.setCacheIvyPattern(repositoryHome.replace('\\', '/') + "/" + RETRIEVE_PATTERN);
 
-    ResolveReport r = ivy.resolve(new File(depsName));
+    //ResolveReport r = ivy.resolve(new File(depsName));
 
-    System.out.println("Ivy has errors: " + r.hasError());
+    //System.out.println("Ivy has errors: " + r.hasError());
   }
 
 }

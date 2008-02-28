@@ -4,10 +4,10 @@
   <property name="jruby.version" value="1.1RC2"/>
 
   <property name="jruby.base" 
-            value="${repository.home}/jruby/jruby/${jruby.version}"/>
+            value="${repository.home}/org/jruby/jruby/${jruby.version}"/>
 
   <property name="jruby.lib" 
-            value="${repository.home}/jruby/jruby-lib/${jruby.version}/jruby-lib-${jruby.version}.jar"/>
+            value="${repository.home}/org/jruby/jruby-lib/${jruby.version}/jruby-lib-${jruby.version}.jar"/>
 
   <target name="install">
     <condition property="jruby.lib.is.present">

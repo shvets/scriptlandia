@@ -84,7 +84,7 @@ public class LauncherHelper {
     System.setProperty("python.home", repositoryHome + "/jython/jython/" + jythonVersion);
     System.setProperty("python.cachedir", repositoryHome + "/jython/jython/" + jythonVersion + "/cachedir");
 
-    String jRubyHome = repositoryHome + "/jruby/jruby/" + jrubyVersion;
+    String jRubyHome = repositoryHome + "/org/jruby/jruby/" + jrubyVersion;
 
     System.setProperty("jruby.shell", "cmd.exe");
     System.setProperty("jruby.script", "jruby.bat");
