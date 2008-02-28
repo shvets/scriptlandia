@@ -10,7 +10,7 @@ class NamesInterpreterContext {
 
   public NamesInterpreterContext() {
     names.add("monitor");
-    names.add("keuboard");
+    names.add("keyboard");
     names.add("mouse");
     names.add("system-block");
   }
