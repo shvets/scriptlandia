@@ -365,7 +365,16 @@
         Added support for GANT version 1.1.0.
       </action>
     </release>
+
     <release version="2.2.5" date="22-February-2008" description="Bug Fix Release">
+      <action dev="Alexander Shvets" type="fix">
+        Using maven 2.0.9.
+      </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgrade for JRuby version 1.1.
+      </action>
+
     </release>
   </body>
 

@@ -1,5 +1,5 @@
 <set.variables>
-JRUBY_VERSION=1.1RC2
+JRUBY_VERSION=1.1
 
 <java.system.props>
 classworlds.conf=@scriptlandia.home@/scriptlandia.conf

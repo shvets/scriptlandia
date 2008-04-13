@@ -11,7 +11,7 @@
   <description>Scriptlandia Ant Starter Module</description>
 
   <properties>
-    <maven.version>2.0.8</maven.version>
+    <maven.version>2.0.9</maven.version>
     <scriptlandia.version>2.2.5</scriptlandia.version>
   </properties>
 

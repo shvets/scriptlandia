@@ -70,7 +70,7 @@ Before executing this script, execute this in scriptlandia-tools\launch4j
               icon="projects/scriptlandia-config/bin/images/scriptlandia.ico">
         <classPath mainClass="org.sf.scriptlandia.install.GuiInstaller">
           <cp>${repository.home}/org/sf/jlaunchpad/jlaunchpad-common/1.0.2/jlaunchpad-common-1.0.2.jar</cp>
-          <cp>${repository.home}/org/apache/maven/bootstrap/bootstrap-mini/2.0.8/bootstrap-mini-2.0.8.jar</cp>
+          <cp>${repository.home}/org/apache/maven/bootstrap/bootstrap-mini/2.0.9/bootstrap-mini-2.0.9.jar</cp>
           <cp>${repository.home}/org/sf/jlaunchpad/pom-reader/1.0.2/pom-reader-1.0.2.jar</cp>
           <cp>${repository.home}/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.2/jlaunchpad-launcher-1.0.2.jar</cp>
 

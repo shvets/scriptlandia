@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<language name="maven" groupId="org.apache.maven" artifactId="maven" version="2.0.8">
+<language name="maven" groupId="org.apache.maven" artifactId="maven" version="2.0.9">
   <registration mimeType="application/maven" icon="maven.ico">
     <extensions>
       <extension>mvn</extension>

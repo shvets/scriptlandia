@@ -178,7 +178,7 @@ Nailgun Server 0.7.1        http://www.martiansoftware.com/nailgun
 log4j          1.2.13       http://logging.apache.org/log4j
 MicroEmu       2.0.1        http://microemu.org
 
-Maven          2.0.8        http://maven.apache.org
+Maven          2.0.9        http://maven.apache.org
 Ant            1.7.0        http://ant.apache.org
 
 BSF            2.4.0        http://jakarta.apache.org/bsf
@@ -189,7 +189,7 @@ Jelly          1.0          http://jakarta.apache.org/commons/jelly
 Velocity       1.5          http://velocity.apache.org
 Freemarker     2.3.9        http://freemarker.sourceforge.net
 Velocity Tools 1.1          http://jakarta.apache.org/velocity
-JRuby          1.1RC2       http://jruby.codehaus.org
+JRuby          1.1          http://jruby.codehaus.org
 Pnuts          1.2          https://pnuts.dev.java.net
 Jython         2.2.1        http://www.jython.org
 Scriptlandia   2.2.5        http://sourceforge.net/projects/scriptlandia

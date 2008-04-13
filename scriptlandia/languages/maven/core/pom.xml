@@ -11,7 +11,7 @@
   <description>Scriptlandia Maven Core Module</description>
 
   <properties>
-    <maven.version>2.0.8</maven.version>
+    <maven.version>2.0.9</maven.version>
   </properties>
 
   <dependencies>
