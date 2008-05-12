@@ -1,24 +1,22 @@
 1. Retrieve the latest version of openjdk sources as archive bundle (http://download.java.net/openjdk/jdk7) 
-or through Subversion:
+or through Subversion from the trunk:
 
->svn co https://openjdk.dev.java.net/svn/openjdk/jdk/tags/jdk7-b18/j2se/src/share/opensource/javac/src/bin openjdk/j2se/src/share/opensource/javac/src/bin
->svn co https://openjdk.dev.java.net/svn/openjdk/jdk/tags/jdk7-b18/j2se/src/share/classes openjdk/j2se/src/share/classes
+>svn co https://openjdk.dev.java.net/svn/openjdk/jdk/trunk openjdk-7-b26
 
 Note: you should be registered user on java.net to get openjdk from svn.
 
-2. In prepare.ant file modify "original.project.home" to point to correct location of openjdk:
 
-  <property name="original.project.home" value="d:/Java/sources/openjdk"/>
+2. Go to "langtools/make" directory. In build.properties correct these properties:
 
-3. In build.properties correct compiler version:
+build.number = b26
+javac.target = 5
 
-build.number = b18
+3. Run this command:
 
-4.
+>ant build -Dboot.java.home=c:/Java/jdk1.5.0
 
->ant -f prepare.ant
+where "boot.java.home" property points out to preinstalled JDK.
 
-5.
-
->ant
+4. In "langtools/dist/lib" directory new file is created: "classes.jar". This archive
+contains all class files required by the compiler.
 
