@@ -11,16 +11,10 @@
   <description>Scriptlandia Scala Core Module</description>
 
   <properties>
-    <scala.version>2.6.1</scala.version>
+    <scala.version>2.7.1</scala.version>
   </properties>
 
   <dependencies>
-    <!--dependency>
-      <groupId>org.scala-lang</groupId>
-      <artifactId>scala-library</artifactId>
-      <version>${scala.version}</version>
-    </dependency-->
-
     <dependency>
       <groupId>org.scala-lang</groupId>
       <artifactId>scala-compiler</artifactId>

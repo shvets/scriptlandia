@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<language name="groovy" groupId="org.codehaus.groovy" artifactId="groovy-all" version="1.5.4">
+<language name="groovy" groupId="org.codehaus.groovy" artifactId="groovy-all" version="1.5.6">
   <registration mimeType="application/groovy" icon="groovy.ico">
     <extensions>
       <extension>groovy</extension>
