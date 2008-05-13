@@ -57,7 +57,8 @@ public class CoreInstaller {
     launcher.setMainClassName("org.sf.scriptlandia.antrun.AntRun");
 
     launcher.configure(Thread.currentThread().getContextClassLoader());
-    launcher.launch();  }
+    launcher.launch();
+  }
 
   /**
    * Installs required projects.
@@ -80,7 +81,7 @@ public class CoreInstaller {
   private void installProjects() throws Exception {
     ProjectInstaller installer = new ProjectInstaller();
 
-    installer.install("projects/scriptlandia-nailgun", false);
+    //installer.install("projects/scriptlandia-nailgun", false);
     installer.install("projects/scriptlandia-launcher", false);
     installer.install("projects/scriptlandia-helper", false);
   }

@@ -40,7 +40,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
   private JTextField scriptlandiaHomeField = new JTextField(35);
   private JTextField launcherHomeField = new JTextField(35);
   private JTextField rubyHomeField = new JTextField(35);
-  private JComboBox javaSpecVersionComboBox = new JComboBox(new String[]{"1.5", "1.6", "1.7"});
+  private JComboBox javaSpecVersionComboBox = new JComboBox(new String[] {"1.5", "1.6", "1.7"});
 
   private JButton installCoreButton = new JButton("Install Core");
   private JButton installLanguagesButton = new JButton("Install");
@@ -672,6 +672,13 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
         String name = (String) language.get("name");
 
         System.setProperty(name + ".install", String.valueOf(checkBoxes[i].isSelected()));
+
+
+        String version = (String) language.get("version");
+        
+        if(version != null) {
+          System.setProperty(name + ".version", version);
+        }
       }
 
       try {
@@ -701,6 +708,12 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
         String name = (String) language.get("name");
 
         System.setProperty(name + ".install", String.valueOf(checkBoxes[i].isSelected()));
+
+        if(!checkBoxes[i].isSelected()) {
+          String version = (String) language.get("version");
+
+          System.setProperty(name + ".version", "");
+        }
       }
 
       try {
@@ -753,6 +766,12 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
       String name = (String) language.get("name");
 
       saveProperty(scriptlandiaProps, checkBoxes[i], name + ".install");
+
+      String version = (String) language.get("version");
+
+      if(version != null) {
+        scriptlandiaProps.put(name + ".version", version);
+      }
     }
 
     scriptlandiaProps.save();
