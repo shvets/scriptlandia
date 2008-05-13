@@ -145,13 +145,13 @@ public class LauncherHelper {
     launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/jlaunchpad-launcher/" + launcherVersion +
       "/jlaunchpad-launcher-" + launcherVersion + ".jar");
 
-    launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/scriptlandia-nailgun/" + scriptlandiaVersion +
-      "/scriptlandia-nailgun-" + scriptlandiaVersion + ".jar");
+    //launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/scriptlandia-nailgun/" + scriptlandiaVersion +
+    //  "/scriptlandia-nailgun-" + scriptlandiaVersion + ".jar");
 //    launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/scriptlandia-installer/" + scriptlandiaVersion +
 //      "/scriptlandia-installer-" + scriptlandiaVersion + ".jar");
 
-    launcher.addClasspathEntry(repositoryHome + "/com/martiansoftware/nailgun/" + nailgunVersion + "/nailgun-" +
-      nailgunVersion + ".jar");
+    //launcher.addClasspathEntry(repositoryHome + "/com/martiansoftware/nailgun/" + nailgunVersion + "/nailgun-" +
+    //  nailgunVersion + ".jar");
     //launcher.addClasspathEntry(repositoryHome + "/org/jdesktop/jdic/" + jdicVersion + "/jdic-" + jdicVersion + ".jar");
     launcher.addClasspathEntry(repositoryHome + "/commons-cli/commons-cli/1.1/commons-cli-1.1.jar");
   }
