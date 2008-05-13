@@ -1,5 +1,5 @@
 <set.variables>
-SCALA_VERSION=2.6.1
+SCALA_VERSION=2.7.1
 
 <java.bootclasspath.append>
 %REPOSITORY_HOME%/org/scala-lang/scala-library/%SCALA_VERSION%/scala-library-%SCALA_VERSION%.jar
