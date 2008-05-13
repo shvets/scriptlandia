@@ -118,6 +118,12 @@
       <artifactId>image4j</artifactId>
       <version>0.6</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.jdesktop</groupId>
+      <artifactId>jdic</artifactId>
+      <version>0.9.3</version>
+    </dependency>
   </dependencies>
 
   <build>

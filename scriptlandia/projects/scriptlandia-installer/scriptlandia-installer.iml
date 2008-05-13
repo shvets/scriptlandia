@@ -11,7 +11,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/target/classes" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -207,6 +206,32 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/sf/image4j/0.6/image4j-0.6-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="org.jdesktop:jdic:0.9.3">
+        <CLASSES>
+          <root url="jar://$maven-repository$/org/jdesktop/jdic/0.9.3/jdic-0.9.3.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$maven-repository$/org/jdesktop/jdic/0.9.3/jdic-0.9.3-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$maven-repository$/org/jdesktop/jdic/0.9.3/jdic-0.9.3-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="org.jdesktop:jdic-native-libs:0.9.3">
+        <CLASSES>
+          <root url="jar://$maven-repository$/org/jdesktop/jdic-native-libs/0.9.3/jdic-native-libs-0.9.3.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$maven-repository$/org/jdesktop/jdic-native-libs/0.9.3/jdic-native-libs-0.9.3-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$maven-repository$/org/jdesktop/jdic-native-libs/0.9.3/jdic-native-libs-0.9.3-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

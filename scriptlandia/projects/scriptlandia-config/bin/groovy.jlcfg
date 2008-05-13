@@ -1,3 +1,5 @@
+# groovy.jlcfg
+
 <set.variables>
 REPOSITORY_HOME=@repository.home@
 

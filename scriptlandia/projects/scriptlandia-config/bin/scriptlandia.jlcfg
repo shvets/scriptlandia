@@ -1,3 +1,5 @@
+# scriptlandia.jlcfg
+
 <java.classpath>
 @mobile.java.home@/wtklib/kenv.zip
 @mobile.java.home@/wtklib/ktools.zip
@@ -5,6 +7,7 @@
 
 <java.library.path>
 @mobile.java.home@/bin
+@repository.home@/org/jdesktop/jdic/0.9.3/windows/x86
 
 <java.system.props>
 java.specification.version.level=@java.specification.version.level@

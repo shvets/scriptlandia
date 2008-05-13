@@ -95,7 +95,7 @@ public class LauncherHelper {
     System.setProperty("scriptlandia.version", scriptlandiaVersion);
     System.setProperty("jlaunchpad.version", launcherVersion);
 
-    //System.setProperty("jdic.version", "0.9.3");
+    System.setProperty("jdic.version", "0.9.3");
     System.setProperty("nailgun.version", "0.7.1");
 
     //setupJavaSpecificationVersion();
@@ -135,7 +135,7 @@ public class LauncherHelper {
     String scriptlandiaVersion = (String)scriptlandiaProps.get("scriptlandia.version");
     String launcherVersion = (String)scriptlandiaProps.get("jlaunchpad.version");
     String nailgunVersion = (String)scriptlandiaProps.get("nailgun.version");
-    //String jdicVersion = (String)scriptlandiaProps.get("jdic.version");
+    String jdicVersion = (String)scriptlandiaProps.get("jdic.version");
 
     launcher.addClasspathEntry(repositoryHome + "/org/apache/maven/bootstrap/bootstrap-mini/2.0.9/bootstrap-mini-2.0.9.jar");
     launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/pom-reader/" + launcherVersion +
@@ -145,14 +145,23 @@ public class LauncherHelper {
     launcher.addClasspathEntry(repositoryHome + "/org/sf/jlaunchpad/jlaunchpad-launcher/" + launcherVersion +
       "/jlaunchpad-launcher-" + launcherVersion + ".jar");
 
-    //launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/scriptlandia-nailgun/" + scriptlandiaVersion +
-    //  "/scriptlandia-nailgun-" + scriptlandiaVersion + ".jar");
+    String slNailgunsLib = repositoryHome + "/org/sf/scriptlandia/scriptlandia-nailgun/" + scriptlandiaVersion +
+      "/scriptlandia-nailgun-" + scriptlandiaVersion + ".jar";
+
+    String nailgunsLib = repositoryHome + "/com/martiansoftware/nailgun/" + nailgunVersion + "/nailgun-" + nailgunVersion + ".jar";
+
+    if(new File(slNailgunsLib).exists()) {
+      launcher.addClasspathEntry(slNailgunsLib);
+    }
+
+    if(new File(nailgunsLib).exists()) {
+      launcher.addClasspathEntry(nailgunsLib);
+    }
+
 //    launcher.addClasspathEntry(repositoryHome + "/org/sf/scriptlandia/scriptlandia-installer/" + scriptlandiaVersion +
 //      "/scriptlandia-installer-" + scriptlandiaVersion + ".jar");
 
-    //launcher.addClasspathEntry(repositoryHome + "/com/martiansoftware/nailgun/" + nailgunVersion + "/nailgun-" +
-    //  nailgunVersion + ".jar");
-    //launcher.addClasspathEntry(repositoryHome + "/org/jdesktop/jdic/" + jdicVersion + "/jdic-" + jdicVersion + ".jar");
+    launcher.addClasspathEntry(repositoryHome + "/org/jdesktop/jdic/" + jdicVersion + "/jdic-" + jdicVersion + ".jar");
     launcher.addClasspathEntry(repositoryHome + "/commons-cli/commons-cli/1.1/commons-cli-1.1.jar");
   }
 

@@ -23,7 +23,7 @@ SET PROPERTIES=%PROPERTIES% "-main.class.name=org.sf.pomreader.ProjectInstaller"
 
 @call %JLAUNCHPAD_HOME%\jlaunchpad.bat -Xbootclasspath/a:%JAVA_HOME%/jre/lib/deploy.jar %SYSTEM_PROPERTIES% %PROPERTIES% -Dbasedir=projects/scriptlandia-installer -Dbuild.required=true
 
-rem @call %JLAUNCHPAD_HOME%\jlaunchpad.bat %SYSTEM_PROPERTIES% %PROPERTIES% -Dbasedir=projects/scriptlandia-nailgun -Dbuild.required=true
+@call %JLAUNCHPAD_HOME%\jlaunchpad.bat %SYSTEM_PROPERTIES% %PROPERTIES% -Dbasedir=projects/scriptlandia-nailgun -Dbuild.required=true
 
 @call %JLAUNCHPAD_HOME%\jlaunchpad.bat %SYSTEM_PROPERTIES% %PROPERTIES% -Dbasedir=projects/scriptlandia-launcher -Dbuild.required=true
 

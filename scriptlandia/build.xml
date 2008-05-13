@@ -26,11 +26,15 @@
   <target name="install">
     <antcall target="copy.config.files"/>
 
-    <antcall target="configure.naligun"/>
+    <!--antcall target="configure.naligun"/-->
+    <antcall target="configure.jdic"/>
 
-    <antcall target="install.libraries"/>
+    <!--antcall target="install.libraries"/-->
+    <copy-properties/>
 
     <antcall target="prepare.unix.files"/>
+
+    <antcall target="register.xfeedesktop.extensions"/>
   </target>
 
   <target name="register.xfeedesktop.extensions">
@@ -118,9 +122,8 @@
         <include name="*.sh"/>
         <include name="*.conf"/>
         <include name="*.jlcfg"/>
-        <!--include name="*.ini"/-->
-        <!--include name="scriptlandia.classpath"/-->
         <exclude name="*-exe.*"/>
+        <exclude name="nailgun*.*"/>
       </fileset>
     </copy>
 
@@ -142,7 +145,6 @@
        <include name="mvn.bat"/>
        <include name="configure.bat"/>
        <include name="scriptlandia*.bat"/>
-       <include name="nailgun*.bat"/>
       </fileset>
     </copy>
 
@@ -152,7 +154,6 @@
        <include name="mvn.bat"/>
        <include name="configure.bat"/>
        <include name="jlaunchpad*.bat"/>
-       <include name="nailgun*.bat"/>
       </fileset>
 
       <filterchain>
@@ -161,7 +162,32 @@
     </move>
   </target>
 
-  <target name="configure.naligun">
+  <target name="install.nailgun">
+    <antcall target="configure.nailgun"/>
+
+    <antcall target="copy.nailgun.config.files"/>
+  </target>
+
+  <target name="copy.nailgun.config.files">
+    <script language="beanshell">
+      String scriptlandiaHome = System.getProperty("scriptlandia.home");
+
+      project.setNewProperty("scriptlandia.home.internal", scriptlandiaHome.replace('\\', '/'));
+    </script>
+
+    <copy todir="${scriptlandia.home}" overwrite="true">
+      <filterset>
+        <filter token="scriptlandia.home" value="${scriptlandia.home.internal}"/>
+        <filter token="nailgun.version" value="${nailgun.version}"/>
+      </filterset>
+
+      <fileset dir="projects/scriptlandia-config/bin">
+        <include name="nailgun*.*"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="configure.nailgun">
     <condition property="nailgun.binaries.present">
       <available file="${repository.home}/com/martiansoftware/nailgun-bin/${nailgun.version}/nailgun-bin-${nailgun.version}.jar"/>
     </condition>
@@ -174,16 +200,57 @@
            dest="${repository.home}/com/martiansoftware/nailgun-bin/${nailgun.version}" overwrite="false"/>
   </target>
 
-  <target name="install.libraries">
-    <!--copy todir="${scriptlandia.home}">
-      <fileset dir=".">
-       <include name="build.xml"/>
-       <include name="scriptlandia-macrodefs.xml"/>
-       <include name="scriptlandia-classpath"/>
-      </fileset>
-    </copy-->
-
+  <!--target name="install.libraries">
     <copy-properties/>
+  </target-->
+
+  <target name="configure.jdic">
+    <condition property="jdic.native.libs.present">
+      <available file="${repository.home}/org/jdesktop/jdic-native-libs/${jdic.version}/jdic-native-libs-${jdic.version}.jar"/>
+    </condition>
+
+    <antcall target="unzip.jdic.native.libs"/>
+  </target>
+
+  <target name="unzip.jdic.native.libs" if="jdic.native.libs.present">
+    <script language="beanshell">
+      String osName = System.getProperty("os.name").toLowerCase();
+
+      if(osName.startsWith("windows")) {
+        osName = "windows";
+      }
+      else if(osName.startsWith("linux")) {
+        osName = "linux";
+      }
+      else if(osName.startsWith("sunos")) {
+        osName = "sunos";
+      }
+
+      project.setNewProperty("os.name.temp", osName);
+
+      String osArch = System.getProperty("os.arch").toLowerCase();
+
+      if(osArch.startsWith("i386")) {
+        osArch = "x86";
+      }
+
+      project.setNewProperty("os.arch.temp", osArch);
+    </script>
+
+    <unzip src="${repository.home}/org/jdesktop/jdic-native-libs/${jdic.version}/jdic-native-libs-${jdic.version}.jar"
+           dest="${repository.home}/org/jdesktop/jdic/${jdic.version}" overwrite="false">
+      <mapper type="flatten"/>
+
+      <patternset>
+        <include name="${os.name.temp}/jdic_stub.jar"/>
+        <include name="${os.name.temp}/${os.arch.temp}/*.*"/>
+      </patternset>
+    </unzip>
+<!--    
+    <unzip src="${repository.home}/org/jdesktop/jdic-native-libs/${jdic.version}/jdic-native-libs-${jdic.version}.jar"
+           dest="${repository.home}/org/jdesktop/jdic/${jdic.version}" overwrite="false">
+    </unzip>
+-->
   </target>
 
   <target name="prepare.unix.files">

@@ -1,3 +1,5 @@
+# scala.jlcfg
+
 <set.variables>
 SCALA_VERSION=2.7.1
 

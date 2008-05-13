@@ -43,6 +43,8 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
   private JComboBox javaSpecVersionComboBox = new JComboBox(new String[] {"1.5", "1.6", "1.7"});
 
   private JButton installCoreButton = new JButton("Install Core");
+  private JButton installNailgunsButton = new JButton("Install Nailguns");
+
   private JButton installLanguagesButton = new JButton("Install");
   private JButton uninstallLanguagesButton = new JButton("Uninstall");
   private JButton closeButton;
@@ -108,6 +110,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     }
 
     installCoreButton.setEnabled(enabled);
+    installNailgunsButton.setEnabled(enabled);
     installLanguagesButton.setEnabled(enabled);
     uninstallLanguagesButton.setEnabled(enabled);
 
@@ -118,6 +121,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     applyEnabledFlag(tabbedPane, true);
 
     installCoreButton.setEnabled(true);
+    installNailgunsButton.setEnabled(true);
 
     tryEnableInstallButton();
   }
@@ -139,6 +143,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
   private void disableControls() {
     applyEnabledFlag(tabbedPane, false);
     installCoreButton.setEnabled(false);
+    installNailgunsButton.setEnabled(false);
 
     console.getComponent().setEnabled(true);
   }
@@ -345,7 +350,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
       public void actionPerformed(ActionEvent event) {
         Thread thread = new Thread() {
           public void run() {
-            blockControls("Installing Scriptlandia core...");
+            blockControls("Installing Scriptlandia Core...");
 
             try {
               GuiInstaller.this.install(args);
@@ -354,7 +359,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
               e.printStackTrace();
             }
             finally {
-              unblockControls("Scriptlandia core installed.");
+              unblockControls("Scriptlandia Core installed.");
             }
           }
         };
@@ -363,6 +368,27 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
       }
     });
 
+    installNailgunsButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+        Thread thread = new Thread() {
+          public void run() {
+            blockControls("Installing Nailguns...");
+
+            try {
+              GuiInstaller.this.installNailguns(args);
+            }
+            catch (Exception e) {
+              e.printStackTrace();
+            }
+            finally {
+              unblockControls("Scriptlandia Nailguns installed.");
+            }
+          }
+        };
+
+        thread.start();
+      }
+    });
     closeButton = new JButton("Close");
 
     closeButton.addActionListener(new ActionListener() {
@@ -383,6 +409,8 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
 
     panel11.add(Box.createRigidArea(new Dimension(200, 0)));
     panel11.add(installCoreButton);
+    panel11.add(Box.createRigidArea(new Dimension(50, 0)));
+    panel11.add(installNailgunsButton);
     panel11.add(Box.createRigidArea(new Dimension(50, 0)));
     panel11.add(closeButton);
     panel11.add(Box.createRigidArea(new Dimension(200, 0)));
@@ -659,6 +687,24 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     }
   }
 
+  public void installNailguns(String[] args) {
+    try {
+      updateProperties();
+
+      try {
+        save();
+      }
+      catch (IOException e) {
+        throw new LauncherException(e);
+      }
+
+      super.installNailguns(args);
+    }
+    catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
   public void installLanguages() throws LauncherException {
     try {
       updateProperties();
@@ -710,8 +756,6 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
         System.setProperty(name + ".install", String.valueOf(checkBoxes[i].isSelected()));
 
         if(!checkBoxes[i].isSelected()) {
-          String version = (String) language.get("version");
-
           System.setProperty(name + ".version", "");
         }
       }
@@ -757,7 +801,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     saveProperty(scriptlandiaProps, launcherHomeField, "jlaunchpad.home");
 
     scriptlandiaProps.put("jlaunchpad.version", System.getProperty("jlaunchpad.version"));
-    //scriptlandiaProps.put("jdic.version", System.getProperty("jdic.version"));
+    scriptlandiaProps.put("jdic.version", System.getProperty("jdic.version"));
     scriptlandiaProps.put("nailgun.version", System.getProperty("nailgun.version"));
     scriptlandiaProps.put("java.compiler.version", System.getProperty("java.compiler.version"));
 

@@ -286,6 +286,7 @@ public class ExtInstaller {
       Association association = new Association();
 
       association.addFileExtension(extension);
+      association.setMimeType(mimeType);
 
       try {
         associationService.unregisterUserAssociation(association);

@@ -33,23 +33,35 @@ public class CoreInstaller {
    * @throws LauncherException the exception
    */
   public void install(String[] args) throws LauncherException {
-      instalRequiredlProjects(args);
+    executeAntTarget(new String[] {"install"});
 
-      try {
-        installProjects();
+    try {
+      installProjects();
 
-        generateScripts();
+      generateScripts();
 
-        registerXFreeDesktopExtensions();
+      //registerXFreeDesktopExtensions();
 
-        System.out.println("Scriptlandia core installed.");
-      } catch (Exception e) {
-        throw new LauncherException(e.getMessage());
-      }
+      System.out.println("Scriptlandia core installed.");
+    } catch (Exception e) {
+      throw new LauncherException(e.getMessage());
+    }
   }
 
-  private void registerXFreeDesktopExtensions() throws LauncherException {
-    DefaultLauncher launcher = new DefaultLauncher(new String[] { "register.xfeedesktop.extensions" });
+  public void installNailguns(String[] args) throws LauncherException {
+    try {
+      ProjectInstaller installer = new ProjectInstaller();
+
+      installer.install("projects/scriptlandia-nailgun", false);
+    } catch (Exception e) {
+      throw new LauncherException(e.getMessage());
+    }
+
+    executeAntTarget(new String[] {"install.nailgun"});
+  }
+
+ /* private void registerXFreeDesktopExtensions() throws LauncherException {
+    DefaultLauncher launcher = new DefaultLauncher(new String[]{"register.xfeedesktop.extensions"});
 
     launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
     launcher.addClasspathEntry("projects/antrun/target/antrun.jar");
@@ -59,14 +71,14 @@ public class CoreInstaller {
     launcher.configure(Thread.currentThread().getContextClassLoader());
     launcher.launch();
   }
-
+*/
   /**
    * Installs required projects.
    *
    * @param args the command line arguments
    * @throws LauncherException the exception
    */
-  private void instalRequiredlProjects(String[] args) throws LauncherException {
+  private void executeAntTarget(String[] args) throws LauncherException {
     DefaultLauncher launcher = new DefaultLauncher(args);
 
     launcher.addClasspathEntry("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
@@ -143,7 +155,7 @@ public class CoreInstaller {
     installLanguage("starter", true, installer, new File(path));
 
     Map language = findLanguage(languages, name);
-    
+
     ExtInstaller extInstaller = new ExtInstaller();
     extInstaller.registerLanguage(language);
   }
@@ -151,44 +163,44 @@ public class CoreInstaller {
   private Map findLanguage(List languages, String name) {
     Map language = null;
 
-    for(int i=0; i < languages.size() && language == null; i++) {
-      Map currentLanguage = (Map)languages.get(i);
-      String currentName = (String)currentLanguage.get("name");
+    for (int i = 0; i < languages.size() && language == null; i++) {
+      Map currentLanguage = (Map) languages.get(i);
+      String currentName = (String) currentLanguage.get("name");
 
-       if(currentName.equalsIgnoreCase(name)) {
-         language = currentLanguage;
-       }
+      if (currentName.equalsIgnoreCase(name)) {
+        language = currentLanguage;
+      }
     }
 
     return language;
   }
 
- protected void uninstallLanguageProjects() {
-   ExtInstaller extInstaller = new ExtInstaller();
+  protected void uninstallLanguageProjects() {
+    ExtInstaller extInstaller = new ExtInstaller();
 
-   ExtXmlHelper xmlHelper = new ExtXmlHelper();
-   xmlHelper.readLanguages("languages");
+    ExtXmlHelper xmlHelper = new ExtXmlHelper();
+    xmlHelper.readLanguages("languages");
 
-   List languages = xmlHelper.getLanguages();
+    List languages = xmlHelper.getLanguages();
 
-   for (Object language1 : languages) {
-     Map language = (Map) language1;
+    for (Object language1 : languages) {
+      Map language = (Map) language1;
 
-     String name = (String) language.get("name");
+      String name = (String) language.get("name");
 
-     boolean requiresInstallation = Boolean.valueOf(System.getProperty(name + ".install")).booleanValue();
+      boolean requiresInstallation = Boolean.valueOf(System.getProperty(name + ".install")).booleanValue();
 
-     if (requiresInstallation) {
-       try {
-         extInstaller.unregisterLanguage(language);
-       }
-       catch (Exception e) {
-         System.out.println("Exception: " + e.getMessage());
-       }
-     }
-   }
+      if (requiresInstallation) {
+        try {
+          extInstaller.unregisterLanguage(language);
+        }
+        catch (Exception e) {
+          System.out.println("Exception: " + e.getMessage());
+        }
+      }
+    }
 
-   System.out.println("Scriptlandia supported languages uninstalled.");
+    System.out.println("Scriptlandia supported languages uninstalled.");
   }
 
   public void uninstallLanguage(String name, List languages) {
@@ -196,12 +208,12 @@ public class CoreInstaller {
 
     ExtInstaller extInstaller = new ExtInstaller();
 
-     try {
-       extInstaller.unregisterLanguage(language);
-     }
-     catch (Exception e) {
-       System.out.println("Exception: " + e.getMessage());
-     }
+    try {
+      extInstaller.unregisterLanguage(language);
+    }
+    catch (Exception e) {
+      System.out.println("Exception: " + e.getMessage());
+    }
   }
 
   private void installLanguage(String section, boolean install, ProjectInstaller installer, File file) throws Exception {
