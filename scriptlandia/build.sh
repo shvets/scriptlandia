@@ -2,6 +2,8 @@
 
 . ../../../jlaunchpad/trunk/jlaunchpad/config.sh
 
+. ./config.sh
+
 if [ ! -e $JLAUNCHPAD_HOME/jlaunchpad.sh ]; then
   echo Please run jlaunchpad-installer.sh first.
 
@@ -18,7 +20,7 @@ $JLAUNCHPAD_HOME/jlaunchpad.sh $SYSTEM_PROPERTIES $PROPERTIES -Dbasedir=projects
 
 $JLAUNCHPAD_HOME/jlaunchpad.sh -Xbootclasspath/a:$JAVA_HOME/jre/lib/deploy.jar $SYSTEM_PROPERTIES $PROPERTIES -Dbasedir=projects/scriptlandia-installer -Dbuild.required=true
 
-$JLAUNCHPAD_HOME/jlaunchpad.sh "$SYSTEM_PROPERTIES $PROPERTIES" -Dbasedir=projects/scriptlandia-nailgun -Dbuild.required=true
+#$JLAUNCHPAD_HOME/jlaunchpad.sh "$SYSTEM_PROPERTIES $PROPERTIES" -Dbasedir=projects/scriptlandia-nailgun -Dbuild.required=true
 
 $JLAUNCHPAD_HOME/jlaunchpad.sh "$SYSTEM_PROPERTIES $PROPERTIES" -Dbasedir=projects/scriptlandia-launcher -Dbuild.required=true
 

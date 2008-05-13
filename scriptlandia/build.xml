@@ -6,7 +6,7 @@
 
   <import file="scriptlandia-macrodefs.xml"/>
 
-  <property file="${user.home}/launcher/config.properties"/>
+  <property file="${user.home}/jlaunchpad/config.properties"/>
   <property file="config.properties"/>
 
   <load-properties/>
@@ -151,7 +151,7 @@
        <include name="ant.bat"/>
        <include name="mvn.bat"/>
        <include name="configure.bat"/>
-       <include name="launcher*.bat"/>
+       <include name="jlaunchpad*.bat"/>
        <include name="nailgun*.bat"/>
       </fileset>
 

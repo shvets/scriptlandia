@@ -372,7 +372,15 @@
       </action>
 
       <action dev="Alexander Shvets" type="fix">
-        Upgrade for JRuby version 1.1.
+        Upgrade for JRuby version 1.1.1.
+      </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgrade Groovy up to version 1.5.6.
+      </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgraded to Scala ver. 2.7.1.
       </action>
 
     </release>

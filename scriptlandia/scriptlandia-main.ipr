@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project relativePaths="false" version="4">
+<project relativePaths="true" version="4">
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
-  </component>
-  <component name="Archetypes.Configuration">
-    <option name="archetypesFileLocation" value="archetypes.xml" />
-    <option name="workingDirectory" value="" />
-  </component>
-  <component name="Archetypes.ToolWindow">
-    <option name="projectRootPath" value="" />
   </component>
   <component name="BuildJarProjectSettings">
     <option name="BUILD_JARS_ON_MAKE" value="false" />
@@ -58,132 +51,6 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
     <option name="REVERSE_PATCH" value="false" />
-  </component>
-  <component name="DBNavigator.Project.CodeEditorSettings">
-    <code-completion>
-      <basic-scheme>
-        <schemas type="SCHEMA" selected="true" />
-        <users type="USER" selected="true" />
-        <build-in-functions type="FUNCTION" selected="false" />
-        <user-schema>
-          <object type="TABLE" selected="true" />
-          <object type="VIEW" selected="true" />
-          <object type="INDEX" selected="true" />
-          <object type="CONSTRAINT" selected="true" />
-          <object type="TRIGGER" selected="true" />
-          <object type="SYNONYM" selected="true" />
-          <object type="SEQUENCE" selected="true" />
-          <object type="PROCEDURE" selected="true" />
-          <object type="FUNCTION" selected="true" />
-          <object type="PACKAGE" selected="true" />
-          <object type="TYPE" selected="true" />
-          <object type="DIMENSION" selected="true" />
-          <object type="CLUSTER" selected="true" />
-        </user-schema>
-        <public-schema>
-          <object type="TABLE" selected="false" />
-          <object type="VIEW" selected="false" />
-          <object type="INDEX" selected="false" />
-          <object type="CONSTRAINT" selected="false" />
-          <object type="TRIGGER" selected="false" />
-          <object type="SYNONYM" selected="false" />
-          <object type="SEQUENCE" selected="false" />
-          <object type="PROCEDURE" selected="false" />
-          <object type="FUNCTION" selected="false" />
-          <object type="PACKAGE" selected="false" />
-          <object type="TYPE" selected="false" />
-          <object type="DIMENSION" selected="false" />
-          <object type="CLUSTER" selected="false" />
-        </public-schema>
-        <any-schema>
-          <object type="TABLE" selected="true" />
-          <object type="VIEW" selected="true" />
-          <object type="INDEX" selected="true" />
-          <object type="CONSTRAINT" selected="true" />
-          <object type="TRIGGER" selected="true" />
-          <object type="SYNONYM" selected="true" />
-          <object type="SEQUENCE" selected="true" />
-          <object type="PROCEDURE" selected="true" />
-          <object type="FUNCTION" selected="true" />
-          <object type="PACKAGE" selected="true" />
-          <object type="TYPE" selected="true" />
-          <object type="DIMENSION" selected="true" />
-          <object type="CLUSTER" selected="true" />
-        </any-schema>
-      </basic-scheme>
-      <smart-scheme>
-        <schemas type="SCHEMA" selected="true" />
-        <users type="USER" selected="true" />
-        <build-in-functions type="FUNCTION" selected="true" />
-        <user-schema>
-          <object type="TABLE" selected="true" />
-          <object type="VIEW" selected="true" />
-          <object type="INDEX" selected="true" />
-          <object type="CONSTRAINT" selected="true" />
-          <object type="TRIGGER" selected="true" />
-          <object type="SYNONYM" selected="true" />
-          <object type="SEQUENCE" selected="true" />
-          <object type="PROCEDURE" selected="true" />
-          <object type="FUNCTION" selected="true" />
-          <object type="PACKAGE" selected="true" />
-          <object type="TYPE" selected="true" />
-          <object type="DIMENSION" selected="true" />
-          <object type="CLUSTER" selected="true" />
-        </user-schema>
-        <public-schema>
-          <object type="TABLE" selected="true" />
-          <object type="VIEW" selected="true" />
-          <object type="INDEX" selected="true" />
-          <object type="CONSTRAINT" selected="true" />
-          <object type="TRIGGER" selected="true" />
-          <object type="SYNONYM" selected="true" />
-          <object type="SEQUENCE" selected="true" />
-          <object type="PROCEDURE" selected="true" />
-          <object type="FUNCTION" selected="true" />
-          <object type="PACKAGE" selected="true" />
-          <object type="TYPE" selected="true" />
-          <object type="DIMENSION" selected="true" />
-          <object type="CLUSTER" selected="true" />
-        </public-schema>
-        <any-schema>
-          <object type="TABLE" selected="true" />
-          <object type="VIEW" selected="true" />
-          <object type="INDEX" selected="true" />
-          <object type="CONSTRAINT" selected="true" />
-          <object type="TRIGGER" selected="true" />
-          <object type="SYNONYM" selected="true" />
-          <object type="SEQUENCE" selected="true" />
-          <object type="PROCEDURE" selected="true" />
-          <object type="FUNCTION" selected="true" />
-          <object type="PACKAGE" selected="true" />
-          <object type="TYPE" selected="true" />
-          <object type="DIMENSION" selected="true" />
-          <object type="CLUSTER" selected="true" />
-        </any-schema>
-      </smart-scheme>
-    </code-completion>
-    <code-style>
-      <case>
-        <keyword value="lower" />
-        <function value="lower" />
-        <parameter value="lower" />
-        <object value="upper" />
-      </case>
-    </code-style>
-  </component>
-  <component name="DBNavigator.Project.ConnectionManager">
-    <connections />
-  </component>
-  <component name="DBNavigator.Project.DatabaseBrowserManager">
-    <autoscroll-to-editor value="false" />
-    <autoscroll-from-editor value="false" />
-  </component>
-  <component name="DBNavigator.Project.DatasetEditorSettings">
-    <autopopup-text-editor active="true" active-if-empty="false" data-length-threshold="100" delay="1000" />
-    <fetch-block-size value="100" />
-  </component>
-  <component name="DBNavigator.Project.GenericSettings">
-    <settings />
   </component>
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
@@ -261,7 +128,7 @@
     <option name="SORT_ALPHABETICALLY" value="false" />
     <option name="HIDE_CLASSES_WHERE_METHOD_NOT_IMPLEMENTED" value="false" />
   </component>
-  <component name="IdProvider" IDEtalkID="53E06B611878531B6ACFFFD19600133C" />
+  <component name="IdProvider" IDEtalkID="139B5ED4F4479E311D09B1AE8EC4475E" />
   <component name="InspectionProjectProfileManager">
     <option name="PROJECT_PROFILE" value="Project Default" />
     <option name="USE_PROJECT_LEVEL_SETTINGS" value="false" />
@@ -273,63 +140,6 @@
       </profile>
     </profiles>
     <list size="0" />
-  </component>
-  <component name="IntelliJadProjectConfigComponent">
-    <config>
-      <a type="boolean">false</a>
-      <af type="boolean">false</af>
-      <always-exclude-recursively type="boolean">false</always-exclude-recursively>
-      <b type="boolean">false</b>
-      <clear type="boolean">false</clear>
-      <clear-and-close-console-on-success type="boolean">false</clear-and-close-console-on-success>
-      <create-output-directory type="boolean">false</create-output-directory>
-      <d type="string" />
-      <dead type="boolean">false</dead>
-      <decompile-on-navigation type="string">Always</decompile-on-navigation>
-      <decompile-to-memory type="boolean">true</decompile-to-memory>
-      <dis type="boolean">false</dis>
-      <exclusion-table-model type="table-model" model-class="net.stevechaloner.intellijad.config.ExclusionTableModel" content-types="string,boolean,boolean" />
-      <f type="boolean">false</f>
-      <ff type="boolean">false</ff>
-      <i type="boolean">false</i>
-      <indentation type="integer">4</indentation>
-      <jad-path type="string" />
-      <l type="integer">64</l>
-      <lnc type="boolean">false</lnc>
-      <lradix type="integer">10</lradix>
-      <nl type="boolean">false</nl>
-      <nocast type="boolean">false</nocast>
-      <noclass type="boolean">false</noclass>
-      <nocode type="boolean">false</nocode>
-      <noconv type="boolean">false</noconv>
-      <noctor type="boolean">false</noctor>
-      <nodos type="boolean">false</nodos>
-      <nofd type="boolean">false</nofd>
-      <noinner type="boolean">false</noinner>
-      <nolvt type="boolean">false</nolvt>
-      <nonlb type="boolean">false</nonlb>
-      <o type="boolean">false</o>
-      <pa type="string" />
-      <pc type="string">_cls</pc>
-      <pe type="string">_ex</pe>
-      <pf type="string">_fld</pf>
-      <pl type="string">_lcl</pl>
-      <pm type="string">_mth</pm>
-      <pp type="string">_prm</pp>
-      <pv type="integer">3</pv>
-      <r type="boolean">false</r>
-      <radix type="integer">10</radix>
-      <read-only type="boolean">false</read-only>
-      <reformat-style type="string">Preferred-Style</reformat-style>
-      <s type="string">java</s>
-      <safe type="boolean">false</safe>
-      <sort type="boolean">false</sort>
-      <space type="boolean">false</space>
-      <stat type="boolean">false</stat>
-      <t type="boolean">false</t>
-      <use-project-specific-settings type="boolean">false</use-project-specific-settings>
-      <v type="boolean">false</v>
-    </config>
   </component>
   <component name="JavacSettings">
     <option name="DEBUGGING_INFO" value="true" />
@@ -363,8 +173,22 @@
     <option name="IS_EMACS_ERRORS_MODE" value="true" />
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
   </component>
-  <component name="MavenBuilder">
-    <option name="jreName" value="1.5" />
+  <component name="MavenProjectsManager">
+    <option name="version" value="1" />
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+    <option name="attachedPlugins">
+      <map>
+        <entry key="$PROJECT_DIR$/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="ModuleEditorState">
     <option name="LAST_EDITED_MODULE_NAME" />
@@ -545,9 +369,7 @@
       <module fileurl="file://$PROJECT_DIR$/languages/sleep/starter/sleep-starter.iml" filepath="$PROJECT_DIR$/languages/sleep/starter/sleep-starter.iml" />
       <module fileurl="file://$PROJECT_DIR$/languages/tcl/starter/tcl-starter.iml" filepath="$PROJECT_DIR$/languages/tcl/starter/tcl-starter.iml" />
       <module fileurl="file://$PROJECT_DIR$/languages/velocity/starter/velocity-starter.iml" filepath="$PROJECT_DIR$/languages/velocity/starter/velocity-starter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/languages/war/starter/war-starter.iml" filepath="$PROJECT_DIR$/languages/war/starter/war-starter.iml" />
       <module fileurl="file://$PROJECT_DIR$/languages/xgql/starter/xgql-starter.iml" filepath="$PROJECT_DIR$/languages/xgql/starter/xgql-starter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/languages/xruby/starter/xruby-starter.iml" filepath="$PROJECT_DIR$/languages/xruby/starter/xruby-starter.iml" />
       <module fileurl="file://$PROJECT_DIR$/languages/yoix/starter/yoix-starter.iml" filepath="$PROJECT_DIR$/languages/yoix/starter/yoix-starter.iml" />
     </modules>
   </component>
@@ -579,10 +401,6 @@
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
-  <component name="RUBY_DOC_SETTINGS">
-    <RUBY_DOC NAME="DEFAULTS" VALUE="TRUE" />
-    <RUBY_DOC NAME="NUMBER" VALUE="0" />
-  </component>
   <component name="ResourceManagerContainer">
     <option name="myResourceBundles">
       <value>
@@ -597,11 +415,19 @@
     <option name="GENERATE_IIOP_STUBS" value="false" />
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
   </component>
-  <component name="RubyDocSettings">
-    <RUBY_DOC NAME="DEFAULTS" VALUE="TRUE" />
-    <RUBY_DOC NAME="NUMBER" VALUE="0" />
-  </component>
   <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
@@ -641,26 +467,11 @@
       </option>
       <envs />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-    </configuration>
     <list size="0" />
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
-  </component>
-  <component name="SQLPlugin.ProjectConfiguration">
-    <queries />
   </component>
   <component name="StarteamConfiguration">
     <option name="SERVER" value="" />
@@ -731,7 +542,7 @@
     </AddOptions>
     <UndocheckoutOptions>
       <option name="MAKE_WRITABLE" value="false" />
-      <option name="REPLACE_LOCAL_COPY" value="0" />
+      <option name="REPLACE_LOCAL_COPY" value="2" />
       <option name="RECURSIVE" value="false" />
     </UndocheckoutOptions>
     <GetOptions>
