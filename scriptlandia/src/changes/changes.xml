@@ -383,6 +383,10 @@
         Upgraded to Scala ver. 2.7.1.
       </action>
 
+      <action dev="Alexander Shvets" type="add">
+        Added support for Nant ver. 0.85.
+      </action>
+
     </release>
   </body>
 
