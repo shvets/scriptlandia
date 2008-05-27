@@ -1,0 +1,4 @@
+BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_BYTE_GRAY);
+Graphics g = image.getGraphics();
+g.drawImage(colorImage, 0, 0, null);
+g.dispose();
