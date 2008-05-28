@@ -11,9 +11,9 @@
             value="${repository.home}/com/sun/fortress/fortress-lib/${fortress.version}/fortress-lib-${fortress.version}.jar"/>
 
   <target name="install">
-    <condition property="fortress.lib.is.present">
+    <condition property="fortress.lib.is.unzipped">
       <and>
-        <available file="${fortress.lib}"/>
+        <available file="${repository.home}/com/sun/fortress/fortress/${fortress.version}/FortressLibrary.fss"/>
         <istrue value="${fortress.install}"/>
       </and>
     </condition>
@@ -21,7 +21,7 @@
     <antcall target="unzip.fortress.lib"/>
   </target>
 
-  <target name="unzip.fortress.lib" if="fortress.lib.is.present">
+  <target name="unzip.fortress.lib" unless="fortress.lib.is.unzipped">
     <unzip src="${fortress.lib}" dest="${fortress.base}" overwrite="false">
       <patternset>
         <include name="FortressLibrary.fss"/>

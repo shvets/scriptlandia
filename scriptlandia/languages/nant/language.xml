@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<language name="nant" groupId="nant" artifactId="nant" version="0.85">
+  <registration mimeType="application/nant" icon="nant.ico">
+    <extensions>
+      <extension>build</extension>
+      <extension>nant</extension>
+    </extensions>
+
+    <starter>
+      <script>nant.bat</script>
+    </starter>
+  </registration>
+</language>

@@ -151,8 +151,13 @@ public class CoreInstaller {
 
     String path = "languages" + File.separatorChar + name;
 
-    installLanguage("core", true, installer, new File(path));
-    installLanguage("starter", true, installer, new File(path));
+    if(new File(path + File.separatorChar + "core").exists()) {
+      installLanguage("core", true, installer, new File(path));
+    }
+
+    if(new File(path + File.separatorChar + "starter").exists()) {
+      installLanguage("starter", true, installer, new File(path));
+    }
 
     Map language = findLanguage(languages, name);
 
@@ -238,6 +243,7 @@ public class CoreInstaller {
       }
     }
   }
+
 
   protected List readLanguages() throws LauncherException {
     java.util.List languages;

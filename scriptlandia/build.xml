@@ -28,6 +28,7 @@
 
     <!--antcall target="configure.naligun"/-->
     <antcall target="configure.jdic"/>
+    <antcall target="configure.nant"/>
 
     <!--antcall target="install.libraries"/-->
     <copy-properties/>
@@ -200,19 +201,19 @@
            dest="${repository.home}/com/martiansoftware/nailgun-bin/${nailgun.version}" overwrite="false"/>
   </target>
 
-  <!--target name="install.libraries">
-    <copy-properties/>
-  </target-->
 
   <target name="configure.jdic">
-    <condition property="jdic.native.libs.present">
-      <available file="${repository.home}/org/jdesktop/jdic-native-libs/${jdic.version}/jdic-native-libs-${jdic.version}.jar"/>
+    <condition property="jdic.native.libs.unzipped">
+      <or>
+        <available file="${repository.home}/org/jdesktop/jdic/${jdic.version}/jdic.dll"/>
+        <available file="${repository.home}/org/jdesktop/jdic/${jdic.version}/jdic.so"/>
+      </or>
     </condition>
 
     <antcall target="unzip.jdic.native.libs"/>
   </target>
 
-  <target name="unzip.jdic.native.libs" if="jdic.native.libs.present">
+  <target name="unzip.jdic.native.libs" unless="jdic.native.libs.unzipped">
     <script language="beanshell">
       String osName = System.getProperty("os.name").toLowerCase();
 
@@ -252,6 +253,21 @@
     </unzip>
 -->
   </target>
+
+  <target name="configure.nant">
+    <condition property="nant.unzipped">
+      <available file="${repository.home}/nant/nant/0.85/bin/NAnt.exe"/>
+    </condition>
+
+    <antcall target="unzip.nant.native.libs"/>
+  </target>
+
+  <target name="unzip.nant.native.libs" unless="nant.unzipped">
+    <unzip src="${repository.home}/nant/nant/0.85/nant-0.85.jar"
+
+           dest="${repository.home}/nant/nant/0.85" overwrite="false"/>
+  </target>
+
 
   <target name="prepare.unix.files">
     <fixcrlf eol="unix" srcdir="${scriptlandia.home}" includes="*.sh"/>

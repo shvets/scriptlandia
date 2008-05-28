@@ -11,9 +11,10 @@
             value="${clojure.base}/boot-${clojure.version}.jar"/>
 
   <target name="install">
-    <condition property="clojure.lib.is.present">
+    <condition property="clojure.lib.is.unzipped">
       <and>
-        <available file="${clojure.lib}"/>
+        <available file="${repository.home}/clojure/boot/${clojure.version}/boot.clj"/>
+
         <istrue value="${clojure.install}"/>
       </and>
     </condition>
@@ -21,7 +22,7 @@
     <antcall target="unzip.clojure.lib"/>
   </target>
 
-  <target name="unzip.clojure.lib" if="clojure.lib.is.present">
+  <target name="unzip.clojure.lib" unless="clojure.lib.is.unzipped">
     <unzip src="${clojure.lib}" dest="${clojure.base}" overwrite="false"/>
   </target>
 

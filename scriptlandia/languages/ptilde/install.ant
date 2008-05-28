@@ -12,7 +12,11 @@
   <target name="install">
     <condition property="ptilde.lib.is.present">
       <and>
-        <available file="${ptilde.lib}"/>
+        <or>
+          <available file="${repository.home}/ptilde/ptilde-lib/${ptilde.version}/p7e.dll"/>
+          <available file="${repository.home}/ptilde/ptilde-lib/${ptilde.version}/libp7e.so"/>
+        </or>
+ 
         <istrue value="${ptilde.install}"/>
       </and>
     </condition>
@@ -20,7 +24,7 @@
     <antcall target="unzip.ptilde.lib"/>
   </target>
 
-  <target name="unzip.ptilde.lib" if="ptilde.lib.is.present">
+  <target name="unzip.ptilde.lib" unless="ptilde.lib.is.present">
     <unzip src="${ptilde.lib}" dest="${ptilde-lib.base}" overwrite="false"/>
   </target>
 

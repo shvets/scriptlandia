@@ -10,9 +10,9 @@
             value="${repository.home}/org/jruby/jruby-lib/${jruby.version}/jruby-lib-${jruby.version}.jar"/>
 
   <target name="install">
-    <condition property="jruby.lib.is.present">
+    <condition property="jruby.lib.is.unzipped">
       <and>
-        <available file="${jruby.lib}"/>
+        <available file="${repository.home}/org/jruby/jruby/${jruby.version}/lib"/>
         <istrue value="${jruby.install}"/>
       </and>
     </condition>
@@ -20,7 +20,7 @@
     <antcall target="unzip.jruby.lib"/>
   </target>
 
-  <target name="unzip.jruby.lib" if="jruby.lib.is.present">
+  <target name="unzip.jruby.lib" unless="jruby.lib.is.unzipped">
     <unzip src="${jruby.lib}" dest="${jruby.base}" overwrite="false"/>
   </target>
 

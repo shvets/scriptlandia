@@ -132,17 +132,29 @@ public class ExtXmlHelper extends XmlHelper {
 
     map.put("imageIcon", icon);
 
-    XmlHelper starterXml = new XmlHelper();
-    starterXml.read(new File(languageDir + "/" + name + "/starter/pom.xml"));
-
-    map.put("starter.groupId", starterXml.getElementByName("groupId").getValue());
-    map.put("starter.artifactId", starterXml.getElementByName("artifactId").getValue());
-    map.put("starter.version", starterXml.getElementByName("version").getValue());
 
     Element starter = getElementByName(registration, "starter");
 
-    map.put("mainClass", getElementByName(starter, "mainClass").getValue());
+    Element mainClass = getElementByName(starter, "mainClass");
 
+    if(mainClass != null) {
+      map.put("mainClass", mainClass.getValue());
+
+      XmlHelper starterXml = new XmlHelper();
+      starterXml.read(new File(languageDir + "/" + name + "/starter/pom.xml"));
+
+      map.put("starter.groupId", starterXml.getElementByName("groupId").getValue());
+      map.put("starter.artifactId", starterXml.getElementByName("artifactId").getValue());
+      map.put("starter.version", starterXml.getElementByName("version").getValue());
+    }
+    else {
+      Element starterScript = getElementByName(starter, "script");
+
+      if(starterScript != null) {
+        map.put("starterScript", starterScript.getValue());
+      }
+    }
+    
     Element commandLine = getElementByName(starter, "commandLine");
 
     if(commandLine != null) {

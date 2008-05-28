@@ -62,7 +62,16 @@ public class ExtInstaller {
 
     Boolean[] registrations = new Boolean[extensions.size()];
 
-    String openAction = getAction(getScriptExt(), scriptlandiaHome) + " " + getCommandLineExpression();
+    String openAction = null;
+
+    String starterScript = (String)language.get("starterScript");
+
+    if(starterScript != null) {
+      openAction = scriptlandiaHome + File.separatorChar + starterScript + " /f:%1 %*";
+    }
+    else {
+      openAction = getAction(getScriptExt(), scriptlandiaHome) + " " + getCommandLineExpression();
+    }
 
     System.out.print("Registering extension(s): " + extensions + "... ");
 
@@ -364,18 +373,6 @@ public class ExtInstaller {
     return scriptExt;
   }
 
-  protected String getScriptName(String path, String name, String ext) {
-    StringBuffer scriptName = new StringBuffer();
-
-    scriptName.append(path);
-    scriptName.append("/");
-    scriptName.append(name);
-    scriptName.append(".");
-    scriptName.append(ext);
-
-    return scriptName.toString();
-  }
-
   protected String getDepsProperty(Map language, String repositoryHome, char separatorChar) {
     String groupId = (String) language.get("starter.groupId");
     String artifactId = (String) language.get("starter.artifactId");
@@ -434,6 +431,18 @@ public class ExtInstaller {
     action.append(fullScriptName.replace('/', '\\'));
 
     return action.toString();
+  }
+
+  protected String getScriptName(String path, String name, String ext) {
+    StringBuffer scriptName = new StringBuffer();
+
+    scriptName.append(path);
+    scriptName.append("/");
+    scriptName.append(name);
+    scriptName.append(".");
+    scriptName.append(ext);
+
+    return scriptName.toString();
   }
 
 }

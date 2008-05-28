@@ -11,9 +11,9 @@
             value="${repository.home}/jython/jython-lib/${jython.version}/jython-lib-${jython.version}.jar"/>
 
   <target name="install">
-    <condition property="jython.lib.is.present">
+    <condition property="jython.lib.is.unzipped">
       <and>
-        <available file="${jython.lib}"/>
+        <available file="${jython.base}/Lib"/>
         <istrue value="${jython.install}"/>
       </and>
     </condition>
@@ -21,7 +21,7 @@
     <antcall target="unzip.jython.lib"/>
   </target>
 
-  <target name="unzip.jython.lib" if="jython.lib.is.present">
+  <target name="unzip.jython.lib" unless="jython.lib.is.unzipped">
     <unzip src="${jython.lib}" dest="${jython.base}/Lib" overwrite="false"/>
   </target>
 
