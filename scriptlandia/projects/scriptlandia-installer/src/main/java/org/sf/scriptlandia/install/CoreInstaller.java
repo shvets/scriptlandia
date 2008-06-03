@@ -44,6 +44,7 @@ public class CoreInstaller {
 
       System.out.println("Scriptlandia core installed.");
     } catch (Exception e) {
+e.printStackTrace();
       throw new LauncherException(e.getMessage());
     }
   }
@@ -142,7 +143,11 @@ public class CoreInstaller {
     File[] files = new File("languages").listFiles();
 
     for (File file : files) {
-      installLanguage(section, install, installer, file);
+      File sectionDirFile = new File("languages/" + file.getName() + "/" + section);
+
+      if(sectionDirFile.exists()) {
+        installLanguage(section, install, installer, file);
+      }
     }
   }
 

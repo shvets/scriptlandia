@@ -64,7 +64,7 @@ public class ExtInstaller {
 
     String openAction = null;
 
-    String starterScript = (String)language.get("starterScript");
+    String starterScript = (String)language.get("starter.script");
 
     if(starterScript != null) {
       openAction = scriptlandiaHome + File.separatorChar + starterScript + " /f:%1 %*";

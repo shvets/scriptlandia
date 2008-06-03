@@ -103,7 +103,7 @@
       <filter token="nailgun.version" value="${nailgun.version}"/>
     </filterset>
 
-    <script language="beanshell">
+    <!--script language="beanshell">
       source("projects/scriptlandia-config/src/main/bsh/ChecksumScript.bsh");
 
       String repositoryHome = System.getProperty("repository.home");
@@ -113,7 +113,7 @@
       ChecksumScript checksum = new ChecksumScript();
 
       checksum.calculate(dir);
-    </script>
+    </script-->
 
     <copy todir="${scriptlandia.home}" overwrite="true">
       <filterset refid="copy.filterset"/>

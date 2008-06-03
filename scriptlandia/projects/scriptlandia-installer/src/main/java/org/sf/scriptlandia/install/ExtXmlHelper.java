@@ -151,7 +151,7 @@ public class ExtXmlHelper extends XmlHelper {
       Element starterScript = getElementByName(starter, "script");
 
       if(starterScript != null) {
-        map.put("starterScript", starterScript.getValue());
+        map.put("starter.script", starterScript.getValue());
       }
     }
     

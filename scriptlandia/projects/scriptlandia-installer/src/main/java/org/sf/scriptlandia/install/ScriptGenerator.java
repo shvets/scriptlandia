@@ -26,8 +26,12 @@ public class ScriptGenerator extends ExtInstaller {
     generateXFreeDesktopApplicationDesktop(languages, scriptlandiaHome);
 
     for (Object language : languages) {
-      generateLanguageBatchScript((Map)language, scriptlandiaHome);
-      generateLanguageShellScript((Map)language, scriptlandiaHome);
+      String starterScript = (String) ((Map)language).get("starter.script");
+
+      if(starterScript == null) {
+        generateLanguageBatchScript((Map)language, scriptlandiaHome);
+        generateLanguageShellScript((Map)language, scriptlandiaHome);
+      }
     }
   }
 
@@ -90,7 +94,7 @@ public class ScriptGenerator extends ExtInstaller {
        Map language = (Map)languages.get(i);
        String mimeType = (String) ((Map)language).get("mimeType");
 
-      writer.write(mimeType);
+       writer.write(mimeType);
 
        if(i < languages.size()-1) {
          writer.write(";");
@@ -166,29 +170,33 @@ public class ScriptGenerator extends ExtInstaller {
     for (Object language : languages) {
       String name = (String) ((Map)language).get("name");
 
-      String depsProperty = getDepsProperty(((Map)language), "%REPOSITORY_HOME%", '\\');
-      String mainClassProperty = getMainClassProperty(((Map)language));
-      String commandLine = getCommandLine(((Map)language));
+      String starterScript = (String) ((Map)language).get("starter.script");
 
-      writer.newLine();
-      writer.write(":" + name + "Setup");
-      writer.newLine();
-      writer.write("SET APP_NAME=" + name);
-      writer.newLine();
-      writer.write("SET DEPS_PROPERTY=" + depsProperty);
-      writer.newLine();
-      writer.write("SET MAIN_CLASS_PROPERTY=" + mainClassProperty);
-      writer.newLine();
-      writer.write("SET CMD_LINE=");
+      if(starterScript == null) {
+        String depsProperty = getDepsProperty(((Map)language), "%REPOSITORY_HOME%", '\\');
+        String mainClassProperty = getMainClassProperty(((Map)language));
+        String commandLine = getCommandLine(((Map)language));
 
-      //if(name.equals("ant") || name.equals("maven")) {
-      //  writer.write("-f ");
-      //}
+        writer.newLine();
+        writer.write(":" + name + "Setup");
+        writer.newLine();
+        writer.write("SET APP_NAME=" + name);
+        writer.newLine();
+        writer.write("SET DEPS_PROPERTY=" + depsProperty);
+        writer.newLine();
+        writer.write("SET MAIN_CLASS_PROPERTY=" + mainClassProperty);
+        writer.newLine();
+        writer.write("SET CMD_LINE=");
 
-      writer.write(commandLine);
-      writer.newLine();
-      writer.write("goto execute ");
-      writer.newLine();
+        //if(name.equals("ant") || name.equals("maven")) {
+        //  writer.write("-f ");
+        //}
+
+        writer.write(commandLine);
+        writer.newLine();
+        writer.write("goto execute ");
+        writer.newLine();
+      }
     }
 
     writer.newLine();
@@ -236,33 +244,37 @@ public class ScriptGenerator extends ExtInstaller {
 
       //String action = getAction(language, "sh", "$REPOSITORY_HOME", "$SCRIPTLANDIA_HOME");
 
-      String depsProperty = getDepsProperty((Map)language, "$REPOSITORY_HOME", '/');
-      String mainClassProperty = getMainClassProperty((Map)language);
-      String commandLine = getCommandLine((Map)language);
+      String starterScript = (String) ((Map)language).get("starter.script");
 
-      List extensions = (List) ((Map)language).get("extensions");
+      if(starterScript == null) {
+        String depsProperty = getDepsProperty((Map)language, "$REPOSITORY_HOME", '/');
+        String mainClassProperty = getMainClassProperty((Map)language);
+        String commandLine = getCommandLine((Map)language);
 
-      for (Object extension : extensions) {
-        writer.write("  '" + extension + "')");
-        writer.newLine();
-        writer.write("    APP_NAME=" + name);
-        writer.newLine();
-        writer.write("    DEPS_PROPERTY=" + depsProperty);
-        writer.newLine();
-        writer.write("    MAIN_CLASS_PROPERTY=" + mainClassProperty);
-        writer.newLine();
-        writer.write("    CMD_LINE=");
+        List extensions = (List) ((Map)language).get("extensions");
 
-        //if(name.equals("ant") || name.equals("maven")) {
-        //  writer.write("-f ");
-        //}
-        writer.write('\"');
-        writer.write(commandLine);
-        writer.write('\"');
-        
-        writer.newLine();
-        writer.write("    ;;");
-        writer.newLine();
+        for (Object extension : extensions) {
+          writer.write("  '" + extension + "')");
+          writer.newLine();
+          writer.write("    APP_NAME=" + name);
+          writer.newLine();
+          writer.write("    DEPS_PROPERTY=" + depsProperty);
+          writer.newLine();
+          writer.write("    MAIN_CLASS_PROPERTY=" + mainClassProperty);
+          writer.newLine();
+          writer.write("    CMD_LINE=");
+
+          //if(name.equals("ant") || name.equals("maven")) {
+          //  writer.write("-f ");
+          //}
+          writer.write('\"');
+          writer.write(commandLine);
+          writer.write('\"');
+          
+          writer.newLine();
+          writer.write("    ;;");
+          writer.newLine();
+        }
       }
     }
 
