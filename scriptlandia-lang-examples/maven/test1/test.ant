@@ -20,6 +20,7 @@
 
   <target name="resolve.dependencies">
     <artifact:dependencies pathId="compile.classpath" filesetId="compile.fileset" useScope="compile">
+      <localRepository refid="local.repository"/>
       <pom refid="maven.project"/>
     </artifact:dependencies>
   </target>

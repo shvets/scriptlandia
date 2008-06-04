@@ -21,6 +21,7 @@
   <artifact:pom file="scala-test2.maven" id="maven.project" />
 
   <artifact:dependencies pathId="scala.classpath" filesetId="compile.fileset" useScope="compile">
+    <localRepository refid="local.repository"/>
     <pom refid="maven.project"/>
   </artifact:dependencies>
 
