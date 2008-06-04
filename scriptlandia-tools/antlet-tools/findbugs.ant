@@ -11,6 +11,7 @@
 
     <artifact:dependencies pathId="findbugs.classpath" useScope="compile">
       <pom refid="maven.project"/>
+      <localRepository refid="local.repository"/>
     </artifact:dependencies>
 
     <taskdef resource="edu/umd/cs/findbugs/anttask/tasks.properties">
