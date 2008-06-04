@@ -66,4 +66,12 @@
     </java>
   </target>
 
+  <target name="felix" depends="resolve.dependencies">
+    <java classname="org.apache.felix.main.Main" fork="yes">
+      <classpath>
+        <path refid="compile.classpath"/>
+      </classpath>
+    </java>
+  </target>
+
 </project>
