@@ -15,6 +15,7 @@
 
     <artifact:dependencies pathId="compile.classpath" filesetId="compile.fileset" useScope="compile">
       <pom refid="maven.project"/>
+      <localRepository refid="local.repository"/>
     </artifact:dependencies>
 
     <condition property="azureus.lib.present">

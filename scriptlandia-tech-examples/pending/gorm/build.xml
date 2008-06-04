@@ -13,6 +13,7 @@
   <target name="resolve.dependencies">
     <artifact:dependencies pathId="compile.classpath" filesetId="compile.fileset" useScope="compile">
       <pom refid="maven.project"/>
+      <localRepository refid="local.repository"/>
     </artifact:dependencies>
 
     <taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc">

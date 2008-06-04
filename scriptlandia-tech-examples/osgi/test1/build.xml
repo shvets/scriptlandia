@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="test1" default="compile" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+
   <description>
     @author Alexander Shvets
   </description>
@@ -14,6 +15,7 @@
   <target name="resolve.dependencies">
     <artifact:dependencies pathId="compile.classpath" filesetId="compile.fileset" useScope="compile">
       <pom refid="maven.project"/>
+      <localRepository refid="local.repository"/>
     </artifact:dependencies>
   </target>
 
