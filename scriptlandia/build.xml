@@ -9,8 +9,6 @@
   <property file="${user.home}/jlaunchpad/config.properties"/>
   <property file="config.properties"/>
 
-  <load-properties/>
-
   <property name="debug" value="on"/>
   <property name="optimize" value="on"/>
   <property name="deprecation" value="on"/>
@@ -23,14 +21,15 @@
     <os family="unix"/>
   </condition>
 
+  <load-properties/>
+
   <target name="install">
     <antcall target="copy.config.files"/>
 
-    <!--antcall target="configure.naligun"/-->
     <antcall target="configure.jdic"/>
+    
     <antcall target="configure.nant"/>
 
-    <!--antcall target="install.libraries"/-->
     <copy-properties/>
 
     <antcall target="prepare.unix.files"/>

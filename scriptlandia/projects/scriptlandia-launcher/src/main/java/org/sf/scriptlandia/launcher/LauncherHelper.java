@@ -4,6 +4,7 @@ import org.sf.jlaunchpad.LauncherException;
 import org.sf.jlaunchpad.CoreLauncher;
 
 import java.util.Properties;
+import java.util.Iterator;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -97,6 +98,23 @@ public class LauncherHelper {
 
     System.setProperty("jdic.version", "0.9.3");
     System.setProperty("nailgun.version", "0.7.1");
+
+    Iterator iterator = scriptlandiaProps.keySet().iterator();
+
+    while(iterator.hasNext()) {
+      String key = (String)iterator.next();
+
+      int index = key.indexOf(".");
+
+      if(index != -1) {
+        String suffix = key.substring(index);
+
+        if(suffix.equalsIgnoreCase(".version")) {
+          System.setProperty(key, (String)scriptlandiaProps.get(key));
+        }
+      }
+    }
+
 
     //setupJavaSpecificationVersion();
   }

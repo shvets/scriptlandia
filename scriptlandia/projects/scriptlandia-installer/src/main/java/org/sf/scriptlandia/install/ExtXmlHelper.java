@@ -15,16 +15,16 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.awt.*;
+import java.awt.image.BufferedImage;
 
 import org.apache.tools.ant.Project;
 
 import javax.swing.*;
 
 public class ExtXmlHelper extends XmlHelper {
-  private List languages = new ArrayList();
+  private List<Map<Object, Object>> languages = new ArrayList<Map<Object, Object>>();
 
-  public List getLanguages() {
+  public List<Map<Object, Object>> getLanguages() {
     return languages;
   }
 
@@ -41,7 +41,7 @@ public class ExtXmlHelper extends XmlHelper {
           String fileName = languageDir + "/" + name + "/language.xml";
 
           if (new File(fileName).exists()) {
-            Map map = readLanguage(languageDir, name);
+            Map<Object, Object> map = readLanguage(languageDir, name);
 
             if (map != null) {
               languages.add(map);
@@ -56,7 +56,7 @@ public class ExtXmlHelper extends XmlHelper {
     }
   }
 
-  public Map readLanguage() throws IOException, JDOMException {
+  public Map<Object, Object> readLanguage() throws IOException, JDOMException {
     String userDir = System.getProperty("user.dir");
 
     String path = new File(userDir).getCanonicalPath();
@@ -64,8 +64,8 @@ public class ExtXmlHelper extends XmlHelper {
     return readLanguage(new File(path).getParentFile().getPath(), new File(userDir).getName());
   }
 
-  public Map readLanguage(String languageDir, String name) throws IOException, JDOMException {
-    Map map = new HashMap();
+  public Map<Object, Object> readLanguage(String languageDir, String name) throws IOException, JDOMException {
+    Map<Object, Object> map = new HashMap<Object, Object>();
 
     String fileName = languageDir + "/" + name + "/language.xml";
 
@@ -127,8 +127,8 @@ public class ExtXmlHelper extends XmlHelper {
     }
     */
 
-    java.util.List images = ICODecoder.read(file);
-    ImageIcon icon = new ImageIcon((Image)images.get(0));
+    List<BufferedImage> images = ICODecoder.read(file);
+    ImageIcon icon = new ImageIcon(images.get(0));
 
     map.put("imageIcon", icon);
 
@@ -161,10 +161,10 @@ public class ExtXmlHelper extends XmlHelper {
       map.put("commandLine", replaceNames(commandLine.getValue()));
     }
 
-    List list = new ArrayList();
+    List<String> list = new ArrayList<String>();
 
-    for(int j=0; j < extensions.size(); j++) {
-      Element extension = (Element)extensions.get(j);
+    for (Object extension1 : extensions) {
+      Element extension = (Element) extension1;
 
       list.add(extension.getValue());
     }
@@ -279,6 +279,7 @@ public class ExtXmlHelper extends XmlHelper {
 
   public static void main(String[] args) throws IOException, JDOMException {
     ExtXmlHelper xmlHelper = new ExtXmlHelper();
+
     xmlHelper.readLanguages("../../../../../languages");
 
     System.out.println(xmlHelper.getLanguages());

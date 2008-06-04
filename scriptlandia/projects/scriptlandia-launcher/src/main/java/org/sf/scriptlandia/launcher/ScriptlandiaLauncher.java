@@ -126,13 +126,8 @@ public class ScriptlandiaLauncher extends JLaunchPadLauncher {
    * @return true if "wait" mode; false otherwise
    */
   public boolean isWaitMode() {
-    ScriptlandiaLauncherCommandLineParser _parser = (ScriptlandiaLauncherCommandLineParser)parser;
+    return ((ScriptlandiaLauncherCommandLineParser)parser).isNailgunClientMode() || super.isWaitMode();
 
-    if(_parser.isNailgunClientMode()) {
-      return true;
-    }
-
-    return super.isWaitMode();
   }
 
   /**

@@ -1,7 +1,6 @@
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import junit.textui.TestRunner;
-import org.codehaus.classworlds.ClassRealm;
 import org.codehaus.classworlds.ClassWorld;
 import org.codehaus.classworlds.Launcher;
 import org.sf.jlaunchpad.JLaunchPadLauncher;

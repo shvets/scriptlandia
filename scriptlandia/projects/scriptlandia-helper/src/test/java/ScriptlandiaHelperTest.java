@@ -11,8 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ScriptlandiaHelperTest extends TestCase {
-  private JLaunchPadLauncher launcher;
-
   protected void setUp() throws Exception {
     super.setUp();
 

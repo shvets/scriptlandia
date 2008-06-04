@@ -151,6 +151,7 @@ public class ScriptlandiaHelper {
    *
    * @throws Exception the exception
    * @param depsFileName dependencies file name
+   * @param ignore ignore it
    */
   public static void resolveDependencies(String depsFileName, boolean ignore) throws Exception {
     resolveDependencies(depsFileName, ignore,ScriptlandiaLauncher.getInstance());

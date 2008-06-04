@@ -62,7 +62,7 @@ public class ExtInstaller {
 
     Boolean[] registrations = new Boolean[extensions.size()];
 
-    String openAction = null;
+    String openAction;
 
     String starterScript = (String)language.get("starter.script");
 
@@ -254,6 +254,7 @@ public class ExtInstaller {
 
       //System.err.println(e);
 
+      //noinspection EmptyCatchBlock
       try {
         if (association != null) {
           associationService.unregisterUserAssociation(association);
@@ -263,7 +264,7 @@ public class ExtInstaller {
         }
       }
       catch (Exception e2) {
-        ;
+
       }
     }
     catch (RegisterFailedException e) {
@@ -297,16 +298,17 @@ public class ExtInstaller {
       association.addFileExtension(extension);
       association.setMimeType(mimeType);
 
+      //noinspection EmptyCatchBlock
       try {
         associationService.unregisterUserAssociation(association);
 
         registered = true;
       }
       catch (AssociationNotRegisteredException e) {
-        ;
+
       }
       catch (RegisterFailedException e) {
-        ;
+
       }
     } else {
       Association assosiation = new Association();
@@ -316,16 +318,17 @@ public class ExtInstaller {
       // Unregister an association in system level.
       // This requires root permission, would remove all the three files registered/generated:
       // javaws.keys, javaws.mime and javaws.applications at system level.
+      //noinspection EmptyCatchBlock
       try {
         associationService.unregisterSystemAssociation(assosiation);
 
         registered = true;
       }
       catch (AssociationNotRegisteredException e) {
-        ;
+
       }
       catch (RegisterFailedException e) {
-        ;
+
       }
 
       // Unregister an association in user level.
