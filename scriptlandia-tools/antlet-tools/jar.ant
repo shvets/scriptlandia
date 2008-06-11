@@ -10,6 +10,12 @@
            addproperty="files.masks"/>
 
     <script language="beanshell"> <![CDATA[
+      String archiveName = project.getProperty("archive.name");
+
+      if(!archiveName.toLowerCase().endsWith(".jar")) {
+        project.setProperty("archive.name", archiveName + ".jar");
+      }
+
       String property = project.getProperty("files.masks");
 
       if(property != null && property.length() > 0) {
@@ -19,7 +25,7 @@
   </target>
 
   <target name="start">
-    <jar destfile="${user.dir}/${archive.name}.jar">
+    <jar destfile="${user.dir}/${archive.name}">
       <fileset dir="${user.dir}">
         <include name="${files.masks}"/>
         <exclude name ="${archive.name}.zip"/>

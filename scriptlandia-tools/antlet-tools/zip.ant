@@ -1,84 +1,34 @@
 <!-- zip.ant -->
 
-<project name="zip" default="start"  basedir=".">
-
-  <target name="start">
-    <script language="beanshell"> <![CDATA[
-      import org.apache.tools.ant.taskdefs.Input;
-
-      String parameters = System.getProperty("command.line");
-
-      if(parameters == null) {
-        parameters = "";
-      }
-
-      StringTokenizer st = new StringTokenizer(parameters);
-
-      if(!st.hasMoreTokens()) {
-        Input inputTask = new Input();
-        inputTask.setProject(project);
-
-        inputTask.setMessage("Input archive name:");
-
-        inputTask.setAddproperty("archive.name");
-
-        inputTask.execute();
-      }
-      else {
-        project.setNewProperty("archive.name", st.nextToken());
-
-        if(!st.hasMoreTokens()) {
-          Input inputTask = new Input();
-          inputTask.setProject(project);
-
-          inputTask.setMessage("Input files mask:");
-          inputTask.setAddproperty("files");
-
-          inputTask.execute();
-        }
-        else {
-          StringBuffer files = new StringBuffer();
-
-          for(int i=0; st.hasMoreTokens(); i++) {
-            files.append(st.nextToken());
-
-            if(i < (st.countTokens()-1)) {
-              files.append(" ");
-            }
-          }
-
-          project.setNewProperty("files", files.toString());
-        }
-      }
-
-      String property1 = project.getProperty("files");
-
-      if(property1 == null || property1.length() == 0) {
-        project.setProperty("files", "*.*");
-      }
-
-      String property2 = project.getProperty("archive.name");
-
-      if(property2 != null && property2.length() > 0) {
-        project.executeTarget("zip");
-      }
-    ]]> </script>
-  </target>
+<project name="zip" default="zip" basedir=".">
 
   <target name="zip">
-    <script language="beanshell">
+    <input message="Input archive name:"
+           addproperty="archive.name"/>
+
+    <input message="Input files mask:"
+           addproperty="files.masks"/>
+
+    <script language="beanshell"> <![CDATA[
       String archiveName = project.getProperty("archive.name");
 
       if(!archiveName.toLowerCase().endsWith(".zip")) {
-        archiveName += ".zip";
-        project.setProperty("archive.name", archiveName);
+        project.setProperty("archive.name", archiveName + ".zip");
       }
-    </script>
 
-    <zip zipfile="${archive.name}">
-      <zipfileset dir=".">
-        <include name="${files}"/>
-        <exclude name ="${archive.name}"/>
+      String property = project.getProperty("files.masks");
+
+      if(property != null && property.length() > 0) {
+        project.executeTarget("start");
+      }
+    ]]></script>
+  </target>
+
+  <target name="start">
+    <zip zipfile="${user.dir}/${archive.name}">
+      <zipfileset dir="${user.dir}">
+        <include name="${files.masks}"/>
+        <exclude name ="${archive.name}.zip"/>
       </zipfileset>
     </zip>
   </target>

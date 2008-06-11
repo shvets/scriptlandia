@@ -7,10 +7,17 @@
 
     <artifact:localRepository id="local.repository" path="${repository.home}" layout="default"/>
 
-    <artifact:pom file="${basedir}/findbugs-deps.maven" id="maven.project" />
+    <artifact:pom file="${basedir}/findbugs-deps.maven" id="findbugs.maven.project" />
+
+    <artifact:pom file="${user.dir}/pom.xml" id="current.maven.project" />
 
     <artifact:dependencies pathId="findbugs.classpath" useScope="compile">
-      <pom refid="maven.project"/>
+      <pom refid="findbugs.maven.project"/>
+      <localRepository refid="local.repository"/>
+    </artifact:dependencies>
+
+    <artifact:dependencies pathId="project.classpath" useScope="compile">
+      <pom refid="current.maven.project"/>
       <localRepository refid="local.repository"/>
     </artifact:dependencies>
 
@@ -24,12 +31,13 @@
     <property name="classes.dir" value="${user.dir}/target/classes"/>
     <property name="report.format" value="text"/>
     <property name="report.name" value="findbugs-report"/>
+    <property name="findbugs.report.format" value="text"/> <!-- 'text', 'xml', 'html', 'xdocs' or 'emacs' -->
 
-     <findbugs output="${findbugs.report.format}"  outputFile="${user.dir}/${report.name}.${report.format}">
-<!--includeFilter="findBugsFilter.xml"-->
+     <findbugs output="${findbugs.report.format}" outputFile="${user.dir}/target/${report.name}.${report.format}"
+               includeFilter="findBugsFilter.xml">
       <sourcePath path="${user.dir}/${src.dir}"/>
 
-      <class location="${user.dir}/${classes.dir}"/>
+      <class location="${classes.dir}"/>
 
       <classpath>
         <path refid="findbugs.classpath"/>
@@ -43,11 +51,11 @@
         </path>
       </pluginList>
 
-<!--
       <auxClasspath>
+        <path refid="findbugs.classpath"/>
+
         <path refid="project.classpath"/>
       </auxClasspath>
- -->
     </findbugs>
 
   </target>
