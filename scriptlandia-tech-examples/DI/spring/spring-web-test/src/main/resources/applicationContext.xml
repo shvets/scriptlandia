@@ -309,13 +309,12 @@
     <property name="message" value="Hello"/>
   </bean>
 
-<!--
-  <lang:groovy id="testGroovyController"
+  <!--lang:groovy id="testGroovyController"
         refresh-check-delay="3000"
         script-source="file:src/main/groovy/groovycontroller/GroovyController.groovy">
     <lang:property name="message" value="Hello"/>
-  </lang:groovy>
--->
+  </lang:groovy-->
+
   <!-- Views -->
 
   <bean id="plainTextView" class="view.PlainTextView"/>

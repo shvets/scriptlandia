@@ -93,6 +93,12 @@
       </td>
     </tr>
 
+    <tr>
+      <td>
+        <a href="<c:url value='test-groovy.spring'/>">Test Groovy Controller</a>
+      </td>
+    </tr>
+
   </table>
 
 </body>

@@ -7,8 +7,7 @@
 <body>
 
 <%
-    java.util.Map model = request.getAttribute("model");
-
+    java.util.Map model = (java.util.Map)request.getAttribute("model");
     String msg = (String)model.get("message") + " " + (String)model.get("firstName") + " " + 
                  (String)model.get("lastName");
 %>

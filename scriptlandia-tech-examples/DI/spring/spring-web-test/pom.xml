@@ -9,7 +9,7 @@
   <packaging>war</packaging>
 
   <properties>
-    <spring.version>2.0.3</spring.version>
+    <spring.version>2.5.4</spring.version>
   </properties>
 
   <dependencies>
@@ -64,15 +64,21 @@
 
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-jdbc</artifactId>
+      <artifactId>spring-webmvc-struts</artifactId>
       <version>${spring.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-jpa</artifactId>
+      <artifactId>spring-jdbc</artifactId>
       <version>${spring.version}</version>
     </dependency>
+
+    <!--dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jpa</artifactId>
+      <version>${spring.version}</version>
+    </dependency-->
 
     <dependency>
       <groupId>org.springframework</groupId>
@@ -82,8 +88,14 @@
 
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-mock</artifactId>
+      <artifactId>spring-test</artifactId>
       <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.tiles</groupId>
+      <artifactId>tiles-jsp</artifactId>
+      <version>2.0.5</version>
     </dependency>
 
     <dependency>

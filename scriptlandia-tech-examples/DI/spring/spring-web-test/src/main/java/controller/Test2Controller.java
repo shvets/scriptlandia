@@ -29,7 +29,7 @@ public class Test2Controller extends AbstractController {
 
   public ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response)
           throws Exception {
-    logger.info(getClass().getName() + ".handleRequest()");
+    logger.warn(getClass().getName() + ".handleRequest()3");
 
     Map<String, Object> model = new HashMap<String, Object>();
     model.put("date", new Date().toString());

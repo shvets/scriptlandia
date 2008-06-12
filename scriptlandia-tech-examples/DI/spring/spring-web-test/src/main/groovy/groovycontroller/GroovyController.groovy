@@ -25,7 +25,7 @@ class GroovyController implements Controller {
     model.put("firstName", "Bartolomew");
     model.put("lastName", "Simpson");
 
-    return new ModelAndView("groovy-test", "model", model);
+    return new ModelAndView("test-groovy", "model", model);
   }
 
 }
