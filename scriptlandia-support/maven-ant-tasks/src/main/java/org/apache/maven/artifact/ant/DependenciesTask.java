@@ -20,6 +20,7 @@ package org.apache.maven.artifact.ant;
  */
 
 import org.apache.maven.artifact.Artifact;
+import org.apache.maven.artifact.DefaultArtifact;
 import org.apache.maven.artifact.factory.ArtifactFactory;
 import org.apache.maven.artifact.metadata.ArtifactMetadataSource;
 import org.apache.maven.artifact.repository.ArtifactRepository;
@@ -197,6 +198,10 @@ public class DependenciesTask
         fileSet.setProject( getProject() );
         fileSet.setDir( fileList.getDir( getProject() ) );
 
+        // new
+        List systemFileListCollection = new ArrayList();
+        // end new
+
         FileSet sourcesFileSet = new FileSet();
         sourcesFileSet.setDir( getLocalRepository().getPath() );
 
@@ -208,8 +213,37 @@ public class DependenciesTask
         for ( Iterator i = result.getArtifacts().iterator(); i.hasNext(); )
         {
             Artifact artifact = (Artifact) i.next();
+            // new
+            if(DefaultArtifact.SCOPE_SYSTEM.equals( artifact.getScope() ) ) {
+              File file = artifact.getFile();
 
-            addArtifactToResult( localRepo, artifact, fileSet, fileList );
+              FileList systemFileList = new FileList();
+              systemFileList.setDir( file.getParentFile() );
+
+              systemFileListCollection.add(systemFileList);
+
+              //addArtifactToResult( localRepo, artifact, systemFileSet, systemFileList );
+
+              String filename = file.getName();
+
+              fileSet.createInclude().setName( filename );
+
+               if ( systemFileList != null)
+               {
+                   FileList.FileName file1 = new FileList.FileName();
+                   file1.setName( filename );
+
+                   systemFileList.addConfiguredFile( file1 );
+               }
+
+               getProject().setProperty( artifact.getDependencyConflictId(), artifact.getFile().getAbsolutePath() );
+
+            }
+            else {         // end new
+              addArtifactToResult( localRepo, artifact, fileSet, fileList );
+            // new
+            }
+            // end new
 
             versions.add( artifact.getVersion() );
 
@@ -232,6 +266,13 @@ public class DependenciesTask
             if ( versions.size() > 0 )
             {
                 path.addFilelist( fileList );
+                // new
+                for(int i=0; i < systemFileListCollection.size(); i++) {
+                  FileList systemFileList = (FileList)systemFileListCollection.get(i);
+                  
+                  path.addFilelist( systemFileList );
+                }
+              // end new
             }
             getProject().addReference( pathId, path );
         }
