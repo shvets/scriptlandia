@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="test1" default="compile" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+
+  <description>
+    @author Alexander Shvets
+  </description>
+
+  <property name="archive.name" value="HelloWorld.jar"/>
+
+  <artifact:localRepository id="local.repository" path="${repository.home}" layout="default"/>
+
+  <artifact:pom file="pom.xml" id="maven.project"/>
+
+  <target name="resolve.dependencies">
+    <artifact:dependencies pathId="compile.classpath" filesetId="compile.fileset" useScope="compile">
+      <pom refid="maven.project"/>
+      <localRepository refid="local.repository"/>
+    </artifact:dependencies>
+  </target>
+
+  <target name="clean" description="Removes all compiled classes">
+    <delete dir="${maven.project.build.directory}"/>
+  </target>
+
+  <target name="clean.osgi" description="Removes OSGI files">
+    <delete dir="${repository.home}/org/eclipse/equinox/osgi/3.2.2/configuration"/>
+  </target>
+
+  <target name="compile" depends="resolve.dependencies">
+    <mkdir dir="${maven.project.build.outputDirectory}"/>
+
+    <javac destdir="${maven.project.build.outputDirectory}"
+           includeAntRuntime="false"
+           source="1.5" target="1.5"
+           debug="${debug}"
+           optimize="${optimize}"
+           deprecation ="${deprecation}">
+        <classpath refid="compile.classpath"/>
+        <src path="${maven.project.build.sourceDirectory}"/>
+    </javac>
+  </target>
+
+  <target name="jar" depends="compile">
+    <script language="beanshell">
+      project.setProperty("import.package", "javax.servlet;version=\"2.4.0\",javax.servlet.http;version=\"2.4.0\"," + 
+                                            "org.osgi.framework;version=\"1.3.0\",org.osgi.service.http;version=\"1.2.0\"," + 
+                                            "org.osgi.util.tracker;version=\"1.3.2\"");
+    </script>
+
+    <jar destfile="${maven.project.build.directory}/programmatic-${archive.name}">
+      <fileset dir="${maven.project.build.outputDirectory}"/>
+      <fileset dir="src/main/webapp"/>
+
+      <manifest>
+        <attribute name="Manifest-Version" value="1.0"/>
+        <attribute name="ManifestVersion" value="2"/>
+        <attribute name="Bundle-Name" value="Hello World"/>
+        <attribute name="Bundle-SymbolicName" value="HelloWorld-programmatic"/>
+        <attribute name="Bundle-Activator" value="HelloActivator"/>
+        <attribute name="Bundle-Vendor" value="my"/>
+        <attribute name="Bundle-Version" value="1.0.0"/>
+        <attribute name="Import-Package" value="${import.package}"/>
+      </manifest>
+    </jar>
+
+    <jar destfile="${maven.project.build.directory}/declarative-${archive.name}">
+      <fileset dir="${maven.project.build.outputDirectory}">
+        <exclude name="HttpServiceTracker.class"/>
+        <exclude name="HelloActivator.class"/>
+      </fileset>
+
+      <fileset dir="src/main/webapp"/>
+      <fileset dir="src/main/resources"/>
+
+      <manifest>
+        <attribute name="Manifest-Version" value="1.0"/>
+        <attribute name="ManifestVersion" value="2"/>
+        <attribute name="Bundle-Name" value="Hello World"/>
+        <attribute name="Bundle-SymbolicName" value="HelloWorld-declarative;singleton:=true"/>
+        <attribute name="Bundle-Vendor" value="my"/>
+        <attribute name="Bundle-Version" value="1.0.0"/>
+        <attribute name="Import-Package" value="${import.package}"/>
+        <attribute name="Require-Bundle" value="org.eclipse.equinox.http.registry"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="osgi" depends="resolve.dependencies">
+    <java classname="org.eclipse.core.runtime.adaptor.EclipseStarter" fork="yes">
+      <classpath>
+        <path refid="compile.classpath"/>
+      </classpath>
+
+      <arg line="-console"/>
+    </java>
+  </target>
+
+  <target name="felix" depends="resolve.dependencies">
+    <java classname="org.apache.felix.main.Main" fork="yes">
+      <classpath>
+        <path refid="compile.classpath"/>
+      </classpath>
+    </java>
+  </target>
+
+</project>

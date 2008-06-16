@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>osgi-deps</groupId>
+  <artifactId>osgi-deps</artifactId>
+  <version>1.0</version>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.eclipse.equinox</groupId>
+      <artifactId>osgi</artifactId>
+      <version>${eclipse.version}</version>
+      <scope>system</scope>
+      <systemPath>${eclipse.home}/plugins/org.eclipse.osgi_3.3.2.R33x_v20080105.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.equinox.http</groupId>
+      <artifactId>jetty</artifactId>
+      <version>${eclipse.version}</version>
+      <scope>system</scope>
+      <systemPath>${eclipse.home}/plugins/org.eclipse.equinox.http.jetty_1.0.1.R33x_v20070816.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.equinox.http</groupId>
+      <artifactId>registry</artifactId>
+      <version>${eclipse.version}</version>
+      <scope>system</scope>
+      <systemPath>${eclipse.home}/plugins/org.eclipse.equinox.http.registry_1.0.1.R33x_v20071231.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.equinox.http</groupId>
+      <artifactId>servlet</artifactId>
+      <version>${eclipse.version}</version>
+      <scope>system</scope>
+      <systemPath>${eclipse.home}/plugins/org.eclipse.equinox.http.servlet_1.0.1.R33x_v20070816.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.osgi</groupId>
+      <artifactId>services</artifactId>
+      <version>${eclipse.version}</version>
+      <scope>system</scope>
+      <systemPath>${eclipse.home}/plugins/org.eclipse.osgi.services_3.1.200.v20070605.jar</systemPath>
+    </dependency>
+
+    <!--dependency>
+      <groupId>org.apache.commons.logging</groupId>
+      <artifactId>logging</artifactId>
+      <version>${eclipse.version}</version>
+      <scope>system</scope>
+      <systemPath>${eclipse.home}/plugins/org.apache.commons.logging_1.0.4.v200711021015.jar</systemPath>
+    </dependency-->
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>sevlet</artifactId>
+      <version>${eclipse.version}</version>
+      <scope>system</scope>
+      <systemPath>${eclipse.home}/plugins/javax.servlet_2.4.0.v200706111738.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mortbay</groupId>
+      <artifactId>jetty</artifactId>
+      <version>${eclipse.version}</version>
+      <scope>system</scope>
+      <systemPath>${eclipse.home}/plugins/org.mortbay.jetty_5.1.11.v200706111724.jar</systemPath>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>verify</defaultGoal>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>scriptlandia-repo</id>
+      <name>Scriptlandia Maven2 repository</name>
+      <url>http://scriptlandia-repository.googlecode.com/svn/trunk/tools</url>
+    </repository>
+  </repositories>
+
+</project>

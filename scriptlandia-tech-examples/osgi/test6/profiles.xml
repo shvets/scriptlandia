@@ -1,0 +1,12 @@
+<profiles>
+  <profile>
+    <id>dev</id>
+    <properties>
+      <eclipse.version>3.3.2</eclipse.version>
+      <eclipse.home>C:/Work/Editors/eclipse</eclipse.home>
+   </properties>
+    <activation>
+      <activeByDefault>true</activeByDefault>
+    </activation>
+  </profile>
+</profiles>
