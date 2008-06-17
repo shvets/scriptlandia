@@ -25,7 +25,7 @@ class Pair {
   }
 
   String toString() {
-    return "Pair {" + ", " + name + ", " + version + fileName + "}";
+    return "Pair {" + name + ", " + version + ", " + fileName + "}";
   }
 }
 
@@ -74,6 +74,7 @@ public class BundleDeps {
           Attributes mainAttributes = manifest.getMainAttributes();
 
           String exportPackage = mainAttributes.getValue("Export-Package");
+          String bundleVersion = mainAttributes.getValue("Bundle-Version");
 
           if(exportPackage != null) {
             StringTokenizer st = new StringTokenizer(exportPackage, ",");
@@ -92,7 +93,7 @@ public class BundleDeps {
                 name = token;
               } 
               
-              list.add(new Pair(name, "", files[i].getPath()));
+              list.add(new Pair(name, bundleVersion, files[i].getPath()));
             }                                                 
           }
         }
@@ -188,7 +189,6 @@ public class BundleDeps {
         Pair exportPair = findExport(importedPackage.name, exportedPackages);
 
         def fileName = exportPair.fileName.replace('\\', '/')
-
 
         if(!usedJars.contains(fileName)) {
           usedJars.add(fileName);
