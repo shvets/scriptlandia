@@ -77,7 +77,16 @@ public final class ScriptlandiaStarter {
       //new ScriptlandiaStarter().start(args, mainRealm);
     //}
 
-    new ScriptlandiaStarter().start(args, classWorld.getRealm("pom-launcher-sl"));
+    ClassRealm mainRealm = null;
+
+    try {
+      mainRealm = classWorld.getRealm("pom-launcher-scriptlandia");
+    }
+    catch(Exception e) {
+      mainRealm = classWorld.getRealm("pom-launcher-sland");
+    }
+
+    new ScriptlandiaStarter().start(args, mainRealm);
   }
 
 }

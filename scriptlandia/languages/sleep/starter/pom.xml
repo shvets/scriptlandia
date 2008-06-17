@@ -27,6 +27,12 @@
       <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>
+
+    <dependency>
+      <groupId>sleep</groupId>
+      <artifactId>slumber</artifactId>
+      <version>1.0-b1</version>
+    </dependency>
   </dependencies>
 
 </project>

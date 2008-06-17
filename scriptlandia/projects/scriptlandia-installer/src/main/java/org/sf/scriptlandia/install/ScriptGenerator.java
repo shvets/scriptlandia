@@ -110,13 +110,13 @@ public class ScriptGenerator extends ExtInstaller {
   }
 
   public void generateSlBatchFile(List languages, String dir) throws IOException {
-    BufferedWriter writer = new BufferedWriter(new FileWriter(dir + "/sl.bat"));
+    BufferedWriter writer = new BufferedWriter(new FileWriter(dir + "/sland.bat"));
 
     writer.write("@echo off");
     writer.newLine();
     writer.newLine();
 
-    writer.write("rem sl.bat");
+    writer.write("rem sland.bat");
     writer.newLine();
     writer.newLine();
 
@@ -213,7 +213,7 @@ public class ScriptGenerator extends ExtInstaller {
   }
 
   public void generateSlShellFile(List languages, String dir) throws IOException {
-    BufferedWriter writer = new BufferedWriter(new FileWriter(dir + "/sl.sh"));
+    BufferedWriter writer = new BufferedWriter(new FileWriter(dir + "/sland.sh"));
 
     writer.write("#!/bin/sh");
     writer.newLine();

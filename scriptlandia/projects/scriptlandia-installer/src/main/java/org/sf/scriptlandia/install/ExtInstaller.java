@@ -427,7 +427,7 @@ public class ExtInstaller {
   }
 
   protected String getAction(String extension, String scriptlandiaHome) {
-    String fullScriptName = getScriptName(scriptlandiaHome, "sl", extension);
+    String fullScriptName = getScriptName(scriptlandiaHome, "sland", extension);
 
     StringBuffer action = new StringBuffer();
 

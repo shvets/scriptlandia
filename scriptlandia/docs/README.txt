@@ -197,7 +197,7 @@ Scriptlandia   2.2.5        http://sourceforge.net/projects/scriptlandia
 Scriptella     1.0beta      http://scriptella.javaforge.com
 Jscheme        7.2          http://jscheme.sourceforge.net
 Jaskell        1.0          http://jaskell.codehaus.org
-Sleep          2.1-beta19   http://sleep.hick.org
+Sleep          2.1          http://sleep.dashnine.orgh
 TCL            1.4.0        http://tcljava.sourceforge.net
 AWK            0.14         http://jawk.sourceforge.net
 JavaFX         200710081507 https://openjfx.dev.java.net

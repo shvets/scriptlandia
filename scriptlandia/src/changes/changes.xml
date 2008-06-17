@@ -387,6 +387,9 @@
         Added support for Nant ver. 0.85.
       </action>
 
+      <action dev="Alexander Shvets" type="fix">
+        Upgraded to Sleep version 2.1.
+      </action>
     </release>
   </body>
 

@@ -66,13 +66,13 @@ It is also good idea to add SCRIPTLANDIA_HOME variable to your PATH variable.
     Direct invocation of Scriptlandia script
 
 if your operating system is not supported by deploy library, you still can use
-Scriptlandia to launch your language scripts. To do it you have to call "sl.bat/sl.sh" script:
+Scriptlandia to launch your language scripts. To do it you have to call "sland.bat/sland.sh" script:
 
->sl.sh test.ant
+>sland.sh test.ant
 
 or
 
->sl.sh hello.bsh
+>sland.sh hello.bsh
 
 
     Integration with Nailgun server
