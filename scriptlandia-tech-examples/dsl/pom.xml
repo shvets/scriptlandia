@@ -1,0 +1,112 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.devx.sparql</groupId>
+  <artifactId>sparql-validator</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0</version>
+  <name>sparql-validator</name>
+  <url>http://maven.apache.org</url>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.antlr</groupId>
+      <artifactId>antlr-runtime</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>antlr3-maven-plugin</artifactId>
+        <version>1.0</version>
+        <configuration>
+          <outputDirectory>
+            target/generated-sources/antlr
+          </outputDirectory>
+        </configuration>
+        <executions>
+          <execution>
+            <id>parser1</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>antlr</goal>
+            </goals>
+            <configuration>
+              <includes>
+                <include>**/Sparql.g</include>
+              </includes>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>parser2</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>antlr</goal>
+            </goals>
+            <configuration>
+              <includes>
+                <include>**/StateMachine.g</include>
+              </includes>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>walker1</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>antlr</goal>
+            </goals>
+            <configuration>
+              <!-- Configure generation of walker to use tokens defined by the grammar parser -->
+              <includes>
+                <include>**/SparqlWalker.g</include>
+              </includes>
+              <libDirectory>
+                target/generated-sources/antlr/com/devx/sparql
+              </libDirectory>
+            </configuration>
+          </execution>
+
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>rodcoffin</id>
+      <name>Rod's Maven Repo</name>
+      <url>http://maven.rodcoffin.com</url>
+      <layout>default</layout>
+    </repository>
+  </repositories>
+  
+  <pluginRepositories>
+    <pluginRepository>
+      <id>rodcoffin</id>
+      <name>Rod's Maven Repo</name>
+      <url>http://maven.rodcoffin.com/repo/</url>
+      <layout>default</layout>
+    </pluginRepository>
+  </pluginRepositories>
+</project>
