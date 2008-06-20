@@ -3,12 +3,12 @@
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sf.scriptlandia</groupId>
-  <artifactId>ptilde-starter</artifactId>
+  <artifactId>fan-starter</artifactId>
   <version>2.2.5</version>
   <packaging>pom</packaging>
 
-  <name>Scriptlandia P~ Starter Module</name>
-  <description>Scriptlandia P~ Starter Module</description>
+  <name>Scriptlandia Fan Starter Module</name>
+  <description>Scriptlandia Fan Starter Module</description>
 
   <properties>
     <scriptlandia.version>2.2.5</scriptlandia.version>
@@ -23,7 +23,7 @@
 
     <dependency>
       <groupId>org.sf.scriptlandia</groupId>
-      <artifactId>ptilde</artifactId>
+      <artifactId>fan</artifactId>
       <version>${scriptlandia.version}</version>
       <type>pom</type>
     </dependency>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<language name="fan" groupId="fan" artifactId="fan-sys" version="1.0.27">
+  <registration mimeType="application/fan" icon="scriptlandia.ico">
+    <extensions>
+      <extension>fan</extension>
+    </extensions>
+
+    <starter>
+      <mainClass>fanx.tools.Fan</mainClass>
+    </starter>
+
+    <properties>
+      <fan.home>${repository.home}/${groupId}/${artifactId}/${version}</fan.home>
+    </properties>
+  </registration>
+</language>

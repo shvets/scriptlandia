@@ -112,6 +112,10 @@ public class LauncherHelper {
         if(suffix.equalsIgnoreCase(".version")) {
           System.setProperty(key, (String)scriptlandiaProps.get(key));
         }
+
+        if(suffix.equalsIgnoreCase(".home")) {
+          System.setProperty(key, (String)scriptlandiaProps.get(key));
+        }
       }
     }
 

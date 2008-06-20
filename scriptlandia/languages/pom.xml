@@ -85,6 +85,7 @@
     <module>xgql/starter</module>
     <module>ptilde/starter</module>
     <module>yoix/starter</module>
+    <module>fan/starter</module>
   </modules>
 
   <distributionManagement>

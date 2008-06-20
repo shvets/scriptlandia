@@ -4,6 +4,7 @@ import com.sun.deploy.config.Config;
 import org.sf.jlaunchpad.JLaunchPadLauncher;
 import org.sf.jlaunchpad.LauncherException;
 import org.sf.jlaunchpad.install.LauncherProperties;
+import org.sf.jlaunchpad.util.StringUtil;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
@@ -20,6 +21,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Iterator;
 
 /**
  * The class perform initial (gui) installation of scriprlandia.
@@ -725,6 +727,19 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
         if(version != null) {
           System.setProperty(name + ".version", version);
         }
+
+        Map properties = (Map)language.get("properties");
+
+        if(properties != null) {
+          Iterator iterator = properties.keySet().iterator();
+
+          while(iterator.hasNext()) {
+            String key = (String)iterator.next();
+            String value = StringUtil.substituteProperties((String)properties.get(key), "${", "}", System.getProperties());
+
+            System.setProperty(key, value);
+          }
+        }
       }
 
       try {
@@ -757,6 +772,18 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
 
         if(!checkBoxes[i].isSelected()) {
           System.setProperty(name + ".version", "");
+        }
+
+        Map properties = (Map)language.get("properties");
+
+        if(properties != null) {
+          Iterator iterator = properties.keySet().iterator();
+
+          while(iterator.hasNext()) {
+            String key = (String)iterator.next();
+
+            System.setProperty(key, null);
+          }
         }
       }
 
@@ -815,6 +842,19 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
 
       if(version != null) {
         scriptlandiaProps.put(name + ".version", version);
+      }
+
+      Map properties = (Map)language.get("properties");
+
+      if(properties != null) {
+        Iterator iterator = properties.keySet().iterator();
+
+        while(iterator.hasNext()) {
+          String key = (String)iterator.next();
+          String value = StringUtil.substituteProperties((String)properties.get(key), "${", "}", System.getProperties());
+
+          scriptlandiaProps.put(key, value);
+        }
       }
     }
 

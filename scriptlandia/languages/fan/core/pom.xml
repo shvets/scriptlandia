@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>fan</artifactId>
+  <version>2.2.5</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia Fan Core Module</name>
+  <description>Scriptlandia Fan Core Module</description>
+
+  <properties>
+    <fan.version>1.0.27</fan.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>fan</groupId>
+      <artifactId>fan-sys</artifactId>
+      <version>${fan.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>fan</groupId>
+      <artifactId>fan-lib</artifactId>
+      <version>${fan.version}</version>
+    </dependency>
+  </dependencies>
+
+</project>

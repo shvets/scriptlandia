@@ -1,6 +1,5 @@
 package org.sf.scriptlandia.install;
 
-
 import org.sf.jlaunchpad.LauncherException;
 import org.sf.jlaunchpad.DefaultLauncher;
 import org.sf.pomreader.ProjectInstaller;
@@ -44,7 +43,7 @@ public class CoreInstaller {
 
       System.out.println("Scriptlandia core installed.");
     } catch (Exception e) {
-e.printStackTrace();
+      e.printStackTrace();
       throw new LauncherException(e.getMessage());
     }
   }

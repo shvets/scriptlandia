@@ -23,6 +23,7 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.2/jlaunchpad-launcher-1.0.2-sources.jar!/" />
+          <root url="intellijad://intellijad" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -606,15 +607,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ivy:ivy:2.0.0-beta1">
+      <library name="org.apache.ivy:ivy:2.0.0-beta2">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ivy/ivy/2.0.0-beta1/ivy-2.0.0-beta1.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ivy/ivy/2.0.0-beta2/ivy-2.0.0-beta2.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ivy/ivy/2.0.0-beta1/ivy-2.0.0-beta1-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ivy/ivy/2.0.0-beta2/ivy-2.0.0-beta2-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ivy/ivy/2.0.0-beta1/ivy-2.0.0-beta1-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ivy/ivy/2.0.0-beta2/ivy-2.0.0-beta2-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

@@ -181,7 +181,7 @@ MicroEmu       2.0.1        http://microemu.org
 
 Maven          2.0.9        http://maven.apache.org
 Ant            1.7.0        http://ant.apache.org
-
+Ivy            2.0.0-beta2  http://ant.apache.org/ivy
 BSF            2.4.0        http://jakarta.apache.org/bsf
 Beanshell      2.0b5        http://www.beanshell.org/bsh-2.0b5.jar
 Javascript     1.6R4        http://www.mozilla.org/rhino
@@ -209,6 +209,7 @@ LOLCODE        0.11         http://code.google.com/p/lolcode-java
 Clojure        20080213     http://clojure.sourceforge.net
 P~ (Ptilde)    0.90         http://ptilde.pbwiki.com
 YOIX           2.1.10       http://www.yoix.org
+Fan            1.0.27       http://www.fandev.org
 
 e-mail:        alexander.shvets@gmail.com, shvets_alexander@yahoo.com
 home-page:     http://home.comcast.net/~shvets

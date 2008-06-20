@@ -390,6 +390,14 @@
       <action dev="Alexander Shvets" type="fix">
         Upgraded to Sleep version 2.1.
       </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgraded to Ivy version 2.0.0-beta2.
+      </action>
+
+      <action dev="Alexander Shvets" type="add">
+        Added support for Fan language ver. 1.0.27.
+      </action>
     </release>
   </body>
 

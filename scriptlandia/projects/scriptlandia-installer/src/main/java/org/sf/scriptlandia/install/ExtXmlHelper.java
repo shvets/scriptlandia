@@ -6,6 +6,7 @@ import org.jdom.Element;
 import org.jdom.Attribute;
 import org.jdom.JDOMException;
 import org.sf.jlaunchpad.xml.XmlHelper;
+import org.sf.jlaunchpad.util.StringUtil;
 
 import net.sf.image4j.codec.ico.ICODecoder;
 
@@ -132,7 +133,6 @@ public class ExtXmlHelper extends XmlHelper {
 
     map.put("imageIcon", icon);
 
-
     Element starter = getElementByName(registration, "starter");
 
     Element mainClass = getElementByName(starter, "mainClass");
@@ -177,6 +177,24 @@ public class ExtXmlHelper extends XmlHelper {
     }
     else {
       map.put("scriptName", script.getAttribute("name").getValue());
+    }
+
+    Element propertiesElement = getElementByName(registration, "properties");
+
+    if(propertiesElement != null) {
+      Map map1 = new HashMap();
+
+      List children = propertiesElement.getChildren();
+
+      for (Object child : children) {
+        Element prop = (Element) child;
+
+        String value = StringUtil.substituteProperties(prop.getValue(), "${", "}", map);
+
+        map1.put(prop.getName(), value);
+      }
+
+      map.put("properties", map1);
     }
 
     return map;
