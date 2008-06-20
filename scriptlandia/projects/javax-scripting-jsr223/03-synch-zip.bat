@@ -1,0 +1,1 @@
+prepare.ant synch-zip

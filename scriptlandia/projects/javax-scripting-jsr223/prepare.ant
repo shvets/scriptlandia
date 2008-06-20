@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+
+<!-- prepare.ant -->
+
+<project name="prepare" default="prepare15" basedir=".">
+
+  <property file="project.properties"/>
+
+  <macrodef name="unzip-project">
+    <attribute name="name"/>
+
+    <element name="excludes" optional="yes"/>
+
+    <sequential>
+      <unzip src="${scripting.engines.src.zip.file}" dest="@{name}/src/main/java" overwrite="true">
+        <patternset>
+          <include name="scripting/engines/@{name}/src/**/*.java"/>
+          <include name="scripting/engines/@{name}/src/META-INF/**"/>
+
+          <excludes/>
+        </patternset>
+      </unzip>
+
+      <move todir="@{name}/src/main/java">
+        <fileset dir="@{name}/src/main/java/scripting/engines/@{name}/src"/>
+      </move>
+
+      <delete dir="@{name}/src/main/java/scripting"/>
+    </sequential>
+  </macrodef>
+
+  <macrodef name="clean-sources">
+    <attribute name="name"/>
+
+    <sequential>
+      <delete includeEmptyDirs="true" failonerror="false">
+        <fileset dir="@{name}/src"/>
+      </delete>
+    </sequential>
+  </macrodef>
+
+  <macrodef name="clean-project">
+    <attribute name="name"/>
+
+    <sequential>
+      <delete includeEmptyDirs="true" failonerror="false">
+        <fileset dir="@{name}/target"/>
+      </delete>
+    </sequential>
+  </macrodef>
+
+  <macrodef name="copy-jar">
+    <attribute name="path"/>
+    <attribute name="name"/>
+    <attribute name="version"/>
+    <attribute name="artifactId" default="@{name}-engine"/>
+
+    <sequential>
+      <copy todir="@{path}/javax/script/@{artifactId}/@{version}" overwrite="true" failonerror="false">
+        <fileset dir="@{name}/target">
+          <include name="*.jar"/>
+        </fileset>
+      </copy>
+      
+      <copy tofile="@{path}/javax/script/@{artifactId}/@{version}/@{artifactId}-@{version}.pom" 
+            file="@{name}/pom.xml" overwrite="true"/>
+    </sequential>
+  </macrodef>
+
+  <target name="clean">
+    <clean-project name="beanshell"/>
+    <clean-project name="browserjs"/>
+    <clean-project name="freemarker"/>
+    <clean-project name="groovy"/>
+    <clean-project name="jacl"/>
+    <clean-project name="jaskell"/>
+    <clean-project name="java"/>
+    <clean-project name="javascript"/>
+    <clean-project name="jawk"/>
+    <clean-project name="jelly"/>
+    <clean-project name="jep"/>
+    <clean-project name="jexl"/>
+    <clean-project name="jruby"/>
+    <clean-project name="judo"/>
+    <clean-project name="juel"/>
+    <clean-project name="jython"/>
+    <clean-project name="ognl"/>
+    <clean-project name="pnuts"/>
+    <clean-project name="scheme"/>
+    <clean-project name="sleep"/>
+    <clean-project name="velocity"/>
+    <clean-project name="xpath"/>
+    <clean-project name="xslt"/>
+    <clean-project name="javafx"/>
+  </target>
+
+  <target name="clean-sources">
+    <clean-sources name="beanshell"/>
+    <clean-sources name="browserjs"/>
+    <clean-sources name="freemarker"/>
+    <clean-sources name="groovy"/>
+    <clean-sources name="jacl"/>
+    <clean-sources name="jaskell"/>
+    <clean-sources name="java"/>
+    <clean-sources name="javascript"/>
+    <clean-sources name="jawk"/>
+    <clean-sources name="jelly"/>
+    <clean-sources name="jep"/>
+    <clean-sources name="jexl"/>
+    <clean-sources name="jruby"/>
+    <clean-sources name="judo"/>
+    <clean-sources name="juel"/>
+    <clean-sources name="jython"/>
+    <clean-sources name="ognl"/>
+    <clean-sources name="pnuts"/>
+    <clean-sources name="scheme"/>
+    <clean-sources name="velocity"/>
+    <clean-sources name="xpath"/>
+    <clean-sources name="xslt"/>
+  </target>
+
+  <target name="synch-zip">
+    <unzip-project name="beanshell">
+      <excludes>
+        <exclude name="**/TestBshScriptEngine.java"/>
+      </excludes>
+    </unzip-project>
+
+    <unzip-project name="browserjs"/>
+    <unzip-project name="freemarker"/>
+    <unzip-project name="groovy"/>
+    <unzip-project name="jacl"/>
+    <unzip-project name="jaskell"/>
+    <unzip-project name="java"/>
+    <unzip-project name="javascript"/>
+    <unzip-project name="jawk"/>
+    <unzip-project name="jelly"/>
+    <unzip-project name="jep"/>
+    <unzip-project name="jexl"/>
+    <unzip-project name="jruby"/>
+    <unzip-project name="judo"/>
+    <unzip-project name="juel"/>
+    <unzip-project name="jython"/>
+    <unzip-project name="ognl"/>
+    <unzip-project name="pnuts"/>
+    <unzip-project name="scheme"/>
+    <unzip-project name="velocity"/>
+    <unzip-project name="xpath"/>
+    <unzip-project name="xslt"/>
+  </target>
+
+  <target name="prepare15">
+    <script language="beanshell">
+      import org.sf.scriptlandia.MavenHelper;
+
+      System.setProperty("java.specification.version", "1.5");
+      
+      String[] args = new String[] { "package", "-Djava.specification.version=1.5", "-Dclassifier=" };
+      MavenHelper.executeMaven("pom.xml", args);
+
+      String[] args = new String[] { "package", "-Djava.specification.version=1.5", "-Dclassifier=jdk1.5" };
+      MavenHelper.executeMaven("pom.xml", args);
+    </script>
+  </target>
+
+  <target name="prepare16">
+    <delete includeEmptyDirs="true" failonerror="false">
+      <fileset dir=".">
+        <include name="**/target/classes/**"/>
+      </fileset>
+    </delete>
+
+    <script language="beanshell">
+      import org.sf.scriptlandia.MavenHelper;
+
+      System.setProperty("java.specification.version", "1.6");
+
+      String[] args = new String[] { "package", "-Djava.specification.version=1.6", "-Dclassifier=jdk1.6" };
+      MavenHelper.executeMaven("pom.xml", args);
+    </script>
+  </target>
+
+  <target name="copy-jars">
+    <copy tofile="${svn.languages.repository.home}/javax/script/all-engines/1.0/all-engines-1.0.pom" 
+          file="all-engines-jdk1.5/pom.xml" overwrite="true"/>
+    <copy tofile="${svn.languages.repository.home}/javax/script/all-engines/1.0/all-engines-1.0-jdk1.5.pom" 
+          file="all-engines-jdk1.5/pom.xml" overwrite="true"/>
+    <copy tofile="${svn.languages.repository.home}/javax/script/all-engines/1.0/all-engines-1.0-jdk1.6.pom" 
+          file="all-engines-jdk1.6/pom.xml" overwrite="true"/>
+
+    <copy-jar path="${svn.languages.repository.home}" name="beanshell" artifactId="bsh-engine" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="browserjs" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="freemarker" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="groovy" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="jacl" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="jaskell" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="java" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="javascript" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="jawk" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="jelly" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="jep" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="jexl" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="jruby" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="judo" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="juel" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="jython" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="ognl" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="pnuts" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="scheme" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="sleep" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="velocity" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="xpath" version="1.0"/>
+    <copy-jar path="${svn.languages.repository.home}" name="xslt" version="1.0"/>
+  </target>
+
+</project>

@@ -117,6 +117,7 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/apache/maven/maven-core/2.0.9/maven-core-2.0.9-sources.jar!/" />
+          <root url="intellijad://intellijad" />
         </SOURCES>
       </library>
     </orderEntry>
