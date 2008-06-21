@@ -4,10 +4,12 @@
   <registration mimeType="application/fan" icon="scriptlandia.ico">
     <extensions>
       <extension>fan</extension>
+      <extension>pod</extension>
     </extensions>
 
     <starter>
-      <mainClass>fanx.tools.Fan</mainClass>
+      <!--mainClass>fanx.tools.Fan</mainClass-->
+      <mainClass>org.sf.scriptlandia.FanStarter</mainClass>
     </starter>
 
     <properties>
