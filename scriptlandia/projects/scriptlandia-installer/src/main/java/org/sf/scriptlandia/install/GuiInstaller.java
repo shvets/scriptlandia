@@ -735,7 +735,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
 
           while(iterator.hasNext()) {
             String key = (String)iterator.next();
-            String value = StringUtil.substituteProperties((String)properties.get(key), "${", "}", System.getProperties());
+            String value = StringUtil.substituteProperties((String)properties.get(key), "${", "}", System.getProperties(), false);
 
             System.setProperty(key, value);
           }

@@ -189,7 +189,7 @@ public class ExtXmlHelper extends XmlHelper {
       for (Object child : children) {
         Element prop = (Element) child;
 
-        String value = StringUtil.substituteProperties(prop.getValue(), "${", "}", map);
+        String value = StringUtil.substituteProperties(prop.getValue(), "${", "}", map, false);
 
         map1.put(prop.getName(), value);
       }
