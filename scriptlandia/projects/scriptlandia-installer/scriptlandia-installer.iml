@@ -37,7 +37,6 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-common/1.0.2/jlaunchpad-common-1.0.2-sources.jar!/" />
-          <root url="intellijad://intellijad" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -64,7 +63,6 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.2/jlaunchpad-launcher-1.0.2-sources.jar!/" />
-          <root url="intellijad://intellijad" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -117,7 +115,6 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/apache/ant/ant/1.7.0/ant-1.7.0-sources.jar!/" />
-          <root url="intellijad://intellijad" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -235,6 +232,19 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/jdesktop/jdic-native-libs/0.9.3/jdic-native-libs-0.9.3-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="nant:nant:0.85">
+        <CLASSES>
+          <root url="jar://$maven-repository$/nant/nant/0.85/nant-0.85.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$maven-repository$/nant/nant/0.85/nant-0.85-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$maven-repository$/nant/nant/0.85/nant-0.85-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

@@ -23,7 +23,6 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.2/jlaunchpad-launcher-1.0.2-sources.jar!/" />
-          <root url="intellijad://intellijad" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -63,7 +62,6 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-common/1.0.2/jlaunchpad-common-1.0.2-sources.jar!/" />
-          <root url="intellijad://intellijad" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -117,7 +115,6 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/apache/maven/maven-settings/2.0.9/maven-settings-2.0.9-sources.jar!/" />
-          <root url="intellijad://intellijad" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -378,7 +375,6 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/apache/maven/maven-artifact/2.0.9/maven-artifact-2.0.9-sources.jar!/" />
-          <root url="intellijad://intellijad" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -431,7 +427,6 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/apache/maven/maven-artifact-manager/2.0.9/maven-artifact-manager-2.0.9-sources.jar!/" />
-          <root url="intellijad://intellijad" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -575,7 +570,6 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/apache/ant/ant/1.7.0/ant-1.7.0-sources.jar!/" />
-          <root url="intellijad://intellijad" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -602,20 +596,19 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/apache/maven/maven-ant-tasks/2.0.9/maven-ant-tasks-2.0.9-sources.jar!/" />
-          <root url="intellijad://intellijad" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ivy:ivy:2.0.0-beta2">
+      <library name="org.apache.ivy:ivy:2.0.0-beta1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ivy/ivy/2.0.0-beta2/ivy-2.0.0-beta2.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ivy/ivy/2.0.0-beta1/ivy-2.0.0-beta1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ivy/ivy/2.0.0-beta2/ivy-2.0.0-beta2-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ivy/ivy/2.0.0-beta1/ivy-2.0.0-beta1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ivy/ivy/2.0.0-beta2/ivy-2.0.0-beta2-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ivy/ivy/2.0.0-beta1/ivy-2.0.0-beta1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

@@ -35,7 +35,6 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.2/jlaunchpad-launcher-1.0.2-sources.jar!/" />
-          <root url="intellijad://intellijad" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -62,7 +61,6 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/sf/jlaunchpad/jlaunchpad-common/1.0.2/jlaunchpad-common-1.0.2-sources.jar!/" />
-          <root url="intellijad://intellijad" />
         </SOURCES>
       </library>
     </orderEntry>

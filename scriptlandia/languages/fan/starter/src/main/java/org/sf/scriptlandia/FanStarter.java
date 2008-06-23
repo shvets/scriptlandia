@@ -3,6 +3,8 @@ package org.sf.scriptlandia;
 import org.codehaus.classworlds.ClassRealm;
 import org.codehaus.classworlds.ClassWorld;
 import org.sf.jlaunchpad.util.ReflectionUtil;
+import org.sf.jlaunchpad.JLaunchPadLauncher;
+import org.sf.scriptlandia.launcher.ScriptlandiaLauncher;
 
 import java.io.File;
 import java.util.Iterator;
@@ -66,13 +68,20 @@ public final class FanStarter {
    * @throws Exception the exception
    */
   public static void main(String[] args, ClassWorld classWorld) throws Exception {
-    Iterator iterator = classWorld.getRealms().iterator();
+/*    Iterator iterator = classWorld.getRealms().iterator();
 
     if(iterator.hasNext()) {
       ClassRealm mainRealm = ((ClassRealm)iterator.next());
 
       new FanStarter().start(args, mainRealm);
     }
+*/
+
+    JLaunchPadLauncher launcher = ScriptlandiaLauncher.getInstance();
+
+    ClassRealm mainRealm = launcher.getMainRealm();
+
+    new FanStarter().start(args, mainRealm);
   }
 
 }
