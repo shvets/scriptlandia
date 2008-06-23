@@ -98,12 +98,6 @@ public class CoreInstaller {
     installer.install("projects/scriptlandia-helper", false);
   }
 
-  private void generateScripts() throws IOException {
-    ScriptGenerator scriptGenerator = new ScriptGenerator();
-
-    scriptGenerator.generate();
-  }
-
   /**
    * Installs languages projects.
    *
@@ -114,6 +108,28 @@ public class CoreInstaller {
 
     installLanguages("starter", false);
 
+    registerLanguages();
+
+    generateScripts();
+
+    System.out.println("Scriptlandia supported languages installed.");
+  }
+
+  private void installLanguages(String section, boolean install) throws Exception {
+    ProjectInstaller installer = new ProjectInstaller(true);
+
+    File[] files = new File("languages").listFiles();
+
+    for (File file : files) {
+      File sectionDirFile = new File("languages/" + file.getName() + "/" + section);
+
+      if(sectionDirFile.exists()) {
+        installLanguage(section, install, installer, file);
+      }
+    }
+  }
+
+  private void registerLanguages() throws LauncherException {
     ExtInstaller extInstaller = new ExtInstaller();
 
     ExtXmlHelper xmlHelper = new ExtXmlHelper();
@@ -132,22 +148,12 @@ public class CoreInstaller {
         extInstaller.registerLanguage(language);
       }
     }
-
-    System.out.println("Scriptlandia supported languages installed.");
   }
 
-  private void installLanguages(String section, boolean install) throws Exception {
-    ProjectInstaller installer = new ProjectInstaller(true);
+  private void generateScripts() throws IOException {
+    ScriptGenerator scriptGenerator = new ScriptGenerator();
 
-    File[] files = new File("languages").listFiles();
-
-    for (File file : files) {
-      File sectionDirFile = new File("languages/" + file.getName() + "/" + section);
-
-      if(sectionDirFile.exists()) {
-        installLanguage(section, install, installer, file);
-      }
-    }
+    scriptGenerator.generate();
   }
 
   public void installLanguage(String name, List languages) throws Exception {
@@ -167,6 +173,31 @@ public class CoreInstaller {
 
     ExtInstaller extInstaller = new ExtInstaller();
     extInstaller.registerLanguage(language);
+
+    generateScripts();
+  }
+
+ private void installLanguage(String section, boolean install, ProjectInstaller installer, File file) throws Exception {
+    if (!file.isHidden() && file.isDirectory()) {
+      String name = file.getName();
+
+      boolean requiresInstallation = false;
+
+      if (Boolean.valueOf(System.getProperty(name + ".install")).booleanValue() || install) {
+        requiresInstallation = true;
+      }
+
+      if (requiresInstallation) {
+        boolean compile = false;
+
+        if (new File("languages/" + name + "/" + section + "/src/main/java").exists() &&
+            !new File("languages/" + name + "/" + section + "/target/" + name + "-" + section + ".jar").exists()) {
+          compile = true;
+        }
+
+        installer.install("languages/" + name + "/" + section, compile);
+      }
+    }
   }
 
   private Map findLanguage(List languages, String name) {
@@ -224,30 +255,6 @@ public class CoreInstaller {
       System.out.println("Exception: " + e.getMessage());
     }
   }
-
-  private void installLanguage(String section, boolean install, ProjectInstaller installer, File file) throws Exception {
-    if (!file.isHidden() && file.isDirectory()) {
-      String name = file.getName();
-
-      boolean requiresInstallation = false;
-
-      if (Boolean.valueOf(System.getProperty(name + ".install")).booleanValue() || install) {
-        requiresInstallation = true;
-      }
-
-      if (requiresInstallation) {
-        boolean compile = false;
-
-        if (new File("languages/" + name + "/" + section + "/src/main/java").exists() &&
-            !new File("languages/" + name + "/" + section + "/target/" + name + "-" + section + ".jar").exists()) {
-          compile = true;
-        }
-
-        installer.install("languages/" + name + "/" + section, compile);
-      }
-    }
-  }
-
 
   protected List readLanguages() throws LauncherException {
     java.util.List languages;
