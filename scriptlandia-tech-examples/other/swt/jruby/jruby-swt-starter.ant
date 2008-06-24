@@ -6,12 +6,12 @@
     <attribute name="name"/>
 
     <![CDATA[
-      import org.sf.scriptlandia.MavenHelper;
+      import org.sf.scriptlandia.ScriptlandiaHelper;
 
       String name = attributes.get("name");
       String manager = attributes.get("manager");
 
-      MavenHelper.resolveLanguageDependencies(name, manager);
+      ScriptlandiaHelper.resolveLanguageDependencies(name, manager);
     ]]>
   </scriptdef>
 
@@ -23,6 +23,7 @@
       System.exit(0);
     }
 
+    print(parameters.get(0));
     project.setNewProperty("script.name", parameters.get(0));
   </script>
 

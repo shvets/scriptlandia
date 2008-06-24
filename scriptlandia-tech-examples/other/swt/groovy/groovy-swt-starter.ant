@@ -6,19 +6,18 @@
     <attribute name="name"/>
 
     <![CDATA[
-      import org.sf.scriptlandia.MavenHelper;
+      import org.sf.scriptlandia.ScriptlandiaHelper;
 
       String name = attributes.get("name");
       String manager = attributes.get("manager");
 
-      MavenHelper.resolveLanguageDependencies(name, manager);
+      ScriptlandiaHelper.resolveLanguageDependencies(name, manager);
     ]]>
   </scriptdef>
 
   <script language="beanshell">
-    import org.sf.scriptlandia.MavenHelper;
-
-    MavenHelper.resolveDependencies("groovy", "groovy-swt", "1.0", "");
+    import org.sf.scriptlandia.ScriptlandiaHelper;
+    ScriptlandiaHelper.resolveDependencies("groovy", "groovy-swt", "1.0");
 
     List parameters = (List)project.getReference("parameters");
 
@@ -33,17 +32,19 @@
   <target name="run">
     <configure-language name="groovy" manager="bsf"/>
 
-    <property name="eclipse.home" location="C:/Editors/eclipse-3.2.2"/>
+    <property name="eclipse.home" location="C:/Work/Editors/eclipse"/>
 
     <addtoclassloader>
       <path>
         <fileset dir="${eclipse.home}/plugins">
-          <include name="org.eclipse.swt.win32.win32.x86_3.2.2.v3236.jar"/>
-          <include name="org.eclipse.jface_3.2.2.M20061214-1200.jar"/>
-          <include name="org.eclipse.ui.forms_3.2.0.v20060602.jar"/>
-          <include name="org.eclipse.core.runtime_3.2.0.v20060603.jar"/>
-          <include name="org.eclipse.osgi_3.2.2.R32x_v20070118.jar"/>
+          <include name="org.eclipse.swt.win32.win32*.jar"/>
+          <include name="org.eclipse.jface_*.jar"/>
+          <include name="org.eclipse.ui.forms_*.jar"/>
+          <include name="org.eclipse.core.runtime_*.jar"/>
+          <include name="org.eclipse.osgi_*.jar"/>
         </fileset>
+
+        <fileset dir="${repository.home}/groovy/groovy-swt/1.0"/>
       </path>
     </addtoclassloader>
 
