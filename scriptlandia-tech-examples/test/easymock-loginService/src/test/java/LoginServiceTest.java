@@ -13,7 +13,7 @@ import static org.easymock.EasyMock.eq;
 */
 public class LoginServiceTest {
 
-     private LoginService service;
+     private LoginServiceImpl service;
 
     @Before
     public void setup() {
@@ -36,7 +36,7 @@ public class LoginServiceTest {
 
           UserDAO mockDao = createStrictMock(UserDAO.class);
 
-          ((LoginServiceImpl)service).setUserDAO(mockDao);
+          service.setUserDAO(mockDao);
 
           expect(mockDao.loadByUsernameAndPassword(eq(userName), eq(password))).andReturn(results);
 
