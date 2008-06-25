@@ -3,8 +3,8 @@
 <project>
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>testng-jmockit</groupId>
-  <artifactId>testng-jmockit</artifactId>
+  <groupId>junit-jmockit-annotations</groupId>
+  <artifactId>junit-jmockit-annotations</artifactId>
   <version>1.0</version>
 
   <dependencies>

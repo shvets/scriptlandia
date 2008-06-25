@@ -3,8 +3,8 @@
 <project>
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>testng-jmockit-loginService</groupId>
-  <artifactId>testng-jmockit-loginService</artifactId>
+  <groupId>junit-jmockit-sample</groupId>
+  <artifactId>junit-jmockit-sample</artifactId>
   <version>1.0</version>
 
   <dependencies>
@@ -16,11 +16,12 @@
     </dependency>
 
     <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>5.8</version>
-      <classifier>jdk15</classifier>
-    </dependency>  
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.4</version>
+      <scope>test</scope>
+    </dependency> 
+ 
   </dependencies>
 
   <build>
