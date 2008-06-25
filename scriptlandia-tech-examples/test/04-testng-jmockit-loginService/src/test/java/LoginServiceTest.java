@@ -11,12 +11,12 @@ import mockit.Expectations;
 public class LoginServiceTest extends Expectations {
 
   private LoginServiceImpl service;
-  UserDAO mockDao;
+  UserDAO mock;
 
   @BeforeTest
   public void setupMocks() {
     service = new LoginServiceImpl();
-    service.setUserDao( mockDao );
+    service.setUserDao( mock );
   }
 
 
@@ -28,18 +28,16 @@ public class LoginServiceTest extends Expectations {
    */
   @Test
   public void testRosyScenario() {
-  	User results = new User();
-  	String userName = "testUserName";
-  	String password = "testPassword";
+  	final User results = new User();
+  	final String userName = "testUserName";
+  	final String password = "testPassword";
   	//String passwordHash = "??&I7???Ni=.";
 
-  	invokeReturning( 
-               mockDao.loadByUsernameAndPassword( userName, 
-                                                  password ), 
-               results );
-  	endRecording();
+      invokeReturning(mock.loadByUsernameAndPassword( userName, password ), results );
+         
+      endRecording();
 
-  	assert service.login( userName, password ) : "Expected true, but was false";
+      assert service.login( userName, password ) : "Expected true, but was false";
   }
 
 
