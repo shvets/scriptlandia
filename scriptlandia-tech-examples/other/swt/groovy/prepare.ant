@@ -1,0 +1,14 @@
+<!-- prepare.ant -->
+
+<project name="prepare.ant" default="prepare" basedir=".">
+
+  <target name="prepare">
+    <unzip src="${repository.home}/org/eclipse/swt-win32/3.2.1/swt-win32-3.2.1.jar"
+           dest="${repository.home}/org/eclipse/swt-win32/3.2.1">
+      <patternset>
+        <include name="*.dll"/>
+      </patternset>
+    </unzip>
+  </target>
+
+</project>
