@@ -1,0 +1,10 @@
+# groovy.jlcfg
+
+<set.variables>
+REPOSITORY_HOME=C:/Work/maven-repository
+
+<java.classpath>
+%REPOSITORY_HOME%/org/eclipse/swt-win32/3.2.1/swt-win32-3.2.1.jar
+
+<java.library.path>
+%REPOSITORY_HOME%/org/eclipse/swt-win32/3.2.1
