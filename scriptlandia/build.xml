@@ -64,6 +64,21 @@
 
       project.setNewProperty("scriptlandia.home.internal", scriptlandiaHome.replace('\\', '/'));
       project.setNewProperty("jlaunchpad.home.internal", launcherHome.replace('\\', '/'));
+
+      String mobileJavaHome = System.getProperty("mobile.java.home");
+
+      String mobileJavaLibs = "";
+      String mobileJavaBin = "";
+
+      if(new File(mobileJavaHome).exists()) {
+        mobileJavaLibs = mobileJavaHome + "/wtklib/kenv.zip/n" + 
+                         mobileJavaHome + "/wtklib/ktools.zip/n" +
+                         mobileJavaHome + "/wtklib/customjmf.jar";
+        mobileJavaBin = mobileJavaHome + "/bin";
+      }
+
+      project.setNewProperty("mobile.java.libs", mobileJavaLibs);
+      project.setNewProperty("mobile.java.bin", mobileJavaBin);
     </script>
 
     <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
@@ -75,7 +90,8 @@
       <filter token="java.specification.version.level" value="${java.specification.version.level}"/>
       <filter token="java.home.internal" value="${java.home.internal}"/>
       <filter token="mobile.java.home" value="${mobile.java.home}"/>
-      <filter token="mobile.java.home" value="${mobile.java.home}"/>
+      <filter token="mobile.java.libs" value="${mobile.java.libs}"/>
+      <filter token="mobile.java.bin" value="${mobile.java.bin}"/>
 
       <filter token="repository.home" value="${repository.home}"/>
       <filter token="scriptlandia.home" value="${scriptlandia.home.internal}"/>

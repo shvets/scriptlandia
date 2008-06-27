@@ -568,6 +568,7 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/apache/ant/ant/1.7.0/ant-1.7.0-sources.jar!/" />
+          <root url="intellijad://intellijad" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -620,6 +621,7 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/jruby/jruby/1.1.2/jruby-1.1.2-sources.jar!/" />
+          <root url="intellijad://intellijad" />
         </SOURCES>
       </library>
     </orderEntry>

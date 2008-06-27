@@ -174,7 +174,6 @@
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
   </component>
   <component name="MavenProjectsManager">
-    <option name="isMavenProject" value="true" />
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />

@@ -1,13 +1,14 @@
 # scriptlandia.jlcfg
 
 <java.classpath>
-@mobile.java.home@/wtklib/kenv.zip
-@mobile.java.home@/wtklib/ktools.zip
-@mobile.java.home@/wtklib/customjmf.jar
+@mobile.java.libs@
 
 <java.library.path>
-@mobile.java.home@/bin
+@mobile.java.bin@
 @repository.home@/org/jdesktop/jdic/0.9.3/windows/x86
+
+<java.bootclasspath.prepend>
+@repository.home@/javax/script/script-api/1.0/script-api-1.0.jar
 
 <java.system.props>
 java.specification.version.level=@java.specification.version.level@

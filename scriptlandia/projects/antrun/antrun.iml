@@ -22,6 +22,7 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/org/apache/ant/ant/1.7.0/ant-1.7.0-sources.jar!/" />
+          <root url="intellijad://intellijad" />
         </SOURCES>
       </library>
     </orderEntry>

@@ -35,6 +35,7 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$maven-repository$/commons-lang/commons-lang/2.3/commons-lang-2.3-sources.jar!/" />
+          <root url="jar://$maven-repository$/javax/script/jruby-engine/1.0/jruby-engine-1.0-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -60,7 +61,7 @@
           <root url="jar://$maven-repository$/org/apache/ant/ant/1.7.0/ant-1.7.0-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant/1.7.0/ant-1.7.0-sources.jar!/" />
+          <root url="file://$MODULE_DIR$/../../../../../../Sources/apache-ant-1.7.0/src/main" />
         </SOURCES>
       </library>
     </orderEntry>
