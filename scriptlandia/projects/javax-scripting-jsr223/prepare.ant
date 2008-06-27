@@ -147,6 +147,19 @@
     <unzip-project name="velocity"/>
     <unzip-project name="xpath"/>
     <unzip-project name="xslt"/>
+
+    <unzip src="jruby-engine-1.1.4.zip" dest="jruby/target" overwrite="true">
+      <patternset>
+        <include name="**/*.jar"/>
+      </patternset>
+    </unzip>
+
+    <move todir="jruby/target">
+      <fileset dir="jruby/target/jruby-engine-1.1.4/lib"/>
+    </move>
+
+    <delete dir="jruby/target/jruby-engine-1.1.4"/>
+
   </target>
 
   <target name="prepare15">

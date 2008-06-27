@@ -33,6 +33,8 @@
     <module>velocity</module>
     <module>xpath</module>
     <module>xslt</module>
+
+    <module>script-api</module>
   </modules>
 
   <build>
