@@ -1,7 +1,5 @@
 // test1.groovy 
 
-print "hello!!!"
-
 import org.eclipse.swt.SWT
 import org.eclipse.swt.widgets.*
 import org.eclipse.swt.layout.RowLayout as Layout
