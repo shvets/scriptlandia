@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>helloworld</groupId>
+  <artifactId>helloworld</artifactId>
+  <version>1.0</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.eclipse</groupId>
+      <artifactId>swt-win32</artifactId>
+      <version>3.2.1</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+
+    <repository>
+      <id>scriptlandia-tools-repo</id>
+      <name>Scriptlandia tools Maven2 repository</name>
+      <url>http://scriptlandia-repository.googlecode.com/svn/trunk/tools</url>
+    </repository>
+
+  </repositories>
+
+</project>
