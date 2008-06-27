@@ -18,15 +18,16 @@
 
   <target name="all">
     <antcall target="javascript"/>
-    <!--antcall target="judo"/-->
+    <antcall target="judo"/>
     <antcall target="bsh"/>
     <antcall target="groovy"/>
-    <antcall target="ruby"/>
+    <antcall target="jruby"/>
     <antcall target="jelly"/>
     <antcall target="jaskell"/>
     <antcall target="sleep"/>
 
     <!--antcall target="javafx"/-->
+    <!--antcall target="scala"/-->
   </target>
 
   <target name="bsh">
@@ -55,7 +56,7 @@
     </script>
   </target>
 
-  <target name="ruby">
+  <target name="jruby">
     <configure-language name="jruby" manager="javax"/>
 
     <script language="ruby" manager="javax">

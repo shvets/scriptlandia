@@ -20,12 +20,11 @@
     <antcall target="ant"/>
     <antcall target="bsh"/>
     <antcall target="javascript"/>
-    <antcall target="jruby"/>
     <antcall target="groovy"/>
     <antcall target="jscheme"/>
     <antcall target="jaskell"/>
-
     <antcall target="jelly"/>
+    <antcall target="jruby"/>
   </target>
 
   <target name="ant">
