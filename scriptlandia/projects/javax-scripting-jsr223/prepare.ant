@@ -148,12 +148,6 @@
     <unzip-project name="xpath"/>
     <unzip-project name="xslt"/>
 
-    <unzip src="jruby-engine-1.1.4.zip" dest="jruby/target" overwrite="true">
-      <patternset>
-        <include name="**/*.jar"/>
-      </patternset>
-    </unzip>
-
     <move todir="jruby/target">
       <fileset dir="jruby/target/jruby-engine-1.1.4/lib"/>
     </move>
@@ -196,10 +190,6 @@
   <target name="copy-jars">
     <copy tofile="${svn.languages.repository.home}/javax/script/all-engines/1.0/all-engines-1.0.pom" 
           file="all-engines-jdk1.5/pom.xml" overwrite="true"/>
-    <copy tofile="${svn.languages.repository.home}/javax/script/all-engines/1.0/all-engines-1.0-jdk1.5.pom" 
-          file="all-engines-jdk1.5/pom.xml" overwrite="true"/>
-    <copy tofile="${svn.languages.repository.home}/javax/script/all-engines/1.0/all-engines-1.0-jdk1.6.pom" 
-          file="all-engines-jdk1.6/pom.xml" overwrite="true"/>
 
     <copy-jar path="${svn.languages.repository.home}" name="beanshell" artifactId="bsh-engine" version="1.0"/>
     <copy-jar path="${svn.languages.repository.home}" name="browserjs" version="1.0"/>
