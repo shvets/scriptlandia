@@ -92,6 +92,8 @@
     <clean-project name="xpath"/>
     <clean-project name="xslt"/>
     <clean-project name="javafx"/>
+
+    <clean-project name="script-api"/>
   </target>
 
   <target name="clean-sources">

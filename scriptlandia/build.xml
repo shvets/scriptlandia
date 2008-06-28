@@ -71,8 +71,8 @@
       String mobileJavaBin = "";
 
       if(new File(mobileJavaHome).exists()) {
-        mobileJavaLibs = mobileJavaHome + "/wtklib/kenv.zip/n" + 
-                         mobileJavaHome + "/wtklib/ktools.zip/n" +
+        mobileJavaLibs = mobileJavaHome + "/wtklib/kenv.zip\n" + 
+                         mobileJavaHome + "/wtklib/ktools.zip\n" +
                          mobileJavaHome + "/wtklib/customjmf.jar";
         mobileJavaBin = mobileJavaHome + "/bin";
       }
