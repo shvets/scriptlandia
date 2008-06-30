@@ -1,1 +1,1 @@
-http://www.michaelminella.com/testing/unit-testing-with-testng-and-jmockit.html
+http://java.dzone.com/articles/unit-testing-with-testng-and-j-0

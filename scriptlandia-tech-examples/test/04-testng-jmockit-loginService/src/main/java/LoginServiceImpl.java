@@ -3,12 +3,8 @@ import java.security.NoSuchAlgorithmException;
 
 
 public class LoginServiceImpl implements LoginService {
-  private UserDAO userDao;
+  private UserDAO userDao = new UserDAOImpl();
 
-  public void setUserDao(UserDAO userDao) {
-  	this.userDao = userDao;
-  }
-  
   public boolean login(String userName, String password) {
     boolean valid = false;
     try {
@@ -28,3 +24,4 @@ public class LoginServiceImpl implements LoginService {
   }
 
 }
+   
