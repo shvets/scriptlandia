@@ -13,7 +13,6 @@ public abstract class AlgorithmTemplate {
     step1();
     step2();
     step3();
-    step4();
   }  
 
   // These methods are "primitive operations" and must be overridden in the concrete templates
@@ -23,8 +22,6 @@ public abstract class AlgorithmTemplate {
   protected  abstract void step2();
 
   protected abstract void step3();
-
-  protected abstract void step4();
 }
 
 // 2. template implementations
@@ -41,10 +38,6 @@ public class MyAlgorithmTemplate1 extends AlgorithmTemplate {
   protected void step3() {
     System.out.println("algorithm1: step3");
   }
-
-  protected void step4() {
-    System.out.println("algorithm1: step4");
-  }
 }
 
 public class MyAlgorithmTemplate2 extends AlgorithmTemplate {
@@ -58,10 +51,6 @@ public class MyAlgorithmTemplate2 extends AlgorithmTemplate {
 
   protected void step3() {
     System.out.println("algorithm2: step3");
-  }
-
-  protected void step4() {
-    System.out.println("algorithm2: step4");
   }
 }
 

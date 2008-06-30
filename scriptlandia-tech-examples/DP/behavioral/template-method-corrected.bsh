@@ -1,0 +1,139 @@
+// template-method-corrected.bsh
+
+// Use Strategy pattern instead.
+
+// Prefer composition to inheritance
+// - Allows greater reuse
+// - Communicates intent better
+// - Easier to understand
+// - Easier to maintain
+// - More robust as it evolves
+// Inheritance is a very strong form of coupling
+// - Especially in a single-inheritance language
+
+// 1. Strategy type and it's implementations
+
+interface Strategy {
+  void execute();
+}
+
+// interfaces
+
+public interface Step1Strategy implements Strategy {}
+public interface Step2Strategy implements Strategy {}
+public interface Step3Strategy implements Strategy {}
+
+// strategy 1
+
+public class Step1Strategy1Impl implements Step1Strategy {
+  public void execute() {
+    System.out.println("stategy1: step1");
+  }
+}
+
+public class Step2Strategy1Impl implements Step2Strategy {
+  public void execute() {
+    System.out.println("stategy1: step2");
+  }
+}
+
+public class Step3Strategy1Impl implements Step3Strategy {
+  public void execute() {
+    System.out.println("stategy1: step3");
+  }
+}
+
+// strategy 2
+
+public class Step1Strategy2Impl implements Step1Strategy {
+  public void execute() {
+    System.out.println("stategy2: step1");
+  }
+}
+
+public class Step2Strategy2Impl implements Step2Strategy {
+  public void execute() {
+    System.out.println("stategy2: step2");
+  }
+}
+
+public class Step3Strategy2Impl implements Step3Strategy {
+  public void execute() {
+    System.out.println("stategy2: step3");
+  }
+}
+
+
+// 2. context's type and it's implementation
+
+interface Context {
+  void setStrategy(Strategy strategy);
+   
+  void execute();
+}
+
+class MyContext implements Context {
+  Strategy strategy;
+ 
+  public void setStrategy(Strategy strategy) {
+    this.strategy = strategy;
+  }
+ 
+  public void execute() {
+    strategy.execute();
+  }
+}
+
+// 3. template algorithms
+
+public class AlgorithmTemplate {  
+  protected Step1Strategy step1;
+  protected Step2Strategy step2;
+  protected Step3Strategy step3;
+
+ 
+  // The "template method"
+  public void someTemplateMethod() {
+    Context context = new MyContext();
+
+    context.setStrategy(step1);
+    context.execute();
+
+    context.setStrategy(step2);
+    context.execute();
+
+    context.setStrategy(step3);
+    context.execute();
+  }  
+
+}
+
+public class MyAlgorithmTemplate1 extends AlgorithmTemplate {  
+  public MyAlgorithmTemplate1() {
+    super();
+
+    step1 = new Step1Strategy1Impl();
+    step2 = new Step2Strategy1Impl();
+    step3 = new Step3Strategy1Impl();
+  }
+}
+
+public class MyAlgorithmTemplate2 extends AlgorithmTemplate {  
+  public MyAlgorithmTemplate2() {
+    super();
+
+    step1 = new Step1Strategy2Impl();
+    step2 = new Step2Strategy2Impl();
+    step3 = new Step3Strategy2Impl();
+  }
+}
+
+
+// test
+
+AlgorithmTemplate template1 = new MyAlgorithmTemplate1();
+AlgorithmTemplate template2 = new MyAlgorithmTemplate2();
+
+template1.someTemplateMethod();
+template2.someTemplateMethod();
+

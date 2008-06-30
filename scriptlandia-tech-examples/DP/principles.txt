@@ -1,0 +1,11 @@
+Design Principles
+
+- Use interfaces and dependency injection to reduce coupling;
+
+- Favor composition over inheritance;
+
+- Separate logic that will evolve at different rates;
+
+- Rely on object identity as little as possible;
+
+- Leverage static typing and generics.

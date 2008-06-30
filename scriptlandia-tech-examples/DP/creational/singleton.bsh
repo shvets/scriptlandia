@@ -2,6 +2,8 @@
 
 // Ensure a class only has one instance and provide a global point of access to it.
 
+// Note: try to avoid singleton (see singleton-corrected.bsh). 
+// Major question: how to test/mock the singleton?
 
 final class MySingleton {
   private static MySingleton instance = new MySingleton();

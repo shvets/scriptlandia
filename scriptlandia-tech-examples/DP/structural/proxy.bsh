@@ -30,6 +30,7 @@ class SubjectProxy implements Subject {
   }
 }
 
+
 // 4. test 
 
 SubjectProxy proxy = new SubjectProxy(new MySubject());
