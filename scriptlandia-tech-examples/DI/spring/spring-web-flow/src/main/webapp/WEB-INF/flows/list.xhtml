@@ -1,0 +1,35 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:sf="http://www.springframework.org/tags/faces"
+	template="/WEB-INF/layouts/standard.xhtml">
+	<ui:define name="content">
+
+		<h:form>
+			<p><h:commandButton value="NEW DATA" action="edit"/></p>
+		</h:form>
+
+		<h:outputText value="No data." rendered="${resultset.rowCount == 0}"/>
+		<h:form>
+		<h:dataTable cellpadding="0" cellspacing="0" border="0" var="l" value="#{resultset}" id="list" rendered="${resultset.rowCount != 0}">
+			<h:column>
+				<f:facet name="header">Name</f:facet>
+				#{l.name}
+			</h:column>
+			<h:column>
+				<f:facet name="header">E-mail</f:facet>
+				#{l.email}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Status</f:facet>
+				#{l.status}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Actions</f:facet>
+				<h:commandButton value="Edit" action="edit"/>
+				<h:commandButton value="Remove" action="remove"/>
+			</h:column>
+		</h:dataTable>
+		</h:form>
+
+	</ui:define>
+</ui:composition>

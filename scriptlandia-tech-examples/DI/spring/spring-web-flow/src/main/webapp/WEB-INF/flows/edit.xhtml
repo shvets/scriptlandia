@@ -1,0 +1,46 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:sf="http://www.springframework.org/tags/faces"
+	template="/WEB-INF/layouts/standard.xhtml">
+	<ui:define name="content">
+
+		<h:form id="editForm">
+		<h:panelGrid columns="3">
+			<h:outputLabel for="name">Name:</h:outputLabel>
+			<h:panelGroup id="name">
+	        	<h:inputText id="nameFirst" value="#{data.name.first}" required="true" size="7"/>
+				<h:inputText id="nameLast" value="#{data.name.last}" size="10"/>
+			</h:panelGroup>
+			<h:message for="nameFirst"/>
+
+			<h:outputLabel for="female">Gender:</h:outputLabel>
+			<h:selectOneRadio id="female" value="#{data.female}">
+				<f:selectItem itemLabel="Female" itemValue="true"/>
+				<f:selectItem itemLabel="Male" itemValue="false"/>
+			</h:selectOneRadio>
+			<h:message for="female"/>
+
+			<h:outputLabel for="status">Status:</h:outputLabel>
+			<h:selectOneMenu id="status" value="#{data.status}">
+				<f:selectItem itemLabel="Single" itemValue="SINGLE"/>
+				<f:selectItem itemLabel="Merried" itemValue="MERRIED"/>
+				<f:selectItem itemLabel="Divorced" itemValue="DIVORCED"/>
+			</h:selectOneMenu>
+			<h:message for="status"/>
+
+			<h:outputLabel for="email">E-mail:</h:outputLabel>
+			<h:inputText id="email" value="#{data.email}" size="30"/>
+			<h:message for="email"/>
+
+			<h:outputLabel for="workExperience">Years experience:</h:outputLabel>
+			<h:inputText id="workExperience" value="#{data.workExperience}" size="2"/>
+			<h:message for="workExperience"/>
+		</h:panelGrid>
+		<div>
+			<h:commandButton value="Done" action="done"/>
+			<h:commandButton value="Cancel" action="cancel" immediate="true"/>
+		</div>
+		</h:form>
+
+	</ui:define>
+</ui:composition>
