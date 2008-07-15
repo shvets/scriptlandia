@@ -774,7 +774,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
           System.setProperty(name + ".version", "");
         }
 
-        Map properties = (Map)language.get("properties");
+        /*Map properties = (Map)language.get("properties");
 
         if(properties != null) {
           Iterator iterator = properties.keySet().iterator();
@@ -782,9 +782,11 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
           while(iterator.hasNext()) {
             String key = (String)iterator.next();
 
-            System.setProperty(key, null);
+            if(key != null) {
+              System.setProperty(key, null);
+            }
           }
-        }
+        }*/
       }
 
       try {

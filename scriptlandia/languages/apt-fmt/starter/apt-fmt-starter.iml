@@ -561,29 +561,29 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant:1.7.0">
+      <library name="org.apache.ant:ant:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant/1.7.0/ant-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant/1.7.1/ant-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant/1.7.0/ant-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant/1.7.1/ant-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant/1.7.0/ant-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant/1.7.1/ant-1.7.1-sources.jar!/" />
           <root url="intellijad://intellijad" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-launcher:1.7.0">
+      <library name="org.apache.ant:ant-launcher:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-launcher/1.7.1/ant-launcher-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-launcher/1.7.1/ant-launcher-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-launcher/1.7.1/ant-launcher-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -614,15 +614,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="commons-beanutils:commons-beanutils:1.7.0">
+      <library name="commons-beanutils:commons-beanutils:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/commons-beanutils/commons-beanutils/1.7.1/commons-beanutils-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/commons-beanutils/commons-beanutils/1.7.1/commons-beanutils-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/commons-beanutils/commons-beanutils/1.7.1/commons-beanutils-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -835,15 +835,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-junit:1.7.0">
+      <library name="org.apache.ant:ant-junit:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-junit/1.7.0/ant-junit-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-junit/1.7.1/ant-junit-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-junit/1.7.0/ant-junit-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-junit/1.7.1/ant-junit-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-junit/1.7.0/ant-junit-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-junit/1.7.1/ant-junit-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -991,15 +991,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-apache-bcel:1.7.0">
+      <library name="org.apache.ant:ant-apache-bcel:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-bcel/1.7.0/ant-apache-bcel-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-bcel/1.7.1/ant-apache-bcel-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-bcel/1.7.0/ant-apache-bcel-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-bcel/1.7.1/ant-apache-bcel-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-bcel/1.7.0/ant-apache-bcel-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-bcel/1.7.1/ant-apache-bcel-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -1017,15 +1017,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-apache-bsf:1.7.0">
+      <library name="org.apache.ant:ant-apache-bsf:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-bsf/1.7.0/ant-apache-bsf-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-bsf/1.7.1/ant-apache-bsf-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-bsf/1.7.0/ant-apache-bsf-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-bsf/1.7.1/ant-apache-bsf-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-bsf/1.7.0/ant-apache-bsf-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-bsf/1.7.1/ant-apache-bsf-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -1043,15 +1043,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-apache-log4j:1.7.0">
+      <library name="org.apache.ant:ant-apache-log4j:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-log4j/1.7.0/ant-apache-log4j-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-log4j/1.7.1/ant-apache-log4j-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-log4j/1.7.0/ant-apache-log4j-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-log4j/1.7.1/ant-apache-log4j-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-log4j/1.7.0/ant-apache-log4j-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-log4j/1.7.1/ant-apache-log4j-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -1069,15 +1069,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-apache-oro:1.7.0">
+      <library name="org.apache.ant:ant-apache-oro:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-oro/1.7.0/ant-apache-oro-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-oro/1.7.1/ant-apache-oro-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-oro/1.7.0/ant-apache-oro-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-oro/1.7.1/ant-apache-oro-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-oro/1.7.0/ant-apache-oro-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-oro/1.7.1/ant-apache-oro-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -1095,15 +1095,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-apache-regexp:1.7.0">
+      <library name="org.apache.ant:ant-apache-regexp:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-regexp/1.7.0/ant-apache-regexp-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-regexp/1.7.1/ant-apache-regexp-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-regexp/1.7.0/ant-apache-regexp-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-regexp/1.7.1/ant-apache-regexp-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-regexp/1.7.0/ant-apache-regexp-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-regexp/1.7.1/ant-apache-regexp-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -1121,15 +1121,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-apache-resolver:1.7.0">
+      <library name="org.apache.ant:ant-apache-resolver:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-resolver/1.7.0/ant-apache-resolver-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-resolver/1.7.1/ant-apache-resolver-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-resolver/1.7.0/ant-apache-resolver-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-resolver/1.7.1/ant-apache-resolver-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-resolver/1.7.0/ant-apache-resolver-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apache-resolver/1.7.1/ant-apache-resolver-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -1147,15 +1147,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-commons-logging:1.7.0">
+      <library name="org.apache.ant:ant-commons-logging:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-commons-logging/1.7.0/ant-commons-logging-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-commons-logging/1.7.1/ant-commons-logging-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-commons-logging/1.7.0/ant-commons-logging-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-commons-logging/1.7.1/ant-commons-logging-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-commons-logging/1.7.0/ant-commons-logging-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-commons-logging/1.7.1/ant-commons-logging-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -1173,15 +1173,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-commons-net:1.7.0">
+      <library name="org.apache.ant:ant-commons-net:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-commons-net/1.7.0/ant-commons-net-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-commons-net/1.7.1/ant-commons-net-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-commons-net/1.7.0/ant-commons-net-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-commons-net/1.7.1/ant-commons-net-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-commons-net/1.7.0/ant-commons-net-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-commons-net/1.7.1/ant-commons-net-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -1199,15 +1199,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-javamail:1.7.0">
+      <library name="org.apache.ant:ant-javamail:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-javamail/1.7.0/ant-javamail-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-javamail/1.7.1/ant-javamail-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-javamail/1.7.0/ant-javamail-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-javamail/1.7.1/ant-javamail-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-javamail/1.7.0/ant-javamail-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-javamail/1.7.1/ant-javamail-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -1238,15 +1238,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-jdepend:1.7.0">
+      <library name="org.apache.ant:ant-jdepend:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-jdepend/1.7.0/ant-jdepend-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-jdepend/1.7.1/ant-jdepend-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-jdepend/1.7.0/ant-jdepend-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-jdepend/1.7.1/ant-jdepend-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-jdepend/1.7.0/ant-jdepend-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-jdepend/1.7.1/ant-jdepend-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -1264,106 +1264,106 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-jsch:1.7.0">
+      <library name="org.apache.ant:ant-jsch:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-jsch/1.7.0/ant-jsch-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-jsch/1.7.1/ant-jsch-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-jsch/1.7.0/ant-jsch-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-jsch/1.7.1/ant-jsch-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-jsch/1.7.0/ant-jsch-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-jsch/1.7.1/ant-jsch-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-nodeps:1.7.0">
+      <library name="org.apache.ant:ant-nodeps:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-nodeps/1.7.0/ant-nodeps-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-nodeps/1.7.1/ant-nodeps-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-nodeps/1.7.0/ant-nodeps-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-nodeps/1.7.1/ant-nodeps-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-nodeps/1.7.0/ant-nodeps-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-nodeps/1.7.1/ant-nodeps-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-swing:1.7.0">
+      <library name="org.apache.ant:ant-swing:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-swing/1.7.0/ant-swing-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-swing/1.7.1/ant-swing-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-swing/1.7.0/ant-swing-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-swing/1.7.1/ant-swing-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-swing/1.7.0/ant-swing-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-swing/1.7.1/ant-swing-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-testutil:1.7.0">
+      <library name="org.apache.ant:ant-testutil:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-testutil/1.7.0/ant-testutil-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-testutil/1.7.1/ant-testutil-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-testutil/1.7.0/ant-testutil-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-testutil/1.7.1/ant-testutil-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-testutil/1.7.0/ant-testutil-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-testutil/1.7.1/ant-testutil-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-trax:1.7.0">
+      <library name="org.apache.ant:ant-trax:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-trax/1.7.0/ant-trax-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-trax/1.7.1/ant-trax-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-trax/1.7.0/ant-trax-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-trax/1.7.1/ant-trax-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-trax/1.7.0/ant-trax-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-trax/1.7.1/ant-trax-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-pack200:1.7.0">
+      <library name="org.apache.ant:ant-pack200:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-pack200/1.7.0/ant-pack200-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-pack200/1.7.1/ant-pack200-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-pack200/1.7.0/ant-pack200-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-pack200/1.7.1/ant-pack200-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-pack200/1.7.0/ant-pack200-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-pack200/1.7.1/ant-pack200-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-apt:1.7.0">
+      <library name="org.apache.ant:ant-apt:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apt/1.7.0/ant-apt-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apt/1.7.1/ant-apt-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apt/1.7.0/ant-apt-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apt/1.7.1/ant-apt-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-apt/1.7.0/ant-apt-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-apt/1.7.1/ant-apt-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.apache.ant:ant-antlr:1.7.0">
+      <library name="org.apache.ant:ant-antlr:1.7.1">
         <CLASSES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-antlr/1.7.0/ant-antlr-1.7.0.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-antlr/1.7.1/ant-antlr-1.7.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-antlr/1.7.0/ant-antlr-1.7.0-javadoc.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-antlr/1.7.1/ant-antlr-1.7.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$maven-repository$/org/apache/ant/ant-antlr/1.7.0/ant-antlr-1.7.0-sources.jar!/" />
+          <root url="jar://$maven-repository$/org/apache/ant/ant-antlr/1.7.1/ant-antlr-1.7.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

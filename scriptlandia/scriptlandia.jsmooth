@@ -59,7 +59,7 @@
 
   <javaProperties>
     <name>ant.version.internal</name>
-    <value>1.7.0</value>
+    <value>1.7.1</value>
   </javaProperties>
 
   <javaProperties>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<language name="ant" groupId="org.apache.ant" artifactId="ant" version="1.7.0">
+<language name="ant" groupId="org.apache.ant" artifactId="ant" version="1.7.1">
   <registration mimeType="application/ant" icon="ant.ico">
     <extensions>
       <extension>ant</extension>

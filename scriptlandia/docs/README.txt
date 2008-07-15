@@ -180,7 +180,7 @@ log4j          1.2.13       http://logging.apache.org/log4j
 MicroEmu       2.0.1        http://microemu.org
 
 Maven          2.0.9        http://maven.apache.org
-Ant            1.7.0        http://ant.apache.org
+Ant            1.7.1        http://ant.apache.org
 Ivy            2.0.0-beta2  http://ant.apache.org/ivy
 BSF            2.4.0        http://jakarta.apache.org/bsf
 Beanshell      2.0b5        http://www.beanshell.org/bsh-2.0b5.jar

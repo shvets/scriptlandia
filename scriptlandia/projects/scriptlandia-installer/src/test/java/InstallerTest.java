@@ -11,7 +11,7 @@ public class InstallerTest extends TestCase {
     super.setUp();
 
     System.setProperty("repository.home", "c:/maven-repository");
-    System.setProperty("ant.version.internal", "1.7.0");    
+    System.setProperty("ant.version.internal", "1.7.1");    
     //System.setProperty("jlaunchpad.home", "c:/launcher");
   }
 

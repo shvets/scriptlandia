@@ -12,7 +12,7 @@
 
   <properties>
     <groovy.version>1.5.6</groovy.version>
-    <ant.version>1.7.0</ant.version>
+    <ant.version>1.7.1</ant.version>
   </properties>
 
   <dependencies>

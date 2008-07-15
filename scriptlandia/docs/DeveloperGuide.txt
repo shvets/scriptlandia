@@ -529,8 +529,8 @@ with Ant API:
 
 // run-ant.bsh
 
-addClassPath("ant-1.7.0.jar");
-addClassPath("ant-launcher-1.7.0.jar");
+addClassPath("ant-1.7.1.jar");
+addClassPath("ant-launcher-1.7.1.jar");
 
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.ProjectHelper;

@@ -18,7 +18,7 @@
   <inceptionYear>2006</inceptionYear>
 
   <properties>
-    <ant.version>1.7.0</ant.version>
+    <ant.version>1.7.1</ant.version>
     <jlaunchpad.version>1.0.2</jlaunchpad.version>
   </properties>
     

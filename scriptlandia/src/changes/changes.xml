@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+?xml version="1.0" encoding="ISO-8859-1"?>
 
 <document>
   <properties>
@@ -397,6 +397,10 @@
 
       <action dev="Alexander Shvets" type="add">
         Added support for Fan language ver. 1.0.27.
+      </action>
+
+      <action dev="Alexander Shvets" type="fix">
+        Upgraded to Ant version 1.7.1.
       </action>
     </release>
   </body>

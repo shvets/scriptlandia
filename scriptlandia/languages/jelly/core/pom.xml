@@ -12,7 +12,7 @@
 
   <properties>
     <jelly.version>1.0</jelly.version>
-    <ant.version>1.7.0</ant.version>
+    <ant.version>1.7.1</ant.version>
   </properties>
 
   <dependencies>
