@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="html-cleaner" default="run" basedir=".">
+
+  <target name="run">
+    <script language="beanshell"> <![CDATA[
+      org.sf.scriptlandia.ScriptlandiaHelper.resolveDependencies("htmlcleaner", "htmlcleaner", "2.0");
+    ]]></script>
+
+    <taskdef name="htmlcleaner" classname="org.htmlcleaner.HtmlCleanerForAnt"/>
+
+    <htmlcleaner src = "bookmarks.html" dest = "bookmarks2.html"
+            outputtype = "simple" 
+    >
+        
+    </htmlcleaner>
+
+<!--
+
+            [incharset = "..."]
+
+            [outcharset = "..."] 
+            [taginfofile = "..."] 
+            [outputtype = "simple" | "compact" | "pretty"]
+            [advancedxmlescape = "true" | "false"]
+            [usecdata = "true" | "false"]
+            [specialentities = "true" | "false"]
+            [unicodechars = "true" | "false"]
+            [omitunknowntags = "true" | "false"]
+            [treatunknowntagsascontent = "true" | "false"]
+            [omitdeprtags = "true" | "false"]
+            [treatdeprtagsascontent = "true" | "false"]
+            [omitcomments = "true" | "false"]
+            [omitxmldecl = "true" | "false"]
+            [omitdoctypedecl = "true" | "false"]
+            [omithtmlenvelope = "true" | "false"]
+            [useemptyelementtags = "true" | "false"]
+            [allowmultiwordattributes = "true" | "false"]
+            [allowhtmlinsideattributes = "true" | "false"]
+            [ignoreqe = "true" | "false"]
+            [namespacesaware = "true" | "false"]
+            [hyphenreplacement = "..."]>
+            [prunetags = "..."]
+            [booleanatts = "true" | "false"]
+            [nodebyxpath = "..."] >
+
+-->
+  </target>
+
+</project>
