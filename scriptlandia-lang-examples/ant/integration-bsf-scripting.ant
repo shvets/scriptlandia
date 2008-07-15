@@ -105,4 +105,12 @@
     </script>
   </target>
 
+  <target name="javafx">
+    <configure-language name="javafx" manager="bsf"/>
+
+    <script language="javafx">
+      //print "Hello World from Jaskell!"
+    </script>
+  </target>
+
 </project>
