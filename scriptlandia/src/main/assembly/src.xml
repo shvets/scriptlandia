@@ -57,6 +57,14 @@
 
         <include>scriptlandia-nailgun/pom.xml</include>
         <include>scriptlandia-nailgun/src/**</include>
+
+        <include>javax-scripting-jsr223/**/pom.xml</include>
+        <include>javax-scripting-jsr223/javafx/src/**</include>
+        <include>javax-scripting-jsr223/script-api/src/**</include>
+        <include>javax-scripting-jsr223/sleep/src/**</include>
+
+        <include>javax-scripting-jsr223/*.*</include>
+        <include>javax-scripting-jsr223/*.zip</include>
       </includes>
     </fileSet>
 

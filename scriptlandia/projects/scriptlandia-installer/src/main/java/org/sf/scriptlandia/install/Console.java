@@ -36,10 +36,10 @@ public class Console {
     consoleArea.setEditable(false);
 
     JPanel panel11 = new JPanel();
-    panel11.setLayout(new BoxLayout(panel11, BoxLayout.X_AXIS));
+    //panel11.setLayout(new BoxLayout(panel11, BoxLayout.X_AXIS));
 
     consoleArea.setRows(25);
-    consoleArea.setColumns(80);
+    consoleArea.setColumns(70);
   }
 
   public JComponent getComponent() {

@@ -156,7 +156,8 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
 
   public JPanel createContent() {
     JPanel panel = new JPanel();
-    panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+    //panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+    panel.setLayout(new BorderLayout());
 
     JComponent basicSettingPanel = makeBasicSettingsPanel();
     tabbedPane.addTab("Basic Settings", null, basicSettingPanel, "Specifies important locations.");
@@ -187,11 +188,11 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     //The following line enables to use scrolling tabs.
     tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 
-    panel.add(Box.createRigidArea(new Dimension(0, 10)));
-    panel.add(tabbedPane);
-    panel.add(Box.createRigidArea(new Dimension(0, 10)));
-    panel.add(makeInstallPanel());
-    panel.add(Box.createRigidArea(new Dimension(0, 10)));
+    //panel.add(Box.createRigidArea(new Dimension(0, 10)));
+    panel.add(tabbedPane, BorderLayout.CENTER);
+    //panel.add(Box.createRigidArea(new Dimension(0, 10)));
+    panel.add(makeInstallPanel(), BorderLayout.SOUTH);
+    //panel.add(Box.createRigidArea(new Dimension(0, 10)));
 
     return panel;
   }
@@ -317,15 +318,15 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
 
   private JPanel makeConsolePanel() {
     JPanel panel = new JPanel();
-    panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+    //panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
     JPanel panel11 = new JPanel();
-    panel11.setLayout(new BoxLayout(panel11, BoxLayout.X_AXIS));
+    //panel11.setLayout(new BoxLayout(panel11, BoxLayout.X_AXIS));
 
-    panel11.add(new JScrollPane(console.getComponent()));
+    panel11.add(new JScrollPane(console.getComponent(), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS));
 
     JPanel panel12 = new JPanel();
-    panel12.setLayout(new BoxLayout(panel12, BoxLayout.X_AXIS));
+    //panel12.setLayout(new BoxLayout(panel12, BoxLayout.X_AXIS));
 
     JButton clearButton = new JButton("Clear Console");
     clearButton.addActionListener(new ActionListener() {
@@ -338,7 +339,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     panel12.add(clearButton);
 
     panel.add(panel11);
-    panel.add(Box.createRigidArea(new Dimension(0, 10)));
+    //panel.add(Box.createRigidArea(new Dimension(0, 10)));
     panel.add(panel12);
 
     return panel;
@@ -420,6 +421,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     panel.add(panel10);
     panel.add(Box.createRigidArea(new Dimension(0, 10)));
     panel.add(panel11);
+    panel.add(Box.createRigidArea(new Dimension(0, 10)));
 
     return panel;
   }
