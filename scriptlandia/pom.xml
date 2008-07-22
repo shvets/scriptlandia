@@ -163,6 +163,12 @@
                     <include name="**/starter/target/**"/>
                   </fileset>
                 </delete>
+
+                <delete includeemptydirs="true">
+                  <fileset dir="projects/javax-scripting-jsr223">
+                    <include name="**/target/**"/>
+                  </fileset>
+                </delete>
               </tasks>
             </configuration>
             <goals>
