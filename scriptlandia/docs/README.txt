@@ -190,7 +190,7 @@ Jelly          1.0          http://jakarta.apache.org/commons/jelly
 Velocity       1.5          http://velocity.apache.org
 Freemarker     2.3.9        http://freemarker.sourceforge.net
 Velocity Tools 1.1          http://jakarta.apache.org/velocity
-JRuby          1.1.2        http://jruby.codehaus.org
+JRuby          1.1.3        http://jruby.codehaus.org
 Pnuts          1.2          https://pnuts.dev.java.net
 Jython         2.2.1        http://www.jython.org
 Scriptlandia   2.2.5        http://sourceforge.net/projects/scriptlandia

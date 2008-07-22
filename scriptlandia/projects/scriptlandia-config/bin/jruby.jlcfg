@@ -1,7 +1,7 @@
 # jruby.jlcfg
 
 <set.variables>
-JRUBY_VERSION=1.1.2
+JRUBY_VERSION=1.1.3
 
 <java.system.props>
 classworlds.conf=@scriptlandia.home@/scriptlandia.conf

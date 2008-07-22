@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <project name="install.ant" default="install" basedir=".">
-  <property name="jruby.version" value="1.1.2"/>
+  <property name="jruby.version" value="1.1.3"/>
 
   <property name="jruby.base" 
             value="${repository.home}/org/jruby/jruby/${jruby.version}"/>
@@ -18,6 +18,19 @@
     </condition>
 
     <antcall target="unzip.jruby.lib"/>
+
+    <filterset id="copy.filterset">
+      <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
+    </filterset>
+
+    <copy todir="${scriptlandia.home}" overwrite="true">
+      <filterset refid="copy.filterset"/>
+
+      <fileset dir=".">
+        <include name="jrake.*"/>
+        <include name="jgem.*"/>
+      </fileset>
+    </copy>
   </target>
 
   <target name="unzip.jruby.lib" unless="jruby.lib.is.unzipped">
