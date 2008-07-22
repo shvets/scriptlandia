@@ -29,6 +29,7 @@
       <fileset dir=".">
         <include name="jrake.*"/>
         <include name="jgem.*"/>
+        <include name="jrails.*"/>
       </fileset>
     </copy>
   </target>
