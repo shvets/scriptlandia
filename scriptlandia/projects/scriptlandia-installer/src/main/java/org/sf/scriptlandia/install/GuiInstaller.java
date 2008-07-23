@@ -5,6 +5,7 @@ import org.sf.jlaunchpad.JLaunchPadLauncher;
 import org.sf.jlaunchpad.LauncherException;
 import org.sf.jlaunchpad.install.LauncherProperties;
 import org.sf.jlaunchpad.util.StringUtil;
+import org.sf.scriptlandia.install.ExtXmlHelper;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
@@ -499,21 +500,34 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
 
         executeSingleLanguageButton.addActionListener(new ActionListener() {
           public void actionPerformed(ActionEvent e) {
-            String name = (String) ((Map) languageCombo.getSelectedItem()).get("name");
+            final String name = (String) ((Map) languageCombo.getSelectedItem()).get("name");
 
-            try {
-              if (installLanguageCheckBox.isSelected()) {
-                blockControls("Installing \"" + name + "\" language...");
-                installLanguage(name, languages);
-                unblockControls("Language \"" + name + "\" installed.");
-              } else {
-                blockControls("Unnstalling \"" + name + "\" language...");
-                uninstallLanguage(name, languages);
-                unblockControls("Language \"" + name + "\" uninstalled.");
+            Thread thread = new Thread() {
+              public void run() {
+                try {
+                  if (installLanguageCheckBox.isSelected()) {
+                    blockControls("Installing \"" + name + "\" language...");
+                    installLanguage(name, languages);
+
+                    ExtXmlHelper xmlHelper = new ExtXmlHelper();
+                    xmlHelper.readLanguages("languages");
+
+                    xmlHelper.copyProperties(System.getProperty("user.home") + "/.scriptlandia");
+
+                    unblockControls("Language \"" + name + "\" installed.");
+                  } else {
+                    blockControls("Unnstalling \"" + name + "\" language...");
+                    uninstallLanguage(name, languages);
+                    unblockControls("Language \"" + name + "\" uninstalled.");
+                  }
+                }
+                catch (Exception e) {
+                  e.printStackTrace();
+                }
               }
-            } catch (Exception e1) {
-              e1.printStackTrace();
-            }
+            };
+
+            thread.start();
           }
         });
 
@@ -750,6 +764,11 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
       catch (IOException e) {
         throw new LauncherException(e);
       }
+
+      ExtXmlHelper xmlHelper = new ExtXmlHelper();
+      xmlHelper.readLanguages("languages");
+
+      xmlHelper.copyProperties(System.getProperty("user.home") + "/.scriptlandia");
 
       super.installLanguageProjects();
     }
