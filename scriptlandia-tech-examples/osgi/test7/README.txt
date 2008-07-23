@@ -1,6 +1,7 @@
 Link:
 http://weblogs.java.net/blog/arungupta/archive/2008/06/totd_36_deploy.html
 http://blogs.sun.com/arungupta/entry/totd_34_using_felix_shell
+http://java.dzone.com/news/from-osgi-glassfish-5-steps
 
 1.
 
@@ -10,7 +11,7 @@ mvn archetype:create -DarchetypeGroupId=org.apache.maven.archetypes -DgroupId=or
 
 3.
 
-mvn install
+mvn package
 
 4. Download and install glassfish v3:
 
@@ -24,4 +25,15 @@ ${com.sun.aas.installRootURI}/felix/bundle/org.apache.felix.shell.tui.jar
 
 5. Run glassfish:
 
-start java -jar C:\Work\glassfishv3-tp2\glassfish\modules\glassfish-10.0-tp-2-SNAPSHOT.jar
+start java -DGlassFish_Platform=Felix -jar C:\Work\glassfishv3-tp2\glassfish\modules\glassfish-10.0-tp-2-SNAPSHOT.jar
+
+6.
+
+felix>help
+felix>ps
+
+felix>install file:///C:\Work\scriptlandia\trunk\scriptlandia-tech-examples\osgi\test7\helloworld\target\helloworld-1.0-SNAPSHOT.jar 
+
+felix>start 68
+felix>stop 68
+felix>uninstall 68
