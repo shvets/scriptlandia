@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<language name="fan" groupId="fan" artifactId="fan-sys" version="1.0.27">
+<language name="fan" groupId="fan" artifactId="fan-sys" version="1.0.29">
   <registration mimeType="application/fan" icon="scriptlandia.ico">
     <extensions>
       <extension>fan</extension>

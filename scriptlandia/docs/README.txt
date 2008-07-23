@@ -209,7 +209,7 @@ LOLCODE        0.11         http://code.google.com/p/lolcode-java
 Clojure        20080213     http://clojure.sourceforge.net
 P~ (Ptilde)    0.90         http://ptilde.pbwiki.com
 YOIX           2.1.10       http://www.yoix.org
-Fan            1.0.27       http://www.fandev.org
+Fan            1.0.29       http://www.fandev.org
 
 e-mail:        alexander.shvets@gmail.com, shvets_alexander@yahoo.com
 home-page:     http://home.comcast.net/~shvets

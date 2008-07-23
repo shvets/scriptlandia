@@ -11,7 +11,7 @@
   <description>Scriptlandia Fan Core Module</description>
 
   <properties>
-    <fan.version>1.0.27</fan.version>
+    <fan.version>1.0.29</fan.version>
   </properties>
 
   <dependencies>
