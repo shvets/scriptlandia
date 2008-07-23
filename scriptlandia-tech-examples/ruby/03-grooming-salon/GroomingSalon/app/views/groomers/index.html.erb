@@ -1,0 +1,24 @@
+<h1>Listing Groomers</h1>
+
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Notes</th>
+  </tr>
+
+<% for groomer in @groomers %>
+  <tr>
+    <td><%=h groomer.firstName %></td>
+    <td><%=h groomer.lastName %></td>
+    <td><%=h groomer.notes %></td>
+    <td><%= link_to 'Show', groomer %></td>
+    <td><%= link_to 'Edit', edit_groomer_path(groomer) %></td>
+    <td><%= link_to 'Destroy', groomer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Groomer', new_groomer_path %>

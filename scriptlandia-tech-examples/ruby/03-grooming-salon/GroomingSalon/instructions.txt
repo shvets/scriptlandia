@@ -55,12 +55,14 @@ jruby script\generate scaffold PetOwner firstName:string lastName:string homePho
 
 jruby script\generate scaffold Appointment appointmentDate:datetime price:string
 
+jruby script\generate scaffold Groomer firstName:string lastName:string notes:text
+
 
 7.
 
-jrake db:drop:all; 
-jrake db:create:all; 
-jrake db:migrate; 
+jrake db:drop:all 
+jrake db:create:all 
+jrake db:migrate 
 jrake test
 
 jrake db:version

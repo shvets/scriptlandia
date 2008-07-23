@@ -1,3 +1,39 @@
+
+<p>
+  <b>Name:</b>
+  <%=h @pet.name %>
+</p>
+
+<p>
+  <b>Breed:</b>
+  <%=h @pet.breed %>
+</p>
+
+<p>
+  <b>Sex:</b>
+  <%=h @pet.sex %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%=h @pet.size %>
+</p>
+
+<p>
+  <b>Color:</b>
+  <%=h @pet.color %>
+</p>
+
+<p>
+  <b>Birthdate:</b>
+  <%=h @pet.birthDate %>
+</p>
+
+<p>
+  <b>Pet Owner:</b>
+  <%=h @pet.pet_owner.name %>
+</p>
+
 <p>
   <b>Veterinar:</b>
   <%=h @pet.veterinar %>
@@ -14,33 +50,13 @@
 </p>
 
 <p>
-  <b>Breed:</b>
-  <%=h @pet.breed %>
+  <b>Special Instructions:</b>
+  <%=h @pet.specialInstructions %>
 </p>
 
 <p>
-  <b>Size:</b>
-  <%=h @pet.size %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%=h @pet.name %>
-</p>
-
-<p>
-  <b>Sex:</b>
-  <%=h @pet.sex %>
-</p>
-
-<p>
-  <b>Color:</b>
-  <%=h @pet.color %>
-</p>
-
-<p>
-  <b>Birthdate:</b>
-  <%=h @pet.birthDate %>
+  <b>Behavior:</b>
+  <%=h @pet.behavior %>
 </p>
 
 <p>
@@ -58,21 +74,6 @@
   <%=h @pet.clip3 %>
 </p>
 
-<p>
-  <b>Special Instructions:</b>
-  <%=h @pet.specialInstructions %>
-</p>
-
-<p>
-  <b>Behavior:</b>
-  <%=h @pet.behavior %>
-</p>
-
-<p>
-  <b>Pet Owner:</b>
-  <%=h @pet.pet_owner.firstName %> <%=h @pet.pet_owner.lastName %>
-
-</p>
 
 
 <%= link_to 'Edit', edit_pet_path(@pet) %> |

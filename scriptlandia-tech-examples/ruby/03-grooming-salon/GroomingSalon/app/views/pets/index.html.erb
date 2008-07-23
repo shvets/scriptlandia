@@ -1,13 +1,58 @@
-<h1>Listing pets</h1>
+<h1>Listing Pets</h1>
 
 <% if @pets.empty? %>
   <h2>We don't have any pets.</h2>
 <% else %>
 
-  <%= render :partial => 'pet_listings' %>
+  <table border="1">
+    <tr>
+      <th>Veterinar</th>
+      <th>Referred by</th>
+      <th>Medical Problems</th>
+      <th>Breed</th>
+      <th>Size</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Color</th>
+      <th>Birth Date</th>
+      <th>Clip1</th>
+      <th>Clip2</th>
+      <th>Clip3</th>
+      <th>Special Instructions</th>
+      <th>Behavior</th>
+      <th>Petowner</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% for pet in @pets %>
+    <tr>
+      <td><%=h pet.veterinar %></td>
+      <td><%=h pet.referredBy %></td>
+      <td><%=h pet.medicalProblems %></td>
+      <td><%=h pet.breed %></td>
+      <td><%=h pet.size %></td>
+      <td><%=h pet.name %></td>
+      <td><%=h pet.sex %></td>
+      <td><%=h pet.color %></td>
+      <td><%=h pet.birthDate %></td>
+      <td><%=h pet.clip1 %></td>
+      <td><%=h pet.clip2 %></td>
+      <td><%=h pet.clip3 %></td>
+      <td><%=h pet.specialInstructions %></td>
+      <td><%=h pet.behavior %></td>
+      <td><%=h pet.pet_owner.name %></td>
+
+      <td><%= link_to 'Show', pet %></td>
+      <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
+      <td><%= link_to 'Destroy', pet, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  </table>
 
   <br />
 
 <% end %>
 
-<%= link_to 'New pet', new_pet_path %>
+<%= link_to 'New Pet', new_pet_path %>

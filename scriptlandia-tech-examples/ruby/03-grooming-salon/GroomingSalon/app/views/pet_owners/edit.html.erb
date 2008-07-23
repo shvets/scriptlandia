@@ -1,35 +1,7 @@
-<h1>Editing pet_owner</h1>
+<h1>Editing Pet Owner</h1>
 
 <% form_for(@pet_owner) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :firstName %><br />
-    <%= f.text_field :firstName %>
-  </p>
-  <p>
-    <%= f.label :lastName %><br />
-    <%= f.text_field :lastName %>
-  </p>
-  <p>
-    <%= f.label :homePhone %><br />
-    <%= f.text_field :homePhone %>
-  </p>
-  <p>
-    <%= f.label :workPhone %><br />
-    <%= f.text_field :workPhone %>
-  </p>
-  <p>
-    <%= f.label :cellPhone %><br />
-    <%= f.text_field :cellPhone %>
-  </p>
-  <p>
-    <%= f.label :salutation %><br />
-    <%= f.text_field :salutation %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
+  <%= render :partial => "pet_owner_editor", :locals => { :f => f, :label_text => "Update"} %>
 <% end %>
 
 <%= link_to 'Show', @pet_owner %> |

@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :groomers
+
   map.resources :pets
 
   map.resources :pet_owners

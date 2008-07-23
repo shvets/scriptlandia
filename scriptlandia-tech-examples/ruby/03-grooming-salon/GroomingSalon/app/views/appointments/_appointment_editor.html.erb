@@ -1,0 +1,33 @@
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :'pet Owner' %><br />
+    <%= collection_select(:appointment, :pet_owner_id, PetOwner.find(:all, :order => "lastName"), :id, :name) %>
+  </p>
+
+  <p>
+    <%= f.label :'Pet' %><br />
+    <%= collection_select(:appointment, :pet_id,  Pet.find(:all, :order => "name"), :id, :name) %>
+  </p>
+
+  <p>
+    <%= f.label :'groomer' %><br />
+
+    <%= select( "member", "sex", { "male" => "M", "female" => "F"}) %>
+
+    <%= collection_select(:appointment, :groomer_id,  Groomer.find(:all, :order => "lastName"), :id, :name) %>
+  </p>
+
+  <p>
+    <%= f.label :'appointment Date' %><br />
+    <%= f.datetime_select :appointmentDate %>
+  </p>
+
+  <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>

@@ -1,0 +1,10 @@
+<h1>Editing groomer</h1>
+
+<% form_for(@groomer) do |f| %>
+
+  <%= render :partial => "groomer_editor", :locals => { :f => f, :label_text => "Update"} %>
+
+<% end %>
+
+<%= link_to 'Show', @groomer %> |
+<%= link_to 'Back', groomers_path %>

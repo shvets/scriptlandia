@@ -1,0 +1,8 @@
+1. introduce template pagefor all pages
+
+2. provide home link
+
+3. replace label meta
+
+4. add validations
+

@@ -1,15 +1,9 @@
 <h1>Editing appointment</h1>
 
 <% form_for(@appointment) do |f| %>
-  <%= f.error_messages %>
 
-  <p>
-    <%= f.label :appointmentDate %><br />
-    <%= f.datetime_select :appointmentDate %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
+  <%= render :partial => "appointment_editor", :locals => { :f => f, :label_text => "Update"} %>
+
 <% end %>
 
 <%= link_to 'Show', @appointment %> |

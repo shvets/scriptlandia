@@ -1,20 +1,40 @@
-<h1>Listing appointments</h1>
+<h1>Listing Appointments</h1>
 
-<table>
-  <tr>
-    <th>Appointmentdate</th>
-  </tr>
+<% if @appointments.empty? %>
+  <h2>We don't have any appointment.</h2>
+<% else %>
 
-<% for appointment in @appointments %>
-  <tr>
-    <td><%=h appointment.appointmentDate %></td>
-    <td><%= link_to 'Show', appointment %></td>
-    <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
-    <td><%= link_to 'Destroy', appointment, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <table border="1">
+    <tr>
+      <th>Pet Owner</th>
+      <th>Pet</th>
+      <th>Groomer</th>
+      <th>Appointment Date</th>
+      <th>Price</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% for appointment in @appointments %>
+    <tr>
+
+      <td><%=h appointment.pet_owner.name %></td>
+      <td><%=h appointment.pet.name %></td>
+      <td><%=h appointment.groomer.name %></td>
+      <td><%=h appointment.appointmentDate %></td>
+      <td><%=h appointment.price %></td>
+
+      <td><%= link_to 'Show', appointment %></td>
+      <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
+      <td><%= link_to 'Destroy', appointment, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+
 <% end %>
-</table>
 
-<br />
 
 <%= link_to 'New appointment', new_appointment_path %>
