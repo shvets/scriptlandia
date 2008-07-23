@@ -1,0 +1,12 @@
+<h1>Editing cat</h1>
+
+<% form_for(@cat) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @cat %> |
+<%= link_to 'Back', cats_path %>

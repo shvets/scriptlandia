@@ -1,0 +1,36 @@
+<h1>Editing pet_owner</h1>
+
+<% form_for(@pet_owner) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :firstName %><br />
+    <%= f.text_field :firstName %>
+  </p>
+  <p>
+    <%= f.label :lastName %><br />
+    <%= f.text_field :lastName %>
+  </p>
+  <p>
+    <%= f.label :homePhone %><br />
+    <%= f.text_field :homePhone %>
+  </p>
+  <p>
+    <%= f.label :workPhone %><br />
+    <%= f.text_field :workPhone %>
+  </p>
+  <p>
+    <%= f.label :cellPhone %><br />
+    <%= f.text_field :cellPhone %>
+  </p>
+  <p>
+    <%= f.label :salutation %><br />
+    <%= f.text_field :salutation %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @pet_owner %> |
+<%= link_to 'Back', pet_owners_path %>

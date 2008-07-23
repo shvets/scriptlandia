@@ -1,0 +1,73 @@
+Links: 
+
+http://www.jonathansng.com/ruby-on-rails/ruby-on-rails-tutorial-now-with-more-202
+http://www.jonathansng.com/ruby-on-rails/basic-rails-routing-and-a-journey-into-views-and-controllers/
+http://www.jonathansng.com/technology/restful-design-and-the-http-request/
+http://www.jonathansng.com/ruby-on-rails/rails-relationships/
+http://www.jonathansng.com/ruby-on-rails/basic-http-authentication-and-partials/
+
+http://www.onlamp.com/pub/a/onlamp/2005/03/03/rails.html
+http://www.railsenvy.com/2007/2/28/rails-caching-tutorial
+http://www.oracle.com/technology/pub/articles/haefel-oracle-ruby.html
+http://wiki.rubyonrails.com/rails/pages/UnderstandingValidation
+http://wiki.rubyonrails.com/rails/pages/HowtoValidate
+
+http://www.sitepoint.com/article/learn-ruby-on-rails
+
+http://developer.apple.com/tools/rubyonrails.html
+http://www.tutorialspoint.com/ruby-on-rails/index.htm
+http://www.meshplex.org/wiki/Ruby/Ruby_on_Rails_programming_tutorials
+
+http://robmayhew.com/rails-201-todo-list-tutorial/
+http://www.jonathansng.com/ruby-on-rails/ruby-on-rails-tutorial-now-with-more-202/
+http://fairleads.blogspot.com/2007/12/rails-20-and-scaffolding-step-by-step.html
+
+1.  (2.1.0)
+
+jgem install rails --include-dependencies --no-rdoc --no-ri
+jgem install jruby-openssl --no-rdoc --no-ri
+jgem update --system
+jruby --version
+jgem --version
+jrails --version
+
+2.
+
+jrails --database mysql GroomingSalon
+
+3.
+cd GroomingSalon
+
+4.
+
+start jruby script/server
+
+5.
+jruby script/generate controller homes
+
+6. 
+
+jruby script\generate scaffold Cat
+jruby script\generate scaffold Dog
+
+jruby script\generate scaffold Pet veterinar:string referredBy:string medicalProblems:text breed:string size:string name:string sex:string color:string birthDate:datetime clip1:string clip2:string clip3:string specialInstructions:text behavior:text
+jruby script\generate scaffold PetOwner firstName:string lastName:string homePhone:string workPhone:string cellPhone:string salutation:string
+
+jruby script\generate scaffold Appointment appointmentDate:datetime price:string
+
+
+7.
+
+jrake db:drop:all; 
+jrake db:create:all; 
+jrake db:migrate; 
+jrake test
+
+jrake db:version
+
+
+8. Open your browser to 
+
+http://localhost:3000/cats
+
+jruby script/generate migration add_pet_owner_id_to_pets

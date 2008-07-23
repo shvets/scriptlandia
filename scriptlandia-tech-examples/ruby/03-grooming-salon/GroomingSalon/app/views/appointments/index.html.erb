@@ -1,0 +1,20 @@
+<h1>Listing appointments</h1>
+
+<table>
+  <tr>
+    <th>Appointmentdate</th>
+  </tr>
+
+<% for appointment in @appointments %>
+  <tr>
+    <td><%=h appointment.appointmentDate %></td>
+    <td><%= link_to 'Show', appointment %></td>
+    <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
+    <td><%= link_to 'Destroy', appointment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New appointment', new_appointment_path %>

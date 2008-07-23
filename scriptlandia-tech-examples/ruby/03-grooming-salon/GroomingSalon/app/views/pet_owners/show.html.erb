@@ -1,0 +1,33 @@
+<p>
+  <b>Firstname:</b>
+  <%=h @pet_owner.firstName %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%=h @pet_owner.lastName %>
+</p>
+
+<p>
+  <b>Homephone:</b>
+  <%=h @pet_owner.homePhone %>
+</p>
+
+<p>
+  <b>Workphone:</b>
+  <%=h @pet_owner.workPhone %>
+</p>
+
+<p>
+  <b>Cellphone:</b>
+  <%=h @pet_owner.cellPhone %>
+</p>
+
+<p>
+  <b>Salutation:</b>
+  <%=h @pet_owner.salutation %>
+</p>
+
+
+<%= link_to 'Edit', edit_pet_owner_path(@pet_owner) %> |
+<%= link_to 'Back', pet_owners_path %>

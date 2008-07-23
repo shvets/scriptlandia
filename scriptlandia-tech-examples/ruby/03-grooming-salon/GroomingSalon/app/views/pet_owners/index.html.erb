@@ -1,0 +1,30 @@
+<h1>Listing pet_owners</h1>
+
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Homephone</th>
+    <th>Workphone</th>
+    <th>Cellphone</th>
+    <th>Salutation</th>
+  </tr>
+
+<% for pet_owner in @pet_owners %>
+  <tr>
+    <td><%=h pet_owner.firstName %></td>
+    <td><%=h pet_owner.lastName %></td>
+    <td><%=h pet_owner.homePhone %></td>
+    <td><%=h pet_owner.workPhone %></td>
+    <td><%=h pet_owner.cellPhone %></td>
+    <td><%=h pet_owner.salutation %></td>
+    <td><%= link_to 'Show', pet_owner %></td>
+    <td><%= link_to 'Edit', edit_pet_owner_path(pet_owner) %></td>
+    <td><%= link_to 'Destroy', pet_owner, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New pet_owner', new_pet_owner_path %>

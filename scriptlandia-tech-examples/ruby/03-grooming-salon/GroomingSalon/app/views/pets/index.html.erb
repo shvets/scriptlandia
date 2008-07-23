@@ -1,0 +1,13 @@
+<h1>Listing pets</h1>
+
+<% if @pets.empty? %>
+  <h2>We don't have any pets.</h2>
+<% else %>
+
+  <%= render :partial => 'pet_listings' %>
+
+  <br />
+
+<% end %>
+
+<%= link_to 'New pet', new_pet_path %>
