@@ -7,4 +7,5 @@ class Pet < ActiveRecord::Base
   #validate_format_of :sex, 
   #  :with => "",
   #  :message : "Should be from: M, F"
+
 end

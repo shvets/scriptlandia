@@ -1,4 +1,6 @@
 class PetOwnersController < ApplicationController
+  layout "grooming-salon-layout"
+
   # GET /pet_owners
   # GET /pet_owners.xml
   def index

@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+  layout "grooming-salon-layout"
 
   before_filter :authenticate
 

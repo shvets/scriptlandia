@@ -6,21 +6,9 @@ http://www.jonathansng.com/technology/restful-design-and-the-http-request/
 http://www.jonathansng.com/ruby-on-rails/rails-relationships/
 http://www.jonathansng.com/ruby-on-rails/basic-http-authentication-and-partials/
 
-http://www.onlamp.com/pub/a/onlamp/2005/03/03/rails.html
-http://www.railsenvy.com/2007/2/28/rails-caching-tutorial
-http://www.oracle.com/technology/pub/articles/haefel-oracle-ruby.html
-http://wiki.rubyonrails.com/rails/pages/UnderstandingValidation
-http://wiki.rubyonrails.com/rails/pages/HowtoValidate
-
-http://www.sitepoint.com/article/learn-ruby-on-rails
-
-http://developer.apple.com/tools/rubyonrails.html
 http://www.tutorialspoint.com/ruby-on-rails/index.htm
+http://www.sitepoint.com/article/learn-ruby-on-rails
 http://www.meshplex.org/wiki/Ruby/Ruby_on_Rails_programming_tutorials
-
-http://robmayhew.com/rails-201-todo-list-tutorial/
-http://www.jonathansng.com/ruby-on-rails/ruby-on-rails-tutorial-now-with-more-202/
-http://fairleads.blogspot.com/2007/12/rails-20-and-scaffolding-step-by-step.html
 
 1.  (2.1.0)
 
@@ -57,8 +45,13 @@ jruby script\generate scaffold Appointment appointmentDate:datetime price:string
 
 jruby script\generate scaffold Groomer firstName:string lastName:string notes:text
 
+jruby script\generate scaffold Company name:string address:string
 
 7.
+
+set RAILS_ENV=production
+set RAILS_ENV=test
+set RAILS_ENV=development
 
 jrake db:drop:all 
 jrake db:create:all 
