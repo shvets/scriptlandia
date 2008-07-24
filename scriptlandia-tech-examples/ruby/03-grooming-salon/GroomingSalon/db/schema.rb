@@ -9,19 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080724024805) do
+ActiveRecord::Schema.define(:version => 6) do
 
   create_table "appointments", :force => true do |t|
     t.datetime "appointmentDate"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.float    "price"
     t.integer  "pet_owner_id",    :limit => 11
     t.integer  "groomer_id",      :limit => 11
     t.integer  "pet_id",          :limit => 11
-  end
-
-  create_table "cats", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,11 +24,6 @@ ActiveRecord::Schema.define(:version => 20080724024805) do
   create_table "companies", :force => true do |t|
     t.string   "name"
     t.string   "address"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "dogs", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -58,24 +48,24 @@ ActiveRecord::Schema.define(:version => 20080724024805) do
   end
 
   create_table "pets", :force => true do |t|
+    t.string   "type"
+    t.string   "name"
+    t.string   "sex"
+    t.string   "breed"
+    t.string   "color"
+    t.string   "size"
+    t.datetime "birthDate"
     t.string   "veterinar"
     t.string   "referredBy"
     t.text     "medicalProblems"
-    t.string   "breed"
-    t.string   "size"
-    t.string   "name"
-    t.string   "sex"
-    t.string   "color"
-    t.datetime "birthDate"
+    t.text     "specialInstructions"
+    t.text     "behavior"
     t.string   "clip1"
     t.string   "clip2"
     t.string   "clip3"
-    t.text     "specialInstructions"
-    t.text     "behavior"
-    t.string   "petOwner"
+    t.integer  "pet_owner_id",        :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "pet_owner_id",        :limit => 11
   end
 
 end

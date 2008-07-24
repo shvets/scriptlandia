@@ -6,9 +6,6 @@ class CreateCompanies < ActiveRecord::Migration
 
       t.timestamps
     end
-
-    Company.create :name => "Goochie Pooch", :address => "Rt. 18"
-
   end
 
   def self.down

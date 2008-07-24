@@ -1,4 +1,4 @@
-  <table border="1">
+  <table width="100%">
     <tr>
       <td colspan="3">
         <%= f.error_messages %>
@@ -31,7 +31,8 @@
       </td>
 
       <td>
-        <%= f.label :'birth Date' %>: <%= f.datetime_select :birthDate %>
+        <%= f.label :'birth Date' %>: <%= date_select('range', :birthDate, :order => [:month, :day, :year])%>
+
       </td>
     </tr>
 
@@ -59,9 +60,9 @@
           </tr>
 
           <tr>
-            <td><%= f.text_area :medicalProblems %></td>
-            <td><%= f.text_area :specialInstructions %></td>
-            <td><%= f.text_area :behavior %></td>
+            <td><%= f.text_area :medicalProblems, "cols" => 30, "rows" => 20 %></td>
+            <td><%= f.text_area :specialInstructions, "cols" => 30, "rows" => 20 %></td>
+            <td><%= f.text_area :behavior, "cols" => 30, "rows" => 20 %></td>
           </tr>
         </table>
       </td>

@@ -23,7 +23,7 @@ a:hover {
 
 #page {
   background-color: #f0f0f0;
-  width: 750px;
+  width: 100%;
   margin: 0;
   margin-left: auto;
   margin-right: auto;
@@ -35,7 +35,7 @@ a:hover {
   border: 3px solid #aaa;
   border-top: none;
   padding: 25px;
-  width: 500px;
+  width: 100%;
 }
 
 #footer {
@@ -50,7 +50,7 @@ a:hover {
 
 
 #header {
-  background-image: url("images/rails.png");
+  background-image: url("/images/rails.png");
   background-repeat: no-repeat;
   background-position: top left;
   height: 64px;

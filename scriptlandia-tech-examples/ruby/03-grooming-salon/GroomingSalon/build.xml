@@ -1,0 +1,17 @@
+<project name="build-common" default="run" basedir=".">
+
+  <target name="init.db">
+    <exec executable="jrake.bat">
+      <arg value="db:drop"/>
+    </exec>
+
+    <exec executable="jrake.bat">
+      <arg value="db:create"/>
+    </exec>
+
+    <exec executable="jrake.bat">
+      <arg value="db:migrate"/>
+    </exec>
+   </target>
+
+</project>
