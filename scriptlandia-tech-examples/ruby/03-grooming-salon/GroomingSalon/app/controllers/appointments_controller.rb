@@ -1,6 +1,4 @@
 class AppointmentsController < ApplicationController
-  layout "grooming-salon-layout"
-
   # GET /appointments
   # GET /appointments.xml
   def index

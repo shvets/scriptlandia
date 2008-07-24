@@ -1,6 +1,4 @@
 class GroomersController < ApplicationController
-  layout "grooming-salon-layout"
-
   # GET /groomers
   # GET /groomers.xml
   def index

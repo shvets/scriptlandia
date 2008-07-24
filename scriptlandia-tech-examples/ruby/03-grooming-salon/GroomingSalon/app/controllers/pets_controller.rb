@@ -1,8 +1,4 @@
 class PetsController < ApplicationController
-  layout "grooming-salon-layout"
-
-  before_filter :authenticate
-
   # GET /pets
   # GET /pets.xml
   def index
@@ -84,14 +80,6 @@ class PetsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(pets_url) }
       format.xml  { head :ok }
-    end
-  end
-
-  protected 
-  
-  def authenticate
-    authenticate_or_request_with_http_basic do |user_name, password|
-      user_name == "foo" && password == "bar"
     end
   end
 
