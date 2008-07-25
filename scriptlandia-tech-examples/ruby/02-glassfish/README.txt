@@ -1,7 +1,8 @@
 Link: http://weblogs.java.net/blog/arungupta/archive/2008/07/jruby_113_relea.html
 
 1.
-jgem install rails glassfish --no-ri --no-rdoc
+jgem install rails --no-ri --no-rdoc
+jgem install glassfish --no-ri --no-rdoc
 
 2.
 jrails helloworld -d mysql  
