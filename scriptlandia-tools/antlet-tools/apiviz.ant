@@ -1,0 +1,52 @@
+<!-- apiviz.ant -->
+
+<!-- http://code.google.com/p/apiviz/ -->
+<!-- http://graphviz.org -->
+
+<project name="apiviz" default="run" basedir=".">
+
+  <property name="reports.dir" value="${user.dir}/target/apiviz-reports"/>
+  <property name="src.dir" value="${user.dir}/src/main/java"/>
+  <property name="graphviz.home" value="C:/Program Files/Graphviz2.20"/>
+
+  <path id="project.classpath">
+    <pathelement path="${src.dir}/"/>
+  </path>
+
+  <target name="init">
+    <mkdir dir="${reports.dir}"/>
+
+   <script language="beanshell">
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      ScriptlandiaHelper.resolveDependencies("apiviz", "apiviz", "1.1.3");
+    </script>
+  </target>
+
+  <target name="run" depends="init">
+    <fileset dir="${src.dir}" id="src.files">
+      <include name="**/*.java"/>
+    </fileset>
+  
+    <pathconvert pathsep=" " property="javafiles" refid="src.files"/>
+
+    <java classname="com.sun.tools.javadoc.Main" fork="yes">
+      <arg line="${javafiles} -private"/>
+
+      <arg line="-sourcepath ${src.dir}"/>
+      <arg line="-d ${reports.dir}"/>
+      <arg line="-doclet net.gleamynode.apiviz.APIviz"/>
+      <arg line="-docletpath ${repository.home}/apiviz/apiviz/1.1.3/apiviz-1.1.3.jar"/>
+
+      <env key="PATH" value="${graphviz.home}/bin"/>
+
+     <classpath>
+        <path refid="project.classpath"/>
+        <pathelement location="${java.home}/lib/tools.jar"/>
+        <pathelement location="${java.home}/../lib/tools.jar"/>
+      </classpath>
+    </java>
+  </target>
+
+</project>
+

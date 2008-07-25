@@ -1,0 +1,85 @@
+<!-- umlgraph.ant -->
+
+<!-- http://www.umlgraph.org -->
+<!-- http://graphviz.org -->
+
+<project name="umlgraph" default="run" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+
+  <property name="reports.dir" value="${user.dir}/target/umlgraph-reports"/>
+  <property name="src.dir" value="${user.dir}/src/main/java"/>
+  <property name="graphviz.home" value="C:/Program Files/Graphviz2.20"/>
+  
+  <property environment="env"/>
+  <property name="env.PATH" value="${env.PATH};${graphviz.home}"/>
+
+  <target name="init">
+    <mkdir dir="${reports.dir}"/>
+
+   <script language="beanshell">
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      ScriptlandiaHelper.resolveDependencies("umlgraph", "umlgraph", "5.0");
+    </script>
+
+    <path id="project.classpath">
+      <pathelement path="${src.dir}/"/>
+    </path>
+  </target>
+
+<!--
+    * -attributes   displays fields for a class.
+    * -enumerations shows different enumerations.
+    * -enumconstants shows possible values for enumerations.
+    * -operations displays the Java methods for a class.
+    * -qualify shows fully qualified class names.
+    * -types displays data types for arguments and return types.
+    * -visibility shows field and method modifiers: public, protected, private, or default.
+
+-->
+
+  <target name="run" depends="init">
+   <fileset dir="${src.dir}" id="src.files">
+      <include name="**/*.java"/>
+    </fileset>
+  
+    <pathconvert pathsep=" " property="javafiles" refid="src.files"/>
+
+    <java classname="com.sun.tools.javadoc.Main" fork="yes">
+      <arg line="${javafiles} -private"/>
+
+      <arg line="-sourcepath ${src.dir}"/>
+      <arg line="-d ${reports.dir}"/>
+      <arg line="-doclet org.umlgraph.doclet.UmlGraphDoc"/>
+      <arg line="-docletpath ${repository.home}/umlgraph/umlgraph/5.0/umlgraph-5.0.jar"/>
+
+      <arg value="-attributes"/>
+      <arg value="-enumerations"/>
+      <arg value="-enumconstants"/>
+      <arg value="-operations"/>
+      <arg value="-qualify"/>
+      <arg value="-types"/>
+      <arg value="-visibility"/>
+
+      <env key="PATH" value="${graphviz.home}/bin"/>
+
+     <classpath>
+        <path refid="project.classpath"/>
+        <pathelement location="${java.home}/lib/tools.jar"/>
+        <pathelement location="${java.home}/../lib/tools.jar"/>
+      </classpath>
+    </java>
+ 
+<!--
+    <apply executable="${graphviz.home}/bin/dot" dest="${reports.dir}" parallel="false">
+      <arg value="-Tpng"/>
+      <arg value="-o"/>
+       <targetfile/>
+       <srcfile/>
+       <fileset dir="${reports.dir}" includes="**/*.dot"/>
+       <mapper type="glob" from="*.dot" to="*.png"/>
+    </apply>
+-->
+  </target>
+
+</project>
+

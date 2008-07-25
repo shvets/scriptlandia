@@ -1,0 +1,88 @@
+<!-- schemaspy.ant -->
+
+<!-- http://code.google.com/p/apiviz/ -->
+<!-- http://graphviz.org -->
+
+<project name="schemaspy" default="run" basedir=".">
+
+  <property name="reports.dir" value="${user.dir}/target/schemaspy-reports"/>
+  <property name="src.dir" value="${user.dir}/src/main/java"/>
+  <property name="graphviz.home" value="C:/Program Files/Graphviz2.20"/>
+
+  <property name="jdbc.user" value="root"/>
+  <property name="jdbc.password" value=""/>
+  <property name="jdbc.driver" value="C:/Work/JDBC-drivers/mysql-connector-java-5.1.6-bin.jar"/>
+
+  <path id="project.classpath">
+    <pathelement path="${src.dir}/"/>
+  </path>
+
+  <target name="init">
+    <mkdir dir="${reports.dir}"/>
+
+   <script language="beanshell">
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      ScriptlandiaHelper.resolveDependencies("schemaspy", "schemaspy", "3.1.1");
+    </script>
+  </target>
+
+  <target name="run" depends="init">
+<!--    <fileset dir="${src.dir}" id="src.files">
+      <include name="**/*.java"/>
+    </fileset>
+  
+    <pathconvert pathsep=" " property="javafiles" refid="src.files"/>
+-->
+
+<!--
+    * -t   is the type of database. (Valid values are mysql, ora, db2, and the like.)
+    * -host is name of the machine where the database is hosted.
+    * -port is the port number for the database URL.
+    * -u is the database username.
+    * -p is the database password.
+    * -cp is the classpath (used to indicate the location of the database driver JAR file).
+    * -o is the output directory location.
+
+-->
+    <java classname="net.sourceforge.schemaspy.Main" 
+          output="${reports.dir}/output.log" error="${reports.dir}/error.log" fork="true">
+      <arg line="-t mysql"/>
+      <arg line="-host localhost"/>
+      <!--arg line="-port 3306"/-->
+      <arg line="-db groomingsalon_development"/>
+      <arg line="-u ${jdbc.user}"/>
+      <!--arg line="-p ${jdbc.password}"/-->
+      <arg line="-cp ${jdbc.driver}"/>
+      <arg line="-o ${reports.dir}"/>
+
+      <env key="PATH" value="${graphviz.home}/bin"/>
+
+     <classpath>
+        <pathelement location="${repository.home}/schemaspy/schemaspy/3.1.1/schemaspy-3.1.1.jar"/>
+        <pathelement location="${jdbc.driver}"/>
+      </classpath>
+
+    </java>
+
+<!--
+    <java classname="com.sun.tools.javadoc.Main" fork="yes">
+      <arg line="${javafiles} -private"/>
+
+      <arg line="-sourcepath ${src.dir}"/>
+      <arg line="-d ${reports.dir}"/>
+      <arg line="-doclet net.gleamynode.apiviz.APIviz"/>
+      <arg line="-docletpath ${repository.home}/apiviz/apiviz/1.1.3/apiviz-1.1.3.jar"/>
+
+
+     <classpath>
+        <path refid="project.classpath"/>
+        <pathelement location="${java.home}/lib/tools.jar"/>
+        <pathelement location="${java.home}/../lib/tools.jar"/>
+      </classpath>
+    </java>
+-->
+  </target>
+
+</project>
+
