@@ -1,2 +1,5 @@
 1. Best Practices for Speeding Up Your Web Site
 http://developer.yahoo.com/performance/rules.html
+
+2. Automation for the people
+http://www.ibm.com/developerworks/views/java/libraryview.jsp?search_by=automation+people:
