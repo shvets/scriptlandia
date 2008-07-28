@@ -45,7 +45,7 @@ class ReportsController < ApplicationController
     respond_to do |format|
       if @report.save
         flash[:notice] = 'Report was successfully created.'
-        format.html { redirect_to(@report) }
+        format.html { redirect_to(reports_url) }
         format.xml  { render :xml => @report, :status => :created, :location => @report }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class ReportsController < ApplicationController
     respond_to do |format|
       if @report.update_attributes(params[:report])
         flash[:notice] = 'Report was successfully updated.'
-        format.html { redirect_to(@report) }
+        format.html { redirect_to(reports_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

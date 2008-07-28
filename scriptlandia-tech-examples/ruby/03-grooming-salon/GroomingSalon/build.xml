@@ -1,6 +1,6 @@
-<project name="build-common" default="run" basedir=".">
+<project name="build" default="run" basedir=".">
 
-  <target name="init.db">
+  <target name="db.init">
     <exec executable="jrake.bat">
       <arg value="db:drop"/>
     </exec>

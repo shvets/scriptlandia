@@ -29,16 +29,21 @@
       </div>
       
       <div id="sidebar">
+        <br>
+        <br>
+        <br>
+
               <ul>
                       <li id="menu" class="bg6">
-                              <h2 class="bg1">Menu</h2>
+                              <!--h2 class="bg1">Menu</h2-->
                               <ul>
                                       <li class="first"><%= link_to "Home", :controller => "homes", :action => "index" %></li>
                                       <li><%= link_to "Companies", :controller => "companies", :action => "index" %></li>
-                                      <li><%= link_to "Groomers", :controller => "groomers", :action => "index" %></li>
+                                      <li>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Users", :controller => "users", :action => "index" %></li>
+                                      <li>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Groomers", :controller => "groomers", :action => "index" %></li>
                                       <li><%= link_to "Pet Owners", :controller => "pet_owners", :action => "index" %></li>
-                                      <li><%= link_to "Pets", :controller => "pets", :action => "index" %></li>
-                                      <li><%= link_to "Appointments", :controller => "appointments", :action => "index" %></li>
+                                      <li>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Pets", :controller => "pets", :action => "index" %></li>
+                                      <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Appointments", :controller => "appointments", :action => "index" %></li>
                                       <li><%= link_to "Reports", :controller => "reports", :action => "index" %></li>
                               </ul>
 
@@ -47,6 +52,8 @@
       </div>
 
       <div id="footer">
+        <table width="100%">
+          <tr align="center"><td>
         <%= javascript_include_tag 'prototype' %>
 
         <% if ENV['RAILS_ENV'] == 'development' %>
@@ -60,6 +67,8 @@
         <% end %>
 
         Copyright &copy; 2008 Dream Programs Inc.
+        </td></tr>
+        </table>
       </div>
 
     </div>

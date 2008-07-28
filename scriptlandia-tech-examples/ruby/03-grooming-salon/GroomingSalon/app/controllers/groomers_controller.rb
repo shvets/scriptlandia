@@ -45,7 +45,7 @@ class GroomersController < ApplicationController
     respond_to do |format|
       if @groomer.save
         flash[:notice] = 'Groomer was successfully created.'
-        format.html { redirect_to(@groomer) }
+        format.html { redirect_to(groomers_url) }
         format.xml  { render :xml => @groomer, :status => :created, :location => @groomer }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class GroomersController < ApplicationController
     respond_to do |format|
       if @groomer.update_attributes(params[:groomer])
         flash[:notice] = 'Groomer was successfully updated.'
-        format.html { redirect_to(@groomer) }
+        format.html { redirect_to(groomers_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

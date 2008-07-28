@@ -49,7 +49,7 @@ class AppointmentsController < ApplicationController
     respond_to do |format|
       if @appointment.save
         flash[:notice] = 'Appointment was successfully created.'
-        format.html { redirect_to(@appointment) }
+        format.html { redirect_to(appointments_url) }
         format.xml  { render :xml => @appointment, :status => :created, :location => @appointment }
       else
         format.html { render :action => "new" }
@@ -66,7 +66,7 @@ class AppointmentsController < ApplicationController
     respond_to do |format|
       if @appointment.update_attributes(params[:appointment])
         flash[:notice] = 'Appointment was successfully updated.'
-        format.html { redirect_to(@appointment) }
+        format.html { redirect_to(appointments_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

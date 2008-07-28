@@ -47,6 +47,8 @@ jruby script\generate scaffold Pet veterinar:string referredBy:string medicalPro
 jruby script\generate scaffold PetOwner firstName:string lastName:string homePhone:string workPhone:string cellPhone:string salutation:string
 jruby script\generate scaffold Appointment appointmentDate:datetime price:string
 jruby script\generate scaffold Report name:string description:string table:string condition:string
+jruby script\generate scaffold User name:string admin:boolean company_id:integer
+
 
 7.
 

@@ -49,7 +49,7 @@ class PetsController < ApplicationController
     respond_to do |format|
       if @pet.save
         flash[:notice] = 'Pet was successfully created.'
-        format.html { redirect_to(@pet) }
+        format.html { redirect_to(pets_url) }
         format.xml  { render :xml => @pet, :status => :created, :location => @pet }
       else
         format.html { render :action => "new" }
@@ -66,7 +66,7 @@ class PetsController < ApplicationController
     respond_to do |format|
       if @pet.update_attributes(params[:pet])
         flash[:notice] = 'Pet was successfully updated.'
-        format.html { redirect_to(@pet) }
+        format.html { redirect_to(pets_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

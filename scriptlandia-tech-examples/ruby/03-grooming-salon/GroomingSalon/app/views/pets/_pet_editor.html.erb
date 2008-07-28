@@ -10,12 +10,6 @@
 
   <table width="100%">
     <tr>
-      <td colspan="4">
-        <%= f.error_messages %>
-      </td>
-    </tr>
-
-    <tr>
       <td>
         <%= "Cat or Dog?" %>: <%= select(:pet, :subtype, %w(cat dog)) %>
       </td>
@@ -48,7 +42,9 @@
         <%= f.label :'birth Date' %>: <%= date_select(:pet, :birthDate, :order => [:month, :day, :year])%>
       </td>
 
-      <td></td>
+      <td>
+        <%= f.label :'alive' %>: <%= select(:pet, :alive, %w(yes no)) %>
+      </td>
     </tr>
 
     <tr>
@@ -107,6 +103,8 @@
     <tr>
       <td>
         <%= f.submit submitText %>
+
+        <%= link_to 'Cancel', pets_path %>
       </td>
     </tr>
   </table>

@@ -35,7 +35,13 @@
         <td><%= link_to 'Show', pet %></td>
         <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
         <td><%= link_to 'Destroy', pet, :confirm => 'Are you sure?', :method => :delete %></td>
-        <td><%= link_to 'Appointments', :controller => "appointments", :action => "index", :pet_id => pet.id %></td>
+
+        <% if pet.appointments.size > 0 %>
+          <td><%= link_to 'Appointments', :controller => "appointments", :action => "index", :pet_id => pet.id %></td>
+        <% else %>
+          <td>Appointments</td>
+        <% end %>
+
         <td><%= link_to 'New Appointment', :controller => "appointments", :action => "new", :pet_id => pet.id %></td>
     </tr>
   <% end %>

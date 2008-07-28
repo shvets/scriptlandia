@@ -26,9 +26,17 @@
     <td><%=h pet_owner.workPhone %></td>
     <td><%=h pet_owner.cellPhone %></td>
     <td><%= link_to 'Show', pet_owner %></td>
+
     <td><%= link_to 'Edit', edit_pet_owner_path(pet_owner) %></td>
+
     <td><%= link_to 'Destroy', pet_owner, :confirm => 'Are you sure?', :method => :delete %></td>
-    <td><%= link_to 'Pets', :controller => "pets", :action => "index", :pet_owner_id => pet_owner.id %></td>
+
+    <% if pet_owner.pets.size > 0 %>
+      <td><%= link_to 'Pets', :controller => "pets", :action => "index", :pet_owner_id => pet_owner.id %></td>
+    <% else %>
+      <td>Pets</td>
+    <% end %>
+
     <td><%= link_to 'New Pet', :controller => "pets", :action => "new", :pet_owner_id => pet_owner.id %></td>
   </tr>
 <% end %>

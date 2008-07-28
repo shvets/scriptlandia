@@ -21,6 +21,7 @@ class CreatePets < ActiveRecord::Migration
       t.string :clip3
 
       t.integer :pet_owner_id
+      t.string :alive
 
       t.timestamps
     end

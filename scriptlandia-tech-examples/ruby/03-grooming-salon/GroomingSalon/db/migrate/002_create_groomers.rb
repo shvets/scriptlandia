@@ -5,6 +5,8 @@ class CreateGroomers < ActiveRecord::Migration
       t.string :lastName
       t.text :notes
 
+      t.integer :company_id 
+
       t.timestamps
     end
   end
