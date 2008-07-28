@@ -1,0 +1,36 @@
+<!-- grand.ant -->
+
+<!-- http://www.ggtools.net/grand -->
+<!-- http://graphviz.org -->
+
+<project name="grand" default="run" basedir=".">
+
+  <property name="reports.dir" value="${user.dir}/target/grand-reports"/>
+  <property name="graphviz.home" value="C:/Program Files/Graphviz2.20"/>
+
+  <property name="grand.output.file" value="${user.dir}/target/test.pdf"/>
+
+  <target name="init">
+    <mkdir dir="${reports.dir}"/>
+
+   <script language="beanshell">
+      import org.sf.scriptlandia.ScriptlandiaHelper;
+
+      ScriptlandiaHelper.resolveDependencies("grand", "grand", "1.8");
+    </script>
+  </target>
+
+  <target name="run" depends="init">
+    <property name="file.type" value="pdf" />
+
+    <typedef resource="net/ggtools/grand/antlib.xml" classpath="${repository.home}/grand/grand/1.8/grand-1.8.jar"/>
+
+    <grand buildfile="${user.dir}/build.xml" output="${reports.dir}/build.dot"/>
+
+    <exec executable="${graphviz.home}/bin/dot" > 
+      <arg line="-T${file.type} -Gsize=11.69,8.27 -Grotate=90 -o ${reports.dir}/build.${file.type} ${user.dir}/target/build.dot"/>
+    </exec>
+  </target>
+
+</project>
+

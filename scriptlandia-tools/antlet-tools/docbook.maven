@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>docbook-pdf</groupId>
+  <artifactId>docbook-pdf</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0</version>
+
+  <name>Dependencies file for DocBook</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.docbook</groupId>
+      <artifactId>docbook-xml</artifactId>
+      <version>4.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.docbook</groupId>
+      <artifactId>docbook-xsl</artifactId>
+      <version>1.72.0</version>
+    </dependency> 
+
+    <dependency>
+      <groupId>org.apache.xmlgraphics</groupId>
+      <artifactId>fop</artifactId>
+      <version>0.94</version>
+    </dependency>
+  </dependencies>
+
+</project>

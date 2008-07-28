@@ -1,0 +1,51 @@
+<!-- docbook-pdf.ant -->
+
+<!-- http://www.oasis-open.org/docbook/xml/4.5 -->
+<!-- http://downloads.sourceforge.net/docbook - xsl version -->
+
+<project name="docbook-pdf" default="run" basedir=".">
+  <property name="docbook-xml.version" value="4.4"/>
+  <property name="docbook-xsl.version" value="1.72.0"/>
+
+  <property name="docbook-xml.home" value="${repository.home}/org/docbook/docbook-xml/${docbook-xml.version}"/>
+  <property name="docbook-xsl.home" value="${repository.home}/org/docbook/docbook-xsl/${docbook-xsl.version}"/>
+
+  <property name="reports.dir" value="${user.dir}/target/docbook-reports"/>
+  <property name="book.src.dir" value="${user.dir}/src/main/docbook"/>
+
+  <property name="style.file" value="${docbook-xsl.home}/fo/docbook.xsl" />
+
+  <target name="init">
+    <mkdir dir="${reports.dir}"/>
+
+    <script language="beanshell">
+      import org.sf.scriptlandia.MavenHelper;
+
+      MavenHelper.resolveMavenDependencies(project, project.getProperty("basedir") + "/docbook.maven", "compile");
+    </script>
+
+    <taskdef name="fop" classname="org.apache.fop.tools.anttasks.Fop"/>
+  </target>
+
+  <target name="run" depends="init">
+    <xslt style="${style.file}" extension=".fo" basedir="${book.src.dir}" destdir="${reports.dir}/fo">
+      <classpath refid="maven.compile.classpath" />
+
+      <include name="book.xml" />
+    </xslt>
+
+    <fop format="application/pdf" outdir="${reports.dir}">
+      <fileset dir="${reports.dir}/fo">
+        <include name="**/*.fo" />
+      </fileset>
+    </fop>
+  </target>
+
+  <target name="prepare">
+    <unzip src="${docbook-xml.home}/docbook-xml-${docbook-xml.version}.jar" dest="${docbook-xml.home}"/>
+
+    <unzip src="${docbook-xsl.home}/docbook-xsl-${docbook-xsl.version}.jar" dest="${docbook-xsl.home}"/>
+  </target>
+
+</project>
+
