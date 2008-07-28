@@ -1,5 +1,9 @@
 class AddDataToTables < ActiveRecord::Migration
   def self.up
+    User.create :name => "admin", :admin => true
+    User.create :name => "gp", :admin => false
+    User.create :name => "paws", :admin => false
+
     Company.create :name => "Goochie Pooch", :address => "Rt. 18" # 1
     Company.create :name => "Paws", :address => "Rt. 33"          # 2
 
@@ -9,8 +13,8 @@ class AddDataToTables < ActiveRecord::Migration
     PetOwner.create :firstName => "Inna", :lastName => "Shvets"   # 1
     PetOwner.create :firstName => "Lisa", :lastName => "Ribansky" # 2
 
-    Pet.create :type => "cat", :name => "Cheeta", :sex => "female", :breed => "siameze", :color => "white", :pet_owner_id => 1
-    Pet.create :type => "cat", :name => "Sheila", :sex => "female", :breed => "persian", :color => "gray", :pet_owner_id => 1
+    Pet.create :type => "cat", :name => "Cheeta", :sex => "female", :breed => "siameze", :color => "white"
+    Pet.create :type => "cat", :name => "Sheila", :sex => "female", :breed => "persian", :color => "gray"
   end
 
   def self.down
