@@ -2,7 +2,7 @@
 
 <% form_for(@pet) do |f| %>
 
-  <%= render :partial => "pet_editor", :locals => { :f => f, :label_text => "Create"} %>
+  <%= render :partial => "pet_editor", :locals => { :f => f, :mode => "new" } %>
 
 <% end %>
 

@@ -2,7 +2,7 @@
 
 <% form_for(@groomer) do |f| %>
 
-  <%= render :partial => "groomer_editor", :locals => { :f => f, :label_text => "Update"} %>
+  <%= render :partial => "groomer_editor", :locals => { :f => f, :mode => "edit" } %>
 
 <% end %>
 

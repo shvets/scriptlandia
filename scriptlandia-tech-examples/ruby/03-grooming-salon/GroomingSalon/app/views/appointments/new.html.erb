@@ -2,7 +2,7 @@
 
 <% form_for(@appointment) do |f| %>
 
-  <%= render :partial => "appointment_editor", :locals => { :f => f, :label_text => "Create"} %>
+  <%= render :partial => "appointment_editor", :locals => { :f => f, :mode => "new" } %>
 
 <% end %>
 

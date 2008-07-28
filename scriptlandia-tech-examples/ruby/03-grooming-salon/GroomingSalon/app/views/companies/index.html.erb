@@ -1,9 +1,14 @@
 <h1>Listing companies</h1>
 
-<table>
+<%= link_to 'New Company', new_company_path %>
+<br />
+<br />
+
+<table width="50%">
   <tr>
     <th>Name</th>
     <th>Address</th>
+    <th colspan="3">Commands</th>
   </tr>
 
 <% for company in @companies %>
@@ -17,8 +22,3 @@
 <% end %>
 </table>
 
-<br />
-
-<%= link_to "Home", :controller => "homes", :action => "index" %>
-
-<%= link_to 'New Company', new_company_path %>

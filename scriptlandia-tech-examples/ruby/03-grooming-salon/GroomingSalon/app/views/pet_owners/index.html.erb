@@ -1,41 +1,37 @@
 <h1>Listing Pet Owners</h1>
 
+<%= link_to 'New Pet Owner', new_pet_owner_path %>
+<br/>
+<br/>
+
 <% if @pet_owners.empty? %>
   <h2>We don't have any pet owners.</h2>
 <% else %>
 
-<table border="1">
+<table border="0" width="80%">
   <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
+    <th>Salutation</th>
+    <th>Name</th>
     <th>Home Phone</th>
     <th>Work Phone</th>
     <th>Cell Phone</th>
-    <th>Salutation</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th colspan="5">Commands</th>
   </tr>
 
 <% for pet_owner in @pet_owners %>
   <tr>
-    <td><%=h pet_owner.firstName %></td>
-    <td><%=h pet_owner.lastName %></td>
+    <td><%=h pet_owner.salutation %></td>
+    <td><%=h pet_owner.name %></td>
     <td><%=h pet_owner.homePhone %></td>
     <td><%=h pet_owner.workPhone %></td>
     <td><%=h pet_owner.cellPhone %></td>
-    <td><%=h pet_owner.salutation %></td>
     <td><%= link_to 'Show', pet_owner %></td>
     <td><%= link_to 'Edit', edit_pet_owner_path(pet_owner) %></td>
     <td><%= link_to 'Destroy', pet_owner, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Pets', :controller => "pets", :action => "index", :pet_owner_id => pet_owner.id %></td>
+    <td><%= link_to 'New Pet', :controller => "pets", :action => "new", :pet_owner_id => pet_owner.id %></td>
   </tr>
 <% end %>
 </table>
 
 <% end %>
-
-<br />
-
-<%= link_to "Home", :controller => "homes", :action => "index" %>
-
-<%= link_to 'New Pet Owner', new_pet_owner_path %>

@@ -2,7 +2,7 @@
 
 <% form_for(@company) do |f| %>
 
-  <%= render :partial => "company_editor", :locals => { :f => f, :label_text => "Update"} %>
+  <%= render :partial => "company_editor", :locals => { :f => f, :mode => "edit" } %>
 
 <% end %>
 

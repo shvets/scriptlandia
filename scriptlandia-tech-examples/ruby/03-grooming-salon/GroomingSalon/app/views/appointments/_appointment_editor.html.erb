@@ -1,21 +1,34 @@
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :'pet Owner' %><br />
-    <%= collection_select(:appointment, :pet_owner_id, PetOwner.find(:all, :order => "lastName"), :id, :name) %>
-  </p>
+  <%
+    if mode == 'new'
+      submitText = "Create"
+    else
+      submitText = "Update"
+    end
+
+    if mode == 'edit' || params[:pet_id] != nil
+      disabled1 = true
+    else
+      disabled1 = false
+    end
+  %>
 
   <p>
+    <%= f.label :'pet Owner' %><br />
+    <%= collection_select(:appointment, :pet_owner_id, PetOwner.find(:all, :order => "lastName"), :id, :name, {}, {:disabled => disabled1}) %>
+  </p>
+              
+  <p>
     <%= f.label :'Pet' %><br />
-    <%= collection_select(:appointment, :pet_id,  Pet.find(:all, :order => "name"), :id, :name) %>
+    <%= collection_select(:appointment, :pet_id,  Pet.find(:all, :order => "name", :conditions => ["id = '1'"]), :id, :name, {}, {:disabled => disabled1}) %>
   </p>
 
   <p>
     <%= f.label :'groomer' %><br />
 
-    <%= select( "member", "sex", { "male" => "M", "female" => "F"}) %>
-
     <%= collection_select(:appointment, :groomer_id,  Groomer.find(:all, :order => "lastName"), :id, :name) %>
+
   </p>
 
   <p>
@@ -29,5 +42,6 @@
   </p>
 
   <p>
-    <%= f.submit label_text %>
+    <%= f.submit submitText %>
   </p>
+

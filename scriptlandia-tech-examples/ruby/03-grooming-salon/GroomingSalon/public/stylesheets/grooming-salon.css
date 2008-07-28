@@ -1,51 +1,53 @@
 body {
-  margin: 0;
-  margin-bottom: 25px;
-  padding: 0;
-  background-color: #f0f0f0;
-  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-  font-size: 13px;
-  color: #333;
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        color: #666666;
+}
+
+h1, h2, h3 {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        color: #000000;
 }
 
 h1 {
-  font-size: 28px;
-  color: #000;
+        font-weight: normal;
+        font-size: 237%;
 }
 
-a  {color: #03c}
+a {
+        border-bottom: 1px dotted #CCCCCC;
+        text-decoration: none;
+        color: #1777B1;
+}
+
 a:hover {
-  background-color: #03c;
-  color: white;
-  text-decoration: none;
+        border-bottom: none;
+        color: #FF7400;
 }
 
-
-#page {
-  background-color: #f0f0f0;
-  width: 100%;
-  margin: 0;
-  margin-left: auto;
-  margin-right: auto;
+img {
+        border: 3px solid #7F7772;
 }
 
-#content {
-  float: left;
-  background-color: white;
-  border: 3px solid #aaa;
-  border-top: none;
-  padding: 25px;
-  width: 100%;
+img.left {
+        float: left;
+        margin: 6px 15px 0 0;
 }
 
-#footer {
-  clear: both;
+img.right {
+        float: right;
+        margin: 6px 0 0 15px;
 }
 
 
 #header {
   padding-left: 75px;
   padding-right: 30px;
+        font-size: 300%;
+        margin: 0 auto;
+
 }
 
 
@@ -62,4 +64,81 @@ a:hover {
   font-size: 16px;
 }
 
+
+/* Page */
+
+#page {
+        width: 85%;
+        margin: 0 auto;
+}
+
+/* Content */
+
+#content {
+        float: right;
+        width: 85%;
+}
+
+#content p, #content ul, #content ol {
+        line-height: 1.8em;
+}
+
+/* Sidebar */
+
+#sidebar {
+        float: left;
+        /*width: 200px;*/
+        padding: 0 20px 0 0;
+        border-right: 1px dotted #DCDCDC;
+}
+
+#sidebar ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+}
+
+#sidebar li {
+}
+
+#sidebar li ul {
+}
+
+#sidebar li li {
+        padding: 5px 10px;
+        border-top: 1px dotted #DCDCDC;
+}
+
+#sidebar li li.first {
+        border-top-color: #FFFFFF;
+}
+
+#sidebar h2 {
+        height: 40px;
+        padding: 20px 0 0 40px;
+        text-transform: lowercase;
+        font-size: 167%;
+}
+
+#sidebar a {
+        border: none;
+}
+
+#sidebar a:hover {
+        border-bottom: 1px dotted #666666;
+}
+
+/* Footer */
+
+#footer {
+        clear: both;
+        height: 150px;
+        padding: 20px 0 0 0;
+}
+
+#footer p {
+        margin: 0;
+        text-align: center;
+        font-size: 85%;
+}
 

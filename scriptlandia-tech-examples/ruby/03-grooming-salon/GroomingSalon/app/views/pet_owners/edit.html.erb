@@ -1,7 +1,9 @@
 <h1>Editing Pet Owner</h1>
 
 <% form_for(@pet_owner) do |f| %>
-  <%= render :partial => "pet_owner_editor", :locals => { :f => f, :label_text => "Update"} %>
+
+  <%= render :partial => "pet_owner_editor", :locals => { :f => f, :mode => "edit" } %>
+
 <% end %>
 
 <%= link_to 'Show', @pet_owner %> |

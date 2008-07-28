@@ -1,11 +1,25 @@
+  <%= f.error_messages %>
+
+  <%
+    if mode == 'new'
+      submitText = "Create"
+    else
+      submitText = "Update"
+    end
+  %>
+
   <table width="100%">
     <tr>
-      <td colspan="3">
+      <td colspan="4">
         <%= f.error_messages %>
       </td>
     </tr>
 
     <tr>
+      <td>
+        <%= "Cat or Dog?" %>: <%= select(:pet, :subtype, %w(cat dog)) %>
+      </td>
+
       <td>
         <%= f.label :name %>: <%= f.text_field :name %>
       </td>
@@ -15,7 +29,7 @@
       </td>
 
       <td>
-        <%= f.label :sex %>: <%= f.text_field :sex %>
+        <%= f.label :sex %>: <%= select(:pet, :sex, %w(male female)) %>
       </td>
     </tr>
 
@@ -31,14 +45,16 @@
       </td>
 
       <td>
-        <%= f.label :'birth Date' %>: <%= date_select('range', :birthDate, :order => [:month, :day, :year])%>
-
+        <%= f.label :'birth Date' %>: <%= date_select(:pet, :birthDate, :order => [:month, :day, :year])%>
       </td>
+
+      <td></td>
     </tr>
 
     <tr>
       <td>
-        <%= f.label :'pet Owner' %>: <%= collection_select(:pet, :pet_owner_id, PetOwner.find(:all, :order => "lastName"), :id, :name) %>
+        <%= f.label :'pet Owner' %>: 
+        <%= collection_select(:pet, :pet_owner_id, PetOwner.find(:all, :order => "lastName"), :id, :name, {}, {:disabled => (params[:pet_owner_id] != nil) }) %>
       </td>
 
       <td>
@@ -48,10 +64,12 @@
       <td>
         <%= f.label :'referred By' %>: <%= f.text_field :referredBy %>
       </td>
+
+      <td></td>
     </tr>
 
     <tr>
-      <td colspan="3">
+      <td colspan="4">
         <table>
           <tr>
             <td><%= f.label :'medical Problems' %>:</td>
@@ -69,26 +87,26 @@
     </tr>
 
     <tr>
-      <td colspan="3">
+      <td colspan="4">
         <%= f.label :'clip 1' %>: <%= f.text_field :clip1 %>
       </td>
     </tr>
 
     <tr>
-      <td colspan="3">
+      <td colspan="4">
         <%= f.label :'clip 2' %>: <%= f.text_field :clip2 %>
       </td>
     </tr>
 
     <tr>
-      <td colspan="3">
+      <td colspan="4">
         <%= f.label :'clip 3' %>: <%= f.text_field :clip3 %>
       </td>
     </tr>
 
     <tr>
       <td>
-        <%= f.submit label_text %>
+        <%= f.submit submitText %>
       </td>
     </tr>
   </table>

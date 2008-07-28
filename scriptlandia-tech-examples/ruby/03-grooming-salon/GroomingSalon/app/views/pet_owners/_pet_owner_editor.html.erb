@@ -1,5 +1,13 @@
   <%= f.error_messages %>
 
+  <%
+    if mode == 'new'
+      submitText = "Create"
+    else
+      submitText = "Update"
+    end
+  %>
+
   <p>
     <%= f.label :'First Name' %><br />
     <%= f.text_field :firstName %>
@@ -26,5 +34,5 @@
   </p>
 
   <p>
-    <%= f.submit label_text %>
+    <%= f.submit submitText %>
   </p>

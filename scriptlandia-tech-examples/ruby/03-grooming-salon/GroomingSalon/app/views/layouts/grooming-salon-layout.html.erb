@@ -15,7 +15,6 @@
     <%= stylesheet_link_tag "grooming-salon" %>
 
     <%= javascript_include_tag :defaults %>
-
   </head>
 
   <body>
@@ -29,7 +28,39 @@
         <%= @content_for_layout %>
       </div>
       
-      <div id="footer">Copyright &copy; 2008 Dream Programs Inc.</div>
+      <div id="sidebar">
+              <ul>
+                      <li id="menu" class="bg6">
+                              <h2 class="bg1">Menu</h2>
+                              <ul>
+                                      <li class="first"><%= link_to "Home", :controller => "homes", :action => "index" %></li>
+                                      <li><%= link_to "Companies", :controller => "companies", :action => "index" %></li>
+                                      <li><%= link_to "Groomers", :controller => "groomers", :action => "index" %></li>
+                                      <li><%= link_to "Pet Owners", :controller => "pet_owners", :action => "index" %></li>
+                                      <li><%= link_to "Pets", :controller => "pets", :action => "index" %></li>
+                                      <li><%= link_to "Appointments", :controller => "appointments", :action => "index" %></li>
+                                      <li><%= link_to "Reports", :controller => "reports", :action => "index" %></li>
+                              </ul>
+
+                      </li>
+              </ul>
+      </div>
+
+      <div id="footer">
+        <%= javascript_include_tag 'prototype' %>
+
+        <% if ENV['RAILS_ENV'] == 'development' %>
+            <div id="debug" style="margin: 40px 5px 5px 5px;">
+                <a href="#" onclick="Element.toggle('debug_info');return false" style="text-decoration: none; color: #ccc;">Show Debug Info &#10162;</a>
+                <div id="debug_info" style="display : none;">
+                    <%= debug session %>
+                    <%= debug params %>
+                </div>
+            </div>
+        <% end %>
+
+        Copyright &copy; 2008 Dream Programs Inc.
+      </div>
 
     </div>
 

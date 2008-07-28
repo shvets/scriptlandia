@@ -1,7 +1,7 @@
 class CreatePets < ActiveRecord::Migration
   def self.up
     create_table :pets do |t|
-      t.string :type
+      t.string :subtype
       t.string :name
       t.string :sex
       t.string :breed

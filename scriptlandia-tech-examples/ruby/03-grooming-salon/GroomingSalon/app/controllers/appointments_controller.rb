@@ -2,7 +2,11 @@ class AppointmentsController < ApplicationController
   # GET /appointments
   # GET /appointments.xml
   def index
-    @appointments = Appointment.find(:all)
+    if params[:pet_owner_id] == nil
+      @appointments = Appointment.find(:all)
+    else
+      @appointments = Appointment.find(:all, :conditions => ["id = '#{params[:pet_id]}'"])
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +28,7 @@ class AppointmentsController < ApplicationController
   # GET /appointments/new
   # GET /appointments/new.xml
   def new
-    @appointment = Appointment.new
+    @appointment = Appointment.new(:pet_id => params[:pet_id])
 
     respond_to do |format|
       format.html # new.html.erb

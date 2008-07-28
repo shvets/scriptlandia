@@ -14,4 +14,9 @@
     </exec>
    </target>
 
+   <target name="server">
+    <exec executable="jruby.bat">
+      <arg value="script/server"/>
+    </exec>
+   </target>
 </project>

@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :reports
+
   map.resources :companies
 
   map.resources :groomers
@@ -9,9 +11,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :appointments
 
-  map.resources :dogs
-
-  map.resources :cats
+  map.resources :report_engines
 
   # The priority is based upon order of creation: first created -> highest priority.
 

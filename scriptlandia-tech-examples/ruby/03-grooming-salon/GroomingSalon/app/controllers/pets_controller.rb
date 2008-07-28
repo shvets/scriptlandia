@@ -2,7 +2,11 @@ class PetsController < ApplicationController
   # GET /pets
   # GET /pets.xml
   def index
-    @pets = Pet.find(:all)
+    if params[:pet_owner_id] == nil
+      @pets = Pet.find(:all)
+    else
+      @pets = Pet.find(:all, :conditions => ["id = ?", params[:pet_owner_id]])
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +28,7 @@ class PetsController < ApplicationController
   # GET /pets/new
   # GET /pets/new.xml
   def new
-    @pet = Pet.new
+    @pet = Pet.new(:pet_owner_id => params[:pet_owner_id])
 
     respond_to do |format|
       format.html # new.html.erb
