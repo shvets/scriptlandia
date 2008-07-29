@@ -8,6 +8,8 @@ class CreatePetOwners < ActiveRecord::Migration
       t.string :cellPhone
       t.string :salutation
 
+      t.integer :company_id
+
       t.timestamps
     end
   end

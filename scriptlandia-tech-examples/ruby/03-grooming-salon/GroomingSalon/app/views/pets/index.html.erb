@@ -22,8 +22,9 @@
     </tr>
 
   <% for pet in @pets %>
-      <tr>
-        <td><%=h pet.pet_owner.name %></td>
+      <tr <%= "style='color:red'" if pet.alive == 'no' %> >
+        <td><%=h pet.pet_owner.name if pet.pet_owner != nil %></td>
+      
         <td><%=h pet.subtype%></td>
         <td><%=h pet.name %></td>
         <td><%=h pet.breed %></td>

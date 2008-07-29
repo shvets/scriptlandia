@@ -1,4 +1,6 @@
 class PetOwner < ActiveRecord::Base
+  belongs_to :company
+
   has_many :pets
   has_many :appointments
 
