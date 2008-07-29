@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   layout "grooming-salon-layout"
 
-  before_filter :storeUserInSession
+  before_filter :store_user_in_session
 
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
@@ -19,26 +19,19 @@ class ApplicationController < ActionController::Base
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
 
+  def current_user
+    User.find(session[:user])
+  end
+
   protected 
 
-  def storeUserInSession
-    #user_name  = "foo";
-    #password = "bar"
-
-    ok = authenticate()
-
-    session[:user] = @current_user
+  def store_user_in_session
+    session[:user] = authenticate().id
   end
 
   def authenticate()
     authenticate_or_request_with_http_basic do |user_name, password|
-      #ok = (un == user_name && p == password)
-       puts "1" + user_name
-      @current_user = User.find(:first, :conditions => ["name =?", user_name])
-      #puts "2" + @current_user.to_s
-      #@current_user != null 
-      # && @current_user.password == password
-      true
+      User.find(:first, :conditions => ["name =?", user_name])
     end
    end
 end

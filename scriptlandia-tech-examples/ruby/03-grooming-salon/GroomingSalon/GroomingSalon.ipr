@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project relativePaths="false" version="4">
-  <component name="Archetypes.Configuration">
-    <option name="archetypesFileLocation" value="archetypes.xml" />
-    <option name="workingDirectory" value="" />
-  </component>
-  <component name="Archetypes.ToolWindow">
-    <option name="projectRootPath" value="" />
-  </component>
   <component name="BuildJarProjectSettings">
     <option name="BUILD_JARS_ON_MAKE" value="false" />
   </component>
@@ -37,283 +30,16 @@
       <entry name="?*.tld" />
     </wildcardResourcePatterns>
   </component>
-  <component name="DBNavigator.Project.CodeCompletionSettings">
-    <filters>
-      <basic-filter>
-        <filter-element type="RESERVED_WORD" id="keyword" selected="true" />
-        <filter-element type="RESERVED_WORD" id="function" selected="false" />
-        <filter-element type="RESERVED_WORD" id="parameter" selected="false" />
-        <filter-element type="OBJECT" id="schema" selected="true" />
-        <filter-element type="OBJECT" id="user" selected="true" />
-        <user-schema>
-          <filter-element type="OBJECT" id="table" selected="true" />
-          <filter-element type="OBJECT" id="view" selected="true" />
-          <filter-element type="OBJECT" id="materialized_view" selected="true" />
-          <filter-element type="OBJECT" id="index" selected="true" />
-          <filter-element type="OBJECT" id="constraint" selected="true" />
-          <filter-element type="OBJECT" id="trigger" selected="true" />
-          <filter-element type="OBJECT" id="synonym" selected="false" />
-          <filter-element type="OBJECT" id="sequence" selected="true" />
-          <filter-element type="OBJECT" id="procedure" selected="true" />
-          <filter-element type="OBJECT" id="function" selected="true" />
-          <filter-element type="OBJECT" id="package" selected="true" />
-          <filter-element type="OBJECT" id="type" selected="true" />
-          <filter-element type="OBJECT" id="dimension" selected="true" />
-          <filter-element type="OBJECT" id="cluster" selected="true" />
-          <filter-element type="OBJECT" id="dblink" selected="true" />
-        </user-schema>
-        <public-schema>
-          <filter-element type="OBJECT" id="table" selected="false" />
-          <filter-element type="OBJECT" id="view" selected="false" />
-          <filter-element type="OBJECT" id="materialized_view" selected="false" />
-          <filter-element type="OBJECT" id="index" selected="false" />
-          <filter-element type="OBJECT" id="constraint" selected="false" />
-          <filter-element type="OBJECT" id="trigger" selected="false" />
-          <filter-element type="OBJECT" id="synonym" selected="false" />
-          <filter-element type="OBJECT" id="sequence" selected="false" />
-          <filter-element type="OBJECT" id="procedure" selected="false" />
-          <filter-element type="OBJECT" id="function" selected="false" />
-          <filter-element type="OBJECT" id="package" selected="false" />
-          <filter-element type="OBJECT" id="type" selected="false" />
-          <filter-element type="OBJECT" id="dimension" selected="false" />
-          <filter-element type="OBJECT" id="cluster" selected="false" />
-          <filter-element type="OBJECT" id="dblink" selected="false" />
-        </public-schema>
-        <any-schema>
-          <filter-element type="OBJECT" id="table" selected="true" />
-          <filter-element type="OBJECT" id="view" selected="true" />
-          <filter-element type="OBJECT" id="materialized_view" selected="true" />
-          <filter-element type="OBJECT" id="index" selected="true" />
-          <filter-element type="OBJECT" id="constraint" selected="true" />
-          <filter-element type="OBJECT" id="trigger" selected="true" />
-          <filter-element type="OBJECT" id="synonym" selected="true" />
-          <filter-element type="OBJECT" id="sequence" selected="true" />
-          <filter-element type="OBJECT" id="procedure" selected="true" />
-          <filter-element type="OBJECT" id="function" selected="true" />
-          <filter-element type="OBJECT" id="package" selected="true" />
-          <filter-element type="OBJECT" id="type" selected="true" />
-          <filter-element type="OBJECT" id="dimension" selected="true" />
-          <filter-element type="OBJECT" id="cluster" selected="true" />
-          <filter-element type="OBJECT" id="dblink" selected="true" />
-        </any-schema>
-      </basic-filter>
-      <smart-filter>
-        <filter-element type="RESERVED_WORD" id="keyword" selected="true" />
-        <filter-element type="RESERVED_WORD" id="function" selected="true" />
-        <filter-element type="RESERVED_WORD" id="parameter" selected="true" />
-        <filter-element type="OBJECT" id="schema" selected="true" />
-        <filter-element type="OBJECT" id="user" selected="true" />
-        <user-schema>
-          <filter-element type="OBJECT" id="table" selected="true" />
-          <filter-element type="OBJECT" id="view" selected="true" />
-          <filter-element type="OBJECT" id="materialized_view" selected="true" />
-          <filter-element type="OBJECT" id="index" selected="true" />
-          <filter-element type="OBJECT" id="constraint" selected="true" />
-          <filter-element type="OBJECT" id="trigger" selected="true" />
-          <filter-element type="OBJECT" id="synonym" selected="true" />
-          <filter-element type="OBJECT" id="sequence" selected="true" />
-          <filter-element type="OBJECT" id="procedure" selected="true" />
-          <filter-element type="OBJECT" id="function" selected="true" />
-          <filter-element type="OBJECT" id="package" selected="true" />
-          <filter-element type="OBJECT" id="type" selected="true" />
-          <filter-element type="OBJECT" id="dimension" selected="true" />
-          <filter-element type="OBJECT" id="cluster" selected="true" />
-          <filter-element type="OBJECT" id="dblink" selected="true" />
-        </user-schema>
-        <public-schema>
-          <filter-element type="OBJECT" id="table" selected="true" />
-          <filter-element type="OBJECT" id="view" selected="true" />
-          <filter-element type="OBJECT" id="materialized_view" selected="true" />
-          <filter-element type="OBJECT" id="index" selected="true" />
-          <filter-element type="OBJECT" id="constraint" selected="true" />
-          <filter-element type="OBJECT" id="trigger" selected="true" />
-          <filter-element type="OBJECT" id="synonym" selected="true" />
-          <filter-element type="OBJECT" id="sequence" selected="true" />
-          <filter-element type="OBJECT" id="procedure" selected="true" />
-          <filter-element type="OBJECT" id="function" selected="true" />
-          <filter-element type="OBJECT" id="package" selected="true" />
-          <filter-element type="OBJECT" id="type" selected="true" />
-          <filter-element type="OBJECT" id="dimension" selected="true" />
-          <filter-element type="OBJECT" id="cluster" selected="true" />
-          <filter-element type="OBJECT" id="dblink" selected="true" />
-        </public-schema>
-        <any-schema>
-          <filter-element type="OBJECT" id="table" selected="true" />
-          <filter-element type="OBJECT" id="view" selected="true" />
-          <filter-element type="OBJECT" id="materialized_view" selected="true" />
-          <filter-element type="OBJECT" id="index" selected="true" />
-          <filter-element type="OBJECT" id="constraint" selected="true" />
-          <filter-element type="OBJECT" id="trigger" selected="true" />
-          <filter-element type="OBJECT" id="synonym" selected="true" />
-          <filter-element type="OBJECT" id="sequence" selected="true" />
-          <filter-element type="OBJECT" id="procedure" selected="true" />
-          <filter-element type="OBJECT" id="function" selected="true" />
-          <filter-element type="OBJECT" id="package" selected="true" />
-          <filter-element type="OBJECT" id="type" selected="true" />
-          <filter-element type="OBJECT" id="dimension" selected="true" />
-          <filter-element type="OBJECT" id="cluster" selected="true" />
-          <filter-element type="OBJECT" id="dblink" selected="true" />
-        </any-schema>
-      </smart-filter>
-    </filters>
-    <sorting enabled="false">
-      <sorting-element type="RESERVED_WORD" id="keyword" />
-      <sorting-element type="OBJECT" id="column" />
-      <sorting-element type="OBJECT" id="table" />
-      <sorting-element type="OBJECT" id="view" />
-      <sorting-element type="OBJECT" id="materialized_view" />
-      <sorting-element type="OBJECT" id="index" />
-      <sorting-element type="OBJECT" id="constraint" />
-      <sorting-element type="OBJECT" id="trigger" />
-      <sorting-element type="OBJECT" id="synonym" />
-      <sorting-element type="OBJECT" id="sequence" />
-      <sorting-element type="OBJECT" id="procedure" />
-      <sorting-element type="OBJECT" id="function" />
-      <sorting-element type="OBJECT" id="package" />
-      <sorting-element type="OBJECT" id="type" />
-      <sorting-element type="OBJECT" id="dimension" />
-      <sorting-element type="OBJECT" id="cluster" />
-      <sorting-element type="OBJECT" id="dblink" />
-      <sorting-element type="OBJECT" id="schema" />
-      <sorting-element type="RESERVED_WORD" id="function" />
-      <sorting-element type="RESERVED_WORD" id="parameter" />
-    </sorting>
-  </component>
-  <component name="DBNavigator.Project.CodeEditorSettings">
-    <code-completion>
-      <basic-scheme>
-        <schemas type="SCHEMA" selected="true" />
-        <users type="USER" selected="true" />
-        <build-in-functions type="FUNCTION" selected="false" />
-        <user-schema>
-          <object type="TABLE" selected="true" />
-          <object type="VIEW" selected="true" />
-          <object type="INDEX" selected="true" />
-          <object type="CONSTRAINT" selected="true" />
-          <object type="TRIGGER" selected="true" />
-          <object type="SYNONYM" selected="true" />
-          <object type="SEQUENCE" selected="true" />
-          <object type="PROCEDURE" selected="true" />
-          <object type="FUNCTION" selected="true" />
-          <object type="PACKAGE" selected="true" />
-          <object type="TYPE" selected="true" />
-          <object type="DIMENSION" selected="true" />
-          <object type="CLUSTER" selected="true" />
-        </user-schema>
-        <public-schema>
-          <object type="TABLE" selected="false" />
-          <object type="VIEW" selected="false" />
-          <object type="INDEX" selected="false" />
-          <object type="CONSTRAINT" selected="false" />
-          <object type="TRIGGER" selected="false" />
-          <object type="SYNONYM" selected="false" />
-          <object type="SEQUENCE" selected="false" />
-          <object type="PROCEDURE" selected="false" />
-          <object type="FUNCTION" selected="false" />
-          <object type="PACKAGE" selected="false" />
-          <object type="TYPE" selected="false" />
-          <object type="DIMENSION" selected="false" />
-          <object type="CLUSTER" selected="false" />
-        </public-schema>
-        <any-schema>
-          <object type="TABLE" selected="true" />
-          <object type="VIEW" selected="true" />
-          <object type="INDEX" selected="true" />
-          <object type="CONSTRAINT" selected="true" />
-          <object type="TRIGGER" selected="true" />
-          <object type="SYNONYM" selected="true" />
-          <object type="SEQUENCE" selected="true" />
-          <object type="PROCEDURE" selected="true" />
-          <object type="FUNCTION" selected="true" />
-          <object type="PACKAGE" selected="true" />
-          <object type="TYPE" selected="true" />
-          <object type="DIMENSION" selected="true" />
-          <object type="CLUSTER" selected="true" />
-        </any-schema>
-      </basic-scheme>
-      <smart-scheme>
-        <schemas type="SCHEMA" selected="true" />
-        <users type="USER" selected="true" />
-        <build-in-functions type="FUNCTION" selected="true" />
-        <user-schema>
-          <object type="TABLE" selected="true" />
-          <object type="VIEW" selected="true" />
-          <object type="INDEX" selected="true" />
-          <object type="CONSTRAINT" selected="true" />
-          <object type="TRIGGER" selected="true" />
-          <object type="SYNONYM" selected="true" />
-          <object type="SEQUENCE" selected="true" />
-          <object type="PROCEDURE" selected="true" />
-          <object type="FUNCTION" selected="true" />
-          <object type="PACKAGE" selected="true" />
-          <object type="TYPE" selected="true" />
-          <object type="DIMENSION" selected="true" />
-          <object type="CLUSTER" selected="true" />
-        </user-schema>
-        <public-schema>
-          <object type="TABLE" selected="true" />
-          <object type="VIEW" selected="true" />
-          <object type="INDEX" selected="true" />
-          <object type="CONSTRAINT" selected="true" />
-          <object type="TRIGGER" selected="true" />
-          <object type="SYNONYM" selected="true" />
-          <object type="SEQUENCE" selected="true" />
-          <object type="PROCEDURE" selected="true" />
-          <object type="FUNCTION" selected="true" />
-          <object type="PACKAGE" selected="true" />
-          <object type="TYPE" selected="true" />
-          <object type="DIMENSION" selected="true" />
-          <object type="CLUSTER" selected="true" />
-        </public-schema>
-        <any-schema>
-          <object type="TABLE" selected="true" />
-          <object type="VIEW" selected="true" />
-          <object type="INDEX" selected="true" />
-          <object type="CONSTRAINT" selected="true" />
-          <object type="TRIGGER" selected="true" />
-          <object type="SYNONYM" selected="true" />
-          <object type="SEQUENCE" selected="true" />
-          <object type="PROCEDURE" selected="true" />
-          <object type="FUNCTION" selected="true" />
-          <object type="PACKAGE" selected="true" />
-          <object type="TYPE" selected="true" />
-          <object type="DIMENSION" selected="true" />
-          <object type="CLUSTER" selected="true" />
-        </any-schema>
-      </smart-scheme>
-    </code-completion>
-    <code-style>
-      <case>
-        <keyword value="lower" />
-        <function value="lower" />
-        <parameter value="lower" />
-        <object value="upper" />
-      </case>
-    </code-style>
-  </component>
-  <component name="DBNavigator.Project.ConnectionManager">
-    <connections />
-  </component>
-  <component name="DBNavigator.Project.DatabaseBrowserManager">
-    <autoscroll-to-editor value="false" />
-    <autoscroll-from-editor value="false" />
-  </component>
-  <component name="DBNavigator.Project.DatasetEditorSettings">
-    <autopopup-text-editor active="true" active-if-empty="false" data-length-threshold="100" delay="1000" />
-    <fetch-block-size value="100" />
-    <trim-whitespaces value="true" />
-    <convert-empty-strings-to-null value="true" />
-    <prompt-filter-dialog value="true" />
-    <default-filter-type value="BASIC" />
-  </component>
-  <component name="DBNavigator.Project.GenericSettings">
-    <settings />
-  </component>
   <component name="DependenciesAnalyzeManager">
     <option name="myForwardDirection" value="false" />
   </component>
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="DynamicManagerImpl">
+    <option name="containingClasses">
+      <map />
+    </option>
   </component>
   <component name="EclipseCompilerSettings">
     <option name="DEBUGGING_INFO" value="true" />
@@ -332,7 +58,7 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
-  <component name="IdProvider" IDEtalkID="53E06B611878531B6ACFFFD19600133C" />
+  <component name="IdProvider" IDEtalkID="139B5ED4F4479E311D09B1AE8EC4475E" />
   <component name="InspectionProjectProfileManager">
     <option name="PROJECT_PROFILE" value="Project Default" />
     <option name="USE_PROJECT_LEVEL_SETTINGS" value="false" />
@@ -341,67 +67,9 @@
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Project Default" />
         <option name="myLocal" value="false" />
-        <inspection_tool class="Struts2ModelInspection" level="ERROR" enabled="false" />
       </profile>
     </profiles>
     <list size="0" />
-  </component>
-  <component name="IntelliJadProjectConfigComponent">
-    <config>
-      <a type="boolean">false</a>
-      <af type="boolean">false</af>
-      <always-exclude-recursively type="boolean">false</always-exclude-recursively>
-      <b type="boolean">false</b>
-      <clear type="boolean">false</clear>
-      <clear-and-close-console-on-success type="boolean">false</clear-and-close-console-on-success>
-      <create-output-directory type="boolean">false</create-output-directory>
-      <d type="string" />
-      <dead type="boolean">false</dead>
-      <decompile-on-navigation type="string">Always</decompile-on-navigation>
-      <decompile-to-memory type="boolean">true</decompile-to-memory>
-      <dis type="boolean">false</dis>
-      <exclusion-table-model type="table-model" model-class="net.stevechaloner.intellijad.config.ExclusionTableModel" content-types="string,boolean,boolean" />
-      <f type="boolean">false</f>
-      <ff type="boolean">false</ff>
-      <i type="boolean">false</i>
-      <indentation type="integer">4</indentation>
-      <jad-path type="string" />
-      <l type="integer">64</l>
-      <lnc type="boolean">false</lnc>
-      <lradix type="integer">10</lradix>
-      <nl type="boolean">false</nl>
-      <nocast type="boolean">false</nocast>
-      <noclass type="boolean">false</noclass>
-      <nocode type="boolean">false</nocode>
-      <noconv type="boolean">false</noconv>
-      <noctor type="boolean">false</noctor>
-      <nodos type="boolean">false</nodos>
-      <nofd type="boolean">false</nofd>
-      <noinner type="boolean">false</noinner>
-      <nolvt type="boolean">false</nolvt>
-      <nonlb type="boolean">false</nonlb>
-      <o type="boolean">false</o>
-      <pa type="string" />
-      <pc type="string">_cls</pc>
-      <pe type="string">_ex</pe>
-      <pf type="string">_fld</pf>
-      <pl type="string">_lcl</pl>
-      <pm type="string">_mth</pm>
-      <pp type="string">_prm</pp>
-      <pv type="integer">3</pv>
-      <r type="boolean">false</r>
-      <radix type="integer">10</radix>
-      <read-only type="boolean">false</read-only>
-      <reformat-style type="string">Preferred-Style</reformat-style>
-      <s type="string">java</s>
-      <safe type="boolean">false</safe>
-      <sort type="boolean">false</sort>
-      <space type="boolean">false</space>
-      <stat type="boolean">false</stat>
-      <t type="boolean">false</t>
-      <use-project-specific-settings type="boolean">false</use-project-specific-settings>
-      <v type="boolean">false</v>
-    </config>
   </component>
   <component name="JavacSettings">
     <option name="DEBUGGING_INFO" value="true" />
@@ -434,9 +102,6 @@
     <option name="GENERATE_NO_WARNINGS" value="false" />
     <option name="IS_EMACS_ERRORS_MODE" value="true" />
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
-  </component>
-  <component name="MavenBuilder">
-    <option name="jreName" value="1.5" />
   </component>
   <component name="Palette2">
     <group name="Swing">
@@ -559,12 +224,6 @@
       </item>
     </group>
   </component>
-  <component name="PlugProxyProjectComponent">
-    <option name="host" value="" />
-    <option name="hostPort" value="" />
-    <option name="localPort" value="" />
-    <option name="hexDump" />
-  </component>
   <component name="ProjectFileVersion" converted="true">
     <converter id="javaee-modules" />
     <converter id="ror-modules" />
@@ -574,12 +233,36 @@
       <module fileurl="file://$PROJECT_DIR$/GroomingSalon.iml" filepath="$PROJECT_DIR$/GroomingSalon.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="JRuby SDK" project-jdk-type="JRUBY_SDK">
+  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
-  <component name="RUBY_DOC_SETTINGS">
-    <RUBY_DOC NAME="DEFAULTS" VALUE="TRUE" />
-    <RUBY_DOC NAME="NUMBER" VALUE="0" />
+  <component name="RailsProjectViewPane">
+    <subPane>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.module.view.nodes.RailsProjectRootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="GroomingSalon" />
+          <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.module.view.nodes.RailsProjectModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.module.view.nodes.RailsProjectRootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="GroomingSalon" />
+          <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.module.view.nodes.RailsProjectModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Controllers" />
+          <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.module.view.nodes.folders.RailsControllersFolderNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
   </component>
   <component name="ResourceManagerContainer">
     <option name="myResourceBundles">
@@ -599,7 +282,8 @@
     <option name="myVersion" value="123" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="svn" />
+    <mapping directory="" vcs="" />
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
 </project>

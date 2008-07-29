@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 8) do
     t.string   "workPhone"
     t.string   "cellPhone"
     t.string   "salutation"
+    t.integer  "company_id", :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
