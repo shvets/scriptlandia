@@ -35,7 +35,7 @@ cd GroomingSalon
 start jruby script/server
 
 5.
-jruby script/generate controller homes
+jruby script/generate controller home
 jruby script/generate controller reportEngines
 
 6. 

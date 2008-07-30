@@ -1,8 +1,8 @@
 class AddDataToTables < ActiveRecord::Migration
   def self.up
-    User.create :name => "admin", :admin => true
-    User.create :name => "gp", :admin => false
-    User.create :name => "paws", :admin => false
+    User.create :username => "admin", :admin => true
+    User.create :username => "gp", :admin => false
+    User.create :username => "paws", :admin => false
 
     Company.create :name => "Goochie Pooch", :address => "Rt. 18" # 1
     Company.create :name => "Paws", :address => "Rt. 33"          # 2

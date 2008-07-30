@@ -81,9 +81,12 @@ ActiveRecord::Schema.define(:version => 8) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "name"
+    t.string   "username"
     t.boolean  "admin"
-    t.integer  "company_id", :limit => 11
+    t.string   "password_salt"
+    t.string   "password_hash"
+    t.string   "email"
+    t.integer  "company_id",    :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end

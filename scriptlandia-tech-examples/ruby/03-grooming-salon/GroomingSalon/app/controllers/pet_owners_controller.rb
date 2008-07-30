@@ -1,8 +1,16 @@
-class PetOwnersController < ApplicationController
+# pet_owners_controller.rb
+
+class PetOwnersController < ProtectedController
   # GET /pet_owners
   # GET /pet_owners.xml
   def index
-    @pet_owners = PetOwner.find(:all)
+    if User.create.current_user(session).admin
+      conditions = []
+    else
+      conditions = [ "company_id=?", User.create.current_user(session).company_id ]
+    end
+
+    @pet_owners = PetOwner.find(:all, :conditions => conditions)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,6 +49,7 @@ class PetOwnersController < ApplicationController
   # POST /pet_owners.xml
   def create
     @pet_owner = PetOwner.new(params[:pet_owner])
+     @pet_owner.company_id = User.create.current_user(session).company_id
 
     respond_to do |format|
       if @pet_owner.save

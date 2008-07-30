@@ -22,7 +22,15 @@
     <div id="header">Grooming Salon</div>
 
     <div id="content">
-        <p style="color: green"><%= flash[:notice] %></p>
+        <p style="color: green">
+          <%=
+            if flash[:notice]
+              flash[:notice]
+            else
+              "&nbsp;"
+            end
+           %>
+        </p>
 
         <%= @content_for_layout %>
     </div>
@@ -33,19 +41,27 @@
         <ul>
             <li id="menu" class="bg6">
                 <ul>
-                    <li class="first"><%= link_to "Home", :controller => "homes", :action => "index" %></li>
+                    <li class="first"><%= link_to "Home", :controller => "home", :action => "index" %></li>
 
-                    <% if @current_user.admin %>
-                      <li><%= link_to "Companies", :controller => "companies", :action => "index" %></li>
+                    <% if User.create.current_user(session) != nil %>
+                      <% if User.create.current_user(session).admin %>
+                        <li><%= link_to "Companies", :controller => "companies", :action => "index" %></li>
+                      <% else %>
+                        <li><%= User.create.current_user(session).company.name if User.create.current_user(session).company != nil %></li>
+                      <% end %>
+
+                      <% if User.create.current_user(session).admin %>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Users", :controller => "users", :action => "index" %></li>
+                      <% end %>
+
+                      <li>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Groomers", :controller => "groomers", :action => "index" %></li>
+                      <li><%= link_to "Pet Owners", :controller => "pet_owners", :action => "index" %></li>
+                      <li>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Pets", :controller => "pets", :action => "index" %></li>
+                      <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Appointments", :controller => "appointments", :action => "index" %></li>
+                      <li><%= link_to "Reports", :controller => "reports", :action => "index" %></li>
                     <% end %>
 
-                    <li>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Users", :controller => "users", :action => "index" %></li>
-                    <li>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Groomers", :controller => "groomers", :action => "index" %></li>
-                    <li><%= link_to "Pet Owners", :controller => "pet_owners", :action => "index" %></li>
-                    <li>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Pets", :controller => "pets", :action => "index" %></li>
-                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Appointments", :controller => "appointments", :action => "index" %></li>
-                    <li><%= link_to "Reports", :controller => "reports", :action => "index" %></li>
-                    <li><%= link_to "Logout", :controller => "homes", :action => "logout" %></li>
+                    <li><%= link_to "Login", :controller => "home", :action => "login" %> / <%= link_to "Logout", :controller => "home", :action => "logout" %></li>
                 </ul>
             </li>
         </ul>

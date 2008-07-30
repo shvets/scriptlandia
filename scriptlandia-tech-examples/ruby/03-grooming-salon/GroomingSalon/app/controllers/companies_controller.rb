@@ -1,4 +1,6 @@
-class CompaniesController < ApplicationController
+# companies_controller.rb
+
+class CompaniesController < ProtectedController
   # GET /companies
   # GET /companies.xml
   def index
@@ -82,4 +84,5 @@ class CompaniesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
 end

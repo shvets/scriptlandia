@@ -1,4 +1,6 @@
-class AppointmentsController < ApplicationController
+# appointments_controller.rb
+
+class AppointmentsController < ProtectedController
   # GET /appointments
   # GET /appointments.xml
   def index

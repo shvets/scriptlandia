@@ -1,12 +1,26 @@
-class PetsController < ApplicationController
+# pets_controller.rb
+
+class PetsController < ProtectedController
   # GET /pets
   # GET /pets.xml
   def index
-    if params[:pet_owner_id] == nil
-      @pets = Pet.find(:all)
-    else
-      @pets = Pet.find(:all, :conditions => ["id = ?", params[:pet_owner_id]])
+    company_id = User.create.current_user(session).company_id
+
+    if company_id
+      pet_owner_ids = PetOwner.find(:all, :conditions => ["company_id=?", company_id]).collect() { |x| x.id }
     end
+
+    if params[:pet_owner_id] != nil
+      pet_owner_ids << params[:pet_owner_id]
+    end
+
+    if company_id || params[:pet_owner_id] != nil
+      conditions = { :pet_owner_id => pet_owner_ids }
+    else
+      conditions = {}
+    end
+
+    @pets = Pet.find(:all, :conditions => conditions )
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,3 +1,5 @@
+# users_controller.rb
+
 class UsersController < ApplicationController
   # GET /users
   # GET /users.xml

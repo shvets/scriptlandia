@@ -21,10 +21,6 @@
       <td>
         <%= f.label :breed %>: <%= f.text_field :breed %>
       </td>
-
-      <td>
-        <%= f.label :sex %>: <%= select(:pet, :sex, %w(male female)) %>
-      </td>
     </tr>
 
     <tr>
@@ -41,10 +37,18 @@
       <td>
         <%= f.label :'birth Date' %>: <%= date_select(:pet, :birthDate, :order => [:month, :day, :year])%>
       </td>
+    </tr>
+
+    <tr>
+      <td>
+        <%= f.label :sex %>: <%= select(:pet, :sex, %w(male female)) %>
+      </td>
 
       <td>
         <%= f.label :'alive' %>: <%= select(:pet, :alive, %w(yes no)) %>
       </td>
+
+      <td></td>
     </tr>
 
     <tr>
@@ -60,12 +64,10 @@
       <td>
         <%= f.label :'referred By' %>: <%= f.text_field :referredBy %>
       </td>
-
-      <td></td>
     </tr>
 
     <tr>
-      <td colspan="4">
+      <td colspan="3">
         <table>
           <tr>
             <td><%= f.label :'medical Problems' %>:</td>
@@ -74,28 +76,28 @@
           </tr>
 
           <tr>
-            <td><%= f.text_area :medicalProblems, "cols" => 30, "rows" => 20 %></td>
-            <td><%= f.text_area :specialInstructions, "cols" => 30, "rows" => 20 %></td>
-            <td><%= f.text_area :behavior, "cols" => 30, "rows" => 20 %></td>
+            <td><%= f.text_area :medicalProblems, "cols" => 25, "rows" => 5 %></td>
+            <td><%= f.text_area :specialInstructions, "cols" => 25, "rows" => 5 %></td>
+            <td><%= f.text_area :behavior, "cols" => 25, "rows" => 5 %></td>
           </tr>
         </table>
       </td>
     </tr>
 
     <tr>
-      <td colspan="4">
+      <td colspan="3">
         <%= f.label :'clip 1' %>: <%= f.text_field :clip1 %>
       </td>
     </tr>
 
     <tr>
-      <td colspan="4">
+      <td colspan="3">
         <%= f.label :'clip 2' %>: <%= f.text_field :clip2 %>
       </td>
     </tr>
 
     <tr>
-      <td colspan="4">
+      <td colspan="3">
         <%= f.label :'clip 3' %>: <%= f.text_field :clip3 %>
       </td>
     </tr>
@@ -108,5 +110,3 @@
       </td>
     </tr>
   </table>
-
-

@@ -1,8 +1,16 @@
-class GroomersController < ApplicationController
+# groomers_controller.rb
+
+class GroomersController < ProtectedController
   # GET /groomers
   # GET /groomers.xml
   def index
-    @groomers = Groomer.find(:all)
+    if User.create.current_user(session).admin
+      conditions = []
+    else
+      conditions = [ "company_id=?", User.create.current_user(session).company_id ]
+    end
+
+    @groomers = Groomer.find(:all, :conditions => conditions)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +32,7 @@ class GroomersController < ApplicationController
   # GET /groomers/new
   # GET /groomers/new.xml
   def new
-    @groomer = Groomer.new
+    @groomer = Groomer.new(:company_id => User.create.current_user(session).company_id)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +49,9 @@ class GroomersController < ApplicationController
   # POST /groomers.xml
   def create
     @groomer = Groomer.new(params[:groomer])
+    puts "? " + params[:company_id].to_s
+
+    @groomer.company_id = User.create.current_user(session).company_id if User.create.current_user(session).company_id
 
     respond_to do |format|
       if @groomer.save

@@ -1,4 +1,6 @@
-class ReportsController < ApplicationController
+# reports_controller.rb
+
+class ReportsController < ProtectedController
   # GET /reports
   # GET /reports.xml
   def index
