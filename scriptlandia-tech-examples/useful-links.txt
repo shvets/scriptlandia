@@ -3,3 +3,6 @@ http://developer.yahoo.com/performance/rules.html
 
 2. Automation for the people
 http://www.ibm.com/developerworks/views/java/libraryview.jsp?search_by=automation+people:
+
+3. 7 Websites No Website Developer Should Be Without
+http://arbent.net/blog/design/7-websites-no-website-developer-should-be-without
