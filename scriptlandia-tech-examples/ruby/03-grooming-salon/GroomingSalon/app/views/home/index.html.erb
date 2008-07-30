@@ -1,0 +1,19 @@
+<%
+  user_name = "Anonymous User"
+  company_name = "Unknown Company"
+
+  if User.create.current_user(session) != nil
+    user_name = User.create.current_user(session).username
+    company_name = User.create.current_user(session).company.name
+  end
+%>
+
+Hello, <b><%= user_name %></b> from <b><%= company_name %></b>.
+<br><br>
+
+Welcome to <b>Grooming Salon</b> Website!
+<br><br>
+
+<% if User.create.current_user(session) == nil %>
+  Please <%= link_to "log in", :controller => "home", :action => "login" %> to have full access to the web site.
+<% end %>
