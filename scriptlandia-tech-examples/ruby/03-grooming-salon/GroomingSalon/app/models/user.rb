@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
   belongs_to :company
 
-  validates_presence_of :username
+  validates_presence_of :username, :password
   validates_uniqueness_of :username
   validates_confirmation_of :password
 
@@ -19,7 +19,6 @@ class User < ActiveRecord::Base
 
   def password_is?(pw)
     Digest::MD5.hexdigest(pw + password_salt) == password_hash
-    #true
   end
 
   def current_user(session)

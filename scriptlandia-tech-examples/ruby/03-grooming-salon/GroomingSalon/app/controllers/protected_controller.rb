@@ -9,10 +9,6 @@ class ProtectedController < ApplicationController
 
   # Store where we are
   def store_locations
-    puts "1. request.request_uri " + request.request_uri.to_s
-    puts "1.1.  " + session['prevpage'].to_s
-    puts "1.2. " + session['thispage'].to_s
-
     session['prevpage'] = session['thispage']
     session['thispage'] = request.request_uri
 
@@ -25,9 +21,8 @@ class ProtectedController < ApplicationController
   end
 
   def check_auth
-    puts "2."
-    unless session[:uid]
-      flash[:error] = 'You need to be logged in to access this panel'
+    unless session[:user]
+      flash[:notice] = 'You need to be logged in to access this panel'
       redirect_to :controller => 'home', :action => 'login'
     end
   end

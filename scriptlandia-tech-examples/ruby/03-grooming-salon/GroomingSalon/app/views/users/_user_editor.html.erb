@@ -8,8 +8,6 @@
     end
   %>
 
-  <%= f.error_messages %>
-
   <p>
     <%= f.label :'user name' %><br />
     <%= f.text_field :username %>
@@ -32,7 +30,7 @@
 
   <p>
     <%= f.label :company_id %><br />
-    <%= collection_select(:user, :company_id, Company.find(:all, :order => "name"), :id, :name) %>
+    <%= collection_select(:user, :company_id, Company.find(:all, :order => "name"), :id, :name, {:include_blank => true }) %>
   </p>
 
   <p>

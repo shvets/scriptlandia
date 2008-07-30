@@ -16,40 +16,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/008_add_data_to_tables.rb" afterPath="$PROJECT_DIR$/db/migrate/008_add_data_to_tables.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/appointments/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/appointments/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/groomers/index.html.erb" afterPath="$PROJECT_DIR$/app/views/groomers/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/protected_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/protected_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/index.html.erb" afterPath="$PROJECT_DIR$/app/views/users/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/_user_editor.html.erb" afterPath="$PROJECT_DIR$/app/views/users/_user_editor.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/groomers_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/groomers_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/grooming-salon-layout.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/grooming-salon-layout.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pets/_pet_editor.html.erb" afterPath="$PROJECT_DIR$/app/views/pets/_pet_editor.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application.rb" afterPath="$PROJECT_DIR$/app/controllers/application.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/pets_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/pets_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/report_engines_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/report_engines_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/appointments/new.html.erb" afterPath="$PROJECT_DIR$/app/views/appointments/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GroomingSalon.iml" afterPath="$PROJECT_DIR$/GroomingSalon.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/appointments/_appointment_editor.html.erb" afterPath="$PROJECT_DIR$/app/views/appointments/_appointment_editor.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/companies/index.html.erb" afterPath="$PROJECT_DIR$/app/views/companies/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pet_owners/index.html.erb" afterPath="$PROJECT_DIR$/app/views/pet_owners/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/companies_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/companies_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/groomers/_groomer_editor.html.erb" afterPath="$PROJECT_DIR$/app/views/groomers/_groomer_editor.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/reports_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/reports_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instructions.txt" afterPath="$PROJECT_DIR$/instructions.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/appointments/index.html.erb" afterPath="$PROJECT_DIR$/app/views/appointments/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/_user_editor.html.erb" afterPath="$PROJECT_DIR$/app/views/users/_user_editor.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GroomingSalon.iws" afterPath="$PROJECT_DIR$/GroomingSalon.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/appointments_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/appointments_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pets/index.html.erb" afterPath="$PROJECT_DIR$/app/views/pets/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GroomingSalon.ipr" afterPath="$PROJECT_DIR$/GroomingSalon.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/reports/index.html.erb" afterPath="$PROJECT_DIR$/app/views/reports/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/pet_owners_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/pet_owners_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/grooming-salon-layout.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/grooming-salon-layout.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/login.html.erb" afterPath="$PROJECT_DIR$/app/views/home/login.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/007_create_users.rb" afterPath="$PROJECT_DIR$/db/migrate/007_create_users.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application.rb" afterPath="$PROJECT_DIR$/app/controllers/application.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
     </list>
     <ignored path="GroomingSalon.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -132,8 +111,8 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state line="3" column="49" selection-start="203" selection-end="203" vertical-scroll-proportion="0.033043478">
                   <folding>
-                    <marker date="1217443982562" expanded="true" signature="181:1201" placeholder=" ... end" />
-                    <marker date="1217443982562" expanded="true" signature="1191:1196" placeholder=" ... end" />
+                    <marker date="1217451528765" expanded="true" signature="181:1537" placeholder=" ... end" />
+                    <marker date="1217451528765" expanded="true" signature="1527:1532" placeholder=" ... end" />
                   </folding>
                 </state>
               </provider>
@@ -648,8 +627,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="49" selection-start="203" selection-end="203" vertical-scroll-proportion="0.033043478">
           <folding>
-            <marker date="1217443982562" expanded="true" signature="181:1201" placeholder=" ... end" />
-            <marker date="1217443982562" expanded="true" signature="1191:1196" placeholder=" ... end" />
+            <marker date="1217451528765" expanded="true" signature="181:1537" placeholder=" ... end" />
+            <marker date="1217451528765" expanded="true" signature="1527:1532" placeholder=" ... end" />
           </folding>
         </state>
       </provider>

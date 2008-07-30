@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 8) do
+ActiveRecord::Schema.define(:version => 9) do
 
   create_table "appointments", :force => true do |t|
     t.datetime "appointmentDate"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(:version => 8) do
     t.integer  "company_id",    :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cookie_hash"
   end
 
 end

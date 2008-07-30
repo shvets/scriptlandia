@@ -4,7 +4,7 @@
 
   if User.create.current_user(session) != nil
     user_name = User.create.current_user(session).username
-    company_name = User.create.current_user(session).company.name
+    company_name = User.create.current_user(session).company.name if User.create.current_user(session).company != nil
   end
 %>
 

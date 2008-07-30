@@ -8,8 +8,6 @@ class ApplicationController < ActionController::Base
 
   layout "grooming-salon-layout"
 
-#  before_filter :store_user_in_session
-
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
   protect_from_forgery # :secret => 'f599262b5622ea5038a3a07071187bd0'
@@ -22,16 +20,23 @@ class ApplicationController < ActionController::Base
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
 
-#  protected 
+  # Pick a unique cookie name to distinguish our session data from others'
 
-#  def store_user_in_session
-#    session[:user] = authenticate().id
+#  before_filter :check_cookie
+
+#  def check_cookie
+#    return if session[:user]
+#      if cookies[:userapp_login]
+#        @user = User.find_by_username(cookies[:userapp_login])
+#        return unless @user 
+#        cookie_hash = Digest::MD5.hexdigest(cookies[:userapp_login_pass] + @user.password_salt)
+#        if @user.cookie_hash == cookie_hash
+#          flash[:info] = 'You\'ve been automatically logged in' # annoying msg
+#          session[:user] = @user.id
+#        else 
+#          flash[:notice] = 'Something is wrong with your cookie'
+#        end
+#      end
 #  end
-
-#  def authenticate()
-#    authenticate_or_request_with_http_basic do |user_name, password|
-#      User.find(:first, :conditions => ["name =?", user_name])
-#    end
-#   end
 
 end

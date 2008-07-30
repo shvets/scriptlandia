@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.column :password_salt, :string
       t.column :password_hash, :string
       t.column :email, :string
+      t.column :cookie_hash, :string
 
       t.integer :company_id
 

@@ -7,7 +7,7 @@ class HomeController < ApplicationController
   def login
     if request.post?
       controller = session['thispage']
-      if controller = "login"
+      if controller == "login"
         controller = "home"
       end
 
@@ -15,7 +15,15 @@ class HomeController < ApplicationController
 
       if @user and @user.password_is? params[:password]
         session[:user] = @user.id
-        session[:uid] = @user.id
+
+        #if params[:remember] # if user wants to be remembered
+        #  cookie_pass = [Array.new(9){rand(256).chr}.join].pack("m").chomp
+        #  cookie_hash = Digest::MD5.hexdigest(cookie_pass + @user.password_salt)
+        #  cookies[:userapp_login_pass] = { :value => cookie_pass, :expires => 30.days.from_now }
+        #  cookies[:userapp_login] = { :value => @user.username, :expires => 30.days.from_now }
+        #  @user.update_attribute(:cookie_hash, cookie_hash)
+        #end
+
         redirect_to :controller => controller, :action => 'index'
       else 
          @auth_error = 'Wrong username or password'
@@ -24,13 +32,9 @@ class HomeController < ApplicationController
   end
 
   def logout
-    puts "logging out..."
-    puts session[:user].to_s
-    reset_session
+    #reset_session
     session[:user] = nil
-    puts session[:user].to_s
 
-    session[:uid] = nil
     flash[:notice] = 'You\'re logged out'
 
     respond_to do |format|

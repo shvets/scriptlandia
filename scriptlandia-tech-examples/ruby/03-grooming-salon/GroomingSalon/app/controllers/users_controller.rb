@@ -1,6 +1,6 @@
 # users_controller.rb
 
-class UsersController < ApplicationController
+class UsersController < ProtectedController
   # GET /users
   # GET /users.xml
   def index
