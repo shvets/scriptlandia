@@ -12,6 +12,8 @@
     else
       conditions = [ "company_id=?", User.create.current_user(session).company_id ]
     end
+
+    disabled = (params[:pet_owner_id] != nil)
   %>
 
   <table width="100%">
@@ -62,8 +64,7 @@
         <%= f.label :'pet Owner' %>: 
         <%= collection_select(:pet, :pet_owner_id, 
               PetOwner.find(:all, :order => "lastName", :conditions => conditions ),
-              :id, :name, {}, 
-              {:disabled => (params[:pet_owner_id] != nil) }) %>
+              :id, :name, {}, {:disabled => disabled }) %>
       </td>
 
       <td>

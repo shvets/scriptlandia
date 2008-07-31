@@ -4,6 +4,8 @@ class PetOwnersController < ProtectedController
   # GET /pet_owners
   # GET /pet_owners.xml
   def index
+    reset_flash_messages
+
     current_user = User.create.current_user(session)
 
     if current_user.admin
@@ -55,7 +57,7 @@ class PetOwnersController < ProtectedController
   # POST /pet_owners.xml
   def create
     @pet_owner = PetOwner.new(params[:pet_owner])
-     @pet_owner.company_id = User.create.current_user(session).company_id
+ #   @pet_owner.company_id = User.create.current_user(session).company_id
 
     respond_to do |format|
       if @pet_owner.save

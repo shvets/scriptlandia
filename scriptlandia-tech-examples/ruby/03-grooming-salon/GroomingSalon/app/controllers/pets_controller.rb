@@ -4,6 +4,8 @@ class PetsController < ProtectedController
   # GET /pets
   # GET /pets.xml
   def index
+    reset_flash_messages
+
     current_user = User.create.current_user(session)
 
     if current_user.admin

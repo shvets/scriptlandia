@@ -4,6 +4,8 @@ class ReportsController < ProtectedController
   # GET /reports
   # GET /reports.xml
   def index
+    reset_flash_messages
+
     @reports = Report.find(:all)
 
     if @reports.empty?

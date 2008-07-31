@@ -4,6 +4,8 @@ class UsersController < ProtectedController
   # GET /users
   # GET /users.xml
   def index
+    reset_flash_messages
+
     @users = User.find(:all)
 
     respond_to do |format|

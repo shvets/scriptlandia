@@ -39,4 +39,11 @@ class ApplicationController < ActionController::Base
 #      end
 #  end
 
+  protected
+
+  def reset_flash_messages
+    flash[:notice] = nil
+    #flash[:error] = nil
+  end
+
 end

@@ -4,6 +4,8 @@ class GroomersController < ProtectedController
   # GET /groomers
   # GET /groomers.xml
   def index
+    reset_flash_messages
+
     current_user = User.create.current_user(session)
 
     if current_user.admin
@@ -56,7 +58,7 @@ class GroomersController < ProtectedController
   def create
     @groomer = Groomer.new(params[:groomer])
 
-    @groomer.company_id = User.create.current_user(session).company_id if User.create.current_user(session).company_id
+#    @groomer.company_id = User.create.current_user(session).company_id if User.create.current_user(session).company_id
 
     respond_to do |format|
       if @groomer.save

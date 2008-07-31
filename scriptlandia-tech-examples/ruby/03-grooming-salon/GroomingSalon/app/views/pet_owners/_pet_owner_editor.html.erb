@@ -6,7 +6,19 @@
     else
       submitText = "Update"
     end
+
+    disabled = !User.create.current_user(session).admin?
   %>
+
+  <% if disabled %>
+    <%= f.hidden_field :company_id %>
+  <% end %>
+
+  <p>
+    <%= f.label :'company' %><br />
+    <%= collection_select(:pet_owner, :company_id, Company.find(:all, :order => "name"), :id, :name, 
+          {}, {:disabled => disabled }) %>
+  </p>
 
   <p>
     <%= f.label :'First Name' %><br />

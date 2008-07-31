@@ -7,7 +7,7 @@
 <% if !@pet_owners.empty? %>
   <table border="0" width="80%">
     <tr>
-      <th>Salutation</th>
+      <th>Company</th>
       <th>Name</th>
       <th>Home Phone</th>
       <th>Work Phone</th>
@@ -17,8 +17,8 @@
 
     <% for pet_owner in @pet_owners %>
       <tr>
-        <td><%=h pet_owner.salutation %></td>
-        <td><%=h pet_owner.name %></td>
+        <td><%=h pet_owner.company.name if pet_owner.company != nil %></td>
+        <td><%=h pet_owner.salutation %> <%=h pet_owner.name %></td>
         <td><%=h pet_owner.homePhone %></td>
         <td><%=h pet_owner.workPhone %></td>
         <td><%=h pet_owner.cellPhone %></td>

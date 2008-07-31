@@ -2,12 +2,16 @@
 
 class HomeController < ApplicationController
   def index
+    reset_flash_messages
   end
 
   def login
     if request.post?
       controller = session['thispage']
-      if controller == "login"
+
+puts controller
+
+      if controller == "login" || controller == nil
         controller = "home"
       end
 
@@ -26,7 +30,8 @@ class HomeController < ApplicationController
 
         redirect_to :controller => controller, :action => 'index'
       else 
-         @auth_error = 'Wrong username or password'
+         #@auth_error = 'Wrong username or password'
+         flash[:notice] = 'Wrong username or password'
       end
     end
   end
@@ -34,6 +39,9 @@ class HomeController < ApplicationController
   def logout
     #reset_session
     session[:user] = nil
+
+    session['prevpage'] = nil
+    session['thispage'] = nil
 
     flash[:notice] = 'You\'re logged out'
 

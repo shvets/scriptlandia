@@ -1,3 +1,5 @@
+<!-- -->
+ 
   <%= f.error_messages %>
 
   <%
@@ -20,19 +22,32 @@
     if User.create.current_user(session).admin
       conditions = []
     else
-      conditions = [ "company_id=?", User.create.current_user(session).company_id ]
+      #conditions = [ "company_id=?", User.create.current_user(session).company_id ]
+conditions = []
     end
   %>
+
+  <% if disabled %>
+    <%= f.hidden_field :pet_id %>
+    <%= f.hidden_field :pet_owner_id %>
+  <% end %>
 
   <p>
     <%= f.label :'pet Owner' %><br />
     <%= collection_select(:appointment, :pet_owner_id, 
-          PetOwner.find(:all, :order => "lastName", :conditions => conditions), :id, :name, {}, {:disabled => disabled}) %>
+          PetOwner.find(:all, :order => "lastName", :conditions => conditions), :id, :name, {:include_blank => true}, {:disabled => disabled }) %>
+
+    <%= observe_field("appointment_pet_owner_id",
+                   :frequency => 0.25,
+                   :update => :display_pets_select_div,
+                   :url => { :controller => 'appointments', :action => :display_pets_select},
+                   :with => 'pet_owner_id') %>
   </p>
-              
+       
   <p>
     <%= f.label :'Pet' %><br />
-    <%= collection_select(:appointment, :pet_id,  Pet.find(:all, :order => "name", :conditions => ["id = '1'"]), :id, :name, {}, {:disabled => disabled}) %>
+
+    <div id="display_pets_select_div"></div>
   </p>
 
   <p>

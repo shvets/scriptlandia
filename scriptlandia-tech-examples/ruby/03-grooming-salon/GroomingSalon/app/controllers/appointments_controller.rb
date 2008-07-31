@@ -4,6 +4,8 @@ class AppointmentsController < ProtectedController
   # GET /appointments
   # GET /appointments.xml
   def index
+    reset_flash_messages
+
     current_user = User.create.current_user(session)
 
     if current_user.admin
@@ -56,7 +58,7 @@ class AppointmentsController < ProtectedController
   # GET /appointments/new
   # GET /appointments/new.xml
   def new
-    @appointment = Appointment.new(:pet_id => params[:pet_id])
+    @appointment = Appointment.new(:pet_owner_id => params[:pet_owner_id], :pet_id => params[:pet_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -114,4 +116,20 @@ class AppointmentsController < ProtectedController
       format.xml  { head :ok }
     end
   end
+
+  def display_pets_select
+#debugger
+    pets = Pet.find(:all, :conditions => [ "pet_owner_id=?", params[:pet_owner_id] ])
+
+    text = '<select id="appointment_pet_id" name="appointment[pet_id]">'
+    
+    for pet in pets
+      text = text + '  <option value="' + pet.id.to_s + '">' + pet.name + '</option>'
+    end
+
+    text = text + '</select>'
+
+    render :text => text
+  end
+
 end

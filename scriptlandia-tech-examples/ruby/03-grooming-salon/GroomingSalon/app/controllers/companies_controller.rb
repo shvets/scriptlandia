@@ -4,6 +4,8 @@ class CompaniesController < ProtectedController
   # GET /companies
   # GET /companies.xml
   def index
+    reset_flash_messages
+
     @companies = Company.find(:all)
 
     respond_to do |format|
