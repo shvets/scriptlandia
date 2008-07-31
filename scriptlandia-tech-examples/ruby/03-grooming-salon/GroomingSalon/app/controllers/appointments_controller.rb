@@ -4,10 +4,36 @@ class AppointmentsController < ProtectedController
   # GET /appointments
   # GET /appointments.xml
   def index
-    if params[:pet_owner_id] == nil
-      @appointments = Appointment.find(:all)
+    current_user = User.create.current_user(session)
+
+    if current_user.admin
+      pet_owner_ids = []
+
+      if params[:pet_owner_id] != nil
+        pet_owner_ids << params[:pet_owner_id]
+      end
     else
-      @appointments = Appointment.find(:all, :conditions => ["id = '#{params[:pet_id]}'"])
+      if current_user.company.id
+        pet_owner_ids = PetOwner.find(:all, :conditions => ["company_id=?", current_user.company.id]).collect() { |x| x.id }
+      else
+        pet_owner_ids = []
+
+        if params[:pet_owner_id] != nil
+          pet_owner_ids << params[:pet_owner_id]
+        end
+      end
+    end
+
+    if pet_owner_ids.size() == 0
+      conditions = {}
+    else
+      conditions = { :pet_owner_id => pet_owner_ids }
+    end
+ 
+    @appointments = Appointment.find(:all, :conditions => conditions)
+
+    if @appointments.empty?
+      flash[:notice] = 'We don\'t have any appointment.'
     end
 
     respond_to do |format|

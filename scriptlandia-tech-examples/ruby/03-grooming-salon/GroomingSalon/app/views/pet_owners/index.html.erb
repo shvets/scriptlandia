@@ -4,10 +4,7 @@
 <br/>
 <br/>
 
-<% if @pet_owners.empty? %>
-  <h2>We don't have any pet owners.</h2>
-<% else %>
-
+<% if !@pet_owners.empty? %>
   <table border="0" width="80%">
     <tr>
       <th>Salutation</th>
@@ -41,5 +38,4 @@
       </tr>
     <% end %>
   </table>
-
 <% end %>

@@ -6,6 +6,10 @@ class ReportsController < ProtectedController
   def index
     @reports = Report.find(:all)
 
+    if @reports.empty?
+      flash[:notice] = 'We don\'t have any report.'
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @reports }

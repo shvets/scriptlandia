@@ -4,10 +4,7 @@
 <br />
 <br />
 
-<% if @appointments.empty? %>
-  <h2>We don't have any appointment.</h2>
-<% else %>
-
+<% if !@appointments.empty? %>
   <table border="0">
     <tr>
       <th>Pet Owner</th>
@@ -20,10 +17,9 @@
 
   <% for appointment in @appointments %>
     <tr>
-
-      <td><%=h appointment.pet_owner.name %></td>
-      <td><%=h appointment.pet.name %></td>
-      <td><%=h appointment.groomer.name %></td>
+      <td><%=h appointment.pet_owner.name if appointment.pet_owner != nil %></td>
+      <td><%=h appointment.pet.name if appointment.pet != nil %></td>
+      <td><%=h appointment.groomer.name if appointment.groomer != nil %></td>
       <td><%=h appointment.appointmentDate %></td>
       <td><%=h appointment.price %></td>
 
@@ -33,5 +29,4 @@
     </tr>
   <% end %>
   </table>
-
 <% end %>

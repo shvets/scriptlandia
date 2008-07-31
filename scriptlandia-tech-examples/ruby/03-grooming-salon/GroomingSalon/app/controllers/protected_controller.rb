@@ -14,7 +14,6 @@ class ProtectedController < ApplicationController
 
     #if session['prevpage'] != nil && session['thispage'] != nil && 
     #   session['prevpage'] && session['thispage'] != request.request_uri
-     # puts "1.3"
       #session['prevpage'] = session['thispage'] || ''
       #session['thispage'] = request.request_uri
     #end

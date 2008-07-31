@@ -4,13 +4,19 @@ class GroomersController < ProtectedController
   # GET /groomers
   # GET /groomers.xml
   def index
-    if User.create.current_user(session).admin
+    current_user = User.create.current_user(session)
+
+    if current_user.admin
       conditions = []
     else
-      conditions = [ "company_id=?", User.create.current_user(session).company_id ]
+      conditions = [ "company_id=?", current_user.company_id ]
     end
 
-    @groomers = Groomer.find(:all, :conditions => conditions)
+    @groomers = Groomer.find(:all, :conditions => conditions )
+
+    if @groomers.empty?
+      flash[:notice] = 'We don\'t have any groomer.'
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -49,7 +55,6 @@ class GroomersController < ProtectedController
   # POST /groomers.xml
   def create
     @groomer = Groomer.new(params[:groomer])
-    puts "? " + params[:company_id].to_s
 
     @groomer.company_id = User.create.current_user(session).company_id if User.create.current_user(session).company_id
 

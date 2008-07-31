@@ -6,6 +6,12 @@
     else
       submitText = "Update"
     end
+
+    if User.create.current_user(session).admin
+      conditions = []
+    else
+      conditions = [ "company_id=?", User.create.current_user(session).company_id ]
+    end
   %>
 
   <table width="100%">
@@ -54,7 +60,10 @@
     <tr>
       <td>
         <%= f.label :'pet Owner' %>: 
-        <%= collection_select(:pet, :pet_owner_id, PetOwner.find(:all, :order => "lastName"), :id, :name, {}, {:disabled => (params[:pet_owner_id] != nil) }) %>
+        <%= collection_select(:pet, :pet_owner_id, 
+              PetOwner.find(:all, :order => "lastName", :conditions => conditions ),
+              :id, :name, {}, 
+              {:disabled => (params[:pet_owner_id] != nil) }) %>
       </td>
 
       <td>

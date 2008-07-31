@@ -4,10 +4,7 @@
 <br />
 <br />
 
-<% if @groomers.empty? %>
-  <h2>We don't have any groomer.</h2>
-<% else %>
-
+<% if !@groomers.empty? %>
   <table>
     <tr>
       <th>Name</th>
@@ -29,5 +26,4 @@
       </tr>
     <% end %>
   </table>
-
 <% end %>

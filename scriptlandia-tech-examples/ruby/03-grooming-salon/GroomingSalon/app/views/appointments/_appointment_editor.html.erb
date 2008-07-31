@@ -7,27 +7,39 @@
       submitText = "Update"
     end
 
-    if mode == 'edit' || params[:pet_id] != nil
-      disabled1 = true
+    if User.create.current_user(session).admin
+      disabled = false    
+    else 
+      if mode == 'edit' || params[:pet_id] != nil
+        disabled = true
+      else
+        disabled = false
+      end
+    end
+
+    if User.create.current_user(session).admin
+      conditions = []
     else
-      disabled1 = false
+      conditions = [ "company_id=?", User.create.current_user(session).company_id ]
     end
   %>
 
   <p>
     <%= f.label :'pet Owner' %><br />
-    <%= collection_select(:appointment, :pet_owner_id, PetOwner.find(:all, :order => "lastName"), :id, :name, {}, {:disabled => disabled1}) %>
+    <%= collection_select(:appointment, :pet_owner_id, 
+          PetOwner.find(:all, :order => "lastName", :conditions => conditions), :id, :name, {}, {:disabled => disabled}) %>
   </p>
               
   <p>
     <%= f.label :'Pet' %><br />
-    <%= collection_select(:appointment, :pet_id,  Pet.find(:all, :order => "name", :conditions => ["id = '1'"]), :id, :name, {}, {:disabled => disabled1}) %>
+    <%= collection_select(:appointment, :pet_id,  Pet.find(:all, :order => "name", :conditions => ["id = '1'"]), :id, :name, {}, {:disabled => disabled}) %>
   </p>
 
   <p>
     <%= f.label :'groomer' %><br />
 
-    <%= collection_select(:appointment, :groomer_id,  Groomer.find(:all, :order => "lastName"), :id, :name) %>
+    <%= collection_select(:appointment, :groomer_id, 
+          Groomer.find(:all, :order => "lastName", :conditions => conditions ), :id, :name) %>
 
   </p>
 

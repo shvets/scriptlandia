@@ -4,13 +4,19 @@ class PetOwnersController < ProtectedController
   # GET /pet_owners
   # GET /pet_owners.xml
   def index
-    if User.create.current_user(session).admin
+    current_user = User.create.current_user(session)
+
+    if current_user.admin
       conditions = []
     else
-      conditions = [ "company_id=?", User.create.current_user(session).company_id ]
+      conditions = [ "company_id=?", current_user.company_id ]
     end
 
     @pet_owners = PetOwner.find(:all, :conditions => conditions)
+
+    if @pet_owners.empty?
+      flash[:notice] = 'We don\'t have any pet owner.'
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -53,7 +59,7 @@ class PetOwnersController < ProtectedController
 
     respond_to do |format|
       if @pet_owner.save
-        flash[:notice] = 'PetOwner was successfully created.'
+        flash[:notice] = 'Pet owner was successfully created.'
         format.html { redirect_to(pet_owners_url) }
         format.xml  { render :xml => @pet_owner, :status => :created, :location => @pet_owner }
       else
@@ -70,7 +76,7 @@ class PetOwnersController < ProtectedController
 
     respond_to do |format|
       if @pet_owner.update_attributes(params[:pet_owner])
-        flash[:notice] = 'PetOwner was successfully updated.'
+        flash[:notice] = 'Pet owner was successfully updated.'
         format.html { redirect_to(pet_owners_url) }
         format.xml  { head :ok }
       else

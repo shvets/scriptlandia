@@ -60,7 +60,12 @@
                     <li>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Pets", :controller => "pets", :action => "index" %></li>
                     <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Appointments", :controller => "appointments", :action => "index" %></li>
                     <li><%= link_to "Reports", :controller => "reports", :action => "index" %></li>
-                    <li><%= link_to "Login", :controller => "home", :action => "login" %> / <%= link_to "Logout", :controller => "home", :action => "logout" %></li>
+
+                    <% if User.create.current_user(session) == nil %>
+                      <li><%= link_to "Login", :controller => "home", :action => "login" %></li>
+                    <% else %>
+                      <li><%= link_to "Logout", :controller => "home", :action => "logout" %></li>
+                    <% end %>
                 </ul>
             </li>
         </ul>
