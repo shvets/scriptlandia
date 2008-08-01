@@ -1,0 +1,41 @@
+  <%= f.error_messages %>
+
+  <%
+    if mode == 'new'
+      submit_text = "Create"
+    else
+      submit_text = "Update"
+    end
+  %>
+
+  <p>
+    <%= f.label :'user name' %><br />
+    <%= f.text_field :username %>
+  </p>
+
+  <p>
+    <%= f.label :'password' %><br />
+    <%= f.password_field :password%>
+  </p>
+
+  <p>
+    <%= f.label :'E-mail' %><br />
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :admin %><br />
+    <%= f.check_box :admin %>
+  </p>
+
+  <p>
+    <%= f.label :company_id %><br />
+    <%= collection_select(:user, :company_id, Company.find(:all, :order => "name"), :id, :name, {:include_blank => true }) %>
+  </p>
+
+  <p>
+    <%= f.submit submit_text %>
+
+    <%= link_to 'Cancel', users_path %>
+  </p>
+

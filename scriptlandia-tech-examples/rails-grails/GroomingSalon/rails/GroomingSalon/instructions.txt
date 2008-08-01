@@ -1,0 +1,81 @@
+Links: 
+
+http://www.jonathansng.com/ruby-on-rails/ruby-on-rails-tutorial-now-with-more-202
+http://www.jonathansng.com/ruby-on-rails/basic-rails-routing-and-a-journey-into-views-and-controllers/
+http://www.jonathansng.com/technology/restful-design-and-the-http-request/
+http://www.jonathansng.com/ruby-on-rails/rails-relationships/
+http://www.jonathansng.com/ruby-on-rails/basic-http-authentication-and-partials/
+
+http://www.tutorialspoint.com/ruby-on-rails/index.htm
+http://www.sitepoint.com/article/learn-ruby-on-rails
+http://www.meshplex.org/wiki/Ruby/Ruby_on_Rails_programming_tutorials
+
+http://stdlib.rubyonrails.org/
+http://api.rubyonrails.org/
+http://www.ruby-doc.org/docs/ProgrammingRuby/
+
+http://codingbitch.com/p/comboy/User+authentication+in+Ruby+on+Rails
+
+1.  (2.1.0)
+
+jgem install rails --include-dependencies --no-rdoc --no-ri
+jgem install jruby-openssl --no-rdoc --no-ri
+jgem update --system
+jruby --version
+jgem --version
+jrails --version
+
+2.
+
+jrails --database mysql GroomingSalon
+
+3.
+cd GroomingSalon
+
+4.
+
+start jruby script/server
+
+5.
+jruby script/generate controller home
+jruby script/generate controller reportEngines
+
+6. 
+
+jruby script\generate scaffold Company name:string address:string
+jruby script\generate scaffold Groomer firstName:string lastName:string notes:text
+
+jruby script\generate scaffold Pet veterinar:string referredBy:string medicalProblems:text breed:string size:string name:string sex:string color:string birthDate:datetime clip1:string clip2:string clip3:string specialInstructions:text behavior:text
+jruby script\generate scaffold PetOwner firstName:string lastName:string homePhone:string workPhone:string cellPhone:string salutation:string
+jruby script\generate scaffold Appointment appointmentDate:datetime price:string
+jruby script\generate scaffold Report name:string description:string table:string condition:string
+jruby script\generate scaffold User name:string password:string admin:boolean company_id:integer
+
+
+7.
+
+set RAILS_ENV=production
+set RAILS_ENV=test
+set RAILS_ENV=development
+
+jrake db:drop:all 
+jrake db:create:all 
+jrake db:migrate 
+jrake test
+ rake db:test:prepare   
+
+jrake db:version
+
+
+8. Open your browser to 
+
+http://localhost:3000/cats
+
+jruby script/generate migration add_pet_owner_id_to_pets
+
+9.
+jruby script/console
+
+10.
+rake db:test:prepare   
+script/generate migration AddTitleEmailToUsers title:string email:string
