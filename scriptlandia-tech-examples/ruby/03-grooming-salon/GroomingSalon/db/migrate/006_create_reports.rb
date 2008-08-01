@@ -5,6 +5,7 @@ class CreateReports < ActiveRecord::Migration
       t.string :description
       t.string :table
       t.string :condition
+      t.string :controller
 
       t.timestamps
     end

@@ -39,7 +39,11 @@
           <td>Appointments</td>
         <% end %>
 
-        <td><%= link_to 'New Appointment', :controller => "appointments", :action => "new", :pet_id => pet.id, :pet_owner_id => pet.pet_owner.id %></td>
+        <% if pet.pet_owner != nil %>
+          <td><%= link_to 'New Appointment', :controller => "appointments", :action => "new", :pet_id => pet.id, :pet_owner_id => pet.pet_owner.id  %></td>
+        <% else %>
+          <td>New Appointment</td>
+        <% end %>
     </tr>
   <% end %>
   </table>

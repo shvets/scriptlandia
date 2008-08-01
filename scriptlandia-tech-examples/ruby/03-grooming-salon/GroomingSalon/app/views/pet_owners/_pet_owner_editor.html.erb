@@ -2,9 +2,9 @@
 
   <%
     if mode == 'new'
-      submitText = "Create"
+      submit_text = "Create"
     else
-      submitText = "Update"
+      submit_text = "Update"
     end
 
     disabled = !User.create.current_user(session).admin?
@@ -46,7 +46,7 @@
   </p>
 
   <p>
-    <%= f.submit submitText %>
+    <%= f.submit submit_text %>
 
     <%= link_to 'Cancel', pet_owners_path %>
   </p>

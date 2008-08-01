@@ -4,13 +4,17 @@
 
   <%
     if mode == 'new'
-      submitText = "Create"
+      submit_text = "Create"
     else
-      submitText = "Update"
+      submit_text = "Update"
     end
 
     if User.create.current_user(session).admin
-      disabled = false    
+      if  params[:pet_id] != nil
+        disabled = true
+      else
+        disabled = false
+      end
     else 
       if mode == 'edit' || params[:pet_id] != nil
         disabled = true
@@ -22,8 +26,19 @@
     if User.create.current_user(session).admin
       conditions = []
     else
-      #conditions = [ "company_id=?", User.create.current_user(session).company_id ]
-conditions = []
+      conditions = [ "company_id=?", User.create.current_user(session).company_id ]
+    end
+
+    puts params[:pet_id]
+
+    if params[:pet_id] != nil
+      pets = Pet.find(:all, :order => "name", :conditions => [ "id = ?", params[:pet_id] ] )
+    else
+      if params[:pet_owner_id] == nil
+        pets = Pet.find(:all, :conditions => [ "id = ?", @appointment.pet_id ])
+      else
+        pets = Pet.find(:all)
+      end
     end
   %>
 
@@ -47,7 +62,9 @@ conditions = []
   <p>
     <%= f.label :'Pet' %><br />
 
-    <div id="display_pets_select_div"></div>
+    <div id="display_pets_select_div">
+      <%= collection_select(:appointment, :pet_id, pets, :id, :name, {}, {:disabled => disabled}) %>
+    </div>
   </p>
 
   <p>
@@ -55,7 +72,6 @@ conditions = []
 
     <%= collection_select(:appointment, :groomer_id, 
           Groomer.find(:all, :order => "lastName", :conditions => conditions ), :id, :name) %>
-
   </p>
 
   <p>
@@ -69,7 +85,7 @@ conditions = []
   </p>
 
   <p>
-    <%= f.submit submitText %>
+    <%= f.submit submit_text %>
 
     <%= link_to 'Cancel', appointments_path %>
   </p>

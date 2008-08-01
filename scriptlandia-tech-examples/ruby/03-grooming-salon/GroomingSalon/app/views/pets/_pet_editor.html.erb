@@ -2,9 +2,9 @@
 
   <%
     if mode == 'new'
-      submitText = "Create"
+      submit_text = "Create"
     else
-      submitText = "Update"
+      submit_text = "Update"
     end
 
     if User.create.current_user(session).admin
@@ -19,21 +19,26 @@
   <table width="100%">
     <tr>
       <td>
+        <%= f.label :'pet Owner' %>: 
+        <%= collection_select(:pet, :pet_owner_id, 
+              PetOwner.find(:all, :order => "lastName", :conditions => conditions ),
+              :id, :name, {}, {:disabled => disabled }) %>
+      </td>
+
+      <td>
         <%= "Cat or Dog?" %>: <%= select(:pet, :subtype, %w(cat dog)) %>
       </td>
 
       <td>
         <%= f.label :name %>: <%= f.text_field :name %>
       </td>
-
-      <td>
-        <%= f.label :breed %>: <%= f.text_field :breed %>
-      </td>
     </tr>
 
     <tr>
+      <td>
+        <%= f.label :breed %>: <%= f.text_field :breed %>
+      </td>
 
-    <tr>
       <td>
         <%= f.label :size %>: <%= f.text_field :size %>
       </td>
@@ -41,13 +46,13 @@
       <td>
         <%= f.label :color %>: <%= f.text_field :color %>
       </td>
-
-      <td>
-        <%= f.label :'birth Date' %>: <%= date_select(:pet, :birthDate, :order => [:month, :day, :year])%>
-      </td>
     </tr>
 
     <tr>
+      <td>
+        <%= f.label :'birth Date' %>: <%= date_select(:pet, :birthDate, :order => [:month, :day, :year])%>
+      </td>
+
       <td>
         <%= f.label :sex %>: <%= select(:pet, :sex, %w(male female)) %>
       </td>
@@ -55,18 +60,9 @@
       <td>
         <%= f.label :'alive' %>: <%= select(:pet, :alive, %w(yes no)) %>
       </td>
-
-      <td></td>
     </tr>
 
     <tr>
-      <td>
-        <%= f.label :'pet Owner' %>: 
-        <%= collection_select(:pet, :pet_owner_id, 
-              PetOwner.find(:all, :order => "lastName", :conditions => conditions ),
-              :id, :name, {}, {:disabled => disabled }) %>
-      </td>
-
       <td>
         <%= f.label :veterinar %>: <%= f.text_field :veterinar %>
       </td>
@@ -114,7 +110,7 @@
 
     <tr>
       <td>
-        <%= f.submit submitText %>
+        <%= f.submit submit_text %>
 
         <%= link_to 'Cancel', pets_path %>
       </td>
