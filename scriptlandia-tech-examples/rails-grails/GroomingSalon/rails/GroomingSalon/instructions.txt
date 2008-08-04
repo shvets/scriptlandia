@@ -79,3 +79,9 @@ jruby script/console
 10.
 rake db:test:prepare   
 script/generate migration AddTitleEmailToUsers title:string email:string
+
+rake rails:freeze:gems
+rake doc:rails
+
+rake cleanup - remover previous versions of gems
+rake rails:update
