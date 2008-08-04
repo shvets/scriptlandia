@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application
+    xmlns:mx="http://www.adobe.com/2006/mxml"
+    width="100%" height="100%" layout="vertical"
+    backgroundGradientColors="[#000000, #CCCCCC]"
+    creationComplete="svcTasksList.send()">
+  <mx:Script>
+<![CDATA[
+import mx.events.ListEvent;
+    import mx.controls.Alert;
+    import mx.rpc.events.ResultEvent;
+    private function createTask():void {
+      svcTasksCreate.send();
+    }
+    private function deleteTask(task:XML):void {
+      svcTasksDestroy.url = "/tasks/" + task.id + ".xml";
+      svcTasksDestroy.send({_method: "DELETE"});
+    }
+    private function updateSelectedTask(event:ListEvent): void {
+      var itemEditor:TextInput =
+          TextInput(event.currentTarget.itemEditorInstance);
+      var selectedTask:XML = XML(event.itemRenderer.data);
+      if (selectedTask.name == itemEditor.text) return;
+      var params:Object = new Object();
+      params['task[name]'] = itemEditor.text;
+      params['_method'] = "PUT";
+      svcTasksUpdate.url = "/tasks/" + selectedTask.id + ".xml";
+      svcTasksUpdate.send(params);
+    }
+    private function listTasks():void {
+      svcTasksList.send();
+    }
+]]>
+</mx:Script>
+  <mx:HTTPService id="svcTasksCreate" url="/tasks.xml"
+                  contentType="application/xml" resultFormat="e4x"
+                  method="POST" result="listTasks()">
+    <mx:request>
+      <task>
+        <name>{newTaskTI.text}</name>
+      </task>
+    </mx:request>
+  </mx:HTTPService>
+
+  <mx:HTTPService id="svcTasksList" url="/tasks.xml"
+                  resultFormat="e4x" method="POST"/>
+
+  <mx:HTTPService id="svcTasksUpdate" resultFormat="e4x"
+                  method="POST" result="listTasks()"/>
+
+  <mx:HTTPService id="svcTasksDestroy" resultFormat="e4x"
+                  method="POST" result="listTasks()"/>
+
+  <mx:XMLListCollection id="tasksXLC"
+                        source="{XMLList(svcTasksList.lastResult.children())}"/>
+
+  <mx:Panel title="Simple Todo" width="100%" height="100%">
+    <mx:HBox width="100%" paddingLeft="5"
+             paddingRight="5"
+             paddingTop="5">
+      <mx:Label text="New Task"/>
+      <mx:TextInput id="newTaskTI" width="100%"
+                    enter="createTask()"/>
+      <mx:Button label="Create" click="createTask()"/>
+    </mx:HBox>
+
+    <mx:List id="taskList" width="100%" height="100%"
+             editable="true" labelField="name"
+             dataProvider="{tasksXLC}"
+             itemEditEnd="updateSelectedTask(event)"/>
+
+    <mx:ControlBar width="100%" horizontalAlign="center">
+      <mx:Button label="Delete" width="100%" height="30"
+                 enabled="{taskList.selectedItem != null}"
+                 click="deleteTask(XML(taskList.selectedItem))"/>
+    </mx:ControlBar>
+  </mx:Panel>
+
+</mx:Application>

@@ -1,0 +1,15 @@
+Links:
+http://refcardz.dzone.com/refcardz/flexible-rails?oid=ban00027-0
+
+1.
+rails testflex
+
+2.
+ruby script\generate scaffold Task name:string -d mysql
+
+3.
+rake db:migrate
+
+4.
+todo>ruby script\server
+
