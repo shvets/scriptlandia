@@ -142,3 +142,14 @@ img.right {
         font-size: 85%;
 }
 
+.list-line-even {
+  background: #e0f8f8;
+}
+
+.list-line-even {
+  background: #f8b0f8;
+}
+
+#salon form, #salon form div {
+  display: inline;
+}

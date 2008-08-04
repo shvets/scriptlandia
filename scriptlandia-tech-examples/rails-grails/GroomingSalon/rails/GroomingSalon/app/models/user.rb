@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
     Digest::MD5.hexdigest(pw + password_salt) == password_hash
   end
 
-  def User.current_user(session)
+  def self.current_user(session)
     if session[:user]
       User.find(session[:user])
     end

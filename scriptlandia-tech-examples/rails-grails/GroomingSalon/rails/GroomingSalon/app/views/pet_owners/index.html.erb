@@ -1,7 +1,6 @@
 <h1>Listing Pet Owners</h1>
 
-<%= link_to 'New Pet Owner', new_pet_owner_path %>
-<br/>
+<%= button_to 'New Pet Owner', new_pet_owner_path %>
 <br/>
 
 <% if !@pet_owners.empty? %>
@@ -16,7 +15,7 @@
     </tr>
 
     <% for pet_owner in @pet_owners %>
-      <tr>
+      <tr valign="top" class="<%=cycle('list-line-odd', 'list-line-even')%>">
         <td><%=h pet_owner.company.name if pet_owner.company != nil %></td>
         <td><%=h pet_owner.salutation %> <%=h pet_owner.name %></td>
         <td><%=h pet_owner.homePhone %></td>

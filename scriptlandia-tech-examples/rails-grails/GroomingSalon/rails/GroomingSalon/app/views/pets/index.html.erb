@@ -1,7 +1,6 @@
 <h1>Listing Pets</h1>
 
-<%= link_to 'New Pet', new_pet_path %>
-<br />
+<%= button_to 'New Pet', new_pet_path %>
 <br />
 
 <% if !@pets.empty? %>
@@ -19,7 +18,7 @@
     </tr>
 
   <% for pet in @pets %>
-      <tr <%= "style='color:red'" if pet.alive == 'no' %> >
+      <tr <%= "style='color:red'" if pet.alive == 'no' %>  valign="top" class="<%=cycle('list-line-odd', 'list-line-even')%>">
         <td><%=h pet.pet_owner.name if pet.pet_owner != nil %></td>
         <td><%=h pet.subtype%></td>
         <td><%=h pet.name %></td>

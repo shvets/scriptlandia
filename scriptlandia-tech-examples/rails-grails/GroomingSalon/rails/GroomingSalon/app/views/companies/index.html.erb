@@ -1,7 +1,6 @@
 <h1>Listing companies</h1>
 
-<%= link_to 'New Company', new_company_path %>
-<br />
+<%= button_to 'New Company', new_company_path %>
 <br />
 
 <table width="50%">
@@ -12,7 +11,7 @@
   </tr>
 
 <% for company in @companies %>
-  <tr>
+  <tr valign="top" class="<%=cycle('list-line-odd', 'list-line-even')%>">
     <td><%=h company.name %></td>
     <td><%=h company.address %></td>
     <td><%= link_to 'Show', company %></td>

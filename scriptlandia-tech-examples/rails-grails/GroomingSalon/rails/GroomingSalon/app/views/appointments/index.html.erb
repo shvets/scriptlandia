@@ -1,8 +1,7 @@
 <h1>Listing Appointments</h1>
 
-<%= link_to 'New Appointment', new_appointment_path %>
-<br />
-<br />
+<%= button_to 'New Appointment', new_appointment_path %>
+<br>
 
 <% if !@appointments.empty? %>
   <table border="0">
@@ -16,12 +15,12 @@
     </tr>
 
   <% for appointment in @appointments %>
-    <tr>
+    <tr valign="top" class="<%=cycle('list-line-odd', 'list-line-even')%>">
       <td><%=h appointment.pet_owner.name if appointment.pet_owner != nil %></td>
       <td><%=h appointment.pet.name if appointment.pet != nil %></td>
       <td><%=h appointment.groomer.name if appointment.groomer != nil %></td>
       <td><%=h appointment.appointmentDate %></td>
-      <td><%=h appointment.price %></td>
+      <td><%=h number_to_currency appointment.price %></td>
 
       <td><%= link_to 'Show', appointment %></td>
       <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>

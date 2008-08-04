@@ -1,7 +1,6 @@
 <h1>Listing Groomers</h1>
 
-<%= link_to 'New Groomer', new_groomer_path %>
-<br />
+<%= button_to 'New Groomer', new_groomer_path %>
 <br />
 
 <% if !@groomers.empty? %>
@@ -15,7 +14,7 @@
     </tr>
 
     <% for groomer in @groomers %>
-      <tr>
+      <tr valign="top" class="<%=cycle('list-line-odd', 'list-line-even')%>">
         <td><%=h groomer.company.name if groomer.company != nil %></td>
         <td><%=h groomer.name %></td>
         <td><%=h groomer.notes %></td>

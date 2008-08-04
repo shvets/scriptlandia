@@ -1,7 +1,6 @@
 <h1>Listing Reports</h1>
 
-<%= link_to 'New Report', new_report_path %>
-<br />
+<%= button_to 'New Report', new_report_path %>
 <br />
 
 <% if !@reports.empty? %>
@@ -12,7 +11,7 @@
     </tr>
 
     <% for report in @reports %>
-      <tr>                      
+      <tr valign="top" class="<%=cycle('list-line-odd', 'list-line-even')%>">                      
         <td><%= link_to report.description, report %>
 
         <td><%= link_to 'Show', report %></td>

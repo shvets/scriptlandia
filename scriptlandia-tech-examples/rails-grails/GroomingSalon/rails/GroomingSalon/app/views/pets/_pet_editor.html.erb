@@ -112,9 +112,9 @@
 
     <tr>
       <td>
-        <%= f.submit submit_text %>
-
-        <%= link_to 'Cancel', pets_path %>
+        <div>
+          <%= f.submit submit_text %> <%= button_to 'Cancel', pets_path %>
+        </div>
       </td>
     </tr>
   </table>

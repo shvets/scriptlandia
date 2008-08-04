@@ -1,7 +1,6 @@
 <h1>Listing users</h1>
 
-<%= link_to 'New user', new_user_path %>
-<br />
+<%= button_to 'New user', new_user_path %>
 <br />
 
 <% if @users.empty? %>
@@ -17,7 +16,7 @@
     </tr>
 
     <% for user in @users %>
-      <tr>
+      <tr valign="top" class="<%=cycle('list-line-odd', 'list-line-even')%>">
         <td><%=h user.username %></td>
         <td><%=h user.admin %></td>
         <td><%=h user.company.name if user.company != nil %></td>
