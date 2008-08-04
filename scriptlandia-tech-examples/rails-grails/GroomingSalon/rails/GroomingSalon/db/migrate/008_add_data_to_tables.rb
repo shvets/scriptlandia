@@ -23,16 +23,16 @@ class AddDataToTables < ActiveRecord::Migration
   end
 
   def self.down
-    Company.delete :id => 1
-    Company.delete :id => 2
+    Company.delete_all
+    Company.delete_all
 
-    Groomer.delete :id => 1
-    Groomer.delete :id => 2
+    Groomer.delete_all
+    Groomer.delete_all
 
-    PetOwner.delete :id => 1
-    PetOwner.delete :id => 2
+    PetOwner.delete_all
+    PetOwner.delete_all
 
-    Pet.delete :id => 1
-    Pet.delete :id => 2
+    Pet.delete_all
+    Pet.delete_all
   end
 end
