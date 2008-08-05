@@ -18,4 +18,9 @@ Welcome to <b>Grooming Salon</b> Website!
 
 <% if current_user == nil %>
   Please <%= link_to "log in", :controller => "home", :action => "login" %> to have full access to the web site.
+<% else %>
+  <h1>Today's Appointments</h1>
+
+  <%= render :partial => "today_appointments" %>
 <% end %>
+

@@ -7,6 +7,34 @@ class Appointment < ActiveRecord::Base
  
   validates_numericality_of :price, :message=>"should be a number"
 
+  def self.find_by_current_user current_user, params
+    if current_user.admin
+      pet_owner_ids = []
+
+      if params[:pet_owner_id] != nil
+        pet_owner_ids << params[:pet_owner_id]
+      end
+    else
+      if current_user.company.id
+        pet_owner_ids = PetOwner.find(:all, :conditions => ["company_id=?", current_user.company.id]).collect() { |x| x.id }
+      else
+        pet_owner_ids = []
+
+        if params[:pet_owner_id] != nil
+          pet_owner_ids << params[:pet_owner_id]
+        end
+      end
+    end
+
+    if pet_owner_ids.size() == 0
+      conditions = {}
+    else
+      conditions = { :pet_owner_id => pet_owner_ids }
+    end
+
+    User.find(:all, :conditions => conditions)
+  end
+
   def to_s
     "Appointment { owner: #{pet_owner.name if pet_owner != nil}; pet: ${pet.name if pet != nil}; appointmentDate: #{appointmentDate}; price: #{price} }"
   end

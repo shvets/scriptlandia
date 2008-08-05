@@ -3,6 +3,8 @@
 class HomeController < ApplicationController
   def index
     reset_flash_messages
+
+    @appointments = Appointment.find_by_current_user User.current_user(session), params
   end
 
   def login

@@ -1,0 +1,21 @@
+<% if !@appointments.empty? %>
+  <table border="0">
+    <tr>
+      <th>Pet Owner</th>
+      <th>Pet</th>
+      <th>Groomer</th>
+      <th>Appointment Date</th>
+      <th>Price</th>
+    </tr>
+
+  <% for appointment in @appointments %>
+    <tr valign="top" class="<%=cycle('list-line-odd', 'list-line-even')%>">
+      <td><%=h appointment.pet_owner.name if appointment.pet_owner != nil %></td>
+      <td><%=h appointment.pet.name if appointment.pet != nil %></td>
+      <td><%=h appointment.groomer.name if appointment.groomer != nil %></td>
+      <td><%=h appointment.appointmentDate %></td>
+      <td><%=h number_to_currency appointment.price %></td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>
