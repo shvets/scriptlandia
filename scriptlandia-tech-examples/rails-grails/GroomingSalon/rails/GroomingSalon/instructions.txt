@@ -85,3 +85,8 @@ rake doc:rails
 
 rake cleanup - remover previous versions of gems
 rake rails:update
+
+11.
+rake db:sessions:create
+rake migrate
+db:sessions:clear

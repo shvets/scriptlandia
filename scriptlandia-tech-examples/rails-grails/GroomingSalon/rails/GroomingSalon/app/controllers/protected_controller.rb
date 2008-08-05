@@ -26,4 +26,9 @@ class ProtectedController < ApplicationController
     end
   end
 
+  private
+
+  def find_user
+    session[:user] ||= User.new
+  end
 end

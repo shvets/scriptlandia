@@ -392,7 +392,10 @@
     <option name="localPort" value="" />
     <option name="hexDump" />
   </component>
-  <component name="ProjectFileVersion" converted="true" />
+  <component name="ProjectFileVersion" converted="true">
+    <converter id="javaee-modules" />
+    <converter id="ror-modules" />
+  </component>
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GroomingSalon.iml" filepath="$PROJECT_DIR$/GroomingSalon.iml" />
