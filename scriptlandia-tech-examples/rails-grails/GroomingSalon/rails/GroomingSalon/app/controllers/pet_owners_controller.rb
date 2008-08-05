@@ -4,8 +4,6 @@ class PetOwnersController < ProtectedController
   # GET /pet_owners
   # GET /pet_owners.xml
   def index
-    reset_flash_messages
-
     current_user = User.current_user(session)
 
     if current_user.admin
@@ -40,6 +38,8 @@ class PetOwnersController < ProtectedController
   # GET /pet_owners/new
   # GET /pet_owners/new.xml
   def new
+    reset_flash_messages
+
     @pet_owner = PetOwner.new
 
     respond_to do |format|
@@ -50,7 +50,7 @@ class PetOwnersController < ProtectedController
 
   # GET /pet_owners/1/edit
   def edit
-    @pet_owner = PetOwner.find(params[:id])
+    @pet_owner = super(params[:id], "index") { PetOwner.find(params[:id]) }
   end
 
   # POST /pet_owners

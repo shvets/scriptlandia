@@ -4,8 +4,6 @@ class CompaniesController < ProtectedController
   # GET /companies
   # GET /companies.xml
   def index
-    reset_flash_messages
-
     @companies = Company.find(:all)
 
     respond_to do |format|
@@ -38,12 +36,14 @@ class CompaniesController < ProtectedController
 
   # GET /companies/1/edit
   def edit
-    @company = Company.find(params[:id])
+    @company = super(params[:id], "index") { Company.find(params[:id]) }
   end
 
   # POST /companies
   # POST /companies.xml
   def create
+    reset_flash_messages
+
     @company = Company.new(params[:company])
 
     respond_to do |format|

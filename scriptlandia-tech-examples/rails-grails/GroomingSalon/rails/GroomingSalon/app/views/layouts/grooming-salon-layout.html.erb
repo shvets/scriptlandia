@@ -25,14 +25,18 @@
       <div id="content">
         <table>
           <tr>
-            <td style="color: green">
-              <%=
-              if flash[:notice]
-                flash[:notice]
-              else
-                "&nbsp;"
-              end
-            %>
+            <td>
+              <% if flash[:notice] %>
+                <div id="notice">
+                  <%= flash[:notice] %>
+                </div>
+              <% elsif flash[:error] %>
+                <div id="error">
+                  <%= flash[:error] %>
+                </div>
+              <% else %>
+                <%= "&nbsp;" %>
+              <% end %>
             </td>
           </tr>
           

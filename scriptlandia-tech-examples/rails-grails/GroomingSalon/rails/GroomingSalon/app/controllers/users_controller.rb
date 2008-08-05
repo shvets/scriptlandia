@@ -4,8 +4,6 @@ class UsersController < ProtectedController
   # GET /users
   # GET /users.xml
   def index
-    reset_flash_messages
-
     @users = User.find(:all)
 
     respond_to do |format|
@@ -28,6 +26,8 @@ class UsersController < ProtectedController
   # GET /users/new
   # GET /users/new.xml
   def new
+    reset_flash_messages
+
     @user = User.new
 
     respond_to do |format|
@@ -38,7 +38,7 @@ class UsersController < ProtectedController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+    @user = super(params[:id], "index") { User.find(params[:id]) }
   end
 
   # POST /users

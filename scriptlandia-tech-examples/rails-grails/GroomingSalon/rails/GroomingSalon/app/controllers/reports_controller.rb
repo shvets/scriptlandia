@@ -4,8 +4,6 @@ class ReportsController < ProtectedController
   # GET /reports
   # GET /reports.xml
   def index
-    reset_flash_messages
-
     @reports = Report.find(:all)
 
     if @reports.empty?
@@ -32,6 +30,8 @@ class ReportsController < ProtectedController
   # GET /reports/new
   # GET /reports/new.xml
   def new
+    reset_flash_messages
+
     @report = Report.new
 
     respond_to do |format|
@@ -42,7 +42,7 @@ class ReportsController < ProtectedController
 
   # GET /reports/1/edit
   def edit
-    @report = Report.find(params[:id])
+    @report = super(params[:id], "index") { Report.find(params[:id]) }
   end
 
   # POST /reports

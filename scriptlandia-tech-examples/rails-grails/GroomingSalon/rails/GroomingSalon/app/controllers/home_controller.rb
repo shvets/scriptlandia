@@ -29,7 +29,7 @@ class HomeController < ApplicationController
         redirect_to :controller => controller, :action => 'index'
       else 
          #@auth_error = 'Wrong username or password'
-         flash[:notice] = 'Wrong username or password'
+         flash[:error] = 'Wrong username or password'
       end
     end
   end

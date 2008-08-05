@@ -9,11 +9,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080805022027) do
+ActiveRecord::Schema.define(:version => 10) do
 
   create_table "appointments", :force => true do |t|
     t.datetime "appointmentDate"
-    t.float    "price"
+    t.float    "price",                         :default => 0.0
     t.integer  "pet_owner_id",    :limit => 11
     t.integer  "groomer_id",      :limit => 11
     t.integer  "pet_id",          :limit => 11
@@ -76,9 +76,9 @@ ActiveRecord::Schema.define(:version => 20080805022027) do
     t.string   "description"
     t.string   "table"
     t.string   "condition"
+    t.string   "controller"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "controller"
   end
 
   create_table "sessions", :force => true do |t|

@@ -4,8 +4,6 @@ class GroomersController < ProtectedController
   # GET /groomers
   # GET /groomers.xml
   def index
-    reset_flash_messages
-
     current_user = User.current_user(session)
 
     if current_user.admin
@@ -40,6 +38,8 @@ class GroomersController < ProtectedController
   # GET /groomers/new
   # GET /groomers/new.xml
   def new
+    reset_flash_messages
+
     @groomer = Groomer.new(:company_id => User.current_user(session).company_id)
 
     respond_to do |format|
@@ -50,7 +50,7 @@ class GroomersController < ProtectedController
 
   # GET /groomers/1/edit
   def edit
-    @groomer = Groomer.find(params[:id])
+    @groomer = super(params[:id], "index") { Groomer.find(params[:id]) }
   end
 
   # POST /groomers

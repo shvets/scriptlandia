@@ -4,8 +4,6 @@ class AppointmentsController < ProtectedController
   # GET /appointments
   # GET /appointments.xml
   def index
-    reset_flash_messages
-
     current_user = User.current_user(session)
 
     if current_user.admin
@@ -58,6 +56,8 @@ class AppointmentsController < ProtectedController
   # GET /appointments/new
   # GET /appointments/new.xml
   def new
+    reset_flash_messages
+
     @appointment = Appointment.new(:pet_owner_id => params[:pet_owner_id], :pet_id => params[:pet_id])
 
     respond_to do |format|
@@ -68,7 +68,7 @@ class AppointmentsController < ProtectedController
 
   # GET /appointments/1/edit
   def edit
-    @appointment = Appointment.find(params[:id])
+    @appointment = super(params[:id], "index") { Appointment.find(params[:id]) }
   end
 
   # POST /appointments

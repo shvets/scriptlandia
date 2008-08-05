@@ -15,6 +15,7 @@ http://api.rubyonrails.org/
 http://www.ruby-doc.org/docs/ProgrammingRuby/
 
 http://codingbitch.com/p/comboy/User+authentication+in+Ruby+on+Rails
+http://pleac.sourceforge.net/pleac_ruby/index.html
 
 1.  (2.1.0)
 

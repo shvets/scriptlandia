@@ -21,14 +21,22 @@ class ProtectedController < ApplicationController
 
   def check_auth
     unless session[:user]
-      flash[:notice] = 'You need to be logged in to access this panel'
+      flash[:error] = 'You need to be logged in to access this panel'
       redirect_to :controller => 'home', :action => 'login'
     end
   end
 
-  private
+  def edit(id, action, &find_item_code)
+    begin
+      if block_given?
+        yield find_item_code
+      end
+    rescue ActiveRecord::RecordNotFound
+      logger.error("Wrong ID: " + id)
+      flash[:error] = "Wrong ID: " + id
 
-  def find_user
-    session[:user] ||= User.new
+      redirect_to :action => action
+    end
   end
+
 end
