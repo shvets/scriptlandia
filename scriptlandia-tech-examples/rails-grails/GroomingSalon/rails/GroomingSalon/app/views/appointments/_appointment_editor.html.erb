@@ -76,8 +76,12 @@
 
   <p>
     <%= f.label :'appointment Date' %><br />
-    <%= f.datetime_select :appointmentDate %>
-    <%= calendar_date_select_includes "red" %>
+    <%= f.date_select :appointmentDate %>
+  </p>
+
+  <p>
+    <%= f.label :'appointment time' %><br />
+    <%= f.time_select :appointmentTime %>
   </p>
 
   <p>

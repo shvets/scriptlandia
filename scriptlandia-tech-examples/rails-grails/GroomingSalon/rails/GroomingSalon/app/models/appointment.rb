@@ -7,7 +7,7 @@ class Appointment < ActiveRecord::Base
  
   validates_numericality_of :price, :message=>"should be a number"
 
-  def self.find_by_current_user current_user, params, current_date = nil
+  def self.find_by_current_user current_user, current_date, params
     pet_owner_ids = []
     
     if current_user != nil
