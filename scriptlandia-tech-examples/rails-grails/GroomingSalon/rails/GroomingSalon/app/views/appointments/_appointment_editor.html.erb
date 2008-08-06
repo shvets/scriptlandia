@@ -31,8 +31,6 @@
       conditions = [ "company_id=?", current_user.company_id ]
     end
 
-    puts params[:pet_id]
-
     if params[:pet_id] != nil
       pets = Pet.find(:all, :order => "name", :conditions => [ "id = ?", params[:pet_id] ] )
     else
@@ -79,6 +77,7 @@
   <p>
     <%= f.label :'appointment Date' %><br />
     <%= f.datetime_select :appointmentDate %>
+    <%= calendar_date_select_includes "red" %>
   </p>
 
   <p>

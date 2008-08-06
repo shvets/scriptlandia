@@ -4,15 +4,7 @@ class GroomersController < ProtectedController
   # GET /groomers
   # GET /groomers.xml
   def index
-    current_user = User.current_user(session)
-
-    if current_user.admin
-      conditions = []
-    else
-      conditions = [ "company_id=?", current_user.company_id ]
-    end
-
-    @groomers = Groomer.find(:all, :conditions => conditions )
+    @groomers = Appointment.find_by_current_user User.current_user(session)
 
     if @groomers.empty?
       flash[:notice] = 'We don\'t have any groomer.'

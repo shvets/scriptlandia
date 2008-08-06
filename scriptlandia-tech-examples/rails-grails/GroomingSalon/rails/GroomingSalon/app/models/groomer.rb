@@ -9,6 +9,16 @@ class Groomer < ActiveRecord::Base
     lastName + " " + firstName
   end
 
+  def self.find_by_current_user current_user
+    if current_user.admin
+      conditions = []
+    else
+      conditions = [ "company_id=?", current_user.company_id ]
+    end
+
+    find(:all, :conditions => conditions )
+  end
+
   def to_s
     "Groomer { name: #{name}; company: #{company.name if company != nil} }"
   end

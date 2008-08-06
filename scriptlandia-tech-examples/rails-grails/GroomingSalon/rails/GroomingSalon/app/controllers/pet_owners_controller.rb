@@ -40,7 +40,8 @@ class PetOwnersController < ProtectedController
   def new
     reset_flash_messages
 
-    @pet_owner = PetOwner.new
+    puts "************ "
+    @pet_owner = PetOwner.new(:company_id => User.current_user(session).company_id)
 
     respond_to do |format|
       format.html # new.html.erb

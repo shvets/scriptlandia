@@ -4,9 +4,7 @@ class AppointmentsController < ProtectedController
   # GET /appointments
   # GET /appointments.xml
   def index
-    current_user = User.current_user(session)
-
-    @appointments = Appointment.find_by_current_user current_user, params
+    @appointments = Appointment.find_by_current_user User.current_user(session), params
 
     if @appointments.empty?
       flash[:notice] = 'We don\'t have any appointment.'
