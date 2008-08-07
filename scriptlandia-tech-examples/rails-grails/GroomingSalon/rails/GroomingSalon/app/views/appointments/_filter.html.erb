@@ -1,0 +1,18 @@
+<% form_tag '/' + action, :method => :get do %>
+
+  Filter by: <%= select_tag "filter_id", options %> 
+
+  <%= observe_field("filter_id",
+                 :frequency => 0.25,
+                 :update => :display_filter_field_div,
+                 :url => { :controller => 'appointments', :action => :display_filter_value_field },
+                 :with => 'filter_id') %>
+
+  Value: 
+  <div id="display_filter_field_div">
+    <%= text_field_tag "filter_value", {}, { :disabled => true } %>
+  </div>
+
+  <%= submit_tag 'Filter' %>
+
+<% end %>
