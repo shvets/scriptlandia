@@ -1,15 +1,16 @@
+<!-- index.html.erb -->
+
 <h1>Listing Appointments</h1>
 
 <%= button_to 'New Appointment', new_appointment_path %>
 
-<% form_remote_tag :url => { :action => "index" } do %>
-  Filter: <%= select( "appointment", "filter", { "by pet owner" => "PETOWNER", "by date" => "DATE"}) %> 
-  Filter value: <%= text_field_tag "123" %>
-  <%= submit_tag 'Filter' %>
-<% end %>
+<% if !@appointments.empty?
+  options = options_for_select({ "" => "", "Pet Owner" => "PETOWNER", "Date" => "DATE"}) -%>
+
+  <%= render :partial => "filter", :locals => { :options => options, :action => 'appointments' } %>
+
 <br>
 
-<% if !@appointments.empty? %>
   <table border="0">
     <tr>
       <th>Pet Owner</th>
@@ -26,8 +27,8 @@
       <td><%=h appointment.pet_owner.name if appointment.pet_owner != nil %></td>
       <td><%=h appointment.pet.name if appointment.pet != nil %></td>
       <td><%=h appointment.groomer.name if appointment.groomer != nil %></td>
-      <td><%=h appointment.appointmentDate.strftime("%A, %B %d, %Y") %></td>
-      <td><%=h appointment.appointmentTime.strftime("%H:%M") %></td>
+      <td><%=h appointment.appointment_date.strftime("%A, %B %d, %Y") %></td>
+      <td><%=h appointment.appointment_time.strftime("%H:%M") %></td>
       <td><%=h number_to_currency appointment.price %></td>
 
       <td><%= link_to 'Show', appointment %></td>

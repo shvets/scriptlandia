@@ -18,9 +18,9 @@
       <tr valign="top" class="<%=cycle('list-line-odd', 'list-line-even')%>">
         <td><%=h pet_owner.company.name if pet_owner.company != nil %></td>
         <td><%=h pet_owner.salutation %> <%=h pet_owner.name %></td>
-        <td><%=h pet_owner.homePhone %></td>
-        <td><%=h pet_owner.workPhone %></td>
-        <td><%=h pet_owner.cellPhone %></td>
+        <td><%=h pet_owner.home_phone %></td>
+        <td><%=h pet_owner.work_phone %></td>
+        <td><%=h pet_owner.cell_phone %></td>
         <td><%= link_to 'Show', pet_owner %></td>
 
         <td><%= link_to 'Edit', edit_pet_owner_path(pet_owner) %></td>

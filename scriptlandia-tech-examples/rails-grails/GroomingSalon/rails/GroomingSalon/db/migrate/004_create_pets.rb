@@ -7,13 +7,13 @@ class CreatePets < ActiveRecord::Migration
       t.string :breed
       t.string :color
       t.string :size
-      t.datetime :birthDate
+      t.datetime :birth_date
 
       t.string :veterinar
-      t.string :referredBy
+      t.string :referred_by
 
-      t.text :medicalProblems
-      t.text :specialInstructions
+      t.text :medical_problems
+      t.text :special_instructions
       t.text :behavior
 
       t.string :clip1

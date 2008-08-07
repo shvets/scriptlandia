@@ -12,12 +12,12 @@
 ActiveRecord::Schema.define(:version => 10) do
 
   create_table "appointments", :force => true do |t|
-    t.date     "appointmentDate"
-    t.time     "appointmentTime"
-    t.float    "price",                         :default => 0.0
-    t.integer  "pet_owner_id",    :limit => 11
-    t.integer  "groomer_id",      :limit => 11
-    t.integer  "pet_id",          :limit => 11
+    t.date     "appointment_date"
+    t.time     "appointment_time"
+    t.float    "price",                          :default => 0.0
+    t.integer  "pet_owner_id",     :limit => 11
+    t.integer  "groomer_id",       :limit => 11
+    t.integer  "pet_id",           :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(:version => 10) do
   end
 
   create_table "groomers", :force => true do |t|
-    t.string   "firstName"
-    t.string   "lastName"
+    t.string   "first_name"
+    t.string   "last_name"
     t.text     "notes"
     t.integer  "company_id", :limit => 11
     t.datetime "created_at"
@@ -39,11 +39,11 @@ ActiveRecord::Schema.define(:version => 10) do
   end
 
   create_table "pet_owners", :force => true do |t|
-    t.string   "firstName"
-    t.string   "lastName"
-    t.string   "homePhone"
-    t.string   "workPhone"
-    t.string   "cellPhone"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "home_phone"
+    t.string   "work_phone"
+    t.string   "cell_phone"
     t.string   "salutation"
     t.integer  "company_id", :limit => 11
     t.datetime "created_at"
@@ -57,16 +57,16 @@ ActiveRecord::Schema.define(:version => 10) do
     t.string   "breed"
     t.string   "color"
     t.string   "size"
-    t.datetime "birthDate"
+    t.datetime "birth_date"
     t.string   "veterinar"
-    t.string   "referredBy"
-    t.text     "medicalProblems"
-    t.text     "specialInstructions"
+    t.string   "referred_by"
+    t.text     "medical_problems"
+    t.text     "special_instructions"
     t.text     "behavior"
     t.string   "clip1"
     t.string   "clip2"
     t.string   "clip3"
-    t.integer  "pet_owner_id",        :limit => 11
+    t.integer  "pet_owner_id",         :limit => 11
     t.string   "alive"
     t.datetime "created_at"
     t.datetime "updated_at"

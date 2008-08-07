@@ -4,6 +4,12 @@ class AppointmentsController < ProtectedController
   # GET /appointments
   # GET /appointments.xml
   def index
+    filter_value = params[:filter_value]
+
+    if filter_value != nil
+      params[:pet_owner_id] = filter_value
+    end
+
     @appointments = Appointment.find_by_current_user User.current_user(session), nil, params
 
     if @appointments.empty?
@@ -33,7 +39,7 @@ class AppointmentsController < ProtectedController
     reset_flash_messages
 
     @appointment = Appointment.new(:pet_owner_id => params[:pet_owner_id], :pet_id => params[:pet_id], 
-      :appointmentDate => Date.today, :appointmentTime => Time.now )
+      :appointment_date => Date.today, :appointment_time => Time.now )
                                                                                                                      
     respond_to do |format|
       format.html # new.html.erb
@@ -103,6 +109,28 @@ class AppointmentsController < ProtectedController
     end
 
     text = text + '</select>'
+
+    render :text => text
+  end
+
+  def display_filter_value_field
+    id = params[:filter_id]
+
+    if id == 'PETOWNER'
+      pet_owners = PetOwner.find_by_current_user User.current_user(session)
+
+      text = '<select id="filter_value" name="filter_value">'
+      
+      for pet_owner in pet_owners
+        text = text + '  <option value="' + pet_owner.id.to_s + '">' + pet_owner.name + '</option>'
+      end
+
+      text = text + '</select>'
+    elsif id == "DATE"
+      text = '<input id="filter_value" name="filter_value" value="" type="text"/>'
+    else
+      text = ''
+    end
 
     render :text => text
   end

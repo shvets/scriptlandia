@@ -4,15 +4,7 @@ class PetOwnersController < ProtectedController
   # GET /pet_owners
   # GET /pet_owners.xml
   def index
-    current_user = User.current_user(session)
-
-    if current_user.admin
-      conditions = []
-    else
-      conditions = [ "company_id=?", current_user.company_id ]
-    end
-
-    @pet_owners = PetOwner.find(:all, :conditions => conditions)
+    @pet_owners = PetOwner.find_by_current_user User.current_user(session)
 
     if @pet_owners.empty?
       flash[:notice] = 'We don\'t have any pet owner.'
@@ -40,7 +32,6 @@ class PetOwnersController < ProtectedController
   def new
     reset_flash_messages
 
-    puts "************ "
     @pet_owner = PetOwner.new(:company_id => User.current_user(session).company_id)
 
     respond_to do |format|

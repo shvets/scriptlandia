@@ -1,11 +1,11 @@
 class CreatePetOwners < ActiveRecord::Migration
   def self.up
     create_table :pet_owners do |t|
-      t.string :firstName
-      t.string :lastName
-      t.string :homePhone
-      t.string :workPhone
-      t.string :cellPhone
+      t.string :first_name
+      t.string :last_name
+      t.string :home_phone
+      t.string :work_phone
+      t.string :cell_phone
       t.string :salutation
 
       t.integer :company_id

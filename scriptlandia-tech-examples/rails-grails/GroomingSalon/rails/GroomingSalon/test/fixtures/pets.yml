@@ -2,34 +2,34 @@
 
 one:
   veterinar: MyString
-  referredBy: MyString
-  medicalProblems: MyText
+  referred_by: MyString
+  medical_problems: MyText
   breed: MyString
   size: MyString
   name: MyString
   sex: MyString
   color: MyString
-  birthDate: 2008-07-22 20:03:20
+  birth_date: 2008-07-22 20:03:20
   clip1: MyString
   clip2: MyString
   clip3: MyString
   specialInstructions: MyText
   behavior: MyText
-  petOwner: MyString
+  pet_owner: MyString
 
 two:
   veterinar: MyString
-  referredBy: MyString
-  medicalProblems: MyText
+  referred_by: MyString
+  medical_problems: MyText
   breed: MyString
   size: MyString
   name: MyString
   sex: MyString
   color: MyString
-  birthDate: 2008-07-22 20:03:20
+  birth_date: 2008-07-22 20:03:20
   clip1: MyString
   clip2: MyString
   clip3: MyString
-  specialInstructions: MyText
+  special_instructions: MyText
   behavior: MyText
-  petOwner: MyString
+  pet_owner: MyString

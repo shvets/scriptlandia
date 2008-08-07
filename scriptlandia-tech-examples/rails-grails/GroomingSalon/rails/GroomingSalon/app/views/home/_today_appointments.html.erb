@@ -6,7 +6,8 @@
       <th>Pet Owner</th>
       <th>Pet</th>
       <th>Groomer</th>
-      <th>Appointment Date</th>
+      <th>Date</th>
+      <th>Time</th>
       <th>Price</th>
     </tr>
 
@@ -17,7 +18,8 @@
         <td><%=h appointment.pet_owner.name if appointment.pet_owner != nil %></td>
         <td><%=h appointment.pet.name if appointment.pet != nil %></td>
         <td><%=h appointment.groomer.name if appointment.groomer != nil %></td>
-        <td><%=h appointment.appointmentDate %></td>
+        <td><%=h appointment.appointment_date.strftime("%A, %B %d, %Y") %></td>
+        <td><%=h appointment.appointment_time.strftime("%H:%M") %></td>
         <td><%=h number_to_currency appointment.price %></td>
       </tr>
     <% 
@@ -25,7 +27,7 @@
     end %>
 
     <tr >
-      <td colspan="4"><b>Total</b></td>
+      <td colspan="5"><b>Total</b></td>
       <td><%=h number_to_currency sum %></td>
     </tr>
   </table>

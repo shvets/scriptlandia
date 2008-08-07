@@ -1,8 +1,8 @@
 class CreateAppointments < ActiveRecord::Migration
   def self.up
     create_table :appointments do |t|
-      t.date :appointmentDate
-      t.time :appointmentTime
+      t.date :appointment_date
+      t.time :appointment_time
       t.float :price, :precision => 8, :scale => 2, :default => 0
     
       t.integer :pet_owner_id

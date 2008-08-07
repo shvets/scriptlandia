@@ -1,17 +1,17 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  firstName: MyString
-  lastName: MyString
-  homePhone: MyString
-  workPhone: MyString
-  cellPhone: MyString
+  first_name: MyString
+  last_name: MyString
+  home_phone: MyString
+  work_phone: MyString
+  cell_phone: MyString
   salutation: MyString
 
 two:
-  firstName: MyString
-  lastName: MyString
-  homePhone: MyString
-  workPhone: MyString
-  cellPhone: MyString
+  first_name: MyString
+  last_name: MyString
+  home_phone: MyString
+  work_phone: MyString
+  cell_phone: MyString
   salutation: MyString

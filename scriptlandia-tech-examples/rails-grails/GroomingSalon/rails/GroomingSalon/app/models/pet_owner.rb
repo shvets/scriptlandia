@@ -4,10 +4,20 @@ class PetOwner < ActiveRecord::Base
   has_many :pets
   has_many :appointments
 
-  validates_presence_of :firstName, :lastName, :homePhone
+  validates_presence_of :first_name, :last_name, :home_phone
 
   def name
-    lastName + " " + firstName
+    last_name + " " + first_name
+  end
+
+  def self.find_by_current_user current_user
+    if current_user.admin
+      conditions = []
+    else
+      conditions = [ "company_id=?", current_user.company_id ]
+    end
+
+    find(:all, :conditions => conditions )
   end
 
   def to_s

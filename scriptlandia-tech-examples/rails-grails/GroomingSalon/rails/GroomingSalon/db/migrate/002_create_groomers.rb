@@ -1,8 +1,8 @@
 class CreateGroomers < ActiveRecord::Migration
   def self.up
     create_table :groomers do |t|
-      t.string :firstName
-      t.string :lastName
+      t.string :first_name
+      t.string :last_name
       t.text :notes
 
       t.integer :company_id 

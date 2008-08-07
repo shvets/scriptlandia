@@ -3,10 +3,10 @@ class Groomer < ActiveRecord::Base
 
   has_many :appointments
 
-  validates_presence_of :firstName, :lastName
+  validates_presence_of :first_name, :last_name
 
   def name
-    lastName + " " + firstName
+    last_name + " " + first_name
   end
 
   def self.find_by_current_user current_user

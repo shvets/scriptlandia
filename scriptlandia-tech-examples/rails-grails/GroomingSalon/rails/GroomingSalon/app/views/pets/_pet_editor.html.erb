@@ -23,7 +23,7 @@
       <td>
         <%= f.label :'pet Owner' %>: 
         <%= collection_select(:pet, :pet_owner_id, 
-              PetOwner.find(:all, :order => "lastName", :conditions => conditions ),
+              PetOwner.find(:all, :order => "last_name", :conditions => conditions ),
               :id, :name, {}, {:disabled => disabled }) %>
       </td>
 
@@ -52,7 +52,7 @@
 
     <tr>
       <td>
-        <%= f.label :'birth Date' %>: <%= date_select(:pet, :birthDate, :order => [:month, :day, :year])%>
+        <%= f.label :'birth Date' %>: <%= date_select(:pet, :birth_date, :order => [:month, :day, :year])%>
       </td>
 
       <td>
@@ -70,7 +70,7 @@
       </td>
 
       <td>
-        <%= f.label :'referred By' %>: <%= f.text_field :referredBy %>
+        <%= f.label :'referred By' %>: <%= f.text_field :referred_by %>
       </td>
     </tr>
 
@@ -84,8 +84,8 @@
           </tr>
 
           <tr>
-            <td><%= f.text_area :medicalProblems, "cols" => 25, "rows" => 5 %></td>
-            <td><%= f.text_area :specialInstructions, "cols" => 25, "rows" => 5 %></td>
+            <td><%= f.text_area :medical_problems, "cols" => 25, "rows" => 5 %></td>
+            <td><%= f.text_area :special_instructions, "cols" => 25, "rows" => 5 %></td>
             <td><%= f.text_area :behavior, "cols" => 25, "rows" => 5 %></td>
           </tr>
         </table>

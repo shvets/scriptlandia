@@ -50,7 +50,7 @@
   <p>
     <%= f.label :'pet Owner' %><br />
     <%= collection_select(:appointment, :pet_owner_id, 
-          PetOwner.find(:all, :order => "lastName", :conditions => conditions), :id, :name, {:include_blank => true}, {:disabled => disabled }) %>
+          PetOwner.find(:all, :order => "last_name", :conditions => conditions), :id, :name, {:include_blank => true}, {:disabled => disabled }) %>
 
     <%= observe_field("appointment_pet_owner_id",
                    :frequency => 0.25,
@@ -71,17 +71,17 @@
     <%= f.label :'groomer' %><br />
 
     <%= collection_select(:appointment, :groomer_id, 
-          Groomer.find(:all, :order => "lastName", :conditions => conditions ), :id, :name) %>
+          Groomer.find(:all, :order => "last_name", :conditions => conditions ), :id, :name) %>
   </p>
 
   <p>
     <%= f.label :'appointment Date' %><br />
-    <%= f.date_select :appointmentDate %>
+    <%= f.date_select :appointment_date %>
   </p>
 
   <p>
     <%= f.label :'appointment time' %><br />
-    <%= f.time_select :appointmentTime %>
+    <%= f.time_select :appointment_time %>
   </p>
 
   <p>
