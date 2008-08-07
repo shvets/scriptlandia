@@ -12,7 +12,8 @@
 ActiveRecord::Schema.define(:version => 10) do
 
   create_table "appointments", :force => true do |t|
-    t.datetime "appointmentDate"
+    t.date     "appointmentDate"
+    t.time     "appointmentTime"
     t.float    "price",                         :default => 0.0
     t.integer  "pet_owner_id",    :limit => 11
     t.integer  "groomer_id",      :limit => 11

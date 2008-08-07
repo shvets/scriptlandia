@@ -1,6 +1,12 @@
 <h1>Listing Appointments</h1>
 
 <%= button_to 'New Appointment', new_appointment_path %>
+
+<% form_remote_tag :url => { :action => "index" } do %>
+  Filter: <%= select( "appointment", "filter", { "by pet owner" => "PETOWNER", "by date" => "DATE"}) %> 
+  Filter value: <%= text_field_tag "123" %>
+  <%= submit_tag 'Filter' %>
+<% end %>
 <br>
 
 <% if !@appointments.empty? %>

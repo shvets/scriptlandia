@@ -32,8 +32,9 @@ class AppointmentsController < ProtectedController
   def new
     reset_flash_messages
 
-    @appointment = Appointment.new(:pet_owner_id => params[:pet_owner_id], :pet_id => params[:pet_id])
-
+    @appointment = Appointment.new(:pet_owner_id => params[:pet_owner_id], :pet_id => params[:pet_id], 
+      :appointmentDate => Date.today, :appointmentTime => Time.now )
+                                                                                                                     
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @appointment }
