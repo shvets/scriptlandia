@@ -3,7 +3,7 @@
 <%= button_to 'New Groomer', new_groomer_path %>
 <br />
 
-<% if !@groomers.empty? %>
+<% unless @groomers.empty? %>
   <table>
     <tr>
       <th>Company</th>

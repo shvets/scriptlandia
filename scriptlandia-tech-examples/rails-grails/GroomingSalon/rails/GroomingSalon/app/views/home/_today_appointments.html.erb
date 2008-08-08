@@ -1,6 +1,4 @@
-<% if @appointments.empty? %>
-  No appointments for today.
-<% else %>
+<% unless @appointments.empty? %>
   <table border="0">
     <tr>
       <th>Pet Owner</th>

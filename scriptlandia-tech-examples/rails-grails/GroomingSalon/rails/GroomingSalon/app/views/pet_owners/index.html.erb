@@ -3,7 +3,7 @@
 <%= button_to 'New Pet Owner', new_pet_owner_path %>
 <br/>
 
-<% if !@pet_owners.empty? %>
+<% unless @pet_owners.empty? %>
   <table border="0" width="80%">
     <tr>
       <th>Company</th>

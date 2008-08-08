@@ -3,7 +3,7 @@
 <%= button_to 'New Report', new_report_path %>
 <br />
 
-<% if !@reports.empty? %>
+<% unless @reports.empty? %>
   <table width="75%">
     <tr>
       <th>Report Description</th>

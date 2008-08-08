@@ -4,12 +4,24 @@
 
 <%= button_to 'New Appointment', new_appointment_path %>
 
-<% if !@appointments.empty?
+<% 
+  @cart = "aaaa"
+unless @appointments.empty?
   options = options_for_select({ "" => "", "Pet Owner" => "PETOWNER", "Date" => "DATE"}) -%>
 
   <%= render :partial => "filter", :locals => { :options => options, :action => 'appointments' } %>
 
-<br>
+  <% form_remote_tag :url => { :action => :effects, :effect => "e1" } do %>
+    <%= submit_tag "Effects" %>
+  <% end %>
+ 
+  <br>
+
+  <div id="effects_div">
+      <%= render(:partial => "effects", :object => @cart)  %>
+  </div>
+
+  <br>
 
   <table border="0">
     <tr>
@@ -23,7 +35,7 @@
     </tr>
 
   <% for appointment in @appointments %>
-    <tr valign="top" class="<%=cycle('list-line-odd', 'list-line-even')%>">
+    <tr id="current_item" valign="top" class="<%=cycle('list-line-odd', 'list-line-even')%>">
       <td><%=h appointment.pet_owner.name if appointment.pet_owner != nil %></td>
       <td><%=h appointment.pet.name if appointment.pet != nil %></td>
       <td><%=h appointment.groomer.name if appointment.groomer != nil %></td>

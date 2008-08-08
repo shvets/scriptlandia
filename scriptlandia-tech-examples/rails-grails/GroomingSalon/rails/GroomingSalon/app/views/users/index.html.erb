@@ -3,9 +3,7 @@
 <%= button_to 'New user', new_user_path %>
 <br />
 
-<% if @users.empty? %>
-  <h2>We don't have any appointment.</h2>
-<% else %>
+<% unless @users.empty? %>
   <table>
     <tr>
       <th>User Name</th>
@@ -26,6 +24,5 @@
       </tr>
     <% end %>
   </table>
-
 <% end %>
 

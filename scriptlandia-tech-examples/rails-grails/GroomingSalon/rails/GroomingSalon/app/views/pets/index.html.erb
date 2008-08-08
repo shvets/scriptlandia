@@ -1,9 +1,9 @@
-<h1>Listing Pets</h1>
+4<h1>Listing Pets</h1>
 
 <%= button_to 'New Pet', new_pet_path %>
 <br />
 
-<% if !@pets.empty? %>
+<% unless @pets.empty? %>
   <table border="0">
     <tr>
       <th>Pet Owner</th>
@@ -17,7 +17,7 @@
       <th colspan="5">Commands</th>
     </tr>
 
-  <% for pet in @pets %>
+    <% for pet in @pets %>
       <tr <%= "style='color:red'" if pet.alive == 'no' %>  valign="top" class="<%=cycle('list-line-odd', 'list-line-even')%>">
         <td><%=h pet.pet_owner.name if pet.pet_owner != nil %></td>
         <td><%=h pet.subtype%></td>
@@ -43,8 +43,8 @@
         <% else %>
           <td>New Appointment</td>
         <% end %>
-    </tr>
-  <% end %>
+      </tr>
+    <% end %>
   </table>
 <% end %>
 

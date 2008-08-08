@@ -135,4 +135,10 @@ class AppointmentsController < ProtectedController
     render :text => text
   end
 
+  def effects
+    puts "*******effects " + params[:effect2].to_s
+
+      @cart = "bbbbb"
+    redirect_to appointments_url unless request.xhr?
+  end
 end
