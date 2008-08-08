@@ -36,7 +36,7 @@ unless @appointments.empty?
 
   <% for appointment in @appointments %>
     <tr id="current_item" valign="top" class="<%=cycle('list-line-odd', 'list-line-even')%>">
-      <td><%=h appointment.pet_owner.name if appointment.pet_owner != nil %></td>
+      <td><%=h appointment.pet.pet_owner.name if appointment.pet.pet_owner != nil %></td>
       <td><%=h appointment.pet.name if appointment.pet != nil %></td>
       <td><%=h appointment.groomer.name if appointment.groomer != nil %></td>
       <td><%=h appointment.appointment_date.strftime("%A, %B %d, %Y") %></td>

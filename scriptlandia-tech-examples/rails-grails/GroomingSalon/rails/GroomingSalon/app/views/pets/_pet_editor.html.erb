@@ -16,6 +16,12 @@
     end
 
     disabled = (params[:pet_owner_id] != nil)
+
+    puts "!!!" + @pet.subtype.to_s
+
+    breeds = Pet.get_breeds @pet.subtype
+
+puts "!!!breeds " + breeds.to_s
   %>
 
   <table width="100%">
@@ -38,7 +44,15 @@
 
     <tr>
       <td>
-        <%= f.label :breed %>: <%= f.text_field :breed %>
+        <%= f.label :breed %>:
+        <%= observe_field("pet_subtype",
+                       :frequency => 0.25,
+                       :update => :display_breeds_select_div,
+                       :url => { :controller => 'pets', :action => :display_breeds_select},
+                       :with => 'subtype') %>
+        <div id="display_breeds_select_div">
+          <%= collection_select(:pet, :breed, breeds, :to_s, :to_s, {}, {:disabled => disabled}) %>
+        </div>
       </td>
 
       <td>

@@ -1,3 +1,5 @@
+#
+
 class Company < ActiveRecord::Base
   has_many :groomers
   has_many :pet_owners

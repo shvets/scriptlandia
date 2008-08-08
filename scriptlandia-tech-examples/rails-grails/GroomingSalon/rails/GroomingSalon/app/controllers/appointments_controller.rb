@@ -99,7 +99,6 @@ class AppointmentsController < ProtectedController
   end
 
   def display_pets_select
-#debugger
     pets = Pet.find(:all, :conditions => [ "pet_owner_id=?", params[:pet_owner_id] ])
 
     text = '<select id="appointment_pet_id" name="appointment[pet_id]">'
@@ -136,9 +135,7 @@ class AppointmentsController < ProtectedController
   end
 
   def effects
-    puts "*******effects " + params[:effect2].to_s
-
-      @cart = "bbbbb"
+    @cart = "bbbbb"
     redirect_to appointments_url unless request.xhr?
   end
 end

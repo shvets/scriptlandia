@@ -117,4 +117,18 @@ class PetsController < ProtectedController
     end
   end
 
+  def display_breeds_select
+    breeds = Pet.get_breeds params[:subtype]
+
+    text = '<select id="breed" name="breed">'
+    
+    for breed in breeds
+      text = text + '  <option value="' + breed.to_s + '">' + breed.to_s + '</option>'
+    end
+
+    text = text + '</select>'
+
+    render :text => text
+  end
+
 end

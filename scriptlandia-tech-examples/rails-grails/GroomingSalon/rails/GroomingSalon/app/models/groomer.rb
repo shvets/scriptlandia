@@ -1,3 +1,5 @@
+#
+
 class Groomer < ActiveRecord::Base
   belongs_to :company
 

@@ -1,8 +1,10 @@
+#
+
 class PetOwner < ActiveRecord::Base
   belongs_to :company
 
   has_many :pets
-  has_many :appointments
+#  has_many :appointments
 
   validates_presence_of :first_name, :last_name, :home_phone
 
