@@ -3,8 +3,7 @@
 
 class ApplicationController < ActionController::Base
   #model :user
-  include FinderFilter
-  #, ClassMethods
+  include FinderFilter, ClassMethods
 
   helper :all # include all helpers, all the time
 

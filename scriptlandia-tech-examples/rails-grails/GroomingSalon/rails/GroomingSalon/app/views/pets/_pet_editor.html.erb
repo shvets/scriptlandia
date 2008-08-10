@@ -53,11 +53,8 @@
                        :url => { :controller => 'pets', :action => :display_breeds_select},
                        :with => 'subtype') %>
         <div id="display_breeds_select_div">
-          <%= collection_select(:pet, :breed, breeds, :to_s, :to_s, {}, {:disabled => disabled}) %>
+          <%= text_field_with_auto_complete :pet, :breed, :autocomplete => "off" %>
         </div>
-
-       <%= text_field_with_auto_complete :breed, :name %>
-
       </td>
 
       <td>

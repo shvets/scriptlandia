@@ -14,15 +14,17 @@ class Pet < ActiveRecord::Base
 
   def self.get_breeds subtype
     if subtype == nil
-      %w()
+      breeds = []
     elsif subtype == "dog"
-      @@DOG_BREEDS
+      #@@DOG_BREEDS
+      breeds = Breed.find(:all, :conditions => [ "subtype=?", subtype])
     elsif subtype == "cat"
       #@@CAT_BREEDS
-      breeds = []
-      File.open("app/models/dog_breeds.txt").each_line { |line| breeds << line unless line.empty? or line.chomp.empty? }
-      breeds
+      breeds = Breed.find(:all, :conditions => [ "subtype=?", subtype])
+      #File.open("app/models/dog_breeds.txt").each_line { |line| breeds << line unless line.empty? or line.chomp.empty? }
     end
+
+    breeds
   end
 
   def to_s

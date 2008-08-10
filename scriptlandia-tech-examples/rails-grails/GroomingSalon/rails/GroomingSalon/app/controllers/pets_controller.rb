@@ -1,9 +1,14 @@
 # pets_controller.rb
 
 class PetsController < ProtectedController
+  include AutoCompleteMacrosHelper,
+          ActionView::Helpers::TagHelper,
+          ActionView::Helpers::FormHelper,
+          ActionView::Helpers::JavaScriptHelper 
+
   #skip_before_filter :verify_authenticity_token
 
- #auto_complete_for :pet_owner, :first_name
+  auto_complete_for :pet_owner, :first_name
 
   # GET /pets
   # GET /pets.xml
@@ -122,46 +127,49 @@ class PetsController < ProtectedController
   end
 
   def display_breeds_select
-    breeds = Pet.get_breeds params[:subtype]
+    #breeds = Pet.get_breeds params[:subtype]
 
-    text = '<select id="breed" name="breed">'
+    #text = '<select id="breed" name="breed">'
     
-    for breed in breeds
-      text = text + '  <option value="' + breed.to_s + '">' + breed.to_s + '</option>'
-    end
+    #for breed in breeds
+    #  text = text + '  <option value="' + breed.to_s + '">' + breed.to_s + '</option>'
+    #end
 
-    text = text + '</select>'
+    #text = text + '</select>'
 
+    #subtype = params[:subtype]
+
+    #puts "subtype: " + subtype
+
+    text = text_field_with_auto_complete(:pet, :breed, :autocomplete => "off")
+    
+    #puts "text: " + text                                       
+     
     render :text => text
   end
 
-  def set_tags
-    respond_to do |format|
-       format.html
-      format.js do
-        render :update do |page|
-          page.replace_html('new_tags', params[:tags])
-        end
-      end
-    end
-  end
+#  def set_tags
+#    respond_to do |format|
+#       format.html
+#      format.js do
+#        render :update do |page|
+#          page.replace_html('new_tags', params[:tags])
+#        end
+#      end
+#    end
+#  end
 
-def auto_complete_for_tags_field
-    @tags = ['tag1', 'tag2', 'tag3', 'abc', 'def', 'hkl']
-    render :partial => 'tag_list', :object => @tags
-  end
-
-skip_before_filter :verify_authenticity_token
-#, :only => [:autocomplete_affiliate_name]    
+  skip_before_filter :verify_authenticity_token, :only => [:auto_complete_for_pet_breed]    
   
-  def auto_complete_for_breed_name
-    breeds = Breed.find(:all, :conditions => [ 'LOWER(name) LIKE ? and subtype=?', '%' + params[:breed][:name].downcase + '%', 'cat' ], 
+  def auto_complete_for_pet_breed
+    #puts "**********" + params[:subtype]
+
+    breeds = Breed.find(:all, :conditions => [ 'LOWER(name) LIKE ? and subtype=?', '%' + params[:pet][:breed].downcase + '%', 'cat' ], 
                                :order => 'name ASC', :limit => 10)
-    #breeds = Pet.get_breeds 'cat'
-  
     text = '<ul>'
     
     for breed in breeds
+      puts "breed: " + breed.name
       text = text + '<li>' + breed.name + '</li>'
     end
 
@@ -169,4 +177,13 @@ skip_before_filter :verify_authenticity_token
 
     render :text => text
   end
+
+#def auto_complete_for_doctor_organization
+#  re = Regexp.new("^#{params[:doctor][:organization]}", "i")
+#  find_options = { :order => "name ASC" }
+#  @organizations = Organization.find(:all, find_options).collect(&:name).select { |org| org.match re }
+        
+#  render :inline => "<%= content_tag(:ul, @organizations.map { |org| content_tag(:li, h(org)) }) %>"
+#end
+
 end
