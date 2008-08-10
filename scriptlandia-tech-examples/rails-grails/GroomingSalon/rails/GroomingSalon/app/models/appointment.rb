@@ -11,7 +11,7 @@ class Appointment < ActiveRecord::Base
 
   def self.find_by_current_user current_user, current_date, params
     pet_owner_ids = []
-    
+  
     if current_user != nil
       if current_user.admin
         if params[:pet_owner_id] != nil
@@ -33,12 +33,16 @@ class Appointment < ActiveRecord::Base
     if pet_owner_ids.size() == 0
       conditions = {}
     else
-      conditions = { :pet_owner_id => pet_owner_ids }
+      pet_ids = Pet.find(:all, :conditions => [ "pet_owner_id in(?)", pet_owner_ids])
+
+      conditions = { :pet_id => pet_ids }
     end
 
     if current_date != nil
       conditions[:appointment_date] = current_date
     end
+
+puts "conditions " + conditions.to_s
 
     find(:all, :conditions => conditions)
   end

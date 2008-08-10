@@ -1,6 +1,9 @@
 # companies_controller.rb
 
 class CompaniesController < ProtectedController
+  finder_filter :company, :only => [:show, :update, :destroy], :param => :id
+  #:by => :name, :except => [:index]
+  
   # GET /companies
   # GET /companies.xml
   def index
@@ -15,7 +18,7 @@ class CompaniesController < ProtectedController
   # GET /companies/1
   # GET /companies/1.xml
   def show
-    @company = Company.find(params[:id])
+    #@company = Company.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -61,7 +64,7 @@ class CompaniesController < ProtectedController
   # PUT /companies/1
   # PUT /companies/1.xml
   def update
-    @company = Company.find(params[:id])
+    #@company = Company.find(params[:id])
 
     respond_to do |format|
       if @company.update_attributes(params[:company])
@@ -78,7 +81,7 @@ class CompaniesController < ProtectedController
   # DELETE /companies/1
   # DELETE /companies/1.xml
   def destroy
-    @company = Company.find(params[:id])
+    #@company = Company.find(params[:id])
     @company.destroy
 
     respond_to do |format|

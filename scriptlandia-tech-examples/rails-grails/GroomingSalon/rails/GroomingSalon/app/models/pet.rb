@@ -18,7 +18,10 @@ class Pet < ActiveRecord::Base
     elsif subtype == "dog"
       @@DOG_BREEDS
     elsif subtype == "cat"
-      @@CAT_BREEDS
+      #@@CAT_BREEDS
+      breeds = []
+      File.open("app/models/dog_breeds.txt").each_line { |line| breeds << line unless line.empty? or line.chomp.empty? }
+      breeds
     end
   end
 

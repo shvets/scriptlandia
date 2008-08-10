@@ -4,12 +4,14 @@
 
 <%= button_to 'New Appointment', new_appointment_path %>
 
+<% options = options_for_select({ "Pet Owner" => "PETOWNER", "Date" => "DATE"}) -%>
+
+<%= render :partial => "common/filter", :locals => { :options => options, :controller => 'appointments', :filter_id => 'PETOWNER' } %>
+
 <% 
   @cart = "aaaa"
-unless @appointments.empty?
-  options = options_for_select({ "" => "", "Pet Owner" => "PETOWNER", "Date" => "DATE"}) -%>
 
-  <%= render :partial => "filter", :locals => { :options => options, :action => 'appointments' } %>
+unless @appointments.empty? %>
 
   <% form_remote_tag :url => { :action => :effects, :effect => "e1" } do %>
     <%= submit_tag "Effects" %>

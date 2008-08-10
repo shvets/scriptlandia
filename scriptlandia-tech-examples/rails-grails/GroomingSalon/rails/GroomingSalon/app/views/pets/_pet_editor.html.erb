@@ -1,3 +1,9 @@
+<!-- -->
+
+<%= javascript_include_tag "scriptaculous/prototype" %>
+
+<%= javascript_include_tag "scriptaculous/scriptaculous" %>
+
   <%= f.error_messages %>
 
   <%
@@ -53,6 +59,9 @@ puts "!!!breeds " + breeds.to_s
         <div id="display_breeds_select_div">
           <%= collection_select(:pet, :breed, breeds, :to_s, :to_s, {}, {:disabled => disabled}) %>
         </div>
+
+       <%= text_field_with_auto_complete :breed, :name %>
+
       </td>
 
       <td>

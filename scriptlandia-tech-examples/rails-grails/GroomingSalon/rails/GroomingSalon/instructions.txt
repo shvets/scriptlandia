@@ -54,6 +54,7 @@ jruby script\generate scaffold PetOwner first_name:string last_name:string home_
 jruby script\generate scaffold Appointment appointment_date:datetime price:string
 jruby script\generate scaffold Report name:string description:string table:string condition:string
 jruby script\generate scaffold User name:string password:string admin:boolean company_id:integer
+jruby script\generate scaffold Breed name:string subtype:string
 
 
 7.
@@ -94,3 +95,13 @@ rake rails:update
 rake db:sessions:create
 rake migrate
 db:sessions:clear
+
+12.
+jruby script/plugin install auto_complete
+script/plugin install http://svn.rubyonrails.org/rails/plugins/auto_complete
+
+13.
+http://github.com/pelargir/finder_filter/
+
+gem sources -a http://gems.github.com
+gem install pelargir-finder_filter

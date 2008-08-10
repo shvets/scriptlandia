@@ -3,6 +3,8 @@
 
 class ApplicationController < ActionController::Base
   #model :user
+  include FinderFilter
+  #, ClassMethods
 
   helper :all # include all helpers, all the time
 
@@ -45,7 +47,6 @@ class ApplicationController < ActionController::Base
     flash[:notice] = nil
     #flash[:error] = nil
   end
-
 end
 
 #ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS.merge!(

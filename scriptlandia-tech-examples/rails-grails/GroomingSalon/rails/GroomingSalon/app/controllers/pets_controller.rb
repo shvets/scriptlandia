@@ -1,6 +1,10 @@
 # pets_controller.rb
 
 class PetsController < ProtectedController
+  #skip_before_filter :verify_authenticity_token
+
+ auto_complete_for :pet_owner, :first_name
+
   # GET /pets
   # GET /pets.xml
   def index
@@ -131,4 +135,53 @@ class PetsController < ProtectedController
     render :text => text
   end
 
+  def set_tags
+    respond_to do |format|
+       format.html
+      format.js do
+        render :update do |page|
+          page.replace_html('new_tags', params[:tags])
+        end
+      end
+    end
+  end
+
+def auto_complete_for_tags_field
+    @tags = ['tag1', 'tag2', 'tag3', 'abc', 'def', 'hkl']
+    render :partial => 'tag_list', :object => @tags
+  end
+
+skip_before_filter :verify_authenticity_token
+#, :only => [:autocomplete_affiliate_name]    
+  
+  def autocomplete_affiliate_name  
+     # this code is called over and over again by Ajax  
+     #  
+     # the next line does a search through the array for terms starting with the   
+     # specified parameters.  
+  
+     @x = Apacheconf.new.names  
+     @affiliates = @x.select { |v| v =~ /^#{params[:affiliate][:name]}/ }  
+  
+     # don't render the layout - we only want the partial to be rendered  
+     render :layout=>false   
+  end  
+
+  def auto_complete_for_breed_name
+    breeds = Breed.find(:all, :conditions => [ 'LOWER(name) LIKE ? and subtype=?', '%' + params[:breed][:name].downcase + '%', 'cat' ], 
+                               :order => 'name ASC', :limit => 10)
+    #breeds = Pet.get_breeds 'cat'
+  
+    text = '<ul>'
+    
+    for breed in breeds
+      puts "***** " + breed.name
+
+      text = text + '<li>' + breed.name + '</li>'
+    end
+
+    text = text + '</ul>'
+
+    render :text => text
+  end
 end
