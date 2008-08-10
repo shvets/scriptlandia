@@ -1,9 +1,10 @@
 <h1>Listing Pets</h1>
 
 <%= button_to 'New Pet', new_pet_path %>
-<br />
 
 <% unless @pets.empty? %>
+  <br />
+
   <table border="0">
     <tr>
       <th>Pet Owner</th>

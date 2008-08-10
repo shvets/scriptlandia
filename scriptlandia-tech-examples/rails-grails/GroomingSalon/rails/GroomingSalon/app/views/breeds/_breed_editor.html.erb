@@ -1,0 +1,26 @@
+#
+  <%
+    if mode == 'new'
+      submit_text = "Create"
+    else
+      submit_text = "Update"
+    end
+  %>
+
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :subtype %><br />
+    <%= f.text_field :subtype %>
+  </p>
+
+  <p>
+    <div>
+      <%= f.submit submit_text %> <%= link_to 'Cancel', breeds_path %>
+    </div>
+  </p>
+  
