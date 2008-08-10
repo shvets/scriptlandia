@@ -8,8 +8,6 @@ class AppointmentsController < ProtectedController
   def index
     filter_value = params[:filter_value]
 
-    puts "filter_value " + filter_value.to_s
-
     if filter_value != nil
       params[:pet_owner_id] = filter_value
     end

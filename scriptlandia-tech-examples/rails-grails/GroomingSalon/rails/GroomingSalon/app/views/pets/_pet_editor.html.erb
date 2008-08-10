@@ -23,11 +23,7 @@
 
     disabled = (params[:pet_owner_id] != nil)
 
-    puts "!!!" + @pet.subtype.to_s
-
     breeds = Pet.get_breeds @pet.subtype
-
-puts "!!!breeds " + breeds.to_s
   %>
 
   <table width="100%">

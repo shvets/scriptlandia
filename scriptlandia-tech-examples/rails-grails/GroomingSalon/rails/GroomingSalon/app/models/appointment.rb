@@ -42,8 +42,6 @@ class Appointment < ActiveRecord::Base
       conditions[:appointment_date] = current_date
     end
 
-puts "conditions " + conditions.to_s
-
     find(:all, :conditions => conditions)
   end
 

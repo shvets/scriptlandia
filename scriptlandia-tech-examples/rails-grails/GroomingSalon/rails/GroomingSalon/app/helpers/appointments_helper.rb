@@ -1,8 +1,12 @@
 module AppointmentsHelper
-  def display_filter_value_field filter_id = nil
+  def display_filter_value_field2 filter_id = nil
     text = ''
 
+    puts "1filter_id: " + filter_id.to_s
+
     filter_id = params[:filter_id] if filter_id == nil and params != nil
+
+    puts "2filter_id: " + filter_id.to_s
 
     if filter_id != nil
       if filter_id == 'PETOWNER'

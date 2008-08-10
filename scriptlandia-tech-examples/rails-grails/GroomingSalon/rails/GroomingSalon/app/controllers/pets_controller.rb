@@ -3,7 +3,7 @@
 class PetsController < ProtectedController
   #skip_before_filter :verify_authenticity_token
 
- auto_complete_for :pet_owner, :first_name
+ #auto_complete_for :pet_owner, :first_name
 
   # GET /pets
   # GET /pets.xml
@@ -154,19 +154,6 @@ def auto_complete_for_tags_field
 skip_before_filter :verify_authenticity_token
 #, :only => [:autocomplete_affiliate_name]    
   
-  def autocomplete_affiliate_name  
-     # this code is called over and over again by Ajax  
-     #  
-     # the next line does a search through the array for terms starting with the   
-     # specified parameters.  
-  
-     @x = Apacheconf.new.names  
-     @affiliates = @x.select { |v| v =~ /^#{params[:affiliate][:name]}/ }  
-  
-     # don't render the layout - we only want the partial to be rendered  
-     render :layout=>false   
-  end  
-
   def auto_complete_for_breed_name
     breeds = Breed.find(:all, :conditions => [ 'LOWER(name) LIKE ? and subtype=?', '%' + params[:breed][:name].downcase + '%', 'cat' ], 
                                :order => 'name ASC', :limit => 10)
@@ -175,8 +162,6 @@ skip_before_filter :verify_authenticity_token
     text = '<ul>'
     
     for breed in breeds
-      puts "***** " + breed.name
-
       text = text + '<li>' + breed.name + '</li>'
     end
 

@@ -6,7 +6,7 @@
 
 <% options = options_for_select({ "Type" => "TYPE" }) -%>
 
-<%= render :partial => "common/filter", :locals => { :options => options, :controller => 'breeds', :filter_id => 'TYPE' } %>
+<%= render :partial => "filter", :locals => { :options => options, :controller => 'breeds', :filter_id => 'TYPE'} %>
 
 <% unless @breeds.empty? %>
   <br />
