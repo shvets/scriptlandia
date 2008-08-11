@@ -1,26 +1,18 @@
 module AppointmentsHelper
+  include ActionView::Helpers::DateHelper, ActionView::Helpers::FormOptionsHelper
+  
   def display_filter_value_field2 filter_id = nil
     text = ''
 
-    puts "1filter_id: " + filter_id.to_s
-
     filter_id = params[:filter_id] if filter_id == nil and params != nil
-
-    puts "2filter_id: " + filter_id.to_s
 
     if filter_id != nil
       if filter_id == 'PETOWNER'
         pet_owners = PetOwner.find_by_current_user User.current_user(session)
 
-        text = '<select id="filter_value" name="filter_value">'
-        
-        for pet_owner in pet_owners
-          text = text + '  <option value="' + pet_owner.id.to_s + '">' + pet_owner.name + '</option>'
-        end
-
-        text = text + '</select>'
+        text = collection_select(:filter, :value, pet_owners, :id, :name)  
       elsif filter_id == "DATE"
-        text = '<input id="filter_value" name="filter_value" value="" type="text"/>'
+        text = date_select(:filter, :value)
       else
         text = ''
       end

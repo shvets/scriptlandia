@@ -1,4 +1,4 @@
-#
+<!-- -->
   <%
     if mode == 'new'
       submit_text = "Create"
@@ -15,7 +15,7 @@
   </p>
   <p>
     <%= f.label :subtype %><br />
-    <%= f.text_field :subtype %>
+    <%= select(:breed, :subtype, %w(cat dog)) %>
   </p>
 
   <p>

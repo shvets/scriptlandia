@@ -1,7 +1,7 @@
 #
 
 class Appointment < ActiveRecord::Base
-#  belongs_to :pet_owner
+  belongs_to :pet_owner
   belongs_to :groomer
   belongs_to :pet
 

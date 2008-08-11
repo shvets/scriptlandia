@@ -11,7 +11,7 @@
       <td>
         <%= text_field_tag :login, params[:login] %>
       </td>
-    </td>
+    </tr>
 
     <tr>
       <td>
@@ -21,13 +21,13 @@
       <td>
         <%= password_field_tag :password, params[:password] %> <!-- check_box_tag :remember %> Remember me-->
       </td>
-    </td>
+    </tr>
 
     <tr>
       <td colspan="2">
         <%= submit_tag "Log in" %>
       </td>
-    </td>
+    </tr>
   </table>  
 
 <% end %>

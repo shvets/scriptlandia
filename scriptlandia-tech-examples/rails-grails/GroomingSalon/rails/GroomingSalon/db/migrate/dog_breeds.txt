@@ -1,2211 +1,1905 @@
-    Afador
-    Afaird
-    Affen Spaniel
-    Affen Terrier
-    Affen Tzu
-    Affengriffon
-    Affenhuahua
-    Affenpinscher
-    Affenpoo
-    Afghan Collie
-    Afghan Hound
-    Afghan Retriever
-    Afghan Sheepdog
-    Afghan Spaniel
-    Afollie
-    African Wild Dog
-    Africanis (Hottentot Dog)
-    Aidi
-    Ainu Dog
-    Airedale Terrier
-    Airedoodle
-    Akbash Dog
-    Akita Inu
-    Akita Shepherd
-    Alano Espaeol
-    Alapaha Blue Blood Bulldog
-    Alaskan Husky
-    Alaskan Klee Kai
-    Alaskan Malamute
-    Alopekis
-    Alpine Dachsbracke
-    Alusky
-    American Bandogge Mastiff
-    American Black and Tan Coonhound
-    American Blue Gascon Hound
-    American Bull Dogue De Bordeaux
-    American Bull Molosser
-    American Bulldog
-    American Bullnese
-    American Bully
-    American Cocker Spaniel
-    American Crested Sand Terrier
-    American Eagle Dog
-    American Eskimo Dog
-    American Foxhound
-    American Gointer
-    American Hairless Terrier
-    American Indian Dog
-    American Lo-Sze Pugg (TM)
-    American Mastiff
-    American Mastiff (Panja)
-    American Pit Bull Terrier
-    American Rat Pinscher
-    American Staffordshire Terrier
-    American Staghound
-    American Toy Terrier  (Amertoy)
-    American Tundra Shepherd Dog
-    American Water Spaniel
-    American White Shepherd
-    Anatolian Shepherd Dog
-    Anglos-Francaises
-    Anglos-Francai Grand
-    Anglos-Francais de Moyenne Venerie
-    Anglos-Francaises de Petite Venerie
-    Appenzell Mountain Dog
-    Ariege Pointing Dog
-    Ariegeois
-    Armant
-    Aryan Molossus
-    Argentine Dogo
-    Arubian Cunucu Dog
-    Atlas Terrier
-    Augi
-    Aussie Bulldog
-    Aussie-Corgi
-    Aussiedoodle
-    Aussiedor
-    Australian Bandog
-    Australian Bulldog
-    Australian Cattle Dog
-    Australian Kelpie
-    Australian Koolie
-    Australian Labradoodle
-    Australian Retriever
-    Australian Shepherd
-    Australian Stumpy Tail Cattle Dog
-    Australian Terrier
-    Austrian Black and Tan Hound
-    Austrian Brandlbracke
-    Austrian Shorthaired Pinscher
-    Auvergne Pointing Dog
-    Azawakh
+Afador
+Afaird
+Affen Spaniel
+Affen Terrier
+Affen Tzu
+Affengriffon
+Affenhuahua
+Affenpinscher
+Affenpoo
+Afghan Collie
+Afghan Hound
+Afghan Retriever
+Afghan Sheepdog
+Afghan Spaniel
+Afollie
+African Wild Dog
+Africanis (Hottentot Dog)
+Aidi
+Ainu Dog
+Airedale Terrier
+Airedoodle
+Akbash Dog
+Akita Inu
+Akita Shepherd
+Alano Espaeol
+Alapaha Blue Blood Bulldog
+Alaskan Husky
+Alaskan Klee Kai
+Alaskan Malamute
+Alopekis
+Alpine Dachsbracke
+Alusky
+American Bandogge Mastiff
+American Black and Tan Coonhound
+American Blue Gascon Hound
+American Bull Dogue De Bordeaux
+American Bull Molosser
+American Bulldog
+American Bullnese
+American Bully
+American Cocker Spaniel
+American Crested Sand Terrier
+American Eagle Dog
+American Eskimo Dog
+American Foxhound
+American Gointer
+American Hairless Terrier
+American Indian Dog
+American Lo-Sze Pugg (TM)
+American Mastiff
+American Mastiff (Panja)
+American Pit Bull Terrier
+American Rat Pinscher
+American Staffordshire Terrier
+American Staghound
+American Toy Terrier  (Amertoy)
+American Tundra Shepherd Dog
+American Water Spaniel
+American White Shepherd
+Anatolian Shepherd Dog
+Anglos-Francaises
+Anglos-Francai Grand
+Anglos-Francais de Moyenne Venerie
+Anglos-Francaises de Petite Venerie
+Appenzell Mountain Dog
+Ariege Pointing Dog
+Ariegeois
+Armant
+Aryan Molossus
+Argentine Dogo
+Arubian Cunucu Dog
+Atlas Terrier
+Augi
+Aussie Bulldog
+Aussie-Corgi
+Aussiedoodle
+Aussiedor
+Australian Bandog
+Australian Bulldog
+Australian Cattle Dog
+Australian Kelpie
+Australian Koolie
+Australian Labradoodle
+Australian Retriever
+Australian Shepherd
+Australian Stumpy Tail Cattle Dog
+Australian Terrier
+Austrian Black and Tan Hound
+Austrian Brandlbracke
+Austrian Shorthaired Pinscher
+Auvergne Pointing Dog
+Azawakh
+
+
+Ba-Shar
+Bagle Hound
+Banjara Greyhound
+Banter Bulldogge
+Barbet
+Basenji
+Baskimo
+Basschshund
+Basselier
+Basset Artesien Normand
+Basset bleu de Gascogne
+Basset fauve de Bretagne
+Basset Hound
+Basset Retriever
+Bassetoodle
+Basston
+Bassugg
+Bavarian Mountain Hound
+Be-Apso
+Bea Griffon
+Bea-Tzu
+Beabull
+Beagle
+Beagle Harrier
+Beagleman
+Beaglier
+Beago
+Bearded Collie
+Beauceron
+Bedlington Terrier
+Bedouin Shepherd Dog
+Belgian Griffons
+Belgian Mastiff
+Belgian Shepherd Groenendael
+Belgian Shepherd Laekenois
+Belgian Shepherd Malinois
+Belgian Shepherd Tervuren
+Belgian Shorthaired Pointer
+Belgrade Terrier
+Bench-legged Feist
+Bergamasco
+Berger des Picard
+Berger des Pyrenees
+Berger Du Languedoc
+Bernedoodle
+Bernefie
+Bernese Mountain Dog
+Bichon Frise
+Bichon Havanais
+Bich-poo
+Bichomo
+Bichon-A-Ranian
+Bichon/Yorkie
+Biewer
+Billy
+Biton
+Black and Tan Coonhound
+Black Forest Hound
+Black Mouth Cur
+Black Russian Terrier
+Bleus de Gascogne
+Bloodhound
+Blue Heeler
+Blue Lacy
+Blue Picardy Spaniel
+Blue Spaniel
+Bluetick Coonhound
+Bo-Dach
+Bocker
+Boerboel
+Bogle
+Boglen Terrier
+Bohemian Shepherd
+Bohemian Terrier
+Bologco
+Bolognese
+Bolonoodle
+Borador
+Border-Aussie
+Border Collie
+Border Jack
+Border Stack
+Border Terrier
+Bordernese
+Bordoodle
+Borzoi
+Bosanski Ostrodlaki Gonic Barak
+Bosapso
+BoShih
+Boskimo
+Bosnian-Herzegovinian Sheepdog - Tornjak
+Bospin
+Bossi-Poo
+Bostillon
+Bostinese
+Boston Lab
+Boston Spaniel
+Boston Terrier
+Bouvier de Ardennes
+Bouvier des Flanders
+Boweimar
+Bowzer
+Boxador
+Boxer
+Boxerdoodle
+Boxweiler
+Boykin Spaniel
+Broodle Griffon
+Bracco Italiano
+Braque Du Bourbonnais
+Braque Dupuy
+Brat
+Brazilian Terrier
+Briard
+Brittany Bourbonnais
+Brissel Chiffon
+Brittany Spaniel
+Briquet
+Briquet Griffon Vendeen
+Broholmer
+Brottweiler
+Brug
+Brusselranian
+Brussels Griffon
+Buggs
+Bukovina Sheepdog
+Buldogue Campeiro
+Bulgarian Shepherd Dog
+Bull Boxer
+Bull-Pei
+Bull Terrier
+Bulldog
+Bullmasador
+Bullmastiff
+Bullmatian
+Bully Basset
+Bullypit
+Bushland Terrier
+
+
+Cadoodle
+Cairmal
+Cairn Terrier
+Cairland Terrier
+Cairnese
+Cairnoodle
+Cajun Squirrel Dog
+Canaan Dog
+Canadian Eskimo Dog
+Canadian Inuit Dog
+Canary Dog
+Canarian Warren Hound
+Cane Corso Italiano
+Canis Panther
+Canoe Dog
+Cantel
+Cao da Serra da Estrela
+Cao da Serra de Aires
+Cao de Castro Laboreiro
+Cao de Fila de Sao Miguel
+Cao dos Mourey
+Caravan Hound
+Care-Tzu
+Carlin Pinscher
+Carolina Dog
+Cardigan Welsh Corgi
+Carkie
+Carnauzer
+Carpathian Sheepdog
+Catahoula Bulldog
+Catahoula Leopard Dog
+Catalan Sheepdog
+Cattle Collie Dog
+Caucasian Ovtcharka
+Cav-A-Malt
+Cav-A-Mo
+Cava-Chin
+Cava-Corgi
+Cava-lon
+Cava-Tzu
+Cavachon
+Cavalier King Charles Spaniel
+Cavanese
+Cavapom
+Cavapoo
+Cavaton
+Cavestie
+Central Asian Ovtcharka
+Cesky Fousek
+Cesky Terrier
+Chacy Ranior
+Chart Polski
+Chesapeake Bay Retriever
+Cheeks
+Cherokee Monarch
+Chesador
+Chestie
+Chi Apso
+Chi-Chi
+Chi-Chon
+Chi-Poo
+Chien D' Artois
+Chiens Francaises
+Chigi
+Chihuahua
+Chilier
+Chimation
+Chin
+Chin-Pin
+Chin-wa
+China Jack
+Chinaranian
+Chineranian
+Chinese Crested (hairless)
+Chinese Chongqing Dog
+Chinese Crestepoo
+Chinese Frise
+Chinese Imperial Dog
+Chinese Foo Dog
+Chinese Shar-Pei
+Chinook
+Chion
+Chipin
+Chippiparai
+Chiribaya Shepherd
+Chiweenie
+Chonzer
+Chorkie
+Chortaj
+Chow Chow
+Chug
+Chussel
+Cierny Sery
+Cirneco Dell 'Etna
+Clumber Spaniel
+Cluminger Spaniel
+Cock-A-Chon
+Cock-A-Mo
+Cock-A-Tzu
+Cockalier
+Cockapin
+Cockapoo
+Cocker Pug
+Cocker Spaniel
+Cocker Westie
+Cockeranian
+CockerShnauz
+Cockinese
+Cojack
+Collie
+Colonial Cocker Spaniel
+Combai
+Comfort Retriever
+Continental Toy Spaniel
+Copica
+Corgi
+Corgidor
+Corillon
+Corkie
+Cosheltie
+Coton De Tulear
+Coton Tzu
+Cotonese
+Cotralian
+Coydog
+Crested Schnauzer
+Crested Malt
+Crested Tzu
+Cretan Hound
+Croatian Sheepdog
+Crustie
+Curly-Coated Retriever
+Cypro Kukur
+Czechoslovakian Wolfdog
+Czesky Terrier
+
+
+Dachshund
+Daisy Dog
+Dakotah Shepherd
+Dalmador
+Dalmatian
+Dameranian
+Dandie Dinmont Terrier
+Daniff
+Danish Broholmer
+Danish-Swedish Farmdog
+Daug
+Denmark Feist
+Deutsche Bracke
+Deutscher Wachtelhund
+Dingo
+Doberman Pinscher
+Dogo Argentino
+Dogue Brasileiro
+Dogue de Bordeaux
+Doodleman Pinscher
+Dorgi
+Dorkie
+Dorset Olde Tyme Bulldogge
+Doxie-Chon
+Doxie-Pin
+Doxie Scot
+Doxiepoo
+Doxle
+Drentse Patrijshond
+Drever
+Dunker
+Dutch Shepherd Dog
+Dutch Smoushond
+
+
+East-European Shepherd
+
+East Russian Coursing Hounds
+
+East Siberian Laika
+
+Elkhound
+
+Engachon
+
+EngAm Bulldog / Olde Bulldog
+
+English Boodle
+
+English Boston-Bulldog
+
+English Bulldog
+
+English Bullen Bordeaux Terrier
+
+English Cocker Spaniel
+
+English Coonhound
+
+English Foxhound
+
+English Mastweiler
+
+English Pointer
+
+English Setter
+
+English Shepherd
+
+English Speagle
+
+English Springer Spaniel
+
+English Toy Cocker Spaniel
+
+English Toy Spaniel
+
+Entlebucher Sennenhund
+
+Eskapoo
+
+Eskifon
+
+Eskijack
+
+Eskland
+
+Estonian Hound
+
+Estrela Mountain Dog
+
+Eurasier
+
+Euro Mountain Sheparnese
+
+
+Farm Collie
+
+Fauves De Bretagne
+
+Faux Frenchbo Bulldog
+
+Feist
+
+Field Spaniel
+
+Fila Brasileiro
+
+Finnish Hound
+
+Finnish Lapphund
+
+Finnish Spitz
+
+Flat-Coated Retriever
+
+Fo-Chon
+
+Fo-Tzu
+
+Foodle
+
+Fourche Terrier
+
+Fox Terrier
+
+Foxhoodle
+
+Foxhound
+
+Foxton
+
+Foxy Rat Terrier
+
+Foxy Russell
+
+Free-Lance Bulldog
+
+French Brittany Spaniel
+
+French Bull Weiner
+
+French Bulldog
+
+French Bullhuahua
+
+French Mastiff
+
+French Pointing Dog
+
+French Spaniel
+
+French Tricolour Hound
+
+French White and Black Hound
+
+French White and Orange Hound
+
+Frenchie Pug
+
+Frengle  
+
+
+
+Galgo Espanol
+
+Gammel Dansk Hoensehund
+
+Gascons-Saintongeois
+
+German Hunt Terrier
+
+German Longhaired Pointer
+
+German Rough-haired Pointing Dog
+
+German Pinscher
+
+German Sheeppoodle
+
+German Shepherd Dog
+
+German Shorthaired Lab
+
+German Shorthaired Pointer
+
+German Spitz Giant
+
+German Spitz Medium
+
+German Spitz Small
+
+German Wirehaired Pointer
+
+Giant Maso Mastiff
+
+Giant Schnauzer
+
+Giant Schnoodle
+
+Glechon
+
+Glen of Imaal Terrier
+
+Goberian
+
+Golden Boxer
+
+Golden Irish
 
+Golden Labrador
 
-    Ba-Shar
+Golden Mountain Dog
 
-    Bagle Hound
+Golden Pei
 
-    Banjara Greyhound
+Golden Pyrenees
 
-    Banter Bulldogge
+Golden Retriever
 
-    Barbet
+Golden Sheltie
 
-    Basenji
+Goldendoodle
 
-    Baskimo
+Goldmaraner
 
-    Basschshund
+Goldmation
 
-    Basselier
+Gollie
 
-    Basset Artesien Normand
+Gonczy Polski
 
-    Basset bleu de Gascogne
+Gordon Setter
 
-    Basset fauve de Bretagne
+Gran Mastin de Borinquen
 
-    Basset Hound
+Grand anglo-francais
 
-    Basset Retriever
+Grand anglo-francais tricolore
 
-    Bassetoodle
+Grand anglo-francais blanc et noir
 
-    Basston
+Grand anglo-francais blanc et orange
 
-    Bassugg
+Grand Basset Griffon Vendeen
 
-    Bavarian Mountain Hound
+Grand bleu de Gascogne
 
-    Be-Apso
+Grand gascon saintongeois
 
-    Bea Griffon
+Grand Griffon Vendeen
 
-    Bea-Tzu
+Great Dane
 
-    Beabull
+Great Pyrenees
 
-    Beagle
+Greater Swiss Mountain Dog
 
-    Beagle Harrier
+Greek Hound
 
-    Beagleman
+Greek Sheepdog
 
-    Beaglier
+Greenland Dog
 
-    Beago
+Greyhound
 
-    Bearded Collie
+Griffichon
 
-    Beauceron
+Griffon bleu de Gascogne
 
-    Bedlington Terrier
+Griffon fauve de Bretagne
 
-    Bedouin Shepherd Dog
+Griffon Nivernais
 
-    Belgian Griffons
+Griffonese
 
-    Belgian Mastiff
+Griffonshire
 
-    Belgian Shepherd Groenendael
+Groenendael
 
-    Belgian Shepherd Laekenois
+Grosser Munsterlinder Vorstehhund
 
-    Belgian Shepherd Malinois
+Guatemalan Bull Terrier
 
-    Belgian Shepherd Tervuren
 
-    Belgian Shorthaired Pointer
+Hairless Khala
 
-    Belgrade Terrier
+Halden Hound
 
-    Bench-legged Feist
+Hamilton Hound
 
-    Bergamasco
+Hanoverian Hound
 
-    Berger des Picard
+Harlequin Pinscher
 
-    Berger des Pyrenees
+Harrier
 
-    Berger Du Languedoc
+Hava-Apso
 
-    Bernedoodle
+Havachin
 
-    Bernefie
+Havachon
 
-    Bernese Mountain Dog
+Havamalt
 
-    Bichon Frise
+Havanese
 
-    Bichon Havanais
+Havashire
 
-    Bich-poo
+Havashu
 
-    Bichomo
+Havaton
 
-    Bichon-A-Ranian
+Hawaiian Poi Dog
 
-    Bichon/Yorkie
+Hellenikos Ichnilatis
 
-    Biewer
+Hellenikos Poimenikos
 
-    Billy
+Hertha Pointer
 
-    Biton
+Highland Maltie
 
-    Black and Tan Coonhound
+Himalayan Sheepdog
 
-    Black Forest Hound
+Hokkaido Dog
 
-    Black Mouth Cur
+Hanoverian Scenthound
 
-    Black Russian Terrier
+Hovawart
 
-    Bleus de Gascogne
+Hungarian Greyhound
 
-    Bloodhound
+Hungarian Kuvasz
 
-    Blue Heeler
+Hungarian Puli
 
-    Blue Lacy
+Hungarian Wire-haired Pointing Dog
 
-    Blue Picardy Spaniel
+Hush Basset
 
-    Blue Spaniel
+Husky
 
-    Bluetick Coonhound
+Hygenhund
 
-    Bo-Dach
 
-    Bocker
 
-    Boerboel
+Ibizan Hound
 
-    Bogle
+Icelandic Sheepdog
 
-    Boglen Terrier
+Imo-Inu
 
-    Bohemian Shepherd
+Inca Hairless Dog
 
-    Bohemian Terrier
+Irish Doodle
 
-    Bologco
+Irish Glen Imaal Terrier
 
-    Bolognese
+Irish Mastiff
 
-    Bolonoodle
+Irish Red and White Setter
 
-    Borador
+Irish Setter
 
-    Border-Aussie
+Irish Staffordshire Bull Terrier
 
-    Border Collie
+Irish Terrier
 
-    Border Jack
+Irish Water Spaniel
 
-    Border Stack
+Irish Wolfhound
 
-    Border Terrier
+Istrian Coarse-Haired Hound
 
-    Bordernese
+Istrian Short-Haired Hound
 
-    Bordoodle
+Italian Bulldogge
 
-    Borzoi
+Italian Greyhound
 
-    Bosanski Ostrodlaki Gonic Barak
+Italian Hound
 
-    Bosapso
+Italian Spinoni
 
-    BoShih
 
-    Boskimo
+Ja-Chon
 
-    Bosnian-Herzegovinian Sheepdog - Tornjak
+Jacairn
 
-    Bospin
+Jack-A-Bee
 
-    Bossi-Poo
+Jack-A-Poo
 
-    Bostillon
+Jack-A-Ranian
 
-    Bostinese
+Jack Chi
 
-    Boston Lab
+Jack-Rat Terrier
 
-    Boston Spaniel
+Jack Russell Terrier
 
-    Boston Terrier
+Jackie-Bichon
 
-    Bouvier de Ardennes
+Jafox
 
-    Bouvier des Flanders
+Jaland
 
-    Boweimar
+Japanese Spaniel (Chin)
 
-    Bowzer
+Japanese Spitz
 
-    Boxador
+Japanese Terrier
 
-    Boxer
+Japeke
 
-    Boxerdoodle
+Japillon
 
-    Boxweiler
+Japug
 
-    Boykin Spaniel
+Jarkie
 
-    Broodle Griffon
+Jatzu
 
-    Bracco Italiano
+Jindo
 
-    Braque Du Bourbonnais
+Jatese
 
-    Braque Dupuy
+Jug
 
-    Brat
 
-    Brazilian Terrier
+Kai Dog
 
-    Briard
+Kangal Dog
 
-    Brittany Bourbonnais
+Kangaroo Dog
 
-    Brissel Chiffon
+Kanni
 
-    Brittany Spaniel
+Karabash
 
-    Briquet
+Karelian Bear Dog
 
-    Briquet Griffon Vendeen
+Karelian Bear Laika
 
-    Broholmer
+Karelo-Finnish Laika
 
-    Brottweiler
+Karst Shepherd
 
-    Brug
+Kashon
 
-    Brusselranian
+Keagle
 
-    Brussels Griffon
+Keeshond
 
-    Buggs
+Kelb Tal-Fenek
 
-    Bukovina Sheepdog
+Kemmer Feist
 
-    Buldogue Campeiro
+Kemmer Stock Hybrid Squirrel Dogs
 
-    Bulgarian Shepherd Dog
+Kerry Beagle
 
-    Bull Boxer
+Kerry Blue Terrier
 
-    Bull-Pei
+Kerry Wheaten
 
-    Bull Terrier
+Kimola
 
-    Bulldog
+King Cavrin
 
-    Bullmasador
+King Charles Spaniel
 
-    Bullmastiff
+King Charles Yorkie
 
-    Bullmatian
+King Schnauzer
 
-    Bully Basset
+King Shepherd
 
-    Bullypit
+Kishu
 
-    Bushland Terrier
+Komondor
 
+Kooikerhondje
 
+Koolie
 
-    Cadoodle
+Korean Dosa Mastiff
 
-    Cairmal
+Krasky Ovcar
 
-    Cairn Terrier
+Kromfohrlender
 
-    Cairland Terrier
+Kugsha Dog
 
-    Cairnese
+Kunming Dog
 
-    Cairnoodle
+Kuvasz
 
-    Cajun Squirrel Dog
+Kyi-Leor
 
-    Canaan Dog
 
-    Canadian Eskimo Dog
+La-Chon
 
-    Canadian Inuit Dog
+La Pom
 
-    Canary Dog
+Lab'Aire
 
-    Canarian Warren Hound
+Lab-Pointer
 
-    Cane Corso Italiano
+Labbe
 
-    Canis Panther
+Labernese
 
-    Canoe Dog
+Labloodhound
 
-    Cantel
+Labmaraner
 
-    Cao da Serra da Estrela
+Labradane
 
-    Cao da Serra de Aires
+Labradinger
 
-    Cao de Castro Laboreiro
+Labradoodle
 
-    Cao de Fila de Sao Miguel
+Labradoodle Australian
 
-    Cao dos Mourey
+Labradoodle Miniature
 
-    Caravan Hound
+Labrador Husky
 
-    Care-Tzu
+Labrador Retriever
 
-    Carlin Pinscher
+Labralas
 
-    Carolina Dog
+Labrottie
 
-    Cardigan Welsh Corgi
+Lacasapoo
 
-    Carkie
+Lagotto Romagnolo
 
-    Carnauzer
+Lakeland Terrier
 
-    Carpathian Sheepdog
+Lancashire Heeler
 
-    Catahoula Bulldog
+Landseer
 
-    Catahoula Leopard Dog
+Lapinporokoira
 
-    Catalan Sheepdog
+Lapphunds
 
-    Cattle Collie Dog
+Large Munsterlinder
 
-    Caucasian Ovtcharka
+Larson Lakeview Bulldogge
 
-    Cav-A-Malt
+Latvian Hound
 
-    Cav-A-Mo
+Leonberger
 
-    Cava-Chin
+Leopard Cur
 
-    Cava-Corgi
+Levesque
 
-    Cava-lon
+Lha-Cocker
 
-    Cava-Tzu
+Lhaffon
 
-    Cavachon
+Lhasa Apso
 
-    Cavalier King Charles Spaniel
+Lhasalier
 
-    Cavanese
+Lhasanese
 
-    Cavapom
+Lhasapoo
 
-    Cavapoo
+Lhatese
 
-    Cavaton
+Lithuanian Hound
 
-    Cavestie
+Llewellin Setter
 
-    Central Asian Ovtcharka
+Louisiana Catahoula Leopard Dog
 
-    Cesky Fousek
+Lowchen (Little Lion Dog)
 
-    Cesky Terrier
+Lucas Terrier
 
-    Chacy Ranior
+Lundehund
 
-    Chart Polski
+Lurcher
 
-    Chesapeake Bay Retriever
 
-    Cheeks
+Magyar Agar
 
-    Cherokee Monarch
+Mahratta Greyhound
 
-    Chesador
+Majestic Tree Hound
 
-    Chestie
+Majorca Shepherd Dog
 
-    Chi Apso
+Malchi
 
-    Chi-Chi
+Mal-Shi
 
-    Chi-Chon
+Malinois X
 
-    Chi-Poo
+Malteagle
 
-    Chien D' Artois
+Maltese
 
-    Chiens Francaises
+Malti-Pin
 
-    Chigi
+Malti-Poo
 
-    Chihuahua
+Malti-Pug
 
-    Chilier
+Maltipom
 
-    Chimation
+Malton
 
-    Chin
+Manchester Terrier
 
-    Chin-Pin
+Maremma Sheepdog
 
-    Chin-wa
+Markiesje
 
-    China Jack
+Mastador
 
-    Chinaranian
+Masti-Bull
 
-    Chineranian
+Mastiff
 
-    Chinese Crested (hairless)
+Mauxie
 
-    Chinese Chongqing Dog
+Mauzer
 
-    Chinese Crestepoo
+McNab
 
-    Chinese Frise
+Meagle
 
-    Chinese Imperial Dog
+Mexican Hairless
 
-    Chinese Foo Dog
+Mi-Ki
 
-    Chinese Shar-Pei
+Middle Asian Ovtcharka
 
-    Chinook
+Mini Australian Shepterrier
 
-    Chion
+Mini Coonhound
 
-    Chipin
+Mini St. Bernard
 
-    Chippiparai
+Miniature American Eskimo
 
-    Chiribaya Shepherd
+Miniature Aussiedoodle
 
-    Chiweenie
+Miniature Australian Bulldog
 
-    Chonzer
+Miniature Australian Shepherd
 
-    Chorkie
+Miniature Bull Terrier
 
-    Chortaj
+Miniature Bulldog
 
-    Chow Chow
+Miniature English Bulldog
 
-    Chug
+Miniature Fox Terrier
 
-    Chussel
+Miniature Goldendoodle
 
-    Cierny Sery
+Miniature Labradoodle
 
-    Cirneco Dell 'Etna
+Miniature Pinscher
 
-    Clumber Spaniel
+Miniature Poodle
 
-    Cluminger Spaniel
+Miniature Schnaupin
 
-    Cock-A-Chon
+Miniature Schnauzer
 
-    Cock-A-Mo
+Miniature Schnauzzie
 
-    Cock-A-Tzu
+Miniature Schnoxie
 
-    Cockalier
+Miniboz
 
-    Cockapin
+Minnie Jack
 
-    Cockapoo
+Mioritic Sheepdog
 
-    Cocker Pug
+Mongrel (Mutt)
 
-    Cocker Spaniel
+Moscow Toy Terrier
 
-    Cocker Westie
+Moscow Vodolaz
 
-    Cockeranian
+Moscow Watchdog
 
-    CockerShnauz
+Mountain Cur
 
-    Cockinese
+Mountain Feist
 
-    Cojack
+Mountain Mastiff
 
-    Collie
+Mountain View Cur
 
-    Colonial Cocker Spaniel
+Mucuchies
 
-    Combai
+Mudi
 
-    Comfort Retriever
+Muggin
 
-    Continental Toy Spaniel
+Munsterlinder
 
-    Copica
 
-    Corgi
+Native American Indian Dog
 
-    Corgidor
+Neapolitan Mastiff
 
-    Corillon
+Nebolish Mastiff
 
-    Corkie
+Nenets Herding Laika
 
-    Cosheltie
+New Guinea Singing Dog
 
-    Coton De Tulear
+New Zealand Huntaway
 
-    Coton Tzu
+Newfoundland
 
-    Cotonese
+Norbottenspets
 
-    Cotralian
+Norfolk Terrier
 
-    Coydog
+North American Miniature Australian Shepherd
 
-    Crested Schnauzer
+Northeasterly Hauling Laika
 
-    Crested Malt
+Northern Inuit Dog
 
-    Crested Tzu
+Norwegian Buhund
 
-    Cretan Hound
+Norwegian Elkhound
 
-    Croatian Sheepdog
+Norwegian Hound
 
-    Crustie
+Norwegian Lundehund
 
-    Curly-Coated Retriever
+Norwich Terrier
 
-    Cypro Kukur
+Nova Scotia Duck-Tolling Retriever
 
-    Czechoslovakian Wolfdog
 
-    Czesky Terrier
 
+Old Anglican Bulldogge
 
+Old Danish Chicken Dog
 
-    Dachshund
+Old English Mastiff
 
-    Daisy Dog
+Old English Sheepdog (Bobtail)
 
-    Dakotah Shepherd
+Old-Time Farm Shepherd
 
-    Dalmador
+Olde Boston Bulldogge
 
-    Dalmatian
+Olde English Bulldogge
 
-    Dameranian
+Olde Victorian Bulldogge
 
-    Dandie Dinmont Terrier
+Ori Pei
 
-    Daniff
+Original English Bulldogge
 
-    Danish Broholmer
+Otterhound
 
-    Danish-Swedish Farmdog
+Owczarek Podhalanski
 
-    Daug
 
-    Denmark Feist
 
-    Deutsche Bracke
+Papastzu
 
-    Deutscher Wachtelhund
+Paperanian
 
-    Dingo
+Papi-poo
 
-    Doberman Pinscher
+Papi Tzu
 
-    Dogo Argentino
+Papichon
 
-    Dogue Brasileiro
+Papillon
 
-    Dogue de Bordeaux
+Papimo
 
-    Doodleman Pinscher
+Papitese
 
-    Dorgi
+Papshund
 
-    Dorkie
+Parnell's Carolina Cur
 
-    Dorset Olde Tyme Bulldogge
+Pariah Dog
 
-    Doxie-Chon
+Parson Russell Terrier
 
-    Doxie-Pin
+Patterdale Terrier
 
-    Doxie Scot
+Patterland Terrier
 
-    Doxiepoo
+Peagle
 
-    Doxle
+Peek-A-Pom
 
-    Drentse Patrijshond
+Pekalier
 
-    Drever
+Peka-A-West
 
-    Dunker
+Peke-A-Chon
 
-    Dutch Shepherd Dog
+Peke-A-Pap
 
-    Dutch Smoushond
+Peke-A-Pin
 
+Peke-A-Tese
 
+Pekehund
 
-    East-European Shepherd
+Pekepoo
 
-    East Russian Coursing Hounds
+Pekingese
 
-    East Siberian Laika
+Pembroke Welsh Corgi
 
-    Elkhound
+Pencil-tail Feist
 
-    Engachon
+Perdiguero de Burgos
 
-    EngAm Bulldog / Olde Bulldog
+Perdiguero Navarro
 
-    English Boodle
+Perro Cimarron
 
-    English Boston-Bulldog
+Perro de Pastor Mallorquin
 
-    English Bulldog
+Perro de Presa Canario
 
-    English Bullen Bordeaux Terrier
+Perro de Presa Mallorquin
 
-    English Cocker Spaniel
+Perro dogo Mallorquin
 
-    English Coonhound
+Perro Ratonero Andaluz
 
-    English Foxhound
+Peruvian Inca Orchid (PIO)
 
-    English Mastweiler
+Petit Basset Griffon Vendeen
 
-    English Pointer
+Petit Blue De Gascongne
 
-    English Setter
+Petit Brabancon
 
-    English Shepherd
+Petit Gascon Saintongeois
 
-    English Speagle
+Petite Goldendoodle
 
-    English Springer Spaniel
+Petite Labradoodle
 
-    English Toy Cocker Spaniel
+Pharaoh Hound
 
-    English Toy Spaniel
+Picardy Spaniel
 
-    Entlebucher Sennenhund
+Pineranian
 
-    Eskapoo
+Pinny-Poo
 
-    Eskifon
+Pit Bull Terrier
 
-    Eskijack
+Plica
 
-    Eskland
+Plott Hound
 
-    Estonian Hound
+Plummer Terrier
 
-    Estrela Mountain Dog
+Pocket Beagle
 
-    Eurasier
+Podenco Ibicenco
 
-    Euro Mountain Sheparnese
+Pointer
 
+Pointer Bay
 
-    Farm Collie
+Poitevin
 
-    Fauves De Bretagne
+Polish Hound
 
-    Faux Frenchbo Bulldog
+Polish Tatra Sheepdog
 
-    Feist
+Polski Owczarek Nizinny
 
-    Field Spaniel
+Pom-A-Nauze
 
-    Fila Brasileiro
+Pom-A-Pug
 
-    Finnish Hound
+Pom-Coton
 
-    Finnish Lapphund
+Pom-Shi
 
-    Finnish Spitz
+Pom-Silk
 
-    Flat-Coated Retriever
+Pom Terrier
 
-    Fo-Chon
+Pomapoo
 
-    Fo-Tzu
+Pomchi
 
-    Foodle
+Pomeranian
 
-    Fourche Terrier
+Pomchi
 
-    Fox Terrier
+Pomeagle
 
-    Foxhoodle
+Pomerat
 
-    Foxhound
+Pomimo
 
-    Foxton
+Pomston
 
-    Foxy Rat Terrier
+Poo-Shi
 
-    Foxy Russell
+Poo-Ton
 
-    Free-Lance Bulldog
+Poochin
 
-    French Brittany Spaniel
+Poodle
 
-    French Bull Weiner
+Poogle
 
-    French Bulldog
+Poolky
 
-    French Bullhuahua
+Poos
 
-    French Mastiff
+Pootalian
 
-    French Pointing Dog
+Poovanese
 
-    French Spaniel
+Porcelaine
 
-    French Tricolour Hound
+Portuguese Hound
 
-    French White and Black Hound
+Portuguese Pointer
 
-    French White and Orange Hound
+Portuguese Water Dog
 
-    Frenchie Pug
+Posavina Hound
 
-    Frengle  
+Poshies
 
+Potsdam Greyhound
 
+Prazsky Krysavik
 
-    Galgo Espanol
+Powderpap
 
-    Gammel Dansk Hoensehund
+Presa Canarios
 
-    Gascons-Saintongeois
+Pudelpointer
 
-    German Hunt Terrier
+Pug
 
-    German Longhaired Pointer
+Pug-A-Mo
 
-    German Rough-haired Pointing Dog
+Pug-Zu
 
-    German Pinscher
+Pugairn
 
-    German Sheeppoodle
+Pugalier
 
-    German Shepherd Dog
+Pugapoo
 
-    German Shorthaired Lab
+Pugese
 
-    German Shorthaired Pointer
+Puggat
 
-    German Spitz Giant
+Puggit
 
-    German Spitz Medium
+Puggle
 
-    German Spitz Small
+Pughasa
 
-    German Wirehaired Pointer
+Puginese
 
-    Giant Maso Mastiff
+Pugland
 
-    Giant Schnauzer
+Pugottie
 
-    Giant Schnoodle
+Pugshire
 
-    Glechon
+Puli  (Pulik)
 
-    Glen of Imaal Terrier
+Pumi
 
-    Goberian
+Pushon
 
-    Golden Boxer
+Pyrenean Mastiff
 
-    Golden Irish
+Pyrenean Mountain Dog
 
-    Golden Labrador
+Queen Elizabeth Pocket Beagle
 
-    Golden Mountain Dog
+Queensland Heeler
 
-    Golden Pei
 
-    Golden Pyrenees
 
-    Golden Retriever
+Rafeiro do Alentejo
 
-    Golden Sheltie
+Raggle
 
-    Goldendoodle
+Rajapalyam
 
-    Goldmaraner
+Rampur Greyhound
 
-    Goldmation
+Rashon
 
-    Gollie
+Rastreador Brasileiro
 
-    Gonczy Polski
+Rat Terrier
 
-    Gordon Setter
+Rat-A-Pap
 
-    Gran Mastin de Borinquen
+Rat-Cha
 
-    Grand anglo-francais
+Ratshi Terrier
 
-    Grand anglo-francais tricolore
+Ratshire Terrier
 
-    Grand anglo-francais blanc et noir
+Rattle
 
-    Grand anglo-francais blanc et orange
+Rattle Griffon
 
-    Grand Basset Griffon Vendeen
+Redbone Coonhound
 
-    Grand bleu de Gascogne
+Rhodesian Ridgeback
 
-    Grand gascon saintongeois
+Roman Rottweiler
 
-    Grand Griffon Vendeen
+Rotterman
 
-    Great Dane
+Rottle
 
-    Great Pyrenees
+Rottweiler
 
-    Greater Swiss Mountain Dog
+Rough Collie
 
-    Greek Hound
+Rumanian Sheepdog
 
-    Greek Sheepdog
+Russian Bear Schnauzer
 
-    Greenland Dog
+Russian Harlequin Hound
 
-    Greyhound
+Russian Hound
 
-    Griffichon
+Russian Spaniel
 
-    Griffon bleu de Gascogne
+Russian Toy Terrier
 
-    Griffon fauve de Bretagne
+Russian Tsvetnaya Bolonka
 
-    Griffon Nivernais
+Russian Wolfhound
 
-    Griffonese
+Russo-European Laika
 
-    Griffonshire
+Rustralian Terrier
 
-    Groenendael
 
-    Grosser Munsterlinder Vorstehhund
 
-    Guatemalan Bull Terrier
+Saarlooswolfhond
 
+Sabuesos Espanoles
 
-    Hairless Khala
+Sage Ashayeri
 
-    Halden Hound
+Sage Koochee
 
-    Hamilton Hound
+Sage Mazandarani
 
-    Hanoverian Hound
+Saint Berdoodle
 
-    Harlequin Pinscher
+Saint Bernard
 
-    Harrier
+Saint Berner
 
-    Hava-Apso
+Saluki
 
-    Havachin
+Samoyed
 
-    Havachon
+Sanshu Dog
 
-    Havamalt
+Sapsari
 
-    Havanese
+Sarplaninac
 
-    Havashire
+Schapendoes
 
-    Havashu
+Schapso
 
-    Havaton
+Schiller Hound
 
-    Hawaiian Poi Dog
+Schip-A-Pom
 
-    Hellenikos Ichnilatis
+Schipese
 
-    Hellenikos Poimenikos
+Schipper-Poo
 
-    Hertha Pointer
+Schipperke
 
-    Highland Maltie
+Schnau-Tzu
 
-    Himalayan Sheepdog
+Schnauzers
 
-    Hokkaido Dog
+Schneagle
 
-    Hanoverian Scenthound
+Schnekingese
 
-    Hovawart
+Schnese
 
-    Hungarian Greyhound
+Schnocker
 
-    Hungarian Kuvasz
+Schnoodle
 
-    Hungarian Puli
+Schweenie
 
-    Hungarian Wire-haired Pointing Dog
+Scoland Terrier
 
-    Hush Basset
+Scoodle
 
-    Husky
+Scotch Collie
 
-    Hygenhund
+Scotchon
 
+Scotti Apso
 
+Scottish Deerhound
 
-    Ibizan Hound
+Scottish-Skye Terrier
 
-    Icelandic Sheepdog
+Scottish Terrier (Scottie)
 
-    Imo-Inu
+Sealydale Terrier
 
-    Inca Hairless Dog
+Sealyham Terrier
 
-    Irish Doodle
+Segugios Italianos
 
-    Irish Glen Imaal Terrier
+Seidenspitz
 
-    Irish Mastiff
+Shar-Pei
 
-    Irish Red and White Setter
+Shar-Poo
 
-    Irish Setter
+Sharbo
 
-    Irish Staffordshire Bull Terrier
+Sharmatian
 
-    Irish Terrier
+Sharp Eagle
 
-    Irish Water Spaniel
+Sheepadoodle
 
-    Irish Wolfhound
+Shelchon
 
-    Istrian Coarse-Haired Hound
+Shelillon
 
-    Istrian Short-Haired Hound
+Sheltidoodle
 
-    Italian Bulldogge
+Shepadoodle
 
-    Italian Greyhound
+Sheprador
 
-    Italian Hound
+Shetland Sheepdog (Sheltie)
 
-    Italian Spinoni
+Shiba Inu
 
+Shibos
 
-    Ja-Chon
+ShiChi
 
-    Jacairn
+Shichon
 
-    Jack-A-Bee
+Shiffon
 
-    Jack-A-Poo
+Shih Apso
 
-    Jack-A-Ranian
+Shih-Mo
 
-    Jack Chi
+Shih-Poo
 
-    Jack-Rat Terrier
+Shih-Tzu
 
-    Jack Russell Terrier
+Shika Inus
 
-    Jackie-Bichon
+Shikoku
 
-    Jafox
+Shiloh Shepherd
 
-    Jaland
+Shinese
 
-    Japanese Spaniel (Chin)
+Shiranian
 
-    Japanese Spitz
+Shocker
 
-    Japanese Terrier
+Shockerd
 
-    Japeke
+Shorgi
 
-    Japillon
+Shorkie Tzu
 
-    Japug
+Shug
 
-    Jarkie
+Sibercaan
 
-    Jatzu
+Siberian Husky
 
-    Jindo
+Siberian Indian Dog
 
-    Jatese
+Siberian Laikas
 
-    Jug
+Silkchon
 
+Silken Windhound
 
-    Kai Dog
+Silkese
 
-    Kangal Dog
+Silkin
 
-    Kangaroo Dog
+Silkland Terrier
 
-    Kanni
+Silky Cocker
 
-    Karabash
+Silky Jack
 
-    Karelian Bear Dog
+Silky-Lhasa
 
-    Karelian Bear Laika
+Silky Terrier
 
-    Karelo-Finnish Laika
+Silky Tzu
 
-    Karst Shepherd
+Silkzer
 
-    Kashon
+Simaku
 
-    Keagle
+Skip-Shzu
 
-    Keeshond
+Skye Terrier
 
-    Kelb Tal-Fenek
+Sloughi
 
-    Kemmer Feist
+Slovakian Hound
 
-    Kemmer Stock Hybrid Squirrel Dogs
+Slovensky Cuvac
 
-    Kerry Beagle
+Slovensky Hrubosrsty Stavac
 
-    Kerry Blue Terrier
+Smalandsstovare
 
-    Kerry Wheaten
+Small Bernese Hound
 
-    Kimola
+Small Greek Domestic Dog
 
-    King Cavrin
+Small Munsterlinder
 
-    King Charles Spaniel
+Small Swiss Hound
 
-    King Charles Yorkie
+Smooth Collie
 
-    King Schnauzer
+Smooth Fox Terrier
 
-    King Shepherd
+Sniffon
 
-    Kishu
+Snorkie
 
-    Komondor
+Soft Coated Golden
 
-    Kooikerhondje
+Soft Coated Wheaten Terrier
 
-    Koolie
+Soft Coated Wheatzer
 
-    Korean Dosa Mastiff
+Soft Coated Woxer
 
-    Krasky Ovcar
+South Russian Ovtcharka
 
-    Kromfohrlender
+Spanador
 
-    Kugsha Dog
+Spaniel de Pont-Audemer
 
-    Kunming Dog
+Spanish Bulldog
 
-    Kuvasz
+Spanish Hound
 
-    Kyi-Leor
+Spanish Mastiff
 
+Spanish Water Dog
 
-    La-Chon
+Spinone Italiano
 
-    La Pom
+Springer Spaniel
 
-    Lab'Aire
+Springerdoodle
 
-    Lab-Pointer
+Srpski Gonic
 
-    Labbe
+Srpski Trobojni Gonic
 
-    Labernese
+Srpski Planinski Gonic
 
-    Labloodhound
+St.Germain Pointing Dog
 
-    Labmaraner
+St. Weiler
 
-    Labradane
+Stabyhoun
 
-    Labradinger
+Staffordshire Bull Terrier
 
-    Labradoodle
+Staghound
 
-    Labradoodle Australian
+Standard American Eskimo
 
-    Labradoodle Miniature
+Standard Poodle
 
-    Labrador Husky
+Standard Schnauzer
 
-    Labrador Retriever
+Stephens Stock Mountain Cur
 
-    Labralas
+Stichelhaar
 
-    Labrottie
+Strellufstover
 
-    Lacasapoo
+Stumpy Tail Cattle Dog
 
-    Lagotto Romagnolo
+Styrian Roughhaired Mountain Hound
 
-    Lakeland Terrier
+Sussex Spaniel
 
-    Lancashire Heeler
+Swedish Elkhound
 
-    Landseer
+Swedish Lapphund
 
-    Lapinporokoira
+Swedish Vallhund
 
-    Lapphunds
+Swiss Hound
 
-    Large Munsterlinder
+Swiss Laufhunds
 
-    Larson Lakeview Bulldogge
+Swiss Shorthaired Pinscher
 
-    Latvian Hound
 
-    Leonberger
 
-    Leopard Cur
+Taco Terrier
 
-    Levesque
+Tahltan Bear Dog
 
-    Lha-Cocker
+Taigan
 
-    Lhaffon
+Tamaskan Dog
 
-    Lhasa Apso
+Tasy
 
-    Lhasalier
+Teddy Roosevelt Terrier
 
-    Lhasanese
+Telomian
 
-    Lhasapoo
+Tenterfield Terrier
 
-    Lhatese
+Tepeizeuintli
 
-    Lithuanian Hound
+Texas Heeler
 
-    Llewellin Setter
+Thai Bangkaew Dog
 
-    Louisiana Catahoula Leopard Dog
+Thai Ridgeback
 
-    Lowchen (Little Lion Dog)
+The Carolina Dog
 
-    Lucas Terrier
+Tibalier
 
-    Lundehund
+Tibetan KyiApso
 
-    Lurcher
+Tibetan Mastiff
 
+Tibetan Pug
 
-    Magyar Agar
+Tibetan Spaniel
 
-    Mahratta Greyhound
+Tibetan Terrier
 
-    Majestic Tree Hound
+Titen Bull-Dogge
 
-    Majorca Shepherd Dog
+Titan Terrier
 
-    Malchi
+Torkie
 
-    Mal-Shi
+Tornjak
 
-    Malinois X
+Tosa Inu
 
-    Malteagle
+Toxirn
 
-    Maltese
+Toy American Eskimo
 
-    Malti-Pin
+Toy Australian Shepherd
 
-    Malti-Poo
+Toy Fox Pinscher
 
-    Malti-Pug
+Toy Fox Terrier
 
-    Maltipom
+Toy German Spitz
 
-    Malton
+Toy Manchester Terrier
 
-    Manchester Terrier
+Toy Poodle
 
-    Maremma Sheepdog
+Toy Poxer
 
-    Markiesje
+Toy Rat Doxie
 
-    Mastador
+Transylvanian Hound
 
-    Masti-Bull
+Treeing Tennessee Brindle
 
-    Mastiff
+Treeing Walker Coonhound
 
-    Mauxie
+Tuareg Sloughi
 
-    Mauzer
+Twatha Utonagan
 
-    McNab
+Tyroler Bracke
 
-    Meagle
+Tzu Basset
 
-    Mexican Hairless
 
-    Mi-Ki
+Ultimate Mastiff
 
-    Middle Asian Ovtcharka
 
-    Mini Australian Shepterrier
 
-    Mini Coonhound
+Valley Bulldog
 
-    Mini St. Bernard
+Victorian Bulldog
 
-    Miniature American Eskimo
+Villano de Las Encartaciones
 
-    Miniature Aussiedoodle
+Vizsla
 
-    Miniature Australian Bulldog
+Volpino Italiano
 
-    Miniature Australian Shepherd
+Vucciriscu
 
-    Miniature Bull Terrier
 
-    Miniature Bulldog
+Wauzer
 
-    Miniature English Bulldog
+Wee-Chon
 
-    Miniature Fox Terrier
+Weeranian
 
-    Miniature Goldendoodle
+Weimaraner
 
-    Miniature Labradoodle
+Weimardoodle
 
-    Miniature Pinscher
+Wel-Chon
 
-    Miniature Poodle
+Welsh Corgi
 
-    Miniature Schnaupin
+Welsh Sheepdog
 
-    Miniature Schnauzer
+Welsh Springer Spaniel
 
-    Miniature Schnauzzie
+Welsh Terrier
 
-    Miniature Schnoxie
+Weshi
 
-    Miniboz
+West Highland White Terrier
 
-    Minnie Jack
+West of Argyll Terrier
 
-    Mioritic Sheepdog
+West Russian Coursing Hound
 
-    Mongrel (Mutt)
+West Siberian Laika
 
-    Moscow Toy Terrier
+Westie-Laso
 
-    Moscow Vodolaz
+Westiepoo
 
-    Moscow Watchdog
+Westphalian Dachsbracke
 
-    Mountain Cur
+Wetterhoun
 
-    Mountain Feist
+Wheaten Terrier
 
-    Mountain Mastiff
+Whippet
 
-    Mountain View Cur
+White German Shepherd
 
-    Mucuchies
+Whoodles
 
-    Mudi
+Wirehaired Fox Terrier
 
-    Muggin
+Wirehaired Pointing Griffon
 
-    Munsterlinder
+Wirehaired Vizsla
 
+Wirelsh Terrier
 
-    Native American Indian Dog
+Wolf Hybrid
 
-    Neapolitan Mastiff
+Wolamute
 
-    Nebolish Mastiff
 
-    Nenets Herding Laika
+Xoloitzcuintle
 
-    New Guinea Singing Dog
+Yoranian
 
-    New Zealand Huntaway
+Yorkie-Apso
 
-    Newfoundland
+Yorkie Pin
 
-    Norbottenspets
+Yorkie Russell
 
-    Norfolk Terrier
+Yorkie-ton
 
-    North American Miniature Australian Shepherd
+Yorkillon
 
-    Northeasterly Hauling Laika
+Yorkinese
 
-    Northern Inuit Dog
+Yorkipoo
 
-    Norwegian Buhund
+Yorkshire Terrier
 
-    Norwegian Elkhound
+Yorktese
 
-    Norwegian Hound
+Yugoslavian Hounds
 
-    Norwegian Lundehund
-
-    Norwich Terrier
-
-    Nova Scotia Duck-Tolling Retriever
-
-
-
-    Old Anglican Bulldogge
-
-    Old Danish Chicken Dog
-
-    Old English Mastiff
-
-    Old English Sheepdog (Bobtail)
-
-    Old-Time Farm Shepherd
-
-    Olde Boston Bulldogge
-
-    Olde English Bulldogge
-
-    Olde Victorian Bulldogge
-
-    Ori Pei
-
-    Original English Bulldogge
-
-    Otterhound
-
-    Owczarek Podhalanski
-
-
-
-    Papastzu
-
-    Paperanian
-
-    Papi-poo
-
-    Papi Tzu
-
-    Papichon
-
-    Papillon
-
-    Papimo
-
-    Papitese
-
-    Papshund
-
-    Parnell's Carolina Cur
-
-    Pariah Dog
-
-    Parson Russell Terrier
-
-    Patterdale Terrier
-
-    Patterland Terrier
-
-    Peagle
-
-    Peek-A-Pom
-
-    Pekalier
-
-    Peka-A-West
-
-    Peke-A-Chon
-
-    Peke-A-Pap
-
-    Peke-A-Pin
-
-    Peke-A-Tese
-
-    Pekehund
-
-    Pekepoo
-
-    Pekingese
-
-    Pembroke Welsh Corgi
-
-    Pencil-tail Feist
-
-    Perdiguero de Burgos
-
-    Perdiguero Navarro
-
-    Perro Cimarron
-
-    Perro de Pastor Mallorquin
-
-    Perro de Presa Canario
-
-    Perro de Presa Mallorquin
-
-    Perro dogo Mallorquin
-
-    Perro Ratonero Andaluz
-
-    Peruvian Inca Orchid (PIO)
-
-    Petit Basset Griffon Vendeen
-
-    Petit Blue De Gascongne
-
-    Petit Brabancon
-
-    Petit Gascon Saintongeois
-
-    Petite Goldendoodle
-
-    Petite Labradoodle
-
-    Pharaoh Hound
-
-    Picardy Spaniel
-
-    Pineranian
-
-    Pinny-Poo
-
-    Pit Bull Terrier
-
-    Plica
-
-    Plott Hound
-
-    Plummer Terrier
-
-    Pocket Beagle
-
-    Podenco Ibicenco
-
-    Pointer
-
-    Pointer Bay
-
-    Poitevin
-
-    Polish Hound
-
-    Polish Tatra Sheepdog
-
-    Polski Owczarek Nizinny
-
-    Pom-A-Nauze
-
-    Pom-A-Pug
-
-    Pom-Coton
-
-    Pom-Shi
-
-    Pom-Silk
-
-    Pom Terrier
-
-    Pomapoo
-
-    Pomchi
-
-    Pomeranian
-
-    Pomchi
-
-    Pomeagle
-
-    Pomerat
-
-    Pomimo
-
-    Pomston
-
-    Poo-Shi
-
-    Poo-Ton
-
-    Poochin
-
-    Poodle
-
-    Poogle
-
-    Poolky
-
-    Poos
-
-    Pootalian
-
-    Poovanese
-
-    Porcelaine
-
-    Portuguese Hound
-
-    Portuguese Pointer
-
-    Portuguese Water Dog
-
-    Posavina Hound
-
-    Poshies
-
-    Potsdam Greyhound
-
-    Prazsky Krysavik
-
-    Powderpap
-
-    Presa Canarios
-
-    Pudelpointer
-
-    Pug
-
-    Pug-A-Mo
-
-    Pug-Zu
-
-    Pugairn
-
-    Pugalier
-
-    Pugapoo
-
-    Pugese
-
-    Puggat
-
-    Puggit
-
-    Puggle
-
-    Pughasa
-
-    Puginese
-
-    Pugland
-
-    Pugottie
-
-    Pugshire
-
-    Puli  (Pulik)
-
-    Pumi
-
-    Pushon
-
-    Pyrenean Mastiff
-
-    Pyrenean Mountain Dog
-
-    Queen Elizabeth Pocket Beagle
-
-    Queensland Heeler
-
-
-
-    Rafeiro do Alentejo
-
-    Raggle
-
-    Rajapalyam
-
-    Rampur Greyhound
-
-    Rashon
-
-    Rastreador Brasileiro
-
-    Rat Terrier
-
-    Rat-A-Pap
-
-    Rat-Cha
-
-    Ratshi Terrier
-
-    Ratshire Terrier
-
-    Rattle
-
-    Rattle Griffon
-
-    Redbone Coonhound
-
-    Rhodesian Ridgeback
-
-    Roman Rottweiler
-
-    Rotterman
-
-    Rottle
-
-    Rottweiler
-
-    Rough Collie
-
-    Rumanian Sheepdog
-
-    Russian Bear Schnauzer
-
-    Russian Harlequin Hound
-
-    Russian Hound
-
-    Russian Spaniel
-
-    Russian Toy Terrier
-
-    Russian Tsvetnaya Bolonka
-
-    Russian Wolfhound
-
-    Russo-European Laika
-
-    Rustralian Terrier
-
-
-
-    Saarlooswolfhond
-
-    Sabuesos Espanoles
-
-    Sage Ashayeri
-
-    Sage Koochee
-
-    Sage Mazandarani
-
-    Saint Berdoodle
-
-    Saint Bernard
-
-    Saint Berner
-
-    Saluki
-
-    Samoyed
-
-    Sanshu Dog
-
-    Sapsari
-
-    Sarplaninac
-
-    Schapendoes
-
-    Schapso
-
-    Schiller Hound
-
-    Schip-A-Pom
-
-    Schipese
-
-    Schipper-Poo
-
-    Schipperke
-
-    Schnau-Tzu
-
-    Schnauzers
-
-    Schneagle
-
-    Schnekingese
-
-    Schnese
-
-    Schnocker
-
-    Schnoodle
-
-    Schweenie
-
-    Scoland Terrier
-
-    Scoodle
-
-    Scotch Collie
-
-    Scotchon
-
-    Scotti Apso
-
-    Scottish Deerhound
-
-    Scottish-Skye Terrier
-
-    Scottish Terrier (Scottie)
-
-    Sealydale Terrier
-
-    Sealyham Terrier
-
-    Segugios Italianos
-
-    Seidenspitz
-
-    Shar-Pei
-
-    Shar-Poo
-
-    Sharbo
-
-    Sharmatian
-
-    Sharp Eagle
-
-    Sheepadoodle
-
-    Shelchon
-
-    Shelillon
-
-    Sheltidoodle
-
-    Shepadoodle
-
-    Sheprador
-
-    Shetland Sheepdog (Sheltie)
-
-    Shiba Inu
-
-    Shibos
-
-    ShiChi
-
-    Shichon
-
-    Shiffon
-
-    Shih Apso
-
-    Shih-Mo
-
-    Shih-Poo
-
-    Shih-Tzu
-
-    Shika Inus
-
-    Shikoku
-
-    Shiloh Shepherd
-
-    Shinese
-
-    Shiranian
-
-    Shocker
-
-    Shockerd
-
-    Shorgi
-
-    Shorkie Tzu
-
-    Shug
-
-    Sibercaan
-
-    Siberian Husky
-
-    Siberian Indian Dog
-
-    Siberian Laikas
-
-    Silkchon
-
-    Silken Windhound
-
-    Silkese
-
-    Silkin
-
-    Silkland Terrier
-
-    Silky Cocker
-
-    Silky Jack
-
-    Silky-Lhasa
-
-    Silky Terrier
-
-    Silky Tzu
-
-    Silkzer
-
-    Simaku
-
-    Skip-Shzu
-
-    Skye Terrier
-
-    Sloughi
-
-    Slovakian Hound
-
-    Slovensky Cuvac
-
-    Slovensky Hrubosrsty Stavac
-
-    Smalandsstovare
-
-    Small Bernese Hound
-
-    Small Greek Domestic Dog
-
-    Small Munsterlinder
-
-    Small Swiss Hound
-
-    Smooth Collie
-
-    Smooth Fox Terrier
-
-    Sniffon
-
-    Snorkie
-
-    Soft Coated Golden
-
-    Soft Coated Wheaten Terrier
-
-    Soft Coated Wheatzer
-
-    Soft Coated Woxer
-
-    South Russian Ovtcharka
-
-    Spanador
-
-    Spaniel de Pont-Audemer
-
-    Spanish Bulldog
-
-    Spanish Hound
-
-    Spanish Mastiff
-
-    Spanish Water Dog
-
-    Spinone Italiano
-
-    Springer Spaniel
-
-    Springerdoodle
-
-    Srpski Gonic
-
-    Srpski Trobojni Gonic
-
-    Srpski Planinski Gonic
-
-    St.Germain Pointing Dog
-
-    St. Weiler
-
-    Stabyhoun
-
-    Staffordshire Bull Terrier
-
-    Staghound
-
-    Standard American Eskimo
-
-    Standard Poodle
-
-    Standard Schnauzer
-
-    Stephens Stock Mountain Cur
-
-    Stichelhaar
-
-    Strellufstover
-
-    Stumpy Tail Cattle Dog
-
-    Styrian Roughhaired Mountain Hound
-
-    Sussex Spaniel
-
-    Swedish Elkhound
-
-    Swedish Lapphund
-
-    Swedish Vallhund
-
-    Swiss Hound
-
-    Swiss Laufhunds
-
-    Swiss Shorthaired Pinscher
-
-
-
-    Taco Terrier
-
-    Tahltan Bear Dog
-
-    Taigan
-
-    Tamaskan Dog
-
-    Tasy
-
-    Teddy Roosevelt Terrier
-
-    Telomian
-
-    Tenterfield Terrier
-
-    Tepeizeuintli
-
-    Texas Heeler
-
-    Thai Bangkaew Dog
-
-    Thai Ridgeback
-
-    The Carolina Dog
-
-    Tibalier
-
-    Tibetan KyiApso
-
-    Tibetan Mastiff
-
-    Tibetan Pug
-
-    Tibetan Spaniel
-
-    Tibetan Terrier
-
-    Titen Bull-Dogge
-
-    Titan Terrier
-
-    Torkie
-
-    Tornjak
-
-    Tosa Inu
-
-    Toxirn
-
-    Toy American Eskimo
-
-    Toy Australian Shepherd
-
-    Toy Fox Pinscher
-
-    Toy Fox Terrier
-
-    Toy German Spitz
-
-    Toy Manchester Terrier
-
-    Toy Poodle
-
-    Toy Poxer
-
-    Toy Rat Doxie
-
-    Transylvanian Hound
-
-    Treeing Tennessee Brindle
-
-    Treeing Walker Coonhound
-
-    Tuareg Sloughi
-
-    Twatha Utonagan
-
-    Tyroler Bracke
-
-    Tzu Basset
-
-
-    Ultimate Mastiff
-
-
-
-    Valley Bulldog
-
-    Victorian Bulldog
-
-    Villano de Las Encartaciones
-
-    Vizsla
-
-    Volpino Italiano
-
-    Vucciriscu
-
-
-    Wauzer
-
-    Wee-Chon
-
-    Weeranian
-
-    Weimaraner
-
-    Weimardoodle
-
-    Wel-Chon
-
-    Welsh Corgi
-
-    Welsh Sheepdog
-
-    Welsh Springer Spaniel
-
-    Welsh Terrier
-
-    Weshi
-
-    West Highland White Terrier
-
-    West of Argyll Terrier
-
-    West Russian Coursing Hound
-
-    West Siberian Laika
-
-    Westie-Laso
-
-    Westiepoo
-
-    Westphalian Dachsbracke
-
-    Wetterhoun
-
-    Wheaten Terrier
-
-    Whippet
-
-    White German Shepherd
-
-    Whoodles
-
-    Wirehaired Fox Terrier
-
-    Wirehaired Pointing Griffon
-
-    Wirehaired Vizsla
-
-    Wirelsh Terrier
-
-    Wolf Hybrid
-
-    Wolamute
-
-
-    Xoloitzcuintle
-
-    Yoranian
-
-    Yorkie-Apso
-
-    Yorkie Pin
-
-    Yorkie Russell
-
-    Yorkie-ton
-
-    Yorkillon
-
-    Yorkinese
-
-    Yorkipoo
-
-    Yorkshire Terrier
-
-    Yorktese
-
-    Yugoslavian Hounds
-
-    Zuchon
+Zuchon

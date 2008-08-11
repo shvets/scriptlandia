@@ -3,16 +3,31 @@
 class AppointmentsController < ProtectedController
   include AppointmentsHelper
 
+  def construct_pet_owner filter
+    filter.to_hash['value']
+  end
+  
+  def construct_date filter
+    Date.new y=filter.to_hash['value(1i)'].to_i, m=filter.to_hash['value(2i)'].to_i, d=filter.to_hash['value(3i)'].to_i
+  end
+  
   # GET /appointments
   # GET /appointments.xml
   def index
-    filter_value = params[:filter_value]
-
-    if filter_value != nil
-      params[:pet_owner_id] = filter_value
+    appointment_date = nil
+    
+    if params[:filter] != nil
+      filter_id = params[:filter_id]
+    
+      if filter_id == "PETOWNER"
+        params[:pet_owner_id] = construct_pet_owner params[:filter]
+      elsif filter_id == "DATE"
+        appointment_date = construct_date params[:filter]
+      end
+      
     end
-
-    @appointments = Appointment.find_by_current_user User.current_user(session), nil, params
+    
+    @appointments = Appointment.find_by_current_user User.current_user(session), appointment_date, params
 
     if @appointments.empty?
       flash[:notice] = 'We don\'t have any appointment.'

@@ -18,7 +18,7 @@
         <td><%=h appointment.groomer.name if appointment.groomer != nil %></td>
         <td><%=h appointment.appointment_date.strftime("%A, %B %d, %Y") %></td>
         <td><%=h appointment.appointment_time.strftime("%H:%M") %></td>
-        <td><%=h number_to_currency appointment.price %></td>
+        <td><%=h number_to_currency(appointment.price) %></td>
       </tr>
     <% 
     sum += appointment.price
@@ -26,7 +26,7 @@
 
     <tr >
       <td colspan="5"><b>Total</b></td>
-      <td><%=h number_to_currency sum %></td>
+      <td><%=h number_to_currency(sum) %></td>
     </tr>
   </table>
 <% end %>

@@ -1,6 +1,6 @@
 module BreedsHelper
 
-  def display_filter_value_field1 filter_id = nil
+  def display_filter_value_field filter_id = nil
     puts "1234"
 
     text = ''

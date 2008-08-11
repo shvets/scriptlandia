@@ -126,45 +126,12 @@ class PetsController < ProtectedController
     end
   end
 
-  def display_breeds_select
-    #breeds = Pet.get_breeds params[:subtype]
-
-    #text = '<select id="breed" name="breed">'
-    
-    #for breed in breeds
-    #  text = text + '  <option value="' + breed.to_s + '">' + breed.to_s + '</option>'
-    #end
-
-    #text = text + '</select>'
-
-    #subtype = params[:subtype]
-
-    #puts "subtype: " + subtype
-
-    text = text_field_with_auto_complete(:pet, :breed, :autocomplete => "off")
-    
-    #puts "text: " + text                                       
-     
-    render :text => text
-  end
-
-#  def set_tags
-#    respond_to do |format|
-#       format.html
-#      format.js do
-#        render :update do |page|
-#          page.replace_html('new_tags', params[:tags])
-#        end
-#      end
-#    end
-#  end
-
-  skip_before_filter :verify_authenticity_token, :only => [:auto_complete_for_pet_breed]    
+  skip_before_filter :verify_authenticity_token, :only => [:auto_complete_for_cat_breed, :auto_complete_for_dog_breed]    
   
-  def auto_complete_for_pet_breed
+  def auto_complete_for_cat_breed
     #puts "**********" + params[:subtype]
 
-    breeds = Breed.find(:all, :conditions => [ 'LOWER(name) LIKE ? and subtype=?', '%' + params[:pet][:breed].downcase + '%', 'cat' ], 
+    breeds = Breed.find(:all, :conditions => [ 'LOWER(name) LIKE ? and subtype=?', '%' + params[:cat][:breed].downcase + '%', 'cat' ], 
                                :order => 'name ASC', :limit => 10)
     text = '<ul>'
     
@@ -178,6 +145,23 @@ class PetsController < ProtectedController
     render :text => text
   end
 
+  def auto_complete_for_dog_breed
+    #puts "**********" + params[:subtype]
+
+    breeds = Breed.find(:all, :conditions => [ 'LOWER(name) LIKE ? and subtype=?', '%' + params[:dog][:breed].downcase + '%', 'dog' ], 
+                               :order => 'name ASC', :limit => 10)
+    text = '<ul>'
+    
+    for breed in breeds
+      puts "breed: " + breed.name
+      text = text + '<li>' + breed.name + '</li>'
+    end
+
+    text = text + '</ul>'
+
+    render :text => text
+  end
+  
 #def auto_complete_for_doctor_organization
 #  re = Regexp.new("^#{params[:doctor][:organization]}", "i")
 #  find_options = { :order => "name ASC" }
