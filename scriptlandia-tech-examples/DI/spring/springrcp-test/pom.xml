@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>springrcp-test</groupId>
+  <artifactId>springrcp-test</artifactId>
+  <version>1.0</version>
+
+  <packaging>jar</packaging>
+
+  <properties>
+    <springRichclient.version>1.0.0</springRichclient.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.richclient</groupId>
+      <artifactId>spring-richclient-resources</artifactId>
+      <version>${springRichclient.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.richclient</groupId>
+      <artifactId>spring-richclient-core</artifactId>
+      <version>${springRichclient.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.richclient</groupId>
+      <artifactId>spring-richclient-binding</artifactId>
+      <version>${springRichclient.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.richclient</groupId>
+      <artifactId>spring-richclient-form</artifactId>
+      <version>${springRichclient.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.richclient</groupId>
+      <artifactId>spring-richclient-support</artifactId>
+      <version>${springRichclient.version}</version>
+    </dependency>
+
+    <!--dependency>
+      <groupId>org.springframework.richclient</groupId>
+      <artifactId>spring-richclient-tiger</artifactId>
+      <version>${springRichclient.version}</version>
+    </dependency-->
+
+    <dependency>
+      <groupId>org.springframework.richclient</groupId>
+      <artifactId>spring-richclient-docking</artifactId>
+      <version>${springRichclient.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.richclient</groupId>
+      <artifactId>spring-richclient-sandbox</artifactId>
+      <version>${springRichclient.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.jgoodies</groupId>
+      <artifactId>forms</artifactId>
+      <version>1.2.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.jgoodies</groupId>
+      <artifactId>looks</artifactId>
+      <version>2.2.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.vlsolutions</groupId>
+      <artifactId>vldocking</artifactId>
+      <version>2.1.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.help</groupId>
+      <artifactId>jhelp</artifactId>
+      <version>2.0</version>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <defaultGoal>compile</defaultGoal>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+          <debug>true</debug>
+          <showDeprecation>true</showDeprecation>
+          <showWarnings>true</showWarnings>
+          <optimize>false</optimize>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>java</goal>
+            </goals>
+          </execution>
+        </executions>
+
+        <configuration>
+          <mainClass>simple.SimpleApp</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>springRichclientRepository</id>
+      <name>Spring rich client repository</name>
+      <url>http://spring-rich-c.sourceforge.net/maven2repository</url>
+    </repository>
+  </repositories>
+
+</project>
