@@ -4,7 +4,7 @@ class GroomersController < ProtectedController
   # GET /groomers
   # GET /groomers.xml
   def index
-    @groomers = Groomer.find_by_current_user User.current_user(session)
+    @groomers = Groomer.find_by_current_user User.current_user(session), params
 
     if @groomers.empty?
       flash[:notice] = 'We don\'t have any groomer.'

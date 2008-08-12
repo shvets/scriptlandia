@@ -102,6 +102,12 @@ class PetsController < ProtectedController
   def update
     @pet = Pet.find(params[:id])
 
+    if params[:pet][:subtype] == 'cat'
+      params[:pet][:breed] = params[:cat][:breed]
+    elsif params[:pet][:subtype] == 'dog'
+      params[:pet][:breed] = params[:dog][:breed]
+    end
+    
     respond_to do |format|
       if @pet.update_attributes(params[:pet])
         flash[:notice] = 'Pet was successfully updated.'
@@ -129,31 +135,19 @@ class PetsController < ProtectedController
   skip_before_filter :verify_authenticity_token, :only => [:auto_complete_for_cat_breed, :auto_complete_for_dog_breed]    
   
   def auto_complete_for_cat_breed
-    #puts "**********" + params[:subtype]
-
-    breeds = Breed.find(:all, :conditions => [ 'LOWER(name) LIKE ? and subtype=?', '%' + params[:cat][:breed].downcase + '%', 'cat' ], 
-                               :order => 'name ASC', :limit => 10)
-    text = '<ul>'
-    
-    for breed in breeds
-      puts "breed: " + breed.name
-      text = text + '<li>' + breed.name + '</li>'
-    end
-
-    text = text + '</ul>'
-
-    render :text => text
+    auto_complete_for_pet_breed 'cat', params[:cat][:breed]
   end
 
   def auto_complete_for_dog_breed
-    #puts "**********" + params[:subtype]
-
-    breeds = Breed.find(:all, :conditions => [ 'LOWER(name) LIKE ? and subtype=?', '%' + params[:dog][:breed].downcase + '%', 'dog' ], 
+    auto_complete_for_pet_breed 'dog', params[:dog][:breed]
+  end
+  
+  def auto_complete_for_pet_breed subtype, param
+    breeds = Breed.find(:all, :conditions => [ 'LOWER(name) LIKE ? and subtype=?', '%' + param.downcase + '%', subtype ], 
                                :order => 'name ASC', :limit => 10)
     text = '<ul>'
     
     for breed in breeds
-      puts "breed: " + breed.name
       text = text + '<li>' + breed.name + '</li>'
     end
 

@@ -22,10 +22,6 @@
   breeds = Pet.get_breeds @pet.subtype
 %>
 
-<%= javascript_include_tag "scriptaculous/prototype" %>
-
-<%= javascript_include_tag "scriptaculous/scriptaculous" %>
-
 <script type="text/javascript">
   function toggleLayers(el) {
     var el1 = document.getElementById('display_cat_breeds_select_div'); 
@@ -63,11 +59,15 @@
   <tr>
     <td>
       <%= f.label :breed %>:
-      <div id="display_cat_breeds_select_div">
-        <%= text_field_with_auto_complete(:cat, :breed, :autocomplete => "off") %>
+      <div id="display_cat_breeds_select_div"
+        <%= (@pet.subtype == 'cat') ? '' : 'style="display:none"' %>
+      >
+        <%= text_field_with_auto_complete(:cat, :breed, {:value => @pet.breed}, {:autocomplete => "off"}) %>
       </div>
-     <div id="display_dog_breeds_select_div">
-        <%= text_field_with_auto_complete(:dog, :breed, :autocomplete => "off") %>
+     <div id="display_dog_breeds_select_div"
+        <%= (@pet.subtype == 'dog') ? '' : 'style="display:none"' %>
+     >
+        <%= text_field_with_auto_complete(:dog, :breed, {:value => @pet.breed}, {:autocomplete => "off"}) %>
       </div>      
     </td>
 

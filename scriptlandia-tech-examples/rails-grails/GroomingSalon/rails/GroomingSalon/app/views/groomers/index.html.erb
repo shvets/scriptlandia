@@ -1,6 +1,11 @@
 <h1>Listing Groomers</h1>
 
 <%= button_to 'New Groomer', new_groomer_path %>
+
+<% options = options_for_select({ "Company" => "COMPANY" }) -%>
+
+<%= render :partial => "filter", :locals => { :options => options, :controller => 'groomers', :filter_id => 'COMPANY'} %>
+
 <br />
 
 <% unless @groomers.empty? %>

@@ -3,10 +3,21 @@
   <component name="DBNavigator.Module.ConnectionManager">
     <connections />
   </component>
+  <component name="FacetManager">
+    <facet type="RailsFacetType" name="Rails">
+      <configuration>
+        <RAILS_FACET_CONFIG_ID NAME="SHOULD_USE_RSPEC_PLUGIN" VALUE="false" />
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_FACET_APPLICATION_ROOT" VALUE="$MODULE_DIR$" />
+      </configuration>
+    </facet>
+  </component>
   <component name="NewModuleRootManager" inherit-compiler-output="false">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/tmp" />
+    </content>
     <orderEntry type="jdk" jdkName="Ruby SDK 1.8.6" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntryProperties />
   </component>
   <component name="RModuleContentRootManager">
     <TEST_URLS url="file://$MODULE_DIR$/test" />
@@ -18,6 +29,15 @@
   </component>
   <component name="RSpecModuleSettingsStorage">
     <RSPEC_MODULE_SETTINGS_STORAGE_ID NAME="RSPEC_SUPPORT_TYPE" VALUE="NONE" />
+  </component>
+  <component name="RailsViewFoldersManager">
+    <USER_URLS url="file://$MODULE_DIR$/vendor/rails" />
+    <USER_URLS url="file://$MODULE_DIR$/db" />
+    <USER_URLS url="file://$MODULE_DIR$/public/stylesheets" />
+    <USER_URLS url="file://$MODULE_DIR$/lib" />
+    <USER_URLS url="file://$MODULE_DIR$/vendor/plugins" />
+    <USER_URLS url="file://$MODULE_DIR$/public/javascripts" />
+    <USER_URLS url="file://$MODULE_DIR$/spec" />
   </component>
 </module>
 
