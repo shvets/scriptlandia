@@ -1,15 +1,24 @@
 #
 
 class BreedsController < ProtectedController
-  include BreedsHelper
+  #include BreedsHelper
+  include ActionView::Helpers::DateHelper, ActionView::Helpers::FormOptionsHelper  
 
   # GET /breeds
   # GET /breeds.xml
   def index
     filter_value = params[:filter_value]
+    
+    if params[:filter] != nil
+      filter_id = params[:filter_id]
+    
+      if filter_id == "TYPE"
+       filter_value = params[:filter][:value]
+      end 
+    end    
 
     if filter_value != nil
-      params[:subtype] = filter_value
+      #params[:subtype] = filter_value
       conditions = [ "subtype = ?", filter_value]
     else
       conditions = []
@@ -100,4 +109,22 @@ class BreedsController < ProtectedController
     end
   end
 
+  def display_filter_value_field filter_id = nil
+    text = ''
+
+    filter_id = params[:filter_id] if filter_id == nil and params != nil
+
+    if filter_id != nil
+      if filter_id == 'TYPE'
+        text = select(:filter, :value, %w(cat dog))  
+      else
+        text = ''
+      end
+    end
+
+    render :text => text
+
+    text
+  end
+  
 end

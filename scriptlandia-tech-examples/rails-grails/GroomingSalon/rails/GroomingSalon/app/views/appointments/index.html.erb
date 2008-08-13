@@ -6,7 +6,9 @@
 
 <% options = options_for_select({ "Pet Owner" => "PETOWNER", "Date" => "DATE"}) -%>
 
-<%= render :partial => "filter", :locals => { :options => options, :controller => 'appointments', :filter_id => 'PETOWNER' } %>
+<%= render :partial => "common/filter", 
+           :locals => { :options => options, :controller => 'appointments', :filter_id => 'PETOWNER',
+                        :controller_instance => @controller } %>
 
 <% 
   @cart = "aaaa"

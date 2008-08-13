@@ -9,9 +9,23 @@ class Appointment < ActiveRecord::Base
  
   validates_numericality_of :price, :message=>"should be a number"
 
+  def self.construct_date filter
+    Date.new y=filter.to_hash['value(1i)'].to_i, m=filter.to_hash['value(2i)'].to_i, d=filter.to_hash['value(3i)'].to_i
+  end
+    
   def self.find_by_current_user current_user, current_date, params
     pet_owner_ids = []
   
+    if params[:filter] != nil
+      filter_id = params[:filter_id]
+    
+      if filter_id == "PETOWNER"
+        params[:pet_owner_id] = params[:filter][:value]
+      elsif filter_id == "DATE"
+        current_date = construct_date params[:filter]
+      end 
+    end
+    
     if current_user != nil
       if current_user.admin
         if params[:pet_owner_id] != nil
@@ -37,7 +51,7 @@ class Appointment < ActiveRecord::Base
 
       conditions = { :pet_id => pet_ids }
     end
-
+    
     if current_date != nil
       conditions[:appointment_date] = current_date
     end

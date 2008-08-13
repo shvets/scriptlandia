@@ -18,15 +18,6 @@ class Groomer < ActiveRecord::Base
       conditions = [ "company_id=?", current_user.company_id ]
     end
 
-    filter_value = params[:filter_value]
-
-    if filter_value != nil
-      #params[:company_id] = filter_value
-      conditions = [ "company_id = ?", filter_value]
-    else
-      conditions = []
-    end
-
     find(:all, :conditions => conditions)
   end
 
