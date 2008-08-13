@@ -15,7 +15,7 @@
   </p>
   <p>
     <%= f.label :subtype %><br />
-    <%= select(:breed, :subtype, %w(cat dog)) %>
+    <%= collection_select(:breed, :subtype, Subtype.list, :id, :name) %>
   </p>
 
   <p>

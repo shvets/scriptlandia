@@ -1,8 +1,10 @@
 # companies_controller.rb
 
 class CompaniesController < ProtectedController
-  finder_filter :company, :only => [:show, :update, :destroy], :param => :id
-  #:by => :name, :except => [:index]
+  finder_filter :company, :only => [:show, :update, :destroy]
+
+  # :param => :id
+  # :by => :name, :except => [:index]
   
   # GET /companies
   # GET /companies.xml

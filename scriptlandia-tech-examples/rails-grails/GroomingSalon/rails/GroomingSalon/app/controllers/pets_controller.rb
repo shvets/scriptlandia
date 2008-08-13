@@ -6,6 +6,8 @@ class PetsController < ProtectedController
           ActionView::Helpers::FormHelper,
           ActionView::Helpers::JavaScriptHelper 
 
+  finder_filter :pet, :only => [:show, :update, :destroy]
+
   #skip_before_filter :verify_authenticity_token
 
   auto_complete_for :pet_owner, :first_name
@@ -54,7 +56,7 @@ class PetsController < ProtectedController
   # GET /pets/1
   # GET /pets/1.xml
   def show
-    @pet = Pet.find(params[:id])
+    #@pet = Pet.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -100,7 +102,7 @@ class PetsController < ProtectedController
   # PUT /pets/1
   # PUT /pets/1.xml
   def update
-    @pet = Pet.find(params[:id])
+    #@pet = Pet.find(params[:id])
 
     if params[:pet][:subtype] == 'cat'
       params[:pet][:breed] = params[:cat][:breed]
@@ -123,7 +125,7 @@ class PetsController < ProtectedController
   # DELETE /pets/1
   # DELETE /pets/1.xml
   def destroy
-    @pet = Pet.find(params[:id])
+    #@pet = Pet.find(params[:id])
     @pet.destroy
 
     respond_to do |format|

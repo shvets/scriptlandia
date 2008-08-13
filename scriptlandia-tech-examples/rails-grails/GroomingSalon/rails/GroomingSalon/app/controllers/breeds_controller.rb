@@ -1,13 +1,15 @@
 #
-
+       
 class BreedsController < ProtectedController
-  #include BreedsHelper
-  include ActionView::Helpers::DateHelper, ActionView::Helpers::FormOptionsHelper  
+  include ActionView::Helpers::FormOptionsHelper
+
+  finder_filter :breed, :only => [:show, :update, :destroy]
+
 
   # GET /breeds
   # GET /breeds.xml
   def index
-    filter_value = params[:filter_value]
+    filter_value = nil
     
     if params[:filter] != nil
       filter_id = params[:filter_id]
@@ -39,7 +41,7 @@ class BreedsController < ProtectedController
   # GET /breeds/1
   # GET /breeds/1.xml
   def show
-    @breed = Breed.find(params[:id])
+    #@breed = Breed.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -83,7 +85,7 @@ class BreedsController < ProtectedController
   # PUT /breeds/1
   # PUT /breeds/1.xml
   def update
-    @breed = Breed.find(params[:id])
+    #@breed = Breed.find(params[:id])
 
     respond_to do |format|
       if @breed.update_attributes(params[:breed])
@@ -100,7 +102,7 @@ class BreedsController < ProtectedController
   # DELETE /breeds/1
   # DELETE /breeds/1.xml
   def destroy
-    @breed = Breed.find(params[:id])
+    #@breed = Breed.find(params[:id])
     @breed.destroy
 
     respond_to do |format|
@@ -116,7 +118,30 @@ class BreedsController < ProtectedController
 
     if filter_id != nil
       if filter_id == 'TYPE'
-        text = select(:filter, :value, %w(cat dog))  
+        #subtype_struct = Struct::new(:id, :name)
+        choices = Subtype.list
+        
+        text = display_collection_select choices, choices[0].id
+      else
+        text = ''
+      end
+    end
+
+    render :text => text
+
+    #text
+  end
+  
+  def display_filter_value_field2 filter_id = nil
+    text = ''
+
+    filter_id = params[:filter_id] if filter_id == nil and params != nil
+
+    if filter_id != nil
+      if filter_id == 'TYPE'
+        choices = %w(cat dog)
+        selected = (params[:filter] == nil) ? 'cat' : params[:filter][:value]
+        text = select(:filter, :value, choices, {:selected => selected} )  
       else
         text = ''
       end

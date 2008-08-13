@@ -16,15 +16,27 @@ class Appointment < ActiveRecord::Base
   def self.find_by_current_user current_user, current_date, params
     pet_owner_ids = []
   
+    filter_value = nil
+    
     if params[:filter] != nil
       filter_id = params[:filter_id]
     
       if filter_id == "PETOWNER"
         params[:pet_owner_id] = params[:filter][:value]
+       #filter_value = params[:filter][:value]
       elsif filter_id == "DATE"
         current_date = construct_date params[:filter]
-      end 
-    end
+      end       
+    end    
+
+#    if filter_value != nil
+      #params[:subtype] = filter_value
+#      conditions = [ "subtype = ?", filter_value]
+#    else
+#      conditions = []
+#    end
+    
+    
     
     if current_user != nil
       if current_user.admin

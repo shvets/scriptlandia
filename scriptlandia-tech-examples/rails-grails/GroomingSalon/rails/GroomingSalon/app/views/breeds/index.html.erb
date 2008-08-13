@@ -7,8 +7,7 @@
 <% options = options_for_select({ "Type" => "TYPE" }) -%>
 
 <%= render :partial => "common/filter", 
-           :locals => { :options => options, :controller => 'breeds', :filter_id => 'TYPE',
-                        :controller_instance => @controller} %>
+           :locals => { :options => options, :controller => 'breeds', :filter_id => 'TYPE'} %>
 
 <% unless @breeds.empty? %>
   <br />
@@ -19,15 +18,15 @@
       <th>Subtype</th>
     </tr>
 
-  <% for breed in @breeds %>
-    <tr>
-      <td><%=h breed.name %></td>
-      <td><%=h breed.subtype %></td>
-      <td><%= link_to 'Show', breed %></td>
-      <td><%= link_to 'Edit', edit_breed_path(breed) %></td>
-      <td><%= link_to 'Destroy', breed, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
+    <% for breed in @breeds %>
+      <tr>
+        <td><%=h breed.name %></td>
+        <td><%=h breed.subtype %></td>
+        <td><%= link_to 'Show', breed %></td>
+        <td><%= link_to 'Edit', edit_breed_path(breed) %></td>
+        <td><%= link_to 'Destroy', breed, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
   </table>
 
 <% end %>

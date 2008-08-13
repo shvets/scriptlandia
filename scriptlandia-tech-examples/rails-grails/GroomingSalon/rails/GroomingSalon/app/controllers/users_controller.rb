@@ -1,6 +1,8 @@
 # users_controller.rb
 
 class UsersController < ProtectedController
+  finder_filter :user, :only => [:show, :update, :destroy]
+
   # GET /users
   # GET /users.xml
   def index
@@ -15,7 +17,7 @@ class UsersController < ProtectedController
   # GET /users/1
   # GET /users/1.xml
   def show
-    @user = User.find(params[:id])
+    #@user = User.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -61,7 +63,7 @@ class UsersController < ProtectedController
   # PUT /users/1
   # PUT /users/1.xml
   def update
-    @user = User.find(params[:id])
+    #@user = User.find(params[:id])
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
@@ -78,7 +80,7 @@ class UsersController < ProtectedController
   # DELETE /users/1
   # DELETE /users/1.xml
   def destroy
-    @user = User.find(params[:id])
+    #@user = User.find(params[:id])
     @user.destroy
 
     respond_to do |format|

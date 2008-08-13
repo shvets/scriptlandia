@@ -2,7 +2,10 @@
 
 class AppointmentsController < ProtectedController
   #include AppointmentsHelper
-  include ActionView::Helpers::DateHelper, ActionView::Helpers::FormOptionsHelper  
+  include ActionView::Helpers::DateHelper, ActionView::Helpers::FormOptionsHelper 
+
+  finder_filter :appointment, :only => [:show, :update, :destroy]
+ 
 
   # GET /appointments
   # GET /appointments.xml
@@ -22,7 +25,7 @@ class AppointmentsController < ProtectedController
   # GET /appointments/1
   # GET /appointments/1.xml
   def show
-    @appointment = Appointment.find(params[:id])
+    #@appointment = Appointment.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -69,7 +72,7 @@ class AppointmentsController < ProtectedController
   # PUT /appointments/1
   # PUT /appointments/1.xml
   def update
-    @appointment = Appointment.find(params[:id])
+    #@appointment = Appointment.find(params[:id])
 
     respond_to do |format|
       if @appointment.update_attributes(params[:appointment])
@@ -86,7 +89,7 @@ class AppointmentsController < ProtectedController
   # DELETE /appointments/1
   # DELETE /appointments/1.xml
   def destroy
-    @appointment = Appointment.find(params[:id])
+    #@appointment = Appointment.find(params[:id])
     @appointment.destroy
 
     respond_to do |format|
@@ -103,10 +106,10 @@ class AppointmentsController < ProtectedController
     if filter_id != nil
       if filter_id == 'PETOWNER'
         pet_owners = PetOwner.find_by_current_user User.current_user(session)
-
-        text = collection_select(:filter, :value, pet_owners, :id, :name)  
+        
+        text = display_collection_select pet_owners, pet_owners[0].id
       elsif filter_id == "DATE"
-        text = date_select(:filter, :value)
+        text = display_date
       else
         text = ''
       end
@@ -114,7 +117,7 @@ class AppointmentsController < ProtectedController
 
     render :text => text
 
-    text
+    #text
   end
-  
+
 end

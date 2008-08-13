@@ -1,6 +1,8 @@
 # groomers_controller.rb
 
 class GroomersController < ProtectedController
+  finder_filter :groomer, :only => [:show, :update, :destroy]
+
   # GET /groomers
   # GET /groomers.xml
   def index
@@ -19,7 +21,7 @@ class GroomersController < ProtectedController
   # GET /groomers/1
   # GET /groomers/1.xml
   def show
-    @groomer = Groomer.find(params[:id])
+    #@groomer = Groomer.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -67,7 +69,7 @@ class GroomersController < ProtectedController
   # PUT /groomers/1
   # PUT /groomers/1.xml
   def update
-    @groomer = Groomer.find(params[:id])
+    #@groomer = Groomer.find(params[:id])
 
     respond_to do |format|
       if @groomer.update_attributes(params[:groomer])
@@ -84,7 +86,7 @@ class GroomersController < ProtectedController
   # DELETE /groomers/1
   # DELETE /groomers/1.xml
   def destroy
-    @groomer = Groomer.find(params[:id])
+    #@groomer = Groomer.find(params[:id])
     @groomer.destroy
 
     respond_to do |format|

@@ -39,4 +39,18 @@ class ProtectedController < ApplicationController
     end
   end
 
+  def display_collection_select collection, default_id
+    filter_value_id = (params[:filter] == nil) ? default_id : params[:filter][:value]
+
+    filter_struct = Struct::new(:value)
+
+    @filter = filter_struct.new(filter_value_id.to_i)
+
+    collection_select(:filter, :value, collection, :id, :name) 
+  end 
+  
+  def display_date
+     date_select(:filter, :value)
+  end
+  
 end

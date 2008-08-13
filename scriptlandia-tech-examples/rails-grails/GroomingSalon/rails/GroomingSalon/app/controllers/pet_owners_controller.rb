@@ -1,6 +1,8 @@
 # pet_owners_controller.rb
 
 class PetOwnersController < ProtectedController
+  finder_filter :pet_owner, :only => [:show, :update, :destroy]
+
   # GET /pet_owners
   # GET /pet_owners.xml
   def index
@@ -19,7 +21,7 @@ class PetOwnersController < ProtectedController
   # GET /pet_owners/1
   # GET /pet_owners/1.xml
   def show
-    @pet_owner = PetOwner.find(params[:id])
+    #@pet_owner = PetOwner.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -65,7 +67,7 @@ class PetOwnersController < ProtectedController
   # PUT /pet_owners/1
   # PUT /pet_owners/1.xml
   def update
-    @pet_owner = PetOwner.find(params[:id])
+    #@pet_owner = PetOwner.find(params[:id])
 
     respond_to do |format|
       if @pet_owner.update_attributes(params[:pet_owner])
@@ -82,7 +84,7 @@ class PetOwnersController < ProtectedController
   # DELETE /pet_owners/1
   # DELETE /pet_owners/1.xml
   def destroy
-    @pet_owner = PetOwner.find(params[:id])
+    #@pet_owner = PetOwner.find(params[:id])
     @pet_owner.destroy
 
     respond_to do |format|
