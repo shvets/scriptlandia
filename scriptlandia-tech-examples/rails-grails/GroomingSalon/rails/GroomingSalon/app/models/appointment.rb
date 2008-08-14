@@ -1,3 +1,19 @@
+# == Schema Information
+# Schema version: 12
+#
+# Table name: appointments
+#
+#  id               :integer(11)     not null, primary key
+#  appointment_date :date            
+#  appointment_time :time            
+#  price            :float           default(0.0)
+#  pet_owner_id     :integer(11)     
+#  groomer_id       :integer(11)     
+#  pet_id           :integer(11)     
+#  created_at       :datetime        
+#  updated_at       :datetime        
+#
+
 #
 
 class Appointment < ActiveRecord::Base
@@ -5,9 +21,13 @@ class Appointment < ActiveRecord::Base
   belongs_to :groomer
   belongs_to :pet
 
-  validates_presence_of :appointment_date, :price
+  validates_presence_of :appointment_date
  
   validates_numericality_of :price, :message=>"should be a number"
+
+  def validate
+    errors.add_to_base("Price should be positive and different from 0") if !price.blank? && price <= 0
+  end
 
   def self.construct_date filter
     Date.new y=filter.to_hash['value(1i)'].to_i, m=filter.to_hash['value(2i)'].to_i, d=filter.to_hash['value(3i)'].to_i

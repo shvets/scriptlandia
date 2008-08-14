@@ -1,3 +1,20 @@
+# == Schema Information
+# Schema version: 12
+#
+# Table name: users
+#
+#  id            :integer(11)     not null, primary key
+#  username      :string(255)     
+#  admin         :boolean(1)      
+#  password_salt :string(255)     
+#  password_hash :string(255)     
+#  email         :string(255)     
+#  cookie_hash   :string(255)     
+#  company_id    :integer(11)     
+#  created_at    :datetime        
+#  updated_at    :datetime        
+#
+
 class User < ActiveRecord::Base
 
   belongs_to :company

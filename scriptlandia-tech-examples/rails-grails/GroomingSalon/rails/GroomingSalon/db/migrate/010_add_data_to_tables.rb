@@ -24,12 +24,10 @@ class AddDataToTables < ActiveRecord::Migration
       :veterinar => "v1", :referred_by => 'rb1', :alive => 'yes', :pet_owner_id => 2
 
     Appointment.create :appointment_date => "2008-08-07", :appointment_time => "12:30", :price => "40.00",
-#      :pet_owner_id => 1,
- :groomer_id => 1, :pet_id => 1
+      :pet_owner_id => 1, :groomer_id => 1, :pet_id => 1
 
     Appointment.create :appointment_date => "2008-08-07", :appointment_time => "12:45", :price => "50.00",
-#      :pet_owner_id => 2, 
-:groomer_id => 2, :pet_id => 2
+      :pet_owner_id => 2, :groomer_id => 2, :pet_id => 2
   end
 
   def self.down

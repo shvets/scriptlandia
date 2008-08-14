@@ -22,8 +22,9 @@ ActiveRecord::Schema.define(:version => 12) do
     t.datetime "updated_at"
   end
 
-  add_index "appointments", ["pet_id"], :name => "fk_appointment_pets"
-  add_index "appointments", ["groomer_id"], :name => "fk_appointment_groomers"
+  add_index "appointments", ["pet_owner_id"], :name => "fk_appointments_pet_owner_id"
+  add_index "appointments", ["pet_id"], :name => "fk_appointments_pet_id"
+  add_index "appointments", ["groomer_id"], :name => "fk_appointments_groomer_id"
 
   create_table "breeds", :force => true do |t|
     t.string   "name",       :null => false
@@ -48,7 +49,7 @@ ActiveRecord::Schema.define(:version => 12) do
     t.datetime "updated_at"
   end
 
-  add_index "groomers", ["company_id"], :name => "fk_groomer_companies"
+  add_index "groomers", ["company_id"], :name => "fk_groomers_company_id"
 
   create_table "pet_owners", :force => true do |t|
     t.string   "first_name"
@@ -62,7 +63,7 @@ ActiveRecord::Schema.define(:version => 12) do
     t.datetime "updated_at"
   end
 
-  add_index "pet_owners", ["company_id"], :name => "fk_pet_owner_companies"
+  add_index "pet_owners", ["company_id"], :name => "fk_pet_owners_company_id"
 
   create_table "pets", :force => true do |t|
     t.string   "subtype"
@@ -86,7 +87,7 @@ ActiveRecord::Schema.define(:version => 12) do
     t.datetime "updated_at"
   end
 
-  add_index "pets", ["pet_owner_id"], :name => "fk_pet_pet_owners"
+  add_index "pets", ["pet_owner_id"], :name => "fk_pets_pet_owner_id"
 
   create_table "reports", :force => true do |t|
     t.string   "name"
@@ -120,6 +121,6 @@ ActiveRecord::Schema.define(:version => 12) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["company_id"], :name => "fk_user_companies"
+  add_index "users", ["company_id"], :name => "fk_users_company_id"
 
 end

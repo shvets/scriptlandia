@@ -1,10 +1,50 @@
+# == Schema Information
+# Schema version: 12
+#
+# Table name: pets
+#
+#  id                   :integer(11)     not null, primary key
+#  subtype              :string(255)     
+#  name                 :string(255)     
+#  sex                  :string(255)     
+#  breed                :string(255)     
+#  color                :string(255)     
+#  size                 :string(255)     
+#  birth_date           :datetime        
+#  veterinar            :string(255)     
+#  referred_by          :string(255)     
+#  medical_problems     :text            
+#  special_instructions :text            
+#  behavior             :text            
+#  clip1                :string(255)     
+#  clip2                :string(255)     
+#  clip3                :string(255)     
+#  pet_owner_id         :integer(11)     
+#  alive                :string(255)     
+#  created_at           :datetime        
+#  updated_at           :datetime        
+#
+
 #
 
 class Pet < ActiveRecord::Base
-  include PetBreeds
+  COLORS = [
+    "white",
+    "white and black",
+    "white and tan",
+    "tan",
+    "black and tan",
+    "red",
+    "blue",
+    "brown",
+    "tricolor (calico)",
+    "gray",
+    "dark gray",
+    "light gray",
+  ]
 
   SEX_TYPES = [
-    ["male", "m"], ["female", "f"]
+    ["male", "male"], ["female", "female"]
   ]
 
   belongs_to :pet_owner

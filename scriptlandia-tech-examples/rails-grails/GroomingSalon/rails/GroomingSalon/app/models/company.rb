@@ -1,3 +1,15 @@
+# == Schema Information
+# Schema version: 12
+#
+# Table name: companies
+#
+#  id         :integer(11)     not null, primary key
+#  name       :string(255)     
+#  address    :string(255)     
+#  created_at :datetime        
+#  updated_at :datetime        
+#
+
 #
 
 class Company < ActiveRecord::Base

@@ -1,3 +1,20 @@
+# == Schema Information
+# Schema version: 12
+#
+# Table name: pet_owners
+#
+#  id         :integer(11)     not null, primary key
+#  first_name :string(255)     
+#  last_name  :string(255)     
+#  home_phone :string(255)     
+#  work_phone :string(255)     
+#  cell_phone :string(255)     
+#  salutation :string(255)     
+#  company_id :integer(11)     
+#  created_at :datetime        
+#  updated_at :datetime        
+#
+
 #
 
 class PetOwner < ActiveRecord::Base

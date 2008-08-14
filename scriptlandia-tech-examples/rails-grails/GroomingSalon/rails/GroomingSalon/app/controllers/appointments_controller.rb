@@ -1,7 +1,7 @@
 # appointments_controller.rb
 
 class AppointmentsController < ProtectedController
-  #include AppointmentsHelper
+  include AppointmentsHelper
   include ActionView::Helpers::DateHelper, ActionView::Helpers::FormOptionsHelper 
 
   finder_filter :appointment, :only => [:show, :update, :destroy]
@@ -10,6 +10,8 @@ class AppointmentsController < ProtectedController
   # GET /appointments
   # GET /appointments.xml
   def index
+    reset_flash_messages
+
     @appointments = Appointment.find_by_current_user User.current_user(session), nil, params
 
     if @appointments.empty?

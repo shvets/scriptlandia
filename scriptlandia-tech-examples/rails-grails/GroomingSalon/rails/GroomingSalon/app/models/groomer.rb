@@ -1,3 +1,17 @@
+# == Schema Information
+# Schema version: 12
+#
+# Table name: groomers
+#
+#  id         :integer(11)     not null, primary key
+#  first_name :string(255)     
+#  last_name  :string(255)     
+#  notes      :text            
+#  company_id :integer(11)     
+#  created_at :datetime        
+#  updated_at :datetime        
+#
+
 #
 
 class Groomer < ActiveRecord::Base

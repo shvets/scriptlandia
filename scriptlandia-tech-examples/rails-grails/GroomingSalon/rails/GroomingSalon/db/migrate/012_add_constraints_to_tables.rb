@@ -1,21 +1,26 @@
 #
 
+require "migration_helpers"
+
 class AddConstraintsToTables < ActiveRecord::Migration
+  extend MigrationHelpers
+
   def self.up
-    execute "alter table users add constraint fk_user_companies foreign key (company_id) references companies(id)"
+    foreign_key :users, :company_id, :companies
+    foreign_key :groomers, :company_id, :companies
+    foreign_key :pet_owners, :company_id, :companies
 
-    execute "alter table groomers add constraint fk_groomer_companies foreign key (company_id) references companies(id)"
-
-    execute "alter table pet_owners add constraint fk_pet_owner_companies foreign key (company_id) references companies(id)"
-
-    execute "alter table pets add constraint fk_pet_pet_owners foreign key (pet_owner_id) references pet_owners(id)"
+    foreign_key :pets, :pet_owner_id, :pet_owners
 
     #execute "alter table appointments add constraint fk_appointment_pet_owners foreign key (pet_owner_id) references pet_owners(id)"
-    execute "alter table appointments add constraint fk_appointment_pets foreign key (pet_id) references pets(id)"
-    execute "alter table appointments add constraint fk_appointment_groomers foreign key (groomer_id) references groomers(id)"
+    foreign_key :appointments, :pet_owner_id, :pet_owners
+    foreign_key :appointments, :pet_id, :pets
+    foreign_key :appointments, :groomer_id, :groomers
   end
 
   def self.down
+    drop_foreign_key :users, :company_id
+
     execute "alter table users drop constraint fk_user_companies"
 
     execute "alter table groomers drop constraint fk_groomer_companies"

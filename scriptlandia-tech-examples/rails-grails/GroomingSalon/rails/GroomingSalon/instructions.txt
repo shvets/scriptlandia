@@ -101,8 +101,13 @@ db:sessions:clear
 rake db:test:prepare
 
 12.
+autocomplete:
 jruby script/plugin install auto_complete
 script/plugin install http://svn.rubyonrails.org/rails/plugins/auto_complete
+
+annotate:
+ruby script/plugin install http://repo.pragprog.com/svn/Public/plugins/annotate_models
+rake annotate_models
 
 13.
 http://github.com/pelargir/finder_filter/

@@ -82,7 +82,7 @@
     </td>
 
     <td>
-      <%= f.label :color %>: <%= f.text_field :color %>
+      <%= f.label :color %>: <%= select(:pet, :color, Pet::COLORS) %>
     </td>
   </tr>
 
@@ -92,7 +92,7 @@
     </td>
 
     <td>
-      <%= f.label :sex %>: <%= select(:pet, :sex, %w(male female)) %>
+      <%= f.label :sex %>: <%= select(:pet, :sex, Pet::SEX_TYPES) %>
     </td>
 
     <td>
