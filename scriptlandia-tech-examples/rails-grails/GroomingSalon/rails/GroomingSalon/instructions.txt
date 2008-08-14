@@ -98,6 +98,8 @@ rake db:sessions:create
 rake migrate
 db:sessions:clear
 
+rake db:test:prepare
+
 12.
 jruby script/plugin install auto_complete
 script/plugin install http://svn.rubyonrails.org/rails/plugins/auto_complete

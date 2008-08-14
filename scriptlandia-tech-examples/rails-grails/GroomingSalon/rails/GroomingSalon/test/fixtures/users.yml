@@ -1,11 +1,18 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
+<% 
+  salt = User.calculate_salt unless defined? salt
+  pw = "secret"
+%>
+
 one:
-  name: MyString
+  username: MyString
   admin: false
   company_id: 1
+  password_salt: <%= salt %>
+  password_hash: <%= User.encrypted_password(pw, salt) %>
 
 two:
-  name: MyString
+  username: MyString
   admin: false
   company_id: 1

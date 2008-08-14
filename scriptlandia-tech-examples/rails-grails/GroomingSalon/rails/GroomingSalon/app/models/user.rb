@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
 
   def validate
-    errors.add_to_base("Missing password") if hashed_password.blank?
+    errors.add_to_base("Missing password") if password_hash.blank?
   end
 
   attr_reader :password
@@ -15,10 +15,17 @@ class User < ActiveRecord::Base
   def password=(pw)
     @password = pw # used by confirmation validator
 
-    salt = [Array.new(6){rand(256).chr}.join].pack("m").chomp # 2^48 combos
+    salt = User.calculate_salt
 
-    self.password_salt, self.password_hash =
-      salt, Digest::MD5.hexdigest(pw + salt)
+    self.password_salt, self.password_hash = salt, User.encrypted_password(pw, salt)
+  end
+
+  def self.calculate_salt
+    [Array.new(6){rand(256).chr}.join].pack("m").chomp # 2^48 combos
+  end
+
+  def self.encrypted_password pw, salt
+    Digest::MD5.hexdigest(pw + salt)
   end
 
   def password_is?(pw)

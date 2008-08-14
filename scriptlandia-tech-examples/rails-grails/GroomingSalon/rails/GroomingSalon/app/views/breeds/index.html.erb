@@ -4,10 +4,10 @@
 
 <%= button_to 'New breed', new_breed_path %>
 
-<% options = options_for_select({ "Type" => "TYPE" }) -%>
+<% options = options_for_select({ "Type" => "TYPE" }, "TYPE") -%>
 
 <%= render :partial => "common/filter", 
-           :locals => { :options => options, :controller => 'breeds', :filter_id => 'TYPE'} %>
+           :locals => { :options => options, :controller => 'breeds'} %>
 
 <% unless @breeds.empty? %>
   <br />

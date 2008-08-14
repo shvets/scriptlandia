@@ -13,7 +13,7 @@ one:
   clip1: MyString
   clip2: MyString
   clip3: MyString
-  specialInstructions: MyText
+  special_instructions: MyText
   behavior: MyText
   pet_owner: MyString
 

@@ -14,7 +14,7 @@ class BreedsController < ProtectedController
       filter_id = params[:filter_id]
     
       if filter_id == "TYPE"
-       filter_value = params[:filter][:value]
+        filter_value = params[:filter][:value]
       end 
     end    
 
@@ -89,7 +89,7 @@ class BreedsController < ProtectedController
     respond_to do |format|
       if @breed.update_attributes(params[:breed])
         flash[:notice] = 'Breed was successfully updated.'
-        format.html { redirect_to(@breed) }
+        format.html { redirect_to breeds_url }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -110,34 +110,11 @@ class BreedsController < ProtectedController
     end
   end
 
-  def display_filter_value_field2 filter_id = nil
-    text = ''
-
-    filter_id = params[:filter_id] if filter_id == nil and params != nil
-
-    if filter_id != nil
-      if filter_id == 'TYPE'
-        #subtype_struct = Struct::new(:id, :name)
-        Subtype.load
-
-        choices = Subtype.list
-        
-        text = display_collection_select choices, choices[0].id
-      else
-        text = ''
-      end
-    end
-
-    render :text => text
-
-    #text
-  end
-  
   def display_filter_value_field filter_id = nil
     text = ''
 
-    filter_id = params[:filter_id] if filter_id == nil and params != nil
-
+    filter_id = (params[:filter_id] == nil) ? 'TYPE' : params[:filter_id]
+    
     if filter_id != nil
       if filter_id == 'TYPE'
         choices = %w(cat dog)

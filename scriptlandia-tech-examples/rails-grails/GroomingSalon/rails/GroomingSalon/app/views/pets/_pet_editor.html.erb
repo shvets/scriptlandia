@@ -23,18 +23,24 @@
 %>
 
 <script type="text/javascript">
-  function toggleLayers(el) {
-    var el1 = document.getElementById('display_cat_breeds_select_div'); 
-    var el2 = document.getElementById('display_dog_breeds_select_div');
+  function toggleLayers(subtypeSelectEl) {
+    var cat_el = document.getElementById('display_cat_breeds_select_div'); 
+    var dog_el = document.getElementById('display_dog_breeds_select_div');
 
-    if(el.selectedIndex == 0) {
-      el2.style.display='none'; 
-      el1.style.display=''; 
+    if(subtypeSelectEl.selectedIndex == 0) { // cat
+      dog_el.style.display = 'none'; 
+      cat_el.style.display = '';
+
+      var cat_tf_el = document.getElementById('cat_breed');
+      cat_tf_el.value = "";
     }
-    else {
-      el1.style.display='none'; 
-      el2.style.display=''; 
-    }
+    else { // dog
+      cat_el.style.display = 'none'; 
+      dog_el.style.display = ''; 
+
+      var dog_tf_el = document.getElementById('dog_breed');
+      dog_tf_el.value = "";
+     }
    }
 </script>
 

@@ -1,10 +1,10 @@
 # pets_controller.rb
 
 class PetsController < ProtectedController
-  include AutoCompleteMacrosHelper,
-          ActionView::Helpers::TagHelper,
-          ActionView::Helpers::FormHelper,
-          ActionView::Helpers::JavaScriptHelper 
+#  include AutoCompleteMacrosHelper,
+#          ActionView::Helpers::TagHelper,
+ #         ActionView::Helpers::FormHelper,
+  #        ActionView::Helpers::JavaScriptHelper 
 
   finder_filter :pet, :only => [:show, :update, :destroy]
 
@@ -15,34 +15,8 @@ class PetsController < ProtectedController
   # GET /pets
   # GET /pets.xml
   def index
-    current_user = User.current_user(session)
-
-    if current_user.admin
-      pet_owner_ids = []
-
-      if params[:pet_owner_id] != nil
-        pet_owner_ids << params[:pet_owner_id]
-      end
-    else
-      if current_user.company.id
-        pet_owner_ids = PetOwner.find(:all, :conditions => ["company_id=?", current_user.company.id]).collect() { |x| x.id }
-      else
-        pet_owner_ids = []
-
-        if params[:pet_owner_id] != nil
-          pet_owner_ids << params[:pet_owner_id]
-        end
-      end
-    end
-
-    if pet_owner_ids.size() == 0
-      conditions = {}
-    else
-      conditions = { :pet_owner_id => pet_owner_ids }
-    end
-
-    @pets = Pet.find(:all, :conditions => conditions )
-
+    @pets = Pet.find_by_current_user User.current_user(session), params
+    
     if @pets.empty?
       flash[:notice] = 'We don\'t have any pet.'
     end
@@ -109,11 +83,11 @@ class PetsController < ProtectedController
     elsif params[:pet][:subtype] == 'dog'
       params[:pet][:breed] = params[:dog][:breed]
     end
-    
+      
     respond_to do |format|
       if @pet.update_attributes(params[:pet])
         flash[:notice] = 'Pet was successfully updated.'
-        format.html { redirect_to(pets_url) }
+        format.html { redirect_to pets_url }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
