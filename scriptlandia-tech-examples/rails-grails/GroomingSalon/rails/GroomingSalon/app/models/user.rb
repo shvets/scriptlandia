@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
   validates_confirmation_of :password
 
+  def validate
+    errors.add_to_base("Missing password") if hashed_password.blank?
+  end
+
   attr_reader :password
 
   def password=(pw)

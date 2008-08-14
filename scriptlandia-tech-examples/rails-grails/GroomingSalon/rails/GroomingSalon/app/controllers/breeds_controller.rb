@@ -5,7 +5,6 @@ class BreedsController < ProtectedController
 
   finder_filter :breed, :only => [:show, :update, :destroy]
 
-
   # GET /breeds
   # GET /breeds.xml
   def index
@@ -111,7 +110,7 @@ class BreedsController < ProtectedController
     end
   end
 
-  def display_filter_value_field filter_id = nil
+  def display_filter_value_field2 filter_id = nil
     text = ''
 
     filter_id = params[:filter_id] if filter_id == nil and params != nil
@@ -119,6 +118,8 @@ class BreedsController < ProtectedController
     if filter_id != nil
       if filter_id == 'TYPE'
         #subtype_struct = Struct::new(:id, :name)
+        Subtype.load
+
         choices = Subtype.list
         
         text = display_collection_select choices, choices[0].id
@@ -132,7 +133,7 @@ class BreedsController < ProtectedController
     #text
   end
   
-  def display_filter_value_field2 filter_id = nil
+  def display_filter_value_field filter_id = nil
     text = ''
 
     filter_id = params[:filter_id] if filter_id == nil and params != nil

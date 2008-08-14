@@ -20,6 +20,8 @@ http://pleac.sourceforge.net/pleac_ruby/index.html
 http://video.google.com/videoplay?docid=-6700435476213800355
 http://blog.taragana.com/index.php/archive/6-ruby-on-rails-video-tutorials/
 
+http://www.peabrane.com/tags/ruby
+
 1.  (2.1.0)
 
 jgem install rails --include-dependencies --no-rdoc --no-ri
