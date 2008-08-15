@@ -1,5 +1,7 @@
-PKG_NAME = 'filtered-list'
-PKG_VERSION = 0.01
+#
+
+PKG_NAME = 'list-filter'
+PKG_VERSION = 0.1
 
 require 'rake'
 require 'rake/testtask'
