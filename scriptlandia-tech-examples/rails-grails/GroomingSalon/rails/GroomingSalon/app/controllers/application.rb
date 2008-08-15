@@ -3,7 +3,7 @@
 
 class ApplicationController < ActionController::Base
   #model :user
-  include FinderFilter
+  include FinderFilter, WillPaginate
 
   helper :all # include all helpers, all the time
 

@@ -25,8 +25,11 @@ class BreedsController < ProtectedController
       conditions = []
     end
 
-    @breeds = Breed.find(:all, :conditions => conditions)
-
+    params[:filter] = 'name' if params[:filter] == nil
+    
+    #@breeds = Breed.find(:all, :conditions => conditions)
+    @breeds = Breed.paginate(:all, :conditions => conditions, :page => params[:page], :per_page => 30)
+        
     if @breeds.empty?
       flash[:notice] = 'We don\'t have any breed.'
     end

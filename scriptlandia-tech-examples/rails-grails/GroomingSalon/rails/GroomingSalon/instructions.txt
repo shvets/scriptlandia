@@ -109,8 +109,14 @@ annotate:
 ruby script/plugin install http://repo.pragprog.com/svn/Public/plugins/annotate_models
 rake annotate_models
 
+filtered list:
+ruby ./script/plugin install svn://rubyforge.org/var/svn/filtered-list/trunk
+
+
 13.
 http://github.com/pelargir/finder_filter/
 
 gem sources -a http://gems.github.com
 gem install pelargir-finder_filter
+
+gem install http://github.com/mislav/will_paginate/tree/master
