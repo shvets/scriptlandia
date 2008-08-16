@@ -2,8 +2,8 @@
 
 class AppointmentsController < ProtectedController
   include AppointmentsHelper
-  include ActionView::Helpers::DateHelper, ActionView::Helpers::FormOptionsHelper 
-
+  include ActionView::Helpers::DateHelper, ActionView::Helpers::FormOptionsHelper
+  
   finder_filter :appointment, :only => [:show, :update, :destroy]
  
 
@@ -101,25 +101,19 @@ class AppointmentsController < ProtectedController
   end
 
   def display_filter_value_field
-    text = ''
- 
-    filter_id = (params[:filter_id] == nil) ? 'PETOWNER' : params[:filter_id]
+    display_filter
+  end  
 
-    if filter_id != nil
-      if filter_id == 'PETOWNER'
-        pet_owners = PetOwner.find_by_current_user User.current_user(session)
-        
-        text = display_collection_select pet_owners, pet_owners[0].id
-      elsif filter_id == "DATE"
-        text = display_date
-      else
-        text = ''
-      end
-    end
+  def filters
+    filter_1 = ListFilter::Filter.new("PETOWNER", "Pet Owner", "select") { 
+      PetOwner.find_by_current_user(User.current_user(session))
+    }
+    
+    filter_2 = ListFilter::Filter.new("DATE", "Appointment Date", "date") { 
+      Date.today 
+    }
 
-    render :text => text
-
-    #text
+    [ filter_1, filter_2 ]
   end
 
 end

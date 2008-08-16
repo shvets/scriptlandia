@@ -4,11 +4,7 @@
 
 <%= button_to 'New Appointment', new_appointment_path %>
 
-<%
-  selected = (params[:filter_id] == nil) ? 'PETOWNER' : params[:filter_id]
-  options = options_for_select({ "Pet Owner" => "PETOWNER", "Date" => "DATE"}, selected) -%>
-
-<%= render :partial => "common/filter", :locals => { :options => options, :controller => 'appointments' } %>
+<%= list_filters %>
 
 <% 
   @cart = "aaaa"
