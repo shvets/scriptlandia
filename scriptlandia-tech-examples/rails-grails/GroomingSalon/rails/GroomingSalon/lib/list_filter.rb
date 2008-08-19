@@ -67,7 +67,33 @@ module ListFilter
       options = options_for_select(choices, filter.id)
 
       render :partial => "common/filter", :locals => { :options => options, :controller => @controller }
+      #filter options, @controller 
     end
+    
+#    def filter options, controller
+#      text = ''
+#      
+#      form_tag('/' + @controller.controller_name, :method => :get) do
+#
+#      text = text + "Filter by: " +  select_tag("filter_id", options)
+#
+#      observe_field("filter_id",
+#                 :frequency => 0.25,
+#                 :update => :display_filter_field_div,
+#                 :url => { :controller => @controller.controller_name, :action => :display_filter_value_field },
+#                 :with => 'filter_id')
+#
+#        text = text + "Value:"
+#      
+#        text = text + '<div id="display_filter_field_div">'
+#
+#        text = text + @controller.display_filter_value_field
+#
+#        text = text + '</div>'
+#
+#        text = text + submit_tag('Filter')
+#      end 
+#    end
   end
   
 end
