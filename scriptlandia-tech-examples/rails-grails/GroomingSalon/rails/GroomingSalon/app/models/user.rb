@@ -16,6 +16,7 @@
 #
 
 class User < ActiveRecord::Base
+  encrypt(:email)
 
   belongs_to :company
 

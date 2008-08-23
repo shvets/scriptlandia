@@ -120,3 +120,5 @@ gem sources -a http://gems.github.com
 gem install pelargir-finder_filter
 
 gem install http://github.com/mislav/will_paginate/tree/master
+
+git submodule add git://github.com/thorny-sun/prawnto.git vendor/plugins/prawnto

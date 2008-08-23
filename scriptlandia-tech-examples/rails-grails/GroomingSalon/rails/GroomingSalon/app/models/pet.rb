@@ -18,8 +18,7 @@
 #  behavior             :text            
 #  clip1                :string(255)     
 #  clip2                :string(255)     
-#  clip3                :string(255)     
-#  pet_owner_id         :integer(11)     
+#  clip3                :string(255)     #  pet_owner_id         :integer(11)     
 #  alive                :string(255)     
 #  created_at           :datetime        
 #  updated_at           :datetime        
@@ -50,7 +49,7 @@ class Pet < ActiveRecord::Base
   belongs_to :pet_owner
   has_many :appointments
 
-  validates_presence_of :name, :breed, :sex, :size, :color, :birth_date
+  validates_presence_of :name, :sex, :size, :color, :birth_date
 
   validates_inclusion_of :sex, :in => SEX_TYPES.map { |disp, *| disp}
   

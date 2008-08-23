@@ -33,17 +33,8 @@
         <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
         <td><%= link_to 'Delete', pet, :confirm => 'Are you sure?', :method => :delete %></td>
 
-        <% if pet.appointments.size > 0 %>
-          <td><%= link_to 'Appointments', :controller => "appointments", :action => "index", :pet_id => pet.id, :pet_owner_id => pet.pet_owner.id %></td>
-        <% else %>
-          <td>Appointments</td>
-        <% end %>
-
-        <% if pet.pet_owner != nil %>
-          <td><%= link_to 'New Appointment', :controller => "appointments", :action => "new", :pet_id => pet.id, :pet_owner_id => pet.pet_owner.id  %></td>
-        <% else %>
-          <td>New Appointment</td>
-        <% end %>
+        <td><%= link_to_if pet.appointments.size > 0, 'Appointments', :controller => "appointments", :action => "index", :pet_id => pet.id, :pet_owner_id => pet.pet_owner.id %></td>
+        <td><%= link_to_if pet.pet_owner != nil, 'New Appointment', :controller => "appointments", :action => "new", :pet_id => pet.id, :pet_owner_id => pet.pet_owner.id  %></td>
       </tr>
     <% end %>
   </table>

@@ -46,6 +46,16 @@ class ApplicationController < ActionController::Base
     flash[:notice] = nil
     #flash[:error] = nil
   end
+
+  if RAILS_ENV == 'developpment'
+    def method_missing name, *args
+      render :inline => %{ 
+        <h2>Unknown action: #{name}</h2> 
+        Query parameters: <br>
+        <%= debug(params) %>
+      }
+    end
+  end
 end
 
 #ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS.merge!(

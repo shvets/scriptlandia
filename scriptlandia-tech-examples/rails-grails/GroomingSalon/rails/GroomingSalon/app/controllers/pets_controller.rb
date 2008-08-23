@@ -59,10 +59,16 @@ class PetsController < ProtectedController
   # POST /pets
   # POST /pets.xml
   def create
+    synchronize_params params
+
+    if breed_is_blank? params
+      flash[:error] = "Breed can't be blank."
+    end
+    
     @pet = Pet.new(params[:pet])
 
     respond_to do |format|
-      if @pet.save
+      if !breed_is_blank?(params) && @pet.save
         flash[:notice] = 'Pet was successfully created.'
         format.html { redirect_to(pets_url) }
         format.xml  { render :xml => @pet, :status => :created, :location => @pet }
@@ -78,14 +84,14 @@ class PetsController < ProtectedController
   def update
     #@pet = Pet.find(params[:id])
 
-    if params[:pet][:subtype] == 'cat'
-      params[:pet][:breed] = params[:cat][:breed]
-    elsif params[:pet][:subtype] == 'dog'
-      params[:pet][:breed] = params[:dog][:breed]
+    synchronize_params params
+
+    if breed_is_blank? params
+      flash[:error] = "Breed can't be blank."
     end
-      
+    
     respond_to do |format|
-      if @pet.update_attributes(params[:pet])
+      if !breed_is_blank?(params) && @pet.update_attributes(params[:pet])
         flash[:notice] = 'Pet was successfully updated.'
         format.html { redirect_to pets_url }
         format.xml  { head :ok }
@@ -96,6 +102,18 @@ class PetsController < ProtectedController
     end
   end
 
+  def synchronize_params params
+    if params[:pet][:subtype] == 'cat'
+      params[:pet][:breed] = params[:cat][:breed]
+    elsif params[:pet][:subtype] == 'dog'
+      params[:pet][:breed] = params[:dog][:breed]
+    end
+  end
+  
+  def breed_is_blank? params
+    params[:cat][:breed].blank? && params[:dog][:breed].blank?
+  end
+  
   # DELETE /pets/1
   # DELETE /pets/1.xml
   def destroy

@@ -65,4 +65,30 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
 
+  #config.gem "prawn"  
+  config.gem "pdf-writer" 
+
+  config.action_view.erb_trim_mode = '>'
 end
+
+class ActiveRecord::Base
+  def self.encrypt(*attr_names)
+    encrypter = Encrypter.new(attr_names)
+    
+    before_save encrypter
+    after_save  encrypter
+    after_find  encrypter
+
+    define_method(:after_find) { }
+  end
+end
+
+#ModelsObserver.instance
+
+Mime::Type.register "application/pdf", :pdf
+
+#require 'pdf_render'
+
+#ActionView::Base.register_template_handler 'rpdf', ActionView::PDFRender
+
+

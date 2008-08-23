@@ -1,5 +1,8 @@
 # appointments_controller.rb
 
+#require 'prawn'
+require 'pdf/writer'
+  
 class AppointmentsController < ProtectedController
   include AppointmentsHelper
   include ActionView::Helpers::DateHelper, ActionView::Helpers::FormOptionsHelper
@@ -21,9 +24,36 @@ class AppointmentsController < ProtectedController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @appointments }
+      format.pdf {
+        pdf
+#        pdf = Prawn::Document.generate("appointments.pdf") do
+#          font "#{Prawn::BASEDIR}/data/fonts/DejaVuSans.ttf"
+#          text "this is a test " * 100
+#        end
+#      
+#         send_data pdf.render, :filename => "appointments.pdf", 
+#                                :disposition => 'inline', 
+#                                :type => "appication/pdf" 
+#        
+        
+      }
     end
   end
 
+  def pdf
+    gen_pdf
+    headers["Content-Disposition"] ||= 'attachment'
+    redirect_to("#{request.relative_url_root}/pdf/hello.pdf")
+  end
+
+  def gen_pdf
+    pdf = PDF::Writer.new
+    pdf.select_font "Times-Roman"
+    pdf.text "Hello, Ruby.", :font_size => 72, :justification => :center
+
+    pdf.save_as("public/pdf/hello.pdf")
+  end
+  
   # GET /appointments/1
   # GET /appointments/1.xml
   def show

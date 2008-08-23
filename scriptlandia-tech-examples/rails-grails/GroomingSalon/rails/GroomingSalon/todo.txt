@@ -1,4 +1,0 @@
-1. pagination control
-
-2. how to make single filter
-

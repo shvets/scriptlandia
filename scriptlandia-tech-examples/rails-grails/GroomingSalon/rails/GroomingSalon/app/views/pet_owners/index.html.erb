@@ -27,11 +27,7 @@
 
         <td><%= link_to 'Delete', pet_owner, :confirm => 'Are you sure?', :method => :delete %></td>
 
-        <% if pet_owner.pets.size > 0 %>
-          <td><%= link_to 'Pets', :controller => "pets", :action => "index", :pet_owner_id => pet_owner.id %></td>
-        <% else %>
-          <td>Pets</td>
-        <% end %>
+        <td><%= link_to_if pet_owner.pets.size > 0, 'Pets', :controller => "pets", :action => "index", :pet_owner_id => pet_owner.id %></td>
 
         <td><%= link_to 'New&nbsp;Pet', :controller => "pets", :action => "new", :pet_owner_id => pet_owner.id %></td>
       </tr>
