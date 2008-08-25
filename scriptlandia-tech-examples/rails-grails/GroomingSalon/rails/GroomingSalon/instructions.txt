@@ -122,3 +122,18 @@ gem install pelargir-finder_filter
 gem install http://github.com/mislav/will_paginate/tree/master
 
 git submodule add git://github.com/thorny-sun/prawnto.git vendor/plugins/prawnto
+
+14.
+
+> script/plugin source http://svn.techno-weenie.net/projects/plugins
+> script/plugin install acts_as_attachment
+> rake test_plugins PLUGIN=acts_as_attachment
+
+> script/generate attachment_model pet_image
+
+http://rubyforge.org/frs/download.php/38052/RMagick-2.5.0-ImageMagick-6.4.1-5-Q8.zip
+gem install rmagick-2.5.0-x86-mswin32.gem
+
+ruby script/plugin install http://sean.treadway.info/svn/plugins/responds_to_parent
+
+ruby script/plugin install http://validates-as-phone.googlecode.com/svn/trunk

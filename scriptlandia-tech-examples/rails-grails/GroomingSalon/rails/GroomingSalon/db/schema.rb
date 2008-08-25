@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 12) do
+ActiveRecord::Schema.define(:version => 13) do
 
   create_table "appointments", :force => true do |t|
     t.date     "appointment_date"
@@ -22,9 +22,8 @@ ActiveRecord::Schema.define(:version => 12) do
     t.datetime "updated_at"
   end
 
-  add_index "appointments", ["pet_owner_id"], :name => "fk_appointments_pet_owner_id"
-  add_index "appointments", ["pet_id"], :name => "fk_appointments_pet_id"
-  add_index "appointments", ["groomer_id"], :name => "fk_appointments_groomer_id"
+  add_index "appointments", ["pet_id"], :name => "fk_appointment_pets"
+  add_index "appointments", ["groomer_id"], :name => "fk_appointment_groomers"
 
   create_table "breeds", :force => true do |t|
     t.string   "name",       :null => false
@@ -49,7 +48,13 @@ ActiveRecord::Schema.define(:version => 12) do
     t.datetime "updated_at"
   end
 
-  add_index "groomers", ["company_id"], :name => "fk_groomers_company_id"
+  add_index "groomers", ["company_id"], :name => "fk_groomer_companies"
+
+  create_table "pet_images", :force => true do |t|
+    t.string  "filename"
+    t.string  "content_type"
+    t.integer "pet_id",       :limit => 11
+  end
 
   create_table "pet_owners", :force => true do |t|
     t.string   "first_name"
@@ -63,7 +68,7 @@ ActiveRecord::Schema.define(:version => 12) do
     t.datetime "updated_at"
   end
 
-  add_index "pet_owners", ["company_id"], :name => "fk_pet_owners_company_id"
+  add_index "pet_owners", ["company_id"], :name => "fk_pet_owner_companies"
 
   create_table "pets", :force => true do |t|
     t.string   "subtype"
@@ -87,7 +92,7 @@ ActiveRecord::Schema.define(:version => 12) do
     t.datetime "updated_at"
   end
 
-  add_index "pets", ["pet_owner_id"], :name => "fk_pets_pet_owner_id"
+  add_index "pets", ["pet_owner_id"], :name => "fk_pet_pet_owners"
 
   create_table "reports", :force => true do |t|
     t.string   "name"
@@ -121,6 +126,6 @@ ActiveRecord::Schema.define(:version => 12) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["company_id"], :name => "fk_users_company_id"
+  add_index "users", ["company_id"], :name => "fk_user_companies"
 
 end

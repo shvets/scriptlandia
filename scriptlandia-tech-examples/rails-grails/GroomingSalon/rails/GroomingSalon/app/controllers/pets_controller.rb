@@ -149,7 +149,7 @@ class PetsController < ProtectedController
 
     render :text => text
   end
-  
+
 #def auto_complete_for_doctor_organization
 #  re = Regexp.new("^#{params[:doctor][:organization]}", "i")
 #  find_options = { :order => "name ASC" }
