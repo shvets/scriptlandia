@@ -137,3 +137,5 @@ gem install rmagick-2.5.0-x86-mswin32.gem
 ruby script/plugin install http://sean.treadway.info/svn/plugins/responds_to_parent
 
 ruby script/plugin install http://validates-as-phone.googlecode.com/svn/trunk
+
+ruby script/plugin install http://svn.rubyonrails.org/rails/plugins/in_place_editing

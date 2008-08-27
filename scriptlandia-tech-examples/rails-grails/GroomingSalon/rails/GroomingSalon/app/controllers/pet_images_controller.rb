@@ -1,5 +1,7 @@
 ## app/controllers/pet_images_controller.rb
 
+require 'ftools'
+
 class PetImagesController < ProtectedController
 
   def index
@@ -19,20 +21,6 @@ class PetImagesController < ProtectedController
     redirect_to :controller => 'pets', :action => 'index'
   end
 
-  def save upload, parent_id = nil
-    @pet_image = PetImage.find_by_pet_id(parent_id)
-    
-    if @pet_image == nil
-      @pet_image = PetImage.new
-    end
-
-    @pet_image.pet_id = parent_id
-    
-    @pet_image.uploaded_image = upload[:datafile]
-
-    @pet_image.save
-  end
-  
   def upload_file
     if params[:upload].blank? || params[:upload][:datafile].blank?
       flash[:notice] = 'Empty selection'      
@@ -49,21 +37,40 @@ class PetImagesController < ProtectedController
     end
   end
 
-#  def save upload, parent_id = nil
-#    name =  upload['datafile'].original_filename
-#    directory = "public/data"
-#    # create the file path
-#    path = File.join(directory, sanitize_filename(name))
-#    # write the file
-#    File.open(path, "wb") { |f| f.write(upload['datafile'].read) }
-#  end
-#
-#  def sanitize_filename(file_name)
-#    # get only the filename, not the whole path (from IE)
-#    just_filename = File.basename(file_name) 
-#    # replace all none alphanumeric, underscore or perioids
-#    # with underscore
-#    just_filename.sub(/[^\w\.\-]/,'_') 
-#  end
+  def save upload, parent_id = nil
+    @pet_image = PetImage.find_by_pet_id(parent_id)
+    
+    if @pet_image == nil
+      @pet_image = PetImage.new
+    end
+
+    @pet_image.pet_id = parent_id
+    
+    @pet_image.uploaded_image = upload[:datafile]
+
+    @pet_image.save
+    
+    save_file upload, parent_id
+  end
+
+  def save_file upload, parent_id = nil
+    name =  upload['datafile'].original_filename
+    directory = "public/data/pet_images/#{parent_id}/"
+
+    File.makedirs directory
+    # create the file path
+    path = File.join(directory, sanitize_filename(name))
+    # write the file
+
+    File.open(path, "wb") { |f| f.write(upload['datafile'].read) }
+  end
+  
+  def sanitize_filename(file_name)
+    # get only the filename, not the whole path (from IE)
+    just_filename = File.basename(file_name) 
+    # replace all none alphanumeric, underscore or perioids
+    # with underscore
+    just_filename.sub(/[^\w\.\-]/,'_') 
+  end
   
 end

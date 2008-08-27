@@ -113,7 +113,7 @@ class BreedsController < ProtectedController
     end
   end
 
-  def display_filter filter_id = nil
+  def display_filter_value_field filter_id = nil
     text = ''
 
     filter_id = (params[:filter_id] == nil) ? 'TYPE' : params[:filter_id]
@@ -132,5 +132,5 @@ class BreedsController < ProtectedController
 
     text
   end
-  
+
 end

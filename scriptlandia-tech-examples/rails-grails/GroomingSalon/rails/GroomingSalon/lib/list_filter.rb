@@ -66,7 +66,7 @@ module ListFilter
         
       options = options_for_select(choices, filter.id)
 
-      render :partial => "common/filter", :locals => { :options => options, :controller => @controller }
+      render :partial => "shared/filter", :locals => { :options => options, :controller => @controller }
       #filter options, @controller 
     end
     

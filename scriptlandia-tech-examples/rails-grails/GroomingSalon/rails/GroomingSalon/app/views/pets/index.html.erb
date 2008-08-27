@@ -23,13 +23,20 @@
       <tr <%= "style='color:red'" if pet.alive == 'no' %>  valign="topN class="<%=cycle('list-line-odd', 'list-line-even')%>">
         <td><%=h pet.pet_owner.name if pet.pet_owner != nil %></td>
         <td><%=h pet.subtype%></td>
-        <td><%=h pet.name %></td>
+        <td>
+          <% if pet.pet_image != nil %>
+            <%= '<img src="data/pet_images/1/' + pet.pet_image.filename.to_s + '"  width=50 height=50/>' %>
+          <% end %>
+
+          <%=h pet.name %>
+        </td>
         <td><%=h pet.breed %></td>
         <td><%=h pet.size %></td>
         <td><%=h pet.sex %></td>
         <td><%=h pet.color %></td>
         <td><%=h pet.birth_date %></td>
-        <td><%=h pet.pet_image.filename if pet.pet_image != nil %></td>
+        <td>
+        </td>
 
         <td><%= link_to 'Upload Image', :controller => 'pet_images', :action => 'index', :parent_id => pet.id %></td>
         

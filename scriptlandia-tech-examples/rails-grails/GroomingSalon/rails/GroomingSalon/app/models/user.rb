@@ -18,6 +18,8 @@
 class User < ActiveRecord::Base
   encrypt(:email)
 
+  attr_protected :admin, :password_salt, :password_hash
+
   belongs_to :company
 
   validates_presence_of :username, :password

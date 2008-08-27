@@ -22,7 +22,7 @@
   <body id="salon">
     
     <div id="page">
-      <div id="header">Grooming Salon</div>
+      <div id="header"><%= image_tag 'loading.gif', :id=>'spinner', :style=>"display:none; float:left;" %>Grooming Salon</div>
       
       <div id="content">
         <table>
@@ -41,7 +41,7 @@
               <% end %>
             </td>
           </tr>
-          
+
           <tr>
             <td>
               <%= @content_for_layout %>

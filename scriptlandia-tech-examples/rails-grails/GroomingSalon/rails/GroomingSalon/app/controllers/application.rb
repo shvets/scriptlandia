@@ -1,5 +1,5 @@
 # Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
+# Likewise, all the methods added will be available for all controllers.                         name
 
 class ApplicationController < ActionController::Base
   #model :user
@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
 
   layout "grooming-salon-layout"
+
+  filter_parameter_logging :password, :username
 
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store

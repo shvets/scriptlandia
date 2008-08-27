@@ -7,9 +7,16 @@ class CompaniesController < ProtectedController
   # :by => :name, :except => [:index]
 
   # GETs should be safe (see  http://www.w3.org/2001/tag/doc/whenToUseGet.html)
-  verify :method => :post, :only => [ :destroy, :create, :update ],
-         :redirect_to => { :action => :index }
+  #verify :method => :post, :only => [ :destroy, :create, :update ],
+  #       :redirect_to => { :action => :index }
+
+  [:name, :address].each do |attribute|
+    in_place_edit_for :company, attribute, :empty_text => '...'
+  end 
+
   
+  protect_from_forgery :except => [:set_company_name, :set_company_address] 
+
   # GET /companies
   # GET /companies.xml
   def index
