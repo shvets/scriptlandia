@@ -16,8 +16,8 @@
 
     <% for @company in @companies %>
       <tr valign="top" class="<%=cycle('list-line-odd', 'list-line-even')%>">
-        <td><%= in_place_editor_field :company, :name %></td>
-        <td><%= in_place_editor_field :company, :address %></td>
+        <td><%= in_place_text_field :company, :name %></td>
+        <td><%= in_place_text_field :company, :address %></td>
         <td><%= link_to 'Show', @company %></td>
         <td><%= link_to 'Edit', edit_company_path(@company) %></td>
         <td><%= link_to 'Delete', @company, :confirm => 'Are you sure?', :method => :delete %></td>

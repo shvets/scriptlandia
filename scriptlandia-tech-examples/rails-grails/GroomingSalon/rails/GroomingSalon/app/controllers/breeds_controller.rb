@@ -5,6 +5,10 @@ class BreedsController < ProtectedController
 
   finder_filter :breed, :only => [:show, :update, :destroy]
 
+  in_place_edit_for :breed, :subtype, :empty_text => '...'
+  
+  protect_from_forgery :except => [:set_breed_subtype] 
+  
   # GET /breeds
   # GET /breeds.xml
   def index

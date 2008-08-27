@@ -139,3 +139,5 @@ ruby script/plugin install http://sean.treadway.info/svn/plugins/responds_to_par
 ruby script/plugin install http://validates-as-phone.googlecode.com/svn/trunk
 
 ruby script/plugin install http://svn.rubyonrails.org/rails/plugins/in_place_editing
+
+ruby script/plugin install http://super-inplace-controls.googlecode.com/svn/trunk/super_inplace_controls

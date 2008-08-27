@@ -12,19 +12,20 @@
 <% unless @breeds.empty? %>
   <br />
 
-  <table>
+  <table width='100%'>
     <tr>
       <th>Name</th>
       <th>Subtype</th>
     </tr>
     
-    <% for breed in @breeds %>
+    <% for @breed in @breeds %>
       <tr>
-        <td><%=h breed.name %></td>
-        <td><%=h breed.subtype %></td>
-        <td><%= link_to 'Show', breed %></td>
-        <td><%= link_to 'Edit', edit_breed_path(breed) %></td>
-        <td><%= link_to 'Destroy', breed, :confirm => 'Are you sure?', :method => :delete %></td>
+        <td><%=h @breed.name %></td>
+        <td><%= in_place_select :breed, :subtype, :choices => %w(cat dog).map { |e| [e, e] } %></td>
+        
+        <td><%= link_to 'Show', @breed %></td>
+        <td><%= link_to 'Edit', edit_breed_path(@breed) %></td>
+        <td><%= link_to 'Destroy', @breed, :confirm => 'Are you sure?', :method => :delete %></td>
       </tr>
     <% end %>
 

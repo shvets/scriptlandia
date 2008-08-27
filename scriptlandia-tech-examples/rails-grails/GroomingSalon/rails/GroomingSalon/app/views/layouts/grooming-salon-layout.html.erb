@@ -12,6 +12,7 @@
   <!--script type="text/javascript" src="/javascripts/effects.js"></script-->
 
   <%= stylesheet_link_tag "grooming-salon" %>
+  <%= stylesheet_link_tag "in_place_styles" %>
 
   <%= javascript_include_tag :defaults %>
   <%= javascript_include_tag "prototype" %>
@@ -28,6 +29,8 @@
         <table>
           <tr>
             <td>
+              <div id="inplace_error_div"></div>
+
               <% if flash[:notice] %>
                 <div id="notice">
                   <%= flash[:notice] %>

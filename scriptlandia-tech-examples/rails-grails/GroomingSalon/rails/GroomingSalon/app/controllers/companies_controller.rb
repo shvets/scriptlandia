@@ -13,7 +13,6 @@ class CompaniesController < ProtectedController
   [:name, :address].each do |attribute|
     in_place_edit_for :company, attribute, :empty_text => '...'
   end 
-
   
   protect_from_forgery :except => [:set_company_name, :set_company_address] 
 
