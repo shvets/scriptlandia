@@ -141,3 +141,7 @@ ruby script/plugin install http://validates-as-phone.googlecode.com/svn/trunk
 ruby script/plugin install http://svn.rubyonrails.org/rails/plugins/in_place_editing
 
 ruby script/plugin install http://super-inplace-controls.googlecode.com/svn/trunk/super_inplace_controls
+
+15.
+
+jruby -S gem install activerecord-jdbcderby-adapter
