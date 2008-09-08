@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/C:/Work/scriptlandia/trunk/scriptlandia-tech-examples/rails-grails/GroomingSalon/rails/GroomingSalon/app/controllers/application.rb</file>
-        <file>file:/C:/Work/scriptlandia/trunk/scriptlandia-tech-examples/rails-grails/GroomingSalon/rails/GroomingSalon/app/controllers/appointments_controller.rb</file>
-        <file>file:/C:/Work/scriptlandia/trunk/scriptlandia-tech-examples/rails-grails/GroomingSalon/rails/GroomingSalon/app/controllers/breeds_controller.rb</file>
-        <file>file:/C:/Work/scriptlandia/trunk/scriptlandia-tech-examples/rails-grails/GroomingSalon/rails/GroomingSalon/app/views/appointments/index.html.erb</file>
-        <file>file:/C:/Work/scriptlandia/trunk/scriptlandia-tech-examples/rails-grails/GroomingSalon/rails/GroomingSalon/app/views/common/_filter.html.erb</file>
-        <file>file:/C:/Work/scriptlandia/trunk/scriptlandia-tech-examples/rails-grails/GroomingSalon/rails/GroomingSalon/vendor/plugins/list_filter/lib/list_filter.rb</file>
-    </open-files>
 </project-private>
