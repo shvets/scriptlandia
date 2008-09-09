@@ -9,5 +9,7 @@
     <starter>
       <mainClass>org.sf.scriptlandia.JarStarter</mainClass>
     </starter>
+
+    <script name="jar-run"/>
   </registration>
 </language>
