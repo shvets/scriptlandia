@@ -1,7 +1,7 @@
 # appointments_controller.rb
 
 #require 'prawn'
-require 'pdf/writer'
+#require 'pdf/writer'
   
 class AppointmentsController < ProtectedController
   include AppointmentsHelper

@@ -57,6 +57,10 @@ class User < ActiveRecord::Base
       User.find(session[:user])
     end
   end
+  
+  def admin
+    super || username == 'admin' 
+  end
 
   def to_s
     "User { username: #{username}; admin: #{admin}; e-mail: #{email}; company: #{company.name if company != nil} }"

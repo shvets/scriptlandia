@@ -10,10 +10,10 @@ class AddConstraintsToTables < ActiveRecord::Migration
     foreign_key :groomers, :company_id, :companies
     foreign_key :pet_owners, :company_id, :companies
 
-    foreign_key :pets, :pet_owner_id, :pet_owners
+    #foreign_key :pets, :pet_owner_id, :pet_owners
 
     #execute "alter table appointments add constraint fk_appointment_pet_owners foreign key (pet_owner_id) references pet_owners(id)"
-    foreign_key :appointments, :pet_owner_id, :pet_owners
+    #foreign_key :appointments, :pet_owner_id, :pet_owners
     foreign_key :appointments, :pet_id, :pets
     foreign_key :appointments, :groomer_id, :groomers
   end

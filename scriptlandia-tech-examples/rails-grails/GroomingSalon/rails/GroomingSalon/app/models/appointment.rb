@@ -64,7 +64,7 @@ class Appointment < ActiveRecord::Base
           pet_owner_ids << params[:pet_owner_id]
         end
       else
-        if current_user.company.id
+        if current_user.company != nil && current_user.company.id
           pet_owner_ids = PetOwner.find(:all, :conditions => ["company_id=?", current_user.company.id]).collect() { |x| x.id }
         else
           pet_owner_ids = []

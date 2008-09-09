@@ -12,8 +12,8 @@ class AddDataToTables < ActiveRecord::Migration
     Groomer.create :first_name => "Inna", :last_name => "Shvets", :company_id => 1
     Groomer.create :first_name => "Carrol", :last_name => "Pollak", :company_id => 2
 
-    PetOwner.create :first_name => "Inna", :last_name => "Shvets", :home_phone => "0", :company_id => 1
-    PetOwner.create :first_name => "Lisa", :last_name => "Ribansky", :home_phone => "0", :company_id => 2
+    PetOwner.create :first_name => "Inna", :last_name => "Shvets", :home_phone => "(609) 222-2222", :company_id => 1
+    PetOwner.create :first_name => "Lisa", :last_name => "Ribansky", :home_phone => "(712) 333-3333", :company_id => 2
 
     Pet.create :subtype => "cat", :name => "Cheeta", :sex => "female", :breed => "siameze",
       :color => "white", :size => 10, :birth_date => '12-12-2008',
