@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 13) do
+ActiveRecord::Schema.define(:version => 14) do
 
   create_table "appointments", :force => true do |t|
     t.date     "appointment_date"
@@ -38,6 +38,18 @@ ActiveRecord::Schema.define(:version => 13) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "four_oh_fours", :force => true do |t|
+    t.string   "host"
+    t.string   "path"
+    t.string   "referer"
+    t.integer  "count",      :limit => 11, :default => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "four_oh_fours", ["host", "path", "referer"], :name => "index_four_oh_fours_on_host_and_path_and_referer", :unique => true
+  add_index "four_oh_fours", ["path"], :name => "index_four_oh_fours_on_path"
 
   create_table "groomers", :force => true do |t|
     t.string   "first_name"

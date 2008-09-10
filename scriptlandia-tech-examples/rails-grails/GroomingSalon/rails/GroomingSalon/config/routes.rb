@@ -63,4 +63,6 @@ ActionController::Routing::Routes.draw do |map|
 
   map.root    :controller => 'home'
 
+  # should be the last
+  map.connect '*path', :controller => 'four_oh_fours'
 end
