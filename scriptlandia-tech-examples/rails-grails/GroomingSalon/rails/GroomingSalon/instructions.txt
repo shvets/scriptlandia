@@ -147,3 +147,7 @@ ruby script/plugin install http://code.logicleaf.com/rails-plugins/dataset
 15.
 
 jruby -S gem install activerecord-jdbcderby-adapter
+
+16.
+rake db:dataset:dump_fixtures DATASET=demo
+rake db:dataset:load_fixtures DATASET=demo
