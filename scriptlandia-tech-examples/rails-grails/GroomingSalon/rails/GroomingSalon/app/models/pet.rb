@@ -50,7 +50,7 @@ class Pet < ActiveRecord::Base
   has_many :appointments
   has_one :pet_image
   
-  validates_presence_of :name, :sex, :size, :color, :birth_date
+  validates_presence_of :name, :subtype, :sex, :breed, :size, :color, :birth_date
 
   validates_inclusion_of :sex, :in => SEX_TYPES.map { |disp, *| disp}
   

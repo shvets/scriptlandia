@@ -1,6 +1,6 @@
 <h1>Edit Groomer</h1>
 
-<% form_for(@groomer) do |f| %>
+<% form_for @groomer, :builder => ValidatingFormBuilder do |f| %>
 
   <%= render :partial => "groomer_editor", :locals => { :f => f, :mode => "edit" } %>
 

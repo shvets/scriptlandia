@@ -54,11 +54,11 @@
     </td>
 
     <td>
-      <%= "Cat or Dog?" %>: <%= select(:pet, :subtype, %w(cat dog), {}, {:onchange => "toggleLayers(this);"}) %>
+      <%= "Cat or Dog?" %>: <%= f.select(:subtype, %w(cat dog), {}, {:onchange => "toggleLayers(this);"}) %>
     </td>
 
     <td>
-      <%= f.label :name %>: <%= f.text_field :name %>
+      <%= f.text_field :name %>
     </td>
   </tr>
 
@@ -78,7 +78,7 @@
     </td>
 
     <td>
-      <%= f.label :size %>: <%= f.text_field :size %>
+      <%= f.text_field :size %>
     </td>
 
     <td>
@@ -114,12 +114,6 @@
     <td colspan="3">
       <table>
         <tr>
-          <td><%= f.label :'medical Problems' %>:</td>
-          <td><%= f.label :'special Instructions' %>:</td>
-          <td><%= f.label :behavior %>:</td>
-        </tr>
-
-        <tr>
           <td><%= f.text_area :medical_problems, "cols" => 25, "rows" => 5 %></td>
           <td><%= f.text_area :special_instructions, "cols" => 25, "rows" => 5 %></td>
           <td><%= f.text_area :behavior, "cols" => 25, "rows" => 5 %></td>
@@ -130,19 +124,19 @@
 
   <tr>
     <td colspan="3">
-      <%= f.label :'clip 1' %>: <%= f.text_field :clip1 %>
+      <%= f.text_field :clip1 %>
     </td>
   </tr>
 
   <tr>
     <td colspan="3">
-      <%= f.label :'clip 2' %>: <%= f.text_field :clip2 %>
+      <%= f.text_field :clip2 %>
     </td>
   </tr>
 
   <tr>
     <td colspan="3">
-      <%= f.label :'clip 3' %>: <%= f.text_field :clip3 %>
+     <%= f.text_field :clip3 %>
     </td>
   </tr>
 

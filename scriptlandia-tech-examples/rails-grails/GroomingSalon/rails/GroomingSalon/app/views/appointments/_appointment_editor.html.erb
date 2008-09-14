@@ -48,7 +48,7 @@
   <% end %>
 
   <p>
-    <%= f.label :'pet Owner' %><br />
+    <%= f.label :'pet Owner' %>
     <%= collection_select(:appointment, :pet_owner_id, 
           PetOwner.find(:all, :order => "last_name", :conditions => conditions), :id, :name, {:include_blank => true}, {:disabled => disabled }) %>
 
@@ -60,32 +60,28 @@
   </p>
        
   <p>
-    <%= f.label :'Pet' %><br />
-
+    <%= f.label :'Pet' %>
     <div id="display_pets_select_div">
       <%= collection_select(:appointment, :pet_id, pets, :id, :name, {}, {:disabled => disabled}) %>
     </div>
   </p>
 
   <p>
-    <%= f.label :'groomer' %><br />
-
+    <%= f.label :'groomer' %>
     <%= collection_select(:appointment, :groomer_id, 
           Groomer.find(:all, :order => "last_name", :conditions => conditions ), :id, :name) %>
   </p>
 
   <p>
-    <%= f.label :'appointment Date' %><br />
     <%= f.date_select :appointment_date %>
   </p>
 
   <p>
-    <%= f.label :'appointment time' %><br />
+    <%= f.label :'appointment time' %>
     <%= f.time_select :appointment_time %>
   </p>
 
   <p>
-    <%= f.label :price %><br />
     <%= f.text_field :price %>
   </p>
 
