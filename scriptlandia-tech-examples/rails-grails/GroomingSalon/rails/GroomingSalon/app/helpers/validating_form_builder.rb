@@ -1,25 +1,27 @@
 #
 
 class ValidatingFormBuilder < ActionView::Helpers::FormBuilder
-  
   helpers = field_helpers +
-           %w(text_field_with_auto_complete, date_select datetime_select time_select, :select, collection_select) -
+           %w(date_select datetime_select time_select select collection_select) -
            %w(hidden_field label fields_for)
-           
-
+  
   def self.create_tagged_field name
     define_method(name) do |field, *args|
-      options = args.last.is_a?(Hash) ? args.pop : {}
-
       if %w(text_field password_field).include?(name) && required_field?(field)
+        options = args.last.is_a?(Hash) ? args.pop : {}
         options[:onblur] = "checkPresence('#{field_name(field)}')"
+        #options2 = args.last.is_a?(Hash) ? args.pop : {}        
+        #options2.merge({:onblur => "checkPresence('#{field_name(field)}')"})
+        control = super(field, options)
+      else
+        control = super(field, *args)
       end
 
       label_options = (required_field?(field)) ? {:style => 'color:red'} : {}
      
       @template.content_tag(:p,
                             label(field, label_text(field), label_options) + ": " +
-                            super(field, options))    
+                            control)    
     end
   end
   
@@ -27,10 +29,10 @@ class ValidatingFormBuilder < ActionView::Helpers::FormBuilder
     create_tagged_field name
   end
   
-  #def select (object, method, choices, options = {}, html_options = {})
-  #  ValidatingFormBuilder.create_tagged_field "subtype"
-  #end
-
+ # def text_field_with_auto_complete object, method, tag_options = {}, completion_options = {}
+ #   text_field_with_auto_complete object, method, tag_options, completion_options
+ # end
+  
 private
   def field_name(field)
    "#{@object_name.to_s.underscore}_#{field.to_s.underscore}"
@@ -39,10 +41,6 @@ private
   def label_text(field)
     "#{field.to_s.humanize}"
   end
-
-#  def required_mark(field)
-#    required_field?(field) ? '*' : ''
-#  end
 
   def required_field?(field)
     @object_name.to_s.camelize.constantize.

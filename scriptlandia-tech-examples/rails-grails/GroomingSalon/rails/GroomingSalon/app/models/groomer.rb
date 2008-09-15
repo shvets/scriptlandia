@@ -19,7 +19,7 @@ class Groomer < ActiveRecord::Base
 
   has_many :appointments
 
-  validates_presence_of :first_name, :last_name
+  validates_presence_of :first_name, :last_name, :company_id
 
   def name
     last_name + " " + first_name

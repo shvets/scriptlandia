@@ -48,8 +48,7 @@
   <% end %>
 
   <p>
-    <%= f.label :'pet Owner' %>
-    <%= collection_select(:appointment, :pet_owner_id, 
+    <%= f.collection_select(:pet_owner_id, 
           PetOwner.find(:all, :order => "last_name", :conditions => conditions), :id, :name, {:include_blank => true}, {:disabled => disabled }) %>
 
     <%= observe_field("appointment_pet_owner_id",
@@ -60,15 +59,13 @@
   </p>
        
   <p>
-    <%= f.label :'Pet' %>
     <div id="display_pets_select_div">
-      <%= collection_select(:appointment, :pet_id, pets, :id, :name, {}, {:disabled => disabled}) %>
+      <%= f.collection_select(:pet_id, pets, :id, :name, {}, {:disabled => disabled}) %>
     </div>
   </p>
 
   <p>
-    <%= f.label :'groomer' %>
-    <%= collection_select(:appointment, :groomer_id, 
+    <%= f.collection_select(:groomer_id, 
           Groomer.find(:all, :order => "last_name", :conditions => conditions ), :id, :name) %>
   </p>
 
@@ -77,7 +74,6 @@
   </p>
 
   <p>
-    <%= f.label :'appointment time' %>
     <%= f.time_select :appointment_time %>
   </p>
 

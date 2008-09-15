@@ -21,7 +21,7 @@ class Appointment < ActiveRecord::Base
   belongs_to :groomer
   belongs_to :pet
 
-  validates_presence_of :appointment_date, :price
+  validates_presence_of :appointment_date, :price, :pet_owner_id, :pet_id, :groomer_id
  
   validates_numericality_of :price, :message=>"should be a number"
 

@@ -10,6 +10,12 @@ db\:charset=Retrieves the charset for the current environment's database
 db\:collation=Retrieves the collation for the current environment's database
 db\:create=Create the database defined in config/database.yml for the current RAILS_ENV
 db\:create\:all=Create all the local databases defined in config/database.yml
+db\:dataset\:clobber=Cleans up all dataset information in db/dataset. Specify DATASET=x and the entire db/dataset/x directory will be deleted.
+db\:dataset\:dump=Dump a SQL dataset from the current environment's database into db/dataset/dataset.sql. Specify DATASET=x to use db/dataset/x/dataset.sql instead.
+db\:dataset\:dump_fixtures=Dump a dataset from the current environment's database into db/dataset. Specify DATASET=x to use db/dataset/x instead. Specify INCLUDE=Model1,Model2,Model3 to dump only certain model classes
+db\:dataset\:load=Load a SQL dataset into the current environment's database from db/dataset. Specify DATASET=x to use db/dataset/x instead.
+db\:dataset\:load_fixtures=Load a dataset into the current environment's database from db/dataset. Specify DATASET=x to use db/dataset/x instead.
+db\:dataset\:migrate=Migrate a SQL dataset to the latest schema version.  You may specify a DATASET environment variable. This task always executes in the 'test' environment.
 db\:drop=Drops the database for the current RAILS_ENV
 db\:drop\:all=Drops all the local databases defined in config/database.yml
 db\:fixtures\:identify=Search for a fixture given a LABEL or ID.
@@ -48,11 +54,13 @@ doc\:clobber_rails=Remove rdoc products
 doc\:plugins=Generate documentation for all installed plugins
 doc\:plugins\:annotate_models=
 doc\:plugins\:auto_complete=
+doc\:plugins\:dataset=
 doc\:plugins\:in_place_editing=
 doc\:plugins\:list_filter=
 doc\:plugins\:relevance_extensions=
 doc\:plugins\:super_inplace_controls=
 doc\:plugins\:validates_as_phone=
+doc\:plugins\:validation_reflection=
 doc\:plugins\:will_paginate=
 doc\:rails=Build the rails HTML Files
 doc\:reapp=Force a rebuild of the RDOC files

@@ -47,14 +47,13 @@
 <table width="100%">
   <tr>
     <td>
-      <%= f.label :'pet Owner' %>: 
-      <%= collection_select(:pet, :pet_owner_id, 
+      <%= f.collection_select(:pet_owner_id, 
             PetOwner.find(:all, :order => "last_name", :conditions => conditions ),
             :id, :name, {}, {:disabled => disabled }) %>
     </td>
 
     <td>
-      <%= "Cat or Dog?" %>: <%= f.select(:subtype, %w(cat dog), {}, {:onchange => "toggleLayers(this);"}) %>
+      <%= f.select(:subtype, %w(cat dog), {}, {:onchange => "toggleLayers(this);"}) %>
     </td>
 
     <td>
@@ -64,7 +63,7 @@
 
   <tr>
     <td>
-      <%= f.label :breed %>:
+      <%= f.label :breed, {}, {:style => 'color:red'} %>:
       <div id="display_cat_breeds_select_div"
         <%= (@pet.subtype == 'cat' || @pet.subtype == nil) ? '' : 'style="display:none"' %>
       >
@@ -82,31 +81,31 @@
     </td>
 
     <td>
-      <%= f.label :color %>: <%= select(:pet, :color, Pet::COLORS) %>
+      <%= f.select(:color, Pet::COLORS) %>
     </td>
   </tr>
 
   <tr>
     <td>
-      <%= f.label :'birth Date' %>: <%= date_select(:pet, :birth_date, :order => [:month, :day, :year])%>
+      <%= f.date_select(:birth_date, :order => [:month, :day, :year])%>
     </td>
 
     <td>
-      <%= f.label :sex %>: <%= select(:pet, :sex, Pet::SEX_TYPES) %>
+      <%= f.select(:sex, Pet::SEX_TYPES) %>
     </td>
 
     <td>
-      <%= f.label :'alive' %>: <%= select(:pet, :alive, %w(yes no)) %>
+      <%= f.select(:alive, %w(yes no)) %>
     </td>
   </tr>
 
   <tr>
     <td>
-      <%= f.label :veterinar %>: <%= f.text_field :veterinar %>
+      <%= f.text_field :veterinar %>
     </td>
 
     <td>
-      <%= f.label :'referred By' %>: <%= f.text_field :referred_by %>
+      <%= f.text_field :referred_by %>
     </td>
   </tr>
 

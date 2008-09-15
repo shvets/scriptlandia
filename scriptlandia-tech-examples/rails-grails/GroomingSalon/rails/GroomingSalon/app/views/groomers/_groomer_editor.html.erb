@@ -19,8 +19,7 @@
   <% end %>
 
   <p>
-    <%= f.label :'company' %>
-    <%= collection_select(:groomer, :company_id, Company.find(:all, :order => "name"), :id, :name, {}, {:disabled => disabled }) %>
+    <%= f.collection_select(:company_id, Company.find(:all, :order => "name"), :id, :name, {}, {:disabled => disabled }) %>
   </p>
 
   <p>

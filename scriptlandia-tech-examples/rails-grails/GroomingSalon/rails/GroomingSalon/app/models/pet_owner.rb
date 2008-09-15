@@ -23,7 +23,7 @@ class PetOwner < ActiveRecord::Base
   has_many :pets
   has_many :appointments, :through => :pets
 
-  validates_presence_of :first_name, :last_name
+  validates_presence_of :first_name, :last_name, :home_phone, :company_id
   
   validates_as_phone :home_phone, :message => "is not a valid US phone number"    
   validates_as_phone :work_phone, :message => "is not a valid US phone number" if @work_phone != nil

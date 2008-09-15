@@ -25,8 +25,7 @@
   </p>
 
   <p>
-    <%= f.label :company_id %><br />
-    <%= collection_select(:user, :company_id, Company.find(:all, :order => "name"), :id, :name, {:include_blank => true }) %>
+    <%= f.collection_select(:company_id, Company.find(:all, :order => "name"), :id, :name, {:include_blank => true }) %>
   </p>
 
   <p>
