@@ -8,8 +8,18 @@ class ValidatingFormBuilder < ActionView::Helpers::FormBuilder
   def self.create_tagged_field name
     define_method(name) do |field, *args|
       if %w(text_field password_field).include?(name) && required_field?(field)
-        options = args.last.is_a?(Hash) ? args.pop : {}
-        options[:onblur] = "checkPresence('#{field_name(field)}')"
+        options = args.detect { |argument| argument.is_a?(Hash) }
+        if options.nil?
+          options = {:onblur => "checkPresence('#{field_name(field)}')"}
+          args << options
+        else
+          options[:onblur] = "checkPresence('#{field_name(field)}')" 
+          #unless options.nil?          
+        end
+    
+        #options = args.last.is_a?(Hash) ? args.pop : {}
+        #options[:onblur] = "checkPresence('#{field_name(field)}')"
+        
         #options2 = args.last.is_a?(Hash) ? args.pop : {}        
         #options2.merge({:onblur => "checkPresence('#{field_name(field)}')"})
         control = super(field, options)
@@ -24,7 +34,7 @@ class ValidatingFormBuilder < ActionView::Helpers::FormBuilder
                             control)    
     end
   end
-  
+   
   helpers.each do |name|
     create_tagged_field name
   end
