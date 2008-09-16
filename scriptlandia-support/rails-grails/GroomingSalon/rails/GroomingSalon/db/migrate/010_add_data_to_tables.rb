@@ -2,8 +2,8 @@
 
 class AddDataToTables < ActiveRecord::Migration
   def self.up
-    Company.create :name => "Goochie Pooch", :address => "Rt. 18" # 1
-    Company.create :name => "Paws", :address => "Rt. 33"          # 2
+    Company.create :name => "Goochie Pooch & Cats Too", :address => "737 State Route 18 East Brunswick, NJ 08816-4904 ", :phone => "732-432-9191" # 1
+    Company.create :name => "Paws Pet Grooming & Supplies", :address => "1905 Highway 33 # 8, Trenton, NJ", :phone => "(609) 586-9860"          # 2
 
     User.create :username => "admin", :admin => true, :password => 'admin'
     User.create :username => "gp", :admin => false, :password => 'gp', :company_id => 1

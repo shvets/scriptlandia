@@ -35,6 +35,9 @@ ActiveRecord::Schema.define(:version => 14) do
   create_table "companies", :force => true do |t|
     t.string   "name"
     t.string   "address"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "owner"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -55,6 +58,7 @@ ActiveRecord::Schema.define(:version => 14) do
     t.string   "first_name"
     t.string   "last_name"
     t.text     "notes"
+    t.string   "address"
     t.integer  "company_id", :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"

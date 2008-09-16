@@ -1,5 +1,60 @@
 <!-- -->
 
+<script type="text/javascript"
+        src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<%= GeoKit::Geocoders::google %>" >
+</script>
+
+<%
+  #ActionView::Base.send :include, GeoKit::Geocoders
+
+  coordinates = @companies.collect do | company |
+    coordinate_struct = Struct::new(:name, :address, :lat, :lng)
+    
+    location = GeoKit::Geocoders::MultiGeocoder.geocode(company.address)
+   puts "?company.address " + company.address  
+  puts "?location " + location.to_s
+
+    coordinate_struct.new(company.name, company.address, location.lat, location.lng) if location.success
+  end
+%>
+<script type="text/javascript">
+  var coordinates = <%= coordinates.to_json %>;
+
+  function initialize() { 
+    if (GBrowserIsCompatible() && typeof coordinates != 'undefined') {
+      var map = new GMap2(document.getElementById("map"));
+      map.setCenter(new GLatLng(37.4419, -122.1419), 13);
+      map.addControl(new GLargeMapControl());
+
+      // Clicking the marker will hide it
+      function createMarker(latlng, coordinate) {
+        var marker = new GMarker(latlng);
+        var html="<strong>"+coordinate.name+"</strong><br />"+coordinate.address;
+        GEvent.addListener(marker,"click", function() {
+          map.openInfoWindowHtml(latlng, html);
+        });
+        return marker;
+      }
+
+      var bounds = new GLatLngBounds;
+      
+      for (var i = 0; i < coordinates.length; i++) {
+        alert(coordinates[i])
+        
+        var latlng=new GLatLng(coordinates[i].lat,coordinates[i].lng)
+        bounds.extend(latlng);
+        map.addOverlay(createMarker(latlng, coordinates[i]));
+      }
+      map.setCenter(bounds.getCenter(),map.getBoundsZoomLevel(bounds));
+    }
+  }  
+
+  //window.onload=initialize;
+  //window.onunload=GUnload;  
+</script>
+
+<body onload="initialize()" onunload="GUnload()">
+
 <h1>Listing companies</h1>
 
 <%= button_to 'New Company', new_company_path %>
@@ -25,4 +80,17 @@
     <% end %>
   </table>
 
-<% end %>
+  <table width="100%">
+    <tr>
+      <th>Companies on Google Maps</th>
+    </tr>
+
+    <tr valign="top">
+      <td><div id="map" style="width:700px; height:300px;"></div></td>
+    </tr>
+  </table>
+
+<% end %>  
+
+</body>
+  
