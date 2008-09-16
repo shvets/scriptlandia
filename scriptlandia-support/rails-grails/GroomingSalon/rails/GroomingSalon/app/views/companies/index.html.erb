@@ -5,18 +5,15 @@
 </script>
 
 <%
-  #ActionView::Base.send :include, GeoKit::Geocoders
-
   coordinates = @companies.collect do | company |
     coordinate_struct = Struct::new(:name, :address, :lat, :lng)
     
-    location = GeoKit::Geocoders::MultiGeocoder.geocode(company.address)
-   puts "?company.address " + company.address  
-  puts "?location " + location.to_s
-
+    location = GeoKit::Geocoders::GoogleGeocoder.geocode(company.address)
+ 
     coordinate_struct.new(company.name, company.address, location.lat, location.lng) if location.success
   end
 %>
+
 <script type="text/javascript">
   var coordinates = <%= coordinates.to_json %>;
 
@@ -29,7 +26,7 @@
       // Clicking the marker will hide it
       function createMarker(latlng, coordinate) {
         var marker = new GMarker(latlng);
-        var html="<strong>"+coordinate.name+"</strong><br />"+coordinate.address;
+        var html="<strong>"+coordinate[0]+"</strong><br />"+coordinate[1];
         GEvent.addListener(marker,"click", function() {
           map.openInfoWindowHtml(latlng, html);
         });
@@ -39,9 +36,8 @@
       var bounds = new GLatLngBounds;
       
       for (var i = 0; i < coordinates.length; i++) {
-        alert(coordinates[i])
+        var latlng=new GLatLng(coordinates[i][2],coordinates[i][3])
         
-        var latlng=new GLatLng(coordinates[i].lat,coordinates[i].lng)
         bounds.extend(latlng);
         map.addOverlay(createMarker(latlng, coordinates[i]));
       }
@@ -49,11 +45,9 @@
     }
   }  
 
-  //window.onload=initialize;
-  //window.onunload=GUnload;  
+  window.onload=initialize;
+  window.onunload=GUnload;  
 </script>
-
-<body onload="initialize()" onunload="GUnload()">
 
 <h1>Listing companies</h1>
 
@@ -92,5 +86,4 @@
 
 <% end %>  
 
-</body>
-  
+ 

@@ -33,6 +33,7 @@ module GeoKit
       def distance_between(from, to, options={})
         from=GeoKit::LatLng.normalize(from)
         to=GeoKit::LatLng.normalize(to)
+        return 0.0 if from == to # fixes a "zero-distance" bug
         units = options[:units] || GeoKit::default_units
         formula = options[:formula] || GeoKit::default_formula
         case formula
@@ -257,7 +258,7 @@ module GeoKit
         return thing.to_lat_lng
       end
       
-      throw ArgumentError.new("#{thing} (#{thing.class}) cannot be normalized to a LatLng. We tried interpreting it as an array, string, Mappable, etc., but no dice.")
+      raise ArgumentError.new("#{thing} (#{thing.class}) cannot be normalized to a LatLng. We tried interpreting it as an array, string, Mappable, etc., but no dice.")
     end
     
   end

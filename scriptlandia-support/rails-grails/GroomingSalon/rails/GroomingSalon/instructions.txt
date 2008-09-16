@@ -145,7 +145,7 @@ ruby script/plugin install http://super-inplace-controls.googlecode.com/svn/trun
 ruby script/plugin install svn://rubyforge.org//var/svn/valirefl/validation_reflection/trunk
 
 svn://code.logicleaf.com/rails-plugins/dataset
-svn://rubyforge.org/var/svn/geokit/trunk
+ruby script/plugin install svn://rubyforge.org/var/svn/geokit/trunk
 
 15.
 
