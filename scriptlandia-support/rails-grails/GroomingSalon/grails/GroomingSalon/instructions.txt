@@ -1,0 +1,25 @@
+Links:
+http://www.strattonenglish.co.uk/login_tutorial.pdf
+http://grag.sourceforge.net/
+
+1.
+grails create-app GroomingSalon
+
+2.
+cd my-project
+
+grails create-domain-class Company
+grails create-controller Company
+
+grails generate-all Company
+grails generate-all User
+grails generate-all Groomer
+grails generate-all PetOwner
+grails generate-all Appointment
+grails generate-all Report
+
+3.
+start grails run-app
+
+4.
+grails stats
