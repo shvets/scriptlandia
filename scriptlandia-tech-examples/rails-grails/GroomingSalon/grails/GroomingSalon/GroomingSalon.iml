@@ -4,6 +4,9 @@
     <connections />
   </component>
   <component name="FacetManager">
+    <facet type="Grails" name="Grails">
+      <configuration />
+    </facet>
     <facet type="web" name="Web">
       <configuration>
         <descriptors>
@@ -60,9 +63,6 @@
         <customNs />
       </configuration>
     </facet>
-    <facet type="Grails" name="Grails">
-      <configuration />
-    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
@@ -80,6 +80,7 @@
       <sourceFolder url="file://$MODULE_DIR$/test/integration" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/test/unit" isTestSource="true" />
     </content>
+    <orderEntry type="library" name="grails-1.0.3" level="application" />
     <orderEntry type="library" name="grails-1.0.3" level="application" />
     <orderEntry type="jdk" jdkName="1.5" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -103,7 +104,6 @@
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntryProperties />
   </component>
   <component name="RSpecModuleSettingsStorage">
     <RSPEC_MODULE_SETTINGS_STORAGE_ID NAME="RSPEC_SUPPORT_TYPE" VALUE="NONE" />
