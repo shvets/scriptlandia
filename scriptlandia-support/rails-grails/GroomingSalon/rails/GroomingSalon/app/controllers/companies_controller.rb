@@ -1,6 +1,9 @@
 # companies_controller.rb
 
 class CompaniesController < ProtectedController
+  #@display_map = false
+  #class << self; attr_reader :display_map; end
+  
   finder_filter :company, :only => [:show, :update, :destroy]
 
   # :param => :id
@@ -26,7 +29,7 @@ class CompaniesController < ProtectedController
       format.xml  { render :xml => @companies }
     end
   end
-
+ 
   # GET /companies/1
   # GET /companies/1.xml
   def show

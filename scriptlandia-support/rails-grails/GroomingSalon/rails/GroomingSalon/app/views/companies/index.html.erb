@@ -1,60 +1,13 @@
 <!-- -->
 
-<script type="text/javascript"
-        src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<%= GeoKit::Geocoders::google %>" >
-</script>
-
-<%
-  coordinates = @companies.collect do | company |
-    coordinate_struct = Struct::new(:name, :address, :lat, :lng)
-    
-    location = GeoKit::Geocoders::GoogleGeocoder.geocode(company.address)
- 
-    coordinate_struct.new(company.name, company.address, location.lat, location.lng) if location.success
-  end
-%>
-
-<script type="text/javascript">
-  var coordinates = <%= coordinates.to_json %>;
-
-  function initialize() { 
-    if (GBrowserIsCompatible() && typeof coordinates != 'undefined') {
-      var map = new GMap2(document.getElementById("map"));
-      map.setCenter(new GLatLng(37.4419, -122.1419), 13);
-      map.addControl(new GLargeMapControl());
-
-      // Clicking the marker will hide it
-      function createMarker(latlng, coordinate) {
-        var marker = new GMarker(latlng);
-        var html="<strong>"+coordinate[0]+"</strong><br />"+coordinate[1];
-        GEvent.addListener(marker,"click", function() {
-          map.openInfoWindowHtml(latlng, html);
-        });
-        return marker;
-      }
-
-      var bounds = new GLatLngBounds;
-      
-      for (var i = 0; i < coordinates.length; i++) {
-        var latlng=new GLatLng(coordinates[i][2],coordinates[i][3])
-        
-        bounds.extend(latlng);
-        map.addOverlay(createMarker(latlng, coordinates[i]));
-      }
-      map.setCenter(bounds.getCenter(),map.getBoundsZoomLevel(bounds));
-    }
-  }  
-
-  window.onload=initialize;
-  window.onunload=GUnload;  
-</script>
-
 <h1>Listing companies</h1>
 
 <%= button_to 'New Company', new_company_path %>
 <br />
 
 <% unless @companies.empty? %>
+
+  <%= render :partial => "shared/geokit_init", :locals => { :list => @companies, :map_div => 'map' } %>
 
   <table width="100%">
     <tr>
@@ -76,11 +29,13 @@
 
   <table width="100%">
     <tr>
-      <th>Companies on Google Maps</th>
+      <th><a href="#" onclick="toggleMapVisibility(); load();">Companies on Google Maps</a></th>
     </tr>
 
     <tr valign="top">
-      <td><div id="map" style="width:700px; height:300px;"></div></td>
+      <td>
+        <div id="map" style="width:700px; height:300px; display:none"></div>
+      </td>
     </tr>
   </table>
 

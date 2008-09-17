@@ -5,5 +5,6 @@ module ApplicationHelper
 #    object_name.to_s.camelize.constantize.
 #                 reflect_on_validations_for(field).
 #                 map(&:macro).include?(:validates_presence_of)
-#  end  
-end
+#  end 
+
+ end
