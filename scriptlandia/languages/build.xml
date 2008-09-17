@@ -22,7 +22,9 @@
         if(!files[i].isHidden() &amp;&amp; files[i].isDirectory()) {
           String name = files[i].getName();
 
-          installer.install(basedir + "/languages/" + name + "/core", true);
+          if(new File(basedir + "/languages/" + name + "/core").exists()) {
+            installer.install(basedir + "/languages/" + name + "/core", true);
+          }
         }
       }
     </script>
@@ -53,7 +55,9 @@
           if(!files[i].isHidden() &amp;&amp; files[i].isDirectory()) {
             String name = files[i].getName();
 
-            installer.install(basedir + "/languages/" + name + "/starter", true);
+            if(new File(basedir + "/languages/" + name + "/starter").exists()) {
+              installer.install(basedir + "/languages/" + name + "/starter", true);
+            }
           }
         }
       }
