@@ -88,6 +88,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
 
     scriptlandiaHomeField.addCaretListener(this);
     launcherHomeField.addCaretListener(this);
+    launcherHomeField.setEnabled(false);
 
     frame.getContentPane().add(createContent(), BorderLayout.CENTER);
 
@@ -127,6 +128,8 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     installNailgunsButton.setEnabled(true);
 
     tryEnableInstallButton();
+
+    launcherHomeField.setEnabled(false);    
   }
 
   private void applyEnabledFlag(Container container, boolean enabled) {
@@ -222,7 +225,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
       }
     });
 
-    JLabel launcherHomeLabel = new JLabel("Launcher Home:     ");
+    JLabel launcherHomeLabel = new JLabel("JLaunchPad Home:     ");
 
     JButton launcherHomeSearchButton = new JButton("Search...");
 
@@ -239,6 +242,8 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
         }
       }
     });
+
+     launcherHomeSearchButton.setEnabled(false);
 
     JLabel scriptlandiaHomeLabel = new JLabel("Scriptlandia Home:     ");
 
@@ -282,7 +287,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     constraints.gridx = 1;
     panel2.add(launcherHomeField, constraints);
     constraints.gridx = 2;
-    panel2.add(launcherHomeSearchButton, constraints);
+   // panel2.add(launcherHomeSearchButton, constraints);
 
     JPanel panel3 = new JPanel();
     constraints.gridy = 2;
@@ -837,7 +842,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     updateProperty(scriptlandiaProps, mobileJavaHomeField, "mobile.java.home");
     updateProperty(scriptlandiaProps, scriptlandiaHomeField, "scriptlandia.home");
     updateProperty(scriptlandiaProps, rubyHomeField, "native.ruby.home");
-    updateProperty(scriptlandiaProps, launcherHomeField, "jlaunchpad.home");
+    updateProperty(launcherProps, launcherHomeField, "jlaunchpad.home");
   }
 
   @SuppressWarnings({"MismatchedQueryAndUpdateOfCollection"})
@@ -848,7 +853,7 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
     saveProperty(scriptlandiaProps, mobileJavaHomeField, "mobile.java.home");
     saveProperty(scriptlandiaProps, scriptlandiaHomeField, "scriptlandia.home");
     saveProperty(scriptlandiaProps, rubyHomeField, "native.ruby.home");
-    saveProperty(scriptlandiaProps, launcherHomeField, "jlaunchpad.home");
+    //saveProperty(scriptlandiaProps, launcherHomeField, "jlaunchpad.home");
 
     scriptlandiaProps.put("jlaunchpad.version", System.getProperty("jlaunchpad.version"));
     scriptlandiaProps.put("jdic.version", System.getProperty("jdic.version"));
