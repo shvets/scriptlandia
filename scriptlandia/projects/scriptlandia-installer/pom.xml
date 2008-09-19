@@ -5,7 +5,7 @@
 
   <groupId>org.sf.scriptlandia</groupId>
   <artifactId>scriptlandia-installer</artifactId>
-  <version>2.2.5</version>
+  <version>2.2.6</version>
 
   <name>Scriptlandia Installer Module</name>
   <description>
@@ -19,7 +19,7 @@
 
   <properties>
     <ant.version>1.7.1</ant.version>
-    <jlaunchpad.version>1.0.2</jlaunchpad.version>
+    <jlaunchpad.version>1.0.3</jlaunchpad.version>
   </properties>
     
   <issueManagement>

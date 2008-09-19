@@ -193,7 +193,8 @@ Velocity Tools 1.1          http://jakarta.apache.org/velocity
 JRuby          1.1.4        http://jruby.codehaus.org
 Pnuts          1.2          https://pnuts.dev.java.net
 Jython         2.2.1        http://www.jython.org
-Scriptlandia   2.2.5        http://sourceforge.net/projects/scriptlandia
+JLaunchpad     1.0.3        http://sourceforge.net/projects/jlaunchpad
+Scriptlandia   2.2.6        http://sourceforge.net/projects/scriptlandia
 Scriptella     1.0beta      http://scriptella.javaforge.com
 Jscheme        7.2          http://jscheme.sourceforge.net
 Jaskell        1.0          http://jaskell.codehaus.org

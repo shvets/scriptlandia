@@ -32,7 +32,7 @@ public class ScriptlandiaHelperTest extends TestCase {
 
       List<String> depsFileNames = new ArrayList<String>();
 
-      depsFileNames.add("C:/maven-repository/org/sf/scriptlandia/beanshell-starter/2.2.5/beanshell-starter-2.2.5.pom ");
+      depsFileNames.add("C:/maven-repository/org/sf/scriptlandia/beanshell-starter/2.2.6/beanshell-starter-2.2.6.pom ");
       parser.getCommandLine().put("main.class.name", "bsh.Interpreter");
       parser.getCommandLine().put("deps.file.name", depsFileNames);
 

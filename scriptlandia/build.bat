@@ -11,7 +11,7 @@ if not exist %JLAUNCHPAD_HOME%\jlaunchpad.bat (
   exit
 )
 
-SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% -Dscriptlandia.version=2.2.5
+SET SYSTEM_PROPERTIES=%SYSTEM_PROPERTIES% -Dscriptlandia.version=2.2.6
 
 echo ---### Java Specification Version Level: %JAVA_SPECIFICATION_VERSION_LEVEL%
 echo ---### Installing basic dependencies, required projects and configuration files...

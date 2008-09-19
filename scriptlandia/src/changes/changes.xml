@@ -403,6 +403,9 @@
         Upgraded to Ant version 1.7.1.
       </action>
     </release>
+
+    <release version="2.2.6" date="19-September-2008" description="Bug Fix Release">
+    </release>
   </body>
 
 </document>

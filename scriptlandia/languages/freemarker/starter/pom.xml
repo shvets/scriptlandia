@@ -4,14 +4,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sf.scriptlandia</groupId>
   <artifactId>freemarker-starter</artifactId>
-  <version>2.2.5</version>
+  <version>2.2.6</version>
   <packaging>jar</packaging>
 
   <name>Scriptlandia FreeMarker Starter Module</name>
   <description>Scriptlandia FreeMarker Starter Module</description>
 
   <properties>
-    <scriptlandia.version>2.2.5</scriptlandia.version>
+    <scriptlandia.version>2.2.6</scriptlandia.version>
   </properties>
 
   <dependencies>

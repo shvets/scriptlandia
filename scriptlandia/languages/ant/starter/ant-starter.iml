@@ -483,15 +483,15 @@
     </orderEntry>
     <orderEntry type="module" module-name="scriptlandia-helper" exported="" />
     <orderEntry type="module-library" exported="">
-      <library name="org.sf.jlaunchpad:jlaunchpad-launcher:1.0.2">
+      <library name="org.sf.jlaunchpad:jlaunchpad-launcher:1.0.3">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.2/jlaunchpad-launcher-1.0.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.3/jlaunchpad-launcher-1.0.3.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.2/jlaunchpad-launcher-1.0.2-javadoc.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.3/jlaunchpad-launcher-1.0.3-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.2/jlaunchpad-launcher-1.0.2-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.3/jlaunchpad-launcher-1.0.3-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -522,15 +522,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.sf.jlaunchpad:jlaunchpad-common:1.0.2">
+      <library name="org.sf.jlaunchpad:jlaunchpad-common:1.0.3">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/org/sf/jlaunchpad/jlaunchpad-common/1.0.2/jlaunchpad-common-1.0.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/org/sf/jlaunchpad/jlaunchpad-common/1.0.3/jlaunchpad-common-1.0.3.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/org/sf/jlaunchpad/jlaunchpad-common/1.0.2/jlaunchpad-common-1.0.2-javadoc.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/org/sf/jlaunchpad/jlaunchpad-common/1.0.3/jlaunchpad-common-1.0.3-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/org/sf/jlaunchpad/jlaunchpad-common/1.0.2/jlaunchpad-common-1.0.2-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/org/sf/jlaunchpad/jlaunchpad-common/1.0.3/jlaunchpad-common-1.0.3-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -548,15 +548,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.sf.jlaunchpad:pom-reader:1.0.2">
+      <library name="org.sf.jlaunchpad:pom-reader:1.0.3">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/org/sf/jlaunchpad/pom-reader/1.0.2/pom-reader-1.0.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/org/sf/jlaunchpad/pom-reader/1.0.3/pom-reader-1.0.3.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/org/sf/jlaunchpad/pom-reader/1.0.2/pom-reader-1.0.2-javadoc.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/org/sf/jlaunchpad/pom-reader/1.0.3/pom-reader-1.0.3-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/org/sf/jlaunchpad/pom-reader/1.0.2/pom-reader-1.0.2-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/org/sf/jlaunchpad/pom-reader/1.0.3/pom-reader-1.0.3-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

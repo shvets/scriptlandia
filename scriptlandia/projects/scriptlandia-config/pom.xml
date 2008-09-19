@@ -5,7 +5,7 @@
 
   <groupId>org.sf.scriptlandia</groupId>
   <artifactId>scriptlandia-config</artifactId>
-  <version>2.2.5</version>
+  <version>2.2.6</version>
   <packaging>pom</packaging>
 
   <name>Scriptlandia Config Module</name>

@@ -528,7 +528,7 @@
     </configuration>
     <configuration default="false" name="installer" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.codehaus.classworlds.Launcher" />
-      <option name="VM_PARAMETERS" value="-Dant.version.internal=1.7.1 -Dbeanshell.version=2.0b5 -Dscriptlandia.version=2.2.4 -Dlauncher.version=1.0.2 -Djdic.version=0.9.3 -Dnailgun.version=0.7.1 -Djava.compiler.version=7.0-b26 -Djava.specification.version=1.5 -Dscriptlandia.home=c:\scriptlandia -Dlauncher.home=c:\launcher  -Drepository.home=c:\maven-repository -Ddebug.mode=false -Dclassworlds.conf=$PROJECT_DIR$/../../../../../launcher/classworlds.conf -Drepository.home=$PROJECT_DIR$/../../../../../maven-repository -Dlauncher.home=$PROJECT_DIR$/../../../../../launcher -Dlauncher.version=1.0.2  -Djava.library.path=$PROJECT_DIR$/../../../../../Java/jdk1.6.0/jre/bin    " />
+      <option name="VM_PARAMETERS" value="-Dant.version.internal=1.7.1 -Dbeanshell.version=2.0b5 -Dscriptlandia.version=2.2.4 -Dlauncher.version=1.0.3 -Djdic.version=0.9.3 -Dnailgun.version=0.7.1 -Djava.compiler.version=7.0-b26 -Djava.specification.version=1.5 -Dscriptlandia.home=c:\scriptlandia -Dlauncher.home=c:\launcher  -Drepository.home=c:\maven-repository -Ddebug.mode=false -Dclassworlds.conf=$PROJECT_DIR$/../../../../../launcher/classworlds.conf -Drepository.home=$PROJECT_DIR$/../../../../../maven-repository -Dlauncher.home=$PROJECT_DIR$/../../../../../launcher -Dlauncher.version=1.0.3  -Djava.library.path=$PROJECT_DIR$/../../../../../Java/jdk1.6.0/jre/bin    " />
       <option name="PROGRAM_PARAMETERS" value="&quot;-deps.file.name=projects\scriptlandia-installer\pom.xml&quot; &quot;-main.class.name=org.sf.scriptlandia.install.GuiInstaller&quot; -wait" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -553,7 +553,7 @@
     <configuration default="false" name="scala-starter" type="Application" factoryName="Application" enabled="true" merge="false">
       <option name="MAIN_CLASS_NAME" value="org.codehaus.classworlds.Launcher" />
       <option name="VM_PARAMETERS" value="&quot;-Dclassworlds.conf=$PROJECT_DIR$/../../../../../launcher/classworlds.conf&quot; &quot;-Drepository.home=$PROJECT_DIR$/../../../../../maven-repository&quot; &quot;-Dlauncher.home=$PROJECT_DIR$/../../../../../launcher&quot; &quot;-Dlauncher.version=1.0.1&quot; &quot;-Dscala.version=2.6.1&quot; " />
-      <option name="PROGRAM_PARAMETERS" value="&quot;-deps.file.name=C:\maven-repository\org\sf\scriptlandia\scala-starter\1.0.1\scala-starter-1.0.2.pom&quot; &quot;-main.class.name=org.sf.scriptlandia.ScalaStarter2&quot; &quot;-nocompdaemon&quot; &quot;-howtorun:script&quot; &quot;C:\Work\Projects\scriptlandia\trunk\scriptlandia\HelloWorld.scala&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;-deps.file.name=C:\maven-repository\org\sf\scriptlandia\scala-starter\1.0.1\scala-starter-1.0.3.pom&quot; &quot;-main.class.name=org.sf.scriptlandia.ScalaStarter2&quot; &quot;-nocompdaemon&quot; &quot;-howtorun:script&quot; &quot;C:\Work\Projects\scriptlandia\trunk\scriptlandia\HelloWorld.scala&quot;" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />

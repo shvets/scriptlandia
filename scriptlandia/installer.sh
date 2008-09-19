@@ -3,7 +3,7 @@
 DIR=../../../jlaunchpad/trunk/jlaunchpad
 
 if [ ! -d $DIR ]; then
-  DIR=jlaunchpad-1.0.2
+  DIR=jlaunchpad-1.0.3
 
   if [ ! -d $DIR ]; then
     echo Please run jlaunchpad-installer.sh first.
@@ -20,7 +20,7 @@ fi
 MOBILE_JAVA_HOME=%DRIVE_LETTER%\Java\j2me-2.5
 #RUBY_HOME=%DRIVE_LETTER%\Ruby\ruby-1.8.4-20
 
-SCRIPTLANDIA_VERSION=2.2.5
+SCRIPTLANDIA_VERSION=2.2.6
 ANT_VERSION=1.7.1
 BEANSHELL_VERSION=2.0b5
 JDIC_VERSION=0.9.3
