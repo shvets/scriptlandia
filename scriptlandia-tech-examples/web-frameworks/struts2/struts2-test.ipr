@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project relativePaths="false" version="4">
+<project relativePaths="true" version="4">
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
   </component>
@@ -244,12 +244,9 @@
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
     <option name="MAXIMUM_HEAP_SIZE" value="128" />
   </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
-  </component>
-  <component name="ErrorTreeViewConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="HIDE_WARNINGS" value="false" />
   </component>
   <component name="FacetAutodetectingManager">
     <autodetection-disabled>
@@ -259,11 +256,6 @@
         </modules>
       </facet-type>
     </autodetection-disabled>
-  </component>
-  <component name="FindManager">
-    <FindUsagesManager>
-      <setting name="OPEN_NEW_TAB" value="false" />
-    </FindUsagesManager>
   </component>
   <component name="HierarchyBrowserManager">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -279,67 +271,9 @@
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Project Default" />
         <option name="myLocal" value="false" />
-        <inspection_tool class="Struts2ModelInspection" level="ERROR" enabled="false" />
       </profile>
     </profiles>
     <list size="0" />
-  </component>
-  <component name="IntelliJadProjectConfigComponent">
-    <config>
-      <a type="boolean">false</a>
-      <af type="boolean">false</af>
-      <always-exclude-recursively type="boolean">false</always-exclude-recursively>
-      <b type="boolean">false</b>
-      <clear type="boolean">false</clear>
-      <clear-and-close-console-on-success type="boolean">false</clear-and-close-console-on-success>
-      <create-output-directory type="boolean">false</create-output-directory>
-      <d type="string" />
-      <dead type="boolean">false</dead>
-      <decompile-on-navigation type="string">Always</decompile-on-navigation>
-      <decompile-to-memory type="boolean">true</decompile-to-memory>
-      <dis type="boolean">false</dis>
-      <exclusion-table-model type="table-model" model-class="net.stevechaloner.intellijad.config.ExclusionTableModel" content-types="string,boolean,boolean" />
-      <f type="boolean">false</f>
-      <ff type="boolean">false</ff>
-      <i type="boolean">false</i>
-      <indentation type="integer">4</indentation>
-      <jad-path type="string" />
-      <l type="integer">64</l>
-      <lnc type="boolean">false</lnc>
-      <lradix type="integer">10</lradix>
-      <nl type="boolean">false</nl>
-      <nocast type="boolean">false</nocast>
-      <noclass type="boolean">false</noclass>
-      <nocode type="boolean">false</nocode>
-      <noconv type="boolean">false</noconv>
-      <noctor type="boolean">false</noctor>
-      <nodos type="boolean">false</nodos>
-      <nofd type="boolean">false</nofd>
-      <noinner type="boolean">false</noinner>
-      <nolvt type="boolean">false</nolvt>
-      <nonlb type="boolean">false</nonlb>
-      <o type="boolean">false</o>
-      <pa type="string" />
-      <pc type="string">_cls</pc>
-      <pe type="string">_ex</pe>
-      <pf type="string">_fld</pf>
-      <pl type="string">_lcl</pl>
-      <pm type="string">_mth</pm>
-      <pp type="string">_prm</pp>
-      <pv type="integer">3</pv>
-      <r type="boolean">false</r>
-      <radix type="integer">10</radix>
-      <read-only type="boolean">false</read-only>
-      <reformat-style type="string">Preferred-Style</reformat-style>
-      <s type="string">java</s>
-      <safe type="boolean">false</safe>
-      <sort type="boolean">false</sort>
-      <space type="boolean">false</space>
-      <stat type="boolean">false</stat>
-      <t type="boolean">false</t>
-      <use-project-specific-settings type="boolean">false</use-project-specific-settings>
-      <v type="boolean">false</v>
-    </config>
   </component>
   <component name="JavacSettings">
     <option name="DEBUGGING_INFO" value="true" />
@@ -375,6 +309,13 @@
   </component>
   <component name="MavenBuilder">
     <option name="jreName" value="1.5" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
   </component>
   <component name="ModuleEditorState">
     <option name="LAST_EDITED_MODULE_NAME" />
@@ -501,6 +442,9 @@
       </item>
     </group>
   </component>
+  <component name="ProjectDetails">
+    <option name="projectName" value="struts2-test" />
+  </component>
   <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="true" id="Add" />
@@ -520,7 +464,7 @@
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
-  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="ProjectView">
@@ -644,6 +588,9 @@
     <option name="AUTOSCROLL_FROM_SOURCE" value="false" />
     <option name="ACTIVE_ACTIONS" value="" />
   </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myVersion" value="124" />
+  </component>
   <component name="SvnConfiguration">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
@@ -710,6 +657,393 @@
     </GetOptions>
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
+  <component name="libraryTable">
+    <library name="Maven: junit:junit:3.8.2">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/junit/junit/3.8.2/junit-3.8.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/junit/junit/3.8.2/junit-3.8.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/junit/junit/3.8.2/junit-3.8.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-lang:commons-lang:2.2">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-lang/commons-lang/2.2/commons-lang-2.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-lang/commons-lang/2.2/commons-lang-2.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-lang/commons-lang/2.2/commons-lang-2.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: struts:struts:1.2.9">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/struts/struts/1.2.9/struts-1.2.9.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/struts/struts/1.2.9/struts-1.2.9-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/struts/struts/1.2.9/struts-1.2.9-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.struts:struts2-core:2.0.11">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/apache/struts/struts2-core/2.0.11/struts2-core-2.0.11.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/apache/struts/struts2-core/2.0.11/struts2-core-2.0.11-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/apache/struts/struts2-core/2.0.11/struts2-core-2.0.11-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.struts:struts2-spring-plugin:2.0.11">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/apache/struts/struts2-spring-plugin/2.0.11/struts2-spring-plugin-2.0.11.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/apache/struts/struts2-spring-plugin/2.0.11/struts2-spring-plugin-2.0.11-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/apache/struts/struts2-spring-plugin/2.0.11/struts2-spring-plugin-2.0.11-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.struts:struts2-tiles-plugin:2.0.11">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/apache/struts/struts2-tiles-plugin/2.0.11/struts2-tiles-plugin-2.0.11.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/apache/struts/struts2-tiles-plugin/2.0.11/struts2-tiles-plugin-2.0.11-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/apache/struts/struts2-tiles-plugin/2.0.11/struts2-tiles-plugin-2.0.11-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.tiles:tiles-jsp:2.0.5">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/apache/tiles/tiles-jsp/2.0.5/tiles-jsp-2.0.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/apache/tiles/tiles-jsp/2.0.5/tiles-jsp-2.0.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/apache/tiles/tiles-jsp/2.0.5/tiles-jsp-2.0.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.servlet:servlet-api:2.4">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/javax/servlet/servlet-api/2.4/servlet-api-2.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/javax/servlet/servlet-api/2.4/servlet-api-2.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/javax/servlet/servlet-api/2.4/servlet-api-2.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.servlet:jsp-api:2.0">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/javax/servlet/jsp-api/2.0/jsp-api-2.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/javax/servlet/jsp-api/2.0/jsp-api-2.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/javax/servlet/jsp-api/2.0/jsp-api-2.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.servlet:jstl:1.1.2">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/javax/servlet/jstl/1.1.2/jstl-1.1.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/javax/servlet/jstl/1.1.2/jstl-1.1.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/javax/servlet/jstl/1.1.2/jstl-1.1.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: taglibs:standard:1.1.2">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/taglibs/standard/1.1.2/standard-1.1.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/taglibs/standard/1.1.2/standard-1.1.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/taglibs/standard/1.1.2/standard-1.1.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.springframework:spring-core:2.5.1">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/springframework/spring-core/2.5.1/spring-core-2.5.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/springframework/spring-core/2.5.1/spring-core-2.5.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/springframework/spring-core/2.5.1/spring-core-2.5.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.springframework:spring-beans:2.5.1">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/springframework/spring-beans/2.5.1/spring-beans-2.5.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/springframework/spring-beans/2.5.1/spring-beans-2.5.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/springframework/spring-beans/2.5.1/spring-beans-2.5.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.springframework:spring-web:2.5.1">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/springframework/spring-web/2.5.1/spring-web-2.5.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/springframework/spring-web/2.5.1/spring-web-2.5.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/springframework/spring-web/2.5.1/spring-web-2.5.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.springframework:spring-test:2.5.1">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/springframework/spring-test/2.5.1/spring-test-2.5.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/springframework/spring-test/2.5.1/spring-test-2.5.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/springframework/spring-test/2.5.1/spring-test-2.5.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: jsonplugin:jsonplugin:0.19">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/jsonplugin/jsonplugin/0.19/jsonplugin-0.19.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/jsonplugin/jsonplugin/0.19/jsonplugin-0.19-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/jsonplugin/jsonplugin/0.19/jsonplugin-0.19-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.json:json:20070829">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/json/json/20070829/json-20070829.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/json/json/20070829/json-20070829-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/json/json/20070829/json-20070829-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.directwebremoting:dwr:2.0.1">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/directwebremoting/dwr/2.0.1/dwr-2.0.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/directwebremoting/dwr/2.0.1/dwr-2.0.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/directwebremoting/dwr/2.0.1/dwr-2.0.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-beanutils:commons-beanutils:1.7.0">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-logging:commons-logging:1.0.4">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-digester:commons-digester:1.6">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-digester/commons-digester/1.6/commons-digester-1.6.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-digester/commons-digester/1.6/commons-digester-1.6-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-digester/commons-digester/1.6/commons-digester-1.6-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-collections:commons-collections:2.1">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-collections/commons-collections/2.1/commons-collections-2.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-collections/commons-collections/2.1/commons-collections-2.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-collections/commons-collections/2.1/commons-collections-2.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: xml-apis:xml-apis:1.0.b2">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-validator:commons-validator:1.1.4">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-validator/commons-validator/1.1.4/commons-validator-1.1.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-validator/commons-validator/1.1.4/commons-validator-1.1.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-validator/commons-validator/1.1.4/commons-validator-1.1.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: oro:oro:2.0.7">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/oro/oro/2.0.7/oro-2.0.7.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/oro/oro/2.0.7/oro-2.0.7-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/oro/oro/2.0.7/oro-2.0.7-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: antlr:antlr:2.7.2">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/antlr/antlr/2.7.2/antlr-2.7.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/antlr/antlr/2.7.2/antlr-2.7.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/antlr/antlr/2.7.2/antlr-2.7.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.opensymphony:xwork:2.0.4">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/com/opensymphony/xwork/2.0.4/xwork-2.0.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/com/opensymphony/xwork/2.0.4/xwork-2.0.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/com/opensymphony/xwork/2.0.4/xwork-2.0.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: opensymphony:ognl:2.6.11">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/opensymphony/ognl/2.6.11/ognl-2.6.11.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/opensymphony/ognl/2.6.11/ognl-2.6.11-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/opensymphony/ognl/2.6.11/ognl-2.6.11-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: freemarker:freemarker:2.3.8">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/freemarker/freemarker/2.3.8/freemarker-2.3.8.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/freemarker/freemarker/2.3.8/freemarker-2.3.8-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/freemarker/freemarker/2.3.8/freemarker-2.3.8-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.sun:tools:1.5.0">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../editors/in2574~1/jre/jre/../lib/tools.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../editors/in2574~1/jre/jre/../lib/tools-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../editors/in2574~1/jre/jre/../lib/tools-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.springframework:spring-context:2.0.5">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/springframework/spring-context/2.0.5/spring-context-2.0.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/springframework/spring-context/2.0.5/spring-context-2.0.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/springframework/spring-context/2.0.5/spring-context-2.0.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: aopalliance:aopalliance:1.0">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/aopalliance/aopalliance/1.0/aopalliance-1.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/aopalliance/aopalliance/1.0/aopalliance-1.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.tiles:tiles-core:2.0.4">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/apache/tiles/tiles-core/2.0.4/tiles-core-2.0.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/apache/tiles/tiles-core/2.0.4/tiles-core-2.0.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/apache/tiles/tiles-core/2.0.4/tiles-core-2.0.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.tiles:tiles-api:2.0.4">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/apache/tiles/tiles-api/2.0.4/tiles-api-2.0.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/apache/tiles/tiles-api/2.0.4/tiles-api-2.0.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/org/apache/tiles/tiles-api/2.0.4/tiles-api-2.0.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-logging:commons-logging-api:1.1">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../../../../../maven-repository/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+  </component>
   <UsedPathMacros>
     <macro name="maven-repository" />
   </UsedPathMacros>
