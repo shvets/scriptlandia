@@ -48,7 +48,6 @@ public final class MavenStarter {
     String[] newArgs = new String[newArgsList.size()];
     newArgsList.toArray(newArgs);
 
-    System.out.println("new args " + Arrays.asList(newArgs));
     MavenCli.main(newArgs, classWorld);
   }
 
