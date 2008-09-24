@@ -64,7 +64,7 @@ public class LauncherHelper {
     System.setProperty("java.home.internal", (String) launcherProps.get("java.home.internal"));
 
     String scriptlandiaHome = (String) scriptlandiaProps.get("scriptlandia.home");
-    String launcherHome = (String) scriptlandiaProps.get("jlaunchpad.home");
+    String launcherHome = (String) launcherProps.get("jlaunchpad.home");
 
     String scalaVersion = (String)scriptlandiaProps.get("scala.version");
     String scriptlandiaVersion = (String)scriptlandiaProps.get("scriptlandia.version");
