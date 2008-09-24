@@ -38,13 +38,17 @@ public final class MavenStarter {
        if(name.endsWith(".mvn") || name.endsWith(".maven") || name.endsWith(".pom")) {
           newArgsList.add("-f");
        }
-     }
+    }
 
     newArgsList.addAll(Arrays.asList(args));
+
+    newArgsList.add(0, System.getProperty("jlaunchpad.home") + File.separatorChar + "settings.xml");
+    newArgsList.add(0, "-s");
 
     String[] newArgs = new String[newArgsList.size()];
     newArgsList.toArray(newArgs);
 
+    System.out.println("new args " + Arrays.asList(newArgs));
     MavenCli.main(newArgs, classWorld);
   }
 
