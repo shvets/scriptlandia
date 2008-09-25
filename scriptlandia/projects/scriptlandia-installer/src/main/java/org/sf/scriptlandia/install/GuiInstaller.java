@@ -975,13 +975,22 @@ public class GuiInstaller extends CoreInstaller implements CaretListener {
   public static void main(String[] args) throws LauncherException {
     JLaunchPadLauncher launcher = JLaunchPadLauncher.getInstance();
 
-    launcher.addClasspathEntry(System.getProperty("java.home") + File.separator + "lib" + File.separator + "deploy.jar");
 
-    try {
-      loadLibDeploy();
-    }
-    catch (Throwable t) {
-      throw new LauncherException(t);
+    if(launcher != null) {
+      String deployFileName = System.getProperty("java.home") + File.separator + "lib" + File.separator + "deploy.jar";
+
+      if(!new File(deployFileName).exists()) {
+        deployFileName = System.getProperty("java.home") + File.separator + ".." + File.separator + "lib" + File.separator + "deploy.jar";
+      }
+
+      launcher.addClasspathEntry(deployFileName);
+
+      try {
+        loadLibDeploy();
+      }
+      catch (Throwable t) {
+        throw new LauncherException(t);
+      }
     }
 
     new GuiInstaller(args);

@@ -8,8 +8,8 @@ Before executing this script, execute this in scriptlandia-tools\launch4j
 
 <project name="launch4j.ant" default="installer.exe" basedir=".">
 
-  <import file="config-macrodefs.xml"/>
-  <load-properties/>
+  <!--import file="scriptlandia-macrodefs.xml"/-->
+  <!--load-properties/-->
 
   <property file="config.properties"/>
 
@@ -25,14 +25,14 @@ Before executing this script, execute this in scriptlandia-tools\launch4j
   </target>
 
   <target name="launch4j">
-    <property name="launch4j.version" value="3.0.0-pre2"/>
+    <property name="launch4j.version" value="3.0.1"/>
     <property name="launch4j.base" value="${repository.home}/launch4j/launch4j-${launch4j.version}"/>
 
     <taskdef name="launch4j"
              classname="net.sf.launch4j.ant.Launch4jTask">
       <classpath>
         <pathelement location="${repository.home}/launch4j/launch4j/${launch4j.version}/launch4j-${launch4j.version}.jar"/>
-        <pathelement location="${repository.home}/com/thoughtworks/xstream/xstream/1.2.1/xstream-1.2.1.jar"/>
+        <pathelement location="${repository.home}/com/thoughtworks/xstream/xstream/1.3/xstream-1.3.jar"/>
       </classpath>
     </taskdef>
 
@@ -63,24 +63,29 @@ Before executing this script, execute this in scriptlandia-tools\launch4j
     <launch4j>
       <config headerType="gui" 
               dontWrapJar="true" 
-              jarPath="projects/scriptlandia-installer/target/scriptlandia-installer.jar" 
               outfile="installer.exe"
               stayAlive="true"
               downloadUrl="http://java.com/download"
-              icon="projects/scriptlandia-config/bin/images/scriptlandia.ico">
-        <classPath mainClass="org.sf.scriptlandia.install.GuiInstaller">
-          <cp>${repository.home}/org/sf/jlaunchpad/jlaunchpad-common/1.0.3/jlaunchpad-common-1.0.3.jar</cp>
-          <cp>${repository.home}/org/apache/maven/bootstrap/bootstrap-mini/2.0.9/bootstrap-mini-2.0.9.jar</cp>
-          <cp>${repository.home}/org/sf/jlaunchpad/pom-reader/1.0.3/pom-reader-1.0.3.jar</cp>
-          <cp>${repository.home}/org/sf/jlaunchpad/jlaunchpad-launcher/1.0.3/jlaunchpad-launcher-1.0.3.jar</cp>
-
-          <cp>projects/scriptlandia-installer/target/scriptlandia-installer.jar</cp>
+              icon="languages/scriptlandia/scriptlandia.ico">
+        <classPath mainClass="org.codehaus.classworlds.Launcher &quot;-deps.file.name=projects/scriptlandia-installer/pom.xml&quot; &quot;-main.class.name=org.sf.scriptlandia.install.GuiInstaller&quot; &quot;-wait&quot;">
+          <cp>c:/Work/maven-repository/classworlds/classworlds/1.1/classworlds-1.1.jar</cp>
         </classPath>
 
         <jre minVersion="1.5.0">
-          <opt>-Dant.version.internal=1.7.1</opt>
-          <opt>-Dbeanshell.version=2.0b5</opt>
-          <opt>-Dscriptlandia.version=2.2.6</opt>
+          <opt>&quot;-Djlaunchpad.version=1.0.3&quot;</opt>
+          <opt>&quot;-Dclassworlds.version=1.1&quot;</opt>
+          <opt>&quot;-Djdom.version=1.1&quot;</opt>
+
+          <opt>&quot;-Dant.version.internal=1.7.1&quot;</opt>
+          <opt>&quot;-Dbeanshell.version=2.0b5&quot;</opt>
+          <opt>&quot;-Dscriptlandia.version=2.2.6&quot;</opt>
+          <opt>&quot;-Djdic.version=0.9.3&quot;</opt>
+          <opt>&quot;-Dnailgun.version=0.7.1&quot;</opt>
+          <opt>&quot;-Djava.compiler.version=7.0-b26&quot;</opt>
+
+          <opt>&quot;-Dclassworlds.conf=C:/Work/jlaunchpad/jlaunchpad.conf&quot;</opt>
+          <opt>&quot;-Drepository.home=C:/Work/maven-repository&quot;</opt>
+          <opt>&quot;-Djlaunchpad.home=C:/Work/jlaunchpad&quot;</opt>
         </jre>
       </config>
     </launch4j>
@@ -95,7 +100,7 @@ Before executing this script, execute this in scriptlandia-tools\launch4j
               outfile="projects/scriptlandia-config/bin/launcher.exe"
               stayAlive="true"
               downloadUrl="http://java.com/download"
-              icon="projects/scriptlandia-config/bin/images/scriptlandia.ico">
+              icon="languages/scriptlandia/scriptlandia.ico">
 
         <jre minVersion="1.5.0">
           <opt>-Dant.version.internal=1.7.1</opt>
@@ -114,7 +119,7 @@ Before executing this script, execute this in scriptlandia-tools\launch4j
               outfile="projects/scriptlandia-config/bin/launcher-gui.exe"
               stayAlive="true"
               downloadUrl="http://java.com/download"
-              icon="projects/scriptlandia-config/bin/images/scriptlandia.ico">
+              icon="languages/scriptlandia/scriptlandia.ico">
 
         <jre minVersion="1.5.0">
           <opt>-Dant.version.internal=1.7.1</opt>

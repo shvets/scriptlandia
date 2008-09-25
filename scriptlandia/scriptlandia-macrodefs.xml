@@ -7,6 +7,7 @@
       <script language="beanshell">
         String repositoryHome = System.getProperty("repository.home");
         addClassPath("projects/scriptlandia-installer/target/scriptlandia-installer.jar");
+        //addClassPath(System.getProperty("repository.home") + "/jdom/jdom/1.1/jdom-1.1.jar");
 
         import org.sf.scriptlandia.install.ExtXmlHelper;
 
