@@ -10,7 +10,7 @@
     <dependency>
       <groupId>launch4j</groupId>
       <artifactId>launch4j</artifactId>
-      <version>3.0.0-pre2</version>
+      <version>3.0.1</version>
     </dependency>
   </dependencies>
 
