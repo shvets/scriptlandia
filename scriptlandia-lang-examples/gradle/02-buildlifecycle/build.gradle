@@ -1,0 +1,7 @@
+defaultTasks "test"
+
+println 'This is executed during the configuration phase.'
+
+createTask('test') {
+    println 'This is executed during the execution phase.'
+}

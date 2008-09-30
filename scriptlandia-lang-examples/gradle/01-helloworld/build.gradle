@@ -1,0 +1,5 @@
+defaultTasks "hello"
+
+createTask('hello') {
+  println 'Hello world!'
+}

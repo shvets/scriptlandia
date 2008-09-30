@@ -1,0 +1,13 @@
+defaultTasks "ant-test"
+
+createTask('ant-test') {
+  fileList('.').each { File file ->
+    ant.echo(message: file.name)
+  }
+}
+
+File[] fileList(String dir) {
+  File[] files = new File(dir).listFiles()
+  Arrays.sort(files)
+  files
+}
