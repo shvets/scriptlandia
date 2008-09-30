@@ -181,7 +181,7 @@ MicroEmu       2.0.1        http://microemu.org
 
 Maven          2.0.9        http://maven.apache.org
 Ant            1.7.1        http://ant.apache.org
-Ivy            2.0.0-beta2  http://ant.apache.org/ivy
+Ivy            2.0.0-rc1    http://ant.apache.org/ivy
 BSF            2.4.0        http://jakarta.apache.org/bsf
 Beanshell      2.0b5        http://www.beanshell.org/bsh-2.0b5.jar
 Javascript     1.6R4        http://www.mozilla.org/rhino

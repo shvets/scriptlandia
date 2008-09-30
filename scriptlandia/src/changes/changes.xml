@@ -409,6 +409,9 @@
         Added support for Gradle ver. 0.4.
       </action>
 
+      <action dev="Alexander Shvets" type="fix">
+        Upgraded to Ivy version 2.0.0-rc1.
+      </action>
     </release>
   </body>
 
