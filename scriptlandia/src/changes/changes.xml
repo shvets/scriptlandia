@@ -366,7 +366,7 @@
       </action>
     </release>
 
-    <release version="2.2.5" date="22-February-2008" description="Bug Fix Release">
+    <release version="2.2.5" date="19-September-2008" description="Bug Fix Release">
       <action dev="Alexander Shvets" type="fix">
         Using maven 2.0.9.
       </action>
@@ -404,7 +404,11 @@
       </action>
     </release>
 
-    <release version="2.2.6" date="19-September-2008" description="Bug Fix Release">
+    <release version="2.2.6" date="1-Match-2009" description="Bug Fix Release">
+      <action dev="Alexander Shvets" type="add">
+        Added support for Gradle ver. 0.4.
+      </action>
+
     </release>
   </body>
 

@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>gradle</artifactId>
+  <version>2.2.6</version>
+  <packaging>pom</packaging>
+
+  <name>Scriptlandia Gradle Core Module</name>
+  <description>Scriptlandia Grradle Core Module</description>
+
+  <properties>
+    <gradle.version>0.4</gradle.version>
+    <groovy.version>1.5.6</groovy.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.codehaus.groovy</groupId>
+      <artifactId>groovy-all</artifactId>
+      <version>${groovy.version}</version>
+
+      <exclusions>
+        <exclusion>
+          <groupId>org.apache.ant</groupId>
+          <artifactId>ant</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>org.apache.ant</groupId>
+          <artifactId>ant-junit</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>org.apache.ant</groupId>
+          <artifactId>ant-launcher</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.gradle</groupId>
+      <artifactId>gradle</artifactId>
+      <version>${gradle.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-httpclient</groupId>
+      <artifactId>commons-httpclient</artifactId>
+      <version>3.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>1.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.3</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.0.3</version>
+    </dependency>
+
+    <dependency>
+      <groupId>dom4j</groupId>
+      <artifactId>dom4j</artifactId>
+      <version>1.6.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>net.sf.jopt-simple</groupId>
+      <artifactId>jopt-simple</artifactId>
+      <version>2.4.1</version>
+    </dependency> 
+
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>0.9.9</version>
+    </dependency> 
+
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>0.9.9</version>
+    </dependency> 
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.5.3</version>
+    </dependency> 
+
+    <dependency>
+      <groupId>slide</groupId>
+      <artifactId>webdavlib</artifactId>
+      <version>2.0</version>
+    </dependency> 
+
+    <dependency>
+      <groupId>org.apache.ivy</groupId>
+      <artifactId>ivy</artifactId>
+      <version>2.0.0-beta2</version>
+    </dependency>
+
+  </dependencies>
+
+</project>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<language name="gradle" groupId="org.gradle" artifactId="gradle" version="0.4">
+  <registration mimeType="application/gradle" icon="groovy.ico">
+    <extensions>
+      <extension>gradle</extension>
+    </extensions>
+
+    <starter>
+      <mainClass>org.sf.scriptlandia.GradleStarter</mainClass>
+    </starter>
+  </registration>
+</language>

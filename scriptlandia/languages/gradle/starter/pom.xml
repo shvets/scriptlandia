@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sf.scriptlandia</groupId>
+  <artifactId>gradle-starter</artifactId>
+  <version>2.2.6</version>
+  <packaging>jar</packaging>
+
+  <name>Scriptlandia Gradle Starter Module</name>
+  <description>Scriptlandia Gradle Starter Module</description>
+
+  <properties>
+    <scriptlandia.version>2.2.6</scriptlandia.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>scriptlandia-helper</artifactId>
+      <version>${scriptlandia.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>gradle</artifactId>
+      <version>${scriptlandia.version}</version>
+      <type>pom</type>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sf.scriptlandia</groupId>
+      <artifactId>ant</artifactId>
+      <version>${scriptlandia.version}</version>
+      <type>pom</type>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>${java.specification.version.level}</source>
+          <target>${java.specification.version.level}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
