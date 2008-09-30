@@ -1,7 +1,7 @@
 # gradle.jlcfg
 
 <set.variables>
-GRADLE_VERSION=0.4
+GRADLE_VERSION=@gradle.version@
 
 <java.system.props>
 gradle.home=%REPOSITORY_HOME%/org/gradle/gradle/%GRADLE_VERSION%

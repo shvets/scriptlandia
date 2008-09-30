@@ -21,6 +21,7 @@
 
     <filterset id="copy.filterset">
       <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
+      <filter token="jruby.version" value="${jruby.version}"/>
     </filterset>
 
     <copy todir="${scriptlandia.home}" overwrite="true">
@@ -31,6 +32,10 @@
         <include name="jgem.*"/>
         <include name="jrails.*"/>
       </fileset>
+    </copy>
+
+    <copy file="language.jlcfg" tofile="${scriptlandia.home}/jruby.jlcfg" overwrite="true">
+      <filterset refid="copy.filterset"/>
     </copy>
   </target>
 

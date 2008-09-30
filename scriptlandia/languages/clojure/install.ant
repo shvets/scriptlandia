@@ -20,6 +20,15 @@
     </condition>
 
     <antcall target="unzip.clojure.lib"/>
+
+    <filterset id="copy.filterset">
+      <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
+      <filter token="clojure.version" value="${clojure.version}"/>
+    </filterset>
+
+    <copy file="language.jlcfg" tofile="${scriptlandia.home}/clojure.jlcfg" overwrite="true">
+      <filterset refid="copy.filterset"/>
+    </copy>
   </target>
 
   <target name="unzip.clojure.lib" unless="clojure.lib.is.unzipped">

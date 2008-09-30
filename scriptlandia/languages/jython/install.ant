@@ -19,6 +19,15 @@
     </condition>
 
     <antcall target="unzip.jython.lib"/>
+
+    <filterset id="copy.filterset">
+      <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
+      <filter token="jython.version" value="${jython.version}"/>
+    </filterset>
+
+    <copy file="language.jlcfg" tofile="${scriptlandia.home}/jython.jlcfg" overwrite="true">
+      <filterset refid="copy.filterset"/>
+    </copy>
   </target>
 
   <target name="unzip.jython.lib" unless="jython.lib.is.unzipped">

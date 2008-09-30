@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<project name="install.ant" default="install" basedir=".">
+
+  <property name="jaskell.version" value="1.0"/>
+
+  <target name="install">
+    <filterset id="copy.filterset">
+      <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
+      <filter token="jaskell.version" value="${jaskell.version}"/>
+    </filterset>
+
+    <copy file="language.jlcfg" tofile="${scriptlandia.home}/jaskell.jlcfg" overwrite="true">
+      <filterset refid="copy.filterset"/>
+    </copy>
+  </target>
+
+</project>

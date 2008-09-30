@@ -1,7 +1,7 @@
 # clojure.jlcfg
 
 <set.variables>
-CLOJURE_VERSION=20080213
+CLOJURE_VERSION=@clojure.version@
 
 <java.system.props>
 classworlds.conf=@scriptlandia.home@/scriptlandia.conf

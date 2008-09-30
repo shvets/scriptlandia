@@ -19,6 +19,15 @@
     </condition>
 
     <antcall target="unzip.fortress.lib"/>
+
+    <filterset id="copy.filterset">
+      <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
+      <filter token="fortress.version" value="${fortress.version}"/>
+    </filterset>
+
+    <copy file="language.jlcfg" tofile="${scriptlandia.home}/fortress.jlcfg" overwrite="true">
+      <filterset refid="copy.filterset"/>
+    </copy>
   </target>
 
   <target name="unzip.fortress.lib" unless="fortress.lib.is.unzipped">

@@ -1,7 +1,7 @@
 # fortress.jlcfg
 
 <set.variables>
-FORTRESS_VERSION=588
+FORTRESS_VERSION=@fortress.version@
 
 <java.system.props>
 classworlds.conf=@scriptlandia.home@/scriptlandia.conf

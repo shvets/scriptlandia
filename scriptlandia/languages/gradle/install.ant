@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<project name="install.ant" default="install" basedir=".">
+  <property name="gradle.version" value="0.4"/>
+
+  <property name="gradle.base" 
+            value="${repository.home}/org/gradle/gradle/${gradle.version}"/>
+
+  <property name="gradle.lib" 
+            value="${gradle.base}/gradle-${gradle.version}.jar"/>
+
+  <target name="install">
+    <condition property="gradle-imports.file.is.unzipped">
+      <and>
+        <available file="${gradle.base}/gradle-imports"/>
+        <istrue value="${gradle.install}"/>
+      </and>
+    </condition>
+
+    <antcall target="unzip.gradle-imports.file"/>
+
+    <filterset id="copy.filterset">
+      <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
+      <filter token="gradle.version" value="${gradle.version}"/>
+    </filterset>
+
+    <copy file="language.jlcfg" tofile="${scriptlandia.home}/gradle.jlcfg" overwrite="true">
+      <filterset refid="copy.filterset"/>
+    </copy>
+  </target>
+
+  <target name="unzip.gradle-imports.file" unless="gradle-imports.file.is.unzipped">
+    <unzip src="${gradle.lib}" dest="${gradle.base}" overwrite="false">
+      <patternset>
+        <include name="gradle-imports"/>
+      </patternset>
+    </unzip>
+  </target>
+
+</project>

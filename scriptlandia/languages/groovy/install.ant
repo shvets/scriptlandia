@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<project name="install.ant" default="install" basedir=".">
+
+  <property name="groovy.version" value="1.5.6"/>
+
+  <target name="install">
+    <filterset id="copy.filterset">
+      <filter token="scriptlandia.home" value="${scriptlandia.home}"/>
+      <filter token="groovy.version" value="${groovy.version}"/>
+    </filterset>
+
+    <copy file="language.jlcfg" tofile="${scriptlandia.home}/groovy.jlcfg" overwrite="true">
+      <filterset refid="copy.filterset"/>
+    </copy>
+  </target>
+
+</project>

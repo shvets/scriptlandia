@@ -4,4 +4,4 @@
 classworlds.conf=@scriptlandia.home@/scriptlandia.conf
 
 <java.library.path>
-%REPOSITORY_HOME%/ptilde/ptilde-lib/0.90
+%REPOSITORY_HOME%/ptilde/ptilde-lib/@ptilde.version@

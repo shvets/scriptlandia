@@ -1,13 +1,13 @@
 # jruby.jlcfg
 
 <set.variables>
-JRUBY_VERSION=1.1.4
+JRUBY_VERSION=@jruby.version@
 
 <java.system.props>
 classworlds.conf=@scriptlandia.home@/scriptlandia.conf
 
 jruby.shell=cmd.exe
 jruby.script=jruby.bat
-jruby.home=%REPOSITORY_HOME/org/jruby/jruby/%JRUBY_VERSION%
+jruby.home=%REPOSITORY_HOME%/org/jruby/jruby/%JRUBY_VERSION%
 
 # jruby optimization: -Xms128m -Xmx512m -Djruby.objectspace.enabled=false -Djruby.jit.enabled=true

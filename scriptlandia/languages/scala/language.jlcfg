@@ -1,7 +1,7 @@
 # scala.jlcfg
 
 <set.variables>
-SCALA_VERSION=2.7.1
+SCALA_VERSION=@scala.version@
 
 <java.bootclasspath.append>
 %REPOSITORY_HOME%/org/scala-lang/scala-library/%SCALA_VERSION%/scala-library-%SCALA_VERSION%.jar
