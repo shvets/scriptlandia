@@ -35,7 +35,7 @@ interface Observable {
 
 // 4. Implementation of observable
 
-class AbstractObservable implements Observable {
+class DefaultObservable implements Observable {
   private List observers = new ArrayList();
 
   public void addObserver(Observer observer) {
@@ -59,14 +59,23 @@ class AbstractObservable implements Observable {
 
 // 5. test
 
+class Tester extends DefaultObservable {
+}
+
 Observer observer1 = new MyObserver("n1");
 Observer observer2 = new MyObserver("n2");
 Observer observer3 = new MyObserver("n3");
 
-Observable observable = new AbstractObservable();
+Observable tester = new Tester();
 
-observable.addObserver(observer1);
-observable.addObserver(observer2);
-observable.addObserver(observer3);
+tester.addObserver(observer1);
+tester.addObserver(observer2);
+tester.addObserver(observer3);
 
-observable.notifyObservers();
+tester.notifyObservers();
+
+System.out.println("----------");
+
+tester.removeObserver(observer3);
+
+tester.notifyObservers();

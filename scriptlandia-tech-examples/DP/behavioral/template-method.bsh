@@ -2,7 +2,7 @@
 
 // Defines the skeleton of an algorithm in an operation, deferring some steps
 // to subclases. Let subclasses redefine certain steps of an algorithm without 
-// chranging the algorithm's structure.
+// changing the algorithm's structure.
 
 // 1. template
 
@@ -19,7 +19,7 @@ public abstract class AlgorithmTemplate {
 
   protected abstract void step1();
 
-  protected  abstract void step2();
+  protected abstract void step2();
 
   protected abstract void step3();
 }

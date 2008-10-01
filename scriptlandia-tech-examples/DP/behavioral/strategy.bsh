@@ -7,44 +7,38 @@
 // 1. strategy type and it's implementations
 
 interface Strategy {
-  void execute();
+  void operation();
 }
 
 class MyStrategy1 implements Strategy {
-  public void execute() {
-    System.out.println("execute1");
+  public void operation() {
+    System.out.println("operation1");
   }
 }
 
 class MyStrategy2 implements Strategy {
-  public void execute() {
-    System.out.println("execute2");
+  public void operation() {
+    System.out.println("operation2");
   }
 }
 
-// 2. context's type and it's implementation
+// 2. strategy context
 
-interface Context {
-  void setStrategy(Strategy strategy);
-   
-  void execute();
-}
-
-class MyContext implements Context {
-  Strategy strategy;
+class StrategyContext {
+  private Strategy strategy;
  
   public void setStrategy(Strategy strategy) {
     this.strategy = strategy;
   }
  
   public void execute() {
-    strategy.execute();
+    strategy.operation();
   }
 }
 
 // 3. test
 
-Context context = new MyContext();
+StrategyContext context = new StrategyContext();
 
 Strategy strategy1 = new MyStrategy1();
 Strategy strategy2 = new MyStrategy2();
