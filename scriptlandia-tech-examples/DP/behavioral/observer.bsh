@@ -25,7 +25,7 @@ class MyObserver implements Observer {
 
 // 3. Observable, serves as a container for observers and takes care of notifying them
 
-interface Observable {
+interface Observable { // or subject
   void addObserver(Observer observer);
   
   void removeObserver(Observer observer);

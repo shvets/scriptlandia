@@ -1,7 +1,9 @@
-# observer.rb
+# observer2.rb
 
 # Define a one-to-many dependency between objects so that when one object
 # changes state, all it's dependents are notified and updated automatically.
+
+require 'observer'
 
 # 1. observer interface
 
@@ -24,25 +26,7 @@ class MyObserver
   end
 end
 
-# 3. Observable, serves as a container for observers and takes care of notifying them
-
-module Observable 
-  def initialize
-    @observers = []
-  end
-
-  def <<(observer) 
-    @observers << observer
-  end
-  
-  def >>(observer) 
-    @observers.delete(observer)
-  end
-
-  def notify_observers() 
-    @observers.clone.each { |observer| observer.update }
-  end
-end
+# 3. Observable is imported from 'observer' module
 
 class Tester
   include Observable
@@ -56,14 +40,18 @@ observer3 = MyObserver.new("n3")
 
 tester = Tester.new
 
-tester << observer1
-tester << observer2
-tester << observer3
+tester.changed
+
+tester.add_observer observer1
+tester.add_observer observer2
+tester.add_observer observer3
 
 tester.notify_observers
 
 puts '----------'
 
-tester >> observer3
+tester.delete_observer observer3
+
+tester.changed
 
 tester.notify_observers
