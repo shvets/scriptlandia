@@ -154,3 +154,7 @@ jruby -S gem install activerecord-jdbcderby-adapter
 16.
 rake db:dataset:dump_fixtures DATASET=demo
 rake db:dataset:load_fixtures DATASET=demo
+
+17.
+gem install capistrano
+cap -f morph_deploy_no_svn.rb morph:deploy
