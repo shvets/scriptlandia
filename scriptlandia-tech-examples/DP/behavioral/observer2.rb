@@ -5,18 +5,9 @@
 
 require 'observer'
 
-# 1. observer interface
+# 1. observer
 
-module Observer
-  def update
-  end
-end
-
-# 2. observer implementation
-
-class MyObserver
-  include Observer 
-
+class Observer
   def initialize(name) 
     @name = name;
   end
@@ -34,9 +25,9 @@ end
 
 # 4. test
 
-observer1 = MyObserver.new("n1")
-observer2 = MyObserver.new("n2")
-observer3 = MyObserver.new("n3")
+observer1 = Observer.new("n1")
+observer2 = Observer.new("n2")
+observer3 = Observer.new("n3")
 
 tester = Tester.new
 

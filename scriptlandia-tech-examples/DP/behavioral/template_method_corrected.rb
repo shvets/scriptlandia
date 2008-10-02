@@ -11,14 +11,9 @@
 # Inheritance is a very strong form of coupling
 # - Especially in a single-inheritance language
 
-# 1. Strategy type and it's implementations
+# 1. Strategy 
 
-class Strategy 
-  def operation()
-  end
-end
-
-class CodeAsStrategy < Strategy
+class StrategyAsCodeBlock
   def initialize &code
     @code = code
   end
@@ -30,7 +25,7 @@ end
 
 # 2. template algorithm; also acts as strategy context
 
-class AlgorithmTemplate  
+module AlgorithmTemplate  
   def initialize
     @steps = [] # strategies
   end
@@ -41,23 +36,27 @@ class AlgorithmTemplate
   end  
 end
 
-class MyAlgorithmTemplate1 < AlgorithmTemplate  
+class MyAlgorithmTemplate1
+  include AlgorithmTemplate
+
   def initialize
     super
 
-    @steps << CodeAsStrategy.new { puts "stategy1: step1" }
-    @steps << CodeAsStrategy.new { puts "stategy1: step2" }
-    @steps << CodeAsStrategy.new { puts "stategy1: step3" } 
+    @steps << StrategyAsCodeBlock.new { puts "stategy1: step1" }
+    @steps << StrategyAsCodeBlock.new { puts "stategy1: step2" }
+    @steps << StrategyAsCodeBlock.new { puts "stategy1: step3" } 
   end
 end
 
-class MyAlgorithmTemplate2 < AlgorithmTemplate  
+class MyAlgorithmTemplate2
+  include AlgorithmTemplate
+
   def initialize
     super
 
-    @steps << CodeAsStrategy.new { puts "stategy2: step1" }
-    @steps << CodeAsStrategy.new { puts "stategy2: step2" }
-    @steps << CodeAsStrategy.new { puts "stategy2: step3" } 
+    @steps << StrategyAsCodeBlock.new { puts "stategy2: step1" }
+    @steps << StrategyAsCodeBlock.new { puts "stategy2: step2" }
+    @steps << StrategyAsCodeBlock.new { puts "stategy2: step3" } 
   end
 end
 

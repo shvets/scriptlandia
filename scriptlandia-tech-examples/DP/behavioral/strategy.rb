@@ -4,24 +4,15 @@
 # make them interchangeable. Let the algorithm vart independently from
 # clients that use it.
 
-# 1. strategy type and it's implementations
-
-module Strategy 
-  def operation
-  end
-end
+# 1. strategy implementations
 
 class MyStrategy1
-  include Strategy
-
   def operation
     puts "operation1"
   end
 end
 
 class MyStrategy2
-  include Strategy
- 
   def operation
      puts "operation2"
   end
