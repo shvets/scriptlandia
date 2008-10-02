@@ -11,7 +11,7 @@
   <description>Scriptlandia Clojure Core Module</description>
 
   <properties>
-    <clojure.version>20080213</clojure.version>
+    <clojure.version>20080916</clojure.version>
   </properties>
 
   <dependencies>
@@ -21,11 +21,11 @@
       <version>${clojure.version}</version>
     </dependency>
 
-    <dependency>
+    <!--dependency>
       <groupId>clojure</groupId>
       <artifactId>boot</artifactId>
       <version>${clojure.version}</version>
-    </dependency>
+    </dependency-->
   </dependencies>
 
 </project>

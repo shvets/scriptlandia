@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<language name="clojure" groupId="clojure" artifactId="clojure" version="20080213">
+<language name="clojure" groupId="clojure" artifactId="clojure" version="20080916">
   <registration mimeType="application/clojure" icon="scriptlandia.ico">
     <extensions>
       <extension>clj</extension>
@@ -8,7 +8,6 @@
 
     <starter>
       <mainClass>clojure.lang.Script</mainClass>
-      <commandLine>${repository.home}/clojure/boot/${clojure.version}/boot.clj</commandLine>
     </starter>
 
     <script name="clj"/>

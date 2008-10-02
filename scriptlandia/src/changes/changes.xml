@@ -412,6 +412,10 @@
       <action dev="Alexander Shvets" type="fix">
         Upgraded to Ivy version 2.0.0-rc1.
       </action>
+
+      <action dev="Alexander Shvets" type="add">
+        Upgraded to Clojure version 20080916.
+      </action>
     </release>
   </body>
 

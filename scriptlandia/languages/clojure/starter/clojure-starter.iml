@@ -611,28 +611,28 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="clojure:clojure:20080213">
+      <library name="clojure:clojure:20080916">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/clojure/clojure/20080213/clojure-20080213.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/clojure/clojure/20080916/clojure-20080916.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/clojure/clojure/20080213/clojure-20080213-javadoc.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/clojure/clojure/20080916/clojure-20080916-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/clojure/clojure/20080213/clojure-20080213-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/clojure/clojure/20080916/clojure-20080916-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="clojure:boot:20080213">
+      <library name="clojure:boot:20080916">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/clojure/boot/20080213/boot-20080213.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/clojure/boot/20080916/boot-20080916.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/clojure/boot/20080213/boot-20080213-javadoc.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/clojure/boot/20080916/boot-20080916-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/clojure/boot/20080213/boot-20080213-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../../../maven-repository/clojure/boot/20080916/boot-20080916-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
