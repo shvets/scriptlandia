@@ -7,7 +7,7 @@
 
 class ExternalIterator
   def initialize(array)
-    @array = array
+    @array = Array.new(array)
     @index = 0
   end
 
@@ -36,11 +36,13 @@ module InternalIterator
   end
 
   def each()
+    copy = Array.new(@array)
+
     i = 0
 
-    while i < @array.length
+    while i < copy.length
       if block_given?
-        yield(@array[i])
+        yield(copy[i])
       end
 
       i += 1
