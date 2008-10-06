@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project relativePaths="false" version="4">
-  <component name="Archetypes.Configuration">
-    <option name="archetypesFileLocation" value="archetypes.xml" />
-    <option name="workingDirectory" value="" />
-  </component>
   <component name="BuildJarProjectSettings">
     <option name="BUILD_JARS_ON_MAKE" value="false" />
   </component>
@@ -20,9 +16,6 @@
     <option name="lastScr" value="" />
     <option name="scrTextFileName" value="" />
     <option name="historyRevisionsNumber" value="4" />
-  </component>
-  <component name="CafeBabe.Configuration">
-    <option name="lastSelectedFile" value="C:/Work/Tools/DbVisualizer-6.0.12/wrapper/classes/com/onseven/dbvis/wrapper/OracleLobHandler.class" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="ClassPatternConfiguration">
@@ -58,166 +51,6 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
     <option name="REVERSE_PATCH" value="false" />
-  </component>
-  <component name="DBNavigator.Project.CodeCompletionSettings">
-    <filters>
-      <basic-filter>
-        <filter-element type="RESERVED_WORD" id="keyword" selected="true" />
-        <filter-element type="RESERVED_WORD" id="function" selected="false" />
-        <filter-element type="RESERVED_WORD" id="parameter" selected="false" />
-        <filter-element type="OBJECT" id="schema" selected="true" />
-        <filter-element type="OBJECT" id="user" selected="true" />
-        <user-schema>
-          <filter-element type="OBJECT" id="table" selected="true" />
-          <filter-element type="OBJECT" id="view" selected="true" />
-          <filter-element type="OBJECT" id="materialized_view" selected="true" />
-          <filter-element type="OBJECT" id="index" selected="true" />
-          <filter-element type="OBJECT" id="constraint" selected="true" />
-          <filter-element type="OBJECT" id="trigger" selected="true" />
-          <filter-element type="OBJECT" id="synonym" selected="false" />
-          <filter-element type="OBJECT" id="sequence" selected="true" />
-          <filter-element type="OBJECT" id="procedure" selected="true" />
-          <filter-element type="OBJECT" id="function" selected="true" />
-          <filter-element type="OBJECT" id="package" selected="true" />
-          <filter-element type="OBJECT" id="type" selected="true" />
-          <filter-element type="OBJECT" id="dimension" selected="true" />
-          <filter-element type="OBJECT" id="cluster" selected="true" />
-          <filter-element type="OBJECT" id="dblink" selected="true" />
-        </user-schema>
-        <public-schema>
-          <filter-element type="OBJECT" id="table" selected="false" />
-          <filter-element type="OBJECT" id="view" selected="false" />
-          <filter-element type="OBJECT" id="materialized_view" selected="false" />
-          <filter-element type="OBJECT" id="index" selected="false" />
-          <filter-element type="OBJECT" id="constraint" selected="false" />
-          <filter-element type="OBJECT" id="trigger" selected="false" />
-          <filter-element type="OBJECT" id="synonym" selected="false" />
-          <filter-element type="OBJECT" id="sequence" selected="false" />
-          <filter-element type="OBJECT" id="procedure" selected="false" />
-          <filter-element type="OBJECT" id="function" selected="false" />
-          <filter-element type="OBJECT" id="package" selected="false" />
-          <filter-element type="OBJECT" id="type" selected="false" />
-          <filter-element type="OBJECT" id="dimension" selected="false" />
-          <filter-element type="OBJECT" id="cluster" selected="false" />
-          <filter-element type="OBJECT" id="dblink" selected="false" />
-        </public-schema>
-        <any-schema>
-          <filter-element type="OBJECT" id="table" selected="true" />
-          <filter-element type="OBJECT" id="view" selected="true" />
-          <filter-element type="OBJECT" id="materialized_view" selected="true" />
-          <filter-element type="OBJECT" id="index" selected="true" />
-          <filter-element type="OBJECT" id="constraint" selected="true" />
-          <filter-element type="OBJECT" id="trigger" selected="true" />
-          <filter-element type="OBJECT" id="synonym" selected="true" />
-          <filter-element type="OBJECT" id="sequence" selected="true" />
-          <filter-element type="OBJECT" id="procedure" selected="true" />
-          <filter-element type="OBJECT" id="function" selected="true" />
-          <filter-element type="OBJECT" id="package" selected="true" />
-          <filter-element type="OBJECT" id="type" selected="true" />
-          <filter-element type="OBJECT" id="dimension" selected="true" />
-          <filter-element type="OBJECT" id="cluster" selected="true" />
-          <filter-element type="OBJECT" id="dblink" selected="true" />
-        </any-schema>
-      </basic-filter>
-      <smart-filter>
-        <filter-element type="RESERVED_WORD" id="keyword" selected="true" />
-        <filter-element type="RESERVED_WORD" id="function" selected="true" />
-        <filter-element type="RESERVED_WORD" id="parameter" selected="true" />
-        <filter-element type="OBJECT" id="schema" selected="true" />
-        <filter-element type="OBJECT" id="user" selected="true" />
-        <user-schema>
-          <filter-element type="OBJECT" id="table" selected="true" />
-          <filter-element type="OBJECT" id="view" selected="true" />
-          <filter-element type="OBJECT" id="materialized_view" selected="true" />
-          <filter-element type="OBJECT" id="index" selected="true" />
-          <filter-element type="OBJECT" id="constraint" selected="true" />
-          <filter-element type="OBJECT" id="trigger" selected="true" />
-          <filter-element type="OBJECT" id="synonym" selected="true" />
-          <filter-element type="OBJECT" id="sequence" selected="true" />
-          <filter-element type="OBJECT" id="procedure" selected="true" />
-          <filter-element type="OBJECT" id="function" selected="true" />
-          <filter-element type="OBJECT" id="package" selected="true" />
-          <filter-element type="OBJECT" id="type" selected="true" />
-          <filter-element type="OBJECT" id="dimension" selected="true" />
-          <filter-element type="OBJECT" id="cluster" selected="true" />
-          <filter-element type="OBJECT" id="dblink" selected="true" />
-        </user-schema>
-        <public-schema>
-          <filter-element type="OBJECT" id="table" selected="true" />
-          <filter-element type="OBJECT" id="view" selected="true" />
-          <filter-element type="OBJECT" id="materialized_view" selected="true" />
-          <filter-element type="OBJECT" id="index" selected="true" />
-          <filter-element type="OBJECT" id="constraint" selected="true" />
-          <filter-element type="OBJECT" id="trigger" selected="true" />
-          <filter-element type="OBJECT" id="synonym" selected="true" />
-          <filter-element type="OBJECT" id="sequence" selected="true" />
-          <filter-element type="OBJECT" id="procedure" selected="true" />
-          <filter-element type="OBJECT" id="function" selected="true" />
-          <filter-element type="OBJECT" id="package" selected="true" />
-          <filter-element type="OBJECT" id="type" selected="true" />
-          <filter-element type="OBJECT" id="dimension" selected="true" />
-          <filter-element type="OBJECT" id="cluster" selected="true" />
-          <filter-element type="OBJECT" id="dblink" selected="true" />
-        </public-schema>
-        <any-schema>
-          <filter-element type="OBJECT" id="table" selected="true" />
-          <filter-element type="OBJECT" id="view" selected="true" />
-          <filter-element type="OBJECT" id="materialized_view" selected="true" />
-          <filter-element type="OBJECT" id="index" selected="true" />
-          <filter-element type="OBJECT" id="constraint" selected="true" />
-          <filter-element type="OBJECT" id="trigger" selected="true" />
-          <filter-element type="OBJECT" id="synonym" selected="true" />
-          <filter-element type="OBJECT" id="sequence" selected="true" />
-          <filter-element type="OBJECT" id="procedure" selected="true" />
-          <filter-element type="OBJECT" id="function" selected="true" />
-          <filter-element type="OBJECT" id="package" selected="true" />
-          <filter-element type="OBJECT" id="type" selected="true" />
-          <filter-element type="OBJECT" id="dimension" selected="true" />
-          <filter-element type="OBJECT" id="cluster" selected="true" />
-          <filter-element type="OBJECT" id="dblink" selected="true" />
-        </any-schema>
-      </smart-filter>
-    </filters>
-    <sorting enabled="false">
-      <sorting-element type="RESERVED_WORD" id="keyword" />
-      <sorting-element type="OBJECT" id="column" />
-      <sorting-element type="OBJECT" id="table" />
-      <sorting-element type="OBJECT" id="view" />
-      <sorting-element type="OBJECT" id="materialized_view" />
-      <sorting-element type="OBJECT" id="index" />
-      <sorting-element type="OBJECT" id="constraint" />
-      <sorting-element type="OBJECT" id="trigger" />
-      <sorting-element type="OBJECT" id="synonym" />
-      <sorting-element type="OBJECT" id="sequence" />
-      <sorting-element type="OBJECT" id="procedure" />
-      <sorting-element type="OBJECT" id="function" />
-      <sorting-element type="OBJECT" id="package" />
-      <sorting-element type="OBJECT" id="type" />
-      <sorting-element type="OBJECT" id="dimension" />
-      <sorting-element type="OBJECT" id="cluster" />
-      <sorting-element type="OBJECT" id="dblink" />
-      <sorting-element type="OBJECT" id="schema" />
-      <sorting-element type="RESERVED_WORD" id="function" />
-      <sorting-element type="RESERVED_WORD" id="parameter" />
-    </sorting>
-  </component>
-  <component name="DBNavigator.Project.ConnectionManager">
-    <connections />
-  </component>
-  <component name="DBNavigator.Project.DatabaseBrowserManager">
-    <autoscroll-to-editor value="false" />
-    <autoscroll-from-editor value="false" />
-  </component>
-  <component name="DBNavigator.Project.DatasetEditorSettings">
-    <autopopup-text-editor active="true" active-if-empty="false" data-length-threshold="100" delay="1000" />
-    <fetch-block-size value="100" />
-    <trim-whitespaces value="true" />
-    <convert-empty-strings-to-null value="true" />
-    <prompt-filter-dialog value="true" />
-    <default-filter-type value="BASIC" />
-  </component>
-  <component name="DBNavigator.Project.GenericSettings">
-    <settings />
   </component>
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
@@ -263,6 +96,11 @@
   </component>
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="DynamicManagerImpl">
+    <option name="containingClasses">
+      <map />
+    </option>
   </component>
   <component name="EclipseCompilerSettings">
     <option name="DEBUGGING_INFO" value="true" />
@@ -495,13 +333,10 @@
       </item>
     </group>
   </component>
-  <component name="PlugProxyProjectComponent">
-    <option name="host" value="" />
-    <option name="hostPort" value="" />
-    <option name="localPort" value="" />
-    <option name="hexDump" />
+  <component name="ProjectFileVersion" converted="true">
+    <converter id="javaee-modules" />
+    <converter id="ror-modules" />
   </component>
-  <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
@@ -545,70 +380,6 @@
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
-  <component name="RailsProjectViewPane">
-    <subPane>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.module.view.nodes.RailsProjectRootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="GroomingSalon" />
-          <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.module.view.nodes.RailsProjectModuleNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.module.view.nodes.RailsProjectRootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="GroomingSalon" />
-          <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.module.view.nodes.RailsProjectModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Controllers" />
-          <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.module.view.nodes.folders.RailsControllersFolderNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.module.view.nodes.RailsProjectRootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="GroomingSalon" />
-          <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.module.view.nodes.RailsProjectModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Controllers" />
-          <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.module.view.nodes.folders.RailsControllersFolderNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="ApplicationController" />
-          <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.module.view.nodes.ClassNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.module.view.nodes.RailsProjectRootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="GroomingSalon" />
-          <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.module.view.nodes.RailsProjectModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Application" />
-          <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.module.view.nodes.folders.RailsApplicationFolderNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="ApplicationController" />
-          <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.module.view.nodes.ControllerClassNode" />
-        </PATH_ELEMENT>
-      </PATH>
-    </subPane>
-  </component>
   <component name="ResourceManagerContainer">
     <option name="myResourceBundles">
       <value>
@@ -628,6 +399,13 @@
     <RUBY_DOC NAME="NUMBER" VALUE="0" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
@@ -671,13 +449,6 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
     </configuration>
     <list size="0" />
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">

@@ -14,10 +14,10 @@ ActiveRecord::Schema.define(:version => 14) do
   create_table "appointments", :force => true do |t|
     t.date     "appointment_date"
     t.time     "appointment_time"
-    t.float    "price",                          :default => 0.0
-    t.integer  "pet_owner_id",     :limit => 11
-    t.integer  "groomer_id",       :limit => 11
-    t.integer  "pet_id",           :limit => 11
+    t.float    "price",            :default => 0.0
+    t.integer  "pet_owner_id"
+    t.integer  "groomer_id"
+    t.integer  "pet_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(:version => 14) do
     t.string   "host"
     t.string   "path"
     t.string   "referer"
-    t.integer  "count",      :limit => 11, :default => 0
+    t.integer  "count",      :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(:version => 14) do
     t.string   "last_name"
     t.text     "notes"
     t.string   "address"
-    t.integer  "company_id", :limit => 11
+    t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(:version => 14) do
   create_table "pet_images", :force => true do |t|
     t.string  "filename"
     t.string  "content_type"
-    t.integer "pet_id",       :limit => 11
+    t.integer "pet_id"
   end
 
   create_table "pet_owners", :force => true do |t|
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(:version => 14) do
     t.string   "work_phone"
     t.string   "cell_phone"
     t.string   "salutation"
-    t.integer  "company_id", :limit => 11
+    t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(:version => 14) do
     t.string   "clip1"
     t.string   "clip2"
     t.string   "clip3"
-    t.integer  "pet_owner_id",         :limit => 11
+    t.integer  "pet_owner_id"
     t.string   "alive"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -135,7 +135,7 @@ ActiveRecord::Schema.define(:version => 14) do
     t.string   "password_hash"
     t.string   "email"
     t.string   "cookie_hash"
-    t.integer  "company_id",    :limit => 11
+    t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

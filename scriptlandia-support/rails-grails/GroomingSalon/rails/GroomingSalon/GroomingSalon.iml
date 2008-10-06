@@ -3,6 +3,14 @@
   <component name="DBNavigator.Module.ConnectionManager">
     <connections />
   </component>
+  <component name="FacetManager">
+    <facet type="RailsFacetType" name="Rails">
+      <configuration>
+        <RAILS_FACET_CONFIG_ID NAME="SHOULD_USE_RSPEC_PLUGIN" VALUE="false" />
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_FACET_APPLICATION_ROOT" VALUE="$MODULE_DIR$" />
+      </configuration>
+    </facet>
+  </component>
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
@@ -24,12 +32,11 @@
   </component>
   <component name="RailsViewFoldersManager">
     <USER_URLS url="file://$MODULE_DIR$/lib" />
+    <USER_URLS url="file://$MODULE_DIR$/public/stylesheets" />
     <USER_URLS url="file://$MODULE_DIR$/vendor/plugins" />
     <USER_URLS url="file://$MODULE_DIR$/public/javascripts" />
-    <USER_URLS url="file://$MODULE_DIR$/vendor/rails" />
     <USER_URLS url="file://$MODULE_DIR$/db" />
-    <USER_URLS url="file://$MODULE_DIR$/public/stylesheets" />
-    <USER_URLS url="file://$MODULE_DIR$/spec" />
+    <USER_URLS url="file://$MODULE_DIR$/vendor/rails" />
   </component>
 </module>
 
