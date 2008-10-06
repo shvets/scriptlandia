@@ -36,19 +36,23 @@ commands.each {|command| command.execute}
 puts "-------"
 
 class Test
-  def operation(command=nil)
-    if block_given?
-      yield
-    else
-      command.execute if command != nil
-    end
+  def initialize(command=nil, &code)
+    @command = command
+    @code = code
+  end
+
+  def operation()
+    @command.execute if @command != nil
+    @code.call if @code != nil
   end
 end
 
-test = Test.new
+test1 = Test.new(MyCommand1.new)
 
-test.operation(MyCommand1.new)
+test1.operation()
 
-test.operation {
+test2 = Test.new() {
   puts "hello!"
 }
+
+test2.operation()
