@@ -32,3 +32,23 @@ end
 commands = [ MyCommand1.new, MyCommand2.new, MyCommand3.new, MyCommand2.new, MyCommand1.new ]
 
 commands.each {|command| command.execute}
+
+puts "-------"
+
+class Test
+  def operation(command=nil)
+    if block_given?
+      yield
+    else
+      command.execute if command != nil
+    end
+  end
+end
+
+test = Test.new
+
+test.operation(MyCommand1.new)
+
+test.operation {
+  puts "hello!"
+}
