@@ -5,26 +5,43 @@
 # the first time it is needed.
 
 class Item
-  def self.item
-    if (@instance == nil)
+  def operation
+    puts "executing operation..."
+  end
+end
+
+class ItemProxy < Item
+  def initialize(&creation_block)
+    @creation_block = creation_block
+  end
+
+  def operation
+    @subject.operation
+  end
+
+  def self.subject
+    if (@subject == nil)
       puts "Creating new instance"
     else
       puts "Using existing instance"
     end
 
-    instance
+    @subject || (@subject = Item.new)
   end
-
-  def self.instance
-    @instance || (@instance = Item.new)
-  end
-
 end
+
 
 # test
 
-item1 = Item.item
+item1 = ItemProxy.subject
 
-item2 = Item.item
+item2 = ItemProxy.subject
 
-item3 = Item.item
+item3 = ItemProxy.subject
+
+item4 = ItemProxy.new { Item.new }.class.subject
+
+item1.operation
+item2.operation
+item3.operation
+item4.operation
