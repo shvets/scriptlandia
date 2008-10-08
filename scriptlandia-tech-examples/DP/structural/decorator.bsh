@@ -5,33 +5,33 @@
 
 // 1. type interface
 
-interface Item {
-  void preform();
+interface Component {
+  void operation();
 }
 
 // 2. type implementation
 
-class MyItem implements Item {
-  public void perform() {
-    System.out.println("my item");
+class ConcreteComponent implements Component {
+  public void operation() {
+    System.out.println("my component");
   }
 }
 
 // 3. traditional solution based on inheritance
 
-class TraditionalItem extends MyItem {
+class TraditionalComponent extends ConcreteComponent {
   public void preDecoration() {
-    System.out.println("my item pre decoration");
+    System.out.println("my component pre decoration");
   }
 
   public void postDecoration() {
-    System.out.println("my item post decoration");
+    System.out.println("my component post decoration");
   }
 
-  public void perform() {
+  public void operation() {
     preDecoration();
 
-    super.perform();
+    super.operation();
 
     postDecoration();
   }
@@ -39,25 +39,25 @@ class TraditionalItem extends MyItem {
 
 // 4. solution based on decorator
 
-class Decorator implements Item {
-  private Item item;
+class Decorator implements Component {
+  private Component component;
 
-  public Decorator(Item item) {
-    this.item = item;
+  public Decorator(Component component) {
+    this.component = component;
   }
 
   public void preDecoration() {
-    System.out.println("my item pre decoration");
+    System.out.println("my component pre decoration");
   }
 
   public void postDecoration() {
-    System.out.println("my item post decoration");
-  }
+    System.out.println("my component post decoration");
+  }                                   
 
-  public void perform() {
+  public void operation() {
     preDecoration();
 
-    item.perform();
+    component.operation();
 
     postDecoration();
   }
@@ -65,8 +65,8 @@ class Decorator implements Item {
 
 // 5. test
 
-Item item1 = new TraditionalItem();
-Item item2 = new Decorator(new MyItem());
+Component component1 = new TraditionalComponent();
+Component component2 = new Decorator(new ConcreteComponent());
 
-item1.perform();
-item2.perform();
+component1.operation();
+component2.operation();
