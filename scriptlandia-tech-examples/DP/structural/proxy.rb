@@ -30,9 +30,29 @@ class SubjectProxy < Subject
   end
 end
 
+class DynamicSubjectProxy 
+
+  def initialize(subject)
+    @subject = subject
+  end
+
+#  def process
+#    @subject.process
+#  end
+  def method_missing(name, *args)
+    puts("Delegating #{name} message to subject.")
+  
+    @subject.send(name, *args)
+  end
+end
+
 
 # 4. test 
 
 proxy = SubjectProxy.new(MySubject.new)
 
 proxy.process
+
+dynamic_proxy = DynamicSubjectProxy.new(MySubject.new)
+
+dynamic_proxy.process

@@ -22,7 +22,7 @@ final class MySingleton implements Singleton {
 
 }
 
-// 2. Class that uses the singleton object.
+// 2. Class that uses the singleton object (we should be able to set it up from outside).
 
 class SingletonUser {
   private Singleton singleton;
@@ -64,5 +64,3 @@ public class SingletonTest {
 SingletonTest tester = new SingletonTest();
 
 tester.testSingleton();
-
-

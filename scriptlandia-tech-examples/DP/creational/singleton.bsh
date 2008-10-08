@@ -5,18 +5,16 @@
 // Note: try to avoid singleton (see singleton-corrected.bsh). 
 // Major question: how to test/mock the singleton?
 
-final class MySingleton {
-  private static MySingleton instance = new MySingleton();
+/*final */class MySingleton {
+  private /*static*/ MySingleton instance = new MySingleton();
   
   private MySingleton() {}
 
-  public static MySingleton getInstance() {
+  public /*static*/ MySingleton getInstance() {
     return instance;
   }
 
 }
 
-MySingleton singleton = mySingleton.getInstance();
-
-System.out.println("singleton: " + singleton);
+System.out.println("singleton: " + MySingleton.getInstance());
 System.out.println("singleton: " + MySingleton.getInstance());

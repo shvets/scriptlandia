@@ -1,4 +1,4 @@
-# decorator.bsh
+# decorator.rb
 
 # Attaches additional responsibilities to an object dynamically. Provides
 # a flexible alternative to subclassing for extending functionality.
@@ -78,15 +78,31 @@ end
 
 # 6. test
 
-component1 = TraditionalComponent.new;
+component1 = TraditionalComponent.new
 component1.operation
 puts '-------'
 
-component2 = Decorator.new(ConcreteComponent.new);
+component2 = Decorator.new(ConcreteComponent.new)
 component2.operation
 puts '-------'
 
-component3 = ForwardableDecorator.new(ConcreteComponent.new);
+component3 = ForwardableDecorator.new(ConcreteComponent.new)
 component3.operation
 puts '-------'
 
+component4 = ConcreteComponent.new
+
+class << component4
+  alias old_operation operation
+
+  def operation
+    puts "my component pre decoration"
+
+    old_operation
+
+    puts "my component post decoration"
+  end
+end
+
+component4.operation
+puts '-------'
