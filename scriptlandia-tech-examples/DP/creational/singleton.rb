@@ -6,10 +6,16 @@
 # Major question: how to test/mock the singleton?
 
 class MySingleton
+  @@name = nil
+
   def self.instance
     @instance || (@instance = MySingleton.new)
 
-    @name = Time.now.to_s
+    @@name || (@@name = Time.now.to_s)
+  end
+
+  def to_s
+    @@name
   end
 end
 
