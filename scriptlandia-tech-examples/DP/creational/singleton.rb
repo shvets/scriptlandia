@@ -5,20 +5,34 @@
 # Note: try to avoid singleton (see singleton-corrected.rb). 
 # Major question: how to test/mock the singleton?
 
-class MySingleton
-  @@name = nil
+class MySingleton1
+  @@instance = nil
+ 
+  def self.instance()
+    if @@instance == nil
+      public_class_method :new # enables instance creation for this class
 
-  def self.instance
-    @instance || (@instance = MySingleton.new)
+      @@instance = new() unless @@instance
 
-    @@name || (@@name = Time.now.to_s)
+      private_class_method :new # disable instance creation for this class
+    end
+
+    @@instance
   end
 
-  def to_s
-    @@name
-  end
+  private_class_method :new # disable instance creation for this class
 end
 
-puts "singleton: " + MySingleton.instance.to_s
+require 'singleton'
 
-puts "singleton: " + MySingleton.instance.to_s
+class MySingleton2
+  include Singleton
+end
+
+# MySingleton1.new # error
+
+puts "singleton1: " + MySingleton1.instance.to_s
+puts "singleton1: " + MySingleton1.instance.to_s
+
+puts "singleton2: " + MySingleton2.instance.to_s
+puts "singleton2: " + MySingleton2.instance.to_s
