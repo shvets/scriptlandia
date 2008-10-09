@@ -23,6 +23,8 @@ class Product implements Prototype {
   }
 }
 
+// test
+
 Product originalProduct = new Product();
 
 Product clonedProduct = originalProduct.makePrototype();

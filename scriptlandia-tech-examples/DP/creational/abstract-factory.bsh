@@ -1,4 +1,4 @@
-// abstract-factory.jsp
+// abstract-factory.bsh
 
 // Provides an interface for creationg families of related or dependent objects without specifying
 // their concrete class.

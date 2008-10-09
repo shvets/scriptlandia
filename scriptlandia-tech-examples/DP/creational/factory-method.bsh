@@ -1,4 +1,4 @@
-// factory-method.jsp
+// factory-method.bsh
 
 // Defines an interface for creating an object, but let subclasses decide which
 // class to instantiate. Lets a class to defer instantiation to sublcasses.
@@ -16,6 +16,7 @@ class Line implements Shape {
     System.out.println("line"); 
   }
 }
+
 class Square implements Shape {
   public void draw() {
     System.out.println("square");
