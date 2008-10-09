@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>axis2-test</groupId>
+  <artifactId>axis2-test</artifactId>
+  <version>1.0.0</version>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+           <source>1.5</source>
+           <target>1.5</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>axistools-maven-plugin</artifactId>
+        <version>1.0</version>
+
+        <executions>
+          <execution>
+            <id>ax-ws-autogen</id>
+            <phase>generate-sources</phase>
+
+            <goals>
+              <goal>wsdl2java</goal>
+            </goals>
+
+            <configuration>
+              <sourceDirectory>src/main/wsdl</sourceDirectory>
+  
+              <wsdlFiles>
+                <wsdlFile>hello_world.wsdl</wsdlFile>
+              </wsdlFiles>
+
+              <packageSpace>com.mycompany.servicename</packageSpace>
+              <testCases>false</testCases>
+              <serverSide>false</serverSide>
+              <subPackageByFileName>false</subPackageByFileName>
+              <outputDirectory>target/src/main/java</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
