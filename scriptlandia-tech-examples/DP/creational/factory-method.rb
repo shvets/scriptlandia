@@ -38,12 +38,12 @@ class ShapeCreator
     Square.new
   end
 
-  # or universal factory method
+  # or universal factory method (parameterized factory method)
 
   def create_shape(type) 
-    if(type == 1) 
+    if(type == :line) 
       Line.new
-    elsif(type== 2) 
+    elsif(type== :square) 
       Square.new
     end
   end
@@ -54,10 +54,11 @@ end
 
 shape_creator = ShapeCreator.new
 
-shape1 = shape_creator.create_line();
-shape2 = shape_creator.create_square();
+shape1 = shape_creator.create_line
+shape2 = shape_creator.create_square
+shape3 = shape_creator.create_shape :line
 
-shape1.draw();
-shape2.draw();
-
+shape1.draw
+shape2.draw
+shape3.draw
 
