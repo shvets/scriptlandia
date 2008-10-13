@@ -1,0 +1,112 @@
+// visitor.bsh
+
+// Represents an operation to be performed on the elements of an object structure.
+// Lets you define a new operation without changing the classes of the elements on which
+// it operates.
+
+// 1. type and visitor interfaces
+
+interface Visitable {
+  void accept(Visitor visitor);
+}
+
+interface Visitor {
+  void visit(MyVisitable1 visitable);
+  void visit(MyVisitable2 visitable);
+  void visit(MyVisitable3 visitable);
+
+  void visit(MyCompoundVisitable visitable);
+}
+
+// 2. type implementation woth visitable behavior
+
+// basic parts
+
+class MyVisitable1 implements Visitable {
+  public void accept(Visitor visitor) {
+    visitor.visit(this);
+  }
+}
+
+class MyVisitable2 implements Visitable {
+  public void accept(Visitor visitor) {
+    visitor.visit(this);
+  }
+}
+
+class MyVisitable3 implements Visitable {
+  public void accept(Visitor visitor) {
+    visitor.visit(this);
+  }
+}
+
+// compound
+
+class MyCompoundVisitable implements Visitable {
+  private Visitable visitable1 = new MyVisitable1();
+  private Visitable visitable2 = new MyVisitable2();
+
+  private Visitable[] visitables3 = new MyVisitable3[] {
+    new MyVisitable3(), new MyVisitable3(), new MyVisitable3()
+  };
+
+  public void accept(Visitor visitor) {
+    visitor.visit(this);
+
+    // takes care of components
+    visitable1.accept(visitor);
+    visitable2.accept(visitor);
+
+    for(MyVisitable3 visitable: visitables3) {
+      visitable.accept(visitor);
+    }
+  }     
+}
+
+// 3. visitor implementations
+
+class MyVisitor1 implements Visitor {
+  public void visit(MyVisitable1 visitable) {
+    System.out.println("visitor1: visiting my visitable 1");
+  }
+
+  public void visit(MyVisitable2 visitable) {
+    System.out.println("visitor1: visiting my visible 2");
+  }
+
+  public void visit(MyVisitable3 visitable) {
+    System.out.println("visitor1: visiting my visitable 3");
+  }
+
+  public void visit(MyCompoundVisitable visitable) {
+    System.out.println("visitor1: visiting my compound visitable");
+  }
+}
+
+class MyVisitor2 implements Visitor {
+  public void visit(MyVisitable1 visitable) {
+    System.out.println("visitor2: visiting my visitable 1");
+  }
+
+  public void visit(MyVisitable2 visitable) {
+    System.out.println("visitor2: visiting my visitable 2");
+  }
+
+  public void visit(MyVisitable3 visitable) {
+    System.out.println("visitor2: visiting my visitable 3");
+  }
+
+  public void visit(MyCompoundVisitable visitable) {
+    System.out.println("visitor2: visiting my compound visitable");
+  }
+}
+
+// 4. test
+
+Visitable visitable = new MyCompoundVisitable();
+
+Visitor visitor1 = new MyVisitor1();
+Visitor visitor2 = new MyVisitor2();
+
+visitable.accept(visitor1);
+visitable.accept(visitor2);

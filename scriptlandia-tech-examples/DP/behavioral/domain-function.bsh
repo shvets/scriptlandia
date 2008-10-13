@@ -108,13 +108,13 @@ class VacationPlanner extends EmployeeDomainFunction {
 VacationPlanner vacationPlanner = new VacationPlanner();
 
 Employee[] employees = new Employee[] {
-  new Contractor("c1"),
-  new Contractor("c2"),
-  new Executive("e1"),
-  new Manager("m1"),
-  new Secretary("s1"),
-  new Engineer("e1"),
-  new Engineer("e2")
+  new Contractor("contractor 1"),
+  new Contractor("contractor 2"),
+  new Executive("executive 1"),
+  new Manager("manager 1"),
+  new Secretary("secretary 1"),
+  new Engineer("engineer 1"),
+  new Engineer("engineer 2")
 };
 
 System.out.println("employees: " + Arrays.asList(employees));
