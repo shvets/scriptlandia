@@ -30,20 +30,18 @@ class NamesInterpreter
   def interpret(expression)
     result = ''
 
-    words = expression.chomp.scan(/\w[-\w']+/) # extract each word
+    tokens = expression.chomp.scan(/\(|\)|[\w\.\*]+/) # extract each word
 
     i = 0
-    while i <= words.size do
-      word = words[i]
+    while i <= tokens.size do
+      token = tokens[i]
 
-      if(word != nil)
-        puts "word: " + word
-
-        if (word == 'show')
-          word = words[i+1]
+      if(token != nil)
+        if (token == 'show')
+          token = tokens[i+1]
           i = i + 1
 
-          if (word == 'names')
+          if (token == 'names')
             result = result + @context.names.join(', ')
           else
             result = result + "error!"
