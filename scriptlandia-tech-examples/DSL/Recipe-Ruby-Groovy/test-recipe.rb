@@ -42,7 +42,7 @@ end
 
 class Recipe
   def initialize(name)
-    @name = name;
+    @name = name
     @ingredients = []
   end
   
