@@ -1,180 +1,192 @@
-// data-access-object.bsh
+# data-access-object.bsh
 
-// 1.
+# 1.
 
-interface TransferObject {
-  Object getData(String key);
+class TransferObject
+  def data(key)
+  end
 
-  void setData(String key, Object value);
-}
+  def set_data(key, value)
+  end
+end
 
-interface TransferObjectDAO {
-  void setDataSource(DataSource dataSource);
+class TransferObjectDAO
+  def set_data_source(dataSource)
+  end
 
-  int create();
-  boolean update(TransferObject to);
-  boolean delete(TransferObject to);
-  TransferObject find(int id);
+  def create
+  end
 
-  List getAll();
-}
+  def update(transfer_object)
+  end
 
-interface DataSource {
-  int generateNextId();
+  def delete(transfer_object)
+  end
 
-  Object executeCommand(String command, Object param);
-}
+  def find(id)
+  end
 
-interface TransferObjectDAOFactory {
-  TransferObjectDAO getTransferObjectDAO();
-}
+  def find_all
+  end
+end
 
-// 2.
+class DataSource
+  def generate_next_id
+  end
 
-class MyTransferObject implements TransferObject {
-  private Map data = new HashMap();
-  
-  public Object getData(String key) {
-    return data.get(key);
-  }
+  def execute_command(command, param)
+  end
+end
 
-  public void setData(String key, Object value) {
-    data.put(key, value);
-  }
+class TransferObjectDAOFactory
+  def transfer_object_dao
+  end
+end
 
-  public String toString() {
-    return data.toString();
-  }
-}
+# 2.
 
-class MyDataSource implements DataSource {
-  private int generatedId = 0;
+class MyTransferObject < TransferObject
+  def initialize
+    @data = {}
+  end
 
-  private List objects = new ArrayList();
-  
-  public int generateNextId() {
-    return generatedId++;
-  }
+  def data(key)
+    @data[key]
+  end
 
-  public Object executeCommand(String command, Object param) {
-    Object result = null;
+  def set_data(key, value)
+    @data[key] = value
+  end
 
-    if(command.equals("insert")) {
-      result = new Boolean(objects.add(param));
-    }
-    else if(command.equals("update")) {
-      int index = objects.indexOf(param);
-      objects.set(index, param);
+  def to_s
+    @data.to_s
+  end
+end
 
-      result = new Boolean(true);
-    }
-    else if(command.equals("delete")) {
-      result = new Boolean(objects.remove(param));  
-    }
-    else if(command.equals("find")) {
-      int id = ((Integer)param).intValue();
+class MyDataSource < DataSource
+  def initialize
+    @generated_id = 0
+
+    @objects = []
+  end
+
+  def generate_next_id
+    @generated_id = @generated_id + 1
+  end
+
+  def execute_command(command, param=nil)
+    result = nil
+
+    if(command == :insert)
+      result = (@objects << param)
+    elsif(command == :update)
+      index = @objects.index(param)
+      @objects.delete_at(index)
+      @objects.insert(index, param)
+
+      result = true
+    elsif(command == :delete)
+      result = (@objects.delete(param))  
+    elsif(command == :find)
+      id = param
       
-      for(int i=0; i < objects.size() && result == null; i++) {
-        TransferObject to = (TransferObject)objects.get(i);
+      @objects.each do |transfer_object|
+        current_id = transfer_object.data("id")
 
-        int currentId = ((Integer)to.getData("id")).intValue();
+        if(current_id == id)
+          result = transfer_object
 
-        if(currentId == id) {
-          result = to;
-        }
-      }
-    }
-    else if(command.equals("getAll")) {
-      result = objects;
-    }
+          break
+        end
+      end
+    elsif(command == :find_all)
+      result = @objects
+    end
 
-    return result;
-  }
-}
+    result
+  end
+end
 
-class MyTransferObjectDAO implements TransferObjectDAO {
-  private DataSource dataSource;
+class MyTransferObjectDAO < TransferObjectDAO
 
-  public void setDataSource(DataSource dataSource) {
-    this.dataSource = dataSource;
-  }
+  def data_source=(data_source)
+    @data_source = data_source
+  end
 
-  public int create() {
-    TransferObject to = new MyTransferObject();
+  def create
+    transfer_object = MyTransferObject.new
 
-    int id = dataSource.generateNextId();
+    id = @data_source.generate_next_id
 
-    to.setData("id", new Integer(id));
+    transfer_object.set_data("id", id)
 
-    dataSource.executeCommand("insert", to);
+    @data_source.execute_command(:insert, transfer_object)
 
-    return id;
-  }
+    id
+  end
 
-  public boolean update(TransferObject to) {
-    return ((Boolean)dataSource.executeCommand("update", to)).booleanValue();
-  }
+  def update(transfer_object)
+    @data_source.execute_command(:update, transfer_object)
+  end
   
-  public boolean delete(TransferObject to) {
-    return ((Boolean)dataSource.executeCommand("delete", to)).booleanValue();
-  }
+  def delete(transfer_object)
+    @data_source.execute_command(:delete, transfer_object)
+  end
 
-  public TransferObject find(int id) {
-    return (TransferObject)dataSource.executeCommand("find", new Integer(id));
-  }
+  def find(id)
+    @data_source.execute_command(:find, id)
+  end
 
-  public List getAll() {
-    return (List)dataSource.executeCommand("getAll", null);
-  }
-}
+  def find_all
+    @data_source.execute_command(:find_all)
+  end
+end
 
-class MyTransferObjectDAOFactory implements TransferObjectDAOFactory {
-  private DataSource dataSource;
+class MyTransferObjectDAOFactory < TransferObjectDAOFactory
 
-  public MyTransferObjectDAOFactory(DataSource dataSource) {
-    this.dataSource = dataSource;
-  }
+  def initialize(data_source)
+    @data_source = data_source
+  end
 
-  public TransferObjectDAO getTransferObjectDAO() {
-    TransferObjectDAO dao = new MyTransferObjectDAO();
+  def transfer_object_dao
+    transfer_object_dao = MyTransferObjectDAO.new
     
-    dao.setDataSource(dataSource);
+    transfer_object_dao.data_source = @data_source
     
-    return dao;
-  }
-}
+    transfer_object_dao
+  end
+end
 
 
-// test - or business object, or client
+# test - or business object, or client
 
-DataSource dataSource = new MyDataSource();
+dataSource = MyDataSource.new
+factory = MyTransferObjectDAOFactory.new(dataSource)
 
-TransferObjectDAOFactory factory = new MyTransferObjectDAOFactory(dataSource);
+dao = factory.transfer_object_dao
 
-TransferObjectDAO dao = factory.getTransferObjectDAO();
+# create a new domain object
+new_id = dao.create
 
-// create a new domain object
-int newId = dao.create();
+# Find a domain object.
+o1 = dao.find(new_id)
 
-// Find a domain object.
-TransferObject o1 = dao.find(newId);
+puts "o1: " + o1.to_s
 
-System.out.println("o1: " + o1);
+# modify the values in the Transfer Object.
+o1.set_data("address", "a1")
+o1.set_data("email", "em1")
 
-// modify the values in the Transfer Object.
-o1.setData("address", "a1");
-o1.setData("email", "em1");
+# update the domain object using the DAO
+dao.update(o1)
 
-// update the domain object using the DAO
-dao.update(o1);
+puts "o1: " + o1.to_s
 
-System.out.println("o1: " + o1);
+list = dao.find_all
 
-List list = dao.getAll();
+puts "list before delete: " + list.join(', ')
 
-System.out.println("list before delete: " + list);
+# delete a domain object
+dao.delete(o1)
 
-// delete a domain object
-dao.delete(o1);
-
-System.out.println("list after delete: " + list);
+puts "list after delete: " + list.join(', ')
