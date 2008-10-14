@@ -9,8 +9,11 @@ class CompositeBase
   end
 
   def self.member_of(composite_name)
+    attr_name = "parent_#{composite_name}"
+    raise 'Method redefinition' if instance_methods.include?(attr_name)
+
     code = %Q{
-      attr_accessor :parent_#{composite_name}
+      attr_accessor :#{attr_name}
     }
 
     class_eval(code)
@@ -40,6 +43,15 @@ class CompositeBase
 
     class_eval(code)
   end
+
+  def member_of_composite?(object, composite_name)
+    object.respond_to?("parent_#{composite_name}")
+  end
+
+  #def member_of_composite?(object, composite_name)
+  #  public_methods = object.public_methods
+  #  public_methods.include?("parent_#{composite_name}")
+  #end
 
   def to_s
     @name
