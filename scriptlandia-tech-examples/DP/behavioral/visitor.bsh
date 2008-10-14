@@ -11,11 +11,7 @@ interface Visitable {
 }
 
 interface Visitor {
-  void visit(MyVisitable1 visitable);
-  void visit(MyVisitable2 visitable);
-  void visit(MyVisitable3 visitable);
-
-  void visit(MyCompoundVisitable visitable);
+  void visit(Visitable visitable);
 }
 
 // 2. type implementation woth visitable behavior
@@ -66,38 +62,36 @@ class MyCompoundVisitable implements Visitable {
 // 3. visitor implementations
 
 class MyVisitor1 implements Visitor {
-  public void visit(MyVisitable1 visitable) {
-    System.out.println("visitor1: visiting my visitable 1");
-  }
-
-  public void visit(MyVisitable2 visitable) {
-    System.out.println("visitor1: visiting my visible 2");
-  }
-
-  public void visit(MyVisitable3 visitable) {
-    System.out.println("visitor1: visiting my visitable 3");
-  }
-
-  public void visit(MyCompoundVisitable visitable) {
-    System.out.println("visitor1: visiting my compound visitable");
+  public void visit(Visitable visitable) {
+    if(visitable instanceof MyVisitable1) {
+      System.out.println("visitor1: visiting my visitable 1");
+    }
+    else if(visitable instanceof MyVisitable2) {
+      System.out.println("visitor1: visiting my visitable 2");
+    }
+    else if(visitable instanceof MyVisitable3) {
+      System.out.println("visitor1: visiting my visitable 3");
+    }
+    else if(visitable instanceof MyCompoundVisitable) {
+      System.out.println("visitor1: visiting my compound visitable");
+    }
   }
 }
 
 class MyVisitor2 implements Visitor {
-  public void visit(MyVisitable1 visitable) {
-    System.out.println("visitor2: visiting my visitable 1");
-  }
-
-  public void visit(MyVisitable2 visitable) {
-    System.out.println("visitor2: visiting my visitable 2");
-  }
-
-  public void visit(MyVisitable3 visitable) {
-    System.out.println("visitor2: visiting my visitable 3");
-  }
-
-  public void visit(MyCompoundVisitable visitable) {
-    System.out.println("visitor2: visiting my compound visitable");
+  public void visit(Visitable visitable) {
+    if(visitable instanceof MyVisitable1) {
+      System.out.println("visitor2: visiting my visitable 1");
+    }
+    else if(visitable instanceof MyVisitable2) {
+      System.out.println("visitor2: visiting my visitable 2");
+    }
+    else if(visitable instanceof MyVisitable3) {
+      System.out.println("visitor2: visiting my visitable 3");
+    }
+    else if(visitable instanceof MyCompoundVisitable) {
+      System.out.println("visitor2: visiting my compound visitable");
+    }
   }
 }
 

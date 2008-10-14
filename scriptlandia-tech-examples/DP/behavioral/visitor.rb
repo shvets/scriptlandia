@@ -1,112 +1,102 @@
-// visitor.bsh
+# visitor.bsh
 
-// Represents an operation to be performed on the elements of an object structure.
-// Lets you define a new operation without changing the classes of the elements on which
-// it operates.
+# Represents an operation to be performed on the elements of an object structure.
+# Lets you define a new operation without changing the classes of the elements on which
+# it operates.
 
-// 1. type and visitor interfaces
+# 1. type and visitor interfaces
 
-interface Visitable {
-  void accept(Visitor visitor);
-}
+class Visitable
+  def accept(visitor)
+  end
+end
 
-interface Visitor {
-  void visit(MyVisitable1 visitable);
-  void visit(MyVisitable2 visitable);
-  void visit(MyVisitable3 visitable);
+class Visitor
+  def visit(visitable)
+  end
+end
 
-  void visit(MyCompoundVisitable visitable);
-}
+# 2. type implementation woth visitable behavior
 
-// 2. type implementation woth visitable behavior
+# basic parts
 
-// basic parts
+class MyVisitable1 < Visitable
+  def accept(visitor)
+    visitor.visit(self)
+  end
+end
 
-class MyVisitable1 implements Visitable {
-  public void accept(Visitor visitor) {
-    visitor.visit(this);
-  }
-}
+class MyVisitable2 < Visitable
+  def accept(visitor)
+    visitor.visit(self)
+  end
+end
 
-class MyVisitable2 implements Visitable {
-  public void accept(Visitor visitor) {
-    visitor.visit(this);
-  }
-}
+class MyVisitable3 < Visitable
+  def accept(visitor)
+    visitor.visit(self)
+  end
+end
 
-class MyVisitable3 implements Visitable {
-  public void accept(Visitor visitor) {
-    visitor.visit(this);
-  }
-}
+# compound
 
-// compound
+class MyCompoundVisitable < Visitable
+  def initialize
+    @visitable1 = MyVisitable1.new
+    @visitable2 = MyVisitable2.new
 
-class MyCompoundVisitable implements Visitable {
-  private Visitable visitable1 = new MyVisitable1();
-  private Visitable visitable2 = new MyVisitable2();
+    @visitables3 = [
+      MyVisitable3.new, MyVisitable3.new, MyVisitable3.new
+    ]
+  end;
 
-  private Visitable[] visitables3 = new MyVisitable3[] {
-    new MyVisitable3(), new MyVisitable3(), new MyVisitable3()
-  };
+  def accept(visitor)
+    visitor.visit(self)
 
-  public void accept(Visitor visitor) {
-    visitor.visit(this);
+    # takes care of components
+    @visitable1.accept(visitor)
+    @visitable2.accept(visitor);
 
-    // takes care of components
-    visitable1.accept(visitor);
-    visitable2.accept(visitor);
+    @visitables3.each { |visitable| visitable.accept(visitor) }
+  end     
+end
 
-    for(MyVisitable3 visitable: visitables3) {
-      visitable.accept(visitor);
-    }
-  }     
-}
+# 3. visitor implementations
 
-// 3. visitor implementations
+class MyVisitor1 < Visitor
+  def visit(visitable)
+    if(visitable.kind_of? MyVisitable1)
+      puts "visitor1: visiting my visitable 1"
+    elsif(visitable.kind_of? MyVisitable2)
+      puts "visitor1: visiting my visible 2"
+    elsif(visitable.kind_of? MyVisitable3)
+      puts "visitor1: visiting my visitable 3"
+    elsif(visitable.kind_of? MyCompoundVisitable)
+      puts "visitor1: visiting my compound visitable"
+    end
+  end
+end
 
-class MyVisitor1 implements Visitor {
-  public void visit(MyVisitable1 visitable) {
-    System.out.println("visitor1: visiting my visitable 1");
-  }
+class MyVisitor2 < Visitor
+  def visit(visitable)
+    if(visitable.kind_of? MyVisitable1)
+      puts "visitor2: visiting my visitable 1"
+    elsif(visitable.kind_of? MyVisitable2)
+      puts "visitor2: visiting my visible 2"
+    elsif(visitable.kind_of? MyVisitable3)
+      puts "visitor2: visiting my visitable 3"
+    elsif(visitable.kind_of? MyCompoundVisitable)
+      puts "visitor2: visiting my compound visitable"
+    end
+  end
+end
 
-  public void visit(MyVisitable2 visitable) {
-    System.out.println("visitor1: visiting my visible 2");
-  }
+# 4. test
 
-  public void visit(MyVisitable3 visitable) {
-    System.out.println("visitor1: visiting my visitable 3");
-  }
+visitable = MyCompoundVisitable.new
 
-  public void visit(MyCompoundVisitable visitable) {
-    System.out.println("visitor1: visiting my compound visitable");
-  }
-}
+visitor1 = MyVisitor1.new
+visitor2 = MyVisitor2.new
 
-class MyVisitor2 implements Visitor {
-  public void visit(MyVisitable1 visitable) {
-    System.out.println("visitor2: visiting my visitable 1");
-  }
-
-  public void visit(MyVisitable2 visitable) {
-    System.out.println("visitor2: visiting my visitable 2");
-  }
-
-  public void visit(MyVisitable3 visitable) {
-    System.out.println("visitor2: visiting my visitable 3");
-  }
-
-  public void visit(MyCompoundVisitable visitable) {
-    System.out.println("visitor2: visiting my compound visitable");
-  }
-}
-
-// 4. test
-
-Visitable visitable = new MyCompoundVisitable();
-
-Visitor visitor1 = new MyVisitor1();
-Visitor visitor2 = new MyVisitor2();
-
-visitable.accept(visitor1);
-visitable.accept(visitor2);
+visitable.accept(visitor1)
+visitable.accept(visitor2)

@@ -18,70 +18,66 @@ class Memento
 end
 
 class Originator
-  def initialize()
+  def initialize
     @state = nil
   end
 
-  def set_state(state)
+  def state=(state)
     @state = state
   end
 
-  def print_state
-    puts state
+  def state_to_s
+    @state.to_s
   end
 
   def create_memento
-    Memento(self, state).new
+    Memento.new(self, @state)
   end
 
-  def restore_memento(m) {
-    if (m.kind_of? Memento) {
-      m.restore_memento
-    end
+  def restore_memento(m)
+    m.restore_memento
   end
 end
 
-     
 
 # 2. Caretaker holds previously creted mementos: storage 
 
 class Caretaker
   def initialize
-    saved_states = []
+    @saved_states = []
   end
 
   def add_memento(memento)
-    @saved_states.add(memento)
+    @saved_states << memento
   end
  
-  def get_memento(index)
-    saved_states.get(index)
+  def [](index)
+    @saved_states[index]
   end
 end
 
 # 3. test
 
 caretaker = Caretaker.new
-
 originator = Originator.new
 
-originator.setState("State1");
-System.out.print("step1: "); originator.printState();
+originator.state = "State1"
+puts "step1: " + originator.state_to_s
 
-originator.setState("State2");
-System.out.print("step2: "); originator.printState();
+originator.state = "State2"
+puts "step2: " + originator.state_to_s
 
-caretaker.addMemento( originator.createMemento() );
-System.out.print("step3: "); originator.printState();
+caretaker.add_memento(originator.create_memento())
+puts "step3: " + originator.state_to_s
 
-originator.setState("State3");
-System.out.print("step4: "); originator.printState();
+originator.state = "State3"
+puts "step4: "+ originator.state_to_s
 
-caretaker.addMemento( originator.createMemento() );
-System.out.print("step5: "); originator.printState();
+caretaker.add_memento(originator.create_memento())
+puts "step5: " + originator.state_to_s
 
-originator.setState("State4");
-System.out.print("step6: "); originator.printState();
+originator.state = "State4"
+puts "step6: " + originator.state_to_s
 
-originator.restoreMemento( caretaker.getMemento(1) );
-System.out.print("step7: "); originator.printState();
+originator.restore_memento(caretaker[1])
+puts "step7: " + originator.state_to_s

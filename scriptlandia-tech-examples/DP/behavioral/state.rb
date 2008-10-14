@@ -1,55 +1,56 @@
-// states.bsh
+# states.bsh
 
-// Allow an object to alter it's behavior when it's internal state changes.
-// The object will appear to change it's class.
+# Allow an object to alter it's behavior when it's internal state changes.
+# The object will appear to change it's class.
 
-// 1. state type and it's implementations
+# 1. state type and it's implementations
 
-interface State {
-  void handle();
-}
+class State
+  def handle
+  end
+end
 
-class MyState1 implements State {
-  public void handle() {
-    System.out.println("handle1");
-  }
-}
+class MyState1 < State
+  def handle
+    puts "handle1"
+  end
+end
 
-class MyState2 implements State {
-  public void handle() {
-    System.out.println("handle2");
-  }
-}
+class MyState2 < State
+  def handle
+    puts "handle2"
+  end
+end
 
-// 2. context's type and it's implementation
+# 2. context's type and it's implementation
 
-interface Context {
-  void setState(State state);
+class Context
+  def set_state(state)
+  end
 
-  void request();
-}
+  def request
+  end
+end
 
-class MyContext implements Context {
-  private State state;
+class MyContext < Context
+  def state=(state)
+    @state = state
+  end
 
-  public void setState(State state) {
-    this.state = state;
-  }
+  def request
+    @state.handle
+  end
+end
 
-  public void request() {
-    state.handle();
-  }
-}
+# 3. test
 
-// 3. test
+context = MyContext.new
 
-Context context = new MyContext();
+state1 = MyState1.new
+state2 = MyState2.new
 
-State state1 = new MyState1();
-State state2 = new MyState2();
+context.state = state1
+context.request
 
-context.setState(state1);
-context.request();
-
-context.setState(state2);
-context.request();
+context.state = state2
+context.request

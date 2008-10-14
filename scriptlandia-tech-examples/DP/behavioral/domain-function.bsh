@@ -3,14 +3,15 @@
 // http://blogs.concedere.net:8080/blog/discipline/java/?permalink=Domain-Function-Pattern.html
 
 class Employee {
-  private int type;
+  private String type;
   private String name;
 
-  public Employee(String name) {
+  public Employee(String type, String name) {
+    this.type = type;
     this.name = name;
   }
 
-  public int getType() {
+  public String getType() {
     return type;
   }
 
@@ -19,88 +20,33 @@ class Employee {
   }
 }
 
-class Contractor extends Employee {
-  public Contractor(String name) {
-    super(name);
-  }
-}
-
-class Executive extends Employee {
-  public Executive(String name) {
-    super(name);
-  }
-}
-
-class Manager extends Employee {
-  public Manager(String name) {
-    super(name);
-  }
-}
-
-class Secretary extends Employee {
-  public Secretary(String name) {
-    super(name);
-  }
-}
-
-class Engineer extends Employee {
-  public Engineer(String name) {
-    super(name);
-  }
-}
 
 public abstract class EmployeeDomainFunction {
-  public void call(Employee e) {
-    if (e instanceof Contractor) {
-      call((Contractor) e);
-    }
-    else if (e instanceof Executive) {
-      call((Executive) e);
-    }
-    else if (e instanceof Manager) {
-      call((Manager) e);
-    }
-    else if (e instanceof Secretary) {
-      call((Secretary) e);
-    }
-    else if (e instanceof Engineer) {
-      call((Engineer) e);
-    }
-    else {
-      throw new IllegalArgumentException("unknown employee type: " + e.getClass().getName());
-    }
-  }
-
-  protected abstract void call(Contractor c);
-
-  protected abstract void call(Executive e);
-
-  protected abstract void call(Manager m);
-
-  protected abstract void call(Secretary s);
-
-  protected abstract void call(Engineer e);
+  public abstract void call(Employee e);
 }
 
 class VacationPlanner extends EmployeeDomainFunction {
-  protected void call(Contractor c) {
-    System.out.println("Vacation planning for Contractor: " + 0);
-  }
+  public void call(Employee e) {
+    String type = e.getType();
 
-  protected void call(Executive e) {
-    System.out.println("Vacation planning for Executive: " + 90);
-  }
-
-  protected void call(Manager m) {
-    System.out.println("Vacation planning for Manager: " + 45);
-  }
-
-  protected void call(Secretary s) {
-    System.out.println("Vacation planning for Secretary: " + 15);
-  }
-
-  protected void call(Engineer e) {
-    System.out.println("Vacation planning for Engineer: " + 10);
+    if (type.equals("contractor")) {
+      System.out.println("Vacation planning for Contractor: " + 0);
+    }
+    else if (type.equals("executive")) {
+      System.out.println("Vacation planning for Executive: " + 90);
+    }
+    else if (type.equals("manager")) {
+      System.out.println("Vacation planning for Manager: " + 45);
+    }
+    else if (type.equals("secretary")) {
+      System.out.println("Vacation planning for Secretary: " + 15);
+    }
+    else if (type.equals("engineer")) {
+      System.out.println("Vacation planning for Engineer: " + 10);
+    }
+    else {
+      throw new IllegalArgumentException("unknown employee type: " + e.getType());
+    }
   }
 }
 
@@ -108,13 +54,13 @@ class VacationPlanner extends EmployeeDomainFunction {
 VacationPlanner vacationPlanner = new VacationPlanner();
 
 Employee[] employees = new Employee[] {
-  new Contractor("contractor 1"),
-  new Contractor("contractor 2"),
-  new Executive("executive 1"),
-  new Manager("manager 1"),
-  new Secretary("secretary 1"),
-  new Engineer("engineer 1"),
-  new Engineer("engineer 2")
+  new Employee("contractor", "contractor 1"),
+  new Employee("contractor", "contractor 2"),
+  new Employee("executive", "executive 1"),
+  new Employee("manager", "manager 1"),
+  new Employee("secretary", "secretary 1"),
+  new Employee("engineer", "engineer 1"),
+  new Employee("engineer", "engineer 2")
 };
 
 System.out.println("employees: " + Arrays.asList(employees));
