@@ -26,7 +26,7 @@ interface Model {
 
 interface Controller implements Observer {
   // Binds a model to this controller. Once added, the controller will listen for all 
-  // model property changes and propogate them on to registered views. In addition,
+  // model property changes and propagate them on to registered views. In addition,
   // it is also responsible for resetting the model properties when a view changes state.
   void addModel(Model model);
 
