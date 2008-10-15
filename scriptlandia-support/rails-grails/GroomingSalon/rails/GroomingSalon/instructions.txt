@@ -162,3 +162,7 @@ cap -f morph_deploy_no_svn.rb morph:deploy
 18.
 http://www.kuripai.com/posts/introduction_to_acts_as_solr
 ruby script/plugin install git://github.com/look/acts_as_solr.git
+
+19.
+gem sources -a http://gems.github.com
+gem install up_the_irons-immutable
