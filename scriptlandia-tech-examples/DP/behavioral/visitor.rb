@@ -4,39 +4,34 @@
 # Lets you define a new operation without changing the classes of the elements on which
 # it operates.
 
+# with dynamic nature of ruby you don't really need this pattern: use
+# open classes feature and use intrenals as you want
+
 # 1. type and visitor interfaces
 
 class Visitable
-  def accept(visitor)
+  def accept(&visitor_code)
+    visitor_code.call(self)
   end
 end
 
-class Visitor
-  def visit(visitable)
-  end
-end
+# we don't need visitor here: code fragment instead
+
+#class Visitor
+#  def visit(visitable)
+#  end
+#end
+
 
 # 2. type implementation woth visitable behavior
 
 # basic parts
 
-class MyVisitable1 < Visitable
-  def accept(visitor)
-    visitor.visit(self)
-  end
-end
+class MyVisitable1 < Visitable; end
 
-class MyVisitable2 < Visitable
-  def accept(visitor)
-    visitor.visit(self)
-  end
-end
+class MyVisitable2 < Visitable; end
 
-class MyVisitable3 < Visitable
-  def accept(visitor)
-    visitor.visit(self)
-  end
-end
+class MyVisitable3 < Visitable; end
 
 # compound
 
@@ -50,53 +45,47 @@ class MyCompoundVisitable < Visitable
     ]
   end;
 
-  def accept(visitor)
-    visitor.visit(self)
+  def accept(&visitor_code)
+    visitor_code.call(self)
+    #visitor.visit(self)
 
     # takes care of components
-    @visitable1.accept(visitor)
-    @visitable2.accept(visitor);
+    @visitable1.accept(&visitor_code)
+    @visitable2.accept(&visitor_code)
 
-    @visitables3.each { |visitable| visitable.accept(visitor) }
+    @visitables3.each { |visitable| visitable.accept(&visitor_code) }
   end     
 end
 
 # 3. visitor implementations
 
-class MyVisitor1 < Visitor
-  def visit(visitable)
-    if(visitable.kind_of? MyVisitable1)
-      puts "visitor1: visiting my visitable 1"
-    elsif(visitable.kind_of? MyVisitable2)
-      puts "visitor1: visiting my visible 2"
-    elsif(visitable.kind_of? MyVisitable3)
-      puts "visitor1: visiting my visitable 3"
-    elsif(visitable.kind_of? MyCompoundVisitable)
-      puts "visitor1: visiting my compound visitable"
-    end
-  end
-end
-
-class MyVisitor2 < Visitor
-  def visit(visitable)
-    if(visitable.kind_of? MyVisitable1)
-      puts "visitor2: visiting my visitable 1"
-    elsif(visitable.kind_of? MyVisitable2)
-      puts "visitor2: visiting my visible 2"
-    elsif(visitable.kind_of? MyVisitable3)
-      puts "visitor2: visiting my visitable 3"
-    elsif(visitable.kind_of? MyCompoundVisitable)
-      puts "visitor2: visiting my compound visitable"
-    end
-  end
-end
-
 # 4. test
 
 visitable = MyCompoundVisitable.new
 
-visitor1 = MyVisitor1.new
-visitor2 = MyVisitor2.new
+# creating visitors dynamically
 
-visitable.accept(visitor1)
-visitable.accept(visitor2)
+visitable.accept do |visitable|
+  if(visitable.kind_of? MyVisitable1)
+    puts "visitor1: visiting my visitable 1"
+  elsif(visitable.kind_of? MyVisitable2)
+    puts "visitor1: visiting my visible 2"
+  elsif(visitable.kind_of? MyVisitable3)
+    puts "visitor1: visiting my visitable 3"
+  elsif(visitable.kind_of? MyCompoundVisitable)
+    puts "visitor1: visiting my compound visitable"
+  end
+end
+
+visitable.accept do |visitable|
+  if(visitable.kind_of? MyVisitable1)
+    puts "visitor2: visiting my visitable 1"
+  elsif(visitable.kind_of? MyVisitable2)
+    puts "visitor2: visiting my visible 2"
+  elsif(visitable.kind_of? MyVisitable3)
+    puts "visitor2: visiting my visitable 3"
+  elsif(visitable.kind_of? MyCompoundVisitable)
+    puts "visitor2: visiting my compound visitable"
+  end
+end
+

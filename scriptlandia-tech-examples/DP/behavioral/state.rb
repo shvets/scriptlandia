@@ -3,6 +3,8 @@
 # Allow an object to alter it's behavior when it's internal state changes.
 # The object will appear to change it's class.
 
+# in ruby you can achieve same goal with metaprogramming
+
 # 1. state type and it's implementations
 
 class State
