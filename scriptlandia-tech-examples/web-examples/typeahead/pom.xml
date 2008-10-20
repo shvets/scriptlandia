@@ -85,25 +85,6 @@
         </configuration>
       </plugin>
 
-      <plugin>
-        <groupId>org.codehaus.cargo</groupId>
-        <artifactId>cargo-maven2-plugin</artifactId>
-
-        <!-- jboss (already running) -->
-        <configuration>
-          <container>
-            <containerId>jboss4x</containerId>
-
-            <output>${project.build.directory}/jboss4x.log</output>
-            <log>${project.build.directory}/cargo.log</log>
-            <type>remote</type>
-          </container>
-
-          <configuration>
-            <type>runtime</type>
-          </configuration>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
 

@@ -124,11 +124,11 @@
       <version>2.5.1</version>
     </dependency>
   
-    <dependency>
+    <!--dependency>
       <groupId>jsonplugin</groupId>
       <artifactId>jsonplugin</artifactId>
       <version>0.19</version>
-    </dependency>
+    </dependency-->
   
     <dependency>
       <groupId>org.json</groupId>
