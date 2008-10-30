@@ -1,5 +1,4 @@
 ENV['JAVA_HOME'] = "c:/Java/jdk1.5.0"
-#ENV['settings.localRepository'] = "c:/Work/maven-repository"
 
 repositories.local = "c:/Work/maven-repository"
 
@@ -15,7 +14,6 @@ repositories.remote << "http://www.ibiblio.org/maven2/"
 
 desc "The 05-buildr project"
 define "05-buildr" do
-
   project.version = VERSION_NUMBER
   project.group = GROUP
   manifest["Implementation-Vendor"] = COPYRIGHT
