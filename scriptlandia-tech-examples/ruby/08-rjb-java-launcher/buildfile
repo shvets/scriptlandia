@@ -1,0 +1,17 @@
+# deps.rb
+
+require 'yaml'
+require 'rubygems'
+require 'rjb'
+
+config = YAML::load File.open(File.dirname(__FILE__) + '/java_launcher.config')
+
+ENV['JAVA_HOME'] = config['java_home']
+local_repository = config['local_repository']
+
+require 'buildr'
+
+repositories.local = 'c:/Work/maven-repository'
+repositories.remote << 'http://repo.mergere.com/maven2'
+
+artifacts(config['dependencies']).each(&:invoke)

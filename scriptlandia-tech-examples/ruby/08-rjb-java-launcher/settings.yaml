@@ -1,0 +1,10 @@
+# The repositories hash is read automatically by buildr.
+repositories:
+
+  # customize user local maven2 repository location
+  local: some/path/to/my_repo
+
+  # prefer the local or nearest mirrors
+  remote: 
+   - https://intra.net/maven2
+   - http://example.com
