@@ -1,4 +1,6 @@
-# The repositories hash is read automatically by buildr.
+java_home:
+  c:/Java/jdk1.5.0
+
 repositories:
 
   # customize user local maven2 repository location
@@ -23,7 +25,3 @@ repositories:
     - http://download.java.net/maven/2
     - http://jyaml.sourceforge.net/m2-repo
     - http://dist.codehaus.org/mule/dependencies/maven2
-
-options:
-  proxy:
-    http: 'http://10.226.67.31:8000'

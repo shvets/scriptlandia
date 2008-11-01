@@ -1,3 +1,4 @@
 #!/usr/bin/env groovy
 
-println("Hello world")
+println("Hello world from groovy");
+                           
