@@ -82,7 +82,6 @@ public class BundleDeps {
     for(int i=0; i < files.length; i++) {
       String name = files[i].getName();
 
-
       if(name.endsWith(".jar")) {
         Manifest manifest = getManifest(files[i].getPath());
 
@@ -210,10 +209,16 @@ public class BundleDeps {
 }
 
 
-String eclipseHome = "c:/Work/eclipse";
+String eclipseHome = "c:/Work/Editors/eclipse";
 
-String bundleJarName = eclipseHome + "/plugins/" + "org.eclipse.equinox.http.jetty_1.0.1.R33x_v20070816.jar";
+if(new File(eclipseHome).exists()) {
+  String bundleJarName = eclipseHome + "/plugins/" + "org.eclipse.equinox.http.jetty_1.0.1.R33x_v20070816.jar";
 
-BundleDeps analyzer = new BundleDeps(eclipseHome);
+  BundleDeps analyzer = new BundleDeps(eclipseHome);
 
-analyzer.analyze(bundleJarName);
+  analyzer.analyze(bundleJarName);                  
+}
+else {
+  print("Directory` " + eclipseHome + " does not exist.");
+}
+
