@@ -1,0 +1,1 @@
+ruby %~p0launcher.rb %*

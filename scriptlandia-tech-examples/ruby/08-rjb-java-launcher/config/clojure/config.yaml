@@ -1,0 +1,6 @@
+jvmargs:
+
+artifacts:
+  clojure: clojure:clojure:jar:20080916
+
+start_class: clojure.lang.Script

@@ -4,8 +4,16 @@ require 'yaml'
 require 'rubygems'
 require 'rjb'
 
+extension = ARGV[0]
+
+if(extension == nil)
+  puts "Please specify extension."
+
+  return
+end
+
 s_config = YAML::load File.open(File.dirname(__FILE__) + '/config/scriptlandia_config.yaml')
-config = YAML::load File.open(File.dirname(__FILE__) + '/config/bsh_launcher_config.yaml')
+config = YAML::load File.open(File.dirname(__FILE__) + '/config/' + extension + '/config.yaml')
 
 ENV['JAVA_HOME'] = s_config['java_home']
 local_repository = s_config['local_repository']

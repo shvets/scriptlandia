@@ -8,6 +8,7 @@ repositories:
 
   # prefer the local or nearest mirrors
   remote: 
+    - file://c:/Work/maven-repository-accelerator
     - http://scriptlandia-repository.googlecode.com/svn/trunk/languages
     - http://scriptlandia-repository.googlecode.com/svn/trunk/tools
     - http://repository.springsource.com/maven/bundles/release
@@ -25,3 +26,7 @@ repositories:
     - http://download.java.net/maven/2
     - http://jyaml.sourceforge.net/m2-repo
     - http://dist.codehaus.org/mule/dependencies/maven2
+
+options:
+  proxy:
+    http: 'http://10.226.67.31:8000'
