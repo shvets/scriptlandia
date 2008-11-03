@@ -1,0 +1,6 @@
+jvmargs:
+
+artifacts:
+  ant: org.apache.ant:ant:jar:1.7.1
+
+start_class: org.apache.ant.Main

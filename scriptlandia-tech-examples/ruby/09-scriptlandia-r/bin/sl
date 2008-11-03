@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+begin
+  require 'scriptlandia'
+rescue LoadError
+  require 'rubygems'
+  require 'scriptlandia'
+end
+
+if(ARGV.size == 0)
+  puts "Please specify script file name."
+else
+  Scriptlandia::Launcher.new.launch
+end
