@@ -1,38 +1,23 @@
 #
-
+require 'rubygems'
 require 'rbconfig'
 require 'find'
 require 'ftools'
+require 'rake/gempackagetask'
 
 include Config
 
 def prepare
   $bindir = CONFIG["bindir"]
+  $libdir = CONFIG["libdir"]
   $ruby = CONFIG['ruby_install_name']
 
-  $realbindir = $bindir
+  spec = Gem::Specification.load('scriptlandia-r.gemspec')
 
-  $sitedir = CONFIG["sitelibdir"]
-  unless $sitedir
-    version = CONFIG["MAJOR"]+"."+CONFIG["MINOR"]
-    $libdir = File.join(CONFIG["libdir"], "ruby", version)
-    $sitedir = $:.find {|x| x =~ /site_ruby/}
-    if !$sitedir
-      $sitedir = File.join($libdir, "site_ruby")
-    elsif $sitedir !~ Regexp.quote(version)
-      $sitedir = File.join($sitedir, version)
-    end
-  end
-
+  $my_libdir = File.join(CONFIG["libdir"], 'ruby', 'gems', 
+                         CONFIG["MAJOR"]+"."+CONFIG["MINOR"], 
+                         'gems', spec.name+'-'+spec.version.to_s, 'lib') 
 end
-
-##
-# Install a binary file. We patch in on the way through to
-# insert a #! line. If this is a Unix install, we name
-# the command (for example) 'rake' and let the shebang line
-# handle running it. Under windows, we add a '.rb' extension
-# and let file associations to their stuff
-#
 
 def tmp_file
   tmp_dir = nil
@@ -49,27 +34,68 @@ def tmp_file
   File.join(tmp_dir, "_tmp")
 end
 
-def installBin(from, to, insert_line)
+def install_file from_file, to_file
+  File::install(from_file, File.join(to_file), 0755, true)
+end
+
+def install_file_with_header(from_file, to_file)
   tmp = tmp_file()
 
-  if(insert_line)
-    File.open(from) do |ip|
-      File.open(tmp, "w") do |op|
-        ruby = File.join($realbindir, $ruby)
-        op.puts "#!#{ruby} -w"
-        op.write ip.read
-      end
+  File.open(from_file) do |ip|
+    File.open(tmp, "w") do |op|
+      ruby = File.join($bindir, $ruby)
+      op.puts "#!#{ruby} -w"
+      op.write ip.read
     end
+  end
 
-    #opfile += ".rb" if CONFIG["target_os"] =~ /mswin/i
-    File::install(tmp, File.join($bindir, to), 0755, true)
-    File::unlink(tmp)
+  File::install(tmp, to_file, 0755, true)
+  File::unlink(tmp)
+end
+
+def install_settings from_file, to_file
+  require 'yaml'
+
+  orig_settings_file_name = $my_libdir + "/settings.yaml"
+  
+  if(File.exist? orig_settings_file_name)
+    settings = YAML::load File.open(orig_settings_file_name)
   else
-    File::install(from, File.join($bindir, to), 0755, true)
+    settings = YAML::load File.open(File.dirname(__FILE__) + '/lib/settings.yaml')
+  end
+
+  orig_java_home = settings['java_home'].chomp
+  orig_repository_home = settings['repositories']['local'].chomp
+
+  puts 'Enter Java Home (' + orig_java_home + "):"
+
+  java_home = gets
+
+  if(java_home.chomp.empty?)
+    java_home = orig_java_home
+  end
+
+  puts 'Enter Repository Home (' + orig_repository_home + "):"
+
+  repository_home = gets
+
+  if(repository_home.chomp.empty?)
+    repository_home = orig_repository_home
+  end
+
+  settings = YAML::load File.open(File.dirname(__FILE__) + '/lib/settings.yaml')
+  settings['java_home'] = java_home
+  settings['repositories']['local'] = repository_home
+
+  File.open( to_file, 'w' ) do |out|
+    YAML.dump(settings, out)
   end
 end
 
 prepare
 
-installBin("bin/sl.bat", "sl.bat", false)
-installBin("bin/sl", "sl", true)
+install_file("bin/sl.bat", $bindir + "/sl.bat")
+
+install_file_with_header("bin/sl", $bindir + "/sl")
+
+install_settings("lib/settings.yaml", $my_libdir + "/settings.yaml")

@@ -1,0 +1,26 @@
+#
+
+require 'rbconfig'
+require 'rbconfig'
+
+include Config
+
+
+#spec = Gem::Specification.load('scriptlandia-r.gemspec')
+
+#$my_libdir = File.join(CONFIG["libdir"], 'ruby', 'gems', 
+#                         CONFIG["MAJOR"]+"."+CONFIG["MINOR"], 
+#                         'gems', spec.name+'-'+spec.version.to_s, 'lib') 
+
+def install_language
+  buildr = File.join CONFIG['bindir'], 'buildr'
+  buildr << '.bat'#config::CONFIG['EXEEXT']
+
+  old_ext = ENV['EXT']
+
+  ENV['EXT'] = ARGV[1]
+
+  exec(buildr, ['-f', 'C:/Ruby/ruby-1.8.7/lib/ruby/gems/1.8/gems/scriptlandia-0.1.0/lib/buildfile'].to_s)
+
+  ENV['EXT'] = old_ext
+end

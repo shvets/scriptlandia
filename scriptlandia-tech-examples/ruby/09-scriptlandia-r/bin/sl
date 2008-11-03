@@ -1,10 +1,6 @@
 
-begin
-  require 'scriptlandia'
-rescue LoadError
-  require 'rubygems'
-  require 'scriptlandia'
-end
+require 'rubygems'
+require 'scriptlandia'
 
 if(ARGV.size == 0)
   puts "Please specify script file name."
@@ -13,18 +9,13 @@ else
     if(ARGV.size < 2)
       puts "Please specify language name to be installed."
     else
-      require 'rbconfig'
+      require 'sl_lang_install'
 
-      include Config
-
-      buildr = File.join CONFIG['bindir'], 'buildr'
-      buildr << '.bat'#config::CONFIG['EXEEXT']
-
-      puts 'Installing ' + ARGV[1] + ' language...'
-      exec(buildr, ARGV[1])
-      puts 'Language ' + ARGV[1] + ' installed.'
+      install_language
     end
   else
     Scriptlandia::Launcher.new.launch
   end
 end
+
+
