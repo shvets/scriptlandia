@@ -12,7 +12,7 @@ spec = Gem::Specification.new do |s|
   s.description = 'Scriptlandia launcher.'
   s.email       = 'alexander.shvets@gmail.com'
 
-  candidates = Dir.glob("{bin,docs,lib,tests}/**/*")
+  candidates = Dir.glob("{docs,lib,tests}/**/*")
   s.files = candidates.delete_if do |item|
     item.include?("svn") || item.include?("rdoc")
   end

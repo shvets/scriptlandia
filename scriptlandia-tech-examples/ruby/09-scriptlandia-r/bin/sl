@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 
 begin
   require 'scriptlandia'
@@ -10,5 +9,22 @@ end
 if(ARGV.size == 0)
   puts "Please specify script file name."
 else
-  Scriptlandia::Launcher.new.launch
+  if(ARGV[0] == '--install')
+    if(ARGV.size < 2)
+      puts "Please specify language name to be installed."
+    else
+      require 'rbconfig'
+
+      include Config
+
+      buildr = File.join CONFIG['bindir'], 'buildr'
+      buildr << '.bat'#config::CONFIG['EXEEXT']
+
+      puts 'Installing ' + ARGV[1] + ' language...'
+      exec(buildr, ARGV[1])
+      puts 'Language ' + ARGV[1] + ' installed.'
+    end
+  else
+    Scriptlandia::Launcher.new.launch
+  end
 end
