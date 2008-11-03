@@ -21,7 +21,7 @@ repositories:
     - http://repo1.maven.org/maven-spring
     - http://dist.codehaus.org
     - http://repository.codehaus.org
-    - http://download.java.net/maven/2/
+    - http://download.java.net/maven/2
     - https://maven-repository.dev.java.net/nonav/repository
     - http://download.java.net/maven/2
     - http://jyaml.sourceforge.net/m2-repo
