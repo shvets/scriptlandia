@@ -36,6 +36,8 @@ pnuts:      [pnut]
 
 ptilde:     [p7e, p7ei]
 
+jruby:       [rb, ruby]
+
 scala:      [scala]
 
 sleep:      [sl, sleep]
