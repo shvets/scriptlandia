@@ -62,11 +62,20 @@ module Scriptlandia
           end
         end
 
+        pause = false
+
+        if(ARGV.include? '--wait')
+          ARGV.delete '--wait'
+          pause = true
+        end
+
         Rjb::load(classpath.join(File::PATH_SEPARATOR), jvmargs = jvm_args)       
 
         ARGV[0, 0] = lang_config['command_line'] if lang_config['command_line']
 
         Rjb::import(lang_config['start_class']).main(ARGV)
+        
+        STDIN.gets if pause
       end
     end
   end
