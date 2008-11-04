@@ -9,13 +9,26 @@ else
     if(ARGV.size < 2)
       puts "Please specify language name to be installed."
     else
-      require 'sl_lang_install'
+      include Config
 
-      install_language
+      buildr = File.join CONFIG['bindir'], 'buildr'
+      buildr << '.bat'
+      #config::CONFIG['EXEEXT']
+
+      old_ext = ENV['EXT']
+
+      ENV['EXT'] = ARGV[1]
+
+      buildfile = File.join(CONFIG["libdir"], 'ruby', 'gems', 
+                               CONFIG["MAJOR"]+"."+CONFIG["MINOR"], 
+                               'gems', name + '-' + version, 'lib', 'buildfile') 
+
+      exec(buildr, ['-f', buildfile].to_s)
+
+      ENV['EXT'] = old_ext
     end
   else
     Scriptlandia::Launcher.new.launch
   end
 end
-
 

@@ -12,11 +12,11 @@ def prepare
   $libdir = CONFIG["libdir"]
   $ruby = CONFIG['ruby_install_name']
 
-  spec = Gem::Specification.load('scriptlandia-r.gemspec')
+  $spec = Gem::Specification.load('scriptlandia-r.gemspec')
 
   $my_libdir = File.join(CONFIG["libdir"], 'ruby', 'gems', 
                          CONFIG["MAJOR"]+"."+CONFIG["MINOR"], 
-                         'gems', spec.name+'-'+spec.version.to_s, 'lib') 
+                         'gems', $spec.name + '-' + $spec.version.to_s, 'lib') 
 end
 
 def tmp_file
@@ -45,6 +45,9 @@ def install_file_with_header(from_file, to_file)
     File.open(tmp, "w") do |op|
       ruby = File.join($bindir, $ruby)
       op.puts "#!#{ruby} -w"
+      op.puts "name = '" + $spec.name + "'"
+      op.puts "version = '" + $spec.version.to_s + "'"            
+
       op.write ip.read
     end
   end
@@ -61,7 +64,7 @@ def install_settings from_file, to_file
   if(File.exist? orig_settings_file_name)
     settings = YAML::load File.open(orig_settings_file_name)
   else
-    settings = YAML::load File.open(File.dirname(__FILE__) + '/lib/settings.yaml')
+    settings = YAML::load File.open(from_file)
   end
 
   orig_java_home = settings['java_home'].chomp
@@ -83,7 +86,7 @@ def install_settings from_file, to_file
     repository_home = orig_repository_home
   end
 
-  settings = YAML::load File.open(File.dirname(__FILE__) + '/lib/settings.yaml')
+  settings = YAML::load File.open(from_file)
   settings['java_home'] = java_home
   settings['repositories']['local'] = repository_home
 
@@ -92,7 +95,7 @@ def install_settings from_file, to_file
   end
 end
 
-prepare
+prepare()
 
 install_file("bin/sl.bat", $bindir + "/sl.bat")
 
