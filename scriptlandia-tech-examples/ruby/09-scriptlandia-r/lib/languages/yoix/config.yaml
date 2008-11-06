@@ -1,6 +1,6 @@
 jvmargs:
 
 artifacts:
-  bsh: bsh:bsh:jar:2.0b5
+  yoix: att.research:yoix:jar:2.1.10
 
 start_class: att.research.yoix.YoixMain
