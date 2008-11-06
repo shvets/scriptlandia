@@ -4,6 +4,21 @@ require 'yaml'
 require 'rubygems'
 require 'rjb'
 
+class String
+  def interpolate vars
+    s_i = self.dup
+
+    vars.each do |key, value|
+      regexp = Regexp.new('#\{' + key + '\}')
+
+      s_i.gsub! regexp, value
+    end
+
+    s_i
+  end
+
+end
+
 module Scriptlandia
   class Launcher
     def initialize
@@ -40,8 +55,12 @@ module Scriptlandia
         ENV['JAVA_HOME'] = @settings['java_home']
         local_repository = @settings['repositories']['local']
 
+        vars = {'repositories.local' => local_repository }
+
         jvm_args = lang_config['jvmargs']
         jvm_args = [] if jvm_args == nil
+
+        jvm_args = jvm_args.collect { |arg| arg.interpolate(vars) }
 
         classpath = lang_config['classpath']
         classpath = [] if classpath == nil
