@@ -1,6 +1,6 @@
 # extension_mapping.yaml 
 
-ant:        [ant]
+ant:        [ant, build.xml]
 
 beanshell:  [bsh]
 
@@ -31,6 +31,8 @@ judo:       [judo]
 jython:     [py, python, jython]
 
 lolcode:    [lol, lcd]
+
+maven:      [mvn, maven, pom.xml]
 
 pnuts:      [pnut]
 

@@ -26,11 +26,17 @@ module Scriptlandia
       @ext_mapping = YAML::load File.open(File.dirname(__FILE__) + '/languages/extension_mapping.yaml')
     end
 
-    def self.language_folder ext_mapping, ext
+    def self.extension name
+      name[name.rindex('.')+1, name.length]
+    end
+
+    def self.language_folder ext_mapping, name
       language_folder = nil
 
+      ext = extension(name)
+
       ext_mapping.each do |folder, extensions|
-        if extensions.include?(ext)
+        if extensions.include?(ext) or extensions.include?(name)
           language_folder = folder
           break
         end
@@ -42,12 +48,10 @@ module Scriptlandia
     def launch
       script_name = ARGV[0]
 
-      extension = script_name[script_name.rindex('.')+1, script_name.length]
-                          
-      language = Launcher.language_folder(@ext_mapping, extension)
+      language = Launcher.language_folder(@ext_mapping, script_name)
       
       if(language == nil) 
-        puts "Unsupported language/extension: " + extension
+        puts "Unsupported language/extension: " + Launcher.extension(script_name)
       else
         lang_config = YAML::load File.open(File.dirname(__FILE__) + '/languages/' + 
                              language + '/config.yaml')
